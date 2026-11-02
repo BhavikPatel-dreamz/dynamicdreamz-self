@@ -12,7 +12,7 @@ export const shopifyDevelopmentPuneContent = {
     eyebrows: ["Shopify Development", "Pune"],
     title: "Shopify Development Company in Pune",
     description:
-      "Dynamic Dreamz is a trustworthy Shopify development company in Pune, offering expert Shopify solutions tailored to your unique needs. From Shopify migration to custom theme design, our Shopify developers ensure your online store performs at its best, enhancing your brand’s reach and driving more growth.",
+      "Dynamic Dreamz provides Shopify development services for businesses in Pune, including Shopify Plus, custom storefronts, theme customization, migrations, integrations, CRO and ongoing support. Our India-based team works with businesses and agencies in Pune and internationally.",
     primaryCta: {
       label: "Get In Touch",
       href: "/request-quote",
@@ -126,20 +126,24 @@ export const shopifyDevelopmentPuneContent = {
       "We are experts in developing custom Shopify stores that help businesses stand out in the competitive digital space. As a Shopify Development Agency in Pune, We focus on delivering visually attractive and sales driven stores, our trained team guarantees that your Shopify store is optimized for success. From Shopify app development to theme customization and white label services, we help you with all your Shopify requirements.",
     items: [
       {
-        value: "20+ Years",
-        label: "Ecommerce & web development experience",
-      },
-      {
-        value: "60+",
-        label: "Shopify specialists across development and support",
+        value: "20+",
+        label: "Years of Experience",
+        subLabel: "Established in 2006",
       },
       {
         value: "150+",
-        label: "Cross-functional experts",
+        label: "Experts",
+        subLabel: "AI empowered. Continuously trained",
       },
       {
         value: "5,000+",
-        label: "Projects delivered across industries",
+        label: "projects delivered",
+        subLabel: "Ecommerce, web and mobile",
+      },
+      {
+        value: "2500+",
+        label: "Verified 5 star Reviews",
+        subLabel: "From Clutch, Trustpilot & Upwork",
       },
     ],
   },

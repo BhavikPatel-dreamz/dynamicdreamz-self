@@ -12,7 +12,7 @@ export const shopifyDevelopmentMumbaiContent = {
     eyebrows: ["Shopify Development", "Mumbai"],
     title: "#1 Shopify Development Company in Mumbai",
     description:
-      "Mumbai’s ecommerce space is evolving rapidly, and brands need to keep pace. As a trusted Shopify development company, Dynamic Dreamz helps businesses launch, scale, and optimize high-performing online stores tailored to their requirements.",
+      "Dynamic Dreamz provides Shopify development services for businesses in Mumbai, including Shopify Plus, custom storefronts, theme customization, migrations, integrations, CRO and ongoing support. Our India-based team works with businesses and agencies in Mumbai and internationally.",
     primaryCta: {
       label: "Get In Touch",
       href: "/request-quote",
@@ -125,20 +125,24 @@ export const shopifyDevelopmentMumbaiContent = {
       "Dynamic Dreamz helps businesses build scalable and high-performing ecommerce experiences tailored for competitive markets like Mumbai. As an experienced Shopify development company, we combine strategic planning, design expertise, and advanced Shopify web development to create online stores focused on growth and conversions.",
     items: [
       {
-        value: "20+ Years",
-        label: "Ecommerce & web development experience",
-      },
-      {
-        value: "60+",
-        label: "Shopify specialists across development and support",
+        value: "20+",
+        label: "Years of Experience",
+        subLabel: "Established in 2006",
       },
       {
         value: "150+",
-        label: "Cross-functional experts",
+        label: "Experts",
+        subLabel: "AI empowered. Continuously trained",
       },
       {
         value: "5,000+",
-        label: "Projects delivered across industries",
+        label: "projects delivered",
+        subLabel: "Ecommerce, web and mobile",
+      },
+      {
+        value: "2500+",
+        label: "Verified 5 star Reviews",
+        subLabel: "From Clutch, Trustpilot & Upwork",
       },
     ],
   },

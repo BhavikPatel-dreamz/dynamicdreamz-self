@@ -12,7 +12,7 @@ export const shopifyDevelopmentNewYorkContent = {
     eyebrows: ["Shopify Development", "New York"],
     title: "Shopify Development in New York That Drives Real Results",
     description:
-      "Finding a trusted Shopify development company in New York? Get to the Dynamic Dreamz, because it design & build powerful, conversion-focused Shopify stores for you. And can help you in both launching a brand new store and scaling an existing one, by simply delivering end-to-end Shopify solutions from custom development and theme design to seamless migrations and long-term support.",
+      "Dynamic Dreamz provides Shopify development services for businesses in New York, including Shopify Plus, custom storefronts, theme customization, migrations, integrations, CRO and ongoing support. Our India-based team works with businesses and agencies in New York and internationally.",
     primaryCta: {
       label: "Get In Touch",
       href: "/request-quote",

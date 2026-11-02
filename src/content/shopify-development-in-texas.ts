@@ -13,7 +13,7 @@ export const shopifyDevelopmentTexasContent = {
     eyebrows: ["Shopify Development", "Texas"],
     title: "Shopify Development in Texas That's Built To Convert",
     description:
-      "Whenever you look for a trusted Shopify development company in Texas, look no further than Dynamic Dreamz. Our Shopify experts build powerful, conversion-focused stores tailored to your brand’s unique identity from Houston and Dallas to Austin, San Antonio, and beyond.",
+      "Dynamic Dreamz provides Shopify development services for businesses in Texas, including Shopify Plus, custom storefronts, theme customization, migrations, integrations, CRO and ongoing support. Our India-based team works with businesses and agencies in Texas and internationally.",
     primaryCta: {
       label: "Get In Touch",
       href: "/request-quote",

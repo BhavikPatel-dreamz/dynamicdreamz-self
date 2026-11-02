@@ -12,7 +12,7 @@ export const shopifyDevelopmentBangaloreContent = {
     eyebrows: ["Shopify Development", "Bangalore / Bengaluru"],
     title: "Shopify Development Company in Bangalore",
     description:
-      "Dynamic Dreamz is a trustworthy Shopify development company in Bangalore, offering expert Shopify solutions tailored to your unique needs. From Shopify migration to custom theme design, our Shopify developers ensure your online store performs at its best, enhancing your brand’s reach and driving more growth.",
+      "Dynamic Dreamz provides Shopify development services for businesses in Bangalore, including Shopify Plus, custom storefronts, theme customization, migrations, integrations, CRO and ongoing support. Our India-based team works with businesses and agencies in Bangalore and internationally.",
     primaryCta: {
       label: "Get In Touch",
       href: "/request-quote",
@@ -126,20 +126,24 @@ export const shopifyDevelopmentBangaloreContent = {
       "Dynamic Dreamz is best at building customized Shopify stores that help businesses stand out in a competitive market. With vast experience and a team of reliable professionals, we create Shopify stores that are visually effective, performance oriented and aligned with your business goals.",
     items: [
       {
-        value: "20+ Years",
-        label: "Ecommerce & web development experience",
-      },
-      {
-        value: "60+",
-        label: "Shopify specialists across development and support",
+        value: "20+",
+        label: "Years of Experience",
+        subLabel: "Established in 2006",
       },
       {
         value: "150+",
-        label: "Cross-functional experts",
+        label: "Experts",
+        subLabel: "AI empowered. Continuously trained",
       },
       {
         value: "5,000+",
-        label: "Projects delivered across industries",
+        label: "projects delivered",
+        subLabel: "Ecommerce, web and mobile",
+      },
+      {
+        value: "2500+",
+        label: "Verified 5 star Reviews",
+        subLabel: "From Clutch, Trustpilot & Upwork",
       },
     ],
   },
@@ -346,64 +350,13 @@ export const shopifyDevelopmentBangaloreContent = {
     ],
   },
 
-  reasons: {
-    eyebrow: "Why Dynamic Dreamz",
-    heading: "Why Choose Us for Your Shopify Development Needs?",
-    description:
-      "With our Shopify experience, practical delivery approach and long-term support capability, we help businesses build ecommerce experiences designed for performance, scalability and continuous improvement.",
-    items: [
-      {
-        title: "Expert Developers",
-        description:
-          "Experienced Shopify developers focused on high-performing stores tailored to your requirements.",
-        icon: "/assets/services/shopify-development-in-bangalore/why-choose-dynamic/expert-developers.svg",
-        iconAlt: "Expert Developers Icon",
-      },
-      {
-        title: "Custom Solutions",
-        description:
-          "Shopify solutions aligned with your business goals, workflows and customer experience.",
-        icon: "/assets/services/shopify-development-in-bangalore/why-choose-dynamic/custom-solutions.svg",
-        iconAlt: "Custom Solutions Icon",
-      },
-      {
-        title: "Intuitive Design",
-        description:
-          "User-friendly layouts designed to make shopping and store management easier.",
-        icon: "/assets/services/shopify-development-in-bangalore/why-choose-dynamic/intuitive-design.svg",
-        iconAlt: "Intuitive Design Icon",
-      },
-      {
-        title: "SEO Expertise",
-        description:
-          "Technical and structural considerations that support a search-friendly Shopify storefront.",
-        icon: "/assets/services/shopify-development-in-bangalore/why-choose-dynamic/seo-expertise.svg",
-        iconAlt: "SEO Expertise Icon",
-      },
-      {
-        title: "Comprehensive Services",
-        description:
-          "From development and migration to integrations, optimization and ongoing support.",
-        icon: "/assets/services/shopify-development-in-bangalore/why-choose-dynamic/comprehensive-services.svg",
-        iconAlt: "Comprehensive Services Icon",
-      },
-      {
-        title: "Proven Track Record",
-        description:
-          "Shopify and ecommerce delivery experience across brands, industries and project types.",
-        icon: "/assets/services/shopify-development-in-bangalore/why-choose-dynamic/proven-track-record.svg",
-        iconAlt: "Proven Track Record Icon",
-      },
-    ],
-  },
-
   portfolio: {
     heading: "Our Work",
-    description:
-      [
+    description: [
       "Lots of Shopify stores are precisely crafted and counting. Our expertise accelerates evolution and redefines shopping experiences for customers.",
     ],
     ctaHref: "/our-work",
+    ctaLabel: "view our work",
     items: [
       {
         name: "Renee",

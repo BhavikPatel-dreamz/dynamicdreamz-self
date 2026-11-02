@@ -12,7 +12,7 @@ export const shopifyDevelopmentChennaiContent = {
     eyebrows: ["Shopify Development", "Chennai"],
     title: "Shopify Development Company in Chennai",
     description:
-      "Dynamic Dreamz is your go-to Shopify development company in Chennai. We help all kinds of businesses to create robust and custom Shopify stores that boost sales and improve online presence. Our experienced team is ready to develop a Shopify store that reflects your brand identity.",
+      "Dynamic Dreamz provides Shopify development services for businesses in Chennai, including Shopify Plus, custom storefronts, theme customization, migrations, integrations, CRO and ongoing support. Our India-based team works with businesses and agencies in Chennai and internationally.",
     primaryCta: {
       label: "Get In Touch",
       href: "/request-quote",
@@ -126,22 +126,22 @@ export const shopifyDevelopmentChennaiContent = {
       {
         value: "20+",
         label: "Years of Experience",
-        description: "Established in 2006",
+        subLabel: "Established in 2006",
       },
       {
         value: "150+",
         label: "Experts",
-        description: "AI empowered. Continuously trained",
+        subLabel: "AI empowered. Continuously trained",
       },
       {
         value: "5,000+",
         label: "projects delivered",
-        description: "Ecommerce, web and mobile",
+        subLabel: "Ecommerce, web and mobile",
       },
       {
         value: "2500+",
         label: "Verified 5 star Reviews",
-        description: "From Clutch, Trustpilot & Upwork",
+        subLabel: "From Clutch, Trustpilot & Upwork",
       },
     ],
   },
@@ -149,7 +149,7 @@ export const shopifyDevelopmentChennaiContent = {
     eyebrow: "Why Shopify",
     heading: "Why Choose Shopify for Your Business?",
     description:
-      "Shopify is a leading eCommerce platform. It helps you start and grow a business online. Shopify offers advanced features and tools to make your\nbusiness unstoppable, which makes it an ideal choice for entrepreneurs.",
+      "Shopify is a leading eCommerce platform. It helps you start and grow a business online. Shopify offers advanced features and tools to make your business unstoppable, which makes it an ideal choice for entrepreneurs.",
     items: [
       {
         title: "User Friendly",
@@ -341,11 +341,11 @@ export const shopifyDevelopmentChennaiContent = {
   portfolio: {
     eyebrow: "Portfolio",
     heading: "Our Work",
-    description:
-      [
+    description: [
       "Lots of Shopify stores are precisely crafted and counting.  Our expertise accelerates evolution and redefines shopping experiences for customers.",
     ],
     ctaHref: "/our-work",
+    ctaLabel: "view our work",
     items: [
       {
         name: "Renee",

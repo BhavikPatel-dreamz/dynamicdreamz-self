@@ -12,7 +12,7 @@ export const shopifyDevelopmentLosAngelesContent = {
     eyebrows: ["Shopify Development", "Los Angeles"],
     title: "Ending Your Search For Shopify Development in Los Angeles",
     description:
-      "Whenever you look for a trusted Shopify development company in Los Angeles, look no further than Dynamic Dreamz. Here, the Shopify experts can build powerful, conversion-focused Shopify stores tailored to your brand’s unique identity. Here",
+      "Dynamic Dreamz provides Shopify development services for businesses in Los Angeles, including Shopify Plus, custom storefronts, theme customization, migrations, integrations, CRO and ongoing support. Our India-based team works with businesses and agencies in Los Angeles and internationally.",
     primaryCta: {
       label: "Get In Touch",
       href: "/request-quote",

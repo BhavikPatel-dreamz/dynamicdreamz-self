@@ -5393,7 +5393,7 @@ export function createShopifyDevelopmentInBangalorePageSchema() {
         title: item.title,
         description: item.description,
       })),
-      ...shopifyDevelopmentBangaloreContent.reasons.items.map((item) => ({
+      ...shopifyDevelopmentBangaloreContent.whyDynamicDreamz.items.map((item) => ({
         title: item.title,
         description: item.description,
       })),

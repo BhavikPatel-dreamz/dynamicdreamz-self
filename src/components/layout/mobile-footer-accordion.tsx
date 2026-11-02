@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import type { NavigationGroup } from "@/data/site";
+import type { NavigationGroup } from "@/data/navigation";
 import { cn } from "@/lib/class-names";
 import { FooterMenuItem } from "@/components/layout/FooterMenuItem";
 

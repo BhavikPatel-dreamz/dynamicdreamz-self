@@ -126,20 +126,24 @@ export const shopifyDevelopmentHyderabadContent = {
       "Our specialty at Dynamic Dreamz is to develop custom Shopify stores that can stand out in the current competitive market and grow your business. With years of experience and a dedicated team, we make sure your Shopify store is not just visually appealing but also performance driven. Whether you need Shopify app development, theme customization, or white label Shopify development, we have experts for all your requirements.",
     items: [
       {
-        value: "20+ Years",
-        label: "Ecommerce & web development experience",
-      },
-      {
-        value: "60+",
-        label: "Shopify specialists across development and support",
+        value: "20+",
+        label: "Years of Experience",
+        subLabel: "Established in 2006",
       },
       {
         value: "150+",
-        label: "Cross-functional experts",
+        label: "Experts",
+        subLabel: "AI empowered. Continuously trained",
       },
       {
         value: "5,000+",
-        label: "Projects delivered across industries",
+        label: "projects delivered",
+        subLabel: "Ecommerce, web and mobile",
+      },
+      {
+        value: "2500+",
+        label: "Verified 5 star Reviews",
+        subLabel: "From Clutch, Trustpilot & Upwork",
       },
     ],
   },
@@ -347,11 +351,11 @@ export const shopifyDevelopmentHyderabadContent = {
 
   portfolio: {
     heading: "Our Work",
-    description:
-      [
+    description: [
       "Lots of Shopify stores are precisely crafted and counting.  Our expertise accelerates evolution and redefines shopping experiences for customers.",
     ],
     ctaHref: "/our-work",
+    ctaLabel: "view our work",
     items: [
       {
         name: "Renee",

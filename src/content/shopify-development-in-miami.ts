@@ -12,7 +12,7 @@ export const shopifyDevelopmentMiamiContent = {
     eyebrows: ["Shopify Development", "Miami"],
     title: "Shopify Development in Miami That Moves as Fast as the City",
     description:
-      "Whenever you are in need of a trusted Shopify development company in Miami, look no further than Dynamic Dreamz. Because our Shopify experts build powerful, conversion-focused stores that are tailored to your brand’s unique identity, from Brickell and Miami Beach to Coral Gables, Fort Lauderdale & beyond.",
+      "Dynamic Dreamz provides Shopify development services for businesses in Miami, including Shopify Plus, custom storefronts, theme customization, migrations, integrations, CRO and ongoing support. Our India-based team works with businesses and agencies in Miami and internationally.",
     primaryCta: {
       label: "Get In Touch",
       href: "/request-quote",

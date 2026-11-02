@@ -3311,9 +3311,9 @@ export const pageSeo = {
   },
   shopifyDevelopmentInDelhi: {
     path: "/shopify-development-in-delhi",
-    title: "No.1 Shopify Development in Delhi | Dynamic Dreamz",
+    title: "Shopify Development Company in Delhi | Dynamic Dreamz",
     description:
-      "Choose Shopify development in Delhi. Expert Shopify development Company with 18+ Years of Experience. Hire DynamicDreamz today!",
+      "Shopify development company in Delhi offering custom Shopify stores, theme development, migrations, app integrations and ongoing support.",
     socialDescription:
       "Expert Shopify development company in Delhi: custom theme design, app development, Shopify migration, 2.0 upgrades, and store maintenance.",
     keywords: [
@@ -3339,9 +3339,9 @@ export const pageSeo = {
   },
   shopifyDevelopmentInHyderabad: {
     path: "/shopify-development-in-hyderabad",
-    title: "No.1 Shopify Development in Hyderabad | Dynamic Dreamz",
+    title: "Shopify Development Company in Hyderabad | Dynamic Dreamz",
     description:
-      "Choose Shopify development in Hyderabad. Expert Shopify development Company with 18+ Years of Experience. Hire DynamicDreamz today!",
+      "Shopify development company in Hyderabad offering custom Shopify stores, theme development, migrations, app integrations and ongoing support.",
     socialDescription:
       "Expert Shopify development company in Hyderabad: custom theme design, app integration, Shopify migration, 2.0 upgrades, and store maintenance.",
     keywords: [
@@ -3565,9 +3565,9 @@ export const pageSeo = {
   },
   shopifyDevelopmentInBangalore: {
     path: "/shopify-development-in-bangalore",
-    title: "No.1 Shopify Development in Bangalore | Dynamic Dreamz",
+    title: "Shopify Development Company in Bangalore | Dynamic Dreamz",
     description:
-      "Best Shopify development in Bangalore. Custom store setup, theme customization, migration & performance optimization for growing brands. Hire Dynamic Dreamz!",
+      "Shopify development company in Bangalore offering custom Shopify stores, theme development, migrations, app integrations and ongoing support.",
     socialDescription:
       "Top-rated Shopify development company in Bangalore. Certified Shopify developers for custom stores, Plus upgrades, theme engineering, and migrations.",
     keywords: [
