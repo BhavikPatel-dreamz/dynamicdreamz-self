@@ -6,6 +6,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 
 import { requestQuoteContent } from "@/content/request-quote";
+import { LazyMount } from "@/components/ui/lazy-mount";
 
 type ArrowProps = {
   className?: string;
@@ -60,6 +61,43 @@ export type QuoteTestimonialsProps = {
   testimonials?: readonly QuoteTestimonialItem[];
 };
 
+function QuoteTestimonialCard({ testimonial }: { testimonial: QuoteTestimonialItem }) {
+  return (
+    <div className="flex h-full rounded-[10px] bg-[linear-gradient(to_right,#15c064,#00d1ff)] p-[1px] max-[575px]:min-h-[285px]">
+      <div className="flex min-h-0 flex-1 flex-col justify-between rounded-[10px] bg-white p-[32px_45px_32px_32px] max-[1199px]:p-5">
+        <div>
+          <div className="mb-5 flex items-center justify-between">
+            <div className="flex items-center gap-3">
+              <Image
+                className="size-12 rounded-full object-cover"
+                src={testimonial.avatar}
+                alt={`${testimonial.name} avatar`}
+                width={48}
+                height={48}
+              />
+              <h3 className="m-0 font-montreal-medium text-lg leading-[23px] font-normal text-ink max-[767px]:text-base">
+                {testimonial.name}
+              </h3>
+            </div>
+          </div>
+          <div className="testimonial-info">
+            <Image
+              className="mb-[15px] h-5 w-[118px]"
+              src="/assets/request-quote/icons/request-star.svg"
+              alt="5 star rating"
+              width={118}
+              height={20}
+            />
+            <p className="m-0 text-sm leading-6 font-normal text-[#535353]">
+              {testimonial.quote}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export function QuoteTestimonials({
   testimonials = requestQuoteContent.testimonials,
 }: QuoteTestimonialsProps = {}) {
@@ -78,44 +116,22 @@ export function QuoteTestimonials({
 
   return (
     <div className="testimonial-slider relative -mx-[5px] pb-[52px] [&_.slick-slide]:h-auto [&_.slick-slide>div]:h-full [&_.slick-track]:flex [&_.slick-track]:items-stretch max-[575px]:[&_.slick-list]:w-[calc(100%_-_25px)] max-[575px]:[&_.slick-list]:!overflow-visible max-[575px]:[&_.slick-list]:[clip-path:inset(0_-100vw_0_5px)]">
-      <Slider {...settings}>
-        {testimonials.map((testimonial) => (
-          <div key={testimonial.name} className="h-full px-[5px]">
-            <div className="flex h-full rounded-[10px] bg-[linear-gradient(to_right,#15c064,#00d1ff)] p-[1px] max-[575px]:min-h-[285px]">
-              <div className="flex min-h-0 flex-1 flex-col justify-between rounded-[10px] bg-white p-[32px_45px_32px_32px] max-[1199px]:p-5">
-                <div>
-                  <div className="mb-5 flex items-center justify-between">
-                    <div className="flex items-center gap-3">
-                      <Image
-                        className="size-12 rounded-full object-cover"
-                        src={testimonial.avatar}
-                        alt={`${testimonial.name} avatar`}
-                        width={48}
-                        height={48}
-                      />
-                      <h3 className="m-0 font-montreal-medium text-lg leading-[23px] font-normal text-ink max-[767px]:text-base">
-                        {testimonial.name}
-                      </h3>
-                    </div>
-                  </div>
-                  <div className="testimonial-info">
-                    <Image
-                      className="mb-[15px] h-5 w-[118px]"
-                      src="/assets/request-quote/icons/request-star.svg"
-                      alt="5 star rating"
-                      width={118}
-                      height={20}
-                    />
-                    <p className="m-0 text-sm leading-6 font-normal text-[#535353]">
-                      {testimonial.quote}
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
+      <LazyMount
+        fallback={testimonials[0] ? (
+          <div className="h-full px-[5px]">
+            <QuoteTestimonialCard testimonial={testimonials[0]} />
           </div>
-        ))}
-      </Slider>
+        ) : null}
+        rootMargin="800px"
+      >
+        <Slider {...settings}>
+          {testimonials.map((testimonial) => (
+            <div key={testimonial.name} className="h-full px-[5px]">
+              <QuoteTestimonialCard testimonial={testimonial} />
+            </div>
+          ))}
+        </Slider>
+      </LazyMount>
     </div>
   );
 }

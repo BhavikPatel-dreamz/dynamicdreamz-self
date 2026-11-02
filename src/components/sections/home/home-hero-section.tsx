@@ -74,7 +74,6 @@ export function HomeHeroSection({
                 width={logo.width ?? 136}
                 height={logo.height ?? 44}
                 sizes="(max-width: 767px) 126px, 160px"
-                loading="eager"
                 decoding="async"
               />
             </a>

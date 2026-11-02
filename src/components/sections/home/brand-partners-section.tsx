@@ -1,7 +1,5 @@
-"use client";
-
-import React from "react";
 import { ClientLogo } from "@/components/sections/home/client-logo";
+import { LoopingLogoTrack } from "@/components/sections/home/looping-logo-track";
 import styles from "@/components/sections/home/brand-partners-section.module.css";
 import { Container } from "@/components/ui/container";
 import { SplitSectionHeading } from "@/components/ui/split-section-heading";
@@ -28,12 +26,6 @@ export function BrandPartnersSection({
   mobileRows = mobileClientLogoRows,
   variant = "home",
 }: BrandPartnersSectionProps = {}) {
-  const isMounted = React.useSyncExternalStore(
-    () => () => {},
-    () => true,
-    () => false,
-  );
-  const loopSets = isMounted ? [0, 1, 2] : [0];
   const isShopifyHours = variant === "shopifyHours";
 
   return (
@@ -81,19 +73,13 @@ export function BrandPartnersSection({
       <div data-aos="fade-up" className="hidden flex-col max-[767px]:flex" aria-hidden="true">
         {mobileRows.map((row, index) => (
           <div className={cn("flex w-max items-center", index > 0 && "mt-2.5", index === 0 && "mb-5", index === 2 && "ml-[-25%]")} key={index}>
-            {loopSets.map((set) => (
-              <div
-                className={cn("flex shrink-0 items-center", index === 1 ? styles.moveRight : styles.moveLeft)}
-                key={set}
-                aria-hidden={set > 0 ? true : undefined}
-              >
-                {row.map((logo) => (
-                  <span className="mx-[30px] flex w-[120px] min-w-[120px] shrink-0 items-center justify-center [&_img]:h-auto [&_img]:w-auto" key={`${set}-${logo.src}`}>
-                    <ClientLogo logo={logo} decorative />
-                  </span>
-                ))}
-              </div>
-            ))}
+            <LoopingLogoTrack
+              className={cn("flex shrink-0 items-center", index === 1 ? styles.moveRight : styles.moveLeft)}
+              decorative
+              logoClassName="mx-[30px] flex w-[120px] min-w-[120px] shrink-0 items-center justify-center [&_img]:h-auto [&_img]:w-auto"
+              logos={row}
+              trackCount={2}
+            />
           </div>
         ))}
       </div>

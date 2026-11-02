@@ -25,42 +25,44 @@ export function PhoneAppSlider({ slides = [], frameImage }: PhoneAppSliderProps)
 
   const [activeIndex, setActiveIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
+  const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (total === 0) return;
 
-    // Check prefers-reduced-motion
-    const prefersReducedMotion = window.matchMedia(
+    const motionPreference = window.matchMedia(
       "(prefers-reduced-motion: reduce)",
-    ).matches;
-    if (prefersReducedMotion) return;
+    );
+    const updateMotionPreference = () =>
+      setPrefersReducedMotion(motionPreference.matches);
+    updateMotionPreference();
+    motionPreference.addEventListener("change", updateMotionPreference);
 
-    let isVisible = true;
     const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          isVisible = entry.isIntersecting;
-        });
-      },
+      ([entry]) => setIsVisible(entry.isIntersecting),
       { threshold: 0.2 },
     );
 
-    if (containerRef.current) {
-      observer.observe(containerRef.current);
-    }
-
-    const interval = setInterval(() => {
-      if (isVisible && !isPaused) {
-        setActiveIndex((prev) => (prev + 1) % total);
-      }
-    }, 3000);
+    const container = containerRef.current;
+    if (container) observer.observe(container);
 
     return () => {
-      clearInterval(interval);
       observer.disconnect();
+      motionPreference.removeEventListener("change", updateMotionPreference);
     };
-  }, [total, isPaused]);
+  }, [total]);
+
+  useEffect(() => {
+    if (total === 0 || !isVisible || isPaused || prefersReducedMotion) return;
+
+    const interval = window.setInterval(() => {
+      setActiveIndex((prev) => (prev + 1) % total);
+    }, 3000);
+
+    return () => window.clearInterval(interval);
+  }, [isPaused, isVisible, prefersReducedMotion, total]);
 
   if (total === 0) return null;
 
@@ -98,7 +100,7 @@ export function PhoneAppSlider({ slides = [], frameImage }: PhoneAppSliderProps)
                 width={slide.width}
                 height={slide.height}
                 className="h-full w-full object-cover object-top"
-                priority={diff === 0}
+                priority={i === 0}
               />
             </div>
           );

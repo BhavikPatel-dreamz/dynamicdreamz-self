@@ -1,6 +1,8 @@
 import Image from "next/image";
+import { useId } from "react";
 
 import styles from "@/components/sections/career/career-hero-section.module.css";
+import { ClientAfterViewport } from "@/components/ui/client-after-viewport";
 import { Container } from "@/components/ui/container";
 import { careerHero } from "@/content/career";
 import { cn } from "@/lib/class-names";
@@ -35,6 +37,8 @@ export function CareerHeroSection({
   badges = careerHero.badges,
   scrollingImages = careerHero.scrollingImages,
 }: CareerHeroSectionProps = {}) {
+  const scrollingTrackId = useId();
+
   return (
     <section className="hero-new-section hide-logo relative overflow-hidden bg-[#f7f4e9] pt-[91px] max-[991px]:pt-16">
       <Container>
@@ -90,7 +94,7 @@ export function CareerHeroSection({
           <div className="right-col relative flex h-[580px] w-[48%] overflow-hidden max-[1199px]:w-[48%] max-[991px]:mt-6 max-[991px]:h-[260px] max-[991px]:w-full max-[767px]:hidden">
             <div className="scrolling_img_wrap relative h-full w-full overflow-hidden">
               <div className="scrolling_anim_img absolute inset-0 px-[68px] max-[1199px]:px-5 max-[991px]:relative max-[991px]:px-0">
-                <div className={cn("scrolling_track", styles.scrollingTrack)}>
+                <div id={scrollingTrackId} className={cn("scrolling_track", styles.scrollingTrack)}>
                   <div className={cn("scrolling_img", styles.scrollingImg)}>
                     {scrollingImages.map((img, i) => (
                       <div
@@ -101,32 +105,35 @@ export function CareerHeroSection({
                           alt={img.alt}
                           className="h-full w-full object-cover object-top"
                           height={img.height}
-                          priority={i < 2}
+                          priority={i === 0}
                           src={img.src}
                           width={img.width}
                         />
                       </div>
                     ))}
                   </div>
-                  <div
-                    aria-hidden="true"
-                    className={cn("scrolling_img", styles.scrollingImg)}
-                  >
-                    {scrollingImages.map((img, i) => (
-                      <div
-                        className="item_img mb-6 flex shrink-0 overflow-hidden rounded-[15.93px] shadow-[6.371px_6.371px_15.929px_0_rgba(0,0,0,0.06)] max-[991px]:mb-0 max-[991px]:mr-4 max-[991px]:h-[227px] max-[991px]:w-[342px] max-[991px]:rounded-[10px]"
-                        key={`hero-img-dup-${i}`}
-                      >
-                        <Image
-                          alt={img.alt}
-                          className="h-full w-full object-cover object-top"
-                          height={img.height}
-                          src={img.src}
-                          width={img.width}
-                        />
-                      </div>
-                    ))}
-                  </div>
+                  <ClientAfterViewport rootId={scrollingTrackId}>
+                    <div
+                      aria-hidden="true"
+                      data-career-track-clone
+                      className={cn("scrolling_img", styles.scrollingImg)}
+                    >
+                      {scrollingImages.map((img, i) => (
+                        <div
+                          className="item_img mb-6 flex shrink-0 overflow-hidden rounded-[15.93px] shadow-[6.371px_6.371px_15.929px_0_rgba(0,0,0,0.06)] max-[991px]:mb-0 max-[991px]:mr-4 max-[991px]:h-[227px] max-[991px]:w-[342px] max-[991px]:rounded-[10px]"
+                          key={`hero-img-dup-${i}`}
+                        >
+                          <Image
+                            alt=""
+                            className="h-full w-full object-cover object-top"
+                            height={img.height}
+                            src={img.src}
+                            width={img.width}
+                          />
+                        </div>
+                      ))}
+                    </div>
+                  </ClientAfterViewport>
                 </div>
               </div>
             </div>

@@ -1,7 +1,3 @@
-"use client";
-
-import { useState } from "react";
-
 import type { BlogTocItem } from "@/types/blog-post";
 
 type BlogTableOfContentsProps = {
@@ -24,23 +20,19 @@ function ListIcon() {
 }
 
 export function BlogTableOfContents({ items, title, toggleLabel }: BlogTableOfContentsProps) {
-  const [open, setOpen] = useState(false);
   if (!items.length) return null;
 
   return (
     <section className="mt-0 mb-4 w-full border border-[#ddd] bg-[#f7f5ef] pt-5 pr-[26px] pb-1 pl-5" aria-label={title}>
-      <button
-        type="button"
-        className="flex w-full items-center justify-between gap-4 border-0 bg-transparent p-0 text-left font-montreal-medium text-[24px] font-normal leading-[31px] tracking-0 text-[#282828]"
-        aria-expanded={open}
-        aria-controls="blog-table-of-contents-list"
-        aria-label={toggleLabel}
-        onClick={() => setOpen((value) => !value)}
-      >
-        <span>{title}</span>
-        <ListIcon />
-      </button>
-      {open ? (
+      <details>
+        <summary
+          className="flex w-full cursor-pointer list-none items-center justify-between gap-4 border-0 bg-transparent p-0 text-left font-montreal-medium text-[24px] font-normal leading-[31px] tracking-0 text-[#282828] [&::-webkit-details-marker]:hidden"
+          aria-controls="blog-table-of-contents-list"
+          aria-label={toggleLabel}
+        >
+          <span>{title}</span>
+          <ListIcon />
+        </summary>
         <nav id="blog-table-of-contents-list" className="mt-[15px]" aria-label={title}>
           <ul className="m-0 list-none p-0">
             {items.map((item) => (
@@ -56,7 +48,7 @@ export function BlogTableOfContents({ items, title, toggleLabel }: BlogTableOfCo
             ))}
           </ul>
         </nav>
-      ) : null}
+      </details>
     </section>
   );
 }

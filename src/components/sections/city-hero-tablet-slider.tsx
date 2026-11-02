@@ -38,8 +38,9 @@ export function CityHeroTabletSlider({ slider }: CityHeroTabletSliderProps) {
 
   const [activeIndex, setActiveIndex] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(true);
+  const [isVisible, setIsVisible] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
-  const transitionTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const transitionTimeoutRef = useRef<number | null>(null);
 
   useEffect(() => {
     const prefersReducedMotion = window.matchMedia(
@@ -47,44 +48,51 @@ export function CityHeroTabletSlider({ slider }: CityHeroTabletSliderProps) {
     ).matches;
     if (prefersReducedMotion || slides.length <= 1) return;
 
-    let isVisible = true;
     const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          isVisible = entry.isIntersecting;
-        });
-      },
+      ([entry]) => setIsVisible(entry.isIntersecting),
       { threshold: 0.2 },
     );
 
-    if (containerRef.current) {
-      observer.observe(containerRef.current);
-    }
-
-    const interval = setInterval(() => {
-      if (isVisible) {
-        setIsTransitioning(true);
-        setActiveIndex((prev) => {
-          const next = prev + 1;
-          if (next === slides.length) {
-            // Reached clone of first slide: allow transition to finish, then snap back
-            if (transitionTimeoutRef.current) clearTimeout(transitionTimeoutRef.current);
-            transitionTimeoutRef.current = setTimeout(() => {
-              setIsTransitioning(false);
-              setActiveIndex(0);
-            }, 600);
-          }
-          return next;
-        });
-      }
-    }, 2000);
+    const container = containerRef.current;
+    if (container) observer.observe(container);
 
     return () => {
-      clearInterval(interval);
-      if (transitionTimeoutRef.current) clearTimeout(transitionTimeoutRef.current);
       observer.disconnect();
     };
   }, [slides.length]);
+
+  useEffect(() => {
+    if (!isVisible || slides.length <= 1) return;
+
+    const interval = window.setInterval(() => {
+      setIsTransitioning(true);
+      setActiveIndex((prev) => {
+        const next = prev + 1;
+        if (next === slides.length) {
+          // Reach the clone of the first slide, then snap back after its transition.
+          if (transitionTimeoutRef.current) {
+            window.clearTimeout(transitionTimeoutRef.current);
+          }
+          transitionTimeoutRef.current = window.setTimeout(() => {
+            setIsTransitioning(false);
+            setActiveIndex(0);
+          }, 600);
+        }
+        return next;
+      });
+    }, 2000);
+
+    return () => window.clearInterval(interval);
+  }, [isVisible, slides.length]);
+
+  useEffect(
+    () => () => {
+      if (transitionTimeoutRef.current) {
+        window.clearTimeout(transitionTimeoutRef.current);
+      }
+    },
+    [],
+  );
 
   return (
     <div

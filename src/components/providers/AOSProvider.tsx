@@ -1,7 +1,6 @@
 "use client";
 
-import { usePathname } from "next/navigation";
-import { type ReactNode, useEffect, useRef } from "react";
+import { type ReactNode, useEffect } from "react";
 
 interface AOSProviderProps {
   children?: ReactNode;
@@ -13,9 +12,6 @@ interface AOSProviderProps {
  * duration: 800ms, easing: ease-in-out, once: true, offset: 80px, delay: 0.
  */
 export function AOSProvider({ children }: AOSProviderProps) {
-  const pathname = usePathname();
-  const observerRef = useRef<IntersectionObserver | null>(null);
-
   useEffect(() => {
     // Respect prefers-reduced-motion
     const prefersReducedMotion =
@@ -43,12 +39,15 @@ export function AOSProvider({ children }: AOSProviderProps) {
       },
     );
 
-    observerRef.current = observer;
+    const pendingRoots = new Set<Element>();
+    let scheduledFrame: number | null = null;
 
-    function scanAndObserve() {
-      const elements = document.querySelectorAll<HTMLElement>(
-        "[data-aos]:not(.aos-animate)",
-      );
+    function observeTree(root: Element) {
+      const selector = "[data-aos]:not(.aos-init):not(.aos-animate)";
+      const elements: HTMLElement[] = [];
+
+      if (root.matches(selector)) elements.push(root as HTMLElement);
+      elements.push(...root.querySelectorAll<HTMLElement>(selector));
 
       for (const el of elements) {
         if (prefersReducedMotion) {
@@ -57,30 +56,36 @@ export function AOSProvider({ children }: AOSProviderProps) {
         }
 
         el.classList.add("aos-init");
-
-        // If element is already in the viewport upon mount or navigation, animate immediately
-        const rect = el.getBoundingClientRect();
-        if (rect.top <= window.innerHeight - 80 && rect.bottom >= 0) {
-          el.classList.add("aos-animate");
-        } else {
-          observer.observe(el);
-        }
+        observer.observe(el);
       }
     }
 
-    let scheduledFrame: number | null = null;
     function scheduleScan() {
       if (scheduledFrame !== null) return;
       scheduledFrame = requestAnimationFrame(() => {
         scheduledFrame = null;
-        scanAndObserve();
+
+        for (const root of pendingRoots) observeTree(root);
+        pendingRoots.clear();
       });
     }
 
+    pendingRoots.add(document.body);
     scheduleScan();
 
-    const mutationObserver = new MutationObserver(() => {
-      scheduleScan();
+    const mutationObserver = new MutationObserver((mutations) => {
+      let hasAddedElements = false;
+
+      for (const mutation of mutations) {
+        for (const node of mutation.addedNodes) {
+          if (node instanceof Element) {
+            pendingRoots.add(node);
+            hasAddedElements = true;
+          }
+        }
+      }
+
+      if (hasAddedElements) scheduleScan();
     });
 
     mutationObserver.observe(document.body, {
@@ -94,38 +99,6 @@ export function AOSProvider({ children }: AOSProviderProps) {
       mutationObserver.disconnect();
     };
   }, []);
-
-  useEffect(() => {
-    const prefersReducedMotion =
-      typeof window !== "undefined" &&
-      window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
-    const timer = requestAnimationFrame(() => {
-      const observer = observerRef.current;
-      if (!observer) return;
-
-      const elements = document.querySelectorAll<HTMLElement>(
-        "[data-aos]:not(.aos-animate)",
-      );
-
-      for (const el of elements) {
-        if (prefersReducedMotion) {
-          el.classList.add("aos-animate");
-          continue;
-        }
-
-        el.classList.add("aos-init");
-        const rect = el.getBoundingClientRect();
-        if (rect.top <= window.innerHeight - 80 && rect.bottom >= 0) {
-          el.classList.add("aos-animate");
-        } else {
-          observer.observe(el);
-        }
-      }
-    });
-
-    return () => cancelAnimationFrame(timer);
-  }, [pathname]);
 
   return <>{children}</>;
 }

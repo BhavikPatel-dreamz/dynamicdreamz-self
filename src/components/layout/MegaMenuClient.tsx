@@ -283,6 +283,7 @@ export function DesktopNavigation({ navigation }: DesktopNavigationProps = {}) {
               isNavigationLinkActive(siteConfig.contactPath, normalizedPathname) && "text-[#ad5151]",
             )}
             href={siteConfig.contactPath}
+            prefetch={false}
             aria-current={isNavigationLinkActive(siteConfig.contactPath, normalizedPathname) ? "page" : undefined}
           >
             {siteChromeCopy.contactUs}

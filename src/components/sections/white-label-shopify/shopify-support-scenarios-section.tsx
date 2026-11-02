@@ -7,6 +7,7 @@ import "slick-carousel/slick/slick.css";
 import { ButtonLink } from "@/components/ui/button-link";
 import { Container } from "@/components/ui/container";
 import { Eyebrow } from "@/components/ui/eyebrow";
+import { LazyMount } from "@/components/ui/lazy-mount";
 import {
   whiteLabelShopifyScenarios,
 } from "@/content/white-label-shopify-development";
@@ -31,6 +32,44 @@ export type ShopifySupportScenariosContent = {
   items: readonly ShopifySupportScenario[];
 };
 
+function ShopifySupportScenarioCard({ panel }: { panel: ShopifySupportScenario }) {
+  return (
+    <div className="scenario-panel flex min-h-[460px] flex-col justify-between rounded-[20px] bg-[#EFF4EF] p-[25px_20px]">
+      <div>
+        <span className="section-kicker mb-2.5 block text-xs font-bold uppercase tracking-[1.5px] text-[#AD5151]">
+          {panel.kicker}
+        </span>
+        <h3 className="mb-3 font-display text-[20px] font-medium leading-7 text-[#282828]">
+          {panel.heading}
+        </h3>
+        <p className="font-sans text-xs font-medium leading-[22px] text-[#535353]">
+          {panel.description}
+        </p>
+        <div className="service-features mt-4 flex flex-wrap gap-2">
+          {panel.features.map((feature) => (
+            <div
+              className="service-feature w-[calc(50%-4px)] rounded-full border border-[rgba(40,40,40,0.10)] bg-white px-2.5 py-[9px] text-center text-[10px] font-bold leading-none text-[#282828]"
+              key={feature}
+            >
+              {feature}
+            </div>
+          ))}
+        </div>
+        <div className="scenario-meta my-4 font-sans text-xs font-medium leading-[22px] text-[#535353]">
+          {panel.meta}
+        </div>
+      </div>
+      <div className="btns_group mt-4 flex flex-col gap-2.5 max-[575px]:w-full [&_a]:w-full [&_a]:text-center">
+        <ButtonLink href={panel.primaryCta.href} variant="primary">
+          {panel.primaryCta.label}
+        </ButtonLink>
+        <ButtonLink href={panel.secondaryCta.href} variant="outline">
+          {panel.secondaryCta.label}
+        </ButtonLink>
+      </div>
+    </div>
+  );
+}
 
 
 const mobileSliderSettings: Settings = {
@@ -169,46 +208,22 @@ export function ShopifySupportScenariosSection({
           data-aos="fade-up"
           className="scenario-mobile block md:hidden max-[767px]:mr-[calc(-100vw/2+508px/2)] max-[575px]:-mr-4 [&_.slick-list]:pr-[40px] [&_.slick-track]:flex"
         >
-          <Slider {...mobileSliderSettings}>
-            {content.items.map((panel) => (
-              <div key={panel.id} className="pr-3 outline-none">
-                <div className="scenario-panel flex flex-col justify-between rounded-[20px] bg-[#EFF4EF] p-[25px_20px] min-h-[460px]">
-                  <div>
-                    <span className="section-kicker mb-2.5 block text-xs font-bold uppercase tracking-[1.5px] text-[#AD5151]">
-                      {panel.kicker}
-                    </span>
-                    <h3 className="mb-3 font-display text-[20px] font-medium leading-7 text-[#282828]">
-                      {panel.heading}
-                    </h3>
-                    <p className="font-sans text-xs font-medium leading-[22px] text-[#535353]">
-                      {panel.description}
-                    </p>
-                    <div className="service-features mt-4 flex flex-wrap gap-2">
-                      {panel.features.map((feat) => (
-                        <div
-                          className="service-feature w-[calc(50%-4px)] rounded-full border border-[rgba(40,40,40,0.10)] bg-white px-2.5 py-[9px] text-center text-[10px] font-bold leading-none text-[#282828]"
-                          key={feat}
-                        >
-                          {feat}
-                        </div>
-                      ))}
-                    </div>
-                    <div className="scenario-meta my-4 font-sans text-xs font-medium leading-[22px] text-[#535353]">
-                      {panel.meta}
-                    </div>
-                  </div>
-                  <div className="btns_group mt-4 flex flex-col gap-2.5 max-[575px]:w-full [&_a]:w-full [&_a]:text-center">
-                    <ButtonLink href={panel.primaryCta.href} variant="primary">
-                      {panel.primaryCta.label}
-                    </ButtonLink>
-                    <ButtonLink href={panel.secondaryCta.href} variant="outline">
-                      {panel.secondaryCta.label}
-                    </ButtonLink>
-                  </div>
-                </div>
+          <LazyMount
+            fallback={content.items[0] ? (
+              <div className="pr-3 outline-none">
+                <ShopifySupportScenarioCard panel={content.items[0]} />
               </div>
-            ))}
-          </Slider>
+            ) : null}
+            rootMargin="800px"
+          >
+            <Slider {...mobileSliderSettings}>
+              {content.items.map((panel) => (
+                <div key={panel.id} className="pr-3 outline-none">
+                  <ShopifySupportScenarioCard panel={panel} />
+                </div>
+              ))}
+            </Slider>
+          </LazyMount>
         </div>
       </Container>
     </section>

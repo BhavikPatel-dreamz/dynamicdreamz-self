@@ -1,10 +1,9 @@
-"use client";
-
 import Image from "next/image";
-import React from "react";
+import { useId } from "react";
 
 import styles from "@/components/sections/home/selected-work-section.module.css";
 import { ButtonLink } from "@/components/ui/button-link";
+import { ClientAfterViewport } from "@/components/ui/client-after-viewport";
 import { Container } from "@/components/ui/container";
 import { DeferredAutoplayVideo } from "@/components/ui/deferred-autoplay-video";
 import { SplitSectionHeading } from "@/components/ui/split-section-heading";
@@ -54,7 +53,7 @@ function ProjectMedia({ project }: { project: Project }) {
 
 function ProjectList({ decorative = false }: { decorative?: boolean }) {
   return (
-    <div className="flex w-1/2 shrink-0 basis-1/2 max-[767px]:w-auto max-[767px]:basis-auto max-[767px]:aria-hidden:hidden" aria-hidden={decorative || undefined}>
+    <div className="flex w-1/2 shrink-0 basis-1/2 max-[767px]:w-auto max-[767px]:basis-auto max-[767px]:aria-hidden:hidden" aria-hidden={decorative || undefined} data-project-clone={decorative ? "true" : undefined}>
       {projects.map((project) => (
         <a
           className="group/project block w-1/5 shrink-0 basis-1/5 text-white max-[767px]:w-[calc(100cqw-50px)] max-[767px]:basis-[calc(100cqw-50px)] max-[767px]:snap-start"
@@ -95,11 +94,7 @@ export function SelectedWorkSection({
   ctaLabel = homeSectionCopy.ctaViewWork,
   ctaHref = homeSectionCopy.ctaViewWorkHref,
 }: SelectedWorkSectionProps = {}) {
-  const isMounted = React.useSyncExternalStore(
-    () => () => {},
-    () => true,
-    () => false,
-  );
+  const projectTrackId = useId();
 
   return (
     <section className="overflow-hidden bg-dark-green pt-[60px] pb-[52px] text-white max-[767px]:py-[30px]">
@@ -115,13 +110,16 @@ export function SelectedWorkSection({
         />
       </Container>
       <div
+        id={projectTrackId}
         data-aos="fade-up"
         className="w-full overflow-hidden py-[57px] pb-[51px] max-[992px]:pt-[34px] max-[992px]:pb-[30px] max-[767px]:overflow-x-auto max-[767px]:px-0 max-[767px]:pt-[34px] max-[767px]:pb-[30px] max-[767px]:[container-type:inline-size] max-[767px]:[scrollbar-width:none] max-[767px]:snap-x max-[767px]:snap-mandatory max-[767px]:[&::-webkit-scrollbar]:hidden"
         aria-label="Selected ecommerce work"
       >
         <div className={cn("flex w-[calc(500%+5px)] min-[1600px]:w-[calc(425%+5px)] max-[767px]:w-max", styles.projectMotion)}>
           <ProjectList />
-          {isMounted ? <ProjectList decorative /> : null}
+          <ClientAfterViewport mediaQuery="(min-width: 768px)" rootId={projectTrackId}>
+            <ProjectList decorative />
+          </ClientAfterViewport>
         </div>
       </div>
       <div data-aos="fade-up" className="flex justify-center">

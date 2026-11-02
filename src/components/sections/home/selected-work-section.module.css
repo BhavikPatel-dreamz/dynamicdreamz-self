@@ -2,6 +2,10 @@
   animation: project-scroll 60s linear infinite;
 }
 
+.projectMotion:not(:has([data-project-clone="true"])) {
+  animation-play-state: paused;
+}
+
 @keyframes project-scroll {
   to {
     transform: translateX(-50%);

@@ -65,6 +65,7 @@ function ReviewCircle({
   starsVisible,
   ratingsVisible,
   pillVisible,
+  prioritizeImage,
 }: {
   review: (typeof shopifyPlusAgencyReviews)[number];
   active: boolean;
@@ -73,6 +74,7 @@ function ReviewCircle({
   starsVisible: number;
   ratingsVisible: boolean;
   pillVisible: boolean;
+  prioritizeImage: boolean;
 }) {
   const visible = active && zoomed;
   const contentVisible = active && wrapperVisible;
@@ -108,7 +110,7 @@ function ReviewCircle({
               alt={review.wordmarkAlt}
               width={review.wordmarkWidth}
               height={review.wordmarkHeight}
-              priority={active}
+              priority={prioritizeImage}
               style={{ width: `${review.wordmarkWidth}px` }}
             />
           </div>
@@ -168,7 +170,9 @@ function ReviewCircle({
 }
 
 export function ReviewAnimation() {
+  const rootRef = useRef<HTMLDivElement>(null);
   const [activeIndex, setActiveIndex] = useState(0);
+  const [isVisible, setIsVisible] = useState(false);
   const [zoomed, setZoomed] = useState(false);
   const [wrapperVisible, setWrapperVisible] = useState(false);
   const [starsVisible, setStarsVisible] = useState(0);
@@ -177,6 +181,21 @@ export function ReviewAnimation() {
   const timeoutsRef = useRef<ReturnType<typeof setTimeout>[]>([]);
 
   useEffect(() => {
+    const root = rootRef.current;
+    if (!root) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => setIsVisible(entry.isIntersecting),
+      { threshold: 0.2 },
+    );
+    observer.observe(root);
+
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    if (!isVisible) return;
+
     const timeouts = timeoutsRef.current;
     timeouts.push(setTimeout(() => setZoomed(true), 100));
     timeouts.push(setTimeout(() => setWrapperVisible(true), 400));
@@ -190,10 +209,12 @@ export function ReviewAnimation() {
       timeouts.forEach(clearTimeout);
       timeouts.length = 0;
     };
-  }, [activeIndex]);
+  }, [activeIndex, isVisible]);
 
   useEffect(() => {
-    const interval = setInterval(() => {
+    if (!isVisible) return;
+
+    const interval = window.setInterval(() => {
       setZoomed(false);
       setWrapperVisible(false);
       setStarsVisible(0);
@@ -201,17 +222,18 @@ export function ReviewAnimation() {
       setPillVisible(false);
       setActiveIndex((index) => (index + 1) % shopifyPlusAgencyReviews.length);
     }, 5000);
-    return () => clearInterval(interval);
-  }, []);
+    return () => window.clearInterval(interval);
+  }, [isVisible]);
 
   return (
-    <div className="review_animation_main relative overflow-hidden">
+    <div ref={rootRef} className="review_animation_main relative overflow-hidden">
       {shopifyPlusAgencyReviews.map((review, index) => (
         <ReviewCircle
           active={index === activeIndex}
           key={review.name}
           pillVisible={pillVisible}
           ratingsVisible={ratingsVisible}
+          prioritizeImage={index === 0}
           review={review}
           starsVisible={starsVisible}
           wrapperVisible={wrapperVisible}

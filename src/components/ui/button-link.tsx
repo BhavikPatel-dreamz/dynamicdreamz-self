@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link, { type LinkProps as NextLinkProps } from "next/link";
 import type { AnchorHTMLAttributes, ButtonHTMLAttributes, ReactNode } from "react";
 
 import { cn } from "@/lib/class-names";
@@ -13,6 +13,7 @@ export type ButtonLinkProps = {
   external?: boolean;
   target?: string;
   rel?: string;
+  prefetch?: NextLinkProps["prefetch"];
   type?: "button" | "submit" | "reset";
   disabled?: boolean;
   onClick?: () => void;
@@ -53,6 +54,7 @@ export function ButtonLink({
   external,
   target,
   rel,
+  prefetch = false,
   type = "button",
   disabled,
   ...props
@@ -136,6 +138,7 @@ export function ButtonLink({
     <Link
       className={commonClasses}
       href={href}
+      prefetch={prefetch}
       rel={rel}
       target={target}
       {...(props as AnchorHTMLAttributes<HTMLAnchorElement>)}

@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Slider, { type Settings } from "react-slick";
 
 import "slick-carousel/slick/slick.css";
@@ -35,6 +35,39 @@ type ClientLogoSliderProps = {
   autoplayStartDelayMs?: number;
 };
 
+type ClientLogoSlideProps = {
+  logo: ClientLogoSliderItem;
+  variant: ClientLogoSliderProps["variant"];
+  hasCompactRail: boolean;
+};
+
+function ClientLogoSlide({ logo, variant, hasCompactRail }: ClientLogoSlideProps) {
+  return (
+    <div
+      className={cn(
+        "flex h-(--client-logo-slider-height) items-center justify-center [&_img]:h-auto [&_img]:w-auto [&_img]:max-w-full [&_img]:object-contain",
+        variant === "resources"
+          ? "px-7 max-[768px]:px-[22px] [&_img]:max-h-[58px]"
+          : "px-5 max-[768px]:px-2.5 [&_img]:max-h-[70px]",
+        hasCompactRail && variant !== "resources" && "[&_img]:max-h-(--client-logo-slider-height)",
+      )}
+    >
+      {logo.href ? (
+        <a
+          className="flex h-full w-full items-center justify-center"
+          href={logo.href}
+          target="_blank"
+          rel="nofollow noopener noreferrer"
+        >
+          <ClientLogo logo={logo} />
+        </a>
+      ) : (
+        <ClientLogo logo={logo} />
+      )}
+    </div>
+  );
+}
+
 export function ClientLogoSlider({
   ariaLabel,
   items,
@@ -44,12 +77,14 @@ export function ClientLogoSlider({
   slides,
   autoplayStartDelayMs = 0,
 }: ClientLogoSliderProps) {
+  const regionRef = useRef<HTMLDivElement>(null);
   const isCompactSlider = variant === "industryCompact" || compact;
   // Live `.our-client-sec .wrapper` is 70px (60px ≤767px) on flexible-css pages.
   const usesFlexibleRail = railHeight === "flexible" && variant !== "resources";
   const hasCompactRail = isCompactSlider || usesFlexibleRail;
   const [reducedMotion, setReducedMotion] = useState(false);
   const [autoplayReady, setAutoplayReady] = useState(autoplayStartDelayMs === 0);
+  const [isNearViewport, setIsNearViewport] = useState(false);
   const [slidesToShow, setSlidesToShow] = useState(
     slides?.desktop ?? (variant === "industry" ? 4 : 6),
   );
@@ -98,6 +133,29 @@ export function ClientLogoSlider({
   }, [slides, variant]);
 
   useEffect(() => {
+    const region = regionRef.current;
+    if (!region) return;
+
+    if (typeof IntersectionObserver === "undefined") {
+      const frame = window.requestAnimationFrame(() => setIsNearViewport(true));
+      return () => window.cancelAnimationFrame(frame);
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries.some((entry) => entry.isIntersecting)) {
+          setIsNearViewport(true);
+          observer.disconnect();
+        }
+      },
+      { rootMargin: "800px" },
+    );
+
+    observer.observe(region);
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
     if (autoplayStartDelayMs === 0) return;
 
     const timer = window.setTimeout(() => setAutoplayReady(true), autoplayStartDelayMs);
@@ -121,49 +179,46 @@ export function ClientLogoSlider({
     touchMove: true,
   };
 
+  const sliderClassName = cn(
+    "h-(--client-logo-slider-height) [&_.slick-list]:h-(--client-logo-slider-height) [&_.slick-list]:cursor-grab [&_.slick-list]:overflow-hidden [&_.slick-list:active]:cursor-grabbing [&_.slick-slide]:h-(--client-logo-slider-height) [&_.slick-slide>div]:h-(--client-logo-slider-height) [&_.slick-track]:h-(--client-logo-slider-height) motion-reduce:[&_.slick-track]:!duration-[1ms]",
+    // Live rail heights: 84px on services pages, 70px on flexible-css pages
+    // (60px ≤767px). `cn` is a plain join, so the preset is exclusive.
+    hasCompactRail
+      ? "[--client-logo-slider-height:70px] max-[767px]:[--client-logo-slider-height:60px]"
+      : variant === "industry"
+        ? "[--client-logo-slider-height:84px] max-[767px]:[--client-logo-slider-height:60px]"
+        : "[--client-logo-slider-height:84px]",
+  );
+
   return (
-    <div aria-label={ariaLabel} role="region">
-      <Slider
-        {...settings}
-        className={cn(
-          "h-(--client-logo-slider-height) [&_.slick-list]:h-(--client-logo-slider-height) [&_.slick-list]:cursor-grab [&_.slick-list]:overflow-hidden [&_.slick-list:active]:cursor-grabbing [&_.slick-slide]:h-(--client-logo-slider-height) [&_.slick-slide>div]:h-(--client-logo-slider-height) [&_.slick-track]:h-(--client-logo-slider-height) motion-reduce:[&_.slick-track]:!duration-[1ms]",
-          // Live rail heights: 84px on services pages, 70px on flexible-css pages
-          // (60px ≤767px). `cn` is a plain join, so the preset is exclusive.
-          hasCompactRail
-            ? "[--client-logo-slider-height:70px] max-[767px]:[--client-logo-slider-height:60px]"
-            : variant === "industry"
-              ? "[--client-logo-slider-height:84px] max-[767px]:[--client-logo-slider-height:60px]"
-              : "[--client-logo-slider-height:84px]",
-        )}
-        key={`${variant}-${slidesToShow}-${reducedMotion ? "reduced" : "motion"}-${autoplayReady ? "ready" : "waiting"}-${compact ? "compact" : "standard"}`}
-      >
-        {items.map((logo) => (
-          <div key={logo.src}>
-            <div
-              className={cn(
-                "flex h-(--client-logo-slider-height) items-center justify-center [&_img]:h-auto [&_img]:w-auto [&_img]:max-w-full [&_img]:object-contain",
-                variant === "resources"
-                  ? "px-7 max-[768px]:px-[22px] [&_img]:max-h-[58px]"
-                  : "px-5 max-[768px]:px-2.5 [&_img]:max-h-[70px]",
-                hasCompactRail && variant !== "resources" && "[&_img]:max-h-(--client-logo-slider-height)",
-              )}
-            >
-              {logo.href ? (
-                <a
-                  className="flex h-full w-full items-center justify-center"
-                  href={logo.href}
-                  target="_blank"
-                  rel="nofollow noopener noreferrer"
-                >
-                  <ClientLogo logo={logo} />
-                </a>
-              ) : (
-                <ClientLogo logo={logo} />
-              )}
+    <div ref={regionRef} aria-label={ariaLabel} role="region">
+      {isNearViewport ? (
+        <Slider
+          {...settings}
+          className={sliderClassName}
+          key={`${variant}-${slidesToShow}-${reducedMotion ? "reduced" : "motion"}-${autoplayReady ? "ready" : "waiting"}-${compact ? "compact" : "standard"}`}
+        >
+          {items.map((logo) => (
+            <div key={logo.src}>
+              <ClientLogoSlide hasCompactRail={hasCompactRail} logo={logo} variant={variant} />
             </div>
+          ))}
+        </Slider>
+      ) : (
+        <div className={cn(sliderClassName, "overflow-hidden")}>
+          <div className="flex h-full">
+            {items.map((logo) => (
+              <div
+                className="h-full shrink-0"
+                key={logo.src}
+                style={{ flexBasis: `${100 / slidesToShow}%` }}
+              >
+                <ClientLogoSlide hasCompactRail={hasCompactRail} logo={logo} variant={variant} />
+              </div>
+            ))}
           </div>
-        ))}
-      </Slider>
+        </div>
+      )}
     </div>
   );
 }

@@ -17,6 +17,10 @@
   will-change: transform;
 }
 
+.track:not(:has([data-tool-track-clone])) .group {
+  animation-play-state: paused;
+}
+
 .forward {
   animation: white-label-tools-forward 100s linear infinite;
 }

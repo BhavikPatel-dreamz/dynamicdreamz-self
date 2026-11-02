@@ -1,7 +1,4 @@
-"use client";
-
-import React from "react";
-import { ClientLogo } from "@/components/sections/home/client-logo";
+import { LoopingLogoTrack } from "@/components/sections/home/looping-logo-track";
 import styles from "@/components/sections/home/integrations-section.module.css";
 import { Container } from "@/components/ui/container";
 import { SectionHeading } from "@/components/ui/section-heading";
@@ -15,13 +12,6 @@ export type IntegrationsSectionProps = {
 export function IntegrationsSection({
   title = homeSectionCopy.integrationsTitle,
 }: IntegrationsSectionProps = {}) {
-  const isMounted = React.useSyncExternalStore(
-    () => () => {},
-    () => true,
-    () => false,
-  );
-  const loopSets = isMounted ? [0, 1, 2] : [0];
-
   return (
     <section className="our_partners overflow-hidden bg-[#fafaf7] py-[55px] max-[767px]:py-[50px]">
       <Container>
@@ -41,19 +31,11 @@ export function IntegrationsSection({
       >
         {integrationLogoRows.map((row, index) => (
           <div className="flex w-full min-h-[50px] max-[767px]:min-h-[30px] items-center overflow-hidden" key={index}>
-            {loopSets.map((set) => (
-              <div
-                className={cn("flex shrink-0 items-center", index === 0 ? styles.moveLeft : styles.moveRight)}
-                key={set}
-                aria-hidden={set > 0 ? true : undefined}
-              >
-                {row.map((logo) => (
-                  <span className="mx-[45px] flex items-center justify-center max-[767px]:mx-6 [&_img]:h-auto [&_img]:w-auto [&_img]:object-contain max-[767px]:[&_img]:max-h-[30px] max-[767px]:[&_img]:max-w-[120px]" key={`${set}-${logo.src}`}>
-                    <ClientLogo logo={logo} decorative={set > 0} />
-                  </span>
-                ))}
-              </div>
-            ))}
+            <LoopingLogoTrack
+              className={cn("flex shrink-0 items-center", index === 0 ? styles.moveLeft : styles.moveRight)}
+              logoClassName="mx-[45px] flex items-center justify-center max-[767px]:mx-6 [&_img]:h-auto [&_img]:w-auto [&_img]:object-contain max-[767px]:[&_img]:max-h-[30px] max-[767px]:[&_img]:max-w-[120px]"
+              logos={row}
+            />
           </div>
         ))}
       </div>

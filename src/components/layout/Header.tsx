@@ -1,8 +1,5 @@
-"use client";
-
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect } from "react";
 
 import { ButtonLink } from "@/components/ui/Button";
 import { Container } from "@/components/ui/container";
@@ -10,64 +7,8 @@ import { siteChromeCopy } from "@/content/common";
 import { siteConfig } from "@/data/site";
 import { primaryNavigation, type PrimaryNavigationGroup } from "@/data/navigation";
 
+import { HeaderScrollBehavior } from "./HeaderScrollBehavior";
 import { DesktopNavigation, MobileNavigation } from "./MegaMenuClient";
-
-// ── 1. HeaderScrollBehavior ──
-type HeaderScrollState = "top" | "up" | "down";
-
-function applyScrollState(header: HTMLElement, state: HeaderScrollState) {
-  header.classList.toggle("header-up", state === "up");
-  header.classList.toggle("header-down", state === "down");
-}
-
-export function HeaderScrollBehavior() {
-  useEffect(() => {
-    const header = document.querySelector<HTMLElement>(".site-header");
-    if (!header) return;
-    const siteHeader = header;
-
-    let previousPosition = window.scrollY;
-    let scrollState: HeaderScrollState = previousPosition > 0 ? "down" : "top";
-    let frame = 0;
-
-    applyScrollState(siteHeader, scrollState);
-
-    function updateHeader() {
-      const position = window.scrollY;
-      const nextState: HeaderScrollState =
-        position <= 0 ? "top" : position < previousPosition ? "up" : position > previousPosition ? "down" : scrollState;
-
-      previousPosition = position;
-      frame = 0;
-
-      if (nextState === scrollState) return;
-      scrollState = nextState;
-      applyScrollState(siteHeader, nextState);
-    }
-
-    function onScroll() {
-      if (!frame) frame = window.requestAnimationFrame(updateHeader);
-    }
-
-    function enableSmoothScroll() {
-      document.documentElement.classList.add("enable-smooth-scroll");
-      window.removeEventListener("pointerdown", enableSmoothScroll);
-      window.removeEventListener("keydown", enableSmoothScroll);
-    }
-
-    window.addEventListener("scroll", onScroll, { passive: true });
-    window.addEventListener("pointerdown", enableSmoothScroll, { passive: true });
-    window.addEventListener("keydown", enableSmoothScroll);
-    return () => {
-      window.removeEventListener("scroll", onScroll);
-      window.removeEventListener("pointerdown", enableSmoothScroll);
-      window.removeEventListener("keydown", enableSmoothScroll);
-      if (frame) window.cancelAnimationFrame(frame);
-    };
-  }, []);
-
-  return null;
-}
 
 // ── 2. ContactWidget ──
 export function ContactWidget({ whatsappNumber }: { whatsappNumber?: string | null } = {}) {
@@ -154,6 +95,7 @@ export function SiteHeader({
           <Link
             className="inline-flex shrink-0 -translate-y-[2.5px] max-[1199px]:mr-auto max-[1199px]:translate-y-0"
             href="/"
+            prefetch={false}
             aria-label="Dynamic Dreamz home"
           >
             <Image

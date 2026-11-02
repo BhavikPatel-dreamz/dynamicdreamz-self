@@ -1,5 +1,7 @@
 import Image from "next/image";
+import { useId } from "react";
 
+import { ClientAfterViewport } from "@/components/ui/client-after-viewport";
 import { whiteLabelShopifySectionCopy, whiteLabelShopifyToolRows } from "@/content/white-label-shopify-development";
 import { cn } from "@/lib/class-names";
 import type { WhiteLabelTool } from "@/types/white-label-service";
@@ -34,16 +36,23 @@ function ToolGroup({ duplicate = false, row }: { duplicate?: boolean; row: ToolR
 }
 
 function ToolRow({ className, direction, row }: ToolRowProps) {
+  const trackId = useId();
+
   return (
-    <div className={cn("track", styles.track, className)}>
-      {[0, 1].map((groupIndex) => (
+    <div id={trackId} className={cn("track", styles.track, className)}>
+      <div
+        className={cn("logo_holder", styles.group, direction === "forward" ? styles.forward : styles.reverse)}
+      >
+        <ToolGroup row={row} />
+      </div>
+      <ClientAfterViewport rootId={trackId}>
         <div
+          data-tool-track-clone
           className={cn("logo_holder", styles.group, direction === "forward" ? styles.forward : styles.reverse)}
-          key={groupIndex}
         >
-          <ToolGroup duplicate={groupIndex === 1} row={row} />
+          <ToolGroup duplicate row={row} />
         </div>
-      ))}
+      </ClientAfterViewport>
     </div>
   );
 }

@@ -48,7 +48,7 @@ const neueMontreal = localFont({
   ],
   variable: "--font-neue-montreal-local",
   display: "swap",
-  preload: true,
+  preload: false,
 });
 
 const neueMontrealMedium = localFont({

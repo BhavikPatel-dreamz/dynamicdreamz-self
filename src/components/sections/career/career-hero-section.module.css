@@ -9,6 +9,10 @@
   animation: careerScroll 40s linear infinite;
 }
 
+.scrollingTrack:not(:has([data-career-track-clone])) .scrollingImg {
+  animation-play-state: paused;
+}
+
 @keyframes careerScroll {
   from {
     transform: translateY(0);
