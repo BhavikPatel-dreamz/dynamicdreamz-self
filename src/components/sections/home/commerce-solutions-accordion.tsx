@@ -66,7 +66,7 @@ export function CommerceSolutionsAccordion({
                       </span>
                     </span>
                     <FaqCircleCrossIcon
-                      className="absolute right-0 top-1/2 -translate-y-1/2 size-[30px] max-[992px]:size-[26px] max-[767px]:size-[26px] shrink-0"
+                      className="absolute right-0 top-1/2 -translate-y-1/2 size-[30px] max-[992px]:size-[26px] max-[767px]:size-[26px] shrink-0 pointer-events-none"
                       isOpen={isOpen}
                       />
                     <span className="sr-only">

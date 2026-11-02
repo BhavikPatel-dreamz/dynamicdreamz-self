@@ -25,7 +25,7 @@ export function CommerceSolutionsSection({
           heading={title}
           headingId="commerce-solutions-title"
           titleColumnClassName="w-[40%] max-[992px]:w-full"
-          textColumnClassName="w-[47%] max-[992px]:w-full max-[992px]:mt-2.5"
+          textColumnClassName="w-[47%] max-[992px]:w-full max-[992px]:mt-0"
           variant="left"
         />
         <CommerceSolutionsAccordion items={items} />
