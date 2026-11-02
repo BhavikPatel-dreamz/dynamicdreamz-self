@@ -69,28 +69,28 @@ export function BlogsArchiveSection({
 }: BlogsArchiveSectionProps) {
   return (
     <section
-      className="blog-sec blog-listing-sec overflow-hidden py-15 max-[991px]:py-10"
+      className="blog-sec blog-listing-sec overflow-hidden py-15 max-[992px]:py-10"
       aria-label={categoriesLabel}
       data-blogs-listing
     >
       <Container>
-        <div className="blog-filter-main mb-10 max-[991px]:mb-7">
+        <div className="blog-filter-main mb-10 max-[992px]:mb-7">
           <div className="search-form">
             <form
               action={search.action}
               method="get"
               role="search"
-              className="custom-blog-search flex flex-wrap items-center justify-between gap-5 max-[991px]:flex-col-reverse max-[991px]:items-stretch"
+              className="custom-blog-search flex flex-wrap items-center justify-between gap-5 max-[992px]:flex-col-reverse max-[992px]:items-stretch"
             >
               <div className="blog-filter-list">
                 <nav
-                  className="blog-category-filter flex flex-wrap items-center gap-2.5 max-[767px]:gap-2"
+                  className="blog-category-filter flex flex-wrap items-center gap-2.5 max-[768px]:gap-2"
                   aria-label={categoriesLabel}
                 >
                   <Link
                     href={query ? `/blogs?s=${encodeURIComponent(query)}` : "/blogs"}
                     className={cn(
-                      "cat-link inline-block rounded-[30px] border border-[#dadada] px-[18px] py-2 text-center font-sans text-sm font-medium text-[#090909] transition-all duration-300 hover:border-brand-red hover:bg-brand-red hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-red max-[767px]:px-3.5 max-[767px]:py-1.5 max-[767px]:text-xs",
+                      "cat-link inline-block rounded-[30px] border border-[#dadada] px-[18px] py-2 text-center font-sans text-sm font-medium text-[#090909] transition-all duration-300 hover:border-brand-red hover:bg-brand-red hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-red max-[768px]:px-3.5 max-[768px]:py-1.5 max-[768px]:text-xs",
                       !activeCategory && "border-brand-red bg-brand-red text-white",
                     )}
                     aria-current={!activeCategory ? "page" : undefined}
@@ -109,7 +109,7 @@ export function BlogsArchiveSection({
                         key={category.value}
                         href={catHref}
                         className={cn(
-                          "cat-link inline-block rounded-[30px] border border-[#dadada] px-[18px] py-2 text-center font-sans text-sm font-medium text-[#090909] transition-all duration-300 hover:border-brand-red hover:bg-brand-red hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-red max-[767px]:px-3.5 max-[767px]:py-1.5 max-[767px]:text-xs",
+                          "cat-link inline-block rounded-[30px] border border-[#dadada] px-[18px] py-2 text-center font-sans text-sm font-medium text-[#090909] transition-all duration-300 hover:border-brand-red hover:bg-brand-red hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-red max-[768px]:px-3.5 max-[768px]:py-1.5 max-[768px]:text-xs",
                           isActive && "border-brand-red bg-brand-red text-white",
                         )}
                         aria-current={isActive ? "page" : undefined}
@@ -122,7 +122,7 @@ export function BlogsArchiveSection({
                 </nav>
               </div>
 
-              <div className="search-input-wrap relative w-[320px] max-w-full max-[991px]:w-full" data-blogs-search-wrap>
+              <div className="search-input-wrap relative w-[320px] max-w-full max-[992px]:w-full" data-blogs-search-wrap>
                 <label className="sr-only" htmlFor="blogs-search">
                   {search.label}
                 </label>
@@ -153,14 +153,14 @@ export function BlogsArchiveSection({
         </div>
 
         {articles.length > 0 ? (
-          <div className="blog-wrapper -mx-3.5 flex flex-wrap gap-y-8 max-[767px]:mx-0 max-[767px]:gap-y-6" data-blogs-grid>
+          <div className="blog-wrapper -mx-3.5 flex flex-wrap gap-y-8 max-[768px]:mx-0 max-[768px]:gap-y-6" data-blogs-grid>
             {articles.map((article) => {
               const isFaq = !article.image || article.category === "Faqs";
               return (
                 <div
                   className={cn(
-                    "blog-col px-3.5 max-[767px]:px-0",
-                    isFaq ? "w-full" : "w-1/3 max-[991px]:w-1/2 max-[767px]:w-full",
+                    "blog-col px-3.5 max-[768px]:px-0",
+                    isFaq ? "w-full" : "w-1/3 max-[992px]:w-1/2 max-[768px]:w-full",
                   )}
                   data-blogs-card
                   key={article.href}
@@ -216,7 +216,7 @@ export function BlogsArchiveSection({
             ) : null}
           </div>
         ) : (
-          <p className="mt-20 text-center text-xl font-medium leading-6 text-ink max-[767px]:text-lg">
+          <p className="mt-20 text-center text-xl font-medium leading-6 text-ink max-[768px]:text-lg">
             {search.noResults}
           </p>
         )}
@@ -247,12 +247,12 @@ export function BlogsPage({
 
   return (
     <div className="font-sans">
-      <div className="inner-hero-sec relative overflow-hidden bg-[#fbeed5] pt-40 pb-[85px] max-[991px]:pt-[140px] max-[991px]:pb-[46px]">
+      <div className="inner-hero-sec relative overflow-hidden bg-[#fbeed5] pt-40 pb-[85px] max-[992px]:pt-[140px] max-[992px]:pb-[46px]">
         <Container>
           <div className="inner-hero-content text-center">
             <h1
               id="blogs-page-title"
-              className="font-montreal-medium text-[50px] font-normal leading-[60px] text-[#282828] max-[1199px]:text-[40px] max-[1199px]:leading-[50px] max-[767px]:text-[28px] max-[767px]:leading-[38px]"
+              className="font-montreal-medium text-[50px] font-normal leading-[60px] text-[#282828] max-[1200px]:text-[40px] max-[1200px]:leading-[50px] max-[768px]:text-[28px] max-[768px]:leading-[38px]"
             >
               {blogsPageContent.heroTitle}
             </h1>

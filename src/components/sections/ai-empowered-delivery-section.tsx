@@ -48,12 +48,12 @@ export function AiEmpoweredDeliverySection({
         <div
           data-aos="fade-up"
           className={cn(
-            "seo-safe-main rounded-[30px] p-10 max-[991px]:rounded-[20px] max-[991px]:p-[30px] max-[767px]:p-5",
+            "seo-safe-main rounded-[30px] p-10 max-[992px]:rounded-[20px] max-[992px]:p-[30px] max-[768px]:p-5",
             isDark ? "bg-[#192019]" : "bg-[#EFF4EF]",
           )}
         >
           <div className="wrapper flex flex-wrap items-center justify-between">
-            <div className="left-col w-[49%] max-[1199px]:w-[41%] max-[991px]:w-full">
+            <div className="left-col w-[49%] max-[1200px]:w-[41%] max-[992px]:w-full">
               <div className="text-block">
                 {content.eyebrow ? (
                   <Eyebrow className="mb-4" tone={isDark ? "inverse" : "muted"}>
@@ -62,7 +62,7 @@ export function AiEmpoweredDeliverySection({
                 ) : null}
                 <h2
                   className={cn(
-                    "mb-3 font-montreal-medium text-[35px] font-normal leading-[1.2] tracking-normal max-[992px]:text-[30px] max-[767px]:text-2xl",
+                    "mb-3 font-montreal-medium text-[35px] font-normal leading-[1.2] tracking-normal max-[992px]:text-[30px] max-[768px]:text-2xl",
                     isDark ? "text-white" : "text-ink",
                   )}
                 >
@@ -88,8 +88,8 @@ export function AiEmpoweredDeliverySection({
               </div>
             </div>
 
-            <div className="right-col w-[49%] max-[1199px]:w-[55%] max-[991px]:mt-5 max-[991px]:w-full">
-              <div className="ai-tools-wrapp grid grid-cols-2 gap-4 max-[767px]:flex max-[767px]:flex-col">
+            <div className="right-col w-[49%] max-[1200px]:w-[55%] max-[992px]:mt-5 max-[992px]:w-full">
+              <div className="ai-tools-wrapp grid grid-cols-2 gap-4 max-[768px]:flex max-[768px]:flex-col">
                 {content.tools.map((tool) => (
                   <div
                     className={cn(

@@ -81,7 +81,7 @@ export function VideoDialog({
               height={overlayHeight ?? 38}
             />
             {overlayCaption ? (
-              <p className="mt-2.5 text-base text-white max-[991px]:hidden">{overlayCaption}</p>
+              <p className="mt-2.5 text-base text-white max-[992px]:hidden">{overlayCaption}</p>
             ) : null}
           </div>
         ) : null}

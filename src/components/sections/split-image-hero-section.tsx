@@ -70,12 +70,12 @@ function SplitImageHeroText({
   return (
     <div className={className}>
       {eyebrow && (
-        <div className="eyebrow relative mb-[15px] inline-flex items-center pl-10 before:absolute before:left-0 before:top-[7px] before:h-0.5 before:w-[30px] before:bg-brand-red before:content-[''] max-[1199px]:mx-auto max-[1199px]:justify-center max-[767px]:mx-auto max-[767px]:justify-center max-[767px]:pl-6 max-[767px]:before:top-1 max-[767px]:before:w-[15px]">
+        <div className="eyebrow relative mb-[15px] inline-flex items-center pl-10 before:absolute before:left-0 before:top-[7px] before:h-0.5 before:w-[30px] before:bg-brand-red before:content-[''] max-[1200px]:mx-auto max-[1200px]:justify-center max-[768px]:mx-auto max-[768px]:justify-center max-[768px]:pl-6 max-[768px]:before:top-1 max-[768px]:before:w-[15px]">
           {Array.isArray(eyebrow) ? (
             eyebrow.map((item, index) => (
               <span
                 className={cn(
-                  "relative inline-flex items-center font-montserrat text-[14px] font-semibold uppercase leading-[1.2] text-[#535353] max-[1199px]:text-[12px] max-[767px]:text-[10px]",
+                  "relative inline-flex items-center font-montserrat text-[14px] font-semibold uppercase leading-[1.2] text-[#535353] max-[1200px]:text-[12px] max-[768px]:text-[10px]",
                   index > 0 &&
                     "ml-2.5 pl-2.5 after:absolute after:-left-[2px] after:top-1/2 after:size-[3px] after:-translate-y-1/2 after:rounded-full after:bg-[#535353] after:content-['']",
                 )}
@@ -85,7 +85,7 @@ function SplitImageHeroText({
               </span>
             ))
           ) : (
-            <span className="font-montserrat text-[14px] font-semibold uppercase leading-[1.2] text-[#535353] max-[1199px]:text-[12px] max-[767px]:text-[10px]">
+            <span className="font-montserrat text-[14px] font-semibold uppercase leading-[1.2] text-[#535353] max-[1200px]:text-[12px] max-[768px]:text-[10px]">
               {eyebrow}
             </span>
           )}
@@ -101,7 +101,7 @@ function SplitImageHeroText({
         </p>
       )}
       {secondaryCtaLabel && secondaryCtaHref ? (
-        <div className="btn-group flex flex-wrap items-center gap-2.5 pt-2.5 max-[1199px]:justify-center max-[767px]:flex-col max-[767px]:gap-2.5 max-[767px]:w-full [&_a]:max-[767px]:w-full [&_a]:text-center">
+        <div className="btn-group flex flex-wrap items-center gap-2.5 pt-2.5 max-[1200px]:justify-center max-[768px]:flex-col max-[768px]:items-center max-[768px]:gap-3.5 [&_a]:w-fit [&_a]:max-[768px]:mx-auto">
           {ctaLabel && (
             <ButtonLink
               aria-label={ctaAriaLabel ?? ctaLabel}
@@ -121,7 +121,7 @@ function SplitImageHeroText({
           </ButtonLink>
         </div>
       ) : ctaLabel ? (
-        <div className="btn-group flex items-center pt-2.5 max-[1199px]:justify-center max-[767px]:flex-col max-[767px]:w-full [&_a]:max-[767px]:w-full [&_a]:text-center">
+        <div className="btn-group flex items-center pt-2.5 max-[1200px]:justify-center max-[768px]:flex-col max-[768px]:items-center max-[768px]:gap-3.5 [&_a]:w-fit [&_a]:max-[768px]:mx-auto">
           <ButtonLink
             aria-label={ctaAriaLabel ?? ctaLabel}
             href={ctaHref}

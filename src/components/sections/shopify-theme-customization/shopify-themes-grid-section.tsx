@@ -51,7 +51,7 @@ export function ShopifyThemesGridSection({
             variant="left"
           />
 
-          <div className="wrapper grid grid-cols-3 gap-[22px] max-[1199px]:grid-cols-2 max-[767px]:block max-[767px]:space-y-4">
+          <div className="wrapper grid grid-cols-3 gap-[22px] max-[1200px]:grid-cols-2 max-[768px]:block max-[768px]:space-y-4">
             {content.items.map((theme) => {
               const title = theme.title ?? theme.name ?? "";
               const alt = theme.alt ?? `${title} Image`;
@@ -102,20 +102,20 @@ export function ShopifyThemesGridSection({
 
   return (
     <section
-      className="shopify-themes-customize-section pt-0 pb-20 max-[767px]:pb-10"
+      className="shopify-themes-customize-section pt-0 pb-20 max-[768px]:pb-10"
       id={sectionId}
     >
       <Container>
         <div className="mx-auto max-w-[820px] text-center" data-aos="fade-up">
-          <h2 className="font-display text-[35px] font-medium leading-[48.475px] tracking-[-0.7px] text-ink max-[992px]:text-[30px] max-[992px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33px] max-[767px]:tracking-[-0.48px]">
+          <h2 className="font-display text-[35px] font-medium leading-[48.475px] tracking-[-0.7px] text-ink max-[992px]:text-[30px] max-[992px]:leading-10 max-[768px]:text-2xl max-[768px]:leading-[33px] max-[768px]:tracking-[-0.48px]">
             {content.title}
           </h2>
-          <p className="mt-2.5 text-base font-medium leading-[30.4px] text-muted max-[767px]:text-sm max-[767px]:leading-6">
+          <p className="mt-2.5 text-base font-medium leading-[30.4px] text-muted max-[768px]:text-sm max-[768px]:leading-6">
             {content.subtitle}
           </p>
         </div>
 
-        <div className="mt-[50px] grid grid-cols-3 gap-x-4 gap-y-8 max-[992px]:grid-cols-2 max-[767px]:mt-8 max-[767px]:grid-cols-1">
+        <div className="mt-[50px] grid grid-cols-3 gap-x-4 gap-y-8 max-[992px]:grid-cols-2 max-[768px]:mt-8 max-[768px]:grid-cols-1">
           {content.items.map((theme) => {
             const title = theme.title ?? theme.name ?? "";
             const alt = theme.alt ?? `${title} Image`;

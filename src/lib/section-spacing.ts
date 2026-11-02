@@ -8,7 +8,7 @@
  *
  * 2. Consecutive sections sharing the same white/transparent background do not have a visual color boundary.
  *    To prevent double spacing (80px + 80px = 160px), the subsequent white section drops its redundant
- *    top padding (pt-0 / max-[991px]:pt-0), maintaining a consistent 80px desktop / 50px mobile gap.
+ *    top padding (pt-0 / max-[992px]:pt-0), maintaining a consistent 80px desktop / 50px mobile gap.
  *
  * 3. Transitions between different backgrounds (White -> Green, Green -> White, Dark -> Light) maintain
  *    full container padding on both sides of the color boundary.
@@ -34,22 +34,22 @@ export function getSectionSpacingClasses({
   // If the current section is a colored container, it always retains its internal padding
   if (currentBg === "colored") {
     return hasBottomPadding
-      ? "py-20 max-[991px]:py-[50px]"
-      : "pt-20 pb-0 max-[991px]:pt-[50px] max-[991px]:pb-0";
+      ? "py-20 max-[992px]:py-[50px]"
+      : "pt-20 pb-0 max-[992px]:pt-[50px] max-[992px]:pb-0";
   }
 
   // If the current section is white/transparent and follows another white/transparent section:
   // Drop redundant top padding so the combined gap is 80px, not 160px!
   if (!isFirst && (previousBg === "white" || previousBg === "transparent")) {
     return hasBottomPadding
-      ? "pt-0 pb-20 max-[991px]:pt-0 max-[991px]:pb-[50px]"
+      ? "pt-0 pb-20 max-[992px]:pt-0 max-[992px]:pb-[50px]"
       : "py-0";
   }
 
   // White section following a colored section or as the first section
   return hasBottomPadding
-    ? "py-20 max-[991px]:py-[50px]"
-    : "pt-20 pb-0 max-[991px]:pt-[50px] max-[991px]:pb-0";
+    ? "py-20 max-[992px]:py-[50px]"
+    : "pt-20 pb-0 max-[992px]:pt-[50px] max-[992px]:pb-0";
 }
 
 /**

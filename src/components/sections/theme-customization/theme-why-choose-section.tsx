@@ -41,13 +41,13 @@ export function ThemeWhyChooseSection({
       <Container>
         <div className="heading-text mx-auto max-w-[920px] text-center" data-aos="fade-up">
           <SectionHeading>
-            {formatBrText(content.title, "max-[1199px]:hidden")}
+            {formatBrText(content.title, "max-[1200px]:hidden")}
           </SectionHeading>
           <SectionDescription
             className="why_dynamic_dreamz_desc mt-2.5"
             textClassName="text-sm font-normal leading-[24px]"
           >
-            {formatBrText(content.subtitle, "max-[1199px]:hidden")}
+            {formatBrText(content.subtitle, "max-[1200px]:hidden")}
           </SectionDescription>
         </div>
 
@@ -63,7 +63,7 @@ export function ThemeWhyChooseSection({
 
               return (
                 <li
-                  className={`why-choose-box flex items-start p-[51px] max-[1199px]:p-8 max-[992px]:py-7.5 max-[992px]:px-5 border-black/5 ${
+                  className={`why-choose-box flex items-start p-[51px] max-[1200px]:p-8 max-[992px]:py-7.5 max-[992px]:px-5 border-black/5 ${
                     isEvenCol ? "border-r max-[992px]:border-r-0" : ""
                   } ${!isLastRow ? "border-b" : "max-[992px]:border-b"} ${
                     isLastItem ? "max-[992px]:border-b-0" : ""
@@ -71,7 +71,7 @@ export function ThemeWhyChooseSection({
                   data-aos="fade-up"
                   key={typeof item.title === "string" ? item.title : item.title.join(" ")}
                 >
-                  <span className="icon mr-5 flex flex-shrink-0 items-center justify-start max-[767px]:mr-3.5">
+                  <span className="icon mr-5 flex flex-shrink-0 items-center justify-start max-[768px]:mr-3.5">
                     <Image
                       alt={item.iconAlt}
                       className="object-contain"
@@ -82,10 +82,10 @@ export function ThemeWhyChooseSection({
                   </span>
                   <div className="text flex-1">
                     <h3 className="mb-[5px] font-montreal-medium text-[18px] font-medium leading-[30.6px] tracking-[0.36px] text-[#020202]">
-                      {formatBrText(item.title, "max-[767px]:hidden")}
+                      {formatBrText(item.title, "max-[768px]:hidden")}
                     </h3>
-                    <p className="text-base font-medium leading-[27.2px] tracking-[0.32px] text-[#535353] max-[767px]:text-sm max-[767px]:leading-6">
-                      {formatBrText(item.description, "max-[767px]:hidden")}
+                    <p className="text-base font-medium leading-[27.2px] tracking-[0.32px] text-[#535353] max-[768px]:text-sm max-[768px]:leading-6">
+                      {formatBrText(item.description, "max-[768px]:hidden")}
                     </p>
                   </div>
                 </li>

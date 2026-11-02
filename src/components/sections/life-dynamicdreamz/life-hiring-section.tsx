@@ -35,7 +35,7 @@ export function LifeHiringSection({
           className="flex justify-between max-[992px]:flex-col-reverse"
           data-life="hiring-layout"
         >
-          <div className="w-[47.8%] max-[1199px]:w-[45%] max-[992px]:mt-[50px] max-[992px]:w-full max-[992px]:text-center">
+          <div className="w-[47.8%] max-[1200px]:w-[45%] max-[992px]:mt-[50px] max-[992px]:w-full max-[992px]:text-center">
             <div className="pb-[5px] max-[992px]:pb-[10.4px] min-[1200px]:ml-[-60px]">
               <Image
                 className="h-auto w-full"
@@ -48,8 +48,8 @@ export function LifeHiringSection({
             </div>
           </div>
 
-          <div className="mt-[65px] w-[47%] max-[1199px]:mt-0 max-[1199px]:w-1/2 max-[992px]:w-full max-[992px]:text-center">
-            <h2 className="mb-[10px] font-montreal-medium text-[35px] leading-[49px] font-normal tracking-normal text-ink max-[992px]:text-[30px] max-[992px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33.24px]">
+          <div className="mt-[65px] w-[47%] max-[1200px]:mt-0 max-[1200px]:w-1/2 max-[992px]:w-full max-[992px]:text-center">
+            <h2 className="mb-[10px] font-montreal-medium text-[35px] leading-[49px] font-normal tracking-normal text-ink max-[992px]:text-[30px] max-[992px]:leading-10 max-[768px]:text-2xl max-[768px]:leading-[33.24px]">
               {title}
             </h2>
             <p className="mb-[30px] text-sm leading-[24px] font-small text-muted max-[992px]:text-base max-[992px]:leading-[30.4px]">

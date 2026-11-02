@@ -418,7 +418,7 @@ export function WhyChooseShopifyMigrationSection({
 }: WhyChooseShopifyMigrationSectionProps) {
   return (
     <section
-      className="why_choose_dynamic_dreamz_for_shopify_migration bg-[#192019] py-20 max-[991px]:py-[50px]"
+      className="why_choose_dynamic_dreamz_for_shopify_migration bg-[#192019] py-20 max-[992px]:py-[50px]"
       id={id}
     >
       <Container>
@@ -432,17 +432,17 @@ export function WhyChooseShopifyMigrationSection({
           variant="left"
         />
 
-        <div className="wrapper -mx-2.5 flex flex-wrap max-[991px]:mx-0">
+        <div className="wrapper -mx-2.5 flex flex-wrap max-[992px]:mx-0">
           <div
             data-aos="fade-up"
-            className="left-col flex w-1/2 flex-col px-2.5 max-[991px]:w-full max-[991px]:px-0"
+            className="left-col flex w-1/2 flex-col px-2.5 max-[992px]:w-full max-[992px]:px-0"
           >
             {content.items.map((item) => (
               <div
-                className="item-box mb-3 flex h-full items-start rounded-[20px] border border-[rgba(40,40,40,0.1)] bg-white p-5 last:mb-0 max-[767px]:rounded-[12px] max-[767px]:p-[20px_15px]"
+                className="item-box mb-3 flex h-full items-start rounded-[20px] border border-[rgba(40,40,40,0.1)] bg-white p-5 last:mb-0 max-[768px]:rounded-[12px] max-[768px]:p-[20px_15px]"
                 key={item.title ?? item.description}
               >
-                <div className="icon mr-5 flex size-10 shrink-0 items-center justify-center rounded-[10px] bg-[#EFF4EF] p-2.5 text-sm font-semibold leading-normal max-[767px]:mr-2.5">
+                <div className="icon mr-5 flex size-10 shrink-0 items-center justify-center rounded-[10px] bg-[#EFF4EF] p-2.5 text-sm font-semibold leading-normal max-[768px]:mr-2.5">
                   {item.iconSvg ?? (item.icon ? <MigrationFeatureIcon icon={item.icon} /> : null)}
                 </div>
                 <div className="text">
@@ -461,13 +461,13 @@ export function WhyChooseShopifyMigrationSection({
 
           <div
             data-aos="fade-up"
-            className="right-col flex w-1/2 flex-col px-2.5 max-[991px]:mt-5 max-[991px]:w-full max-[991px]:px-0"
+            className="right-col flex w-1/2 flex-col px-2.5 max-[992px]:mt-5 max-[992px]:w-full max-[992px]:px-0"
           >
-            <div className="text-block flex h-full flex-col justify-between rounded-[20px] bg-white p-[50px_30px_30px_30px] max-[991px]:p-[30px_20px_20px_20px] max-[767px]:rounded-[12px]">
+            <div className="text-block flex h-full flex-col justify-between rounded-[20px] bg-white p-[50px_30px_30px_30px] max-[992px]:p-[30px_20px_20px_20px] max-[768px]:rounded-[12px]">
               <div className="content-box text-center">
                 <div className="logo-wrapp mb-5 flex justify-center">
                   <a
-                    className="flex w-full max-w-[180px] max-[767px]:max-w-[160px]"
+                    className="flex w-full max-w-[180px] max-[768px]:max-w-[160px]"
                     href={content.logoHref ?? content.partnerLink.href}
                     rel="nofollow noopener noreferrer"
                     target="_blank"
@@ -481,13 +481,13 @@ export function WhyChooseShopifyMigrationSection({
                     />
                   </a>
                 </div>
-                <h3 className="mb-2.5 font-display text-[30px] font-medium leading-[35px] text-ink max-[1199px]:text-[24px] max-[1199px]:leading-[28px] max-[767px]:text-[20px] max-[767px]:leading-[24px]">
+                <h3 className="mb-2.5 font-display text-[30px] font-medium leading-[35px] text-ink max-[1200px]:text-[24px] max-[1200px]:leading-[28px] max-[768px]:text-[20px] max-[768px]:leading-[24px]">
                   {content.partnerHeading}
                 </h3>
                 <p className="font-sans text-sm font-regular leading-6 text-[#535353]">
                   {content.partnerDescription}
                 </p>
-                <div className="boxes-wrapper mt-9 grid grid-cols-4 gap-2 max-[1199px]:grid-cols-2 max-[991px]:mt-[30px]">
+                <div className="boxes-wrapper mt-9 grid grid-cols-4 gap-2 max-[1200px]:grid-cols-2 max-[992px]:mt-[30px]">
                   {content.stats.map((stat, idx) => {
                     const bgColors = [
                       "bg-[#EFF4EF]",

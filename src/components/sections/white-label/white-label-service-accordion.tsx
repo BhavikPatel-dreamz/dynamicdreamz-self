@@ -25,7 +25,7 @@ export function WhiteLabelServiceAccordion({
   return (
     <div
       data-aos="fade-up"
-      className={cn("mb-[43px] flex gap-[60px] max-[1199px]:mb-[30px] max-[1199px]:gap-[50px] max-[992px]:mb-[25px] max-[992px]:flex-col max-[992px]:gap-0 max-[767px]:mb-5", flushEnd && "mb-0 max-[1199px]:mb-0 max-[992px]:mb-0 max-[767px]:mb-0")}
+      className={cn("mb-[43px] flex gap-[60px] max-[1200px]:mb-[30px] max-[1200px]:gap-[50px] max-[992px]:mb-[25px] max-[992px]:flex-col max-[992px]:gap-0 max-[768px]:mb-5", flushEnd && "mb-0 max-[1200px]:mb-0 max-[992px]:mb-0 max-[768px]:mb-0")}
     >
       {columns.map((column, columnIndex) => (
         <div className="flex flex-1 flex-col" key={`service-column-${columnIndex}`}>
@@ -47,7 +47,7 @@ export function WhiteLabelServiceAccordion({
               >
                 <button
                   className={cn(
-                    "flex w-full cursor-pointer items-center border-0 bg-transparent py-5 text-left select-none max-[1199px]:py-[18px] max-[992px]:py-[15px]",
+                    "flex w-full cursor-pointer items-center border-0 bg-transparent py-5 text-left select-none max-[1200px]:py-[18px] max-[992px]:py-[15px]",
                     itemIndex === 0 && "!pt-0",
                     columnIndex === 1 && itemIndex === 0 && "max-[992px]:!pt-[15px]",
                   )}
@@ -58,18 +58,18 @@ export function WhiteLabelServiceAccordion({
                   onClick={() => setOpenIndex(isOpen ? null : index)}
                 >
                   <Image
-                    className="mr-[18px] size-[52px] shrink-0 rounded-[15px] object-contain max-[1199px]:mr-[15px] max-[1199px]:size-12 max-[992px]:mr-2.5 max-[992px]:size-10 max-[767px]:size-[30px]"
+                    className="mr-[18px] size-[52px] shrink-0 rounded-[15px] object-contain max-[1200px]:mr-[15px] max-[1200px]:size-12 max-[992px]:mr-2.5 max-[992px]:size-10 max-[768px]:size-[30px]"
                     src={service.icon}
                     alt=""
                     width={52}
                     height={52}
                     aria-hidden="true"
                   />
-                  <span className="flex-1 font-sans text-lg leading-[27px] font-sm text-white max-[1199px]:leading-[26px] max-[767px]:text-base max-[767px]:leading-6">
+                  <span className="flex-1 font-sans text-lg leading-[27px] font-sm text-white max-[1200px]:leading-[26px] max-[768px]:text-base max-[768px]:leading-6">
                     {service.title}
                   </span>
                   <span
-                    className="flex size-8 shrink-0 items-center justify-center rounded-lg bg-white/10 pb-0.5 text-[28px] leading-none font-normal text-white transition-all duration-300 max-[1199px]:size-7 max-[1199px]:text-2xl max-[992px]:size-6 max-[992px]:text-xl max-[767px]:size-[22px]"
+                    className="flex size-8 shrink-0 items-center justify-center rounded-lg bg-white/10 pb-0.5 text-[28px] leading-none font-normal text-white transition-all duration-300 max-[1200px]:size-7 max-[1200px]:text-2xl max-[992px]:size-6 max-[992px]:text-xl max-[768px]:size-[22px]"
                     aria-hidden="true"
                   >
                     {isOpen ? "−" : "+"}
@@ -88,7 +88,7 @@ export function WhiteLabelServiceAccordion({
                   inert={!isOpen}
                 >
                   <div className="overflow-hidden">
-                    <div className="pb-8 pl-[70px] text-base leading-[30.4px] font-medium text-white/80 max-[1199px]:pb-5 max-[1199px]:pl-[63px] max-[1199px]:leading-[26px] max-[992px]:pb-[15px] max-[992px]:pl-[50px] max-[992px]:leading-6 max-[767px]:pl-10 max-[767px]:text-[15px] max-[767px]:leading-[22px]">
+                    <div className="pb-8 pl-[70px] text-base leading-[30.4px] font-medium text-white/80 max-[1200px]:pb-5 max-[1200px]:pl-[63px] max-[1200px]:leading-[26px] max-[992px]:pb-[15px] max-[992px]:pl-[50px] max-[992px]:leading-6 max-[768px]:pl-10 max-[768px]:text-[15px] max-[768px]:leading-[22px]">
                       {service.description}
                       {service.href ? (
                         <Link

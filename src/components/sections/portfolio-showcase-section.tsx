@@ -80,17 +80,17 @@ export function PortfolioShowcaseSection({
   const isShopifyPlusCategory = content.category === "SHOPIFY PLUS";
   const isLiveGrid = variant === "liveGrid";
   const sectionClassName = isShopifyPlusCategory
-    ? "our-work-sec bg-white pt-0 pb-20 max-[991px]:pt-0 max-[991px]:pb-[50px]"
+    ? "our-work-sec bg-white pt-0 pb-20 max-[992px]:pt-0 max-[992px]:pb-[50px]"
     : isLiveGrid
-      ? "our-work-sec pt-20 pb-20 max-[991px]:pt-0 max-[767px]:pt-0"
-      : "our-work-sec py-20 max-[991px]:py-[50px]";
+      ? "our-work-sec pt-20 pb-20 max-[992px]:pt-0 max-[768px]:pt-0"
+      : "our-work-sec py-20 max-[992px]:py-[50px]";
 
   const gridColsClass =
     resolvedColumns === 4
-      ? "grid-cols-4 max-[992px]:grid-cols-2 max-[767px]:grid-cols-2"
+      ? "grid-cols-4 max-[1200px]:grid-cols-3 max-[992px]:grid-cols-2 max-[768px]:grid-cols-2"
       : resolvedColumns === 2
-        ? "grid-cols-2 max-[767px]:grid-cols-2"
-        : "grid-cols-3 max-[992px]:grid-cols-2 max-[767px]:grid-cols-2";
+        ? "grid-cols-2 max-[768px]:grid-cols-2"
+        : "grid-cols-3 max-[992px]:grid-cols-2 max-[768px]:grid-cols-2";
 
   return (
     <section className={cn(sectionClassName, className)} data-section="portfolio" id={sectionId}>
@@ -103,7 +103,7 @@ export function PortfolioShowcaseSection({
           variant="portfolio"
         />
 
-        <div className={`mt-[42px] grid gap-x-[15px] gap-y-[60px] max-[992px]:mt-[50px] max-[992px]:gap-y-[30px] max-[767px]:mt-[30px] ${gridColsClass} ${itemsClassName ?? ""}`}>
+        <div className={`mt-[42px] grid gap-x-[15px] gap-y-[60px] max-[992px]:mt-[50px] max-[992px]:gap-y-[30px] max-[768px]:mt-[30px] ${gridColsClass} ${itemsClassName ?? ""}`}>
           {content.items.map((item) => (
             <PortfolioProjectCard
               category={item.category ?? content.category}
@@ -123,7 +123,7 @@ export function PortfolioShowcaseSection({
         </div>
 
         {!hideCta && (
-          <div className="mt-[51px] flex flex-wrap justify-center gap-4 max-[767px]:mt-10 max-[575px]:flex-col [&_a]:max-[575px]:w-full" data-aos="fade-up">
+          <div className="mt-[51px] flex flex-wrap justify-center gap-4 max-[768px]:mt-10 max-[575px]:flex-col [&_a]:max-[575px]:w-full" data-aos="fade-up">
             <ButtonLink href={resolvedCtaHref} variant="primary" className="text-center">
               {resolvedCtaLabel}
             </ButtonLink>

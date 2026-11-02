@@ -16,15 +16,15 @@ export function BookDiscoveryCallPage({
   return (
     <section
       aria-labelledby="book-discovery-call-title"
-      className="booking-section pt-[140px] pb-20 max-[991px]:pt-[90px] max-[991px]:pb-[60px] max-[767px]:pt-20 max-[767px]:pb-10"
+      className="booking-section pt-[140px] pb-20 max-[992px]:pt-[90px] max-[992px]:pb-[60px] max-[768px]:pt-20 max-[768px]:pb-10"
     >
       <Container>
         <div className="flex flex-wrap justify-between">
-          <aside className="w-[36%] max-[1399px]:w-[41%] max-[1199px]:w-[51%] max-[991px]:w-full">
-            <div className="mb-5 flex items-center gap-2.5 max-[767px]:mb-4">
+          <aside className="w-[36%] max-[1399px]:w-[41%] max-[1200px]:w-[51%] max-[992px]:w-full">
+            <div className="mb-5 flex items-center gap-2.5 max-[768px]:mb-4">
               <span
                 aria-hidden="true"
-                className="h-0.5 w-[30px] shrink-0 bg-brand-red max-[767px]:w-[15px]"
+                className="h-0.5 w-[30px] shrink-0 bg-brand-red max-[768px]:w-[15px]"
               />
               <span className="uppercase text-sm font-semibold leading-normal text-[#535353]">
                 {content.eyebrow}
@@ -32,17 +32,17 @@ export function BookDiscoveryCallPage({
             </div>
 
             <h1
-              className="mb-2.5 font-montreal-medium text-[35px] leading-[45px] font-normal tracking-[-0.7px] text-ink max-[992px]:text-[30px] max-[992px]:leading-10 max-[767px]:text-[26px] max-[767px]:leading-[34px]"
+              className="mb-2.5 font-montreal-medium text-[35px] leading-[45px] font-normal tracking-[-0.7px] text-ink max-[992px]:text-[30px] max-[992px]:leading-10 max-[768px]:text-[26px] max-[768px]:leading-[34px]"
               id="book-discovery-call-title"
             >
               {content.title}
             </h1>
-            <p className="text-base font-medium leading-[190%] text-muted max-[767px]:text-sm max-[767px]:leading-[26px]">
+            <p className="text-base font-medium leading-[190%] text-muted max-[768px]:text-sm max-[768px]:leading-[26px]">
               {content.description}
             </p>
 
-            <div className="my-[26px] flex items-center rounded-2xl border border-[rgba(36,36,36,0.1)] bg-[#f7f4e9] p-[18px] max-[767px]:rounded-[10px] max-[767px]:p-2.5">
-              <div className="mr-[15px] h-[68px] w-[68px] shrink-0 overflow-hidden rounded-full max-[767px]:mr-2.5">
+            <div className="my-[26px] flex items-center rounded-2xl border border-[rgba(36,36,36,0.1)] bg-[#f7f4e9] p-[18px] max-[768px]:rounded-[10px] max-[768px]:p-2.5">
+              <div className="mr-[15px] h-[68px] w-[68px] shrink-0 overflow-hidden rounded-full max-[768px]:mr-2.5">
                 <Image
                   alt={content.host.imageAlt}
                   className="h-full w-full rounded-full border-[3px] border-white object-cover shadow-[0_5px_18px_rgb(39_39_39/10%)]"
@@ -52,10 +52,10 @@ export function BookDiscoveryCallPage({
                 />
               </div>
               <div>
-                <strong className="mb-[3px] block text-base leading-normal font-bold text-[#535353] max-[767px]:mb-0 max-[767px]:text-[15px]">
+                <strong className="mb-[3px] block text-base leading-normal font-bold text-[#535353] max-[768px]:mb-0 max-[768px]:text-[15px]">
                   {content.host.name}
                 </strong>
-                <span className="text-sm leading-normal font-medium text-[#535353] max-[767px]:text-xs">
+                <span className="text-sm leading-normal font-medium text-[#535353] max-[768px]:text-xs">
                   {content.host.role}
                 </span>
               </div>
@@ -83,7 +83,7 @@ export function BookDiscoveryCallPage({
             </div>
           </aside>
 
-          <div className="w-[55.304%] overflow-hidden rounded-[24px] border border-[rgba(36,36,36,0.1)] bg-white p-3.5 shadow-[0_18px_54px_rgb(36_36_36/8%)] max-[1199px]:w-[47%] max-[991px]:mt-5 max-[991px]:w-full">
+          <div className="w-[55.304%] overflow-hidden rounded-[24px] border border-[rgba(36,36,36,0.1)] bg-white p-3.5 shadow-[0_18px_54px_rgb(36_36_36/8%)] max-[1200px]:w-[47%] max-[992px]:mt-5 max-[992px]:w-full">
             <div className="mb-1 flex items-center justify-between border-b border-[rgba(36,36,36,0.1)] px-3 py-2.5 pb-[18px]">
               <strong className="text-[13px] leading-normal font-bold text-[#535353]">
                 {content.calendar.heading}

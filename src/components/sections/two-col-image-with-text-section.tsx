@@ -45,7 +45,7 @@ export function TwoColImageWithTextSection({
           <div
             data-aos="fade-up"
             className={cn(
-              "left-col w-[41.229%] max-[1199px]:w-[43%] max-[992px]:w-full",
+              "left-col w-[41.229%] max-[1200px]:w-[43%] max-[992px]:w-full",
               imagePosition === "right" && "order-2 max-[992px]:order-1",
             )}
           >
@@ -62,12 +62,12 @@ export function TwoColImageWithTextSection({
           <div
             data-aos="fade-up"
             className={cn(
-              "right-col w-[53.685%] max-[1199px]:w-[53%] max-[992px]:w-full",
+              "right-col w-[53.685%] max-[1200px]:w-[53%] max-[992px]:w-full",
               imagePosition === "right" && "order-1 max-[992px]:order-2",
             )}
           >
             <div className="text-block">
-              <h2 className="font-display text-[35px] font-medium leading-[48.475px] tracking-[-0.7px] text-ink mb-4 max-[992px]:text-[30px] max-[992px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33px]">
+              <h2 className="font-display text-[35px] font-medium leading-[48.475px] tracking-[-0.7px] text-ink mb-4 max-[992px]:text-[30px] max-[992px]:leading-10 max-[768px]:text-2xl max-[768px]:leading-[33px]">
                 {heading}
               </h2>
               {Array.isArray(description) ? (

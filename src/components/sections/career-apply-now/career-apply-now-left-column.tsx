@@ -20,15 +20,15 @@ export function CareerApplyNowLeftColumn({
   emailHref = careerApplyNowContent.contact.email.href,
 }: CareerApplyNowLeftColumnProps = {}) {
   return (
-    <div className="left-col w-[31%] max-[1199px]:w-[40%] max-[991px]:mb-[60px] max-[991px]:w-full max-[767px]:mb-10">
-      <h1 className="mb-8 border-b border-[#efefef] pb-8 font-montreal-medium text-[35px] font-normal leading-[46px] tracking-normal text-ink max-[1299px]:text-[30px] max-[1299px]:leading-[40px] max-[991px]:mb-5 max-[991px]:pb-5 max-[991px]:text-center max-[767px]:text-[27px] max-[767px]:leading-[38px] max-[320px]:text-[23px] max-[320px]:leading-[33px]">
+    <div className="left-col w-[31%] max-[1200px]:w-[40%] max-[992px]:mb-[60px] max-[992px]:w-full max-[768px]:mb-10">
+      <h1 className="mb-8 border-b border-[#efefef] pb-8 font-montreal-medium text-[35px] font-normal leading-[46px] tracking-normal text-ink max-[1299px]:text-[30px] max-[1299px]:leading-[40px] max-[992px]:mb-5 max-[992px]:pb-5 max-[992px]:text-center max-[768px]:text-[27px] max-[768px]:leading-[38px] max-[320px]:text-[23px] max-[320px]:leading-[33px]">
         {heading}
       </h1>
       <div className="contact-us">
-        <ul className="list-none p-0 max-[991px]:flex max-[991px]:flex-wrap max-[991px]:justify-center max-[991px]:gap-5 max-[767px]:mt-10">
-          <li className="mb-12 flex items-center max-[991px]:mb-0 max-[767px]:min-w-[256px]">
+        <ul className="list-none p-0 max-[992px]:flex max-[992px]:flex-wrap max-[992px]:justify-center max-[992px]:gap-5 max-[768px]:mt-10">
+          <li className="mb-12 flex items-center max-[992px]:mb-0 max-[768px]:min-w-[256px]">
             <span
-              className="mr-4 flex h-[46px] w-[46px] shrink-0 items-center justify-center rounded-full bg-[linear-gradient(97.18deg,#15c064_28.5%,#00d1ff_91.82%)] max-[991px]:mr-3.5 max-[991px]:h-[35px] max-[991px]:w-[35px]"
+              className="mr-4 flex h-[46px] w-[46px] shrink-0 items-center justify-center rounded-full bg-[linear-gradient(97.18deg,#15c064_28.5%,#00d1ff_91.82%)] max-[992px]:mr-3.5 max-[992px]:h-[35px] max-[992px]:w-[35px]"
               aria-hidden="true"
             >
               <svg
@@ -37,7 +37,7 @@ export function CareerApplyNowLeftColumn({
                 height="27"
                 viewBox="0 0 26 27"
                 fill="none"
-                className="h-auto w-[26px] max-[991px]:w-5"
+                className="h-auto w-[26px] max-[992px]:w-5"
                 aria-hidden="true"
               >
                 <g clipPath="url(#phone-clip-career)">
@@ -58,8 +58,8 @@ export function CareerApplyNowLeftColumn({
                 </defs>
               </svg>
             </span>
-            <span className="w-[calc(100%-62px)] max-[991px]:w-[calc(100%-51px)]">
-              <span className="mb-[15px] block text-base font-semibold uppercase leading-normal text-ink max-[991px]:mb-2.5 max-[991px]:text-sm">
+            <span className="w-[calc(100%-62px)] max-[992px]:w-[calc(100%-51px)]">
+              <span className="mb-[15px] block text-base font-semibold uppercase leading-normal text-ink max-[992px]:mb-2.5 max-[992px]:text-sm">
                 {phoneLabel}
               </span>
               <a
@@ -70,9 +70,9 @@ export function CareerApplyNowLeftColumn({
               </a>
             </span>
           </li>
-          <li className="flex items-center max-[767px]:min-w-[256px]">
+          <li className="flex items-center max-[768px]:min-w-[256px]">
             <span
-              className="mr-4 flex h-[46px] w-[46px] shrink-0 items-center justify-center rounded-full bg-[linear-gradient(97.18deg,#15c064_28.5%,#00d1ff_91.82%)] max-[991px]:mr-3.5 max-[991px]:h-[35px] max-[991px]:w-[35px]"
+              className="mr-4 flex h-[46px] w-[46px] shrink-0 items-center justify-center rounded-full bg-[linear-gradient(97.18deg,#15c064_28.5%,#00d1ff_91.82%)] max-[992px]:mr-3.5 max-[992px]:h-[35px] max-[992px]:w-[35px]"
               aria-hidden="true"
             >
               <svg
@@ -81,7 +81,7 @@ export function CareerApplyNowLeftColumn({
                 height="27"
                 viewBox="0 0 26 27"
                 fill="none"
-                className="h-auto w-[26px] max-[991px]:w-5"
+                className="h-auto w-[26px] max-[992px]:w-5"
                 aria-hidden="true"
               >
                 <path
@@ -111,8 +111,8 @@ export function CareerApplyNowLeftColumn({
                 </defs>
               </svg>
             </span>
-            <span className="w-[calc(100%-62px)] max-[991px]:w-[calc(100%-51px)]">
-              <span className="mb-[15px] block text-base font-semibold uppercase leading-normal text-ink max-[991px]:mb-2.5 max-[991px]:text-sm">
+            <span className="w-[calc(100%-62px)] max-[992px]:w-[calc(100%-51px)]">
+              <span className="mb-[15px] block text-base font-semibold uppercase leading-normal text-ink max-[992px]:mb-2.5 max-[992px]:text-sm">
                 {emailLabel}
               </span>
               <a

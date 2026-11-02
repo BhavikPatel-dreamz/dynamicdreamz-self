@@ -84,7 +84,7 @@ function ReviewCircle({
   return (
     <div
       className={cn(
-        "review_animation absolute inset-x-0 top-0 mx-auto flex size-[420px] items-center justify-center rounded-full text-center [transition:transform_.6s_ease,opacity_.6s_ease] max-[767px]:size-[275px]",
+        "review_animation absolute inset-x-0 top-0 mx-auto flex size-[420px] items-center justify-center rounded-full text-center [transition:transform_.6s_ease,opacity_.6s_ease] max-[768px]:size-[275px]",
         active && "relative z-10",
         visible
           ? "[transform:scale(1)] opacity-100"
@@ -102,10 +102,10 @@ function ReviewCircle({
               : "[transform:translateY(30px)] opacity-0",
           )}
         >
-          <div className="review_animation_text mb-6 text-center text-base leading-normal text-black max-[767px]:mb-[10px] max-[767px]:text-sm">{sharedUiCopy.reviewedOn}</div>
-          <div className="review_animation_box_logo mb-5 max-[767px]:mb-0">
+          <div className="review_animation_text mb-6 text-center text-base leading-normal text-black max-[768px]:mb-[10px] max-[768px]:text-sm">{sharedUiCopy.reviewedOn}</div>
+          <div className="review_animation_box_logo mb-5 max-[768px]:mb-0">
             <Image
-              className="mx-auto h-auto w-auto max-[767px]:max-h-10 max-[767px]:max-w-[130px]"
+              className="mx-auto h-auto w-auto max-[768px]:max-h-10 max-[768px]:max-w-[130px]"
               src={review.wordmark}
               alt={review.wordmarkAlt}
               width={review.wordmarkWidth}
@@ -115,14 +115,14 @@ function ReviewCircle({
             />
           </div>
         </div>
-        <div className="review_animation_ratings mb-[18px] flex items-center max-[767px]:mb-[10px]">
+        <div className="review_animation_ratings mb-[18px] flex items-center max-[768px]:mb-[10px]">
           <ReviewStars
             review={review}
             starsVisible={active ? starsVisible : 0}
           />
           <div
             className={cn(
-              "review_ratings ml-[10px] text-[20px] font-semibold text-black [transition:opacity_.6s_ease] max-[767px]:text-[15px]",
+              "review_ratings ml-[10px] text-[20px] font-semibold text-black [transition:opacity_.6s_ease] max-[768px]:text-[15px]",
               ratingIsVisible ? "opacity-100" : "opacity-0",
             )}
           >
@@ -131,14 +131,14 @@ function ReviewCircle({
         </div>
         <div
           className={cn(
-            "review_total_ratings [transition:transform_1s_cubic-bezier(.95,-.42,.15,1.26),opacity_.6s_ease] max-[767px]:inline-flex max-[767px]:items-center",
+            "review_total_ratings [transition:transform_1s_cubic-bezier(.95,-.42,.15,1.26),opacity_.6s_ease] max-[768px]:inline-flex max-[768px]:items-center",
             pillIsVisible
               ? "[transform:translateY(0)] opacity-100"
               : "[transform:translateY(150px)] opacity-0",
           )}
         >
           <a
-            className="inline-block rounded-[60.664px] px-[18px] py-2 text-[19.413px] leading-normal text-white max-[767px]:text-sm"
+            className="inline-block rounded-[60.664px] px-[18px] py-2 text-[19.413px] leading-normal text-white max-[768px]:text-sm"
             href={review.pillHref}
             rel="nofollow"
             style={{
@@ -150,7 +150,7 @@ function ReviewCircle({
             {review.pillLabel}
             <svg
               aria-hidden="true"
-              className="ml-[10px] inline h-[15px] w-[14px] align-middle max-[767px]:ml-[5px] max-[767px]:w-[10px]"
+              className="ml-[10px] inline h-[15px] w-[14px] align-middle max-[768px]:ml-[5px] max-[768px]:w-[10px]"
               fill="none"
               height={15}
               viewBox="0 0 14 15"

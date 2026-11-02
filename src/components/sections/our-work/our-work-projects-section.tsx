@@ -30,13 +30,13 @@ export function OurWorkProjectsSection({
 }: OurWorkProjectsSectionProps = {}) {
   return (
     <section
-      className="scroll-mt-20 py-20 max-[991px]:py-[50px]"
+      className="scroll-mt-20 py-20 max-[992px]:py-[50px]"
       id="our-work-projects"
       aria-labelledby="our-work-projects-title"
     >
       <Container>
         <SplitSectionHeading
-          className="gap-12 max-[991px]:items-start max-[767px]:flex-col max-[767px]:gap-4"
+          className="gap-12 max-[992px]:items-start max-[768px]:flex-col max-[768px]:gap-4"
           description={description}
           eyebrow={eyebrow}
           heading={title}
@@ -48,11 +48,11 @@ export function OurWorkProjectsSection({
         />
         <OurWorkFilterController filters={ourWorkPage.filters} counts={projectCounts} />
 
-        <div className="mt-[50px] flex flex-wrap gap-x-[15px] gap-y-[60px] max-[992px]:mt-[40px] max-[992px]:gap-y-[30px] max-[767px]:gap-x-[10px] max-[767px]:gap-y-5">
+        <div className="mt-[50px] flex flex-wrap gap-x-[15px] gap-y-[60px] max-[992px]:mt-[40px] max-[992px]:gap-y-[30px] max-[768px]:gap-x-[10px] max-[768px]:gap-y-5">
           {ourWorkProjects.map((project) => (
             <div
               data-aos="fade-up"
-              className="w-[calc(25%_-_11.25px)] max-[1199px]:w-[calc(33.333%_-_10px)] max-[992px]:w-[calc(50%_-_7.5px)] max-[767px]:w-[calc(50%_-_5px)]"
+              className="w-[calc(25%_-_11.25px)] max-[1200px]:w-[calc(33.333%_-_10px)] max-[992px]:w-[calc(50%_-_7.5px)] max-[768px]:w-[calc(50%_-_5px)]"
               data-work-project
               data-work-platform={project.platform}
               key={project.id}

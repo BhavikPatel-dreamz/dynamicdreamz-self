@@ -40,7 +40,7 @@ export function HappyClientCard({
           className="pointer-events-none absolute inset-0 z-0 bg-black/30"
         />
         {testimonial.logo ? (
-          <span className="pointer-events-none absolute top-5 right-5 z-20 flex h-[70px] w-[140px] items-center justify-end max-[1199px]:top-4 max-[1199px]:right-4 max-[1199px]:h-[50px] max-[1199px]:w-[120px] max-[767px]:top-3 max-[767px]:right-3 max-[767px]:h-[45px] max-[767px]:w-[90px]">
+          <span className="pointer-events-none absolute top-5 right-5 z-20 flex h-[70px] w-[140px] items-center justify-end max-[1200px]:top-4 max-[1200px]:right-4 max-[1200px]:h-[50px] max-[1200px]:w-[120px] max-[768px]:top-3 max-[768px]:right-3 max-[768px]:h-[45px] max-[768px]:w-[90px]">
             <Image
               alt={testimonial.logoAlt ?? `${testimonial.company} logo`}
               className="h-auto max-h-full w-auto max-w-full object-contain"
@@ -50,9 +50,9 @@ export function HappyClientCard({
             />
           </span>
         ) : null}
-        <h3 className="pointer-events-none font-sans absolute bottom-[15px] left-[15px] max-[1199px]:bottom-3 max-[1199px]:left-3 z-20 m-0 inline-block rounded-[5px] border-l-[3px] border-brand-red bg-black/80 px-[15px] py-[10px] max-[1199px]:px-[14px] max-[1199px]:py-[7px] text-left text-[15px] font-semibold leading-[21px] text-white max-[1199px]:text-sm max-[1199px]:leading-[21px]">
+        <h3 className="pointer-events-none font-sans absolute bottom-[15px] left-[15px] max-[1200px]:bottom-3 max-[1200px]:left-3 z-20 m-0 inline-block rounded-[5px] border-l-[3px] border-brand-red bg-black/80 px-[15px] py-[10px] max-[1200px]:px-[14px] max-[1200px]:py-[7px] text-left text-[15px] font-semibold leading-[21px] text-white max-[1200px]:text-sm max-[1200px]:leading-[21px]">
           {testimonial.name}
-          <span className="mt-[5px] block text-[15px] font-medium leading-normal max-[1199px]:text-xs">
+          <span className="mt-[5px] block text-[15px] font-medium leading-normal max-[1200px]:text-xs">
             {testimonial.company}
           </span>
         </h3>

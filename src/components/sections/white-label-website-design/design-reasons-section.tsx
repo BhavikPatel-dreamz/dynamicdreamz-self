@@ -19,14 +19,14 @@ export function DesignReasonsSection({
   return (
     <section
       className={cn(
-        "white_label_wp_development_service_accordion_section website-design bg-[#fafaf7] py-[60px] max-[767px]:py-10",
+        "white_label_wp_development_service_accordion_section website-design bg-[#fafaf7] py-[60px] max-[768px]:py-10",
         className,
       )}
     >
       <Container>
         <div className="flex items-center justify-between gap-[60px] max-[992px]:flex-col max-[992px]:items-stretch max-[992px]:gap-5">
           <div data-aos="fade-up" className="w-[47%] max-[992px]:w-full">
-            <h2 className="mb-[15px] font-display text-[35px] leading-[1.38] font-normal tracking-normal text-ink max-[992px]:text-[30px] max-[767px]:text-2xl max-[767px]:leading-[1.35]">
+            <h2 className="mb-[15px] font-display text-[35px] leading-[1.38] font-normal tracking-normal text-ink max-[992px]:text-[30px] max-[768px]:text-2xl max-[768px]:leading-[1.35]">
               {title}
             </h2>
             <p className="text-base font-medium leading-[1.9] text-muted">

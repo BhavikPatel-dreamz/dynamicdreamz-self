@@ -30,8 +30,8 @@ export function IndustriesServedSection({
 }) {
   const sectionClass =
     variant === "grid"
-      ? "industries_box_section bg-white pt-0 pb-20 max-[991px]:pt-0 max-[991px]:pb-[50px]"
-      : "industries-served-sec pt-0 pb-20 max-[991px]:pb-[50px]";
+      ? "industries_box_section bg-white pt-0 pb-20 max-[992px]:pt-0 max-[992px]:pb-[50px]"
+      : "industries-served-sec pt-0 pb-20 max-[992px]:pb-[50px]";
 
   return (
     <section className={sectionClass} data-section="industries" id="industries-served">
@@ -44,7 +44,7 @@ export function IndustriesServedSection({
           variant="left"
         />
         {variant === "grid" ? (
-          <div data-aos="fade-up" className="grid grid-cols-4 gap-[18px] max-[1199px]:grid-cols-3 max-[991px]:grid-cols-2 max-[767px]:grid-cols-1">
+          <div data-aos="fade-up" className="grid grid-cols-4 gap-[18px] max-[1200px]:grid-cols-3 max-[992px]:grid-cols-2 max-[768px]:grid-cols-1">
             {content.items.map((item) => {
               const card = (
                 <div className="h-full overflow-hidden rounded-[22px] border border-[rgba(40,40,40,0.06)] bg-[#fafaf7]">
@@ -97,7 +97,7 @@ export function IndustriesServedSection({
               key={item.title}
             >
               <div className="group h-full rounded-[10px] bg-[#dfdfdf] p-0.5 transition-[background] duration-300 hover:bg-[linear-gradient(to_right,#15c064,#00d1ff)]">
-                <div className="h-full rounded-[8px] bg-white pt-7 pr-7 pb-[43px] pl-7 max-[1199px]:p-[18px]">
+                <div className="h-full rounded-[8px] bg-white pt-7 pr-7 pb-[43px] pl-7 max-[1200px]:p-[18px]">
                   <div className="relative mb-[25px] overflow-hidden rounded-lg pb-[57%]">
                     <Image
                       className="absolute inset-0 h-full w-full object-cover transition-transform duration-1000 group-hover:scale-105"
@@ -120,7 +120,7 @@ export function IndustriesServedSection({
         </HorizontalDragScroll>
         )}
         {content.bottomDescription && (
-          <div data-aos="fade-up" className="bottom-text mt-[50px] text-center max-[767px]:mt-[30px]">
+          <div data-aos="fade-up" className="bottom-text mt-[50px] text-center max-[768px]:mt-[30px]">
             <p className="mx-auto max-w-[800px] text-base font-normal leading-[30.4px] text-muted max-[992px]:text-sm max-[992px]:leading-6">
               {content.bottomDescription}
             </p>

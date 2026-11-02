@@ -48,17 +48,17 @@ export function ShopifyPlusAgencySection({ content }: ShopifyPlusAgencySectionPr
     <section className="bg-[#fbeed5] py-[43px] max-[992px]:py-[30px]" aria-labelledby="shopify-plus-agency-title">
       <Container>
         <SplitSectionHeading
-          className="gap-8 max-[1199px]:mb-5 max-[992px]:gap-0"
+          className="gap-8 max-[1200px]:mb-5 max-[992px]:gap-0"
           description={intro}
           eyebrow={eyebrow}
           heading={title}
           headingId="shopify-plus-agency-title"
-          titleColumnClassName="w-[42%] max-[1199px]:w-full max-[1199px]:mb-0 max-[992px]:mb-0"
+          titleColumnClassName="w-[42%] max-[1200px]:w-full max-[1200px]:mb-0 max-[992px]:mb-0"
           variant="left"
         />
 
-        <div className="flex flex-wrap justify-between rounded-[30px] bg-[#fafaf7] p-8 max-[1199px]:rounded-[20px] max-[1199px]:p-6 max-[767px]:p-5">
-          <div data-aos="fade-up" className="w-[46.816%] max-[767px]:w-full">
+        <div className="flex flex-wrap justify-between rounded-[30px] bg-[#fafaf7] p-8 max-[1200px]:rounded-[20px] max-[1200px]:p-6 max-[768px]:p-5">
+          <div data-aos="fade-up" className="w-[46.816%] max-[768px]:w-full">
             <div className="mb-5 max-w-[575px]">
               {paragraphs.map((paragraph, index) => (
                 <p className={index === 0 ? "mb-3.75 text-sm leading-6 font-normal text-muted" : "text-sm leading-[1.8] font-normal text-muted"} key={paragraph}>
@@ -70,13 +70,13 @@ export function ShopifyPlusAgencySection({ content }: ShopifyPlusAgencySectionPr
               {counters.map((counter) => {
                 const tone = counter.tone && counter.tone in counterToneClasses ? counter.tone : "green";
                 return (
-                  <div className="mb-2 w-1/2 px-1 max-[767px]:w-full" key={counter.value}>
-                    <div className={`flex h-full min-h-[136px] max-[767px]:min-h-0 flex-col justify-between max-[767px]:justify-start rounded-[20px] p-[18px] max-[767px]:rounded-xl ${counterToneClasses[tone]}`}>
+                  <div className="mb-2 w-1/2 px-1 max-[768px]:w-full" key={counter.value}>
+                    <div className={`flex h-full min-h-[136px] max-[768px]:min-h-0 flex-col justify-between max-[768px]:justify-start rounded-[20px] p-[18px] max-[768px]:rounded-xl ${counterToneClasses[tone]}`}>
                       <div>
-                        <h3 className="h2 font-montreal-bold block text-[35px] leading-[1.4] font-semibold text-ink max-[767px]:text-[24px] max-[767px]:leading-[33.24px] max-[767px]:tracking-[-.48px]">
+                        <h3 className="h2 font-montreal-bold block text-[35px] leading-[1.4] font-semibold text-ink max-[768px]:text-[24px] max-[768px]:leading-[33.24px] max-[768px]:tracking-[-.48px]">
                           {counter.value}
                         </h3>
-                        <span className="mt-[5px] mb-[25px] max-[767px]:mb-5 block text-xs leading-none font-semibold text-[#4d5577] uppercase">{counter.label}</span>
+                        <span className="mt-[5px] mb-[25px] max-[768px]:mb-5 block text-xs leading-none font-semibold text-[#4d5577] uppercase">{counter.label}</span>
                       </div>
                       {counter.note ? <p className="text-xs leading-none font-medium text-muted">{counter.note}</p> : null}
                     </div>
@@ -87,7 +87,7 @@ export function ShopifyPlusAgencySection({ content }: ShopifyPlusAgencySectionPr
           </div>
           <div
             data-aos="fade-up"
-            className="relative w-1/2 min-h-[380px] max-[1199px]:min-h-0 overflow-hidden rounded-[20px] max-[767px]:mt-5 max-[767px]:w-full max-[767px]:aspect-[1.37] max-[767px]:rounded-xl"
+            className="relative w-1/2 min-h-[380px] max-[1200px]:min-h-0 overflow-hidden rounded-[20px] max-[768px]:mt-5 max-[768px]:w-full max-[768px]:aspect-[1.37] max-[768px]:rounded-xl"
           >
             <DeferredAutoplayVideo
               className="absolute inset-0 h-full w-full object-cover"

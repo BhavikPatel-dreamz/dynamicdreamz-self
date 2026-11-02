@@ -69,12 +69,12 @@ export function PhoneAppSlider({ slides = [], frameImage }: PhoneAppSliderProps)
   return (
     <div
       ref={containerRef}
-      className="app-slider-wrap relative flex w-full items-center justify-center overflow-hidden py-10 min-[1200px]:py-[100px] max-[1199px]:pt-[60px] max-[1199px]:pb-0"
+      className="app-slider-wrap relative flex w-full items-center justify-center overflow-hidden py-10 min-[1200px]:py-[100px] max-[1200px]:pt-[60px] max-[1200px]:pb-0"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
       aria-label="Shopify mobile application interactive preview slider"
     >
-      <div className="app-slider-track relative h-[466px] w-full max-[1199px]:h-[400px]">
+      <div className="app-slider-track relative h-[466px] w-full max-[1200px]:h-[400px]">
         {bufferedSlides.map((slide, i) => {
           const diff = (i - activeIndex + total) % total;
           let positionStyle = "translate-x-[140%] scale-[0.6] opacity-0 z-[1]";
@@ -92,7 +92,7 @@ export function PhoneAppSlider({ slides = [], frameImage }: PhoneAppSliderProps)
           return (
             <div
               key={`${slide.src}-${i}`}
-              className={`app-slide absolute top-1/2 left-1/2 h-[466px] w-[220px] -mt-[233px] -ml-[110px] overflow-hidden rounded-[24px] bg-[#0d0730] transition-all duration-[800ms] ease-[cubic-bezier(0.65,0.05,0.36,1)] will-change-transform max-[1399px]:h-[386px] max-[1399px]:w-[200px] max-[1399px]:-mt-[235px] max-[1399px]:-ml-[100px] max-[1199px]:h-[339px] max-[1199px]:w-[175px] max-[1199px]:-mt-[244px] max-[1199px]:-ml-[96px] ${positionStyle}`}
+              className={`app-slide absolute top-1/2 left-1/2 h-[466px] w-[220px] -mt-[233px] -ml-[110px] overflow-hidden rounded-[24px] bg-[#0d0730] transition-all duration-[800ms] ease-[cubic-bezier(0.65,0.05,0.36,1)] will-change-transform max-[1399px]:h-[386px] max-[1399px]:w-[200px] max-[1399px]:-mt-[235px] max-[1399px]:-ml-[100px] max-[1200px]:h-[339px] max-[1200px]:w-[175px] max-[1200px]:-mt-[244px] max-[1200px]:-ml-[96px] ${positionStyle}`}
             >
               <Image
                 src={slide.src}
@@ -108,7 +108,7 @@ export function PhoneAppSlider({ slides = [], frameImage }: PhoneAppSliderProps)
       </div>
 
       {/* Frame overlay */}
-      <div className="frame-main pointer-events-none absolute top-1/2 left-1/2 z-[5] h-[466px] w-[220px] -mt-[233px] -ml-[110px] max-[1399px]:h-[390px] max-[1399px]:w-[200px] max-[1399px]:-mt-[215px] max-[1399px]:-ml-[100px] max-[1199px]:h-[339px] max-[1199px]:w-[178px] max-[1199px]:-mt-[192px] max-[1199px]:-ml-[91px]">
+      <div className="frame-main pointer-events-none absolute top-1/2 left-1/2 z-[5] h-[466px] w-[220px] -mt-[233px] -ml-[110px] max-[1399px]:h-[390px] max-[1399px]:w-[200px] max-[1399px]:-mt-[215px] max-[1399px]:-ml-[100px] max-[1200px]:h-[339px] max-[1200px]:w-[178px] max-[1200px]:-mt-[192px] max-[1200px]:-ml-[91px]">
         <Image
           src={frameImage.src}
           alt=""
@@ -120,7 +120,7 @@ export function PhoneAppSlider({ slides = [], frameImage }: PhoneAppSliderProps)
         />
         {/* Frame bottom drop shadow */}
         <span
-          className="absolute -bottom-[10px] left-1/2 block h-4 w-[400px] -translate-x-1/2 rounded-[429px] opacity-50 blur-[5.5px] max-[1399px]:bottom-[5px] max-[1399px]:w-[300px] max-[1199px]:bottom-[10px] max-[1199px]:w-[280px]"
+          className="absolute -bottom-[10px] left-1/2 block h-4 w-[400px] -translate-x-1/2 rounded-[429px] opacity-50 blur-[5.5px] max-[1399px]:bottom-[5px] max-[1399px]:w-[300px] max-[1200px]:bottom-[10px] max-[1200px]:w-[280px]"
           style={{
             background:
               "radial-gradient(47.55% 42.84% at 50% 50%, #000 0%, rgba(0, 0, 0, 0.00) 100%)",

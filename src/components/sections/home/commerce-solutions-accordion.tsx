@@ -45,7 +45,7 @@ export function CommerceSolutionsAccordion({
             return (
               <article
                 className={cn(
-                  "relative rounded-[15px] border border-[#6e7590]/10 p-5 shadow-[2px_2px_4px_rgb(83_83_83/5%)] max-[767px]:p-[15px]",
+                  "relative rounded-[15px] border border-[#6e7590]/10 p-5 shadow-[2px_2px_4px_rgb(83_83_83/5%)] max-[768px]:p-[15px]",
                   isOpen ? "bg-[#eff4ef]" : "bg-white",
                 )}
                 key={item.title}
@@ -54,19 +54,19 @@ export function CommerceSolutionsAccordion({
                   <button
                     id={triggerId}
                     type="button"
-                    className="relative block w-full cursor-pointer border-0 bg-transparent p-0 pr-[45px] max-[992px]:pr-[38px] max-[767px]:pr-[42px] text-left font-display text-xl leading-7 font-medium text-ink max-[767px]:text-base max-[767px]:leading-6"
+                    className="relative block w-full cursor-pointer border-0 bg-transparent p-0 pr-[45px] max-[992px]:pr-[38px] max-[768px]:pr-[42px] text-left font-display text-xl leading-7 font-medium text-ink max-[768px]:text-base max-[768px]:leading-6"
                     aria-expanded={isOpen}
                     aria-controls={panelId}
                     onClick={() => setActiveIndex(isOpen ? -1 : index)}
                   >
                     <span className="block w-full">
                       <span className="block w-full">{item.title}</span>
-                      <span className="mt-2.5 block font-display text-sm leading-normal font-medium text-ink max-[767px]:mt-[5px] max-[767px]:text-[13px]">
+                      <span className="mt-2.5 block font-display text-sm leading-normal font-medium text-ink max-[768px]:mt-[5px] max-[768px]:text-[13px]">
                         {item.summary}
                       </span>
                     </span>
                     <FaqCircleCrossIcon
-                      className="absolute right-0 top-1/2 -translate-y-1/2 size-[30px] max-[992px]:size-[26px] max-[767px]:size-[26px] shrink-0 pointer-events-none"
+                      className="absolute right-0 top-1/2 -translate-y-1/2 size-[30px] max-[992px]:size-[26px] max-[768px]:size-[26px] shrink-0 pointer-events-none"
                       isOpen={isOpen}
                       />
                     <span className="sr-only">
@@ -83,11 +83,11 @@ export function CommerceSolutionsAccordion({
                   aria-labelledby={triggerId}
                   className={cn(
                     "grid grid-rows-[0fr] transition-[grid-template-rows,margin-top] duration-300",
-                    isOpen && "mt-4 max-[767px]:mt-2.5 grid-rows-[1fr]",
+                    isOpen && "mt-4 max-[768px]:mt-2.5 grid-rows-[1fr]",
                   )}
                 >
                   <div className="overflow-hidden">
-                    <div className="border-t border-[#6e7590]/10 pt-4 max-[767px]:pt-2.5">
+                    <div className="border-t border-[#6e7590]/10 pt-4 max-[768px]:pt-2.5">
                       <p className="mb-[15px] text-sm leading-6 font-normal text-muted">
                         {item.body}
                       </p>

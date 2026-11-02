@@ -19,7 +19,7 @@ function ToolGroup({ duplicate = false, row }: { duplicate?: boolean; row: ToolR
     <div aria-hidden={duplicate || undefined} className="flex shrink-0 items-center">
       {row.map((item) => (
         <div
-          className="our_partners_logo_item relative mx-1.5 h-[94px] w-[202px] shrink-0 max-[1199px]:w-[200px] max-[992px]:w-[180px] max-[767px]:w-[170px]"
+          className="our_partners_logo_item relative mx-1.5 h-[94px] w-[202px] shrink-0 max-[1200px]:w-[200px] max-[992px]:w-[180px] max-[768px]:w-[170px]"
           key={item.name}
         >
           <Image
@@ -77,13 +77,13 @@ export function WhiteLabelToolsSection({
   return (
     <section
       className={cn(
-        "white_label_wide_range_technologies_section overflow-hidden bg-[#fafaf7] py-[70px] max-[1199px]:py-[60px] max-[992px]:py-10 max-[767px]:py-[30px]",
+        "white_label_wide_range_technologies_section overflow-hidden bg-[#fafaf7] py-[70px] max-[1200px]:py-[60px] max-[992px]:py-10 max-[768px]:py-[30px]",
         className,
       )}
     >
       <div
         data-aos="fade-up"
-        className="wide_range_technologies_top_part mb-10 px-4 text-center max-[1199px]:mb-[35px] max-[992px]:mb-[30px] max-[767px]:mb-5"
+        className="wide_range_technologies_top_part mb-10 px-4 text-center max-[1200px]:mb-[35px] max-[992px]:mb-[30px] max-[768px]:mb-5"
       >
         {eyebrow ? (
           <div className="title mb-5 text-[13px] font-bold uppercase tracking-[1.5px] text-[#e33d37]">
@@ -91,12 +91,12 @@ export function WhiteLabelToolsSection({
           </div>
         ) : null}
         <div className="wide_range_technologies_heading">
-          <h2 className="mx-auto mb-6 max-w-[1000px] font-montreal-medium text-[35px] leading-[48.475px] font-normal tracking-normal text-ink max-[1199px]:mb-[22px] max-[991px]:mb-5 max-[991px]:text-[30px] max-[991px]:leading-10 max-[767px]:mb-[15px] max-[767px]:text-2xl max-[767px]:leading-[33.24px]">
+          <h2 className="mx-auto mb-6 max-w-[1000px] font-montreal-medium text-[35px] leading-[48.475px] font-normal tracking-normal text-ink max-[1200px]:mb-[22px] max-[992px]:mb-5 max-[992px]:text-[30px] max-[992px]:leading-10 max-[768px]:mb-[15px] max-[768px]:text-2xl max-[768px]:leading-[33.24px]">
             {title}
           </h2>
         </div>
         <div className="wide_range_technologies_para mx-auto max-w-[1000px]">
-          <p className="text-base leading-[30.4px] font-medium text-muted max-[1199px]:leading-[26px] max-[767px]:text-sm max-[767px]:leading-5">
+          <p className="text-base leading-[30.4px] font-medium text-muted max-[1200px]:leading-[26px] max-[768px]:text-sm max-[768px]:leading-5">
             {description}
           </p>
         </div>

@@ -27,20 +27,20 @@ export function CaseStudyHero({ caseStudy }: CaseStudyHeroProps) {
 
   return (
     <section
-      className="case-study-hero relative bg-[#F7F4E9] pt-[151px] pb-[60px] max-[1199px]:pt-[124px] max-[767px]:px-1"
+      className="case-study-hero relative bg-[#F7F4E9] pt-[151px] pb-[60px] max-[1200px]:pt-[124px] max-[768px]:px-1"
       aria-labelledby="case-study-title"
     >
       <Container>
-        <div className="wrapper flex flex-wrap items-center justify-between max-[991px]:flex-col-reverse max-[991px]:gap-0">
-          <div className="left-col w-[47%] max-[1199px]:w-1/2 max-[991px]:mt-10 max-[991px]:w-full">
+        <div className="wrapper flex flex-wrap items-center justify-between max-[992px]:flex-col-reverse max-[992px]:gap-0">
+          <div className="left-col w-[47%] max-[1200px]:w-1/2 max-[992px]:mt-10 max-[992px]:w-full">
             <div className="hero-content">
               {eyebrowBadges.length > 0 && (
-                <div className="eyebrow relative mb-[15px] inline-flex items-center pl-10 before:absolute before:left-0 before:top-[7px] before:h-0.5 before:w-[30px] before:bg-[#ad5151] max-[767px]:pl-6 max-[767px]:before:top-1 max-[767px]:before:w-[15px]">
+                <div className="eyebrow relative mb-[15px] inline-flex items-center pl-10 before:absolute before:left-0 before:top-[7px] before:h-0.5 before:w-[30px] before:bg-[#ad5151] max-[768px]:pl-6 max-[768px]:before:top-1 max-[768px]:before:w-[15px]">
                   {eyebrowBadges.map((badge, index) => (
                     <span
                       key={badge}
                       className={cn(
-                        "font-montserrat text-[14px] font-semibold uppercase leading-[1.2] text-[#282828] max-[1199px]:text-[12px] max-[767px]:text-[10px]",
+                        "font-montserrat text-[14px] font-semibold uppercase leading-[1.2] text-[#282828] max-[1200px]:text-[12px] max-[768px]:text-[10px]",
                         index > 0 &&
                           "relative ml-2.5 pl-2.5 after:absolute after:left-[-2px] after:top-1/2 after:size-[3px] after:-translate-y-1/2 after:rounded-full after:bg-[#535353] after:content-['']",
                       )}
@@ -52,7 +52,7 @@ export function CaseStudyHero({ caseStudy }: CaseStudyHeroProps) {
               )}
               <h1
                 id="case-study-title"
-                className="mb-3 font-montreal-medium text-[35px] font-normal leading-[49px] tracking-normal text-[#282828] max-[767px]:text-[24px] max-[767px]:leading-[31.2px]"
+                className="mb-3 font-montreal-medium text-[35px] font-normal leading-[49px] tracking-normal text-[#282828] max-[768px]:text-[24px] max-[768px]:leading-[31.2px]"
               >
                 {caseStudy.title}
               </h1>
@@ -81,7 +81,7 @@ export function CaseStudyHero({ caseStudy }: CaseStudyHeroProps) {
             </div>
           </div>
 
-          <div className="right-col w-[46%] max-[1199px]:w-[47%] max-[991px]:w-full">
+          <div className="right-col w-[46%] max-[1200px]:w-[47%] max-[992px]:w-full">
             <div className="case-study-img relative flex w-full overflow-hidden rounded-[28px] pb-[68%] shadow-[0_28px_65px_rgba(40,40,40,0.11)]">
               <Image
                 src={caseStudy.hero.image.src}
@@ -128,7 +128,7 @@ export function CaseStudyAllInfo({ caseStudy }: CaseStudyAllInfoProps) {
   ];
 
   return (
-    <section className="border-b border-[rgba(40,40,40,0.11)] bg-white max-[767px]:border-b-0" aria-label={caseStudiesUiCopy.keyMetricsHeading}>
+    <section className="border-b border-[rgba(40,40,40,0.11)] bg-white max-[768px]:border-b-0" aria-label={caseStudiesUiCopy.keyMetricsHeading}>
       <Container>
         <div className="flex flex-wrap">
           {items.map((item) => (
@@ -136,14 +136,14 @@ export function CaseStudyAllInfo({ caseStudy }: CaseStudyAllInfoProps) {
               key={item.label}
               className={
                 item.isPrimary
-                  ? "w-[40%] border-l-0 py-6 pr-6 pl-0 max-[1199px]:w-1/2 max-[1199px]:p-5 max-[767px]:w-full max-[767px]:border-b max-[767px]:border-[rgba(40,40,40,0.11)] max-[767px]:py-4 max-[767px]:px-0"
-                  : "w-[20%] border-l border-[rgba(40,40,40,0.11)] p-6 max-[1199px]:w-1/2 max-[1199px]:p-5 max-[1199px]:even:border-l max-[1199px]:odd:border-l-0 max-[767px]:w-full max-[767px]:border-l-0 max-[767px]:border-b max-[767px]:border-[rgba(40,40,40,0.11)] max-[767px]:py-4 max-[767px]:px-0"
+                  ? "w-[40%] border-l-0 py-6 pr-6 pl-0 max-[1200px]:w-1/2 max-[1200px]:p-5 max-[768px]:w-full max-[768px]:border-b max-[768px]:border-[rgba(40,40,40,0.11)] max-[768px]:py-4 max-[768px]:px-0"
+                  : "w-[20%] border-l border-[rgba(40,40,40,0.11)] p-6 max-[1200px]:w-1/2 max-[1200px]:p-5 max-[1200px]:even:border-l max-[1200px]:odd:border-l-0 max-[768px]:w-full max-[768px]:border-l-0 max-[768px]:border-b max-[768px]:border-[rgba(40,40,40,0.11)] max-[768px]:py-4 max-[768px]:px-0"
               }
             >
               <span className="mb-1.5 block font-montserrat text-[14px] font-extrabold uppercase leading-[19px] tracking-[1.12px] text-[#282828]">
                 {item.label}
               </span>
-              <p className="m-0 font-sans text-[16px] font-medium leading-[1.6] text-[#535353] max-[1199px]:text-[14px]">
+              <p className="m-0 font-sans text-[16px] font-medium leading-[1.6] text-[#535353] max-[1200px]:text-[14px]">
                 {item.value}
               </p>
             </div>

@@ -167,7 +167,7 @@ export function BookIntroCallForm() {
 
       <div className="pt-2">
         <button
-          className="group/contact-submit relative inline-flex min-h-[49px] cursor-pointer overflow-hidden rounded-[30px] border-2 border-brand-red px-8 py-[15px] text-center text-sm font-bold uppercase tracking-wider text-white transition-colors duration-500 hover:border-[#4f4f4f] hover:text-[#4f4f4f] disabled:cursor-wait disabled:opacity-70 max-[767px]:w-full max-[767px]:justify-center"
+          className="group/contact-submit relative inline-flex min-h-[49px] cursor-pointer overflow-hidden rounded-[30px] border-2 border-brand-red px-8 py-[15px] text-center text-sm font-bold uppercase tracking-wider text-white transition-colors duration-500 hover:border-[#4f4f4f] hover:text-[#4f4f4f] disabled:cursor-wait disabled:opacity-70 max-[768px]:w-full max-[768px]:justify-center"
           disabled={isPending}
           type="submit"
         >

@@ -53,10 +53,10 @@ function ProjectMedia({ project }: { project: Project }) {
 
 function ProjectList({ decorative = false }: { decorative?: boolean }) {
   return (
-    <div className="flex w-1/2 shrink-0 basis-1/2 max-[767px]:w-auto max-[767px]:basis-auto max-[767px]:aria-hidden:hidden" aria-hidden={decorative || undefined} data-project-clone={decorative ? "true" : undefined}>
+    <div className="flex w-1/2 shrink-0 basis-1/2 max-[768px]:w-auto max-[768px]:basis-auto max-[768px]:aria-hidden:hidden" aria-hidden={decorative || undefined} data-project-clone={decorative ? "true" : undefined}>
       {projects.map((project) => (
         <a
-          className="group/project block w-1/5 shrink-0 basis-1/5 text-white max-[767px]:w-[calc(100cqw-50px)] max-[767px]:basis-[calc(100cqw-50px)] max-[767px]:snap-start"
+          className="group/project block w-1/5 shrink-0 basis-1/5 text-white max-[768px]:w-[calc(100cqw-50px)] max-[768px]:basis-[calc(100cqw-50px)] max-[768px]:snap-start"
           key={project.name}
           href={project.href}
           target="_blank"
@@ -66,12 +66,12 @@ function ProjectList({ decorative = false }: { decorative?: boolean }) {
           <span className="relative block w-full overflow-hidden pb-[70%] min-[992px]:pb-[56.25%] min-[1200px]:pb-[68%] min-[1600px]:pb-[56.25%]">
             <ProjectMedia project={project} />
           </span>
-          <span className="relative flex flex-col items-start justify-between border-y border-r border-[#45433d] px-[30px] py-5 font-display text-[30px] leading-[1.2] font-medium text-white max-[1380px]:p-5 max-[1380px]:text-2xl max-[767px]:min-h-[94px] max-[767px]:p-4 max-[767px]:pr-[35px] max-[767px]:text-lg max-[767px]:leading-[1.24]">
+          <span className="relative flex flex-col items-start justify-between border-y border-r border-[#45433d] px-[30px] py-5 font-display text-[30px] leading-[1.2] font-medium text-white max-[1380px]:p-5 max-[1380px]:text-2xl max-[768px]:min-h-[94px] max-[768px]:p-4 max-[768px]:pr-[35px] max-[768px]:text-lg max-[768px]:leading-[1.24]">
             <span>{project.name}</span>
-            <span className="mt-2.5 block font-montserrat text-[15px] font-semibold uppercase leading-[1.29] text-white/80 max-[1199px]:text-[11px] max-[767px]:mt-[7px] max-[767px]:text-xs">
+            <span className="mt-2.5 block font-montserrat text-[15px] font-semibold uppercase leading-[1.29] text-white/80 max-[1200px]:text-[11px] max-[768px]:mt-[7px] max-[768px]:text-xs">
               {project.technology}
             </span>
-            <span className="absolute right-[30px] top-1/2 -translate-y-1/2 max-[1380px]:right-5 max-[767px]:right-4" aria-hidden="true">
+            <span className="absolute right-[30px] top-1/2 -translate-y-1/2 max-[1380px]:right-5 max-[768px]:right-4" aria-hidden="true">
               <DiagonalArrowIcon  />
             </span>
           </span>
@@ -97,7 +97,7 @@ export function SelectedWorkSection({
   const projectTrackId = useId();
 
   return (
-    <section className="overflow-hidden bg-dark-green pt-[60px] pb-[52px] text-white max-[767px]:py-[30px]">
+    <section className="overflow-hidden bg-dark-green pt-[60px] pb-[52px] text-white max-[768px]:py-[30px]">
       <Container data-aos="fade-up">
         <SplitSectionHeading
           dark
@@ -112,10 +112,10 @@ export function SelectedWorkSection({
       <div
         id={projectTrackId}
         data-aos="fade-up"
-        className="w-full overflow-hidden py-[57px] pb-[51px] max-[992px]:pt-[25px] max-[992px]:pb-[30px] max-[767px]:overflow-x-auto max-[767px]:px-0 max-[767px]:pt-5 max-[767px]:pb-[30px] max-[767px]:[container-type:inline-size] max-[767px]:[scrollbar-width:none] max-[767px]:snap-x max-[767px]:snap-mandatory max-[767px]:[&::-webkit-scrollbar]:hidden"
+        className="w-full overflow-hidden py-[57px] pb-[51px] max-[992px]:pt-[25px] max-[992px]:pb-[30px] max-[768px]:overflow-x-auto max-[768px]:px-0 max-[768px]:pt-5 max-[768px]:pb-[30px] max-[768px]:[container-type:inline-size] max-[768px]:[scrollbar-width:none] max-[768px]:snap-x max-[768px]:snap-mandatory max-[768px]:[&::-webkit-scrollbar]:hidden"
         aria-label="Selected ecommerce work"
       >
-        <div className={cn("flex w-[calc(500%+5px)] min-[1600px]:w-[calc(425%+5px)] max-[767px]:w-max", styles.projectMotion)}>
+        <div className={cn("flex w-[calc(500%+5px)] min-[1600px]:w-[calc(425%+5px)] max-[768px]:w-max", styles.projectMotion)}>
           <ProjectList />
           <ClientAfterViewport mediaQuery="(min-width: 768px)" rootId={projectTrackId}>
             <ProjectList decorative />

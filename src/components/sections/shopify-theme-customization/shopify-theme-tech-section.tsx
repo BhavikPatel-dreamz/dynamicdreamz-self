@@ -49,24 +49,24 @@ export function ShopifyThemeTechSection({
 
   return (
     <section
-      className="wordpress-page-builders_sec pt-0 pb-20 max-[767px]:pb-10"
+      className="wordpress-page-builders_sec pt-0 pb-20 max-[768px]:pb-10"
       id="technologies"
     >
       <Container>
         <div className="mx-auto max-w-[850px] text-center" data-aos="fade-up">
-          <h2 className="font-display text-[35px] font-medium leading-[48.475px] tracking-[-0.7px] text-ink max-[992px]:text-[30px] max-[992px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33px] max-[767px]:tracking-[-0.48px]">
-            {formatBrText(content.title, "max-[1199px]:hidden")}
+          <h2 className="font-display text-[35px] font-medium leading-[48.475px] tracking-[-0.7px] text-ink max-[992px]:text-[30px] max-[992px]:leading-10 max-[768px]:text-2xl max-[768px]:leading-[33px] max-[768px]:tracking-[-0.48px]">
+            {formatBrText(content.title, "max-[1200px]:hidden")}
           </h2>
           {content.subtitle && (
-            <p className="mt-2.5 text-base font-medium leading-[30.4px] text-muted max-[767px]:text-sm max-[767px]:leading-6">
-              {formatBrText(content.subtitle, "max-[1199px]:hidden")}
+            <p className="mt-2.5 text-base font-medium leading-[30.4px] text-muted max-[768px]:text-sm max-[768px]:leading-6">
+              {formatBrText(content.subtitle, "max-[1200px]:hidden")}
             </p>
           )}
         </div>
 
         <div
           className={cn(
-            "builder-wrapper mx-auto mt-[50px] flex flex-wrap justify-center max-[767px]:mt-[35px]",
+            "builder-wrapper mx-auto mt-[50px] flex flex-wrap justify-center max-[768px]:mt-[35px]",
             isFiveCol ? "max-w-[1140px] -mx-2" : "max-w-[900px]",
           )}
           data-aos="fade-up"
@@ -81,8 +81,8 @@ export function ShopifyThemeTechSection({
                 className={cn(
                   "builder-col pb-[30px] text-center",
                   isFiveCol
-                    ? "w-1/5 px-2 max-[1199px]:w-1/4 max-[767px]:w-1/2"
-                    : "w-1/3 px-2.5 max-[767px]:w-1/2",
+                    ? "w-1/5 px-2 max-[1200px]:w-1/4 max-[768px]:w-1/2"
+                    : "w-1/3 px-2.5 max-[768px]:w-1/2",
                 )}
                 data-aos="fade-up"
                 key={title}
@@ -92,8 +92,8 @@ export function ShopifyThemeTechSection({
                     className={cn(
                       "builder-logo mx-auto flex items-center justify-center rounded-[10px] p-4",
                       isFiveCol
-                        ? "min-h-[146px] border border-[#d9d9d9] mb-4 max-[767px]:min-h-[120px]"
-                        : "size-[100px] rounded-[15px] mb-4 max-[767px]:size-[80px]",
+                        ? "min-h-[146px] border border-[#d9d9d9] mb-4 max-[768px]:min-h-[120px]"
+                        : "size-[100px] rounded-[15px] mb-4 max-[768px]:size-[80px]",
                     )}
                     style={{
                       background:
@@ -107,8 +107,8 @@ export function ShopifyThemeTechSection({
                       className={cn(
                         "object-contain",
                         isFiveCol
-                          ? "max-h-[70px] max-w-[120px] max-[767px]:max-h-[50px] max-[767px]:max-w-[100px]"
-                          : "max-h-[60px] max-w-[60px] max-[767px]:max-h-[48px] max-[767px]:max-w-[48px]",
+                          ? "max-h-[70px] max-w-[120px] max-[768px]:max-h-[50px] max-[768px]:max-w-[100px]"
+                          : "max-h-[60px] max-w-[60px] max-[768px]:max-h-[48px] max-[768px]:max-w-[48px]",
                       )}
                       height={70}
                       src={icon}
@@ -120,7 +120,7 @@ export function ShopifyThemeTechSection({
                       "font-sans text-ink",
                       isFiveCol
                         ? "text-base font-normal leading-[25.92px] tracking-[0.54px]"
-                        : "text-[18px] font-bold leading-[30.6px] tracking-[0.36px] max-[767px]:text-base",
+                        : "text-[18px] font-bold leading-[30.6px] tracking-[0.36px] max-[768px]:text-base",
                     )}
                   >
                     {title}
@@ -133,7 +133,7 @@ export function ShopifyThemeTechSection({
 
         {content.bottomDescription && (
           <div className="bottom-text mt-10 text-center" data-aos="fade-up">
-            <p className="mx-auto max-w-[850px] font-sans text-base font-semibold italic leading-[26px] text-[#535353] max-[767px]:text-sm max-[767px]:leading-6">
+            <p className="mx-auto max-w-[850px] font-sans text-base font-semibold italic leading-[26px] text-[#535353] max-[768px]:text-sm max-[768px]:leading-6">
               {formatBrText(content.bottomDescription)}
             </p>
           </div>

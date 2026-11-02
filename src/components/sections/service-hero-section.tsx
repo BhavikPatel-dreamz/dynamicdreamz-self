@@ -111,10 +111,10 @@ export function ServiceHeroSection({
     const sectionClass =
       className ??
       (isRisks
-        ? "inner-hero-sec risk-shopify-sec relative overflow-hidden bg-white pt-[190px] pb-[130px] max-[1199px]:pt-[140px] max-[1199px]:pb-[60px] max-[991px]:pt-[100px] max-[767px]:pt-[120px]"
+        ? "inner-hero-sec risk-shopify-sec relative overflow-hidden bg-white pt-[190px] pb-[130px] max-[1200px]:pt-[140px] max-[1200px]:pb-[60px] max-[992px]:pt-[100px] max-[768px]:pt-[120px]"
         : isCoBranding
-        ? "inner-hero-sec full-width-sec relative overflow-hidden bg-white pt-[210px] pb-[55px] max-[991px]:pt-[100px]"
-        : "inner-hero-sec full-width-sec shopify-theme-customization-sec relative overflow-hidden bg-white pt-[210px] pb-[55px] max-[991px]:pt-[100px]");
+        ? "inner-hero-sec full-width-sec relative overflow-hidden bg-white pt-[210px] pb-[55px] max-[992px]:pt-[100px]"
+        : "inner-hero-sec full-width-sec shopify-theme-customization-sec relative overflow-hidden bg-white pt-[210px] pb-[55px] max-[992px]:pt-[100px]");
     const headingClass =
       headingClassName ??
       (isRisks ? "!font-montreal-medium !font-normal !tracking-normal" : undefined);
@@ -131,12 +131,12 @@ export function ServiceHeroSection({
             <div className="left-col w-full">
               <div className={`inner-hero-content mx-auto ${maxWidth} text-center`}>
                 {content.eyebrows && content.eyebrows.length > 0 && (
-                  <div className="eyebrow relative mb-[15px] inline-flex items-center pl-10 before:absolute before:left-0 before:top-[7px] before:inline-block before:h-0.5 before:w-[30px] before:bg-brand-red before:content-[''] max-[1199px]:justify-center max-[767px]:flex max-[767px]:w-full max-[767px]:justify-start max-[767px]:pl-6 max-[767px]:text-left max-[767px]:before:top-1 max-[767px]:before:w-[15px]">
+                  <div className="eyebrow relative mb-[15px] inline-flex items-center pl-10 before:absolute before:left-0 before:top-[7px] before:inline-block before:h-0.5 before:w-[30px] before:bg-brand-red before:content-[''] max-[1200px]:justify-center max-[768px]:flex max-[768px]:w-full max-[768px]:justify-start max-[768px]:pl-6 max-[768px]:text-left max-[768px]:before:top-1 max-[768px]:before:w-[15px]">
                     {content.eyebrows.map((item, idx) => (
                       <span
                         key={idx}
                         className={cn(
-                          "relative inline-flex items-center font-montserrat text-[14px] font-semibold uppercase leading-[1.2] text-[#535353] max-[1199px]:text-[12px] max-[767px]:text-[10px]",
+                          "relative inline-flex items-center font-montserrat text-[14px] font-semibold uppercase leading-[1.2] text-[#535353] max-[1200px]:text-[12px] max-[768px]:text-[10px]",
                           idx > 0 &&
                             "ml-2.5 pl-2.5 after:absolute after:-left-[2px] after:top-1/2 after:size-[3px] after:-translate-y-1/2 after:rounded-full after:bg-[#535353] after:content-['']",
                         )}
@@ -147,24 +147,24 @@ export function ServiceHeroSection({
                   </div>
                 )}
                 {content.coBranding && (
-                  <div className="mobile-app-wrapper mb-[35px] flex items-center justify-center max-[767px]:mb-[25px]">
+                  <div className="mobile-app-wrapper mb-[35px] flex items-center justify-center max-[768px]:mb-[25px]">
                     <Image
                       alt={content.coBranding.leftLogo.alt}
-                      className="h-[37px] w-auto max-[767px]:h-[30px]"
+                      className="h-[37px] w-auto max-[768px]:h-[30px]"
                       height={content.coBranding.leftLogo.height}
                       src={content.coBranding.leftLogo.src}
                       width={content.coBranding.leftLogo.width}
                     />
                     <Image
                       alt={content.coBranding.separator.alt}
-                      className="mx-5 h-[29px] w-auto max-[767px]:mx-[15px] max-[767px]:h-5"
+                      className="mx-5 h-[29px] w-auto max-[768px]:mx-[15px] max-[768px]:h-5"
                       height={content.coBranding.separator.height}
                       src={content.coBranding.separator.src}
                       width={content.coBranding.separator.width}
                     />
                     <Image
                       alt={content.coBranding.rightLogo.alt}
-                      className="h-[39px] w-auto max-[991px]:max-w-[130px] max-[767px]:h-[30px] max-[767px]:max-w-[104px]"
+                      className="h-[39px] w-auto max-[992px]:max-w-[130px] max-[768px]:h-[30px] max-[768px]:max-w-[104px]"
                       height={content.coBranding.rightLogo.height}
                       src={content.coBranding.rightLogo.src}
                       width={content.coBranding.rightLogo.width}
@@ -173,7 +173,7 @@ export function ServiceHeroSection({
                 )}
                 <h1
                   className={cn(
-                    "mb-2.5 inline-block font-montreal-medium text-[50px] font-normal leading-[60px] tracking-normal text-ink max-[1199px]:text-[40px] max-[1199px]:leading-[50px] max-[767px]:text-[30px] max-[767px]:leading-[40px] max-[379px]:text-[28px] max-[379px]:leading-[38px]",
+                    "mb-2.5 inline-block font-montreal-medium text-[50px] font-normal leading-[60px] tracking-normal text-ink max-[1200px]:text-[40px] max-[1200px]:leading-[50px] max-[768px]:text-[30px] max-[768px]:leading-[40px] max-[379px]:text-[28px] max-[379px]:leading-[38px]",
                     headingClass,
                   )}
                 >
@@ -188,7 +188,7 @@ export function ServiceHeroSection({
                     content.titleAccent && typeof content.title === "string"
                       ? content.title.replace(content.titleAccent, "").trim()
                       : content.title,
-                    "max-[1199px]:hidden",
+                    "max-[1200px]:hidden",
                   )}
                   {content.titleAccent && titleAccentPosition !== "start" ? (
                     <>
@@ -200,7 +200,7 @@ export function ServiceHeroSection({
                   ) : null}
                 </h1>
                 {content.subheading ? (
-                  <span className="h4 mb-2.5 block font-montserrat text-[16px] font-semibold leading-[28px] text-[#535353] max-[1199px]:text-[14px] max-[1199px]:leading-[24px] max-[767px]:text-[16px] max-[767px]:leading-[27px]">
+                  <span className="h4 mb-2.5 block font-montserrat text-[16px] font-semibold leading-[28px] text-[#535353] max-[1200px]:text-[14px] max-[1200px]:leading-[24px] max-[768px]:text-[16px] max-[768px]:leading-[27px]">
                     {content.subheading}
                   </span>
                 ) : null}
@@ -220,7 +220,7 @@ export function ServiceHeroSection({
                   <>
                     <p
                       className={cn(
-                        "mt-6 mb-6 font-sans text-base font-normal leading-[30.4px] text-[#535353] max-[991px]:my-4",
+                        "mt-6 mb-6 font-sans text-base font-normal leading-[30.4px] text-[#535353] max-[992px]:my-4",
                         bodyClass,
                       )}
                     >
@@ -295,27 +295,27 @@ export function ServiceHeroSection({
   const isHeroNew = hasVideo || isShopifyPlus;
 
   const defaultLeftCol = isHeroNew
-    ? "left-col flex w-[51%] max-[1399px]:w-[50%] max-[1199px]:w-full max-[1199px]:items-center max-[1199px]:text-center max-[1199px]:pb-[30px] max-[991px]:py-10 max-[767px]:py-8 py-[60px] flex-col items-start justify-center"
+    ? "left-col flex w-[51%] max-[1399px]:w-[50%] max-[1200px]:w-full max-[1200px]:items-center max-[1200px]:text-center max-[1200px]:pb-[30px] max-[992px]:py-10 max-[768px]:py-8 py-[60px] flex-col items-start justify-center"
     : content.image
-    ? "left-col w-[58%] max-[1199px]:w-full max-[1199px]:text-center"
-    : "left-col w-[55.7%] max-[1199px]:w-full max-[1199px]:text-center";
+    ? "left-col w-[58%] max-[1200px]:w-full max-[1200px]:text-center"
+    : "left-col w-[55.7%] max-[1200px]:w-full max-[1200px]:text-center";
 
   const defaultRightCol = isHeroNew
-    ? "right-col w-[43.182%] max-[1399px]:w-[40%] max-[1199px]:w-[60%] max-[1199px]:mx-auto max-[1199px]:mb-10 max-[991px]:hidden flex"
+    ? "right-col w-[43.182%] max-[1399px]:w-[40%] max-[1200px]:w-[60%] max-[1200px]:mx-auto max-[1200px]:mb-10 max-[992px]:hidden flex"
     : content.image
-    ? "right-col w-[40%] max-[1199px]:mx-auto max-[1199px]:mt-[50px] max-[1199px]:w-1/2 max-[991px]:w-full"
-    : "right-col w-[43.182%] max-[1199px]:mx-auto max-[1199px]:mt-[50px] max-[1199px]:w-1/2 max-[991px]:w-full";
+    ? "right-col w-[40%] max-[1200px]:mx-auto max-[1200px]:mt-[50px] max-[1200px]:w-1/2 max-[992px]:w-full"
+    : "right-col w-[43.182%] max-[1200px]:mx-auto max-[1200px]:mt-[50px] max-[1200px]:w-1/2 max-[992px]:w-full";
 
   const splitSectionClass =
     className ??
     (isHeroNew
-      ? "hero-new-section relative overflow-hidden bg-[#f7f4e9] pt-[91px] pb-0 max-[991px]:pt-16"
-      : "inner-hero-sec relative overflow-hidden bg-white pt-[158px] pb-[55px] max-[991px]:pt-[100px]");
+      ? "hero-new-section relative overflow-hidden bg-[#f7f4e9] pt-[91px] pb-0 max-[992px]:pt-16"
+      : "inner-hero-sec relative overflow-hidden bg-white pt-[158px] pb-[55px] max-[992px]:pt-[100px]");
 
   const splitBodyClass =
     bodyClassName ??
     (isHeroNew
-      ? "!font-medium !text-[16px] !leading-[28px] max-[1199px]:!text-[14px] max-[1199px]:!leading-[24px] max-[767px]:!text-[14px] max-[767px]:!leading-[27px] !text-[#535353]"
+      ? "!font-medium !text-[16px] !leading-[28px] max-[1200px]:!text-[14px] max-[1200px]:!leading-[24px] max-[768px]:!text-[14px] max-[768px]:!leading-[27px] !text-[#535353]"
       : undefined);
 
   return (
@@ -325,12 +325,12 @@ export function ServiceHeroSection({
           <div className={cn(defaultLeftCol, leftColClassName)}>
             <div className="hero-content w-full">
               {content.eyebrows && content.eyebrows.length > 0 && (
-                <div className="eyebrow relative mb-[15px] inline-flex items-center pl-10 before:absolute before:left-0 before:top-[7px] before:h-0.5 before:w-[30px] before:bg-brand-red before:content-[''] max-[1199px]:mx-auto max-[1199px]:justify-center max-[767px]:mx-auto max-[767px]:justify-center max-[767px]:pl-6 max-[767px]:before:top-1 max-[767px]:before:w-[15px]">
+                <div className="eyebrow relative mb-[15px] inline-flex items-center pl-10 before:absolute before:left-0 before:top-[7px] before:h-0.5 before:w-[30px] before:bg-brand-red before:content-[''] max-[1200px]:mx-auto max-[1200px]:justify-center max-[768px]:mx-auto max-[768px]:justify-center max-[768px]:pl-6 max-[768px]:before:top-1 max-[768px]:before:w-[15px]">
                   {content.eyebrows.map((item, idx) => (
                     <span
                       key={idx}
                       className={cn(
-                        "relative inline-flex items-center font-montserrat text-[14px] font-semibold uppercase leading-[1.2] text-[#535353] max-[1199px]:text-[12px] max-[767px]:text-[10px]",
+                        "relative inline-flex items-center font-montserrat text-[14px] font-semibold uppercase leading-[1.2] text-[#535353] max-[1200px]:text-[12px] max-[768px]:text-[10px]",
                         idx > 0 &&
                           "ml-2.5 pl-2.5 after:absolute after:-left-[2px] after:top-1/2 after:size-[3px] after:-translate-y-1/2 after:rounded-full after:bg-[#535353] after:content-['']",
                       )}
@@ -342,7 +342,7 @@ export function ServiceHeroSection({
               )}
               <h1
                 className={cn(
-                  "mb-2.5 inline-block font-montreal-medium text-[50px] font-normal leading-[60px] tracking-normal text-ink max-[1199px]:text-[40px] max-[1199px]:leading-[50px] max-[767px]:text-[30px] max-[767px]:leading-[40px]",
+                  "mb-2.5 inline-block font-montreal-medium text-[50px] font-normal leading-[60px] tracking-normal text-ink max-[1200px]:text-[40px] max-[1200px]:leading-[50px] max-[768px]:text-[30px] max-[768px]:leading-[40px]",
                   headingClassName,
                 )}
               >
@@ -357,7 +357,7 @@ export function ServiceHeroSection({
                   content.titleAccent && typeof content.title === "string"
                     ? content.title.replace(content.titleAccent, "").trim()
                     : content.title,
-                  "max-[1199px]:hidden",
+                  "max-[1200px]:hidden",
                 )}
                 {content.titleAccent && titleAccentPosition !== "start" ? (
                   <>
@@ -369,7 +369,7 @@ export function ServiceHeroSection({
                 ) : null}
               </h1>
               {content.subheading ? (
-                <span className="h4 mb-2.5 block font-montserrat text-[16px] font-semibold leading-[28px] text-[#535353] max-[1199px]:text-[14px] max-[1199px]:leading-[24px] max-[767px]:text-[16px] max-[767px]:leading-[27px]">
+                <span className="h4 mb-2.5 block font-montserrat text-[16px] font-semibold leading-[28px] text-[#535353] max-[1200px]:text-[14px] max-[1200px]:leading-[24px] max-[768px]:text-[16px] max-[768px]:leading-[27px]">
                   {content.subheading}
                 </span>
               ) : null}
@@ -377,7 +377,7 @@ export function ServiceHeroSection({
                 content.paragraphs.map((paragraph, idx) => (
                   <p
                     className={cn(
-                      "mt-0 mb-2.5 font-sans text-[16px] font-medium leading-[28px] text-[#535353] max-[1199px]:text-[14px] max-[1199px]:leading-[24px] max-[767px]:leading-[27px]",
+                      "mt-0 mb-2.5 font-sans text-[16px] font-medium leading-[28px] text-[#535353] max-[1200px]:text-[14px] max-[1200px]:leading-[24px] max-[768px]:leading-[27px]",
                       splitBodyClass,
                     )}
                     key={idx}
@@ -389,7 +389,7 @@ export function ServiceHeroSection({
                 <>
                   <p
                     className={cn(
-                      "mt-0 mb-2.5 font-sans text-[16px] font-medium leading-[28px] text-[#535353] max-[1199px]:text-[14px] max-[1199px]:leading-[24px] max-[767px]:leading-[27px]",
+                      "mt-0 mb-2.5 font-sans text-[16px] font-medium leading-[28px] text-[#535353] max-[1200px]:text-[14px] max-[1200px]:leading-[24px] max-[768px]:leading-[27px]",
                       splitBodyClass,
                     )}
                   >
@@ -398,7 +398,7 @@ export function ServiceHeroSection({
                   {content.secondaryDescription && (
                     <p
                       className={cn(
-                        "mt-0 mb-2.5 font-sans text-[16px] font-medium leading-[28px] text-[#535353] max-[1199px]:text-[14px] max-[1199px]:leading-[24px] max-[767px]:leading-[27px]",
+                        "mt-0 mb-2.5 font-sans text-[16px] font-medium leading-[28px] text-[#535353] max-[1200px]:text-[14px] max-[1200px]:leading-[24px] max-[768px]:leading-[27px]",
                         splitBodyClass,
                       )}
                     >
@@ -408,7 +408,7 @@ export function ServiceHeroSection({
                 </>
               ) : null}
               {content.secondaryCta ? (
-                <div className="services-hero-btn mt-2.5 flex flex-wrap items-center gap-5 max-[1199px]:justify-center max-[575px]:flex-col max-[575px]:items-center max-[575px]:gap-[13px] max-[575px]:w-full [&_a]:max-[575px]:w-full [&_button]:max-[575px]:w-full">
+                <div className="services-hero-btn mt-2.5 flex flex-wrap items-center gap-5 max-[1200px]:justify-center max-[575px]:flex-col max-[575px]:items-center max-[575px]:gap-[13px] max-[575px]:w-full [&_a]:max-[575px]:w-full [&_button]:max-[575px]:w-full">
                   {content.ctaLabel && (
                     <ButtonLink
                       
@@ -429,9 +429,9 @@ export function ServiceHeroSection({
                   </ButtonLink>
                 </div>
               ) : content.ctaLabel ? (
-                <div className="btn-group pt-2.5 max-[1199px]:text-center">
+                <div className="btn-group pt-2.5 max-[1200px]:text-center">
                   <ButtonLink
-                    className="max-[991px]:!px-5 max-[991px]:!py-3 max-[575px]:!w-full"
+                    className="max-[992px]:!px-5 max-[992px]:!py-3 max-[575px]:!w-full"
                     aria-label={content.ctaLabel}
                     href={ctaHref}
                     variant="primary"
@@ -444,9 +444,9 @@ export function ServiceHeroSection({
               {content.badges && content.badges.length > 0 && (
                 <div
                   className={cn(
-                    "global_brands_grid_wrap mt-[30px] -mx-[15px] flex items-center flex-wrap max-[1199px]:justify-center max-[991px]:mx-auto",
+                    "global_brands_grid_wrap mt-[30px] -mx-[15px] flex items-center flex-wrap max-[1200px]:justify-center max-[992px]:mx-auto",
                     content.badges.length === 4
-                      ? "max-[767px]:relative max-[767px]:overflow-hidden max-[767px]:before:absolute max-[767px]:before:top-0 max-[767px]:before:left-1/2 max-[767px]:before:block max-[767px]:before:h-full max-[767px]:before:w-px max-[767px]:before:-translate-x-1/2 max-[767px]:before:bg-[#d9d9d9] max-[767px]:before:content-[''] max-[767px]:after:absolute max-[767px]:after:top-1/2 max-[767px]:after:left-5 max-[767px]:after:block max-[767px]:after:h-px max-[767px]:after:w-[calc(100%-40px)] max-[767px]:after:bg-[#d9d9d9] max-[767px]:after:content-['']"
+                      ? "max-[768px]:relative max-[768px]:overflow-hidden max-[768px]:before:absolute max-[768px]:before:top-0 max-[768px]:before:left-1/2 max-[768px]:before:block max-[768px]:before:h-full max-[768px]:before:w-px max-[768px]:before:-translate-x-1/2 max-[768px]:before:bg-[#d9d9d9] max-[768px]:before:content-[''] max-[768px]:after:absolute max-[768px]:after:top-1/2 max-[768px]:after:left-5 max-[768px]:after:block max-[768px]:after:h-px max-[768px]:after:w-[calc(100%-40px)] max-[768px]:after:bg-[#d9d9d9] max-[768px]:after:content-['']"
                       : "",
                   )}
                   aria-label="Partnerships and independent review profiles"
@@ -454,10 +454,10 @@ export function ServiceHeroSection({
                   {content.badges.map((badge, idx) => (
                     <div
                       className={cn(
-                        "global_brands_item relative px-[15px] max-[1199px]:px-3 border-r border-[#d9d9d9] last:border-r-0",
+                        "global_brands_item relative px-[15px] max-[1200px]:px-3 border-r border-[#d9d9d9] last:border-r-0",
                         content.badges && content.badges.length === 4
-                          ? "max-[767px]:w-1/2 max-[767px]:p-[15px] max-[767px]:text-center max-[767px]:border-0"
-                          : "max-[767px]:w-1/3 max-[767px]:p-[15px] max-[767px]:text-center max-[767px]:border-r max-[767px]:border-[#d9d9d9] max-[767px]:last:border-r-0",
+                          ? "max-[768px]:w-1/2 max-[768px]:p-[15px] max-[768px]:text-center max-[768px]:border-0"
+                          : "max-[768px]:w-1/3 max-[768px]:p-[15px] max-[768px]:text-center max-[768px]:border-r max-[768px]:border-[#d9d9d9] max-[768px]:last:border-r-0",
                       )}
                       key={`${badge.href}-${idx}`}
                     >

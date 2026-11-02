@@ -50,10 +50,10 @@ export function FeaturesGridSection({
 
   const colClass =
     columns === 4
-      ? "w-1/4 max-[1199px]:w-1/2 max-[767px]:w-full"
+      ? "w-1/4 max-[1200px]:w-1/2 max-[768px]:w-full"
       : columns === 2
-      ? "w-1/2 max-[767px]:w-full"
-      : "w-1/3 max-[992px]:w-1/2 max-[767px]:w-full";
+      ? "w-1/2 max-[768px]:w-full"
+      : "w-1/3 max-[992px]:w-1/2 max-[768px]:w-full";
 
   return (
     <section
@@ -65,7 +65,7 @@ export function FeaturesGridSection({
         <div
           data-aos="fade-up"
           className={cn(
-            "title mb-12 max-[767px]:mb-6",
+            "title mb-12 max-[768px]:mb-6",
             titleAlign === "center" ? "mx-auto max-w-[850px] text-center" : "text-left",
           )}
         >
@@ -76,12 +76,12 @@ export function FeaturesGridSection({
               </span>
             </div>
           ) : null}
-          <h2 className="font-montreal-medium text-[35px] font-normal leading-[48.475px] tracking-normal text-ink max-[992px]:text-[30px] max-[992px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33px]">
-            {formatBrText(resolvedHeading, "max-[1199px]:hidden")}
+          <h2 className="font-montreal-medium text-[35px] font-normal leading-[48.475px] tracking-normal text-ink max-[992px]:text-[30px] max-[992px]:leading-10 max-[768px]:text-2xl max-[768px]:leading-[33px]">
+            {formatBrText(resolvedHeading, "max-[1200px]:hidden")}
           </h2>
           {resolvedDescription ? (
-            <p className="mt-2.5 font-sans text-base font-medium leading-[27px] text-[#535353] max-[767px]:text-sm">
-              {formatBrText(resolvedDescription, "max-[1199px]:hidden")}
+            <p className="mt-2.5 font-sans text-base font-medium leading-[27px] text-[#535353] max-[768px]:text-sm">
+              {formatBrText(resolvedDescription, "max-[1200px]:hidden")}
             </p>
           ) : null}
         </div>
@@ -104,11 +104,11 @@ export function FeaturesGridSection({
                   ) : item.iconSvg ? (
                     <div className="icon relative z-10 mb-4 h-[50px] w-[50px]">{item.iconSvg}</div>
                   ) : null}
-                  <h3 className="relative z-10 mt-2 mb-2.5 font-montreal-medium text-[20px] font-normal leading-[28px] text-ink max-[767px]:text-lg">
-                    {formatBrText(item.title, "max-[767px]:hidden")}
+                  <h3 className="relative z-10 mt-2 mb-2.5 font-montreal-medium text-[20px] font-normal leading-[28px] text-ink max-[768px]:text-lg">
+                    {formatBrText(item.title, "max-[768px]:hidden")}
                   </h3>
-                  <p className="relative z-10 font-sans text-base font-medium leading-[27px] tracking-[0.32px] text-[#535353] max-[767px]:text-sm max-[767px]:leading-6">
-                    {formatBrText(item.description, "max-[767px]:hidden")}
+                  <p className="relative z-10 font-sans text-base font-medium leading-[27px] tracking-[0.32px] text-[#535353] max-[768px]:text-sm max-[768px]:leading-6">
+                    {formatBrText(item.description, "max-[768px]:hidden")}
                   </p>
                 </div>
 

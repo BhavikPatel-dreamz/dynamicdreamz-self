@@ -48,7 +48,7 @@ export function RecentArchitecturePatternsSection({
           {content.items.map((item) => (
             <div
               data-aos="fade-up"
-              className="recent_architecture_col mb-[15px] w-1/4 px-[7.5px] max-[1199px]:w-1/2 max-[767px]:w-full"
+              className="recent_architecture_col mb-[15px] w-1/4 px-[7.5px] max-[1200px]:w-1/2 max-[768px]:w-full"
               key={item.title}
             >
               <article className="recent_architecture_item flex h-full flex-col justify-between gap-[30px] rounded-[20px] border border-[rgba(23,30,22,0.10)] bg-white p-[30px_18px]">
@@ -66,7 +66,7 @@ export function RecentArchitecturePatternsSection({
                   </p>
                 </div>
                 <div className="bottom_text">
-                  <p className="rounded-[10px] border border-[#D0D0CE] bg-[#FAFAF7] p-[8.5px_7px] text-center font-sans text-[10px] font-bold leading-[150%] tracking-[-0.33px] text-[#282828] max-[1399px]:flex max-[1399px]:min-h-[49px] max-[1399px]:items-center max-[1399px]:p-[8.5px_10px] max-[1399px]:text-left max-[1199px]:min-h-0 max-[1199px]:w-fit">
+                  <p className="rounded-[10px] border border-[#D0D0CE] bg-[#FAFAF7] p-[8.5px_7px] text-center font-sans text-[10px] font-bold leading-[150%] tracking-[-0.33px] text-[#282828] max-[1399px]:flex max-[1399px]:min-h-[49px] max-[1399px]:items-center max-[1399px]:p-[8.5px_10px] max-[1399px]:text-left max-[1200px]:min-h-0 max-[1200px]:w-fit">
                     {item.stack}
                   </p>
                 </div>

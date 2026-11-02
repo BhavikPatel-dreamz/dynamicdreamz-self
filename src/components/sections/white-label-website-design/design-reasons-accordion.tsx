@@ -20,7 +20,7 @@ export function DesignReasonsAccordion({ items }: DesignReasonsAccordionProps) {
         const panelId = `white-label-design-reason-panel-${index}`;
 
         return (
-          <article data-aos="fade-up" className="rounded-[15px] border border-ink/10 bg-white px-6 py-[19px] max-[767px]:rounded-[10px] max-[767px]:px-[15px] max-[767px]:py-[18px]" key={item.title}>
+          <article data-aos="fade-up" className="rounded-[15px] border border-ink/10 bg-white px-6 py-[19px] max-[768px]:rounded-[10px] max-[768px]:px-[15px] max-[768px]:py-[18px]" key={item.title}>
             <button
               className="flex w-full cursor-pointer items-center border-0 bg-transparent text-left"
               id={triggerId}
@@ -29,7 +29,7 @@ export function DesignReasonsAccordion({ items }: DesignReasonsAccordionProps) {
               aria-expanded={isOpen}
               onClick={() => setOpenIndex(isOpen ? null : index)}
             >
-              <span className="flex-1 pr-2.5 text-lg leading-[1.28] font-semibold text-brand-red max-[767px]:text-base">
+              <span className="flex-1 pr-2.5 text-lg leading-[1.28] font-semibold text-brand-red max-[768px]:text-base">
                 {item.title}
               </span>
               <span className="relative flex size-8 shrink-0 items-center justify-center rounded-lg bg-dark-green/5" aria-hidden="true">
@@ -53,7 +53,7 @@ export function DesignReasonsAccordion({ items }: DesignReasonsAccordionProps) {
               inert={!isOpen}
             >
               <div className="overflow-hidden">
-                <p className="pt-2.5 text-base leading-[1.9] font-medium text-muted max-[767px]:leading-[21px]">
+                <p className="pt-2.5 text-base leading-[1.9] font-medium text-muted max-[768px]:leading-[21px]">
                   {item.description}
                 </p>
               </div>

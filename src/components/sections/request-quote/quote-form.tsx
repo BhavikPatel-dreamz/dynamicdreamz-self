@@ -37,7 +37,7 @@ function FieldLabel({
   return (
     <label
       htmlFor={htmlFor}
-      className="mb-2.5 block text-base leading-6 font-semibold text-[#090909] max-[1199px]:text-sm max-[992px]:text-base"
+      className="mb-2.5 block text-base leading-6 font-semibold text-[#090909] max-[1200px]:text-sm max-[992px]:text-base"
     >
       {children}
       {required ? <em className="not-italic text-[#d92128]">*</em> : null}
@@ -58,7 +58,7 @@ export type QuoteFormProps = {
 export function QuoteForm({
   title = requestQuoteContent.form.title,
   showTitle = true,
-  className = "right-col w-1/2 py-[150px] pl-[46px] pb-[110px] max-[1199px]:pl-[30px] max-[992px]:w-full max-[992px]:pt-[150px] max-[992px]:pl-0 max-[992px]:pb-[50px] max-[767px]:pt-[145px] max-[767px]:pb-[50px]",
+  className = "right-col w-1/2 py-[150px] pl-[46px] pb-[110px] max-[1200px]:pl-[30px] max-[992px]:w-full max-[992px]:pt-[150px] max-[992px]:pl-0 max-[992px]:pb-[50px] max-[768px]:pt-[145px] max-[768px]:pb-[50px]",
   phonePlaceholder = quoteFormCopy.placeholders.phone,
   submitLabel = quoteFormCopy.submit,
   submitButtonClassName,
@@ -111,12 +111,12 @@ export function QuoteForm({
   return (
     <div className={className}>
       {showTitle && (
-        <h2 className="mb-3 font-display text-[35px] leading-[48.475px] font-medium text-ink max-[1199px]:text-[29px] max-[767px]:leading-[33.24px] max-[767px]:tracking-[-.48px] max-[992px]:mb-10 max-[359px]:text-2xl">
+        <h2 className="mb-3 font-display text-[35px] leading-[48.475px] font-medium text-ink max-[1200px]:text-[29px] max-[768px]:leading-[33.24px] max-[768px]:tracking-[-.48px] max-[992px]:mb-10 max-[359px]:text-2xl">
           {title}
         </h2>
       )}
 
-      <form ref={formRef} action={formAction} aria-label={quoteFormCopy.ariaLabel} className="max-[767px]:relative max-[767px]:-top-0.5">
+      <form ref={formRef} action={formAction} aria-label={quoteFormCopy.ariaLabel} className="max-[768px]:relative max-[768px]:-top-0.5">
         <input
           name="website"
           tabIndex={-1}
@@ -128,13 +128,13 @@ export function QuoteForm({
           <input key={name} type="hidden" name={name} />
         ))}
 
-        <div className="-mx-[7px] flex flex-wrap max-[767px]:mx-0">
-          <div className="mb-7 w-1/2 px-[7px] max-[1199px]:mb-5 max-[992px]:mb-[15px] max-[767px]:mb-5 max-[767px]:w-full max-[767px]:px-0">
+        <div className="-mx-[7px] flex flex-wrap max-[768px]:mx-0">
+          <div className="mb-7 w-1/2 px-[7px] max-[1200px]:mb-5 max-[992px]:mb-[15px] max-[768px]:mb-5 max-[768px]:w-full max-[768px]:px-0">
             <FieldLabel htmlFor="quote-name" required>
               {quoteFormCopy.labels.name}
             </FieldLabel>
             <input
-              className="h-[49px] w-full rounded-[5px] border-[1.5px] border-[#dfdfdf] px-4 text-base font-medium text-[#090909] placeholder:text-[#9a9a9a] focus:border-[#090909] focus:outline-none max-[1199px]:text-sm max-[992px]:h-[44px]"
+              className="h-[49px] w-full rounded-[5px] border-[1.5px] border-[#dfdfdf] px-4 text-base font-medium text-[#090909] placeholder:text-[#9a9a9a] focus:border-[#090909] focus:outline-none max-[1200px]:text-sm max-[992px]:h-[44px]"
               id="quote-name"
               name="name"
               type="text"
@@ -145,12 +145,12 @@ export function QuoteForm({
             />
           </div>
 
-          <div className="mb-7 w-1/2 px-[7px] max-[1199px]:mb-5 max-[992px]:mb-5 max-[767px]:w-full max-[767px]:px-0">
+          <div className="mb-7 w-1/2 px-[7px] max-[1200px]:mb-5 max-[992px]:mb-5 max-[768px]:w-full max-[768px]:px-0">
             <FieldLabel htmlFor="quote-email" required>
               {quoteFormCopy.labels.email}
             </FieldLabel>
             <input
-              className="h-[49px] w-full rounded-[5px] border-[1.5px] border-[#dfdfdf] px-4 text-base font-medium text-[#090909] placeholder:text-[#9a9a9a] focus:border-[#090909] focus:outline-none max-[1199px]:text-sm max-[992px]:h-[44px]"
+              className="h-[49px] w-full rounded-[5px] border-[1.5px] border-[#dfdfdf] px-4 text-base font-medium text-[#090909] placeholder:text-[#9a9a9a] focus:border-[#090909] focus:outline-none max-[1200px]:text-sm max-[992px]:h-[44px]"
               id="quote-email"
               name="email"
               type="email"
@@ -161,7 +161,7 @@ export function QuoteForm({
             />
           </div>
 
-          <div className="mb-7 w-1/2 px-[7px] max-[1199px]:mb-5 max-[992px]:mb-5 max-[767px]:w-full max-[767px]:px-0">
+          <div className="mb-7 w-1/2 px-[7px] max-[1200px]:mb-5 max-[992px]:mb-5 max-[768px]:w-full max-[768px]:px-0">
             <FieldLabel htmlFor="quote-phone">{quoteFormCopy.labels.phone}</FieldLabel>
             <PhoneInput
               
@@ -174,10 +174,10 @@ export function QuoteForm({
             />
           </div>
 
-          <div className="mb-7 w-1/2 px-[7px] max-[1199px]:mb-5 max-[992px]:mb-5 max-[767px]:w-full max-[767px]:px-0">
+          <div className="mb-7 w-1/2 px-[7px] max-[1200px]:mb-5 max-[992px]:mb-5 max-[768px]:w-full max-[768px]:px-0">
             <FieldLabel htmlFor="quote-company">{quoteFormCopy.labels.company}</FieldLabel>
             <input
-              className="h-[49px] w-full rounded-[5px] border-[1.5px] border-[#dfdfdf] px-4 text-base font-medium text-[#090909] placeholder:text-[#9a9a9a] focus:border-[#090909] focus:outline-none max-[1199px]:text-sm max-[992px]:h-[44px]"
+              className="h-[49px] w-full rounded-[5px] border-[1.5px] border-[#dfdfdf] px-4 text-base font-medium text-[#090909] placeholder:text-[#9a9a9a] focus:border-[#090909] focus:outline-none max-[1200px]:text-sm max-[992px]:h-[44px]"
               id="quote-company"
               name="company"
               type="text"
@@ -187,10 +187,10 @@ export function QuoteForm({
             />
           </div>
 
-          <div className="mb-7 w-1/2 px-[7px] max-[1199px]:mb-5 max-[992px]:mb-5 max-[767px]:w-full max-[767px]:px-0">
+          <div className="mb-7 w-1/2 px-[7px] max-[1200px]:mb-5 max-[992px]:mb-5 max-[768px]:w-full max-[768px]:px-0">
             <FieldLabel htmlFor="quote-website">{quoteFormCopy.labels.website}</FieldLabel>
             <input
-              className="h-[49px] w-full rounded-[5px] border-[1.5px] border-[#dfdfdf] px-4 text-base font-medium text-[#090909] placeholder:text-[#9a9a9a] focus:border-[#090909] focus:outline-none max-[1199px]:text-sm max-[992px]:h-[44px]"
+              className="h-[49px] w-full rounded-[5px] border-[1.5px] border-[#dfdfdf] px-4 text-base font-medium text-[#090909] placeholder:text-[#9a9a9a] focus:border-[#090909] focus:outline-none max-[1200px]:text-sm max-[992px]:h-[44px]"
               id="quote-website"
               name="websiteUrl"
               type="text"
@@ -200,10 +200,10 @@ export function QuoteForm({
             />
           </div>
 
-          <div className="mb-7 w-1/2 px-[7px] max-[1199px]:mb-5 max-[992px]:mb-5 max-[767px]:w-full max-[767px]:px-0">
+          <div className="mb-7 w-1/2 px-[7px] max-[1200px]:mb-5 max-[992px]:mb-5 max-[768px]:w-full max-[768px]:px-0">
             <FieldLabel htmlFor="quote-budget">{quoteFormCopy.labels.budget}</FieldLabel>
             <select
-              className="h-[49px] w-full cursor-pointer appearance-none rounded-[5px] border-[1.5px] border-[#dfdfdf] bg-white bg-[url('/assets/request-quote/icons/select-arrow.svg')] bg-[position:calc(100%-16px)_center] bg-no-repeat px-4 pr-9 text-base font-medium text-[#090909] focus:border-[#090909] focus:outline-none max-[1199px]:text-sm max-[992px]:h-[44px]"
+              className="h-[49px] w-full cursor-pointer appearance-none rounded-[5px] border-[1.5px] border-[#dfdfdf] bg-white bg-[url('/assets/request-quote/icons/select-arrow.svg')] bg-[position:calc(100%-16px)_center] bg-no-repeat px-4 pr-9 text-base font-medium text-[#090909] focus:border-[#090909] focus:outline-none max-[1200px]:text-sm max-[992px]:h-[44px]"
               id="quote-budget"
               name="budget"
               defaultValue=""
@@ -217,10 +217,10 @@ export function QuoteForm({
             </select>
           </div>
 
-          <div className="mb-7 w-full px-[7px] max-[1199px]:mb-5 max-[992px]:mb-[15px] max-[767px]:mb-5 max-[767px]:px-0">
+          <div className="mb-7 w-full px-[7px] max-[1200px]:mb-5 max-[992px]:mb-[15px] max-[768px]:mb-5 max-[768px]:px-0">
             <FieldLabel htmlFor="quote-project">{quoteFormCopy.labels.project}</FieldLabel>
             <textarea
-              className="h-[136px] w-full resize-none rounded-[5px] border-[1.5px] border-[#dfdfdf] px-4 py-3 text-base font-medium text-[#090909] placeholder:text-[#9a9a9a] focus:border-[#090909] focus:outline-none max-[1199px]:text-sm"
+              className="h-[136px] w-full resize-none rounded-[5px] border-[1.5px] border-[#dfdfdf] px-4 py-3 text-base font-medium text-[#090909] placeholder:text-[#9a9a9a] focus:border-[#090909] focus:outline-none max-[1200px]:text-sm"
               id="quote-project"
               name="project"
               placeholder={quoteFormCopy.placeholders.project}

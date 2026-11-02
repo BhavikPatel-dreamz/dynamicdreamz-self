@@ -24,7 +24,7 @@ export function ShopifyMobileAppComparisonSection({
   content,
 }: ShopifyMobileAppComparisonSectionProps) {
   return (
-    <section className="why_build_a_custom_shopify_mobile_app bg-[#F7F4E9] py-20 max-[991px]:py-[50px]">
+    <section className="why_build_a_custom_shopify_mobile_app bg-[#F7F4E9] py-20 max-[992px]:py-[50px]">
       <Container variant="wide">
         <SplitSectionHeading
           variant="services"
@@ -42,7 +42,7 @@ export function ShopifyMobileAppComparisonSection({
                   {content.tableHeaders.map((header, idx) => (
                     <th
                       key={header}
-                      className={`p-[31px_20px] font-sans text-sm font-bold uppercase leading-[13px] text-[#282828] border-b border-[rgba(0,0,0,0.10)] w-1/3 max-[767px]:p-[20px_16px] ${
+                      className={`p-[31px_20px] font-sans text-sm font-bold uppercase leading-[13px] text-[#282828] border-b border-[rgba(0,0,0,0.10)] w-1/3 max-[768px]:p-[20px_16px] ${
                         idx === content.tableHeaders.length - 1
                           ? "bg-[#EFF4EF] border-l border-[rgba(0,0,0,0.10)]"
                           : "bg-[#FAFAF7]"
@@ -61,20 +61,20 @@ export function ShopifyMobileAppComparisonSection({
                   return (
                     <tr key={row.title}>
                       <td
-                        className={`p-[16px_20px] align-middle bg-white ${borderBottom} text-[#282828] text-sm leading-[22px] max-[767px]:p-[12px_16px] max-[767px]:text-xs`}
+                        className={`p-[16px_20px] align-middle bg-white ${borderBottom} text-[#282828] text-sm leading-[22px] max-[768px]:p-[12px_16px] max-[768px]:text-xs`}
                       >
                         <strong>{row.title}</strong>
-                        <span className="table-sub block text-xs font-medium leading-5 text-[#535353] mt-2.5 max-[767px]:mt-1">
+                        <span className="table-sub block text-xs font-medium leading-5 text-[#535353] mt-2.5 max-[768px]:mt-1">
                           {row.subtitle}
                         </span>
                       </td>
                       <td
-                        className={`p-[16px_20px] align-middle bg-white ${borderBottom} text-sm font-medium leading-[22px] text-[#535353] max-[767px]:p-[12px_16px] max-[767px]:text-xs`}
+                        className={`p-[16px_20px] align-middle bg-white ${borderBottom} text-sm font-medium leading-[22px] text-[#535353] max-[768px]:p-[12px_16px] max-[768px]:text-xs`}
                       >
                         {row.appBuilder}
                       </td>
                       <td
-                        className={`p-[16px_20px] align-middle bg-[#EFF4EF] ${borderBottom} border-l border-[rgba(0,0,0,0.10)] text-base font-bold leading-[22px] text-[#282828] max-[991px]:text-sm max-[767px]:p-[12px_16px] max-[767px]:text-xs`}
+                        className={`p-[16px_20px] align-middle bg-[#EFF4EF] ${borderBottom} border-l border-[rgba(0,0,0,0.10)] text-base font-bold leading-[22px] text-[#282828] max-[992px]:text-sm max-[768px]:p-[12px_16px] max-[768px]:text-xs`}
                       >
                         {row.custom}
                       </td>

@@ -37,7 +37,7 @@ function FieldLabel({
   return (
     <label
       htmlFor={htmlFor}
-      className="mb-4 block text-lg font-semibold leading-[26.19px] text-[#090909] max-[1199px]:mb-2.5 max-[991px]:text-base max-[991px]:leading-normal"
+      className="mb-4 block text-lg font-semibold leading-[26.19px] text-[#090909] max-[1200px]:mb-2.5 max-[992px]:text-base max-[992px]:leading-normal"
     >
       {children}
       {required ? <em className="ml-1 not-italic text-[#d92128]">*</em> : null}
@@ -137,12 +137,12 @@ export function CareerApplyNowForm() {
   }
 
   return (
-    <div className="right-col w-[61%] max-[1199px]:w-[55%] max-[991px]:w-full">
+    <div className="right-col w-[61%] max-[1200px]:w-[55%] max-[992px]:w-full">
       <form
         ref={formRef}
         action={formAction}
         aria-label={careerApplyFormCopy.ariaLabel}
-        className="form-row -mx-[7px] flex flex-wrap max-[767px]:mx-0"
+        className="form-row -mx-[7px] flex flex-wrap max-[768px]:mx-0"
       >
         <input
           name="website"
@@ -155,7 +155,7 @@ export function CareerApplyNowForm() {
           <input key={name} type="hidden" name={name} />
         ))}
 
-        <div className="col-md-6 mb-7 w-1/2 px-[7px] max-[991px]:mb-5 max-[767px]:w-full max-[767px]:px-0">
+        <div className="col-md-6 mb-7 w-1/2 px-[7px] max-[992px]:mb-5 max-[768px]:w-full max-[768px]:px-0">
           <div className="form-group">
             <FieldLabel htmlFor="job-position">
               {careerApplyFormCopy.labels.position}
@@ -165,7 +165,7 @@ export function CareerApplyNowForm() {
                 id="job-position"
                 name="PositionAppliedFor"
                 defaultValue=""
-                className="h-[49px] w-full cursor-pointer appearance-none rounded-[5px] border-[1.5px] border-[#dfdfdf] bg-[rgba(254,254,254,0.93)] bg-[url('/assets/request-quote/icons/select-arrow.svg')] bg-[position:calc(100%-16px)_center] bg-no-repeat px-4 pr-9 text-base font-medium text-[#090909] focus:border-[#090909] focus:outline-none max-[1199px]:text-sm max-[991px]:h-[44px]"
+                className="h-[49px] w-full cursor-pointer appearance-none rounded-[5px] border-[1.5px] border-[#dfdfdf] bg-[rgba(254,254,254,0.93)] bg-[url('/assets/request-quote/icons/select-arrow.svg')] bg-[position:calc(100%-16px)_center] bg-no-repeat px-4 pr-9 text-base font-medium text-[#090909] focus:border-[#090909] focus:outline-none max-[1200px]:text-sm max-[992px]:h-[44px]"
               >
                 <option value="">{careerApplyFormCopy.placeholders.position}</option>
                 {careerApplyNowContent.positions.map((pos) => (
@@ -178,7 +178,7 @@ export function CareerApplyNowForm() {
           </div>
         </div>
 
-        <div className="col-md-6 mb-7 w-1/2 px-[7px] max-[991px]:mb-5 max-[767px]:w-full max-[767px]:px-0">
+        <div className="col-md-6 mb-7 w-1/2 px-[7px] max-[992px]:mb-5 max-[768px]:w-full max-[768px]:px-0">
           <div className="form-group">
             <FieldLabel htmlFor="job-location">
               {careerApplyFormCopy.labels.location}
@@ -188,7 +188,7 @@ export function CareerApplyNowForm() {
                 id="job-location"
                 name="Location"
                 defaultValue="Surat"
-                className="h-[49px] w-full cursor-pointer appearance-none rounded-[5px] border-[1.5px] border-[#dfdfdf] bg-[rgba(254,254,254,0.93)] bg-[url('/assets/request-quote/icons/select-arrow.svg')] bg-[position:calc(100%-16px)_center] bg-no-repeat px-4 pr-9 text-base font-medium text-[#090909] focus:border-[#090909] focus:outline-none max-[1199px]:text-sm max-[991px]:h-[44px]"
+                className="h-[49px] w-full cursor-pointer appearance-none rounded-[5px] border-[1.5px] border-[#dfdfdf] bg-[rgba(254,254,254,0.93)] bg-[url('/assets/request-quote/icons/select-arrow.svg')] bg-[position:calc(100%-16px)_center] bg-no-repeat px-4 pr-9 text-base font-medium text-[#090909] focus:border-[#090909] focus:outline-none max-[1200px]:text-sm max-[992px]:h-[44px]"
               >
                 {careerApplyNowContent.locations.map((loc) => (
                   <option key={loc} value={loc}>
@@ -200,7 +200,7 @@ export function CareerApplyNowForm() {
           </div>
         </div>
 
-        <div className="col-md-6 mb-7 w-1/2 px-[7px] max-[991px]:mb-5 max-[767px]:w-full max-[767px]:px-0">
+        <div className="col-md-6 mb-7 w-1/2 px-[7px] max-[992px]:mb-5 max-[768px]:w-full max-[768px]:px-0">
           <div className="form-group">
             <FieldLabel htmlFor="job-name" required>
               {careerApplyFormCopy.labels.name}
@@ -213,12 +213,12 @@ export function CareerApplyNowForm() {
               required
               maxLength={400}
               placeholder={careerApplyFormCopy.placeholders.name}
-              className="h-[49px] w-full rounded-[5px] border-[1.5px] border-[#dfdfdf] bg-[rgba(254,254,254,0.93)] px-4 text-base font-medium text-[#090909] placeholder:text-[#9a9a9a] focus:border-[#090909] focus:outline-none max-[1199px]:text-sm max-[991px]:h-[44px]"
+              className="h-[49px] w-full rounded-[5px] border-[1.5px] border-[#dfdfdf] bg-[rgba(254,254,254,0.93)] px-4 text-base font-medium text-[#090909] placeholder:text-[#9a9a9a] focus:border-[#090909] focus:outline-none max-[1200px]:text-sm max-[992px]:h-[44px]"
             />
           </div>
         </div>
 
-        <div className="col-md-6 mb-7 w-1/2 px-[7px] max-[991px]:mb-5 max-[767px]:w-full max-[767px]:px-0">
+        <div className="col-md-6 mb-7 w-1/2 px-[7px] max-[992px]:mb-5 max-[768px]:w-full max-[768px]:px-0">
           <div className="form-group">
             <FieldLabel htmlFor="job-email" required>
               {careerApplyFormCopy.labels.email}
@@ -231,17 +231,17 @@ export function CareerApplyNowForm() {
               required
               maxLength={400}
               placeholder={careerApplyFormCopy.placeholders.email}
-              className="h-[49px] w-full rounded-[5px] border-[1.5px] border-[#dfdfdf] bg-[rgba(254,254,254,0.93)] px-4 text-base font-medium text-[#090909] placeholder:text-[#9a9a9a] focus:border-[#090909] focus:outline-none max-[1199px]:text-sm max-[991px]:h-[44px]"
+              className="h-[49px] w-full rounded-[5px] border-[1.5px] border-[#dfdfdf] bg-[rgba(254,254,254,0.93)] px-4 text-base font-medium text-[#090909] placeholder:text-[#9a9a9a] focus:border-[#090909] focus:outline-none max-[1200px]:text-sm max-[992px]:h-[44px]"
             />
           </div>
         </div>
 
-        <div className="col-md-6 mb-7 w-1/2 px-[7px] max-[991px]:mb-5 max-[767px]:w-full max-[767px]:px-0">
+        <div className="col-md-6 mb-7 w-1/2 px-[7px] max-[992px]:mb-5 max-[768px]:w-full max-[768px]:px-0">
           <div className="form-group">
             <FieldLabel htmlFor="job-phone">
               {careerApplyFormCopy.labels.phone}
             </FieldLabel>
-            <div className="flex h-[49px] w-full items-center rounded-[5px] border-[1.5px] border-[#dfdfdf] bg-[rgba(254,254,254,0.93)] px-4 text-base font-medium text-[#090909] transition-colors focus-within:border-[#090909] max-[1199px]:text-sm max-[991px]:h-[44px]">
+            <div className="flex h-[49px] w-full items-center rounded-[5px] border-[1.5px] border-[#dfdfdf] bg-[rgba(254,254,254,0.93)] px-4 text-base font-medium text-[#090909] transition-colors focus-within:border-[#090909] max-[1200px]:text-sm max-[992px]:h-[44px]">
               <span
                 className="mr-3 flex shrink-0 items-center gap-1.5 border-r border-[#dfdfdf] pr-3 text-sm text-[#090909]"
                 aria-label={careerApplyFormCopy.phoneAriaLabel}
@@ -271,13 +271,13 @@ export function CareerApplyNowForm() {
                 autoComplete="tel"
                 inputMode="tel"
                 maxLength={400}
-                className="h-full min-w-0 flex-1 border-0 bg-transparent p-0 text-base font-medium text-[#090909] placeholder:text-[#9a9a9a] focus:outline-none max-[1199px]:text-sm"
+                className="h-full min-w-0 flex-1 border-0 bg-transparent p-0 text-base font-medium text-[#090909] placeholder:text-[#9a9a9a] focus:outline-none max-[1200px]:text-sm"
               />
             </div>
           </div>
         </div>
 
-        <div className="col-md-6 mb-7 w-1/2 px-[7px] max-[991px]:mb-5 max-[767px]:w-full max-[767px]:px-0">
+        <div className="col-md-6 mb-7 w-1/2 px-[7px] max-[992px]:mb-5 max-[768px]:w-full max-[768px]:px-0">
           <div className="form-group">
             <FieldLabel htmlFor="job-experience">
               {careerApplyFormCopy.labels.experience}
@@ -288,12 +288,12 @@ export function CareerApplyNowForm() {
               type="text"
               maxLength={400}
               placeholder={careerApplyFormCopy.placeholders.experience}
-              className="h-[49px] w-full rounded-[5px] border-[1.5px] border-[#dfdfdf] bg-[rgba(254,254,254,0.93)] px-4 text-base font-medium text-[#090909] placeholder:text-[#9a9a9a] focus:border-[#090909] focus:outline-none max-[1199px]:text-sm max-[991px]:h-[44px]"
+              className="h-[49px] w-full rounded-[5px] border-[1.5px] border-[#dfdfdf] bg-[rgba(254,254,254,0.93)] px-4 text-base font-medium text-[#090909] placeholder:text-[#9a9a9a] focus:border-[#090909] focus:outline-none max-[1200px]:text-sm max-[992px]:h-[44px]"
             />
           </div>
         </div>
 
-        <div className="col-md-12 mb-7 w-full px-[7px] max-[991px]:mb-5 max-[767px]:px-0">
+        <div className="col-md-12 mb-7 w-full px-[7px] max-[992px]:mb-5 max-[768px]:px-0">
           <div className="form-group">
             <FieldLabel htmlFor="job-message">
               {careerApplyFormCopy.labels.message}
@@ -304,12 +304,12 @@ export function CareerApplyNowForm() {
               rows={10}
               maxLength={2000}
               placeholder={careerApplyFormCopy.placeholders.message}
-              className="h-[136px] w-full resize-none rounded-[5px] border-[1.5px] border-[#dfdfdf] bg-[rgba(254,254,254,0.93)] px-4 py-3 text-base font-medium text-[#090909] placeholder:text-[#9a9a9a] focus:border-[#090909] focus:outline-none max-[1199px]:text-sm"
+              className="h-[136px] w-full resize-none rounded-[5px] border-[1.5px] border-[#dfdfdf] bg-[rgba(254,254,254,0.93)] px-4 py-3 text-base font-medium text-[#090909] placeholder:text-[#9a9a9a] focus:border-[#090909] focus:outline-none max-[1200px]:text-sm"
             />
           </div>
         </div>
 
-        <div className="col-md-12 mb-7 w-full px-[7px] max-[991px]:mb-5 max-[767px]:px-0">
+        <div className="col-md-12 mb-7 w-full px-[7px] max-[992px]:mb-5 max-[768px]:px-0">
           <div className="form-group">
             <FieldLabel htmlFor="file-upload">
               {careerApplyFormCopy.labels.resume}
@@ -327,11 +327,11 @@ export function CareerApplyNowForm() {
                 />
                 <label
                   htmlFor="file-upload"
-                  className="inline-block cursor-pointer rounded-[5px] border-[1.5px] border-[#dfdfdf] bg-[url('/assets/career/icons/upload-icon.svg')] bg-[position:6px_center] bg-no-repeat py-5 pr-5 pl-20 text-base font-medium leading-[23.28px] text-[#090909] transition-colors hover:border-[#090909] max-[991px]:py-4 max-[991px]:pl-16 max-[991px]:text-sm"
+                  className="inline-block cursor-pointer rounded-[5px] border-[1.5px] border-[#dfdfdf] bg-[url('/assets/career/icons/upload-icon.svg')] bg-[position:6px_center] bg-no-repeat py-5 pr-5 pl-20 text-base font-medium leading-[23.28px] text-[#090909] transition-colors hover:border-[#090909] max-[992px]:py-4 max-[992px]:pl-16 max-[992px]:text-sm"
                 >
                   {careerApplyFormCopy.upload.button}
                 </label>
-                <span className="ml-4 text-xs font-medium leading-[17.46px] text-[#090909] max-[1299px]:ml-2.5 max-[1299px]:text-[11px] max-[1199px]:mt-2.5 max-[1199px]:block max-[1199px]:w-full max-[1199px]:ml-0">
+                <span className="ml-4 text-xs font-medium leading-[17.46px] text-[#090909] max-[1299px]:ml-2.5 max-[1299px]:text-[11px] max-[1200px]:mt-2.5 max-[1200px]:block max-[1200px]:w-full max-[1200px]:ml-0">
                   {careerApplyFormCopy.upload.helpText}
                 </span>
               </div>
@@ -345,7 +345,7 @@ export function CareerApplyNowForm() {
         </div>
 
         <div
-          className={`col-md-12 w-full px-[7px] max-[767px]:px-0 ${
+          className={`col-md-12 w-full px-[7px] max-[768px]:px-0 ${
             state.status === "idle" ? "h-0" : "mb-5 min-h-6"
           }`}
           aria-live="polite"
@@ -361,7 +361,7 @@ export function CareerApplyNowForm() {
           ) : null}
         </div>
 
-        <div className="col-md-12 w-full px-[7px] max-[767px]:px-0">
+        <div className="col-md-12 w-full px-[7px] max-[768px]:px-0">
           <div className="form-group mb-0">
             <ButtonLink
               type="submit"

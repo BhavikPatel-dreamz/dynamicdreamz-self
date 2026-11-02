@@ -4067,7 +4067,7 @@ export function BlockRenderer({ sections }: BlockRendererProps) {
 
             return (
               <PortfolioShowcaseSection
-                className={isConsecutiveWhite ? "pt-0 max-[991px]:pt-0" : undefined}
+                className={isConsecutiveWhite ? "pt-0 max-[992px]:pt-0" : undefined}
                 cardVariant={cardVariant}
                 columns={(psBlock.columns as 2 | 3 | 4) || 4}
                 content={{
@@ -4173,7 +4173,7 @@ export function BlockRenderer({ sections }: BlockRendererProps) {
             return (
               <EvaluationFrameworkSection
                 key={blockKey}
-                className={isConsecutiveWhite ? "pt-0 max-[991px]:pt-0" : undefined}
+                className={isConsecutiveWhite ? "pt-0 max-[992px]:pt-0" : undefined}
                 content={{
                   eyebrow: efBlock.eyebrow,
                   heading: efBlock.heading,

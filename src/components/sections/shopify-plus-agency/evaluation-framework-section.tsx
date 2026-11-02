@@ -29,7 +29,7 @@ export function EvaluationFrameworkSection({
 }: EvaluationFrameworkSectionProps) {
   return (
     <section
-      className={cn("how-to-choose-spa-sec bg-white py-20 max-[991px]:py-[50px]", className)}
+      className={cn("how-to-choose-spa-sec bg-white py-20 max-[992px]:py-[50px]", className)}
       data-section="evaluation-framework"
       id={id}
     >
@@ -45,14 +45,14 @@ export function EvaluationFrameworkSection({
         <div className="spa-wrapper flex flex-wrap border-t border-l border-[#2828281c]" data-aos="fade-up">
           {content.items.map((item, index) => (
             <div
-              className="spa-col w-1/4 max-[991px]:w-1/2 max-[767px]:w-full"
+              className="spa-col w-1/4 max-[992px]:w-1/2 max-[768px]:w-full"
               key={index}
             >
               <article className="spa-item flex h-full flex-col border-r border-b border-[#2828281c] p-6 max-[1399px]:p-5">
                 <div className="spa-title">
                   <span
                     aria-hidden="true"
-                    className="mb-5 flex size-[34px] items-center justify-center rounded-full bg-[#fbefd7] font-montserrat text-[10px] font-bold text-brand-red max-[991px]:mb-2.5"
+                    className="mb-5 flex size-[34px] items-center justify-center rounded-full bg-[#fbefd7] font-montserrat text-[10px] font-bold text-brand-red max-[992px]:mb-2.5"
                   >
                     {String(index + 1).padStart(2, "0")}
                   </span>

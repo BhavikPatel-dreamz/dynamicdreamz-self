@@ -31,7 +31,7 @@ export function AboutFoundersSection({
     customFounders && customFounders.length > 0 ? customFounders : founders;
 
   return (
-    <section data-about="founders" aria-labelledby="about-founders-title" className="pt-20 max-[1199px]:pt-[60px]">
+    <section data-about="founders" aria-labelledby="about-founders-title" className="pt-20 max-[1200px]:pt-[60px]">
       <Container>
         <SplitSectionHeading 
         heading={title}
@@ -39,22 +39,22 @@ export function AboutFoundersSection({
         eyebrow={eyebrow}
         />
 
-        <div className="-mx-2 flex flex-wrap max-[767px]:mx-0">
+        <div className="-mx-2 flex flex-wrap max-[768px]:mx-0">
           {activeFounders.map((founder) => (
             <article
               data-aos="fade-up"
-              className="mb-[30px] w-1/3 px-2 text-center max-[767px]:w-full max-[767px]:px-0"
+              className="mb-[30px] w-1/3 px-2 text-center max-[768px]:w-full max-[768px]:px-0"
               key={founder.name}
             >
-              <div className="relative mb-[-5px] pb-[125%] max-[767px]:mb-0">
+              <div className="relative mb-[-5px] pb-[125%] max-[768px]:mb-0">
                 <Image className="rounded-[20px] object-cover" src={founder.image} alt={founder.alt} fill sizes="(max-width: 767px) calc(100vw - 32px), (max-width: 1199px) 31vw, 370px" />
               </div>
-              <div className="pt-6 pr-[29px] pl-6 max-[1199px]:px-0 max-[1199px]:pt-5 max-[992px]:pt-[15px]">
-                <h3 className="mb-[5px] text-xl leading-[27px] font-normal text-ink max-[1199px]:text-[18px]">{founder.name}</h3>
+              <div className="pt-6 pr-[29px] pl-6 max-[1200px]:px-0 max-[1200px]:pt-5 max-[992px]:pt-[15px]">
+                <h3 className="mb-[5px] text-xl leading-[27px] font-normal text-ink max-[1200px]:text-[18px]">{founder.name}</h3>
                 <p className="mb-4 text-[15px] leading-[22px] font-medium text-muted italic">{founder.role}</p>
-                <p className="mb-4 text-base leading-6 font-medium text-muted max-[1199px]:text-[14px]">{founder.biography}</p>
+                <p className="mb-4 text-base leading-6 font-medium text-muted max-[1200px]:text-[14px]">{founder.biography}</p>
                 <a
-                  className="mx-auto flex h-[39px] w-[34px] items-start rounded-full max-[1199px]:h-[38px] [&_circle]:transition-colors [&_circle]:duration-300 hover:[&_circle]:fill-brand-red"
+                  className="mx-auto flex h-[39px] w-[34px] items-start rounded-full max-[1200px]:h-[38px] [&_circle]:transition-colors [&_circle]:duration-300 hover:[&_circle]:fill-brand-red"
                   href={founder.linkedIn}
                   target="_blank"
                   rel="nofollow noopener noreferrer"

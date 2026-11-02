@@ -140,7 +140,7 @@ export function BlogContentRenderer({ blocks, className }: BlogContentRendererPr
             if (block.level === 2) {
               return (
                 <h2
-                  className="mt-[30px] mb-[15px] text-[24px] leading-normal font-normal text-[#282828] max-[991px]:mt-5"
+                  className="mt-[30px] mb-[15px] text-[24px] leading-normal font-normal text-[#282828] max-[992px]:mt-5"
                   id={block.id}
                   key={index}
                 >
@@ -151,7 +151,7 @@ export function BlogContentRenderer({ blocks, className }: BlogContentRendererPr
             if (block.level === 3) {
               return (
                 <h3
-                  className="mb-2.5 text-[20px] leading-[28.8px] font-normal text-[#282828] max-[991px]:text-[18px] max-[991px]:leading-[26.8px]"
+                  className="mb-2.5 text-[20px] leading-[28.8px] font-normal text-[#282828] max-[992px]:text-[18px] max-[992px]:leading-[26.8px]"
                   id={block.id}
                   key={index}
                 >
@@ -162,7 +162,7 @@ export function BlogContentRenderer({ blocks, className }: BlogContentRendererPr
             if (block.level === 4) {
               return (
                 <h4
-                  className="mb-2.5 text-[17px] leading-[24.92px] font-normal text-[#282828] max-[991px]:text-[16px] max-[991px]:leading-[23.92px]"
+                  className="mb-2.5 text-[17px] leading-[24.92px] font-normal text-[#282828] max-[992px]:text-[16px] max-[992px]:leading-[23.92px]"
                   id={block.id}
                   key={index}
                 >
@@ -184,7 +184,7 @@ export function BlogContentRenderer({ blocks, className }: BlogContentRendererPr
           case "paragraph":
             return (
               <p
-                className="mb-[15px] text-[16px] font-medium leading-[30.4px] text-[#535353] last:mb-0 max-[767px]:text-[15px] max-[767px]:leading-[28px]"
+                className="mb-[15px] text-[16px] font-medium leading-[30.4px] text-[#535353] last:mb-0 max-[768px]:text-[15px] max-[768px]:leading-[28px]"
                 key={index}
               >
                 <InlineNodes nodes={block.children} />

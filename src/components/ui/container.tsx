@@ -18,7 +18,7 @@ const containerVariantStyles: Record<ContainerVariant, string> = {
   narrow:
     "max-w-none px-4 md:px-5 min-[576px]:max-w-[540px] min-[768px]:max-w-[720px] min-[992px]:max-w-[960px] min-[1200px]:max-w-[1180px] min-[1440px]:max-w-[1180px]",
   fullBleedTablet:
-    "max-w-none px-[15px] max-[1199px]:max-w-full max-[1199px]:px-0 min-[1200px]:max-w-[1180px] min-[1300px]:max-w-[1280px] min-[1400px]:max-w-[1408px]",
+    "max-w-none px-[15px] max-[1200px]:max-w-full max-[1200px]:px-0 min-[1200px]:max-w-[1180px] min-[1300px]:max-w-[1280px] min-[1400px]:max-w-[1408px]",
   form:
     "max-w-none px-4 md:px-5 min-[576px]:max-w-[540px] min-[768px]:max-w-[720px] min-[992px]:max-w-[960px] min-[1200px]:max-w-[1180px] min-[1300px]:max-w-[1360px] min-[1300px]:px-10",
 };

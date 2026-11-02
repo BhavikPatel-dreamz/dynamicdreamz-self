@@ -398,7 +398,7 @@ export function MobileNavigation({ navigation, contactEmail }: MobileNavigationP
   }
 
   return (
-    <div className="hidden w-[30px] shrink-0 max-[1199px]:block mr-3 max-[767px]:mr-0">
+    <div className="hidden w-[30px] shrink-0 max-[1200px]:block mr-3 max-[768px]:mr-0">
       <button
         className="flex h-[30px] w-[30px] cursor-pointer items-center justify-start border-0 bg-transparent p-0 shrink-0"
         ref={toggleRef}
@@ -429,7 +429,7 @@ export function MobileNavigation({ navigation, contactEmail }: MobileNavigationP
         <div className="flex min-h-[30px] items-center justify-between pb-2.5">
           <Link href="/" aria-label="Dynamic Dreamz home" onClick={closeMenu}>
             <Image
-              className="flex h-auto w-[225px] max-[767px]:w-[170px] max-[379px]:w-[150px]"
+              className="flex h-auto w-[225px] max-[768px]:w-[170px] max-[379px]:w-[150px]"
               src={siteConfig.logo}
               alt="Dynamic Dreamz - Shopify Platinum Partner"
               width={257}

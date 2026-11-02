@@ -76,8 +76,8 @@ export function SplitFaqSection({
     : "bg-white"
   const paddingClass =
     isPt0
-      ? "pt-0 pb-20 max-[992px]:py-[60px] max-[767px]:pt-10 max-[767px]:pb-5"
-      : "py-[60px] max-[767px]:pt-10 max-[767px]:pb-5";
+      ? "pt-0 pb-20 max-[992px]:py-[60px] max-[768px]:pt-10 max-[768px]:pb-5"
+      : "py-[60px] max-[768px]:pt-10 max-[768px]:pb-5";
   const containerClass = isMobileAppFaq
     ? "min-[1400px]:max-w-[1408px] px-[15px]"
     : undefined;
@@ -91,7 +91,7 @@ export function SplitFaqSection({
     >
       <Container className={containerClass}>
         <div className="wrapper flex justify-between gap-[105px] max-[1399px]:gap-8 max-[992px]:flex-col max-[992px]:gap-2.5">
-          <div className="w-[41%] max-[1199px]:w-[44%] max-[992px]:w-full" data-aos="fade-up">
+          <div className="w-[41%] max-[1200px]:w-[44%] max-[992px]:w-full" data-aos="fade-up">
             <header className="header-text mb-0 flex flex-col items-start text-left min-[992px]:sticky min-[992px]:top-[20px]">
               {eyebrow ? (
                 <Eyebrow as="span" className="mb-4">
@@ -100,21 +100,21 @@ export function SplitFaqSection({
               ) : null}
               <h2
                 className={cn(
-                  "mb-2.5 font-display text-[35px] leading-[49px] font-normal tracking-normal text-ink max-[1199px]:text-[30px] max-[767px]:mb-4 max-[767px]:text-2xl max-[767px]:leading-[33.24px] max-[767px]:tracking-[-0.48px]",
+                  "mb-2.5 font-display text-[35px] leading-[49px] font-normal tracking-normal text-ink max-[1200px]:text-[30px] max-[768px]:mb-4 max-[768px]:text-2xl max-[768px]:leading-[33.24px] max-[768px]:tracking-[-0.48px]",
                   headingClassName,
                 )}
                 id={titleId}
               >
-                {formatBrText(heading, headingBrClassName ?? "max-[1199px]:hidden")}
+                {formatBrText(heading, headingBrClassName ?? "max-[1200px]:hidden")}
               </h2>
               {description ? (
-                <p className="max-w-[500px] text-base leading-[28px] font-medium text-[#535353] max-[767px]:text-sm max-[767px]:leading-[24px]">
-                  {formatBrText(description, "max-[1199px]:hidden")}
+                <p className="max-w-[500px] text-base leading-[28px] font-medium text-[#535353] max-[768px]:text-sm max-[768px]:leading-[24px]">
+                  {formatBrText(description, "max-[1200px]:hidden")}
                 </p>
               ) : null}
             </header>
           </div>
-          <div className="accordion-main w-[57%] max-w-[654px] grow max-[1199px]:w-[53%] max-[1199px]:max-w-none max-[992px]:w-full" data-aos="fade-up">
+          <div className="accordion-main w-[57%] max-w-[654px] grow max-[1200px]:w-[53%] max-[1200px]:max-w-none max-[992px]:w-full" data-aos="fade-up">
             {lazyAccordion ? (
               <LazyFaqAccordion
                 animateOnReveal={animateOnReveal}
@@ -125,20 +125,20 @@ export function SplitFaqSection({
                     
                     iconVariant={iconVariant}
                     idPrefix={idPrefix}
-                    itemClassName={cn("!mb-0 !rounded-none !border-0 !border-b !border-ink/10 !bg-transparent !py-6 first:!pt-0 max-[767px]:!py-5 max-[767px]:first:!pt-0 last:!border-b-0", itemClassName)}
+                    itemClassName={cn("!mb-0 !rounded-none !border-0 !border-b !border-ink/10 !bg-transparent !py-6 first:!pt-0 max-[768px]:!py-5 max-[768px]:first:!pt-0 last:!border-b-0", itemClassName)}
                     items={items}
                     panelContentClassName={cn("!px-0 !pt-5 !pb-0", panelContentClassName)}
-                    questionClassName={cn("!font-montreal-medium !text-[20px] !leading-[28px] !font-medium max-[1199px]:!text-[18px] max-[1199px]:!leading-[26px] max-[640px]:!text-base max-[640px]:!leading-6", questionClassName)}
+                    questionClassName={cn("!font-montreal-medium !text-[20px] !leading-[28px] !font-medium max-[1200px]:!leading-[26px] max-[640px]:!text-base max-[640px]:!leading-6", questionClassName)}
                     triggerClassName={cn("!pl-0 !pr-[37px] !py-0", triggerClassName)}
                   />
                 }
                 
                 iconVariant={iconVariant}
                 idPrefix={idPrefix}
-                itemClassName={cn("!mb-0 !rounded-none !border-0 !border-b !border-ink/10 !bg-transparent !py-6 first:!pt-0 max-[767px]:!py-5 max-[767px]:first:!pt-0 last:!border-b-0", itemClassName)}
+                itemClassName={cn("!mb-0 !rounded-none !border-0 !border-b !border-ink/10 !bg-transparent !py-6 first:!pt-0 max-[768px]:!py-5 max-[768px]:first:!pt-0 last:!border-b-0", itemClassName)}
                 items={items}
                 panelContentClassName={cn("!px-0 !pt-5 !pb-0", panelContentClassName)}
-                questionClassName={cn("!font-montreal-medium !text-[20px] !leading-[28px] !font-medium max-[1199px]:!text-[18px] max-[1199px]:!leading-[26px] max-[640px]:!text-base max-[640px]:!leading-6", questionClassName)}
+                questionClassName={cn("!font-montreal-medium !text-[20px] !leading-[28px] !font-medium max-[1200px]:!text-[18px] max-[1200px]:!leading-[26px] max-[640px]:!text-base max-[640px]:!leading-6", questionClassName)}
                 triggerClassName={cn("!pl-0 !pr-[37px] !py-0", triggerClassName)}
                 rootMargin={lazyRootMargin}
               />
@@ -149,10 +149,10 @@ export function SplitFaqSection({
                 
                 iconVariant={iconVariant}
                 idPrefix={idPrefix}
-                itemClassName={cn("!mb-0 !rounded-none !border-0 !border-b !border-ink/10 !bg-transparent !py-6 first:!pt-0 max-[767px]:!py-5 max-[767px]:first:!pt-0 last:!border-b-0", itemClassName)}
+                itemClassName={cn("!mb-0 !rounded-none !border-0 !border-b !border-ink/10 !bg-transparent !py-6 first:!pt-0 max-[768px]:!py-5 max-[768px]:first:!pt-0 last:!border-b-0", itemClassName)}
                 items={items}
                 panelContentClassName={cn("!px-0 !pt-5 !pb-0", panelContentClassName)}
-                questionClassName={cn("!font-montreal-medium !text-[20px] !leading-[28px] !font-medium max-[1199px]:!text-[18px] max-[1199px]:!leading-[26px] max-[640px]:!text-base max-[640px]:!leading-6", questionClassName)}
+                questionClassName={cn("!font-montreal-medium !text-[20px] !leading-[28px] !font-medium max-[1200px]:!leading-[26px] max-[640px]:!text-base max-[640px]:!leading-6", questionClassName)}
                 triggerClassName={cn("!pl-0 !pr-[37px] !py-0", triggerClassName)}
               />
             )}

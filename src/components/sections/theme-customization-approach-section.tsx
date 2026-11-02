@@ -66,7 +66,7 @@ export function ThemeCustomizationApproachSection({
         />
 
         <div
-          className="wrapper grid grid-cols-2 gap-4 max-[1199px]:block max-[1199px]:space-y-4"
+          className="wrapper grid grid-cols-2 gap-4 max-[1200px]:block max-[1200px]:space-y-4"
           data-aos="fade-up"
         >
           {content.approaches.map((item, itemIdx) => {
@@ -75,7 +75,7 @@ export function ThemeCustomizationApproachSection({
             return (
               <div
                 className={cn(
-                  "block rounded-[24px] border border-[rgba(40,40,40,0.11)] p-[30px] pb-[18px] max-[767px]:rounded-[20px] max-[767px]:p-6 max-[767px]:pb-3",
+                  "block rounded-[24px] border border-[rgba(40,40,40,0.11)] p-[30px] pb-[18px] max-[768px]:rounded-[20px] max-[768px]:p-6 max-[768px]:pb-3",
                   item.isHighlighted
                     ? "left-block bg-[#eff4ef]"
                     : "right-block bg-white",
@@ -102,7 +102,7 @@ export function ThemeCustomizationApproachSection({
                         </span>
                       )}
                       {item.title && (
-                        <h3 className="mb-2 font-display text-[22px] font-medium leading-tight text-ink max-[767px]:text-lg">
+                        <h3 className="mb-2 font-display text-[22px] font-medium leading-tight text-ink max-[768px]:text-lg">
                           {item.title}
                         </h3>
                       )}

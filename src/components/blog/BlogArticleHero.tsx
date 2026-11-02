@@ -25,7 +25,7 @@ function BackArrow() {
 
 function GoogleIcon() {
   return (
-    <svg aria-hidden="true" className="h-auto w-10 shrink-0 max-[767px]:w-9" viewBox="0 0 512 512" fill="none">
+    <svg aria-hidden="true" className="h-auto w-10 shrink-0 max-[768px]:w-9" viewBox="0 0 512 512" fill="none">
       <path
         d="M178.36 16.84C127.203 34.5867 83.0857 68.2707 52.4877 112.944C21.8896 157.618 6.42368 210.926 8.36172 265.039C10.2998 319.152 29.5396 371.217 63.2551 413.587C96.9706 455.957 143.385 486.399 195.68 500.44C238.077 511.38 282.496 511.861 325.12 501.84C363.733 493.167 399.431 474.615 428.72 448C459.203 419.454 481.329 383.139 492.72 342.96C505.101 299.267 507.304 253.317 499.16 208.64H261.08V307.4H398.96C396.204 323.152 390.299 338.185 381.598 351.601C372.897 365.018 361.578 376.54 348.32 385.48C331.483 396.617 312.504 404.111 292.6 407.48C272.638 411.192 252.162 411.192 232.2 407.48C211.968 403.297 192.828 394.946 176 382.96C148.966 363.824 128.667 336.637 118 305.28C107.153 273.336 107.153 238.704 118 206.76C125.593 184.369 138.145 163.981 154.72 147.12C173.688 127.47 197.701 113.424 224.126 106.523C250.551 99.6223 278.366 100.133 304.52 108C324.951 114.272 343.634 125.23 359.08 140C374.627 124.533 390.147 109.027 405.64 93.48C413.64 85.12 422.36 77.16 430.24 68.6C406.662 46.6591 378.987 29.5863 348.8 18.36C293.828 -1.60042 233.679 -2.13684 178.36 16.84Z"
         fill="white"
@@ -52,7 +52,7 @@ function GoogleIcon() {
 
 function GooglePreferredBadge() {
   return (
-    <div className="right-badge flex w-[300px] shrink-0 justify-end max-[1199px]:mt-6 max-[1199px]:w-full max-[1199px]:justify-start">
+    <div className="right-badge flex w-[300px] shrink-0 justify-end max-[1200px]:mt-6 max-[1200px]:w-full max-[1200px]:justify-start">
       <div className="badge">
         <a
           href={blogDetailUiCopy.googleBadgeUrl}
@@ -63,7 +63,7 @@ function GooglePreferredBadge() {
         >
           <div className="relative z-10 inline-flex items-center rounded-[20px] bg-white p-[15px]">
             <GoogleIcon />
-            <span className="block w-[calc(100%-40px)] pl-[15px] text-[16px] font-semibold leading-[1.3] text-[#282828] max-[767px]:w-[calc(100%-36px)] max-[767px]:pl-3 max-[767px]:text-[14px]">
+            <span className="block w-[calc(100%-40px)] pl-[15px] text-[16px] font-semibold leading-[1.3] text-[#282828] max-[768px]:w-[calc(100%-36px)] max-[768px]:pl-3 max-[768px]:text-[14px]">
               {blogDetailUiCopy.googleBadgePrefix}
               <strong className="font-bold">{blogDetailUiCopy.googleBadgeBrand}</strong>
               <br />
@@ -93,11 +93,11 @@ export function BlogArticleHero({ post }: { post: BlogPostDetail }) {
 
       <header className="entry-header mb-5" aria-labelledby="blog-post-title">
         <Container>
-          <div className="wrapper flex items-center justify-between max-[1199px]:flex-wrap">
-            <div className="left-title w-[calc(100%-300px)] max-[1199px]:w-full">
+          <div className="wrapper flex items-center justify-between max-[1200px]:flex-wrap">
+            <div className="left-title w-[calc(100%-300px)] max-[1200px]:w-full">
               <h1
                 id="blog-post-title"
-                className="mb-4 font-montreal-medium text-[35px] leading-[46px] tracking-[-0.7px] text-[#282828] max-[767px]:text-[30px] max-[767px]:leading-10"
+                className="mb-4 font-montreal-medium text-[35px] leading-[46px] tracking-[-0.7px] text-[#282828] max-[768px]:text-[30px] max-[768px]:leading-10"
               >
                 {post.title}
               </h1>
@@ -188,7 +188,7 @@ function ShareLinks({ post }: { post: BlogPostDetail }) {
   ];
 
   return (
-    <div className="flex items-center gap-6 max-[767px]:gap-2.5">
+    <div className="flex items-center gap-6 max-[768px]:gap-2.5">
       {links.map((link) => (
         <a
           className="flex text-[#6e6e6e] transition-colors duration-300 hover:text-brand-red focus-visible:text-brand-red"
@@ -220,8 +220,8 @@ function PostNavigationLink({ item, direction }: { item: BlogPostNavigationItem;
       href={`/blogs/${item.slug}`}
       className={`group flex flex-col px-[15px] text-[#282828] transition-colors duration-300 hover:text-brand-red focus-visible:text-brand-red ${direction === "next" ? "items-end text-right" : "items-start text-left"}`}
     >
-      <span className="block text-[16px] font-semibold leading-[30px] max-[767px]:hidden">{item.title}</span>
-      <span className="mt-[15px] inline-flex items-center gap-2 text-[13px] font-bold leading-5 uppercase text-brand-red max-[767px]:mt-0">
+      <span className="block text-[16px] font-semibold leading-[30px] max-[768px]:hidden">{item.title}</span>
+      <span className="mt-[15px] inline-flex items-center gap-2 text-[13px] font-bold leading-5 uppercase text-brand-red max-[768px]:mt-0">
         {direction === "previous" ? <NavArrow direction="previous" /> : null}
         {label}
         {direction === "next" ? <NavArrow direction="next" /> : null}
@@ -234,7 +234,7 @@ function PostNavigation({ post }: { post: BlogPostDetail }) {
   if (!post.previous && !post.next) return null;
   return (
     <Container>
-      <nav className="nav-links mx-[-15px] grid grid-cols-2 gap-0 pt-6 max-[767px]:pt-4" aria-label={blogDetailUiCopy.postNavigationLabel}>
+      <nav className="nav-links mx-[-15px] grid grid-cols-2 gap-0 pt-6 max-[768px]:pt-4" aria-label={blogDetailUiCopy.postNavigationLabel}>
         {post.previous ? <PostNavigationLink item={post.previous} direction="previous" /> : <span />}
         {post.next ? <PostNavigationLink item={post.next} direction="next" /> : <span />}
       </nav>
@@ -251,7 +251,7 @@ export function BlogDetailPage({ post, relatedPosts }: BlogDetailPageProps) {
   const activeRelatedPosts = relatedPosts ?? getRelatedBlogPosts(post);
 
   return (
-    <div className="single-blog overflow-x-clip pt-[140px] max-[767px]:pt-[100px]">
+    <div className="single-blog overflow-x-clip pt-[140px] max-[768px]:pt-[100px]">
       <BlogArticleHero post={post} />
 
       <div className="entry-content">
@@ -281,7 +281,7 @@ export function BlogDetailPage({ post, relatedPosts }: BlogDetailPageProps) {
 
       <Container>
         <div className="mt-[42px] mb-[24px] flex items-center justify-between border-y border-[#efefef] py-[11px]">
-          <h2 className="m-0 font-montreal-medium text-[18px] font-normal leading-7 text-[#282828] max-[767px]:text-[16px]">{blogDetailUiCopy.shareHeading}</h2>
+          <h2 className="m-0 font-montreal-medium text-[18px] font-normal leading-7 text-[#282828] max-[768px]:text-[16px]">{blogDetailUiCopy.shareHeading}</h2>
           <ShareLinks post={post} />
         </div>
       </Container>

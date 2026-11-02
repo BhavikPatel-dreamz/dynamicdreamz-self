@@ -18,17 +18,17 @@ export function ContactWidget({ whatsappNumber }: { whatsappNumber?: string | nu
     : siteConfig.whatsappHref;
 
   return (
-    <div className="whatsapp-widget fixed right-5 bottom-[60px] max-[1199px]:bottom-[50px] max-[767px]:bottom-[38px] z-110 [&_a]:[transition:all_.3s_ease]">
+    <div className="whatsapp-widget fixed right-5 bottom-[60px] max-[1200px]:bottom-[50px] max-[768px]:bottom-[38px] z-110 [&_a]:[transition:all_.3s_ease]">
       <a
-        className="whatsapp-widget flex min-w-[240px] max-[1199px]:min-w-[220px] max-[767px]:min-w-[200px] items-center rounded-[100px] bg-brand-green px-2.5 py-1.75 max-[767px]:p-[5px] text-white shadow-[0_10px_30px_rgb(0_0_0/15%)] transition-all duration-300 ease-[ease] [transition:all_.3s_ease] hover:-translate-y-0.75 hover:shadow-[0_15px_40px_rgb(0_0_0/20%)]"
+        className="whatsapp-widget flex min-w-[240px] max-[1200px]:min-w-[220px] max-[768px]:min-w-[200px] items-center rounded-[100px] bg-brand-green px-2.5 py-1.75 max-[768px]:p-[5px] text-white shadow-[0_10px_30px_rgb(0_0_0/15%)] transition-all duration-300 ease-[ease] [transition:all_.3s_ease] hover:-translate-y-0.75 hover:shadow-[0_15px_40px_rgb(0_0_0/20%)]"
         href={href}
         target="_blank"
         rel="nofollow noopener noreferrer"
         aria-label={siteChromeCopy.contactWidget.ariaLabel}
       >
-        <span className="flex size-[55px] shrink-0 items-center justify-center max-[1199px]:size-10">
+        <span className="flex size-[55px] shrink-0 items-center justify-center max-[1200px]:size-10">
           <svg
-            className="size-[55px] max-[1199px]:size-10"
+            className="size-[55px] max-[1200px]:size-10"
             aria-hidden="true"
             viewBox="0 0 50 50"
             width="55"
@@ -48,12 +48,12 @@ export function ContactWidget({ whatsappNumber }: { whatsappNumber?: string | nu
             />
           </svg>
         </span>
-        <span className="mr-2 h-[55px] max-[1199px]:h-[45px] w-px shrink-0 bg-white/50 max-[767px]:h-[35px]" aria-hidden="true" />
+        <span className="mr-2 h-[55px] max-[1200px]:h-[45px] w-px shrink-0 bg-white/50 max-[768px]:h-[35px]" aria-hidden="true" />
         <span className="whatsapp-content flex flex-col leading-[1.2]">
-          <small className="mb-[5px] text-[12px] font-semibold max-[767px]:mb-[3px] max-[767px]:text-[11px]">
+          <small className="mb-[5px] text-[12px] font-semibold max-[768px]:mb-[3px] max-[768px]:text-[11px]">
             {siteChromeCopy.contactWidget.prompt}
           </small>
-          <strong className="text-[18px] font-bold leading-[1.1] max-[1199px]:text-[16px] max-[767px]:text-sm">{siteChromeCopy.contactWidget.cta}</strong>
+          <strong className="text-[18px] font-bold leading-[1.1] max-[1200px]:text-[16px] max-[768px]:text-sm">{siteChromeCopy.contactWidget.cta}</strong>
         </span>
       </a>
     </div>
@@ -86,20 +86,20 @@ export function SiteHeader({
     navigation && navigation.length > 0 ? navigation : primaryNavigation;
 
   return (
-    <header className="site-header fixed top-0 left-0 z-[111] w-full py-[15px] min-[1200px]:py-0 max-[992px]:[&.header-up]:py-[12px] min-[1200px]:[&.header-up]:py-0 bg-white/60 backdrop-blur-[25px] transition-all duration-500 ease-in-out [body:has(main[data-page=career-apply-now])_&]:hidden [body:has(main[data-page=request-quote])_&]:hidden [body:has(main[data-page=white-label-shopify])_&:not(.header-up):not(.header-down)]:bg-transparent [body:has(main[data-page=white-label-shopify])_&:not(.header-up):not(.header-down)]:backdrop-blur-none [body:has(main[data-page=white-label-wordpress])_&:not(.header-up):not(.header-down)]:bg-transparent [body:has(main[data-page=white-label-wordpress])_&:not(.header-up):not(.header-down)]:backdrop-blur-none [body:has(main[data-page=white-label-website-design])_&:not(.header-up):not(.header-down)]:bg-transparent [body:has(main[data-page=white-label-website-design])_&:not(.header-up):not(.header-down)]:backdrop-blur-none [&.header-down]:-translate-y-full [&.header-down]:shadow-[0_-6px_10px_5px_rgb(0_0_0/10%)] [&.header-up]:translate-y-0 [&.header-up]:bg-white/60 [&.header-up]:shadow-[0_-6px_10px_5px_rgb(0_0_0/10%)] max-[992px]:[&:not(.header-up)]:bg-transparent max-[1199px]:[&_.container]:min-h-[34px]">
+    <header className="site-header fixed top-0 left-0 z-[111] w-full py-[15px] min-[1200px]:py-0 max-[992px]:[&.header-up]:py-[12px] min-[1200px]:[&.header-up]:py-0 bg-white/60 backdrop-blur-[25px] transition-all duration-500 ease-in-out [body:has(main[data-page=career-apply-now])_&]:hidden [body:has(main[data-page=request-quote])_&]:hidden [body:has(main[data-page=white-label-shopify])_&:not(.header-up):not(.header-down)]:bg-transparent [body:has(main[data-page=white-label-shopify])_&:not(.header-up):not(.header-down)]:backdrop-blur-none [body:has(main[data-page=white-label-wordpress])_&:not(.header-up):not(.header-down)]:bg-transparent [body:has(main[data-page=white-label-wordpress])_&:not(.header-up):not(.header-down)]:backdrop-blur-none [body:has(main[data-page=white-label-website-design])_&:not(.header-up):not(.header-down)]:bg-transparent [body:has(main[data-page=white-label-website-design])_&:not(.header-up):not(.header-down)]:backdrop-blur-none [&.header-down]:-translate-y-full [&.header-down]:shadow-[0_-6px_10px_5px_rgb(0_0_0/10%)] [&.header-up]:translate-y-0 [&.header-up]:bg-white/60 [&.header-up]:shadow-[0_-6px_10px_5px_rgb(0_0_0/10%)] max-[992px]:[&:not(.header-up)]:bg-transparent max-[1200px]:[&_.container]:min-h-[34px]">
       <HeaderScrollBehavior />
       <Container className="relative flex items-center justify-between gap-0">
         <div className="flex items-center">
           <MobileNavigation navigation={effectiveNav} contactEmail={contactEmail} />
 
           <Link
-            className="inline-flex shrink-0 -translate-y-[2.5px] max-[1199px]:mr-auto max-[1199px]:translate-y-0"
+            className="inline-flex shrink-0 -translate-y-[2.5px] max-[1200px]:mr-auto max-[1200px]:translate-y-0"
             href="/"
             prefetch={false}
             aria-label="Dynamic Dreamz home"
           >
             <Image
-              className="h-auto w-[225px] max-[767px]:w-[170px] max-[379px]:w-[150px]"
+              className="h-auto w-[225px] max-[768px]:w-[170px] max-[379px]:w-[150px]"
               src={effectiveLogo}
               alt={effectiveLogoAlt}
               width={257}
@@ -114,7 +114,7 @@ export function SiteHeader({
           <DesktopNavigation navigation={effectiveNav} />
         </div>
 
-        <div className="header-btn shrink-0 ml-5 min-[1400px]:ml-6 min-[1400px]:[&_a]:py-[15px] min-[1400px]:[&_a]:px-6 min-[1400px]:[&_a]:text-[16px] min-[1400px]:[&_a]:min-h-[49px] min-[1400px]:[&_a]:h-[49px] max-[1399px]:[&_a]:px-5 max-[1399px]:[&_a]:py-[13px] max-[1399px]:[&_a]:text-[14px] max-[1399px]:[&_a]:min-h-[44px] max-[1399px]:[&_a]:h-[44px] min-[992px]:max-[1199px]:[&_a]:px-[14px] min-[992px]:max-[1199px]:[&_a]:py-[9px] min-[992px]:max-[1199px]:[&_a]:text-[13px] min-[992px]:max-[1199px]:[&_a]:min-h-0 min-[992px]:max-[1199px]:[&_a]:h-auto max-[992px]:[&_a]:px-5 max-[992px]:[&_a]:py-[13px] max-[992px]:[&_a]:text-[14px] max-[992px]:[&_a]:min-h-[44px] max-[992px]:[&_a]:h-[44px] max-[379px]:[&_a]:px-[10px] max-[379px]:[&_a]:py-[8px] max-[379px]:[&_a]:text-[10px] max-[379px]:[&_a]:min-h-0 max-[379px]:[&_a]:h-auto">
+        <div className="header-btn shrink-0 ml-5 min-[1400px]:ml-6 min-[1400px]:[&_a]:py-[15px] min-[1400px]:[&_a]:px-6 min-[1400px]:[&_a]:text-[16px] min-[1400px]:[&_a]:min-h-[49px] min-[1400px]:[&_a]:h-[49px] max-[1399px]:[&_a]:px-5 max-[1399px]:[&_a]:py-[13px] max-[1399px]:[&_a]:text-[14px] max-[1399px]:[&_a]:min-h-[44px] max-[1399px]:[&_a]:h-[44px] min-[992px]:max-[1200px]:[&_a]:px-[14px] min-[992px]:max-[1200px]:[&_a]:py-[9px] min-[992px]:max-[1200px]:[&_a]:text-[13px] min-[992px]:max-[1200px]:[&_a]:min-h-0 min-[992px]:max-[1200px]:[&_a]:h-auto max-[992px]:[&_a]:px-5 max-[992px]:[&_a]:py-[13px] max-[992px]:[&_a]:text-[14px] max-[992px]:[&_a]:min-h-[44px] max-[992px]:[&_a]:h-[44px] max-[379px]:[&_a]:px-[10px] max-[379px]:[&_a]:py-[8px] max-[379px]:[&_a]:text-[10px] max-[379px]:[&_a]:min-h-0 max-[379px]:[&_a]:h-auto">
           <ButtonLink
             variant="primary"
             href={effectiveCtaHref}

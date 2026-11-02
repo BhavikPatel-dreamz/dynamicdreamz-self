@@ -40,18 +40,18 @@ export function CareerHeroSection({
   const scrollingTrackId = useId();
 
   return (
-    <section className="hero-new-section hide-logo relative overflow-hidden bg-[#f7f4e9] pt-[91px] max-[991px]:pt-16">
+    <section className="hero-new-section hide-logo relative overflow-hidden bg-[#f7f4e9] pt-[91px] max-[992px]:pt-16">
       <Container>
-        <div className="wrapper flex flex-wrap items-center justify-between max-[991px]:flex-col">
-          <div className="left-col z-1 flex w-[51%] flex-col justify-center py-[60px] max-[1199px]:w-1/2 max-[991px]:w-full max-[991px]:py-8 max-[991px]:text-center">
+        <div className="wrapper flex flex-wrap items-center justify-between max-[992px]:flex-col">
+          <div className="left-col z-1 flex w-[51%] flex-col justify-center py-[60px] max-[1200px]:w-1/2 max-[992px]:w-full max-[992px]:py-8 max-[992px]:text-center">
             <div className="hero-content">
               {eyebrow ? (
-                <div className="eyebrow relative mb-[15px] inline-flex items-center pl-10 text-[#535353] before:absolute before:left-0 before:top-[7px] before:h-0.5 before:w-[30px] before:bg-brand-red before:content-[''] max-[1199px]:mx-auto max-[1199px]:justify-center max-[991px]:mx-auto max-[767px]:pl-6 max-[767px]:before:top-1 max-[767px]:before:w-[15px]">
-                  <span className="font-montserrat text-[14px] font-semibold uppercase leading-[1.2] max-[1199px]:text-[12px] max-[767px]:text-[10px]">{eyebrow}</span>
+                <div className="eyebrow relative mb-[15px] inline-flex items-center pl-10 text-[#535353] before:absolute before:left-0 before:top-[7px] before:h-0.5 before:w-[30px] before:bg-brand-red before:content-[''] max-[1200px]:mx-auto max-[1200px]:justify-center max-[992px]:mx-auto max-[768px]:pl-6 max-[768px]:before:top-1 max-[768px]:before:w-[15px]">
+                  <span className="font-montserrat text-[14px] font-semibold uppercase leading-[1.2] max-[1200px]:text-[12px] max-[768px]:text-[10px]">{eyebrow}</span>
                 </div>
               ) : null}
 
-              <h1 className="mb-2.5 font-montreal-medium text-[50px] font-normal leading-[60px] tracking-normal text-[#282828] max-[1199px]:text-[40px] max-[1199px]:leading-[50px] max-[767px]:text-[30px] max-[767px]:leading-[40px]">
+              <h1 className="mb-2.5 font-montreal-medium text-[50px] font-normal leading-[60px] tracking-normal text-[#282828] max-[1200px]:text-[40px] max-[1200px]:leading-[50px] max-[768px]:text-[30px] max-[768px]:leading-[40px]">
                 {title}
               </h1>
 
@@ -61,14 +61,14 @@ export function CareerHeroSection({
             </div>
 
             <div
-              className="global_brands_grid_wrap relative -mx-[15px] mt-[30px] flex items-center max-[1199px]:justify-center max-[767px]:-mx-[15px] max-[767px]:w-[calc(100%+30px)] max-[767px]:flex-wrap max-[767px]:overflow-hidden"
+              className="global_brands_grid_wrap relative -mx-[15px] mt-[30px] flex items-center max-[1200px]:justify-center max-[768px]:-mx-[15px] max-[768px]:w-[calc(100%+30px)] max-[768px]:flex-wrap max-[768px]:overflow-hidden"
               aria-label="Partnerships and independent review profiles"
             >
               {badges.map((badge, idx) => (
                 <div
                   className={cn(
                     "global_brands_item relative border-r border-[#d9d9d9] px-[15px] last:border-r-0",
-                    "max-[767px]:w-1/3 max-[767px]:border-r max-[767px]:border-[#d9d9d9] max-[767px]:last:border-r-0 max-[767px]:p-2.5 max-[767px]:text-center",
+                    "max-[768px]:w-1/3 max-[768px]:border-r max-[768px]:border-[#d9d9d9] max-[768px]:last:border-r-0 max-[768px]:p-2.5 max-[768px]:text-center",
                   )}
                   key={`${badge.href}-${idx}`}
                 >
@@ -91,14 +91,14 @@ export function CareerHeroSection({
             </div>
           </div>
 
-          <div className="right-col relative flex h-[580px] w-[48%] overflow-hidden max-[1199px]:w-[48%] max-[991px]:mt-6 max-[991px]:h-[260px] max-[991px]:w-full max-[767px]:hidden">
+          <div className="right-col relative flex h-[580px] w-[48%] overflow-hidden max-[1200px]:w-[48%] max-[992px]:mt-6 max-[992px]:h-[260px] max-[992px]:w-full max-[768px]:hidden">
             <div className="scrolling_img_wrap relative h-full w-full overflow-hidden">
-              <div className="scrolling_anim_img absolute inset-0 px-[68px] max-[1199px]:px-5 max-[991px]:relative max-[991px]:px-0">
+              <div className="scrolling_anim_img absolute inset-0 px-[68px] max-[1200px]:px-5 max-[992px]:relative max-[992px]:px-0">
                 <div id={scrollingTrackId} className={cn("scrolling_track", styles.scrollingTrack)}>
                   <div className={cn("scrolling_img", styles.scrollingImg)}>
                     {scrollingImages.map((img, i) => (
                       <div
-                        className="item_img mb-6 flex shrink-0 overflow-hidden rounded-[15.93px] shadow-[6.371px_6.371px_15.929px_0_rgba(0,0,0,0.06)] max-[991px]:mb-0 max-[991px]:mr-4 max-[991px]:h-[227px] max-[991px]:w-[342px] max-[991px]:rounded-[10px]"
+                        className="item_img mb-6 flex shrink-0 overflow-hidden rounded-[15.93px] shadow-[6.371px_6.371px_15.929px_0_rgba(0,0,0,0.06)] max-[992px]:mb-0 max-[992px]:mr-4 max-[992px]:h-[227px] max-[992px]:w-[342px] max-[992px]:rounded-[10px]"
                         key={`hero-img-${i}`}
                       >
                         <Image
@@ -120,7 +120,7 @@ export function CareerHeroSection({
                     >
                       {scrollingImages.map((img, i) => (
                         <div
-                          className="item_img mb-6 flex shrink-0 overflow-hidden rounded-[15.93px] shadow-[6.371px_6.371px_15.929px_0_rgba(0,0,0,0.06)] max-[991px]:mb-0 max-[991px]:mr-4 max-[991px]:h-[227px] max-[991px]:w-[342px] max-[991px]:rounded-[10px]"
+                          className="item_img mb-6 flex shrink-0 overflow-hidden rounded-[15.93px] shadow-[6.371px_6.371px_15.929px_0_rgba(0,0,0,0.06)] max-[992px]:mb-0 max-[992px]:mr-4 max-[992px]:h-[227px] max-[992px]:w-[342px] max-[992px]:rounded-[10px]"
                           key={`hero-img-dup-${i}`}
                         >
                           <Image

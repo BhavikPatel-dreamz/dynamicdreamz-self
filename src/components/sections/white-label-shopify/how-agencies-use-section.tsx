@@ -25,7 +25,7 @@ export function HowAgenciesUseSection({
   content = whiteLabelShopifyAgencyUseCases,
 }: HowAgenciesUseSectionProps) {
   return (
-    <section className="how_agencies_use_dynamic_dreamz_section py-20 max-[991px]:py-[50px]">
+    <section className="how_agencies_use_dynamic_dreamz_section py-20 max-[992px]:py-[50px]">
       <Container>
         <SplitSectionHeading
           variant="services"
@@ -36,21 +36,21 @@ export function HowAgenciesUseSection({
 
         <div
           data-aos="fade-up"
-          className="grid grid-cols-3 gap-5 max-[991px]:grid-cols-2 max-[767px]:grid-cols-1"
+          className="grid grid-cols-3 gap-5 max-[992px]:grid-cols-2 max-[768px]:grid-cols-1"
         >
           {content.cards.map((card) => (
             <div
-              className="flex h-full flex-col justify-between rounded-[20px] border border-[rgba(23,30,22,0.10)] bg-white p-[30px_20px] max-[1199px]:p-5"
+              className="flex h-full flex-col justify-between rounded-[20px] border border-[rgba(23,30,22,0.10)] bg-white p-[30px_20px] max-[1200px]:p-5"
               key={card.tag}
             >
               <div>
                 <span className="mb-5 block font-montserrat text-sm font-bold uppercase text-[#AD5151] max-[1399px]:text-xs">
                   {card.tag}
                 </span>
-                <h3 className="mb-2.5 font-display text-[22px] font-medium leading-[1.35] text-[#282828] max-[1399px]:text-lg max-[991px]:text-base">
+                <h3 className="mb-2.5 font-display text-[22px] font-medium leading-[1.35] text-[#282828] max-[1399px]:text-lg max-[992px]:text-base">
                   {card.heading}
                 </h3>
-                <p className="font-sans text-base font-medium leading-7 text-[#535353] max-[991px]:text-sm max-[991px]:leading-6">
+                <p className="font-sans text-base font-medium leading-7 text-[#535353] max-[992px]:text-sm max-[992px]:leading-6">
                   {card.description}
                 </p>
               </div>

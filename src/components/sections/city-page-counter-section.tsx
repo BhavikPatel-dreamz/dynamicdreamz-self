@@ -29,7 +29,7 @@ export function CityPageCounterSection({
   return (
     <section
       className={cn(
-        "city-page-counter py-20 max-[991px]:py-[50px]",
+        "city-page-counter py-20 max-[992px]:py-[50px]",
         className,
       )}
     >
@@ -50,11 +50,11 @@ export function CityPageCounterSection({
               className={cn(
                 "item w-1/4 p-5 border-t border-r border-b border-[rgba(40,40,40,0.11)]",
                 idx === 0 && "border-l",
-                "max-[991px]:w-1/2 max-[991px]:[&:nth-child(odd)]:border-l max-[991px]:[&:nth-last-child(-n+2)]:border-t-0",
-                "max-[767px]:w-full max-[767px]:border-t! max-[767px]:border-l! max-[767px]:border-r! max-[767px]:border-b-0! max-[767px]:p-[18px] max-[767px]:last:border-b!",
+                "max-[992px]:w-1/2 max-[992px]:[&:nth-child(odd)]:border-l max-[992px]:[&:nth-last-child(-n+2)]:border-t-0",
+                "max-[768px]:w-full max-[768px]:border-t! max-[768px]:border-l! max-[768px]:border-r! max-[768px]:border-b-0! max-[768px]:p-[18px] max-[768px]:last:border-b!",
               )}
             >
-              <h3 className="text-[28px] font-normal leading-[28.5px] text-ink mb-3 max-[767px]:text-[22px] max-[767px]:mb-1">
+              <h3 className="text-[28px] font-normal leading-[28.5px] text-ink mb-3 max-[768px]:text-[22px] max-[768px]:mb-1">
                 {item.value}
               </h3>
               {item.subLabel ? (

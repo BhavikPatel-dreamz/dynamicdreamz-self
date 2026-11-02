@@ -184,9 +184,9 @@ export function ClientLogoSlider({
     // Live rail heights: 84px on services pages, 70px on flexible-css pages
     // (60px ≤767px). `cn` is a plain join, so the preset is exclusive.
     hasCompactRail
-      ? "[--client-logo-slider-height:70px] max-[767px]:[--client-logo-slider-height:60px]"
+      ? "[--client-logo-slider-height:70px] max-[768px]:[--client-logo-slider-height:60px]"
       : variant === "industry"
-        ? "[--client-logo-slider-height:84px] max-[767px]:[--client-logo-slider-height:60px]"
+        ? "[--client-logo-slider-height:84px] max-[768px]:[--client-logo-slider-height:60px]"
         : "[--client-logo-slider-height:84px]",
   );
 

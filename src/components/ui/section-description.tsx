@@ -19,7 +19,7 @@ export function SectionDescription({
     <div
       className={cn(
         "section_text",
-        width === "half" && "w-[48%] max-[1199px]:w-full",
+        width === "half" && "w-[48%] max-[1200px]:w-full",
         width === "full" && "w-full",
         className,
       )}
@@ -27,7 +27,7 @@ export function SectionDescription({
       {children ? (
         <p
           className={cn(
-            "text-base max-[1199px]:text-[14px] max-[767px]:text-sm leading-7 max-[1199px]:leading-[24px] max-[767px]:leading-[22px] font-medium text-muted",
+            "text-base max-[1200px]:text-[14px] max-[768px]:text-sm leading-7 max-[1200px]:leading-[24px] max-[768px]:leading-[22px] font-medium text-muted",
             textClassName,
           )}
         >

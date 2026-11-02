@@ -73,7 +73,7 @@ export function LifeHeroSection({
     >
       <Container>
         <div className="mx-auto max-w-[900px] text-center">
-          <h1 className="mb-6 inline-block text-[50px] leading-[60px] font-normal tracking-normal text-ink max-[992px]:text-[40px] max-[992px]:leading-[60px] max-[767px]:text-[30px]">
+          <h1 className="mb-6 inline-block text-[50px] leading-[60px] font-normal tracking-normal text-ink max-[992px]:text-[40px] max-[992px]:leading-[60px] max-[768px]:text-[30px]">
             {titleBeforeTeamwork}{" "}
             <span className="relative whitespace-nowrap">
               {teamwork}
@@ -85,7 +85,7 @@ export function LifeHeroSection({
               <Image
                 aria-hidden="true"
                 alt=""
-                className={`${styles.leaf} absolute top-[-23px] right-[-19px] h-[38px] w-[31px] max-[767px]:top-[-11px] max-[767px]:right-[-9px] max-[767px]:h-[22px] max-[767px]:w-[14px]`}
+                className={`${styles.leaf} absolute top-[-23px] right-[-19px] h-[38px] w-[31px] max-[768px]:top-[-11px] max-[768px]:right-[-9px] max-[768px]:h-[22px] max-[768px]:w-[14px]`}
                 src="/assets/life-dynamicdreamz/teamwork-leaf.svg"
                 width={31}
                 height={38}

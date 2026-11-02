@@ -40,11 +40,11 @@ export function PartnerDirectoryProofSection({
       <Container>
         <div
           data-aos="fade-up"
-          className="sop-box-wrapper rounded-[30px] bg-[#fafaf7] p-[50px] max-[1199px]:p-[50px_40px] max-[992px]:p-[40px_30px] max-[575px]:rounded-[20px] max-[575px]:p-[30px_20px]"
+          className="sop-box-wrapper rounded-[30px] bg-[#fafaf7] p-[50px] max-[1200px]:p-[50px_40px] max-[992px]:p-[40px_30px] max-[575px]:rounded-[20px] max-[575px]:p-[30px_20px]"
         >
           <header className="section-title mx-auto max-w-[875px] text-center">
             <h2
-              className="mb-[15px] font-montreal-medium text-[35px] leading-[48.475px] font-normal tracking-[-0.7px] text-ink max-[1199px]:text-[33px] max-[992px]:text-[32px] max-[992px]:leading-10 max-[575px]:text-2xl max-[575px]:leading-[33.24px]"
+              className="mb-[15px] font-montreal-medium text-[35px] leading-[48.475px] font-normal tracking-[-0.7px] text-ink max-[1200px]:text-[33px] max-[992px]:text-[32px] max-[992px]:leading-10 max-[575px]:text-2xl max-[575px]:leading-[33.24px]"
               id="shopify-partner-directory-title"
             >
               {content.heading}
@@ -54,8 +54,8 @@ export function PartnerDirectoryProofSection({
             </p>
           </header>
 
-          <div className="sop-state mt-[70px] max-[1199px]:mt-10 max-[575px]:mt-[30px]">
-            <div className="sop-row grid grid-cols-4 items-end gap-10 max-[1199px]:gap-5 max-[992px]:grid-cols-2 max-[992px]:gap-y-[30px] max-[575px]:grid-cols-1">
+          <div className="sop-state mt-[70px] max-[1200px]:mt-10 max-[575px]:mt-[30px]">
+            <div className="sop-row grid grid-cols-4 items-end gap-10 max-[1200px]:gap-5 max-[992px]:grid-cols-2 max-[992px]:gap-y-[30px] max-[575px]:grid-cols-1">
               {content.items.map((item) => (
                 <div className="sop-col text-center" key={item.label}>
                   <div className="sop-item">
@@ -76,11 +76,11 @@ export function PartnerDirectoryProofSection({
                         />
                       </a>
                     ) : (
-                      <h3 className="flex min-h-11 items-center justify-center font-display text-[60px] leading-[49px] font-normal text-ink max-[1199px]:text-[50px] max-[1199px]:leading-11 max-[575px]:text-[40px] max-[575px]:leading-10">
+                      <h3 className="flex min-h-11 items-center justify-center font-display text-[60px] leading-[49px] font-normal text-ink max-[1200px]:text-[50px] max-[1200px]:leading-11 max-[575px]:text-[40px] max-[575px]:leading-10">
                         {item.value}
                       </h3>
                     )}
-                    <p className="mt-[15px] border-t-[1.5px] border-ink/10 pt-[15px] text-sm leading-[21px] font-semibold text-[#535353] uppercase max-[1199px]:text-xs max-[575px]:mt-2.5 max-[575px]:pt-2.5">
+                    <p className="mt-[15px] border-t-[1.5px] border-ink/10 pt-[15px] text-sm leading-[21px] font-semibold text-[#535353] uppercase max-[1200px]:text-xs max-[575px]:mt-2.5 max-[575px]:pt-2.5">
                       {item.label}
                     </p>
                   </div>

@@ -28,13 +28,13 @@ export type ShopifyCroEngagementSectionProps = {
 
 export function ShopifyCroEngagementSection({
   content = shopifyCroEngagements,
-  className = "shopify-cro-engagement-section bg-[#FAFAF7] py-10 max-[767px]:py-8",
+  className = "shopify-cro-engagement-section bg-[#FAFAF7] py-10 max-[768px]:py-8",
 }: ShopifyCroEngagementSectionProps) {
   return (
     <section className={className}>
       <Container>
         <div data-aos="fade-up" className="section-title mx-auto mb-[35px] text-center">
-          <h2 className="font-display text-[35px] font-normal leading-[48.475px] tracking-normal text-ink max-[1199px]:text-[30px] max-[767px]:text-2xl">
+          <h2 className="font-display text-[35px] font-normal leading-[48.475px] tracking-normal text-ink max-[1200px]:text-[30px] max-[768px]:text-2xl">
             {content.heading}
           </h2>
         </div>
@@ -44,7 +44,7 @@ export function ShopifyCroEngagementSection({
             <div
               key={item.title}
               data-aos="fade-up"
-              className="shopify-cro-engagement-card mb-4 w-[calc(50%-8px)] max-[767px]:w-full"
+              className="shopify-cro-engagement-card mb-4 w-[calc(50%-8px)] max-[768px]:w-full"
             >
               <div className="shopify-cro-engagement-box flex h-full flex-col justify-between rounded-[30px] border border-[rgba(40,40,40,0.10)] bg-white p-[25px] shadow-none">
                 <div>
@@ -58,7 +58,7 @@ export function ShopifyCroEngagementSection({
                         className="size-full object-contain"
                       />
                     </span>
-                    <h3 className="mb-2.5 font-montreal-medium text-[20px] font-normal leading-[28.8px] text-ink max-[1199px]:text-[18px] max-[1199px]:leading-[26px]">
+                    <h3 className="mb-2.5 font-montreal-medium text-[20px] font-normal leading-[28.8px] text-ink max-[1200px]:text-[18px] max-[1200px]:leading-[26px]">
                       {item.title}
                     </h3>
                     <p className="m-0 font-sans text-sm font-normal leading-6 text-muted">

@@ -96,17 +96,17 @@ export function ShopifySupportScenariosSection({
     content.items.find((item) => item.id === activeTabId) ?? content.items[0];
 
   return (
-    <section className="scenario-tab-sec overflow-hidden bg-white py-20 max-[991px]:py-[50px]">
+    <section className="scenario-tab-sec overflow-hidden bg-white py-20 max-[992px]:py-[50px]">
       <Container>
         <div
           data-aos="fade-up"
-          className="section_title mb-10 max-[991px]:mb-[30px]"
+          className="section_title mb-10 max-[992px]:mb-[30px]"
         >
           {content.eyebrow ? (
             <Eyebrow className="mb-4">{content.eyebrow}</Eyebrow>
           ) : null}
-          <div className="flex flex-wrap items-start justify-between gap-6 max-[991px]:flex-col">
-            <h2 className="w-full max-w-[580px] font-montreal-medium text-[35px] font-normal leading-[49px] text-ink max-[991px]:text-[28px] max-[767px]:text-2xl">
+          <div className="flex flex-wrap items-start justify-between gap-6 max-[992px]:flex-col">
+            <h2 className="w-full max-w-[580px] font-montreal-medium text-[35px] font-normal leading-[49px] text-ink max-[992px]:text-[28px] max-[768px]:text-2xl">
               {content.heading}
             </h2>
             {content.description ? (
@@ -155,7 +155,7 @@ export function ShopifySupportScenariosSection({
             })}
           </div>
 
-          <div className="scenario-panels sticky top-[108px] flex h-fit w-[61%] flex-col justify-between rounded-[20px] bg-[#EFF4EF] p-[30px] max-[1399px]:w-[63%] max-[991px]:p-6">
+          <div className="scenario-panels sticky top-[108px] flex h-fit w-[61%] flex-col justify-between rounded-[20px] bg-[#EFF4EF] p-[30px] max-[1399px]:w-[63%] max-[992px]:p-6">
             {activePanel && (
               <div
                 aria-labelledby={`scenario-tab-${activePanel.id}`}
@@ -167,16 +167,16 @@ export function ShopifySupportScenariosSection({
                   <span className="section-kicker mb-3 block text-[13px] font-bold uppercase text-[#AD5151]">
                     {activePanel.kicker}
                   </span>
-                  <h3 className="mb-4 max-w-[530px] font-display text-[28px] font-medium leading-[1.4] tracking-[-0.56px] text-[#282828] max-[991px]:text-xl max-[991px]:leading-7">
+                  <h3 className="mb-4 max-w-[530px] font-display text-[28px] font-medium leading-[1.4] tracking-[-0.56px] text-[#282828] max-[992px]:text-xl max-[992px]:leading-7">
                     {activePanel.heading}
                   </h3>
-                  <p className="max-w-[650px] font-sans text-sm font-medium leading-6 text-[#535353] max-[991px]:text-sm max-[991px]:leading-6">
+                  <p className="max-w-[650px] font-sans text-sm font-medium leading-6 text-[#535353] max-[992px]:text-sm max-[992px]:leading-6">
                     {activePanel.description}
                   </p>
                   <div className="service-features mt-6 flex flex-wrap gap-3">
                     {activePanel.features.map((feat) => (
                       <div
-                        className="service-feature w-[calc(33.33%-8px)] rounded-[17px] border border-[#D0D0CE] bg-[#FAFAF7] px-2.5 py-3.5 text-center text-sm font-bold leading-none text-[#282828] shadow-[2px_2px_0_0_rgba(40,40,40,0.20)] max-[991px]:w-[calc(50%-8px)] max-[991px]:rounded-full max-[991px]:border-[rgba(40,40,40,0.10)] max-[991px]:bg-white max-[991px]:text-xs max-[991px]:shadow-none"
+                        className="service-feature w-[calc(33.33%-8px)] rounded-[17px] border border-[#D0D0CE] bg-[#FAFAF7] px-2.5 py-3.5 text-center text-sm font-bold leading-none text-[#282828] shadow-[2px_2px_0_0_rgba(40,40,40,0.20)] max-[992px]:w-[calc(50%-8px)] max-[992px]:rounded-full max-[992px]:border-[rgba(40,40,40,0.10)] max-[992px]:bg-white max-[992px]:text-xs max-[992px]:shadow-none"
                         key={feat}
                       >
                         {feat}
@@ -206,7 +206,7 @@ export function ShopifySupportScenariosSection({
         {/* Mobile Slider (< 768px) matching live Slick slider */}
         <div
           data-aos="fade-up"
-          className="scenario-mobile block md:hidden max-[767px]:mr-[calc(-100vw/2+508px/2)] max-[575px]:-mr-4 [&_.slick-list]:pr-[40px] [&_.slick-track]:flex"
+          className="scenario-mobile block md:hidden max-[768px]:mr-[calc(-100vw/2+508px/2)] max-[575px]:-mr-4 [&_.slick-list]:pr-[40px] [&_.slick-track]:flex"
         >
           <LazyMount
             fallback={content.items[0] ? (

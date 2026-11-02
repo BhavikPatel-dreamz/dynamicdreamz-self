@@ -71,25 +71,25 @@ export function SplitSectionHeading({
         ) : null}
         <h2
           className={cn(
-            "font-montreal-medium text-[35px] font-normal leading-[49px] tracking-normal max-[992px]:text-[30px] max-[992px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33.24px]",
+            "font-montreal-medium text-[35px] font-normal leading-[49px] tracking-normal max-[992px]:text-[30px] max-[992px]:leading-10 max-[768px]:text-2xl max-[768px]:leading-[33.24px]",
             dark ? "text-white" : "text-ink",
             titleClassName,
           )}
           id={headingId}
         >
-          {formatBrText(heading, "max-[1199px]:hidden")}
+          {formatBrText(heading, "max-[1200px]:hidden")}
         </h2>
         {body.length > 0 ? (
           <div className={textClassName}>
             {body.map((paragraph) => (
               <p
                 className={cn(
-                  "mt-2.5 font-sans text-base font-medium leading-7 text-[#535353] max-[1199px]:text-sm max-[1199px]:leading-6",
+                  "mt-2.5 font-sans text-base font-medium leading-7 text-[#535353] max-[1200px]:text-sm max-[1200px]:leading-6",
                   dark && "text-white/80", pClassName
                 )}
                 key={paragraph}
               >
-                {formatBrText(paragraph, "max-[1199px]:hidden")}
+                {formatBrText(paragraph, "max-[1200px]:hidden")}
               </p>
             ))}
           </div>
@@ -139,14 +139,14 @@ export function SplitSectionHeading({
         ) : null}
         <h2
           className={cn(
-            "font-montreal-medium text-[35px] font-normal leading-[49px] tracking-normal max-[992px]:mb-[10px] max-[992px]:text-[30px] max-[992px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33.24px]",
+            "font-montreal-medium text-[35px] font-normal leading-[49px] tracking-normal max-[1200px]:text-[30px] max-[992px]:mb-[10px] max-[992px]:text-[30px] max-[992px]:leading-10 max-[768px]:text-2xl max-[768px]:leading-[33.24px]",
             dark ? "text-white" : "text-ink",
           )}
           id={headingId}
         >
           {formatBrText(
             preserveBreaks ? heading : removeBreakTags(heading),
-            "max-[767px]:hidden",
+            "max-[768px]:hidden",
           )}
         </h2>
       </div>
@@ -155,7 +155,7 @@ export function SplitSectionHeading({
           className={cn(
             textColumnClassName ??
             // Live `.section_title_with_eyebrow .section_text` is 48.3% (50% ≤1199px).
-            "w-[48.3%] max-[1199px]:w-1/2",
+            "w-[48.3%] max-[1200px]:w-1/2",
             "max-[992px]:w-full",
             textClassName,
           )}
@@ -165,17 +165,17 @@ export function SplitSectionHeading({
               className={cn(
                 "not-last:mb-[15px]",
                 services || leftAligned
-                  ? "font-sans xl:text-base text-sm font-medium leading-7 max-[767px]:leading-6"
+                  ? "font-sans xl:text-base text-sm font-medium leading-7 max-[768px]:leading-6"
                   : portfolio
-                    ? "font-sans text-[16px] font-medium leading-7 max-[992px]:mt-3.75 max-[992px]:text-sm max-[992px]:leading-[24px] max-[767px]:text-sm max-[767px]:leading-6"
-                    : "font-sans text-base font-medium leading-7 max-[1199px]:text-sm max-[1199px]:leading-6 not-last:mb-2.5",
+                    ? "font-sans text-[16px] font-medium leading-7 max-[992px]:text-sm max-[992px]:leading-[24px] max-[768px]:text-sm max-[768px]:leading-6"
+                    : "font-sans text-base font-medium leading-7 max-[1200px]:text-sm max-[1200px]:leading-6 not-last:mb-2.5",
                 dark ? "text-white" : "text-muted", pClassName
-              )}
+              )}  
               key={paragraph}
             >
               {formatBrText(
                 preserveBreaks ? paragraph : removeBreakTags(paragraph),
-                "max-[767px]:hidden",
+                "max-[768px]:hidden",
               )}
             </p>
           ))}

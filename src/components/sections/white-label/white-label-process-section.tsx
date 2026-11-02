@@ -33,28 +33,28 @@ export function WhiteLabelProcessSection({
           <div
             data-aos="fade-up"
             className={cn(
-              "section_title_with_eyebrow mb-10 max-[991px]:mb-[30px] max-[767px]:mb-5",
+              "section_title_with_eyebrow mb-10 max-[992px]:mb-[30px] max-[768px]:mb-5",
               description &&
-                "flex flex-wrap items-end justify-between max-[991px]:flex-col max-[991px]:items-start",
+                "flex flex-wrap items-end justify-between max-[992px]:flex-col max-[992px]:items-start",
             )}
           >
             <div
-              className={cn("title", description && "w-[44%] max-[991px]:w-full")}
+              className={cn("title", description && "w-[44%] max-[992px]:w-full")}
             >
               {eyebrow && (
-                <div className="eyebrow relative mb-4 inline-flex items-center pl-10 before:absolute before:left-0 before:top-[7px] before:inline-block before:h-[2px] before:w-[30px] before:bg-brand-red before:content-[''] max-[1199px]:before:top-[6px] max-[767px]:mb-3 max-[767px]:pl-[23px] max-[767px]:before:top-[4px] max-[767px]:before:w-[15px]">
-                  <span className="font-montserrat text-sm font-semibold uppercase leading-[1.2] text-[#535353] max-[1199px]:text-xs max-[767px]:text-[10px]">
+                <div className="eyebrow relative mb-4 inline-flex items-center pl-10 before:absolute before:left-0 before:top-[7px] before:inline-block before:h-[2px] before:w-[30px] before:bg-brand-red before:content-[''] max-[1200px]:before:top-[6px] max-[768px]:mb-3 max-[768px]:pl-[23px] max-[768px]:before:top-[4px] max-[768px]:before:w-[15px]">
+                  <span className="font-montserrat text-sm font-semibold uppercase leading-[1.2] text-[#535353] max-[1200px]:text-xs max-[768px]:text-[10px]">
                     {eyebrow}
                   </span>
                 </div>
               )}
-              <h2 className="m-0 font-montreal-medium text-[35px] font-normal leading-[49px] text-[#282828] max-[1199px]:[&_br]:hidden max-[991px]:mb-2.5 max-[991px]:text-[30px] max-[991px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33px]">
-                {formatBrText(title, "max-[1199px]:hidden")}
+              <h2 className="m-0 font-montreal-medium text-[35px] font-normal leading-[49px] text-[#282828] max-[1200px]:[&_br]:hidden max-[992px]:mb-2.5 max-[992px]:text-[30px] max-[992px]:leading-10 max-[768px]:text-2xl max-[768px]:leading-[33px]">
+                {formatBrText(title, "max-[1200px]:hidden")}
               </h2>
             </div>
             {description && (
-              <div className="section_text w-[48.3%] max-[1199px]:w-[50%] max-[991px]:w-full max-[991px]:mt-2.5">
-                <p className="m-0 font-sans text-base font-medium leading-7 text-[#535353] max-[1199px]:text-sm max-[1199px]:leading-6">
+              <div className="section_text w-[48.3%] max-[1200px]:w-[50%] max-[992px]:w-full max-[992px]:mt-2.5">
+                <p className="m-0 font-sans text-base font-medium leading-7 text-[#535353] max-[1200px]:text-sm max-[1200px]:leading-6">
                   {description}
                 </p>
               </div>
@@ -63,28 +63,28 @@ export function WhiteLabelProcessSection({
         ) : (
           <h2
             data-aos="fade-up"
-            className="mb-[60px] text-center font-montreal-medium text-[35px] leading-[48.475px] font-normal tracking-normal text-ink max-[1199px]:mb-[50px] max-[992px]:mb-[30px] max-[992px]:text-[30px] max-[992px]:leading-10 max-[767px]:mb-5 max-[767px]:text-2xl max-[767px]:leading-[33.24px]"
+            className="mb-[60px] text-center font-montreal-medium text-[35px] leading-[48.475px] font-normal tracking-normal text-ink max-[1200px]:mb-[50px] max-[992px]:mb-[30px] max-[992px]:text-[30px] max-[992px]:leading-10 max-[768px]:mb-5 max-[768px]:text-2xl max-[768px]:leading-[33.24px]"
           >
             {formatBrText(title)}
           </h2>
         )}
-        <div data-aos="fade-up" className="partnership_steps flex max-[991px]:flex-wrap">
+        <div data-aos="fade-up" className="partnership_steps flex max-[992px]:flex-wrap">
           {steps.map((step, index) => (
             <article
               style={{ zIndex: steps.length - index }}
               className={cn(
-                "step_card relative flex-1 bg-[#fafaf7] p-[60px_22px_40px] text-center odd:bg-cream max-[1199px]:p-[50px_20px_30px] max-[991px]:w-full max-[991px]:flex-none max-[991px]:p-[40px_20px_30px] max-[767px]:p-[30px_15px_20px]",
+                "step_card relative flex-1 bg-[#fafaf7] p-[60px_22px_40px] text-center odd:bg-cream max-[1200px]:p-[50px_20px_30px] max-[992px]:w-full max-[992px]:flex-none max-[992px]:p-[40px_20px_30px] max-[768px]:p-[30px_15px_20px]",
                 index < steps.length - 1 &&
-                  "before:content-[''] before:w-[30px] before:h-[30px] before:absolute before:top-1/2 before:right-[-4px] before:[transform:rotate(45deg)_translateY(-50%)] before:z-1 before:bg-[#fafaf7] odd:before:bg-cream max-[991px]:before:top-auto max-[991px]:before:right-auto max-[991px]:before:bottom-[-25px] max-[991px]:before:left-1/2 max-[991px]:before:[transform:rotate(45deg)_translateX(-50%)] max-[767px]:before:w-[25px] max-[767px]:before:h-[25px] max-[767px]:before:bottom-[-20px]",
+                  "before:content-[''] before:w-[30px] before:h-[30px] before:absolute before:top-1/2 before:right-[-4px] before:[transform:rotate(45deg)_translateY(-50%)] before:z-1 before:bg-[#fafaf7] odd:before:bg-cream max-[992px]:before:top-auto max-[992px]:before:right-auto max-[992px]:before:bottom-[-25px] max-[992px]:before:left-1/2 max-[992px]:before:[transform:rotate(45deg)_translateX(-50%)] max-[768px]:before:w-[25px] max-[768px]:before:h-[25px] max-[768px]:before:bottom-[-20px]",
               )}
               key={step.title}
             >
-              <div className="mb-[30px] max-[1199px]:mb-[25px]">
-                <span className="mx-auto flex size-12 items-center justify-center rounded-full bg-brand-red font-sans text-[30px] leading-[39px] font-normal italic text-white outline outline-1 outline-dashed outline-offset-4 outline-brand-red max-[1199px]:size-[45px] max-[1199px]:text-[28px] max-[1199px]:leading-[38px]">
+              <div className="mb-[30px] max-[1200px]:mb-[25px]">
+                <span className="mx-auto flex size-12 items-center justify-center rounded-full bg-brand-red font-sans text-[30px] leading-[39px] font-normal italic text-white outline outline-1 outline-dashed outline-offset-4 outline-brand-red max-[1200px]:size-[45px] max-[1200px]:text-[28px] max-[1200px]:leading-[38px]">
                   {index + 1}
                 </span>
               </div>
-              <h3 className="mb-6 font-montreal-medium text-base font-normal leading-[20.48px] text-ink max-[1199px]:mb-[22px] max-[767px]:mb-[15px]">
+              <h3 className="mb-6 font-montreal-medium text-base font-normal leading-[20.48px] text-ink max-[1200px]:mb-[22px] max-[768px]:mb-[15px]">
                 {step.title}
               </h3>
               <p className="text-sm leading-[190%] font-medium text-muted">{step.description}</p>
@@ -92,8 +92,8 @@ export function WhiteLabelProcessSection({
           ))}
         </div>
         {note ? (
-          <div data-aos="fade-up" className="mt-8 rounded-[50px] border border-brand-red bg-brand-red/3 p-2.5 text-center max-[1199px]:mt-[25px] max-[992px]:mt-5 max-[767px]:rounded-[10px]">
-            <p className="text-base leading-4 font-semibold text-muted max-[1199px]:text-[15px] max-[1199px]:leading-[22px] max-[767px]:text-sm max-[767px]:leading-5">
+          <div data-aos="fade-up" className="mt-8 rounded-[50px] border border-brand-red bg-brand-red/3 p-2.5 text-center max-[1200px]:mt-[25px] max-[992px]:mt-5 max-[768px]:rounded-[10px]">
+            <p className="text-base leading-4 font-semibold text-muted max-[1200px]:text-[15px] max-[1200px]:leading-[22px] max-[768px]:text-sm max-[768px]:leading-5">
               {note}
             </p>
           </div>

@@ -33,7 +33,7 @@ export function CareerApplyNowPage({
       <section className="apply-interivew-sec p-[40px_0_10px_0]">
         <Container variant="form">
           <div className="apply-interivew-main rounded-[30px] p-[2px] bg-[linear-gradient(178.87deg,#15c064_11.23%,rgba(0,209,255,0.66)_33.98%,rgba(0,209,255,0)_78.28%)]">
-            <div className="wrapper flex flex-wrap justify-between rounded-[30px] bg-white p-[78px] max-[1299px]:p-[78px_60px] max-[1199px]:p-[60px_40px] max-[991px]:flex-col max-[991px]:p-10 max-[767px]:p-[40px_20px] max-[320px]:p-[40px_10px]">
+            <div className="wrapper flex flex-wrap justify-between rounded-[30px] bg-white p-[78px] max-[1299px]:p-[78px_60px] max-[1200px]:p-[60px_40px] max-[992px]:flex-col max-[992px]:p-10 max-[768px]:p-[40px_20px] max-[320px]:p-[40px_10px]">
               <CareerApplyNowLeftColumn
                 heading={heading}
                 phoneLabel={phoneLabel}
@@ -44,7 +44,7 @@ export function CareerApplyNowPage({
                 emailHref={emailHref}
               />
               {form ? (
-                <div className="right-col w-[61%] max-[1199px]:w-[55%] max-[991px]:w-full">
+                <div className="right-col w-[61%] max-[1200px]:w-[55%] max-[992px]:w-full">
                   <CmsFormClient
                     form={form}
                   />

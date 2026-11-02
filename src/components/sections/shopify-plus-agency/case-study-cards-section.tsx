@@ -37,7 +37,7 @@ export function CaseStudyCardsSection({
 }) {
   return (
     <section
-      className={cn("see-the-work-sec mb-20 bg-[#eff4ef] py-10 max-[991px]:mb-[50px]", className)}
+      className={cn("see-the-work-sec mb-20 bg-[#eff4ef] py-10 max-[992px]:mb-[50px]", className)}
       data-section="case-studies"
       id="case-studies"
     >
@@ -49,7 +49,7 @@ export function CaseStudyCardsSection({
           heading={content.heading}
           variant="left"
         />
-        <div className="cs-listing-main three-col grid grid-cols-3 gap-5 max-[992px]:grid-cols-2 max-[992px]:gap-4 max-[767px]:grid-cols-1">
+        <div className="cs-listing-main three-col grid grid-cols-3 gap-5 max-[992px]:grid-cols-2 max-[992px]:gap-4 max-[768px]:grid-cols-1">
           {content.items.map((item) => (
             <article
               data-aos="fade-up"

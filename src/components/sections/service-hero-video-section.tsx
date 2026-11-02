@@ -70,7 +70,7 @@ export function ServiceHeroVideoSection({
   return (
     <section
       className={cn(
-        "hero-new-section overflow-hidden bg-[#f7f4e9] pt-[91px] max-[991px]:pt-16",
+        "hero-new-section overflow-hidden bg-[#f7f4e9] pt-[91px] max-[992px]:pt-16",
         className,
       )}
     >
@@ -78,19 +78,19 @@ export function ServiceHeroVideoSection({
         <div className={cn("wrapper flex flex-wrap items-center justify-between", wrapperClassName)}>
           <div
             className={cn(
-              "left-col flex w-[51%] flex-col items-start justify-center py-[60px] max-[1199px]:w-full max-[1199px]:items-center max-[1199px]:py-10 max-[1199px]:text-center max-[767px]:py-8",
+              "left-col flex w-[51%] flex-col items-start justify-center py-[60px] max-[1200px]:w-full max-[1200px]:items-center max-[1200px]:py-10 max-[1200px]:text-center max-[768px]:py-8",
               isShopifyMigration ? "max-[1399px]:w-[59%]" : "max-[1399px]:w-[50%]",
             )}
           >
             <div className="hero-content w-full">
               {content.eyebrowSpans && content.eyebrowSpans.length > 0 ? (
-                <div className="eyebrow relative mb-[15px] inline-flex items-center pl-10 before:absolute before:left-0 before:top-[7px] before:inline-block before:h-[2px] before:w-[30px] before:bg-brand-red before:content-[''] max-[1199px]:mx-auto max-[1199px]:justify-center max-[767px]:mx-auto max-[767px]:justify-center max-[767px]:pl-6 max-[767px]:before:top-1 max-[767px]:before:w-[15px]">
+                <div className="eyebrow relative mb-[15px] inline-flex items-center pl-10 before:absolute before:left-0 before:top-[7px] before:inline-block before:h-[2px] before:w-[30px] before:bg-brand-red before:content-[''] max-[1200px]:mx-auto max-[1200px]:justify-center max-[768px]:mx-auto max-[768px]:justify-center max-[768px]:pl-6 max-[768px]:before:top-1 max-[768px]:before:w-[15px]">
                   {content.eyebrowSpans.map((span, idx) => (
                     <span
                       className={cn(
-                        "relative inline-flex items-center font-montserrat text-sm font-semibold uppercase leading-[1.2] text-[#535353] max-[767px]:text-[10px]",
+                        "relative inline-flex items-center font-montserrat text-sm font-semibold uppercase leading-[1.2] text-[#535353] max-[768px]:text-[10px]",
                         idx === 0 &&
-                          "max-[767px]:before:absolute max-[767px]:before:-left-6 max-[767px]:before:top-1/2 max-[767px]:before:-translate-y-1/2 max-[767px]:before:inline-block max-[767px]:before:h-[2px] max-[767px]:before:w-[15px] max-[767px]:before:bg-brand-red max-[767px]:before:content-['']",
+                          "max-[768px]:before:absolute max-[768px]:before:-left-6 max-[768px]:before:top-1/2 max-[768px]:before:-translate-y-1/2 max-[768px]:before:inline-block max-[768px]:before:h-[2px] max-[768px]:before:w-[15px] max-[768px]:before:bg-brand-red max-[768px]:before:content-['']",
                         idx > 0 &&
                           "ml-2.5 pl-2.5 after:absolute after:-left-[2px] after:top-1/2 after:-translate-y-1/2 after:inline-block after:size-[3px] after:rounded-full after:bg-[#535353] after:content-['']",
                       )}
@@ -101,14 +101,14 @@ export function ServiceHeroVideoSection({
                   ))}
                 </div>
               ) : content.eyebrow ? (
-                <div className="eyebrow relative mb-[15px] inline-flex items-center pl-10 before:absolute before:left-0 before:top-[7px] before:inline-block before:h-[2px] before:w-[30px] before:bg-brand-red before:content-[''] max-[1199px]:mx-auto max-[1199px]:justify-center max-[767px]:mx-auto max-[767px]:justify-center max-[767px]:pl-6 max-[767px]:before:top-1 max-[767px]:before:w-[15px]">
-                  <span className="relative inline-flex items-center font-montserrat text-sm font-semibold uppercase leading-[1.2] text-[#535353] max-[767px]:text-[10px] max-[767px]:before:absolute max-[767px]:before:-left-6 max-[767px]:before:top-1/2 max-[767px]:before:-translate-y-1/2 max-[767px]:before:inline-block max-[767px]:before:h-[2px] max-[767px]:before:w-[15px] max-[767px]:before:bg-brand-red max-[767px]:before:content-['']">
+                <div className="eyebrow relative mb-[15px] inline-flex items-center pl-10 before:absolute before:left-0 before:top-[7px] before:inline-block before:h-[2px] before:w-[30px] before:bg-brand-red before:content-[''] max-[1200px]:mx-auto max-[1200px]:justify-center max-[768px]:mx-auto max-[768px]:justify-center max-[768px]:pl-6 max-[768px]:before:top-1 max-[768px]:before:w-[15px]">
+                  <span className="relative inline-flex items-center font-montserrat text-sm font-semibold uppercase leading-[1.2] text-[#535353] max-[768px]:text-[10px] max-[768px]:before:absolute max-[768px]:before:-left-6 max-[768px]:before:top-1/2 max-[768px]:before:-translate-y-1/2 max-[768px]:before:inline-block max-[768px]:before:h-[2px] max-[768px]:before:w-[15px] max-[768px]:before:bg-brand-red max-[768px]:before:content-['']">
                     {content.eyebrow}
                   </span>
                 </div>
               ) : null}
 
-              <h1 className="mb-2.5 font-montreal-medium text-[50px] font-normal leading-[60px] text-ink max-[1199px]:text-[40px] max-[1199px]:leading-[50px] max-[767px]:text-[30px] max-[767px]:leading-[40px]">
+              <h1 className="mb-2.5 font-montreal-medium text-[50px] font-normal leading-[60px] text-ink max-[1200px]:text-[40px] max-[1200px]:leading-[50px] max-[768px]:text-[30px] max-[768px]:leading-[40px]">
                 {content.titleAccent && titleAccentPosition === "start" ? (
                   <>
                     {titleAccentTag === "span" ? (
@@ -161,18 +161,18 @@ export function ServiceHeroVideoSection({
               </h1>
 
               {content.subtitle ? (
-                <span className="h4 mb-2.5 block font-montserrat text-base font-semibold leading-7 text-[#535353] max-[1199px]:text-sm max-[1199px]:leading-6 max-[767px]:text-base max-[767px]:leading-[27px]">
+                <span className="h4 mb-2.5 block font-montserrat text-base font-semibold leading-7 text-[#535353] max-[1200px]:text-sm max-[1200px]:leading-6 max-[768px]:text-base max-[768px]:leading-[27px]">
                   {content.subtitle}
                 </span>
               ) : content.lead ? (
-                <p className="mb-2.5 font-sans text-xl font-medium text-ink max-[767px]:text-lg">
+                <p className="mb-2.5 font-sans text-xl font-medium text-ink max-[768px]:text-lg">
                   {content.lead}
                 </p>
               ) : null}
 
               {(content.paragraphs ?? []).map((p, index) => (
                 <p
-                  className="mb-[15px] font-sans text-base font-medium leading-7 text-[#535353] max-[1199px]:text-sm max-[1199px]:leading-6 max-[767px]:text-sm max-[767px]:leading-[27px]"
+                  className="mb-[15px] font-sans text-base font-medium leading-7 text-[#535353] max-[1200px]:text-sm max-[1200px]:leading-6 max-[768px]:text-sm max-[768px]:leading-[27px]"
                   key={index}
                 >
                   {formatBrText(p)}
@@ -180,7 +180,7 @@ export function ServiceHeroVideoSection({
               ))}
 
               {content.cta && content.ctaHref ? (
-                <div className="btn-group flex items-center gap-2.5 pt-2.5 max-[1199px]:justify-center max-[767px]:w-full max-[767px]:flex-col max-[767px]:items-center max-[767px]:gap-2.5 [&_a]:max-[767px]:w-full">
+                <div className="btn-group flex items-center gap-2.5 pt-2.5 max-[1200px]:justify-center max-[768px]:w-full max-[768px]:flex-col max-[768px]:items-center max-[768px]:gap-2.5 [&_a]:max-[768px]:w-full">
                   <ButtonLink
                     className="px-5"
                     href={content.ctaHref}
@@ -201,13 +201,13 @@ export function ServiceHeroVideoSection({
               ) : null}
 
               {content.badges && content.badges.length > 0 ? (
-                <div className="global_brands_grid_wrap relative mt-[30px] -mx-[15px] flex flex-wrap items-center max-[1199px]:justify-center max-[767px]:overflow-hidden max-[767px]:before:absolute max-[767px]:before:left-1/2 max-[767px]:before:top-0 max-[767px]:before:h-full max-[767px]:before:w-[1px] max-[767px]:before:-translate-x-1/2 max-[767px]:before:bg-[#d9d9d9] max-[767px]:before:content-[''] max-[767px]:after:absolute max-[767px]:after:left-5 max-[767px]:after:top-1/2 max-[767px]:after:h-[1px] max-[767px]:after:w-[calc(100%-40px)] max-[767px]:after:bg-[#d9d9d9] max-[767px]:after:content-['']">
+                <div className="global_brands_grid_wrap relative mt-[30px] -mx-[15px] flex flex-wrap items-center max-[1200px]:justify-center max-[768px]:overflow-hidden max-[768px]:before:absolute max-[768px]:before:left-1/2 max-[768px]:before:top-0 max-[768px]:before:h-full max-[768px]:before:w-[1px] max-[768px]:before:-translate-x-1/2 max-[768px]:before:bg-[#d9d9d9] max-[768px]:before:content-[''] max-[768px]:after:absolute max-[768px]:after:left-5 max-[768px]:after:top-1/2 max-[768px]:after:h-[1px] max-[768px]:after:w-[calc(100%-40px)] max-[768px]:after:bg-[#d9d9d9] max-[768px]:after:content-['']">
                   {content.badges.map((badge, idx) => (
                     <div
                       className={cn(
-                        "global_brands_item px-[15px] max-[1199px]:px-3",
-                        "border-r border-[#d9d9d9] last:border-r-0 max-[767px]:border-r-0",
-                        "max-[767px]:w-1/2 max-[767px]:p-[15px] max-[767px]:text-center",
+                        "global_brands_item px-[15px] max-[1200px]:px-3",
+                        "border-r border-[#d9d9d9] last:border-r-0 max-[768px]:border-r-0",
+                        "max-[768px]:w-1/2 max-[768px]:p-[15px] max-[768px]:text-center",
                       )}
                       key={badge.label || badge.name || idx}
                     >
@@ -219,7 +219,7 @@ export function ServiceHeroVideoSection({
                       >
                         <Image
                           alt={badge.alt}
-                          className="h-auto w-auto max-w-[100px] object-contain max-[767px]:max-h-[44px]"
+                          className="h-auto w-auto max-w-[100px] object-contain max-[768px]:max-h-[44px]"
                           height={badge.height}
                           src={badge.icon || badge.src || ""}
                           width={badge.width}
@@ -233,7 +233,7 @@ export function ServiceHeroVideoSection({
           </div>
 
           {content.video ? (
-            <div className="right-col flex w-[43.182%] max-[1399px]:w-[40%] max-[1199px]:w-[60%] max-[1199px]:mx-auto max-[1199px]:mb-10 max-[991px]:hidden">
+            <div className="right-col flex w-[43.182%] max-[1399px]:w-[40%] max-[1200px]:w-[60%] max-[1200px]:mx-auto max-[1200px]:mb-10 max-[992px]:hidden">
               <div className="video-wrapper relative w-full min-h-[386px]">
                 <video
                   autoPlay
@@ -250,7 +250,7 @@ export function ServiceHeroVideoSection({
           ) : content.image ? (
             <div
               className={cn(
-                "right-col flex w-[43.182%] max-[1399px]:w-[48%] max-[1199px]:w-[50%] max-[1199px]:mx-auto max-[1199px]:mb-10 max-[991px]:hidden",
+                "right-col flex w-[43.182%] max-[1399px]:w-[48%] max-[1200px]:w-[50%] max-[1200px]:mx-auto max-[1200px]:mb-10 max-[992px]:hidden",
                 rightColClassName,
               )}
             >

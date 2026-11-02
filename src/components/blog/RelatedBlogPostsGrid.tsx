@@ -71,20 +71,20 @@ export function BlogCard({ item, variant, isLast = false }: BlogCardProps) {
         <div className="-mx-1 mb-[9px] flex flex-wrap items-center">
           <Link className="inline-flex" href={categoryHref}>
             <span
-              className="mx-1 mb-2 flex items-center rounded-[50px] border border-[rgba(40,40,40,0.15)] px-[10px] py-2 text-center text-xs leading-[72%] font-medium text-muted uppercase transition-colors duration-300 hover:text-brand-red focus-visible:text-brand-red max-[767px]:px-[7.5px] max-[767px]:py-[3.5px] max-[767px]:text-[10px] max-[767px]:leading-[1.48] max-[767px]:tracking-[0.2px]"
+              className="mx-1 mb-2 flex items-center rounded-[50px] border border-[rgba(40,40,40,0.15)] px-[10px] py-2 text-center text-xs leading-[72%] font-medium text-muted uppercase transition-colors duration-300 hover:text-brand-red focus-visible:text-brand-red max-[768px]:px-[7.5px] max-[768px]:py-[3.5px] max-[768px]:text-[10px] max-[768px]:leading-[1.48] max-[768px]:tracking-[0.2px]"
               data-blogs-meta
             >
               {category}
             </span>
           </Link>
           <time
-            className="mx-1 mb-2 flex items-center rounded-[50px] border border-[rgba(40,40,40,0.15)] px-[10px] py-2 text-center text-xs leading-[72%] font-medium text-muted uppercase max-[767px]:px-[7.5px] max-[767px]:py-[3.5px] max-[767px]:text-[10px] max-[767px]:leading-[1.48] max-[767px]:tracking-[0.2px]"
+            className="mx-1 mb-2 flex items-center rounded-[50px] border border-[rgba(40,40,40,0.15)] px-[10px] py-2 text-center text-xs leading-[72%] font-medium text-muted uppercase max-[768px]:px-[7.5px] max-[768px]:py-[3.5px] max-[768px]:text-[10px] max-[768px]:leading-[1.48] max-[768px]:tracking-[0.2px]"
             dateTime={item.date}
           >
             {item.displayDate}
           </time>
         </div>
-        <h3 className="font-montreal-medium text-lg font-normal leading-6 text-ink transition-colors duration-300 group-hover/archive-card:text-brand-red max-[1199px]:text-[18px] max-[1199px]:leading-[26px] max-[767px]:text-base max-[767px]:leading-6" data-blogs-title>
+        <h3 className="font-montreal-medium text-lg font-normal leading-6 text-ink transition-colors duration-300 group-hover/archive-card:text-brand-red max-[1200px]:text-[18px] max-[1200px]:leading-[26px] max-[768px]:text-base max-[768px]:leading-6" data-blogs-title>
           <Link className="hover:text-brand-red focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-red" href={item.href}>
             {item.title}
           </Link>
@@ -125,14 +125,14 @@ export function BlogCard({ item, variant, isLast = false }: BlogCardProps) {
           <Image className="h-auto w-full object-cover [aspect-ratio:1504/1137] max-[992px]:absolute max-[992px]:inset-0 max-[992px]:h-full max-[992px]:[aspect-ratio:auto]" src={item.image ?? "/assets/og/homepage.png"} alt={item.title} width={item.width ?? 1504} height={item.height ?? 1137} sizes="(max-width: 991px) 40vw, 33vw" />
         </Link>
         <div className="max-[992px]:w-[calc(100%-110px)] max-[992px]:flex-[1_1_calc(100%-110px)]">
-          <div className="blog-cate-wrap -mx-1 mb-0 flex flex-wrap items-center max-[767px]:mb-[3px]">
+          <div className="blog-cate-wrap -mx-1 mb-0 flex flex-wrap items-center max-[768px]:mb-[3px]">
             <Link className="inline-flex" href={categoryHref}>
-              <span className="blog-cate mx-1 mb-2 flex items-center rounded-[50px] border border-[rgba(40,40,40,0.15)] px-[10px] py-2 text-center text-xs leading-[72%] font-semibold text-muted transition-colors duration-300 hover:text-brand-red focus-visible:text-brand-red max-[767px]:px-[7.5px] max-[767px]:pt-[4.5px] max-[767px]:pb-[2.75px] max-[767px]:text-[10px] max-[767px]:leading-none max-[767px]:tracking-[0.2px]">
+              <span className="blog-cate mx-1 mb-2 flex items-center rounded-[50px] border border-[rgba(40,40,40,0.15)] px-[10px] py-2 text-center text-xs leading-[72%] font-semibold text-muted transition-colors duration-300 hover:text-brand-red focus-visible:text-brand-red max-[768px]:px-[7.5px] max-[768px]:pt-[4.5px] max-[768px]:pb-[2.75px] max-[768px]:text-[10px] max-[768px]:leading-none max-[768px]:tracking-[0.2px]">
                 {category}
               </span>
             </Link>
             <time
-              className="blog-date mx-1 mb-2 flex items-center rounded-[50px] border border-[rgba(40,40,40,0.15)] px-[10px] py-2 text-center text-xs leading-[72%] font-semibold text-muted max-[767px]:px-[7.5px] max-[767px]:pt-[4.5px] max-[767px]:pb-[2.75px] max-[767px]:text-[10px] max-[767px]:leading-none max-[767px]:tracking-[0.2px]"
+              className="blog-date mx-1 mb-2 flex items-center rounded-[50px] border border-[rgba(40,40,40,0.15)] px-[10px] py-2 text-center text-xs leading-[72%] font-semibold text-muted max-[768px]:px-[7.5px] max-[768px]:pt-[4.5px] max-[768px]:pb-[2.75px] max-[768px]:text-[10px] max-[768px]:leading-none max-[768px]:tracking-[0.2px]"
               dateTime={item.date}
             >
               {item.displayDate}
@@ -140,7 +140,7 @@ export function BlogCard({ item, variant, isLast = false }: BlogCardProps) {
           </div>
           <div className="blog-title">
             <Link className="group/title block" href={item.href}>
-              <h3 className="font-display text-xl leading-[30px] font-normal tracking-normal transition-colors duration-300 ease-in-out group-hover/title:text-brand-red group-focus-visible/title:text-brand-red max-[767px]:text-base max-[767px]:leading-[normal]">
+              <h3 className="font-display text-xl leading-[30px] font-normal tracking-normal transition-colors duration-300 ease-in-out group-hover/title:text-brand-red group-focus-visible/title:text-brand-red max-[768px]:text-base max-[768px]:leading-[normal]">
                 {item.title}
               </h3>
             </Link>
@@ -160,12 +160,12 @@ export function BlogRelatedSection({ posts }: BlogRelatedSectionProps) {
 
   return (
     <section
-      className="related-blog-sec mt-20 bg-[#eff4ef] py-20 max-[991px]:mt-[50px] max-[991px]:py-[50px]"
+      className="related-blog-sec mt-20 bg-[#eff4ef] py-20 max-[992px]:mt-[50px] max-[992px]:py-[50px]"
       aria-labelledby="related-blogs-title"
     >
       <Container>
         <SplitSectionHeading
-          className="mb-10 max-[991px]:mb-8"
+          className="mb-10 max-[992px]:mb-8"
           description={blogDetailUiCopy.relatedDescription}
           eyebrow={blogDetailUiCopy.relatedEyebrow}
           heading={blogDetailUiCopy.relatedHeading}
@@ -176,7 +176,7 @@ export function BlogRelatedSection({ posts }: BlogRelatedSectionProps) {
           {posts.map((post) => (
             <div
               key={post.href}
-              className="w-1/3 px-3.5 max-[991px]:w-1/2 max-[767px]:w-full"
+              className="w-1/3 px-3.5 max-[992px]:w-1/2 max-[768px]:w-full"
             >
               <BlogCard item={post} variant="archive" />
             </div>

@@ -10,7 +10,7 @@ export default function NotFound() {
     >
       <Container>
         <p className="mb-4 font-bold text-[#535353] uppercase">{notFoundCopy.eyebrow}</p>
-        <h1 className="mx-auto mb-6 max-w-[760px] text-[56px] leading-[1.1] max-[767px]:text-[34px]">
+        <h1 className="mx-auto mb-6 max-w-[760px] text-[56px] leading-[1.1] max-[768px]:text-[34px]">
           {notFoundCopy.title}
         </h1>
         <p className="mx-auto max-w-[640px]">

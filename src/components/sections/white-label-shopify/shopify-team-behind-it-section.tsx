@@ -42,7 +42,7 @@ export function ShopifyTeamBehindItSection({
   return (
     <section
       className={cn(
-        "our_shopify_team_behind_it_section bg-[#EFF4EF] py-20 max-[991px]:py-[50px]",
+        "our_shopify_team_behind_it_section bg-[#EFF4EF] py-20 max-[992px]:py-[50px]",
         className,
       )}
     >
@@ -56,18 +56,18 @@ export function ShopifyTeamBehindItSection({
 
         <div
           data-aos="fade-up"
-          className="grid grid-cols-3 gap-5 max-[991px]:grid-cols-2 max-[767px]:grid-cols-1"
+          className="grid grid-cols-3 gap-5 max-[992px]:grid-cols-2 max-[768px]:grid-cols-1"
         >
           {content.cards.map((card) => (
             <div
-              className="flex h-full flex-col justify-between rounded-[20px] border border-[rgba(40,40,40,0.10)] bg-white p-[30px] max-[1199px]:p-5"
+              className="flex h-full flex-col justify-between rounded-[20px] border border-[rgba(40,40,40,0.10)] bg-white p-[30px] max-[1200px]:p-5"
               key={card.title}
             >
               <div>
-                <h3 className="mb-2.5 font-display text-[22px] font-medium leading-[1.32] text-[#282828] max-[1399px]:text-lg max-[991px]:text-base">
+                <h3 className="mb-2.5 font-display text-[22px] font-medium leading-[1.32] text-[#282828] max-[1399px]:text-lg max-[992px]:text-base">
                   {card.title}
                 </h3>
-                <p className="font-sans text-sm font-small leading-7 text-[#535353] max-[991px]:text-sm max-[991px]:leading-6">
+                <p className="font-sans text-sm font-small leading-7 text-[#535353] max-[992px]:text-sm max-[992px]:leading-6">
                   {card.description}
                 </p>
               </div>
@@ -78,7 +78,7 @@ export function ShopifyTeamBehindItSection({
         {!hideCtas && content.ctas ? (
           <div
             data-aos="fade-up"
-            className="mt-10 flex flex-wrap items-center justify-center gap-4 max-[767px]:flex-col"
+            className="mt-10 flex flex-wrap items-center justify-center gap-4 max-[768px]:flex-col"
           >
             <ButtonLink href={content.ctas.primary.href} variant="primary">
               {content.ctas.primary.label}

@@ -16,7 +16,7 @@ export function HeaderTwo() {
             aria-label="Dynamic Dreamz home"
           >
             <Image
-              className="h-auto w-[225px] max-[1199px]:w-[180px] max-[992px]:w-[225px] max-[767px]:w-[170px] max-[379px]:w-[150px]"
+              className="h-auto w-[225px] max-[1200px]:w-[180px] max-[992px]:w-[225px] max-[768px]:w-[170px] max-[379px]:w-[150px]"
               src={siteConfig.logo}
               alt="Dynamic Dreamz - Shopify Platinum Partner"
               width={257}

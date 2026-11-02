@@ -39,7 +39,7 @@ export function ShopifyMigrationServicesSection({
   return (
     <section
       className={cn(
-        "migration-services-sec bg-[#f7f4e9] py-20 max-[991px]:py-[50px]",
+        "migration-services-sec bg-[#f7f4e9] py-20 max-[992px]:py-[50px]",
         className,
       )}
       id={id}
@@ -61,7 +61,7 @@ export function ShopifyMigrationServicesSection({
         >
           {items.map((item) => (
             <div
-              className="migration-col mb-5 w-1/3 px-2 transition-all duration-300 ease-in-out max-[1199px]:mb-4 max-[1199px]:w-1/2 max-[767px]:w-full"
+              className="migration-col mb-5 w-1/3 px-2 transition-all duration-300 ease-in-out max-[1200px]:mb-4 max-[1200px]:w-1/2 max-[768px]:w-full"
               data-aos="fade-up"
               key={item.title}
             >
@@ -106,17 +106,17 @@ export function ShopifyMigrationServicesSection({
 
         {banner && (
           <div
-            className="wrapper mt-[50px] flex items-center justify-between rounded-[30px] border-[1.5px] border-[rgba(23,30,22,0.1)] bg-[#EFF4EF] p-[40px_32px_32px_32px] max-[1199px]:flex-wrap max-[991px]:mt-8 max-[991px]:rounded-[20px] max-[991px]:p-[30px] max-[767px]:p-5"
+            className="wrapper mt-[50px] flex items-center justify-between rounded-[30px] border-[1.5px] border-[rgba(23,30,22,0.1)] bg-[#EFF4EF] p-[40px_32px_32px_32px] max-[1200px]:flex-wrap max-[992px]:mt-8 max-[992px]:rounded-[20px] max-[992px]:p-[30px] max-[768px]:p-5"
             data-aos="fade-up"
           >
-            <div className="wlp-banner-content max-w-[868px] max-[1440px]:max-w-[720px] max-[1199px]:mb-5 max-[1199px]:max-w-full">
+            <div className="wlp-banner-content max-w-[868px] max-[1440px]:max-w-[720px] max-[1200px]:mb-5 max-[1200px]:max-w-full">
               <span className="badge mb-2 inline-block rounded-[50px] bg-[#282828] px-[10.5px] py-[6.5px] font-montserrat text-xs font-bold uppercase leading-none text-white">
                 {banner.badge}
               </span>
-              <h2 className="wlp-banner-title mb-2.5 font-montreal-medium text-[35px] font-normal leading-[1.4] text-ink max-[1199px]:text-[30px] max-[767px]:text-2xl max-[767px]:leading-[1.3]">
+              <h2 className="wlp-banner-title mb-2.5 font-montreal-medium text-[35px] font-normal leading-[1.4] text-ink max-[1200px]:text-[30px] max-[768px]:text-2xl max-[768px]:leading-[1.3]">
                 {banner.title}
               </h2>
-              <p className="wlp-banner-description font-sans text-base font-medium leading-7 text-[#535353] max-[767px]:text-sm max-[767px]:leading-6">
+              <p className="wlp-banner-description font-sans text-base font-medium leading-7 text-[#535353] max-[768px]:text-sm max-[768px]:leading-6">
                 {banner.description}
               </p>
             </div>

@@ -89,13 +89,13 @@ export function CareerLocationFilter({
   }
 
   return (
-    <div className="current-openings-wrap mt-10 max-[767px]:mt-6">
+    <div className="current-openings-wrap mt-10 max-[768px]:mt-6">
       <div
         data-aos="fade-up"
-        className="filter-location relative z-1 pb-7 text-right max-[767px]:pt-[30px] max-[767px]:pb-[43px]"
+        className="filter-location relative z-1 pb-7 text-right max-[768px]:pt-[30px] max-[768px]:pb-[43px]"
       >
         <div
-          className="dropdown_menu relative inline-block min-w-[149px] text-left max-[767px]:w-full"
+          className="dropdown_menu relative inline-block min-w-[149px] text-left max-[768px]:w-full"
           ref={rootRef}
         >
           <button

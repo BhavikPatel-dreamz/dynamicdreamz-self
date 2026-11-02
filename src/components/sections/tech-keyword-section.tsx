@@ -30,7 +30,7 @@ export function TechKeywordSection({
       id={id}
     >
       <Container>
-        <div data-aos="fade-up" className="wrapper grid grid-cols-[0.8fr_1.2fr] items-center gap-[55px] rounded-[24px] border border-[rgba(40,40,40,0.11)] bg-white p-[34px_38px] max-[1199px]:grid-cols-[0.8fr_1fr] max-[1199px]:gap-2.5 max-[1199px]:p-[30px_20px] max-[767px]:grid-cols-1 max-[767px]:gap-0">
+        <div data-aos="fade-up" className="wrapper grid grid-cols-[0.8fr_1.2fr] items-center gap-[55px] rounded-[24px] border border-[rgba(40,40,40,0.11)] bg-white p-[34px_38px] max-[1200px]:grid-cols-[0.8fr_1fr] max-[1200px]:gap-2.5 max-[1200px]:p-[30px_20px] max-[768px]:grid-cols-1 max-[768px]:gap-0">
           <div className="section_title_with_eyebrow mb-0">
             <div className="title w-full">
               {content.eyebrow ? (
@@ -38,13 +38,13 @@ export function TechKeywordSection({
                   <Eyebrow as="span">{content.eyebrow}</Eyebrow>
                 </div>
               ) : null}
-              <h2 className="font-display text-[35px] font-medium leading-[48px] tracking-[-0.7px] text-ink max-[1199px]:text-[28px] max-[1199px]:leading-[38px] max-[767px]:text-2xl max-[767px]:leading-[33px]">
+              <h2 className="font-display text-[35px] font-medium leading-[48px] tracking-[-0.7px] text-ink max-[1200px]:text-[28px] max-[1200px]:leading-[38px] max-[768px]:text-2xl max-[768px]:leading-[33px]">
                 {content.heading}
               </h2>
             </div>
           </div>
-          <div className="tech-keyword-copy max-[767px]:mt-4">
-            <p className="text-[#535353] font-normal text-[#535353] max-[767px]:text-sm">
+          <div className="tech-keyword-copy max-[768px]:mt-4">
+            <p className="text-[#535353] font-normal text-[#535353] max-[768px]:text-sm">
               {content.introText ? `${content.introText} ` : null}
               {content.highlightedText ? (
                 <strong className="font-bold">

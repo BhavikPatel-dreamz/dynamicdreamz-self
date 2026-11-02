@@ -122,11 +122,11 @@ function ContactDetails({
   return (
     <div className="border-t border-ink/10 pt-[15px] max-[992px]:border-0 max-[992px]:pt-0">
       <address className="flex flex-col gap-[15px] not-italic">
-        <a className="flex items-center text-sm leading-5 font-medium text-[rgba(40,40,40,0.8)] transition-colors duration-300 hover:text-[#282828] focus-visible:text-[#282828] max-[767px]:text-[11.5px] max-[767px]:leading-[15px]" href={`mailto:${displayEmail}`}>
+        <a className="flex items-center text-sm leading-5 font-medium text-[rgba(40,40,40,0.8)] transition-colors duration-300 hover:text-[#282828] focus-visible:text-[#282828] max-[768px]:text-[11.5px] max-[768px]:leading-[15px]" href={`mailto:${displayEmail}`}>
           <span className="mr-2.5 flex w-[18px] shrink-0 items-center justify-center text-[#111111]"><MailIcon /></span>
           <span>{displayEmail}</span>
         </a>
-        <a className="flex items-center text-sm leading-5 font-medium text-[rgba(40,40,40,0.8)] transition-colors duration-300 hover:text-[#282828] focus-visible:text-[#282828] max-[767px]:text-[11.5px] max-[767px]:leading-[15px]" href={hrefPhone}>
+        <a className="flex items-center text-sm leading-5 font-medium text-[rgba(40,40,40,0.8)] transition-colors duration-300 hover:text-[#282828] focus-visible:text-[#282828] max-[768px]:text-[11.5px] max-[768px]:leading-[15px]" href={hrefPhone}>
           <span className="mr-2.5 flex w-[18px] shrink-0 items-center justify-center text-[#111111]"><PhoneIcon /></span>
           <span>{displayPhone}</span>
         </a>
@@ -222,7 +222,7 @@ export function SiteFooter({
   const effectiveCopyright = copyrightText;
 
   return (
-    <footer className="bg-cream text-ink pt-15 max-[1199px]:pt-10 max-[767px]:pb-[70px]">
+    <footer className="bg-cream text-ink pt-15 max-[1200px]:pt-10 max-[768px]:pb-[70px]">
       <Container>
         {/* Desktop (1200px+) and Tablet (992px - 1199px) */}
         <div className="hidden min-[992px]:flex min-[992px]:flex-wrap min-[992px]:justify-between">
@@ -230,7 +230,7 @@ export function SiteFooter({
           <div className="w-[200px] min-[1400px]:w-[238px]"><FooterMenu index={1} navigation={effectiveNavigation} /></div>
           <div className="w-[200px] min-[1400px]:w-[235px]"><FooterMenu index={2} navigation={effectiveNavigation} /></div>
           <div className="w-[259px]"><PartnershipMenus navigation={effectiveNavigation} /></div>
-          <div className="w-[220px] max-[1199px]:mt-[38px]">
+          <div className="w-[220px] max-[1200px]:mt-[38px]">
             <MoreServices
               navigation={effectiveNavigation}
               email={effectiveEmail}
@@ -257,10 +257,10 @@ export function SiteFooter({
       </Container>
 
       <Container aria-label="Partner and review profiles">
-        <div className="grid grid-cols-6 gap-3 pt-[50px] max-[1199px]:grid-cols-3 max-[1199px]:gap-5 max-[1199px]:pt-[35px] max-[767px]:grid-cols-2 max-[767px]:gap-4 max-[767px]:pt-[30px]">
+        <div className="grid grid-cols-6 gap-3 pt-[50px] max-[1200px]:grid-cols-3 max-[1200px]:gap-5 max-[1200px]:pt-[35px] max-[768px]:grid-cols-2 max-[768px]:gap-4 max-[768px]:pt-[30px]">
           {footerAwards.map((award) => (
-            <a className="flex h-[81px] items-center justify-center rounded-[20px] bg-white px-[18px] py-4 max-[1199px]:rounded-[10px] max-[767px]:h-[60px] max-[767px]:border max-[767px]:border-[#efefef]/20 max-[767px]:px-[13px] max-[767px]:py-[5px]" href={award.href} target="_blank" rel="nofollow noopener noreferrer" key={award.src} aria-label={award.alt}>
-              <Image src={award.src} alt={award.alt} width={award.width} height={award.height} className="max-[767px]:h-10 object-contain"/>
+            <a className="flex h-[81px] items-center justify-center rounded-[20px] bg-white px-[18px] py-4 max-[1200px]:rounded-[10px] max-[768px]:h-[60px] max-[768px]:border max-[768px]:border-[#efefef]/20 max-[768px]:px-[13px] max-[768px]:py-[5px]" href={award.href} target="_blank" rel="nofollow noopener noreferrer" key={award.src} aria-label={award.alt}>
+              <Image src={award.src} alt={award.alt} width={award.width} height={award.height} className="max-[768px]:h-10 object-contain"/>
             </a>
           ))}
         </div>
@@ -270,20 +270,20 @@ export function SiteFooter({
       </Container>
 
       <Container>
-        <div className="flex items-center justify-between pt-[30px] pb-[15px] min-[992px]:pt-10 min-[992px]:pb-5 max-[992px]:pt-[30px] max-[992px]:pb-5 max-[767px]:mt-0 max-[767px]:flex-col max-[767px]:justify-center max-[767px]:gap-[15px] max-[767px]:border-t max-[767px]:border-[#efefef]/20 max-[767px]:pt-[15px] max-[767px]:pb-[15px] max-[767px]:text-center max-[359px]:gap-2.5">
+        <div className="flex items-center justify-between pt-[30px] pb-[15px] min-[992px]:pt-10 min-[992px]:pb-5 max-[992px]:pt-[30px] max-[992px]:pb-5 max-[768px]:mt-0 max-[768px]:flex-col max-[768px]:justify-center max-[768px]:gap-[15px] max-[768px]:border-t max-[768px]:border-[#efefef]/20 max-[768px]:pt-[15px] max-[768px]:pb-[15px] max-[768px]:text-center max-[359px]:gap-2.5">
           {effectiveCopyright ? (
-            <p className="text-sm leading-5 font-normal text-ink max-[767px]:text-[11.5px] max-[767px]:leading-[15px]">{effectiveCopyright}</p>
+            <p className="text-sm leading-5 font-normal text-ink max-[768px]:text-[11.5px] max-[768px]:leading-[15px]">{effectiveCopyright}</p>
           ) : (
-            <p className="text-sm leading-5 font-normal text-ink max-[767px]:text-[11.5px] max-[767px]:leading-[15px]">{siteChromeCopy.footer.copyrightPrefix} <Link className="transition-colors duration-300 hover:text-brand-red focus-visible:text-brand-red" href="/">{siteConfig.legalName}.</Link> {siteChromeCopy.footer.copyright}</p>
+            <p className="text-sm leading-5 font-normal text-ink max-[768px]:text-[11.5px] max-[768px]:leading-[15px]">{siteChromeCopy.footer.copyrightPrefix} <Link className="transition-colors duration-300 hover:text-brand-red focus-visible:text-brand-red" href="/">{siteConfig.legalName}.</Link> {siteChromeCopy.footer.copyright}</p>
           )}
 
           {effectiveBottomLinks && effectiveBottomLinks.length > 0 ? (
-            <div className="flex max-[767px]:mt-0 max-[767px]:w-full max-[767px]:justify-center">
+            <div className="flex max-[768px]:mt-0 max-[768px]:w-full max-[768px]:justify-center">
               {effectiveBottomLinks.map((link, idx) => (
                 <FooterBottomLink
                   key={`${link.label}-${link.href}`}
                   className={cn(
-                    "inline-block text-sm leading-5 font-normal text-ink/80 transition-colors duration-300 hover:text-brand-red focus-visible:text-brand-red max-[767px]:text-[11.5px] max-[767px]:leading-[15px]",
+                    "inline-block text-sm leading-5 font-normal text-ink/80 transition-colors duration-300 hover:text-brand-red focus-visible:text-brand-red max-[768px]:text-[11.5px] max-[768px]:leading-[15px]",
                     idx < effectiveBottomLinks.length - 1 && "relative mr-[14px] pr-[10px] after:absolute after:-top-[1px] after:right-[-4px] after:content-['|']",
                   )}
                   href={link.href}
@@ -294,9 +294,9 @@ export function SiteFooter({
               ))}
             </div>
           ) : (
-            <div className="flex max-[767px]:mt-0 max-[767px]:w-full max-[767px]:justify-center">
-              <FooterBottomLink className="relative mr-[14px] inline-block pr-[10px] text-sm leading-5 font-normal text-ink/80 transition-colors duration-300 after:absolute after:-top-[1px] after:right-[-4px] after:content-['|'] hover:text-brand-red focus-visible:text-brand-red max-[767px]:text-[11.5px] max-[767px]:leading-[15px]" href={siteConfig.termsPath} label={siteChromeCopy.footer.terms} target="_blank" rel="noopener noreferrer" />
-              <FooterBottomLink className="inline-block text-sm leading-5 font-normal text-ink/80 transition-colors duration-300 hover:text-brand-red focus-visible:text-brand-red max-[767px]:text-[11.5px] max-[767px]:leading-[15px]" href={siteConfig.privacyPath} label={siteChromeCopy.footer.privacy} target="_blank" rel="noopener noreferrer" />
+            <div className="flex max-[768px]:mt-0 max-[768px]:w-full max-[768px]:justify-center">
+              <FooterBottomLink className="relative mr-[14px] inline-block pr-[10px] text-sm leading-5 font-normal text-ink/80 transition-colors duration-300 after:absolute after:-top-[1px] after:right-[-4px] after:content-['|'] hover:text-brand-red focus-visible:text-brand-red max-[768px]:text-[11.5px] max-[768px]:leading-[15px]" href={siteConfig.termsPath} label={siteChromeCopy.footer.terms} target="_blank" rel="noopener noreferrer" />
+              <FooterBottomLink className="inline-block text-sm leading-5 font-normal text-ink/80 transition-colors duration-300 hover:text-brand-red focus-visible:text-brand-red max-[768px]:text-[11.5px] max-[768px]:leading-[15px]" href={siteConfig.privacyPath} label={siteChromeCopy.footer.privacy} target="_blank" rel="noopener noreferrer" />
             </div>
           )}
         </div>

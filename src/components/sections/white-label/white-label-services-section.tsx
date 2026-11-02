@@ -27,7 +27,7 @@ export function WhiteLabelServicesSection({
   showCta = true,
 }: WhiteLabelServicesSectionProps) {
   return (
-    <section className="bg-[#192019] py-20 max-[991px]:py-[50px]">
+    <section className="bg-[#192019] py-20 max-[992px]:py-[50px]">
       <Container>
         <SplitSectionHeading
           dark

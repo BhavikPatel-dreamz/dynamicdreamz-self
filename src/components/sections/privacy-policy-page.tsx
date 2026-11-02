@@ -56,7 +56,7 @@ export function PrivacyPolicyPage({ content }: PrivacyPolicyPageProps = {}) {
         <Container>
           <h1
             id="privacy-policy-title"
-            className="inline-block max-w-full font-montreal-medium text-[50px] leading-[60px] font-normal tracking-normal text-ink max-[992px]:text-[40px] max-[992px]:leading-[50px] max-[767px]:text-[30px] max-[767px]:leading-10"
+            className="inline-block max-w-full font-montreal-medium text-[50px] leading-[60px] font-normal tracking-normal text-ink max-[992px]:text-[40px] max-[992px]:leading-[50px] max-[768px]:text-[30px] max-[768px]:leading-10"
           >
             {heroTitle}
           </h1>
@@ -68,8 +68,8 @@ export function PrivacyPolicyPage({ content }: PrivacyPolicyPageProps = {}) {
           {sections.map((section) => {
             const Heading = section.level === 3 ? "h3" : "h2";
             const headingClass = section.level === 3
-              ? "mb-2.5 text-lg leading-[28.8px] font-small tracking-[-0.36px] text-ink max-[767px]:text-base max-[767px]:leading-[26px]"
-              : "mb-6 text-2xl leading-[31.2px] font-small tracking-[-0.48px] text-ink max-[767px]:text-xl max-[767px]:leading-[31.2px]";
+              ? "mb-2.5 text-lg leading-[28.8px] font-small tracking-[-0.36px] text-ink max-[768px]:text-base max-[768px]:leading-[26px]"
+              : "mb-6 text-2xl leading-[31.2px] font-small tracking-[-0.48px] text-ink max-[768px]:text-xl max-[768px]:leading-[31.2px]";
 
             return (
               <div key={section.title}>
@@ -93,7 +93,7 @@ export function PrivacyPolicyPage({ content }: PrivacyPolicyPageProps = {}) {
           })}
 
           <div className="text-base leading-[30.4px] font-medium text-muted">
-            <h3 className="mb-2.5 font-display text-lg leading-[28.8px] font-medium tracking-[-0.36px] text-ink max-[767px]:text-base max-[767px]:leading-[26px]">
+            <h3 className="mb-2.5 font-display text-lg leading-[28.8px] font-medium tracking-[-0.36px] text-ink max-[768px]:text-base max-[768px]:leading-[26px]">
               {contact.name}
             </h3>
             <address className="not-italic">

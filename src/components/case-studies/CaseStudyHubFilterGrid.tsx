@@ -132,14 +132,14 @@ export function CaseStudiesListing({ content }: CaseStudiesListingProps) {
 
   return (
     <section className="cs-listing-sec bg-[#eff4ef]" ref={filterRef}>
-      <div id="explore_case_studies" className="cs-main-wrapp bg-[#eff4ef] px-0 pt-[54px] pb-[120px] max-[1199px]:pt-[50px] max-[1199px]:pb-10 max-[992px]:pt-10 max-[992px]:pb-[30px]">
+      <div id="explore_case_studies" className="cs-main-wrapp bg-[#eff4ef] px-0 pt-[54px] pb-[120px] max-[1200px]:pt-[50px] max-[1200px]:pb-10 max-[992px]:pt-10 max-[992px]:pb-[30px]">
         <Container>
           <div className="cs-filter-main">
             <div className="mx-auto max-w-[1170px]">
-              <div className="cs-filter grid grid-cols-[minmax(260px,1fr)_260px_260px] items-center gap-3 rounded-[20px] border-[1.5px] border-[rgba(18,18,18,0.1)] bg-white p-[13px] shadow-[0_8px_30px_rgba(40,40,40,0.04)] max-[992px]:grid-cols-2 max-[992px]:gap-[13px] max-[767px]:grid-cols-1 max-[767px]:gap-2.5 max-[767px]:p-[15px] max-[767px]:rounded-[10px]">
-                <label className="cs-search relative w-full max-[992px]:col-span-2 max-[767px]:col-span-1">
+              <div className="cs-filter grid grid-cols-[minmax(260px,1fr)_260px_260px] items-center gap-3 rounded-[20px] border-[1.5px] border-[rgba(18,18,18,0.1)] bg-white p-[13px] shadow-[0_8px_30px_rgba(40,40,40,0.04)] max-[992px]:grid-cols-2 max-[992px]:gap-[13px] max-[768px]:grid-cols-1 max-[768px]:gap-2.5 max-[768px]:p-[15px] max-[768px]:rounded-[10px]">
+                <label className="cs-search relative w-full max-[992px]:col-span-2 max-[768px]:col-span-1">
                   <span className="sr-only">{caseStudiesUiCopy.searchLabel}</span>
-                  <input value={searchQuery} onChange={(event) => { setSearchQuery(event.target.value); setVisibleCount(BATCH_SIZE); }} type="search" placeholder={caseStudiesUiCopy.searchPlaceholder} className="h-[50px] max-[767px]:h-[44px] w-full rounded-[10px] border border-[rgba(40,40,40,0.12)] bg-[rgba(255,255,255,0.05)] pl-11 pr-4 font-sans text-sm font-medium text-[#282828] outline-none placeholder:text-[#282828]/80 focus:border-[#ad5151]" />
+                  <input value={searchQuery} onChange={(event) => { setSearchQuery(event.target.value); setVisibleCount(BATCH_SIZE); }} type="search" placeholder={caseStudiesUiCopy.searchPlaceholder} className="h-[50px] max-[768px]:h-[44px] w-full rounded-[10px] border border-[rgba(40,40,40,0.12)] bg-[rgba(255,255,255,0.05)] pl-11 pr-4 font-sans text-sm font-medium text-[#282828] outline-none placeholder:text-[#282828]/80 focus:border-[#ad5151]" />
                   <svg aria-hidden="true" viewBox="0 0 20 20" className="pointer-events-none absolute top-1/2 left-[15px] size-5 -translate-y-1/2 text-[#ad5151]" fill="none"><path d="m17.5 17.5-3.62-3.62M15.83 9.17a6.67 6.67 0 1 1-13.33 0 6.67 6.67 0 0 1 13.33 0Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" /></svg>
                 </label>
                 <FilterMenu id={techId} label={caseStudiesUiCopy.allTechnologies} value={selectedTech} options={filter.technologies} open={openMenu === "technology"} onToggle={() => setOpenMenu(openMenu === "technology" ? null : "technology")} onSelect={(value) => { setSelectedTech(value); setVisibleCount(BATCH_SIZE); setOpenMenu(null); }} />
@@ -150,13 +150,13 @@ export function CaseStudiesListing({ content }: CaseStudiesListingProps) {
           </div>
 
           <SplitSectionHeading
-            className="cs-section-title mt-[54px] border-t border-black/10 pt-[54px] max-[991px]:mt-5 max-[991px]:pt-5"
+            className="cs-section-title mt-[54px] border-t border-black/10 pt-[54px] max-[992px]:mt-5 max-[992px]:pt-5"
             pClassName="font-semibold"
             description={sectionTitle.description}
             eyebrow={sectionTitle.eyebrow}
             heading={sectionTitle.heading}
-            titleColumnClassName="w-[44%] max-[1399px]:w-[35%] max-[1199px]:w-[36%] max-[991px]:w-full"
-            textColumnClassName="w-[49%] max-[1399px]:w-[56%] max-[1199px]:w-[51%] max-[991px]:w-full"
+            titleColumnClassName="w-[44%] max-[1399px]:w-[35%] max-[1200px]:w-[36%] max-[992px]:w-full"
+            textColumnClassName="w-[49%] max-[1399px]:w-[56%] max-[1200px]:w-[51%] max-[992px]:w-full"
             variant="left"
           />
 
@@ -179,7 +179,7 @@ export function CaseStudiesListing({ content }: CaseStudiesListingProps) {
 }
 
 function FilterMenu({ id, label, value, options, open, onToggle, onSelect }: { id: string; label: string; value: string; options: readonly string[]; open: boolean; onToggle: () => void; onSelect: (value: string) => void }) {
-  return <div className="dropdown_menu relative min-w-[190px]"><button type="button" className="flex h-[50px] max-[767px]:h-[44px] w-full items-center justify-between rounded-[10px] border border-[rgba(40,40,40,0.12)] bg-[rgba(254,254,254,0.93)] px-4 py-3 text-left font-montserrat text-sm font-semibold text-[#282828cc] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#ad5151]" aria-haspopup="listbox" aria-expanded={open} aria-controls={id} onClick={onToggle}><span className="truncate">{value || label}</span><svg aria-hidden="true" viewBox="0 0 10 6" className={`size-2.5 transition-transform ${open ? "rotate-180" : ""}`} fill="none"><path d="m1 1 4 4 4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" /></svg></button>{open && <ul id={id} role="listbox" className="absolute top-[calc(100%+5px)] left-0 z-30 max-h-[272px] w-full overflow-y-auto rounded-[5px] border border-[#efefef] bg-white py-3 shadow-[2px_6px_19px_rgba(0,0,0,0.08)]">{["", ...options].map((option) => <li key={option || label} role="option" aria-selected={value === option} onClick={() => onSelect(option)} className={`cursor-pointer px-4 py-2.5 text-sm font-medium text-[#282828]/80 transition-colors hover:bg-[#f4f4f4] ${value === option ? "bg-[#f4f4f4] font-semibold" : ""}`}>{option || label}</li>)}</ul>}</div>;
+  return <div className="dropdown_menu relative min-w-[190px]"><button type="button" className="flex h-[50px] max-[768px]:h-[44px] w-full items-center justify-between rounded-[10px] border border-[rgba(40,40,40,0.12)] bg-[rgba(254,254,254,0.93)] px-4 py-3 text-left font-montserrat text-sm font-semibold text-[#282828cc] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#ad5151]" aria-haspopup="listbox" aria-expanded={open} aria-controls={id} onClick={onToggle}><span className="truncate">{value || label}</span><svg aria-hidden="true" viewBox="0 0 10 6" className={`size-2.5 transition-transform ${open ? "rotate-180" : ""}`} fill="none"><path d="m1 1 4 4 4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" /></svg></button>{open && <ul id={id} role="listbox" className="absolute top-[calc(100%+5px)] left-0 z-30 max-h-[272px] w-full overflow-y-auto rounded-[5px] border border-[#efefef] bg-white py-3 shadow-[2px_6px_19px_rgba(0,0,0,0.08)]">{["", ...options].map((option) => <li key={option || label} role="option" aria-selected={value === option} onClick={() => onSelect(option)} className={`cursor-pointer px-4 py-2.5 text-sm font-medium text-[#282828]/80 transition-colors hover:bg-[#f4f4f4] ${value === option ? "bg-[#f4f4f4] font-semibold" : ""}`}>{option || label}</li>)}</ul>}</div>;
 }
 
 function CaseStudyCard({ item }: { item: CaseStudyItem }) {
@@ -203,7 +203,7 @@ function CaseStudyCard({ item }: { item: CaseStudyItem }) {
             />
           </Link>
         </div>
-        <div className="cs-col-right flex flex-grow flex-col p-5 max-[767px]:p-[15px]">
+        <div className="cs-col-right flex flex-grow flex-col p-5 max-[768px]:p-[15px]">
           <div className="cs-text flex h-full flex-col justify-between">
             <div className="cs-title">
               <Link
@@ -218,11 +218,11 @@ function CaseStudyCard({ item }: { item: CaseStudyItem }) {
                     {item.industry}
                   </span>
                 </div>
-                <h2 className="h3 mb-2.5 font-montreal-medium text-[24px] font-normal leading-8 tracking-normal text-ink transition-colors group-hover/title:text-[#ad5151] max-[767px]:text-[20px] max-[767px]:leading-[28px]">
+                <h2 className="h3 mb-2.5 font-montreal-medium text-[24px] font-normal leading-8 tracking-normal text-ink transition-colors group-hover/title:text-[#ad5151] max-[768px]:text-[20px] max-[768px]:leading-[28px]">
                   {item.title}
                 </h2>
               </Link>
-              <p className="m-0 font-sans text-sm font-normal leading-[1.75] text-[#535353] max-[767px]:text-sm max-[767px]:leading-[26.6px]">
+              <p className="m-0 font-sans text-sm font-normal leading-[1.75] text-[#535353] max-[768px]:text-sm max-[768px]:leading-[26.6px]">
                 {item.excerpt}
               </p>
               {item.tags.length > 0 && (

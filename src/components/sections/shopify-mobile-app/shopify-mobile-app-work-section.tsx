@@ -44,7 +44,7 @@ export function ShopifyMobileAppWorkSection({
   return (
     <section
       id={id}
-      className="our-work-sec scroll-mt-20 bg-white py-20 max-[991px]:py-[50px]"
+      className="our-work-sec scroll-mt-20 bg-white py-20 max-[992px]:py-[50px]"
     >
       <Container>
         <SplitSectionHeading
@@ -55,12 +55,12 @@ export function ShopifyMobileAppWorkSection({
           
         />
 
-        <div className="our-work-main flex flex-wrap justify-start gap-x-[15px] gap-y-[42px] max-[991px]:gap-y-[30px]">
+        <div className="our-work-main flex flex-wrap justify-start gap-x-[15px] gap-y-[42px] max-[992px]:gap-y-[30px]">
           {content.items.map((project) => (
             <div
               key={project.name}
               data-aos="fade-up"
-              className="our_work_team apps w-[calc(25%_-_12px)] max-[1199px]:w-[calc(33.333%_-_10px)] max-[991px]:w-[calc(50%_-_10px)] max-[575px]:w-[calc(50%_-_8px)]"
+              className="our_work_team apps w-[calc(25%_-_12px)] max-[1200px]:w-[calc(33.333%_-_10px)] max-[992px]:w-[calc(50%_-_10px)] max-[575px]:w-[calc(50%_-_8px)]"
             >
               <PortfolioProjectCard
                 name={project.name}

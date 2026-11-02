@@ -26,7 +26,7 @@ export type ShopifyCroServicesSectionProps = {
 
 export function ShopifyCroServicesSection({
   content = shopifyCroServices,
-  className = "shopify-cro-services bg-white py-20 max-[991px]:py-[50px]",
+  className = "shopify-cro-services bg-white py-20 max-[992px]:py-[50px]",
 }: ShopifyCroServicesSectionProps) {
   return (
     <section className={className}>
@@ -47,7 +47,7 @@ export function ShopifyCroServicesSection({
               <div
                 key={item.title}
                 data-aos="fade-up"
-                className={`shopify-cro-services-item w-1/3 p-[42px_37px] text-center max-[991px]:w-full max-[991px]:border-l-0 max-[991px]:border-b max-[991px]:border-black/10 max-[991px]:p-[25px] max-[991px]:last:border-b-0 ${
+                className={`shopify-cro-services-item w-1/3 p-[42px_37px] text-center max-[992px]:w-full max-[992px]:border-l-0 max-[992px]:border-b max-[992px]:border-black/10 max-[992px]:p-[25px] max-[992px]:last:border-b-0 ${
                   !isFirstInRow
                     ? "min-[992px]:border-l min-[992px]:border-black/10"
                     : ""

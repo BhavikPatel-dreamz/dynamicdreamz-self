@@ -44,7 +44,7 @@ export function VerifiedKnowledgeSection({
           {content.items.map((item) => (
             <article
               data-aos="fade-up"
-              className="px-[50px] text-center max-[1199px]:px-[15px] max-[992px]:px-0 max-[992px]:py-5 max-[992px]:first:pt-0 max-[992px]:last:pb-0"
+              className="px-[50px] text-center max-[1200px]:px-[15px] max-[992px]:px-0 max-[992px]:py-5 max-[992px]:first:pt-0 max-[992px]:last:pb-0"
               key={item.title}
             >
               <Image

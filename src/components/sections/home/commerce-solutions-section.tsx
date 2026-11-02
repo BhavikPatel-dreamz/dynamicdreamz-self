@@ -17,7 +17,7 @@ export function CommerceSolutionsSection({
   const items = solutions.length > 0 ? solutions : commerceSolutions;
 
   return (
-    <section className="py-[60px] max-[992px]:py-[50px] max-[767px]:py-10" aria-labelledby="commerce-solutions-title">
+    <section className="py-[60px] max-[992px]:py-[50px] max-[768px]:py-10" aria-labelledby="commerce-solutions-title">
       <Container>
         <SplitSectionHeading
           className="mb-[54px] max-[992px]:mb-8"

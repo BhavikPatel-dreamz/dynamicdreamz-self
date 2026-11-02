@@ -43,18 +43,18 @@ export function Eyebrow<T extends ElementType = "p">({
   return (
     <Component
       className={cn(
-        !unstyled && "items-center text-[14px] leading-[1.2] font-semibold uppercase before:block before:shrink-0 before:bg-brand-red before:content-[''] max-[1199px]:text-[12px] max-[767px]:flex-wrap",
+        !unstyled && "items-center text-[14px] leading-[1.2] font-semibold uppercase before:block before:shrink-0 before:bg-brand-red before:content-[''] max-[1200px]:text-[12px] max-[768px]:text-[10px] max-[768px]:flex-wrap",
         !unstyled && (Component === "span" ? "inline-flex" : "flex"),
         !unstyled && align === "center" && "justify-center",
-        !unstyled && align === "responsive-center" && "justify-start max-[1199px]:justify-center",
-        !unstyled && linePosition === "flow" && "before:mr-3 max-[767px]:before:mr-2.5",
+        !unstyled && align === "responsive-center" && "justify-start max-[1200px]:justify-center",
+        !unstyled && linePosition === "flow" && "before:mr-3 max-[768px]:before:mr-2.5",
         !unstyled &&
           linePosition === "overlay" &&
-          "relative pl-10 before:absolute before:left-0 before:top-[7px] max-[767px]:pl-6 max-[1199px]:before:top-[6px] max-[767px]:before:top-[4px]",
+          "relative pl-10 before:absolute before:left-0 before:top-[7px] max-[768px]:pl-6 max-[1200px]:before:top-[6px] max-[768px]:before:top-[4px]",
         !unstyled && lineThickness === "regular" && "before:h-0.5",
         !unstyled && lineThickness === "thin" && "before:h-[2px]",
         !unstyled && lineWidth === "fixed" && "before:w-[30px]",
-        !unstyled && lineWidth === "responsive" && "before:w-[30px] max-[767px]:before:w-[15px]",
+        !unstyled && lineWidth === "responsive" && "before:w-[30px] max-[768px]:before:w-[15px]",
         !unstyled && (tone === "inverse" ? "text-white" : "text-[#535353]"),
         className,
       )}

@@ -25,25 +25,25 @@ export function BlogAuthorBioBox({ post }: { post: BlogPostDetail }) {
   if (!post.author) return null;
 
   return (
-    <section className="mt-[42px] max-[767px]:mt-[30px]" aria-label={post.author.name}>
+    <section className="mt-[42px] max-[768px]:mt-[30px]" aria-label={post.author.name}>
       <Container>
-        <div className="flex items-center max-[767px]:flex-col max-[767px]:text-center">
+        <div className="flex items-center max-[768px]:flex-col max-[768px]:text-center">
           {post.author.image ? (
-            <div className="mr-[25px] w-[220px] shrink-0 max-[767px]:mr-0 max-[767px]:w-full">
-              <div className="max-[767px]:text-center">
+            <div className="mr-[25px] w-[220px] shrink-0 max-[768px]:mr-0 max-[768px]:w-full">
+              <div className="max-[768px]:text-center">
                 <Image
                   src={post.author.image}
                   alt={`${post.author.name} - ${post.author.role} at Dynamic Dreamz`}
                   width={211}
                   height={211}
                   sizes="211px"
-                  className="h-auto w-[211px] max-w-full rounded-full object-cover max-[767px]:mx-auto"
+                  className="h-auto w-[211px] max-w-full rounded-full object-cover max-[768px]:mx-auto"
                 />
               </div>
             </div>
           ) : null}
-          <div className="w-[calc(100%-245px)] max-[767px]:mt-[10px] max-[767px]:w-full">
-            <div className="mb-1 flex items-center gap-2 max-[767px]:justify-center">
+          <div className="w-[calc(100%-245px)] max-[768px]:mt-[10px] max-[768px]:w-full">
+            <div className="mb-1 flex items-center gap-2 max-[768px]:justify-center">
               <h2 className="m-0 font-montreal-medium text-[20px] font-normal leading-[28.8px] text-[#282828]">
                 {post.author.name.toUpperCase()}
               </h2>

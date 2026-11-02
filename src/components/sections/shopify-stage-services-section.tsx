@@ -55,7 +55,7 @@ export function ShopifyStageServicesSection({
           variant="left"
         />
 
-        <div className="wrapper grid grid-cols-[1.2fr_0.8fr_0.8fr] auto-rows-[minmax(210px,auto)] gap-[15px] max-[1199px]:grid-cols-2 max-[767px]:flex max-[767px]:flex-col">
+        <div className="wrapper grid grid-cols-[1.2fr_0.8fr_0.8fr] auto-rows-[minmax(210px,auto)] gap-[15px] max-[1200px]:grid-cols-2 max-[768px]:flex max-[768px]:flex-col">
           {content.items.map((item, index) => {
             const isFirst = index === 0;
             const isFourth = index === 3;
@@ -68,22 +68,22 @@ export function ShopifyStageServicesSection({
               <article
                 data-aos="fade-up"
                 className={cn(
-                  "item relative overflow-hidden rounded-[22px] border border-[rgba(40,40,40,0.11)] p-[27px] transition-all max-[1399px]:p-5 max-[767px]:rounded-[16px] flex flex-col",
+                  "item relative overflow-hidden rounded-[22px] border border-[rgba(40,40,40,0.11)] p-[27px] transition-all max-[1399px]:p-5 max-[768px]:rounded-[16px] flex flex-col",
                   isFirst
-                    ? "row-span-2 min-h-[440px] bg-[#f7f4ea] justify-between max-[767px]:row-auto max-[767px]:min-h-0"
+                    ? "row-span-2 min-h-[440px] bg-[#f7f4ea] justify-between max-[768px]:row-auto max-[768px]:min-h-0"
                     : isFourth
                       ? cn(
                           "bg-[#eff4ef] flex flex-col justify-between",
                           content.items.length !== 5 && "col-span-2",
                         )
                       : isFifth && isSixCards
-                        ? "col-span-2 bg-white max-[1199px]:col-span-1 "
+                        ? "col-span-2 bg-white max-[1200px]:col-span-1 "
                         : isSeventh
-                          ? "bg-white max-[1199px]:row-span-2 max-[1199px]:bg-[#eef4ef]"
+                          ? "bg-white max-[1200px]:row-span-2 max-[1200px]:bg-[#eef4ef]"
                           : isEighth
-                            ? "col-span-2 bg-[rgba(239,244,239,1)] max-[1199px]:col-span-1 max-[1199px]:bg-transparent"
+                            ? "col-span-2 bg-[rgba(239,244,239,1)] max-[1200px]:col-span-1 max-[1200px]:bg-transparent"
                             : lastColFull && isLast
-                              ? "col-span-2 max-[1199px]:col-span-1 bg-white flex flex-col justify-between"
+                              ? "col-span-2 max-[1200px]:col-span-1 bg-white flex flex-col justify-between"
                               : "bg-white ",
                 )}
                 key={item.title}
@@ -94,7 +94,7 @@ export function ShopifyStageServicesSection({
                       {item.tag}
                     </span>
                   ) : null}
-                  <h3 className="mb-3 font-display text-[20px] font-normal leading-[28.8px] text-ink max-[1199px]:text-[18px] max-[1199px]:leading-[26px]">
+                  <h3 className="mb-3 font-display text-[20px] font-normal leading-[28.8px] text-ink max-[1200px]:text-[18px] max-[1200px]:leading-[26px]">
                     {item.title}
                   </h3>
                   <div className="description">

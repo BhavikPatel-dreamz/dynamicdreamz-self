@@ -29,9 +29,9 @@ export function WorkCultureSection({
       aria-labelledby="work-culture-title"
     >
       <Container>
-        <header className="mx-auto mb-[50px] max-w-[620px] text-center max-[1199px]:mb-[30px]">
+        <header className="mx-auto mb-[50px] max-w-[620px] text-center max-[1200px]:mb-[30px]">
           <h2
-            className="mb-2 font-montreal-medium text-[35px] leading-[48.475px] font-normal tracking-[-0.7px] text-ink max-[992px]:text-[30px] max-[992px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33.24px] max-[767px]:tracking-[-0.48px]"
+            className="mb-2 font-montreal-medium text-[35px] leading-[48.475px] font-normal tracking-[-0.7px] text-ink max-[992px]:text-[30px] max-[992px]:leading-10 max-[768px]:text-2xl max-[768px]:leading-[33.24px] max-[768px]:tracking-[-0.48px]"
             id="work-culture-title"
           >
             {title}
@@ -42,7 +42,7 @@ export function WorkCultureSection({
         </header>
 
         <div
-          className="flex flex-wrap rounded-[10px] border-[1.3px] border-[#efefef] max-[767px]:border-0"
+          className="flex flex-wrap rounded-[10px] border-[1.3px] border-[#efefef] max-[768px]:border-0"
           data-life="culture-grid"
         >
           {activeValues.map((value, index) => {
@@ -56,20 +56,20 @@ export function WorkCultureSection({
             return (
               <article
                 className={cn(
-                  "w-1/2 border-[#efefef] transition-shadow duration-300 hover:shadow-[-10px_4px_30px_rgba(0,38,31,0.06)] max-[992px]:w-full max-[767px]:rounded-[10px] max-[767px]:!border-[1.3px]",
+                  "w-1/2 border-[#efefef] transition-shadow duration-300 hover:shadow-[-10px_4px_30px_rgba(0,38,31,0.06)] max-[992px]:w-full max-[768px]:rounded-[10px] max-[768px]:!border-[1.3px]",
                   index % 2 === 0 && "border-r-[1.3px]",
                   index < activeValues.length - 2 && "border-b-[1.3px]",
                   index === activeValues.length - 2 &&
                     "max-[992px]:border-b-[1.3px]",
                   index < activeValues.length - 1 &&
-                    "max-[767px]:mb-[15px]",
+                    "max-[768px]:mb-[15px]",
                 )}
                 data-life="culture-card"
                 key={value.title}
               >
                 <div
                   className={cn(
-                    "flex h-full bg-white py-[30px] pr-8 pl-[49px] max-[1199px]:p-[30px] max-[767px]:flex-col max-[767px]:rounded-[10px] max-[767px]:p-5 max-[767px]:text-center",
+                    "flex h-full bg-white py-[30px] pr-8 pl-[49px] max-[1200px]:p-[30px] max-[768px]:flex-col max-[768px]:rounded-[10px] max-[768px]:p-5 max-[768px]:text-center",
                     index === 0 && "rounded-tl-[10px]",
                     index === 1 && "rounded-tr-[10px]",
                     index === activeValues.length - 2 &&
@@ -79,7 +79,7 @@ export function WorkCultureSection({
                   )}
                   data-life="culture-card-inner"
                 >
-                  <div className="mr-[30px] w-[85px] shrink-0 max-[1199px]:mr-5 max-[1199px]:min-h-[74.41px] max-[1199px]:w-16 max-[767px]:!mx-auto">
+                  <div className="mr-[30px] w-[85px] shrink-0 max-[1200px]:mr-5 max-[1200px]:min-h-[74.41px] max-[1200px]:w-16 max-[768px]:!mx-auto">
                     {iconUrl ? (
                       <Image
                         className="h-auto max-w-full"
@@ -90,7 +90,7 @@ export function WorkCultureSection({
                       />
                     ) : null}
                   </div>
-                  <div className="w-[calc(100%-115px)] max-[1199px]:w-[calc(100%-84px)] max-[767px]:w-full">
+                  <div className="w-[calc(100%-115px)] max-[1200px]:w-[calc(100%-84px)] max-[768px]:w-full">
                     <h3 className="mb-[5px] text-xl leading-[28.8px] font-normal text-ink max-[992px]:text-[18px] max-[992px]:leading-[26px]">
                       {value.title}
                     </h3>

@@ -23,16 +23,16 @@ export function WhiteLabelStatsSection({
             {stats.map((stat, index) => (
               <div
                 className={cn(
-                  "stats_item flex w-1/4 items-center justify-center border-r border-black/10 py-[17px] last:border-r-0 max-[991px]:w-1/2 max-[991px]:border-b max-[991px]:border-black/10 max-[991px]:even:border-r-0 max-[767px]:min-h-[94px] max-[767px]:p-4",
-                  index >= 2 && "max-[991px]:border-b-0",
+                  "stats_item flex w-1/4 items-center justify-center border-r border-black/10 py-[17px] last:border-r-0 max-[992px]:w-1/2 max-[992px]:border-b max-[992px]:border-black/10 max-[992px]:even:border-r-0 max-[768px]:min-h-[94px] max-[768px]:p-4",
+                  index >= 2 && "max-[992px]:border-b-0",
                 )}
                 key={stat.label}
               >
-                <div className="stats_box mx-auto w-fit text-center max-[991px]:text-left">
-                  <div className="stats_number font-montserrat text-2xl font-bold leading-none text-[#282828] max-[767px]:text-base">
+                <div className="stats_box mx-auto w-fit text-center max-[992px]:text-left">
+                  <div className="stats_number font-montserrat text-2xl font-bold leading-none text-[#282828] max-[768px]:text-base">
                     {stat.value}
                   </div>
-                  <p className="counter_title mt-2 font-montserrat text-[13px] font-medium leading-none text-[#535353] max-[767px]:max-w-[135px] max-[767px]:leading-[18px]">
+                  <p className="counter_title mt-2 font-montserrat text-[13px] font-medium leading-none text-[#535353] max-[768px]:max-w-[135px] max-[768px]:leading-[18px]">
                     {stat.label}
                   </p>
                 </div>
@@ -87,7 +87,7 @@ export function WhiteLabelWhySection({
     <section
       className={cn(
         isPistaBg ? "bg-[#EFF4EF]" : "bg-[#fafaf7]",
-        "pt-[70px] pb-[82px] max-[1199px]:py-20 max-[992px]:py-[50px]",
+        "pt-[70px] pb-[82px] max-[1200px]:py-20 max-[992px]:py-[50px]",
       )}
     >
       <Container>
@@ -95,9 +95,9 @@ export function WhiteLabelWhySection({
           variant="centered"
           eyebrow={eyebrow}
           heading={title || ""}
-          className="mb-5 max-[1199px]:mb-[60px] max-[992px]:mb-10 max-[767px]:mb-[30px]"
+          className="mb-5 max-[1200px]:mb-[60px] max-[992px]:mb-10 max-[768px]:mb-[30px]"
         />
-        <div data-aos="fade-up" className="grid grid-cols-3 max-[767px]:grid-cols-1 max-[767px]:gap-5">
+        <div data-aos="fade-up" className="grid grid-cols-3 max-[768px]:grid-cols-1 max-[768px]:gap-5">
           {reasons.map((reason, index) => {
             const isEmpty = reason === null;
             const isLastVisible = index === lastVisibleIndex;
@@ -107,21 +107,21 @@ export function WhiteLabelWhySection({
             return (
               <article
                 className={cn(
-                  "relative px-[25px] py-10 text-center max-[1199px]:px-5 max-[1199px]:py-[30px] max-[992px]:py-5",
+                  "relative px-[25px] py-10 text-center max-[1200px]:px-5 max-[1200px]:py-[30px] max-[992px]:py-5",
                   column !== 2 &&
                     "after:absolute after:top-0 after:right-0 after:h-full after:w-px after:opacity-20",
                   column !== 2 && whyRightBorderClasses[index],
                   row < lastRowIndex &&
                     "before:absolute before:right-0 before:bottom-0 before:left-0 before:h-px before:opacity-20",
                   row < lastRowIndex && whyBottomBorderClasses[column],
-                  column === 0 && "pl-0 max-[1199px]:pl-0",
-                  column === 2 && "pr-0 max-[1199px]:pr-0",
-                  isEmpty && "max-[767px]:hidden",
+                  column === 0 && "pl-0 max-[1200px]:pl-0",
+                  column === 2 && "pr-0 max-[1200px]:pr-0",
+                  isEmpty && "max-[768px]:hidden",
                   !isEmpty &&
                     !isLastVisible &&
-                    "max-[767px]:px-0 max-[767px]:pt-0 max-[767px]:pb-5 max-[767px]:after:hidden max-[767px]:before:absolute max-[767px]:before:right-0 max-[767px]:before:bottom-0 max-[767px]:before:left-0 max-[767px]:before:h-px max-[767px]:before:bg-[linear-gradient(90deg,transparent,rgba(51,51,51,0.2),transparent)]",
+                    "max-[768px]:px-0 max-[768px]:pt-0 max-[768px]:pb-5 max-[768px]:after:hidden max-[768px]:before:absolute max-[768px]:before:right-0 max-[768px]:before:bottom-0 max-[768px]:before:left-0 max-[768px]:before:h-px max-[768px]:before:bg-[linear-gradient(90deg,transparent,rgba(51,51,51,0.2),transparent)]",
                   isLastVisible &&
-                    "max-[767px]:px-0 max-[767px]:pt-0 max-[767px]:pb-5 max-[767px]:after:hidden max-[767px]:before:hidden",
+                    "max-[768px]:px-0 max-[768px]:pt-0 max-[768px]:pb-5 max-[768px]:after:hidden max-[768px]:before:hidden",
                 )}
                 aria-hidden={isEmpty || undefined}
                 key={reason?.title ?? `empty-${index}`}
@@ -131,7 +131,7 @@ export function WhiteLabelWhySection({
                     <h3 className="mb-3.5 text-lg leading-[1.28] font-bold text-[#ad5151] max-[992px]:mb-2.5">
                       {reason.title}
                     </h3>
-                    <p className="font-sans text-sm leading-[24px] font-medium text-muted max-[1199px]:leading-[26px] max-[992px]:text-[15px] max-[992px]:leading-[22px]">
+                    <p className="font-sans text-sm leading-[24px] font-medium text-muted max-[1200px]:leading-[26px] max-[992px]:text-[15px] max-[992px]:leading-[22px]">
                       {reason.description}
                     </p>
                   </>

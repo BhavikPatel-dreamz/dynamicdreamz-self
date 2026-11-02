@@ -71,18 +71,18 @@ export function ShopifyMobileAppHeroSection({
   };
 
   return (
-    <section className="hero-new-section relative overflow-hidden bg-[#f7f4e9] pt-[91px] max-[991px]:pt-16">
+    <section className="hero-new-section relative overflow-hidden bg-[#f7f4e9] pt-[91px] max-[992px]:pt-16">
       <Container className="max-w-[1408px] px-[15px]">
-        <div className="wrapper flex items-center justify-between max-[1199px]:flex-col">
-          <div className="left-col z-1 w-[53%] min-[1400px]:w-[51%] py-[60px] max-[1199px]:w-full max-[1199px]:py-10 max-[1199px]:text-center max-[767px]:py-8">
+        <div className="wrapper flex items-center justify-between max-[1200px]:flex-col">
+          <div className="left-col z-1 w-[53%] min-[1400px]:w-[51%] py-[60px] max-[1200px]:w-full max-[1200px]:py-10 max-[1200px]:text-center max-[768px]:py-8">
             <div className="hero-content">
               {content.eyebrows && content.eyebrows.length > 0 && (
-                <div className="eyebrow relative mb-[15px] inline-flex items-center pl-10 before:absolute before:left-0 before:top-1/2 before:-translate-y-1/2 before:inline-block before:h-[2px] before:w-[30px] before:bg-brand-red before:content-[''] max-[1199px]:mx-auto max-[1199px]:justify-center max-[767px]:mx-auto max-[767px]:justify-center max-[767px]:pl-6 max-[767px]:before:w-[15px]">
+                <div className="eyebrow relative mb-[15px] inline-flex items-center pl-10 before:absolute before:left-0 before:top-1/2 before:-translate-y-1/2 before:inline-block before:h-[2px] before:w-[30px] before:bg-brand-red before:content-[''] max-[1200px]:mx-auto max-[1200px]:justify-center max-[768px]:mx-auto max-[768px]:justify-center max-[768px]:pl-6 max-[768px]:before:w-[15px]">
                   {content.eyebrows.map((item, idx) => (
                     <span
                       key={item}
                       className={cn(
-                        "relative inline-flex items-center font-montserrat text-sm font-semibold uppercase leading-[1.2] text-[#535353] max-[767px]:text-[11px]",
+                        "relative inline-flex items-center font-montserrat text-sm font-semibold uppercase leading-[1.2] text-[#535353] max-[768px]:text-[11px]",
                         idx > 0 &&
                           "ml-2.5 pl-2.5 after:absolute after:-left-[2px] after:top-1/2 after:-translate-y-1/2 after:inline-block after:size-[3px] after:rounded-full after:bg-[#535353] after:content-['']",
                       )}
@@ -93,7 +93,7 @@ export function ShopifyMobileAppHeroSection({
                 </div>
               )}
 
-              <h1 className="mb-3 font-montreal-medium text-[50px] font-normal leading-[60px] tracking-normal text-[#282828] max-[1199px]:text-[40px] max-[1199px]:leading-[50px] max-[767px]:text-[30px] max-[767px]:leading-[40px]">
+              <h1 className="mb-3 font-montreal-medium text-[50px] font-normal leading-[60px] tracking-normal text-[#282828] max-[1200px]:text-[40px] max-[1200px]:leading-[50px] max-[768px]:text-[30px] max-[768px]:leading-[40px]">
                 {content.title}{" "}
                 <i className="font-normal not-italic text-[#ad5151]">
                   {content.titleAccent}
@@ -104,7 +104,7 @@ export function ShopifyMobileAppHeroSection({
                 {content.description}
               </p>
 
-              <div className="btn-group mt-[30px] flex flex-wrap items-center gap-[15px] max-[1199px]:justify-center max-[767px]:flex-col max-[767px]:items-stretch max-[575px]:w-full [&_a]:max-[575px]:w-full">
+              <div className="btn-group mt-[30px] flex flex-wrap items-center gap-[15px] max-[1200px]:justify-center max-[768px]:flex-col max-[768px]:items-stretch max-[575px]:w-full [&_a]:max-[575px]:w-full">
                 <ButtonLink
                   href={content.primaryCta.href}
                   variant="primary"
@@ -126,9 +126,9 @@ export function ShopifyMobileAppHeroSection({
               {content.badges && content.badges.length > 0 && (
                 <div
                   className={cn(
-                    "global_brands_grid_wrap relative mt-[30px] flex items-center -mx-[15px] max-[1199px]:justify-center max-[767px]:-mx-[15px] max-[767px]:w-[calc(100%+30px)] max-[767px]:flex-wrap max-[767px]:overflow-hidden",
+                    "global_brands_grid_wrap relative mt-[30px] flex items-center -mx-[15px] max-[1200px]:justify-center max-[768px]:-mx-[15px] max-[768px]:w-[calc(100%+30px)] max-[768px]:flex-wrap max-[768px]:overflow-hidden",
                     !badgeRowLayout &&
-                      "max-[767px]:before:absolute max-[767px]:before:top-0 max-[767px]:before:left-1/2 max-[767px]:before:block max-[767px]:before:h-full max-[767px]:before:w-px max-[767px]:before:-translate-x-1/2 max-[767px]:before:bg-[#d9d9d9] max-[767px]:before:content-[''] max-[767px]:after:absolute max-[767px]:after:top-1/2 max-[767px]:after:left-5 max-[767px]:after:block max-[767px]:after:h-px max-[767px]:after:w-[calc(100%-40px)] max-[767px]:after:bg-[#d9d9d9] max-[767px]:after:content-['']",
+                      "max-[768px]:before:absolute max-[768px]:before:top-0 max-[768px]:before:left-1/2 max-[768px]:before:block max-[768px]:before:h-full max-[768px]:before:w-px max-[768px]:before:-translate-x-1/2 max-[768px]:before:bg-[#d9d9d9] max-[768px]:before:content-[''] max-[768px]:after:absolute max-[768px]:after:top-1/2 max-[768px]:after:left-5 max-[768px]:after:block max-[768px]:after:h-px max-[768px]:after:w-[calc(100%-40px)] max-[768px]:after:bg-[#d9d9d9] max-[768px]:after:content-['']",
                   )}
                   aria-label="Shopify partnership credentials and client rating badges"
                 >
@@ -137,8 +137,8 @@ export function ShopifyMobileAppHeroSection({
                       className={cn(
                         "global_brands_item relative px-[15px] border-r border-[#d9d9d9] last:border-r-0",
                         badgeRowLayout
-                          ? "max-[767px]:w-1/3 max-[767px]:p-[15px] max-[767px]:text-center"
-                          : "max-[767px]:w-1/2 max-[767px]:border-0 max-[767px]:p-[15px] max-[767px]:text-center",
+                          ? "max-[768px]:w-1/3 max-[768px]:p-[15px] max-[768px]:text-center"
+                          : "max-[768px]:w-1/2 max-[768px]:border-0 max-[768px]:p-[15px] max-[768px]:text-center",
                       )}
                       key={`${badge.href}-${idx}`}
                     >
@@ -149,7 +149,7 @@ export function ShopifyMobileAppHeroSection({
                         rel="nofollow noopener noreferrer"
                       >
                         <Image
-                          className="h-auto max-w-[100px] w-auto object-contain max-[767px]:max-h-11"
+                          className="h-auto max-w-[100px] w-auto object-contain max-[768px]:max-h-11"
                           src={badge.src}
                           alt={badge.alt}
                           width={badge.width}
@@ -163,7 +163,7 @@ export function ShopifyMobileAppHeroSection({
             </div>
           </div>
 
-          <div className="right-col w-[48%] max-[1199px]:w-[50%] max-[1199px]:mx-auto max-[991px]:hidden">
+          <div className="right-col w-[48%] max-[1200px]:w-[50%] max-[1200px]:mx-auto max-[992px]:hidden">
             <PhoneAppSlider
               slides={content.slides}
               frameImage={frameImage}

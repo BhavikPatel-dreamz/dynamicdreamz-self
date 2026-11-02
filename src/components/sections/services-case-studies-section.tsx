@@ -50,28 +50,28 @@ export function ServicesCaseStudiesSection({
         <div
           data-aos="fade-up"
           className={cn(
-            "section_title_with_eyebrow mb-10 max-[991px]:mb-[30px]",
+            "section_title_with_eyebrow mb-10 max-[992px]:mb-[30px]",
             description &&
-              "flex flex-wrap items-end justify-between max-[991px]:flex-col max-[991px]:items-start",
+              "flex flex-wrap items-end justify-between max-[992px]:flex-col max-[992px]:items-start",
           )}
         >
           <div
-            className={cn("title", description && "w-[44%] max-[991px]:w-full")}
+            className={cn("title", description && "w-[44%] max-[992px]:w-full")}
           >
             {eyebrow && (
-              <div className="eyebrow relative mb-4 inline-flex items-center pl-10 before:absolute before:left-0 before:top-[7px] before:inline-block before:h-[2px] before:w-[30px] before:bg-brand-red before:content-[''] max-[1199px]:before:top-[6px] max-[767px]:pl-6 max-[767px]:before:top-[4px] max-[767px]:before:w-[15px]">
-                <span className="font-montserrat text-sm font-semibold uppercase leading-[1.2] text-[#535353] max-[1199px]:text-xs max-[767px]:text-[10px]">
+              <div className="eyebrow relative mb-4 inline-flex items-center pl-10 before:absolute before:left-0 before:top-[7px] before:inline-block before:h-[2px] before:w-[30px] before:bg-brand-red before:content-[''] max-[1200px]:before:top-[6px] max-[768px]:pl-6 max-[768px]:before:top-[4px] max-[768px]:before:w-[15px]">
+                <span className="font-montserrat text-sm font-semibold uppercase leading-[1.2] text-[#535353] max-[1200px]:text-xs max-[768px]:text-[10px]">
                   {eyebrow}
                 </span>
               </div>
             )}
-            <h2 className="m-0 font-montreal-medium text-[35px] font-normal leading-[49px] text-[#282828] max-[1199px]:[&_br]:hidden max-[991px]:mb-2.5 max-[991px]:text-[30px] max-[991px]:leading-10 max-[767px]:text-2xl max-[767px]:leading-[33px]">
-              {formatBrText(heading, "max-[1199px]:hidden")}
+            <h2 className="m-0 font-montreal-medium text-[35px] font-normal leading-[49px] text-[#282828] max-[1200px]:[&_br]:hidden max-[992px]:mb-2.5 max-[992px]:text-[30px] max-[992px]:leading-10 max-[768px]:text-2xl max-[768px]:leading-[33px]">
+              {formatBrText(heading, "max-[1200px]:hidden")}
             </h2>
           </div>
           {description && (
-            <div className="section_text w-[48.3%] max-[1199px]:w-[50%] max-[991px]:w-full max-[991px]:mt-2.5">
-              <p className="m-0 font-sans text-base font-medium leading-7 text-[#535353] max-[1199px]:text-sm max-[1199px]:leading-6">
+            <div className="section_text w-[48.3%] max-[1200px]:w-[50%] max-[992px]:w-full max-[992px]:mt-2.5">
+              <p className="m-0 font-sans text-base font-medium leading-7 text-[#535353] max-[1200px]:text-sm max-[1200px]:leading-6">
                 {formatBrText(description)}
               </p>
             </div>
@@ -83,7 +83,7 @@ export function ServicesCaseStudiesSection({
             <article
               key={item.href}
               data-aos="fade-up"
-              className="cs-listing-row relative mb-5 flex min-h-full w-[calc(33.33%-10px)] flex-col overflow-hidden rounded-[20px] border border-[rgba(40,40,40,0.06)] bg-white transition-[0.23s_ease] max-[1199px]:w-[calc(50%-10px)] max-[991px]:w-full"
+              className="cs-listing-row relative mb-5 flex min-h-full w-[calc(33.33%-10px)] flex-col overflow-hidden rounded-[20px] border border-[rgba(40,40,40,0.06)] bg-white transition-[0.23s_ease] max-[1200px]:w-[calc(50%-10px)] max-[992px]:w-full"
             >
               <Link
                 href={item.href}

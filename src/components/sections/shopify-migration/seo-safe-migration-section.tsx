@@ -37,27 +37,27 @@ export function SeoSafeMigrationSection({
     <section
       className={cn(
         "seo_safe_shopify_migration_section bg-white",
-        isPt0 ? "pt-0 pb-0" : "py-20 max-[991px]:py-[50px]",
+        isPt0 ? "pt-0 pb-0" : "py-20 max-[992px]:py-[50px]",
       )}
       id={id}
     >
       <Container>
         <div
           data-aos="fade-up"
-          className="seo-safe-main mx-auto rounded-[30px] bg-[#EFF4EF] p-10 max-[991px]:rounded-[20px] max-[991px]:p-[30px] max-[767px]:p-5"
+          className="seo-safe-main mx-auto rounded-[30px] bg-[#EFF4EF] p-10 max-[992px]:rounded-[20px] max-[992px]:p-[30px] max-[768px]:p-5"
         >
-          <div className="wrapper flex flex-wrap items-center justify-between max-[991px]:block">
-            <div className="left-col w-[49%] max-[1199px]:w-[41%] max-[991px]:w-full">
+          <div className="wrapper flex flex-wrap items-center justify-between max-[992px]:block">
+            <div className="left-col w-[49%] max-[1200px]:w-[41%] max-[992px]:w-full">
               <div className="text-block">
                 {content.eyebrow && (
                   <Eyebrow className="mb-4" lineThickness="thin">
                     {content.eyebrow}
                   </Eyebrow>
                 )}
-                <h2 className="mb-2.5 font-montreal-medium text-[35px] font-normal leading-[1.2] text-ink max-[1199px]:text-[30px] max-[767px]:text-2xl">
-                  {formatBrText(content.heading, "max-[767px]:hidden")}
+                <h2 className="mb-2.5 font-montreal-medium text-[35px] font-normal leading-[1.2] text-ink max-[1200px]:text-[30px] max-[768px]:text-2xl">
+                  {formatBrText(content.heading, "max-[768px]:hidden")}
                 </h2>
-                <p className="font-sans font-small leading-7 text-[#535353] max-[1199px]:text-sm max-[1199px]:leading-6">
+                <p className="font-sans font-small leading-7 text-[#535353] max-[1200px]:text-sm max-[1200px]:leading-6">
                   {formatBrText(content.description)}
                 </p>
                 <div className="meta-wrapp mt-5 flex flex-wrap gap-[7px]">
@@ -73,21 +73,21 @@ export function SeoSafeMigrationSection({
               </div>
             </div>
 
-            <div className="right-col w-[49%] max-[1199px]:w-[55%] max-[991px]:mt-5 max-[991px]:w-full">
+            <div className="right-col w-[49%] max-[1200px]:w-[55%] max-[992px]:mt-5 max-[992px]:w-full">
               <div className="url-map-wrapp">
                 {content.urlMappings.map((row) => (
                   <div
-                    className="url-map-row mb-2.5 flex items-center justify-between rounded-[15px] border border-[rgba(23,30,22,0.2)] p-[15px] last:mb-0 max-[991px]:rounded-[10px] max-[991px]:p-2.5 max-[767px]:flex-col"
+                    className="url-map-row mb-2.5 flex items-center justify-between rounded-[15px] border border-[rgba(23,30,22,0.2)] p-[15px] last:mb-0 max-[992px]:rounded-[10px] max-[992px]:p-2.5 max-[768px]:flex-col"
                     key={row.source}
                   >
-                    <div className="url-map w-[45%] px-2.5 max-[767px]:w-full max-[767px]:px-0">
+                    <div className="url-map w-[45%] px-2.5 max-[768px]:w-full max-[768px]:px-0">
                       <div className="code">
-                        <p className="text-sm font-medium text-[#535353] max-[767px]:mb-2.5">
+                        <p className="text-sm font-medium text-[#535353] max-[768px]:mb-2.5">
                           {row.source}
                         </p>
                       </div>
                     </div>
-                    <div className="redirect flex w-[55%] items-center gap-[15px] px-2.5 max-[767px]:w-full max-[767px]:gap-2 max-[767px]:px-0">
+                    <div className="redirect flex w-[55%] items-center gap-[15px] px-2.5 max-[768px]:w-full max-[768px]:gap-2 max-[768px]:px-0">
                       <div className="url flex items-center gap-1.5 font-bold text-[#ad5151]">
                         <h3 className="m-0 font-montreal-medium text-[20px] font-normal text-[#282828]">
                           {row.statusCode ?? "301"}
@@ -107,7 +107,7 @@ export function SeoSafeMigrationSection({
               <div className="seo-checks -mx-[5px] mt-5 flex flex-wrap">
                 {content.checks.map((check) => (
                   <div
-                    className="seo-col mb-2.5 w-1/2 px-[5px] max-[767px]:w-full"
+                    className="seo-col mb-2.5 w-1/2 px-[5px] max-[768px]:w-full"
                     key={check}
                   >
                     <div className="code border-l-2 border-[#ad5151] bg-[#ad5151]/[0.07] px-3 py-[7px]">

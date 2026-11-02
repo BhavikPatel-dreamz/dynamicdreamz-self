@@ -80,7 +80,7 @@ export function IndustryHeroSection({
             </span>
           ) : null}
           <h1
-            className="mb-2.5 font-montreal-medium text-[50px] leading-[60px] font-normal tracking-normal text-ink max-[992px]:text-[40px] max-[992px]:leading-[50px] max-[767px]:text-[30px] max-[767px]:leading-10"
+            className="mb-2.5 font-montreal-medium text-[50px] leading-[60px] font-normal tracking-normal text-ink max-[992px]:text-[40px] max-[992px]:leading-[50px] max-[768px]:text-[30px] max-[768px]:leading-10"
             id={`${slug}-title`}
           >
             {resolvedTitle}
@@ -94,7 +94,7 @@ export function IndustryHeroSection({
               {resolvedDescBefore}
               {resolvedDescAfter ? (
                 <>
-                  <br className="max-[1199px]:hidden" /> {resolvedDescAfter}
+                  <br className="max-[1200px]:hidden" /> {resolvedDescAfter}
                 </>
               ) : null}
             </p>
@@ -111,7 +111,7 @@ export function IndustryHeroSection({
         </div>
 
         {resolvedImage ? (
-          <div className="industries-img mx-auto mt-[55px] mb-[-80px] w-full max-w-[840px] pb-[5px] max-[992px]:mt-[60.4px] max-[992px]:pb-[10px] max-[767px]:mt-[30.4px] max-[767px]:mb-[-70px] max-[575px]:pb-[10.75px]">
+          <div className="industries-img mx-auto mt-[55px] mb-[-80px] w-full max-w-[840px] pb-[5px] max-[992px]:mt-[60.4px] max-[992px]:pb-[10px] max-[768px]:mt-[30.4px] max-[768px]:mb-[-70px] max-[575px]:pb-[10.75px]">
             <Image
               className="h-auto w-full"
               src={resolvedImage.src}

@@ -126,13 +126,13 @@ export function FaqAccordion({
           >
             {item.listItems.map((listItem) => (
               <li
-                className="relative pl-[30px] text-sm leading-7 font-medium text-[#535353] max-[1199px]:pl-[26px] max-[1199px]:text-sm max-[1199px]:leading-6"
+                className="relative pl-[30px] text-sm text-[#535353] max-[1200px]:pl-[26px] max-[1200px]:text-sm max-[1200px]:leading-6"
                 key={`${listItem.label ?? "item"}-${listItem.text}`}
               >
                 <Image
                   aria-hidden="true"
                   alt=""
-                  className="absolute top-[4px] left-0 size-[18px] max-[1199px]:top-[3px] max-[1199px]:size-[16px]"
+                  className="absolute top-[4px] left-0 size-[18px] max-[1200px]:top-[3px] max-[1200px]:size-[16px]"
                   height={18}
                   src="/assets/icons/gradient-check.svg"
                   width={18}
@@ -231,7 +231,7 @@ export function FaqAccordion({
           >
             <button
               className={cn(
-                "relative block w-full cursor-pointer border-0 bg-transparent py-6 pr-[70px] pl-8 text-left max-[1199px]:py-5 max-[1199px]:pr-[50px] max-[1199px]:pl-5",
+                "relative block w-full cursor-pointer border-0 bg-transparent py-6 pr-[70px] pl-8 text-left max-[1200px]:py-5 max-[1200px]:pr-[50px] max-[1200px]:pl-5",
                 triggerClassName,
               )}
               data-faq-trigger
@@ -243,7 +243,7 @@ export function FaqAccordion({
             >
               <h3
                 className={cn(
-                  "m-0 font-montreal-medium text-[20px] leading-7 tracking-0 font-medium text-ink max-[1199px]:text-[18px]",
+                  "m-0 font-montreal-medium text-[20px] leading-7 tracking-0 font-medium text-ink max-[576px]:text-[16px]",
                   questionClassName,
                 )}
               >
@@ -272,7 +272,7 @@ export function FaqAccordion({
               <div className="overflow-hidden">
                 <div
                   className={cn(
-                    "px-8 pb-6 max-[1199px]:px-5 max-[1199px]:pb-5",
+                    "px-8 pb-6 max-[1200px]:px-5 max-[1200px]:pb-5",
                     panelContentClassName,
                   )}
                 >

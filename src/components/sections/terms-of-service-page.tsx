@@ -26,13 +26,13 @@ export function TermsOfServicePage({ content }: TermsOfServicePageProps = {}) {
   return (
     <>
       <section
-        className="overflow-hidden bg-[linear-gradient(97.18deg,#e8f9ef_28.5%,#e6fafd_91.82%)] pt-40 pb-[85px] text-center max-[991px]:pt-[170px] max-[991px]:pb-20"
+        className="overflow-hidden bg-[linear-gradient(97.18deg,#e8f9ef_28.5%,#e6fafd_91.82%)] pt-40 pb-[85px] text-center max-[992px]:pt-[170px] max-[992px]:pb-20"
         aria-labelledby="terms-of-service-title"
       >
         <Container>
           <h1
             id="terms-of-service-title"
-            className="inline-block max-w-full font-montreal-medium text-[50px] leading-[60px] font-normal tracking-normal text-ink max-[991px]:text-[40px] max-[991px]:leading-[50px] max-[767px]:text-[30px] max-[767px]:leading-10"
+            className="inline-block max-w-full font-montreal-medium text-[50px] leading-[60px] font-normal tracking-normal text-ink max-[992px]:text-[40px] max-[992px]:leading-[50px] max-[768px]:text-[30px] max-[768px]:leading-10"
           >
             {heroTitle}
           </h1>
@@ -40,7 +40,7 @@ export function TermsOfServicePage({ content }: TermsOfServicePageProps = {}) {
       </section>
 
       <section
-        className="py-20 max-[991px]:py-[50px]"
+        className="py-20 max-[992px]:py-[50px]"
         aria-label="Terms of service details"
       >
         <Container>
@@ -50,7 +50,7 @@ export function TermsOfServicePage({ content }: TermsOfServicePageProps = {}) {
 
           {sections.map((section) => (
             <Fragment key={section.title}>
-              <h2 className="mb-3 font-montreal-medium text-2xl leading-[31.2px] font-normal tracking-[-0.48px] text-ink max-[767px]:mb-2.5 max-[767px]:text-xl max-[767px]:leading-[31.2px] max-[767px]:tracking-[-0.4px]">
+              <h2 className="mb-3 font-montreal-medium text-2xl leading-[31.2px] font-normal tracking-[-0.48px] text-ink max-[768px]:mb-2.5 max-[768px]:text-xl max-[768px]:leading-[31.2px] max-[768px]:tracking-[-0.4px]">
                 {section.title}
               </h2>
               {section.paragraphs?.map((paragraph, index) => (

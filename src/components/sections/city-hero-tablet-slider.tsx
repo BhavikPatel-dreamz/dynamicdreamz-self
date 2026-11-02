@@ -97,14 +97,14 @@ export function CityHeroTabletSlider({ slider }: CityHeroTabletSliderProps) {
   return (
     <div
       ref={containerRef}
-      className="tablet-slider-wrap relative mb-[-40px] flex w-full items-center justify-center px-10 pt-[60px] pb-0 max-[1199px]:mb-[-70px] max-[1199px]:pt-[30px]"
+      className="tablet-slider-wrap relative mb-[-40px] flex w-full items-center justify-center px-10 pt-[60px] pb-0 max-[1200px]:mb-[-70px] max-[1200px]:pt-[30px]"
       aria-label="Interactive showcase preview"
     >
-      <div className="tablet-frame relative h-[593px] w-[420px] shrink-0 rounded-[22px] bg-[#171326] p-4 shadow-[0_30px_60px_rgba(0,0,0,0.18)] max-[1199px]:h-[500px] max-[1199px]:w-[345px]">
+      <div className="tablet-frame relative h-[593px] w-[420px] shrink-0 rounded-[22px] bg-[#171326] p-4 shadow-[0_30px_60px_rgba(0,0,0,0.18)] max-[1200px]:h-[500px] max-[1200px]:w-[345px]">
         {/* Background decorative shape */}
         {bgShapeSrc && (
           <div
-            className="pointer-events-none absolute -top-5 -left-[15px] z-0 h-[calc(100%+50px)] w-[calc(100%+30px)] bg-top bg-no-repeat bg-contain max-[1199px]:-top-[11px] max-[1199px]:h-[calc(100%+30px)]"
+            className="pointer-events-none absolute -top-5 -left-[15px] z-0 h-[calc(100%+50px)] w-[calc(100%+30px)] bg-top bg-no-repeat bg-contain max-[1200px]:-top-[11px] max-[1200px]:h-[calc(100%+30px)]"
             style={{ backgroundImage: `url('${bgShapeSrc}')` }}
             aria-hidden="true"
           />
@@ -144,7 +144,7 @@ export function CityHeroTabletSlider({ slider }: CityHeroTabletSliderProps) {
 
       {/* Floating Badges */}
       {topBadge?.src ? (
-        <div className="tablet-badge tablet-badge-top absolute top-[100px] -right-[15px] z-[9999] max-w-[173px] max-[1199px]:top-[60px] max-[1199px]:max-w-[150px]">
+        <div className="tablet-badge tablet-badge-top absolute top-[100px] -right-[15px] z-[9999] max-w-[173px] max-[1200px]:top-[60px] max-[1200px]:max-w-[150px]">
           <Image
             src={topBadge.src}
             alt={topBadge.alt}
@@ -156,7 +156,7 @@ export function CityHeroTabletSlider({ slider }: CityHeroTabletSliderProps) {
       ) : null}
 
       {bottomBadge?.src ? (
-        <div className="tablet-badge tablet-badge-bottom absolute bottom-[80px] -left-[5px] z-[9999] max-w-[130px] max-[1199px]:bottom-[60px] max-[1199px]:-left-[15px] max-[1199px]:max-w-[110px]">
+        <div className="tablet-badge tablet-badge-bottom absolute bottom-[80px] -left-[5px] z-[9999] max-w-[130px] max-[1200px]:bottom-[60px] max-[1200px]:-left-[15px] max-[1200px]:max-w-[110px]">
           <Image
             src={bottomBadge.src}
             alt={bottomBadge.alt}

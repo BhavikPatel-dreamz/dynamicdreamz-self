@@ -31,15 +31,15 @@ export function FormSection({
     title || (typeof form === "object" && form !== null ? form.title : "");
 
   return (
-    <section className="cms-form-section bg-white py-20 max-[991px]:py-14 max-[767px]:py-10">
+    <section className="cms-form-section bg-white py-20 max-[992px]:py-14 max-[768px]:py-10">
       <Container className={containerClass}>
         {(eyebrow || displayTitle || description) && (
-          <div className="mb-10 max-[767px]:mb-6">
+          <div className="mb-10 max-[768px]:mb-6">
             {eyebrow && (
               <div className="mb-3 flex items-center gap-2.5">
                 <span
                   aria-hidden="true"
-                  className="h-0.5 w-[30px] shrink-0 bg-brand-red max-[767px]:hidden"
+                  className="h-0.5 w-[30px] shrink-0 bg-brand-red max-[768px]:hidden"
                 />
                 <span className="text-sm font-medium uppercase tracking-wider text-[#66635f]">
                   {eyebrow}
@@ -47,19 +47,19 @@ export function FormSection({
               </div>
             )}
             {displayTitle && (
-              <h2 className="mb-3 font-montreal-medium text-[35px] font-normal leading-[1.25] tracking-normal text-ink max-[1199px]:text-[30px] max-[767px]:text-[26px]">
+              <h2 className="mb-3 font-montreal-medium text-[35px] font-normal leading-[1.25] tracking-normal text-ink max-[1200px]:text-[30px] max-[768px]:text-[26px]">
                 {displayTitle}
               </h2>
             )}
             {description && (
-              <p className="max-w-[720px] text-base font-normal leading-relaxed text-[#535353] max-[767px]:text-sm">
+              <p className="max-w-[720px] text-base font-normal leading-relaxed text-[#535353] max-[768px]:text-sm">
                 {description}
               </p>
             )}
           </div>
         )}
 
-        <div className="rounded-[10px] border border-[#e5e5e5] bg-white p-8 shadow-[0_4px_25px_rgba(0,0,0,0.03)] max-[991px]:p-6 max-[767px]:p-5">
+        <div className="rounded-[10px] border border-[#e5e5e5] bg-white p-8 shadow-[0_4px_25px_rgba(0,0,0,0.03)] max-[992px]:p-6 max-[768px]:p-5">
           <CmsFormClient form={form} />
         </div>
       </Container>

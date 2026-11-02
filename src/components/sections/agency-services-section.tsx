@@ -84,14 +84,14 @@ export function AgencyServicesSection({
           variant="services"
         />
 
-        <div className="services-provide-main mt-[50px] max-[991px]:mt-[30px]">
+        <div className="services-provide-main mt-[50px] max-[992px]:mt-[30px]">
           <div
             className={cn(
-              "wrapper grid gap-4 max-[991px]:block",
+              "wrapper grid gap-4 max-[992px]:block",
               columns === 4
-                ? "grid-cols-4 max-[1199px]:grid-cols-2"
+                ? "grid-cols-4 max-[1200px]:grid-cols-2"
                 : columns === 3
-                  ? "grid-cols-3 max-[1199px]:grid-cols-2"
+                  ? "grid-cols-3 max-[1200px]:grid-cols-2"
                   : "grid-cols-2",
             )}
           >
@@ -100,13 +100,13 @@ export function AgencyServicesSection({
 
               return (
                 <div
-                  className="services-box w-full max-[991px]:[&:not(:last-child)]:mb-4"
+                  className="services-box w-full max-[992px]:[&:not(:last-child)]:mb-4"
                   data-aos="fade-up"
                   key={typeof service.title === "string" ? service.title : service.title.join(" ")}
                 >
                   <div className="services-text relative flex h-full flex-col justify-between rounded-[10px] border border-[rgba(40,40,40,0.08)] bg-[#fafaf7] p-5">
-                    <div className="top-block flex max-[767px]:flex-wrap">
-                      <div className="icon flex size-6 shrink-0 items-center justify-center max-[767px]:mb-[15px] [&>img]:size-full [&>img]:max-h-6 [&>img]:max-w-6 [&>img]:object-contain [&>svg]:size-full [&>svg]:max-h-6 [&>svg]:max-w-6 [&>svg]:object-contain">
+                    <div className="top-block flex max-[768px]:flex-wrap">
+                      <div className="icon flex size-6 shrink-0 items-center justify-center max-[768px]:mb-[15px] [&>img]:size-full [&>img]:max-h-6 [&>img]:max-w-6 [&>img]:object-contain [&>svg]:size-full [&>svg]:max-h-6 [&>svg]:max-w-6 [&>svg]:object-contain">
                         {service.iconSvg ? (
                           service.iconSvg
                         ) : service.icon ? (
@@ -119,8 +119,8 @@ export function AgencyServicesSection({
                           />
                         ) : null}
                       </div>
-                      <div className="text-block w-[calc(100%-24px)] pl-4 max-[767px]:w-full max-[767px]:pl-0">
-                        <h3 className="m-0 mb-2.5 font-montreal-medium text-[20px] font-normal leading-[28.8px] tracking-[0.32px] text-ink">
+                      <div className="text-block w-[calc(100%-24px)] pl-4 max-[768px]:w-full max-[768px]:pl-0">
+                        <h3 className="m-0 mb-2.5 font-montreal-medium max-[1200px]:text-[20px] font-normal leading-[28.8px] tracking-[0.32px] text-ink max-[768px]:text-lg">
                           {formatBrText(service.title)}
                         </h3>
                         <p className="mt-2.5 mb-0 font-sans text-[14px] font-normal leading-6 tracking-[0.32px] text-[#535353]">
@@ -146,7 +146,7 @@ export function AgencyServicesSection({
                     </div>
                     <div
                       className={cn(
-                        "bottom-block pl-10 max-[767px]:pl-0",
+                        "bottom-block pl-10 max-[768px]:pl-0",
                         serviceHref ? "mt-[15px]" : "m-0",
                       )}
                     >

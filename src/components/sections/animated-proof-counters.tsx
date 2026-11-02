@@ -72,12 +72,12 @@ export function AnimatedProofCounters({
     <ul
       ref={rootRef}
       data-aos="fade-up"
-      className="resources-counter-grid grid grid-cols-4 gap-4 max-[992px]:grid-cols-2 max-[992px]:pb-4 max-[767px]:grid-cols-1"
+      className="resources-counter-grid grid grid-cols-4 gap-4 max-[992px]:grid-cols-2 max-[992px]:pb-4 max-[768px]:grid-cols-1"
     >
       {stats.map((stat, index) => (
         <li
           data-aos="fade-up"
-          className="resources-counter-card relative flex min-h-[193px] flex-col items-center justify-center overflow-hidden rounded-[10px] border border-[#efefef] bg-white px-5 text-center shadow-[0_39px_50px_rgba(74,74,74,0.05)] after:absolute after:top-0 after:right-0 after:size-[193px] after:bg-[url('/assets/backgrounds/counter-ellipse.webp')] after:bg-contain after:bg-no-repeat max-[767px]:mx-[30px]"
+          className="resources-counter-card relative flex min-h-[193px] flex-col items-center justify-center overflow-hidden rounded-[10px] border border-[#efefef] bg-white px-5 text-center shadow-[0_39px_50px_rgba(74,74,74,0.05)] after:absolute after:top-0 after:right-0 after:size-[193px] after:bg-[url('/assets/backgrounds/counter-ellipse.webp')] after:bg-contain after:bg-no-repeat max-[768px]:mx-[30px]"
           key={stat.label}
         >
           <span className="sr-only">
@@ -86,7 +86,7 @@ export function AnimatedProofCounters({
           </span>
           <span
             aria-hidden="true"
-            className="counter-value font-montreal-medium text-[50px] font-normal leading-[1.2] tracking-normal text-brand-red max-[1199px]:text-[40px] max-[767px]:text-[32px]"
+            className="counter-value font-montreal-medium text-[50px] font-normal leading-[1.2] tracking-normal text-brand-red max-[1200px]:text-[40px] max-[768px]:text-[32px]"
           >
             {values[index]}
             {stat.suffix ?? ""}

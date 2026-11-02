@@ -57,8 +57,8 @@ export function CityWhyChooseBoxesSection({
       className={cn(
         isDynamic ? "city-page-why-choose-dynamic" : "city-page-why-choose-boxes",
         isPb0
-          ? "pt-20 pb-0 max-[991px]:pt-[50px] max-[991px]:pb-0"
-          : "py-20 max-[991px]:py-[50px]",
+          ? "pt-20 pb-0 max-[992px]:pt-[50px] max-[992px]:pb-0"
+          : "py-20 max-[992px]:py-[50px]",
         defaultBg,
         className,
       )}
@@ -83,10 +83,10 @@ export function CityWhyChooseBoxesSection({
             className={cn(
               "wrapper grid gap-[15px]",
               columns === 4
-                ? "grid-cols-4 max-[1199px]:grid-cols-2 max-[767px]:grid-cols-1"
+                ? "grid-cols-4 max-[1200px]:grid-cols-2 max-[768px]:grid-cols-1"
                 : columns === 3
-                  ? "grid-cols-3 max-[1199px]:grid-cols-3 max-[767px]:grid-cols-1"
-                  : "grid-cols-5 max-[1199px]:grid-cols-3 max-[767px]:grid-cols-1",
+                  ? "grid-cols-3 max-[1200px]:grid-cols-3 max-[768px]:grid-cols-1"
+                  : "grid-cols-5 max-[1200px]:grid-cols-3 max-[768px]:grid-cols-1",
             )}
           >
             {content.items.map((item) => (
@@ -128,7 +128,7 @@ export function CityWhyChooseBoxesSection({
                   ) : null}
                   <h3
                     className={cn(
-                      "mb-2 font-montreal-medium text-[20px] font-normal leading-[28.8px] max-[991px]:text-[18px] max-[991px]:leading-[26px]",
+                      "mb-2 font-montreal-medium text-[20px] font-normal leading-[28.8px] max-[992px]:text-[18px] max-[992px]:leading-[26px]",
                       isDark ? "text-white" : "text-ink",
                     )}
                   >

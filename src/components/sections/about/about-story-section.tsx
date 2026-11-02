@@ -34,7 +34,7 @@ export function AboutStorySection({
 
         <div
           data-aos="fade-up"
-          className="hero-vide-wrap mt-[50px] h-[492px] max-[992px]:h-[350px] max-[767px]:mt-[30px] max-[767px]:h-[200px]"
+          className="hero-vide-wrap mt-[50px] h-[492px] max-[992px]:h-[350px] max-[768px]:mt-[30px] max-[768px]:h-[200px]"
         >
           <VideoDialog
             overlay={overlay}

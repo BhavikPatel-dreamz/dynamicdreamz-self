@@ -127,7 +127,7 @@ export function ClientLogoSlider({
   };
 
   const densitySpacing = density === "compact" ? "py-4 md:py-6" : "py-8 md:py-12";
-  const mobileMargin = mobileSpacing === "compact" ? "max-[767px]:my-2" : "";
+  const mobileMargin = mobileSpacing === "compact" ? "max-[768px]:my-2" : "";
 
   return (
     <div

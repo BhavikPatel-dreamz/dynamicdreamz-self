@@ -446,13 +446,13 @@ export function CmsFormClient({
         aria-hidden="true"
       />
 
-      <div className="-mx-[7px] flex flex-wrap max-[767px]:mx-0">
+      <div className="-mx-[7px] flex flex-wrap max-[768px]:mx-0">
         {fields.map((field: FormFieldBlock, index: number) => {
           if (!field) return null;
 
           if (field.blockType === "message") {
             return (
-              <div key={field.id || index} className="mb-5 w-full px-[7px] max-[767px]:px-0">
+              <div key={field.id || index} className="mb-5 w-full px-[7px] max-[768px]:px-0">
                 <div className="rounded-[5px] bg-[#f8f8f8] p-4 text-sm text-[#090909]">
                   {renderLexicalRichText(field.message)}
                 </div>
@@ -463,8 +463,8 @@ export function CmsFormClient({
           const fieldWidth = (field as any).width || 100;
           const isHalfWidth = fieldWidth <= 50 && field.blockType !== "textarea";
           const colClass = isHalfWidth
-            ? "mb-7 w-1/2 px-[7px] max-[1199px]:mb-5 max-[992px]:mb-[15px] max-[767px]:mb-5 max-[767px]:w-full max-[767px]:px-0"
-            : "mb-7 w-full px-[7px] max-[1199px]:mb-5 max-[992px]:mb-[15px] max-[767px]:mb-5 max-[767px]:px-0";
+            ? "mb-7 w-1/2 px-[7px] max-[1200px]:mb-5 max-[992px]:mb-[15px] max-[768px]:mb-5 max-[768px]:w-full max-[768px]:px-0"
+            : "mb-7 w-full px-[7px] max-[1200px]:mb-5 max-[992px]:mb-[15px] max-[768px]:mb-5 max-[768px]:px-0";
 
           const fieldId = `${reactId}-${(field as any).name}-${index}`;
           const isRequired = Boolean((field as any).required);
@@ -504,7 +504,7 @@ export function CmsFormClient({
                 <>
                   <label
                     htmlFor={fieldId}
-                    className="mb-2.5 block text-base leading-normal font-semibold text-[#090909] max-[991px]:text-sm"
+                    className="mb-2.5 block text-base leading-normal font-semibold text-[#090909] max-[992px]:text-sm"
                   >
                     {fieldLabel}
                     {isRequired && (
@@ -522,7 +522,7 @@ export function CmsFormClient({
                       defaultValue={(field as any).defaultValue || ""}
                       placeholder={fieldPlaceholder}
                       rows={4}
-                      className="w-full rounded-[5px] border-[1.5px] border-[#dfdfdf] p-4 text-base font-medium text-[#090909] resize-none placeholder:text-[#9a9a9a] focus:border-[#090909] focus:outline-none max-[1199px]:text-sm"
+                      className="w-full rounded-[5px] border-[1.5px] border-[#dfdfdf] p-4 text-base font-medium text-[#090909] resize-none placeholder:text-[#9a9a9a] focus:border-[#090909] focus:outline-none max-[1200px]:text-sm"
                     />
                   ) : field.blockType === "select" ? (
                     <div className="relative">
@@ -531,7 +531,7 @@ export function CmsFormClient({
                         name={(field as any).name}
                         required={isRequired}
                         defaultValue={(field as any).defaultValue || ""}
-                        className="h-[49px] w-full cursor-pointer appearance-none rounded-[5px] border-[1.5px] border-[#dfdfdf] bg-[rgba(254,254,254,0.93)] bg-[url('/assets/request-quote/icons/select-arrow.svg')] bg-[position:calc(100%-16px)_center] bg-no-repeat px-4 pr-9 text-base font-medium text-[#090909] focus:border-[#090909] focus:outline-none max-[1199px]:text-sm max-[992px]:h-[44px]"
+                        className="h-[49px] w-full cursor-pointer appearance-none rounded-[5px] border-[1.5px] border-[#dfdfdf] bg-[rgba(254,254,254,0.93)] bg-[url('/assets/request-quote/icons/select-arrow.svg')] bg-[position:calc(100%-16px)_center] bg-no-repeat px-4 pr-9 text-base font-medium text-[#090909] focus:border-[#090909] focus:outline-none max-[1200px]:text-sm max-[992px]:h-[44px]"
                       >
                         <option value="">
                           {(field as any).placeholder || cmsFormCopy.selectPlaceholder}
@@ -551,7 +551,7 @@ export function CmsFormClient({
                         name={(field as any).name}
                         required={isRequired}
                         defaultValue={(field as any).defaultValue || ""}
-                        className="h-[49px] w-full cursor-pointer appearance-none rounded-[5px] border-[1.5px] border-[#dfdfdf] bg-[rgba(254,254,254,0.93)] bg-[url('/assets/request-quote/icons/select-arrow.svg')] bg-[position:calc(100%-16px)_center] bg-no-repeat px-4 pr-9 text-base font-medium text-[#090909] focus:border-[#090909] focus:outline-none max-[1199px]:text-sm max-[992px]:h-[44px]"
+                        className="h-[49px] w-full cursor-pointer appearance-none rounded-[5px] border-[1.5px] border-[#dfdfdf] bg-[rgba(254,254,254,0.93)] bg-[url('/assets/request-quote/icons/select-arrow.svg')] bg-[position:calc(100%-16px)_center] bg-no-repeat px-4 pr-9 text-base font-medium text-[#090909] focus:border-[#090909] focus:outline-none max-[1200px]:text-sm max-[992px]:h-[44px]"
                       >
                         <option value="">{cmsFormCopy.countryPlaceholder}</option>
                         {COMMON_COUNTRIES.map((country) => (
@@ -588,11 +588,11 @@ export function CmsFormClient({
                         />
                         <label
                           htmlFor={fieldId}
-                          className="inline-block cursor-pointer rounded-[5px] border-[1.5px] border-[#dfdfdf] bg-[url('/assets/career/icons/upload-icon.svg')] bg-[position:6px_center] bg-no-repeat py-5 pr-5 pl-20 text-base font-medium leading-[23.28px] text-[#090909] transition-colors hover:border-[#090909] max-[991px]:py-4 max-[991px]:pl-16 max-[991px]:text-sm"
+                          className="inline-block cursor-pointer rounded-[5px] border-[1.5px] border-[#dfdfdf] bg-[url('/assets/career/icons/upload-icon.svg')] bg-[position:6px_center] bg-no-repeat py-5 pr-5 pl-20 text-base font-medium leading-[23.28px] text-[#090909] transition-colors hover:border-[#090909] max-[992px]:py-4 max-[992px]:pl-16 max-[992px]:text-sm"
                         >
                           {cmsFormCopy.uploadButton}
                         </label>
-                        <span className="ml-4 text-xs font-medium leading-[17.46px] text-[#090909] max-[1299px]:ml-2.5 max-[1299px]:text-[11px] max-[1199px]:mt-2.5 max-[1199px]:block max-[1199px]:w-full max-[1199px]:ml-0">
+                        <span className="ml-4 text-xs font-medium leading-[17.46px] text-[#090909] max-[1299px]:ml-2.5 max-[1299px]:text-[11px] max-[1200px]:mt-2.5 max-[1200px]:block max-[1200px]:w-full max-[1200px]:ml-0">
                           {cmsFormCopy.uploadHelpText}
                         </span>
                       </div>
@@ -626,7 +626,7 @@ export function CmsFormClient({
                       required={isRequired}
                       defaultValue={(field as any).defaultValue || ""}
                       placeholder={fieldPlaceholder}
-                      className="h-[49px] w-full rounded-[5px] border-[1.5px] border-[#dfdfdf] px-4 text-base font-medium text-[#090909] placeholder:text-[#9a9a9a] focus:border-[#090909] focus:outline-none max-[1199px]:text-sm max-[992px]:h-[44px]"
+                      className="h-[49px] w-full rounded-[5px] border-[1.5px] border-[#dfdfdf] px-4 text-base font-medium text-[#090909] placeholder:text-[#9a9a9a] focus:border-[#090909] focus:outline-none max-[1200px]:text-sm max-[992px]:h-[44px]"
                     />
                   )}
                 </>
@@ -648,12 +648,12 @@ export function CmsFormClient({
       <div
         className={
           footerNote
-            ? "flex items-center justify-between gap-5 pt-2 max-[767px]:flex-col-reverse max-[767px]:items-center [&_button]:max-[767px]:w-full"
+            ? "flex items-center justify-between gap-5 pt-2 max-[768px]:flex-col-reverse max-[768px]:items-center [&_button]:max-[768px]:w-full"
             : "pt-2"
         }
       >
         {footerNote && (
-          <div className="max-[767px]:text-center">
+          <div className="max-[768px]:text-center">
             <p className="text-xs font-normal text-[#090909]">
               {footerNote}
             </p>

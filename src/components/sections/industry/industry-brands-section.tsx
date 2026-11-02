@@ -65,14 +65,14 @@ export function IndustryBrandsSection({
         {showHeading ? (
           <div
             className={cn(
-              "left-col pl-[calc((100%-1140px)/2)] max-[1199px]:pl-[calc((100%-920px)/2)] max-[991.98px]:w-full max-[991.98px]:p-0 max-[991.98px]:text-center",
+              "left-col pl-[calc((100%-1140px)/2)] max-[1200px]:pl-[calc((100%-920px)/2)] max-[991.98px]:w-full max-[991.98px]:p-0 max-[991.98px]:text-center",
               // `cn` is a plain join, so width/padding presets stay mutually exclusive.
               isCompact
-                ? "w-1/3 min-[1400px]:pl-[calc((100%-1320px)/2)] max-[991.98px]:mb-5 max-[767px]:mb-[15px]"
+                ? "w-1/3 min-[1400px]:pl-[calc((100%-1320px)/2)] max-[991.98px]:mb-5 max-[768px]:mb-[15px]"
                 : isFlexible
-                  ? "w-[30%] max-[1199px]:w-[30%] min-[1400px]:pl-[calc((100%-1320px)/2)] max-[991.98px]:mb-5 max-[767px]:mb-[15px]"
+                  ? "w-[30%] max-[1200px]:w-[30%] min-[1400px]:pl-[calc((100%-1320px)/2)] max-[991.98px]:mb-5 max-[768px]:mb-[15px]"
                   : cn(
-                      "w-[31%] max-[1199px]:w-[30%] min-[1400px]:pl-[calc((100%-1334px)/2)]",
+                      "w-[31%] max-[1200px]:w-[30%] min-[1400px]:pl-[calc((100%-1334px)/2)]",
                       hasSpaciousMobileLayout
                         ? "max-[991.98px]:mb-10"
                         : "max-[991.98px]:mb-5",
@@ -82,7 +82,7 @@ export function IndustryBrandsSection({
           >
             <h2
               className={cn(
-                "m-0 whitespace-nowrap font-montreal-medium text-xl leading-[26.4px] font-medium tracking-normal text-ink max-[1199px]:text-lg max-[991.98px]:whitespace-normal",
+                "m-0 whitespace-nowrap font-montreal-medium text-xl leading-[26.4px] font-medium tracking-normal text-ink max-[1200px]:text-lg max-[991.98px]:whitespace-normal",
               )}
               id={`${content.slug}-brands-title`}
             >
@@ -98,12 +98,12 @@ export function IndustryBrandsSection({
           className={cn(
             "right-col max-[991.98px]:w-full",
             isCompact
-              ? "w-2/3 max-[1199px]:w-[70%]"
+              ? "w-2/3 max-[1200px]:w-[70%]"
               : isFlexible
                 ? // Live `.right-col` is 69% (70% ≤1199px), matching the 30% heading column.
-                  "w-[69%] max-[1199px]:w-[70%]"
+                  "w-[69%] max-[1200px]:w-[70%]"
                 : showHeading
-                  ? "w-[69%] max-[1199px]:w-[70%]"
+                  ? "w-[69%] max-[1200px]:w-[70%]"
                   : "w-full",
           )}
           data-aos="fade-up"

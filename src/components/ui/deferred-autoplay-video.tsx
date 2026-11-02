@@ -113,7 +113,7 @@ export function DeferredAutoplayVideo({
       {poster ? (
         <Image
           aria-hidden={decorative || undefined}
-          className={cn("object-cover", hidePosterOnMobile && "max-[767px]:hidden", posterClassName)}
+          className={cn("object-cover", hidePosterOnMobile && "max-[768px]:hidden", posterClassName)}
           alt={decorative ? "" : (posterAlt ?? "")}
           fill
           sizes={posterSizes}

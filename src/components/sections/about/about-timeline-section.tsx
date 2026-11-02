@@ -72,10 +72,10 @@ export function AboutTimelineSection({
                         <span className={`${styles.marker} ${imageFirst ? styles.forwardMarker : styles.reverseMarker} ${index === 0 ? styles.firstMarker : ""} ${index === milestones.length - 2 ? styles.penultimateMarker : ""}`} aria-hidden="true">
                           <Image className="relative z-10 size-[26px]" src="/assets/about/timeline/location-marker.svg" alt="" width={26} height={26} />
                         </span>
-                        <div className="bg-[linear-gradient(97deg,#15c064_37.46%,#00d1ff_120.9%)] bg-clip-text text-[70px] leading-[86px] font-bold text-transparent max-[767px]:text-[50px]">
+                        <div className="bg-[linear-gradient(97deg,#15c064_37.46%,#00d1ff_120.9%)] bg-clip-text text-[70px] leading-[86px] font-bold text-transparent max-[768px]:text-[50px]">
                           {milestone.year}
                         </div>
-                        <p className="line-clamp-5 h-[139px] text-base leading-7 font-normal text-muted max-[1199px]:text-[14px] max-[1199px]:leading-6 [&_strong]:font-bold [&_strong]:text-[#535353]">
+                        <p className="line-clamp-5 h-[139px] text-base leading-7 font-normal text-muted max-[1200px]:text-[14px] max-[1200px]:leading-6 [&_strong]:font-bold [&_strong]:text-[#535353]">
                           {formatBrText(milestone.description)}
                         </p>
                       </div>

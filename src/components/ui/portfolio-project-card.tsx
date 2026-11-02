@@ -54,7 +54,7 @@ function Overlay({ persistent = false }: { persistent?: boolean }) {
     <span
       className={cn(
         "pointer-events-none absolute inset-0 z-1 bg-[linear-gradient(0deg,rgba(0,0,0,0.4)_0%,rgba(0,0,0,0.4)_100%)] opacity-0 transition-opacity duration-300 group-hover/project:opacity-100 group-focus/project:opacity-100 group-focus-within/project:opacity-100",
-        persistent && "max-[1199px]:opacity-100",
+        persistent && "max-[1200px]:opacity-100",
       )}
       data-project-overlay
     />
@@ -66,13 +66,13 @@ function Overlay({ persistent = false }: { persistent?: boolean }) {
 function AppStoreLinks({ appLinks }: { appLinks: readonly PortfolioAppLink[] }) {
   return (
     <span
-      className="absolute right-0 bottom-[30px] left-0 z-2 flex items-center justify-center opacity-0 transition-opacity duration-500 ease-in-out group-hover/project:opacity-100 group-focus-within/project:opacity-100 max-[1199px]:opacity-100 max-[575px]:bottom-[15px]"
+      className="absolute right-0 bottom-[30px] left-0 z-2 flex items-center justify-center opacity-0 transition-opacity duration-500 ease-in-out group-hover/project:opacity-100 group-focus-within/project:opacity-100 max-[1200px]:opacity-100 max-[575px]:bottom-[15px]"
       data-project-app-links
     >
       {appLinks.map((link, index) => (
         <a
           className={cn(
-            "inline-flex items-center whitespace-nowrap px-[15px] text-[15px] font-bold leading-[25.2px] text-white max-[1399px]:text-[12px] max-[1199px]:px-[15px] max-[1199px]:text-sm max-[1199px]:leading-[18px] max-[575px]:px-[11px] max-[575px]:text-[0px] max-[359px]:px-2.5",
+            "inline-flex items-center whitespace-nowrap px-[15px] text-[15px] font-bold leading-[25.2px] text-white max-[1399px]:text-[12px] max-[1200px]:px-[15px] max-[1200px]:text-sm max-[1200px]:leading-[18px] max-[575px]:px-[11px] max-[575px]:text-[0px] max-[359px]:px-2.5",
             index > 0 && "border-l-[1.5px] border-white",
           )}
           href={link.href}
@@ -81,7 +81,7 @@ function AppStoreLinks({ appLinks }: { appLinks: readonly PortfolioAppLink[] }) 
           target="_blank"
         >
           <Image
-            className="mr-2.5 h-[30px] w-[30px] max-[1399px]:mr-[5px] max-[1399px]:h-[22px] max-[1399px]:w-[22px] max-[1199px]:h-7 max-[1199px]:w-7 max-[575px]:mr-0 max-[575px]:h-6 max-[575px]:w-6"
+            className="mr-2.5 h-[30px] w-[30px] max-[1399px]:mr-[5px] max-[1399px]:h-[22px] max-[1399px]:w-[22px] max-[1200px]:h-7 max-[1200px]:w-7 max-[575px]:mr-0 max-[575px]:h-6 max-[575px]:w-6"
             src={link.icon}
             alt=""
             width={39}
@@ -134,7 +134,7 @@ export function PortfolioProjectCard({
             />
             <Overlay />
           </div>
-          <div className="mt-3.5 flex items-end justify-between gap-2 max-[767px]:mt-1 max-[767px]:gap-1.5">
+          <div className="mt-3.5 flex items-end justify-between gap-2 max-[768px]:mt-2.5 max-[768px]:gap-1.5">
             <div className="min-w-0 flex-1">
               {category ? (
                 <p className={cn("font-montserrat text-[10px] leading-[14px] font-bold uppercase tracking-[0.8px] text-brand-red", categoryClassName)}>
@@ -143,14 +143,14 @@ export function PortfolioProjectCard({
               ) : null}
               <h3
                 className={cn(
-                  category ? "mt-2.5 max-[1199px]:mt-2 max-[767px]:mt-[3px]" : "mt-0",
-                  "font-montserrat text-lg leading-5 font-bold text-ink capitalize max-[1399px]:text-base max-[1399px]:leading-[18px] max-[767px]:text-sm max-[767px]:leading-5 max-[767px]:font-semibold",
+                  category ? "mt-2.5 max-[1200px]:mt-2 max-[768px]:mt-[3px]" : "mt-0",
+                  "font-montserrat text-lg leading-5 font-bold text-ink capitalize max-[1399px]:text-base max-[1399px]:leading-[18px] max-[768px]:text-sm max-[768px]:leading-5 max-[768px]:font-semibold",
                 )}
               >
                 {name}
               </h3>
             </div>
-            <span className="flex h-[34px] w-[34px] shrink-0 items-center justify-center rounded-full border border-black/20 bg-white transition-colors duration-300 group-hover/project:bg-brand-red group-focus/project:bg-brand-red max-[767px]:hidden">
+            <span className="flex h-[34px] w-[34px] shrink-0 items-center justify-center rounded-full border border-black/20 bg-white transition-colors duration-300 group-hover/project:bg-brand-red group-focus/project:bg-brand-red">
               <Image
                 aria-hidden="true"
                 className="h-[9px] w-[9px] brightness-0 transition-[filter] duration-300 group-hover/project:brightness-100 group-focus/project:brightness-100"
@@ -179,7 +179,7 @@ export function PortfolioProjectCard({
             <Overlay persistent={Boolean(isAppProject)} />
             {isAppProject ? <AppStoreLinks appLinks={appLinks} /> : null}
           </div>
-          <div className="mt-3.5 flex items-end justify-between gap-2 max-[767px]:mt-1 max-[767px]:gap-1.5">
+          <div className="mt-3.5 flex items-end justify-between gap-2 max-[768px]:mt-1 max-[768px]:gap-1.5">
             <div className="min-w-0 flex-1">
               {category ? (
                 <p className={cn("font-montserrat text-[10px] leading-[14px] font-bold uppercase tracking-[0.8px] text-brand-red", categoryClassName)}>
@@ -188,15 +188,15 @@ export function PortfolioProjectCard({
               ) : null}
               <h3
                 className={cn(
-                  category ? "mt-2.5 max-[1199px]:mt-2 max-[767px]:mt-[3px]" : "mt-0",
-                  "font-montserrat text-lg leading-5 font-bold text-ink capitalize max-[1399px]:text-base max-[1399px]:leading-[18px] max-[767px]:text-sm max-[767px]:leading-5 max-[767px]:font-semibold",
+                  category ? "mt-2.5 max-[1200px]:mt-2 max-[768px]:mt-[3px]" : "mt-0",
+                  "font-montserrat text-lg leading-5 font-bold text-ink capitalize max-[1399px]:text-base max-[1399px]:leading-[18px] max-[768px]:text-sm max-[768px]:leading-5 max-[768px]:font-semibold",
                 )}
               >
                 {name}
               </h3>
             </div>
             {showArrow && (
-              <span className="flex h-[34px] w-[34px] shrink-0 items-center justify-center rounded-full border border-black/20 bg-white transition-colors duration-300 group-hover/project:bg-brand-red group-focus/project:bg-brand-red max-[767px]:hidden">
+              <span className="flex h-[34px] w-[34px] shrink-0 items-center justify-center rounded-full border border-black/20 bg-white transition-colors duration-300 group-hover/project:bg-brand-red group-focus/project:bg-brand-red">
                 <Image
                   aria-hidden="true"
                   className="h-[9px] w-[9px] brightness-0 transition-[filter] duration-300 group-hover/project:brightness-100 group-focus/project:brightness-100"

@@ -72,7 +72,7 @@ export function ContactHeroSection({
 }: ContactHeroSectionProps = {}) {
   return (
     <section
-      className="overflow-hidden bg-[#fbeed5] pt-[160px] pb-10 text-center max-[1199px]:pt-[120px] max-[991px]:pt-[110px] max-[991px]:pb-8"
+      className="overflow-hidden bg-[#fbeed5] pt-[160px] pb-10 text-center max-[1200px]:pt-[120px] max-[992px]:pt-[110px] max-[992px]:pb-8"
       aria-labelledby="contact-page-title"
     >
       <Container>
@@ -82,14 +82,14 @@ export function ContactHeroSection({
           </Eyebrow>
           <h1
             id="contact-page-title"
-            className="font-display text-[50px] leading-[60px] font-medium text-ink max-[991px]:text-[40px] max-[991px]:leading-[50px] max-[767px]:text-[30px] max-[767px]:leading-[40px]"
+            className="font-display text-[50px] leading-[60px] font-medium text-ink max-[992px]:text-[40px] max-[992px]:leading-[50px] max-[768px]:text-[30px] max-[768px]:leading-[40px]"
           >
             {title}
           </h1>
-          <p className="mx-auto mt-4 max-w-[810px] text-base leading-7 font-medium text-muted max-[767px]:text-sm max-[767px]:leading-6">
+          <p className="mx-auto mt-4 max-w-[810px] text-base leading-7 font-medium text-muted max-[768px]:text-sm max-[768px]:leading-6">
             {description}
           </p>
-          <div className="mt-6 flex flex-wrap items-center justify-center gap-5 text-xs font-semibold uppercase max-[767px]:flex-nowrap max-[767px]:justify-start max-[767px]:overflow-x-auto max-[767px]:whitespace-nowrap max-[767px]:pb-2">
+          <div className="mt-6 flex flex-wrap items-center justify-center gap-5 text-xs font-semibold uppercase max-[768px]:flex-nowrap max-[768px]:justify-start max-[768px]:overflow-x-auto max-[768px]:whitespace-nowrap max-[768px]:pb-2">
             {quickLinks.map((link) => (
               <a
                 key={link.href}
@@ -122,7 +122,7 @@ export function ContactFormSection({
   return (
     <section
       id="message"
-      className="bg-[#fbeed5] pb-20 max-[991px]:pb-[60px] max-[767px]:pb-10"
+      className="bg-[#fbeed5] pb-20 max-[992px]:pb-[60px] max-[768px]:pb-10"
       aria-labelledby="inquiry-title"
     >
       <Container>
@@ -130,21 +130,21 @@ export function ContactFormSection({
           data-aos="fade-up"
           className="mx-auto max-w-[920px] overflow-hidden rounded-[30px] border border-[rgba(40,40,40,0.11)] bg-white shadow-[0_28px_70px_rgba(72,52,35,0.08)]"
         >
-          <div className="border-b border-[rgba(40,40,40,0.11)] p-10 text-center max-[1199px]:p-[30px] max-[767px]:px-5 max-[767px]:py-[30px]">
+          <div className="border-b border-[rgba(40,40,40,0.11)] p-10 text-center max-[1200px]:p-[30px] max-[768px]:px-5 max-[768px]:py-[30px]">
             <Eyebrow align="center" className="mb-4">
               {eyebrow}
             </Eyebrow>
             <h2
               id="inquiry-title"
-              className="mt-0 mb-2.5 font-montreal-medium text-[32px] leading-[42px] font-normal text-ink max-[991px]:text-[26px] max-[991px]:leading-[34px] max-[767px]:text-[22px] max-[767px]:leading-[30px]"
+              className="mt-0 mb-2.5 font-montreal-medium text-[32px] leading-[42px] font-normal text-ink max-[992px]:text-[26px] max-[992px]:leading-[34px] max-[768px]:text-[22px] max-[768px]:leading-[30px]"
             >
               {title}
             </h2>
-            <p className="text-base leading-7 font-medium text-muted max-[767px]:text-sm max-[767px]:leading-6">
+            <p className="text-base leading-7 font-medium text-muted max-[768px]:text-sm max-[768px]:leading-6">
               {description}
             </p>
           </div>
-          <div className="p-10 max-[1199px]:p-[30px] max-[767px]:px-5 max-[767px]:py-[30px]">
+          <div className="p-10 max-[1200px]:p-[30px] max-[768px]:px-5 max-[768px]:py-[30px]">
             {form ? (
               <CmsFormClient
                 form={form}
@@ -189,7 +189,7 @@ export function ContactOfficesSection({
   return (
     <section
       id="offices"
-      className="bg-[#eff4ef] py-20 max-[991px]:py-[60px] max-[767px]:py-10"
+      className="bg-[#eff4ef] py-20 max-[992px]:py-[60px] max-[768px]:py-10"
       aria-labelledby="offices-title"
     >
       <Container>
@@ -198,27 +198,27 @@ export function ContactOfficesSection({
           eyebrow={eyebrow}
           heading={title}
           headingId="offices-title"
-          textColumnClassName="w-full md:w-[48%] md:text-right max-[991px]:mt-3"
+          textColumnClassName="w-full md:w-[48%] md:text-right max-[992px]:mt-3"
           titleColumnClassName="w-full md:w-[48%]"
         />
-        <div className="grid grid-cols-2 gap-[30px] max-[991px]:gap-5 max-[767px]:grid-cols-1">
+        <div className="grid grid-cols-2 gap-[30px] max-[992px]:gap-5 max-[768px]:grid-cols-1">
           {activeOffices.map((office) => (
             <article
               key={office.city}
               data-aos="fade-up"
-              className="rounded-[20px] border-[1.5px] border-[#e4e4e4] bg-white p-8 max-[1199px]:p-5 max-[991px]:rounded-[12px]"
+              className="rounded-[20px] border-[1.5px] border-[#e4e4e4] bg-white p-8 max-[1200px]:p-5 max-[992px]:rounded-[12px]"
             >
-              <h3 className="font-display text-2xl leading-normal font-medium text-ink max-[991px]:text-lg">
+              <h3 className="font-display text-2xl leading-normal font-medium text-ink max-[992px]:text-lg">
                 {office.city}
               </h3>
-              <address className="my-5 leading-[26px] not-italic text-muted max-[991px]:my-3.5 max-[991px]:text-sm max-[991px]:leading-6">
+              <address className="my-5 leading-[26px] not-italic text-muted max-[992px]:my-3.5 max-[992px]:text-sm max-[992px]:leading-6">
                 {office.address}
               </address>
-              <ul className="space-y-5 max-[991px]:space-y-3.5">
+              <ul className="space-y-5 max-[992px]:space-y-3.5">
                 <li>
                   <a
                     href={office.phoneHref}
-                    className="flex items-center font-medium text-muted transition-colors duration-300 hover:text-ink max-[991px]:text-sm"
+                    className="flex items-center font-medium text-muted transition-colors duration-300 hover:text-ink max-[992px]:text-sm"
                   >
                     <span className="mr-2.5 shrink-0">
                       <PhoneIcon />
@@ -260,7 +260,7 @@ export function ContactDetailsSection({
   return (
     <section
       id="contact-details"
-      className="bg-white py-20 max-[991px]:py-[60px] max-[767px]:py-10"
+      className="bg-white py-20 max-[992px]:py-[60px] max-[768px]:py-10"
       aria-labelledby="contact-details-title"
     >
       <Container>
@@ -270,7 +270,7 @@ export function ContactDetailsSection({
           </Eyebrow>
           <h2
             id="contact-details-title"
-            className="font-montreal-medium text-[32px] leading-[42px] font-normal text-ink max-[991px]:text-[28px] max-[767px]:text-2xl"
+            className="font-montreal-medium text-[32px] leading-[42px] font-normal text-ink max-[992px]:text-[28px] max-[768px]:text-2xl"
           >
             {title}
           </h2>
@@ -278,10 +278,10 @@ export function ContactDetailsSection({
 
           <div
             data-aos="fade-up"
-            className="grid grid-cols-[1.35fr_1.05fr_1fr_0.75fr] border-y border-[rgba(40,40,40,0.11)] max-[1199px]:grid-cols-2 max-[767px]:grid-cols-1"
+            className="grid grid-cols-[1.35fr_1.05fr_1fr_0.75fr] border-y border-[rgba(40,40,40,0.11)] max-[1200px]:grid-cols-2 max-[768px]:grid-cols-1"
           >
             {/* Item 1: Sales */}
-            <div className="flex min-h-[138px] flex-col justify-start border-r border-[rgba(40,40,40,0.11)] p-[22px_20px] transition-colors duration-300 hover:bg-[#f7f4e9] max-[1199px]:border-b max-[767px]:min-h-0 max-[767px]:border-r-0 max-[767px]:px-0 max-[767px]:py-5 max-[767px]:hover:bg-transparent">
+            <div className="flex min-h-[138px] flex-col justify-start border-r border-[rgba(40,40,40,0.11)] p-[22px_20px] transition-colors duration-300 hover:bg-[#f7f4e9] max-[1200px]:border-b max-[768px]:min-h-0 max-[768px]:border-r-0 max-[768px]:px-0 max-[768px]:py-5 max-[768px]:hover:bg-transparent">
               <span className="mb-2.5 font-sans text-[10px] leading-[1.4] font-bold uppercase tracking-[0.8px] text-brand-red">
                 {contactDetailsSection.sales.label}
               </span>
@@ -300,7 +300,7 @@ export function ContactDetailsSection({
             </div>
 
             {/* Item 2: HR */}
-            <div className="flex min-h-[138px] flex-col justify-start border-r border-[rgba(40,40,40,0.11)] p-[22px_20px] transition-colors duration-300 hover:bg-[#f7f4e9] max-[1199px]:border-r-0 max-[1199px]:border-b max-[767px]:min-h-0 max-[767px]:px-0 max-[767px]:py-5 max-[767px]:hover:bg-transparent">
+            <div className="flex min-h-[138px] flex-col justify-start border-r border-[rgba(40,40,40,0.11)] p-[22px_20px] transition-colors duration-300 hover:bg-[#f7f4e9] max-[1200px]:border-r-0 max-[1200px]:border-b max-[768px]:min-h-0 max-[768px]:px-0 max-[768px]:py-5 max-[768px]:hover:bg-transparent">
               <span className="mb-2.5 font-sans text-[10px] leading-[1.4] font-bold uppercase tracking-[0.8px] text-brand-red">
                 {contactDetailsSection.hr.label}
               </span>
@@ -330,7 +330,7 @@ export function ContactDetailsSection({
             </div>
 
             {/* Item 3: Discovery Call */}
-            <div className="flex min-h-[138px] flex-col justify-start border-r border-[rgba(40,40,40,0.11)] p-[22px_20px] transition-colors duration-300 hover:bg-[#f7f4e9] max-[1199px]:border-b-0 max-[767px]:min-h-0 max-[767px]:border-r-0 max-[767px]:border-b max-[767px]:px-0 max-[767px]:py-5 max-[767px]:hover:bg-transparent">
+            <div className="flex min-h-[138px] flex-col justify-start border-r border-[rgba(40,40,40,0.11)] p-[22px_20px] transition-colors duration-300 hover:bg-[#f7f4e9] max-[1200px]:border-b-0 max-[768px]:min-h-0 max-[768px]:border-r-0 max-[768px]:border-b max-[768px]:px-0 max-[768px]:py-5 max-[768px]:hover:bg-transparent">
               <span className="mb-2.5 font-sans text-[10px] leading-[1.4] font-bold uppercase tracking-[0.8px] text-brand-red">
                 {contactDetailsSection.discoveryCall.label}
               </span>
@@ -346,7 +346,7 @@ export function ContactDetailsSection({
             </div>
 
             {/* Item 4: Social */}
-            <div className="flex min-h-[138px] flex-col justify-start p-[22px_20px] transition-colors duration-300 hover:bg-[#f7f4e9] max-[767px]:min-h-0 max-[767px]:px-0 max-[767px]:py-5 max-[767px]:hover:bg-transparent">
+            <div className="flex min-h-[138px] flex-col justify-start p-[22px_20px] transition-colors duration-300 hover:bg-[#f7f4e9] max-[768px]:min-h-0 max-[768px]:px-0 max-[768px]:py-5 max-[768px]:hover:bg-transparent">
               <span className="mb-2.5 font-sans text-[10px] leading-[1.4] font-bold uppercase tracking-[0.8px] text-brand-red">
                 {contactDetailsSection.social.label}
               </span>

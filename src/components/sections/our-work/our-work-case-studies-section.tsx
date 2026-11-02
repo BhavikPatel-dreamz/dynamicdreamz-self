@@ -28,8 +28,8 @@ export function OurWorkCaseStudiesSection({
           eyebrow={eyebrow}
           heading={title}
           headingId="our-work-case-studies-title"
-          titleColumnClassName="w-[44%] max-[1399px]:w-[35%] max-[1199px]:w-[36%] max-[992px]:w-full"
-          textColumnClassName="w-[49%] max-[1399px]:w-[56%] max-[1199px]:w-[51%] max-[992px]:w-full"
+          titleColumnClassName="w-[44%] max-[1399px]:w-[35%] max-[1200px]:w-[36%] max-[992px]:w-full"
+          textColumnClassName="w-[49%] max-[1399px]:w-[56%] max-[1200px]:w-[51%] max-[992px]:w-full"
           variant="left"
         />
 
@@ -37,7 +37,7 @@ export function OurWorkCaseStudiesSection({
           {ourWorkCaseStudies.map((item) => (
             <article
               data-aos="fade-up"
-              className="cs-listing-row flex w-[calc(33.333%_-_14px)] flex-col overflow-hidden rounded-[20px] border border-[rgba(40,40,40,0.06)] bg-white transition-shadow duration-300 hover:shadow-[0_10px_30px_rgba(0,0,0,0.08)] max-[992px]:w-[calc(50%_-_10px)] max-[767px]:w-full"
+              className="cs-listing-row flex w-[calc(33.333%_-_14px)] flex-col overflow-hidden rounded-[20px] border border-[rgba(40,40,40,0.06)] bg-white transition-shadow duration-300 hover:shadow-[0_10px_30px_rgba(0,0,0,0.08)] max-[992px]:w-[calc(50%_-_10px)] max-[768px]:w-full"
               key={item.slug}
             >
               <div className="cs-wrapper flex h-full flex-col">
@@ -56,7 +56,7 @@ export function OurWorkCaseStudiesSection({
                     />
                   </Link>
                 </div>
-                <div className="cs-col-right flex flex-1 flex-col p-5 max-[767px]:p-[15px]">
+                <div className="cs-col-right flex flex-1 flex-col p-5 max-[768px]:p-[15px]">
                   <div className="cs-text flex h-full flex-col justify-between">
                     <div className="cs-title">
                       <Link

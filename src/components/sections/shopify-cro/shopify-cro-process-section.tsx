@@ -25,7 +25,7 @@ export type ShopifyCroProcessSectionProps = {
 
 export function ShopifyCroProcessSection({
   content = shopifyCroProcess,
-  className = "white_label_process_step_box_section column-five bg-white py-20 max-[991px]:py-[50px]",
+  className = "white_label_process_step_box_section column-five bg-white py-20 max-[992px]:py-[50px]",
 }: ShopifyCroProcessSectionProps) {
   return (
     <section className={className}>
@@ -40,7 +40,7 @@ export function ShopifyCroProcessSection({
 
         <div
           data-aos="fade-up"
-          className="wrapper -mx-5 -mb-[30px] flex flex-wrap max-[1199px]:-mx-2.5 max-[767px]:m-0 max-[767px]:ml-[5px] max-[767px]:flex-col max-[767px]:border-l-2 max-[767px]:border-[#AD5151] max-[767px]:pl-5"
+          className="wrapper -mx-5 -mb-[30px] flex flex-wrap max-[1200px]:-mx-2.5 max-[768px]:m-0 max-[768px]:ml-[5px] max-[768px]:flex-col max-[768px]:border-l-2 max-[768px]:border-[#AD5151] max-[768px]:pl-5"
         >
           {content.steps.map((step, idx) => {
             const isLast = idx === content.steps.length - 1;
@@ -48,10 +48,10 @@ export function ShopifyCroProcessSection({
             return (
               <div
                 key={step.title}
-                className="col mb-[30px] w-1/5 px-5 max-[1199px]:px-2.5 max-[991px]:w-1/3 max-[767px]:w-full max-[767px]:p-0 max-[767px]:last:mb-0"
+                className="col mb-[30px] w-1/5 px-5 max-[1200px]:px-2.5 max-[992px]:w-1/3 max-[768px]:w-full max-[768px]:p-0 max-[768px]:last:mb-0"
               >
-                <div className="step-box relative text-center max-[767px]:text-left">
-                  <div className="icon relative mx-auto mb-[17px] size-[97px] max-[767px]:ml-0 max-[767px]:size-[70px]">
+                <div className="step-box relative text-center max-[768px]:text-left">
+                  <div className="icon relative mx-auto mb-[17px] size-[97px] max-[768px]:ml-0 max-[768px]:size-[70px]">
                     <Image
                       src={step.icon}
                       alt=""
@@ -62,7 +62,7 @@ export function ShopifyCroProcessSection({
                     />
                     {!isLast && (
                       <svg
-                        className="pointer-events-none absolute top-1/2 left-[97px] -z-10 h-[13px] w-[204px] -translate-y-1/2 overflow-visible max-[1399px]:w-[185px] max-[1199px]:w-[160px] max-[991px]:hidden"
+                        className="pointer-events-none absolute top-1/2 left-[97px] -z-10 h-[13px] w-[204px] -translate-y-1/2 overflow-visible max-[1399px]:w-[185px] max-[1200px]:w-[160px] max-[992px]:hidden"
                         viewBox="0 0 204 13"
                         preserveAspectRatio="none"
                         aria-hidden="true"
@@ -78,10 +78,10 @@ export function ShopifyCroProcessSection({
                     )}
                     <span
                       aria-hidden="true"
-                      className="absolute top-1/2 -left-[26px] hidden size-2.5 -translate-y-1/2 rounded-full bg-[#AD5151] max-[767px]:block"
+                      className="absolute top-1/2 -left-[26px] hidden size-2.5 -translate-y-1/2 rounded-full bg-[#AD5151] max-[768px]:block"
                     />
                   </div>
-                  <h3 className="mb-2.5 font-display text-[20px] font-small leading-[1.28] text-ink max-[767px]:text-base">
+                  <h3 className="mb-2.5 font-display text-[20px] font-small leading-[1.28] text-ink max-[768px]:text-base">
                     {step.title}
                   </h3>
                   <p className="m-0 font-sans text-sm font-small leading-[190%] text-muted">

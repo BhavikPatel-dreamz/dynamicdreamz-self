@@ -49,10 +49,10 @@ export function ShopifyReasonsSection({
           height={60}
         />
         <h3 className="mb-[5px] font-montreal-medium text-base leading-[26.72px] font-medium tracking-[0.32px] text-ink">
-          {formatBrText(item.title, "max-[767px]:hidden")}
+          {formatBrText(item.title, "max-[768px]:hidden")}
         </h3>
         <p className="text-base leading-[27.2px] font-medium tracking-[0.32px] text-muted">
-          {formatBrText(item.description, "max-[767px]:hidden")}
+          {formatBrText(item.description, "max-[768px]:hidden")}
         </p>
       </div>
     </article>
@@ -90,7 +90,7 @@ export function ShopifyReasonsSection({
       id={id}
     >
       <Container>
-        <div data-aos="fade-up" className="mb-[50px] text-center max-[767px]:mb-[35px]">
+        <div data-aos="fade-up" className="mb-[50px] text-center max-[768px]:mb-[35px]">
           <SectionHeading>
             {formatBrText(
               content.heading,

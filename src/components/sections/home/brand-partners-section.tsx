@@ -33,16 +33,16 @@ export function BrandPartnersSection({
       className={cn(
         "trusted_leading_brands overflow-hidden",
         isShopifyHours
-          ? "py-20 max-[992px]:py-[60px] max-[767px]:min-h-[365px] max-[767px]:pt-10 max-[767px]:pb-[50px]"
-          : "py-20 max-[992px]:pb-20 max-[992px]:pt-[50px] max-[767px]:pt-10 max-[767px]:pb-[50px]",
+          ? "py-20 max-[992px]:py-[60px] max-[768px]:min-h-[365px] max-[768px]:pt-10 max-[768px]:pb-[50px]"
+          : "py-20 max-[992px]:pb-20 max-[992px]:pt-[50px] max-[768px]:pt-10 max-[768px]:pb-[50px]",
       )}
     >
       <Container>
         <SplitSectionHeading
           className={cn(
             isShopifyHours
-              ? "mb-10 max-[767px]:mb-[30px]"
-              : "mb-[50px] min-[768px]:max-[992px]:mb-[30px] max-[767px]:mb-[55px]",
+              ? "mb-10 max-[768px]:mb-[30px]"
+              : "mb-[50px] min-[768px]:max-[992px]:mb-[30px] max-[768px]:mb-[55px]",
           )}
           description={description}
           heading={heading}
@@ -51,7 +51,7 @@ export function BrandPartnersSection({
         <div
           data-aos="fade-up"
           className={cn(
-            "grid grid-cols-5 -mx-3.75 max-[767px]:hidden",
+            "grid grid-cols-5 -mx-3.75 max-[768px]:hidden",
             isShopifyHours
               ? "gap-y-0 min-[768px]:max-[992px]:grid-cols-4"
               : "gap-y-[50px] min-[768px]:max-[992px]:mx-[-15px] min-[768px]:max-[992px]:grid-cols-4 min-[768px]:max-[992px]:gap-y-[30px]",
@@ -70,7 +70,7 @@ export function BrandPartnersSection({
           ))}
         </div>
       </Container>
-      <div data-aos="fade-up" className="hidden flex-col max-[767px]:flex" aria-hidden="true">
+      <div data-aos="fade-up" className="hidden flex-col max-[768px]:flex" aria-hidden="true">
         {mobileRows.map((row, index) => (
           <div className={cn("flex w-max items-center", index > 0 && "mt-2.5", index === 0 && "mb-5", index === 2 && "ml-[-25%]")} key={index}>
             <LoopingLogoTrack

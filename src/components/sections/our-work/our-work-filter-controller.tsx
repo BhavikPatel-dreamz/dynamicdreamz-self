@@ -62,12 +62,12 @@ export function OurWorkFilterController({ filters, counts }: OurWorkFilterContro
   return (
     <div>
       <div className="w-full">
-        <div className="our-work-category w-full min-w-full max-[767px]:p-0">
+        <div className="our-work-category w-full min-w-full max-[768px]:p-0">
           <ul className="relative flex w-full gap-2 overflow-x-auto max-[992px]:whitespace-nowrap" id="category_filter" ref={listRef} aria-label="Filter projects by platform">
             {filters.map((filter) => (
               <li className="shrink-0" key={filter.id}>
                 <button
-                  className="relative z-1 cursor-pointer rounded-[30px] border border-black/15 bg-transparent px-5 py-[10px] text-xs leading-[normal] font-bold tracking-[.45px] whitespace-nowrap uppercase transition-colors duration-300 max-[767px]:px-4"
+                  className="relative z-1 cursor-pointer rounded-[30px] border border-black/15 bg-transparent px-5 py-[10px] text-xs leading-[normal] font-bold tracking-[.45px] whitespace-nowrap uppercase transition-colors duration-300 max-[768px]:px-4"
                   data-work-filter={filter.id}
                   type="button"
                   aria-pressed={activeFilter === filter.id}

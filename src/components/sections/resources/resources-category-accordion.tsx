@@ -10,7 +10,7 @@ export function ResourcesCategoryAccordion({ categories }: { categories: readonl
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <div className="rounded-[26px] bg-white px-10 pt-7 pb-7 max-[767px]:px-5" data-resources-accordion>
+    <div className="rounded-[26px] bg-white px-10 pt-7 pb-7 max-[768px]:px-5" data-resources-accordion>
       {categories.map((category, index) => {
         const open = openIndex === index;
         const buttonId = `resource-category-${index}-button`;

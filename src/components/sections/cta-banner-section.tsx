@@ -40,20 +40,20 @@ export function CtaBannerSection({
       >
         <div
           data-aos="fade-up"
-          className="flex flex-wrap items-center justify-center gap-8 text-center max-[1199px]:gap-5"
+          className="flex flex-wrap items-center justify-center gap-8 text-center max-[1200px]:gap-5"
         >
           <div className="text-center">
             <h2
               id="cta-banner-title"
               className={cn(
-                "font-display text-[30px] font-normal leading-[43.2px] tracking-[-0.6px] text-white max-[1199px]:text-[26px] max-[1199px]:leading-9 max-[767px]:text-[20px] max-[767px]:leading-7",
+                "font-display text-[30px] font-normal leading-[43.2px] tracking-[-0.6px] text-white max-[1200px]:text-[26px] max-[1200px]:leading-9 max-[768px]:text-[20px] max-[768px]:leading-7",
                 isMobileAppCta && "!font-montreal-medium !font-normal !tracking-normal",
               )}
             >
               {heading}
             </h2>
             {description ? (
-              <p className="mt-2 text-base font-medium text-white/90 max-[767px]:text-sm">
+              <p className="mt-2 text-base font-medium text-white/90 max-[768px]:text-sm">
                 {description}
               </p>
             ) : null}

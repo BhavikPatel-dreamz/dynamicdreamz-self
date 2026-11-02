@@ -21,17 +21,17 @@ export function TextBoxSection({
 
   return (
     <section
-      className="single-text-box-sec pb-0 pt-20 max-[991px]:pt-[50px]"
+      className="single-text-box-sec pb-0 pt-20 max-[992px]:pt-[50px]"
       data-section="single-text-box"
     >
       <Container>
         <div
           data-aos="fade-up"
-          className="text-box-wrap text-center rounded-[30px] border-[1.5px] border-[rgba(23,30,22,0.1)] bg-[#eff4ef] p-10 max-[767px]:p-5"
+          className="text-box-wrap text-center rounded-[30px] border-[1.5px] border-[rgba(23,30,22,0.1)] bg-[#eff4ef] p-10 max-[768px]:p-5"
         >
           <div className="title mb-3">
-            <h2 className="text-center font-montreal-medium text-[30px] font-normal leading-[42px] tracking-normal text-ink min-[1200px]:text-[35px] min-[1200px]:leading-[49px] max-[767px]:text-2xl max-[767px]:leading-8">
-              {formatBrText(heading, "max-[1199px]:hidden")}
+            <h2 className="text-center font-montreal-medium text-[30px] font-normal leading-[42px] tracking-normal text-ink min-[1200px]:text-[35px] min-[1200px]:leading-[49px] max-[768px]:text-2xl max-[768px]:leading-8">
+              {formatBrText(heading, "max-[1200px]:hidden")}
             </h2>
           </div>
           <div className="text m-0">
@@ -52,7 +52,7 @@ export function TextBoxSection({
               <ul className="mx-auto w-fit list-disc text-left">
                 {listItems.map((item, index) => (
                   <li
-                    className="mx-auto mb-[15px] w-fit text-[16px] font-medium leading-[34.2px] text-[#535353] last:mb-0 max-[767px]:text-sm max-[767px]:leading-7"
+                    className="mx-auto mb-[15px] w-fit text-[16px] font-medium leading-[34.2px] text-[#535353] last:mb-0 max-[768px]:text-sm max-[768px]:leading-7"
                     key={index}
                   >
                     {item}

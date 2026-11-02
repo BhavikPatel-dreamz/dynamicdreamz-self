@@ -39,7 +39,7 @@ function FieldLabel({
   return (
     <label
       htmlFor={htmlFor}
-      className="mb-2.5 block text-base leading-normal font-semibold text-[#090909] max-[991px]:text-sm"
+      className="mb-2.5 block text-base leading-normal font-semibold text-[#090909] max-[992px]:text-sm"
     >
       {children}
       {required ? <em className="ml-1 not-italic text-[#d92128] text-lg font-semibold leading-none">*</em> : null}
@@ -103,13 +103,13 @@ export function ContactForm() {
         <input key={name} type="hidden" name={name} />
       ))}
 
-      <div className="grid grid-cols-2 gap-x-[30px] max-[767px]:grid-cols-1 max-[767px]:gap-x-0">
+      <div className="grid grid-cols-2 gap-x-[30px] max-[768px]:grid-cols-1 max-[768px]:gap-x-0">
         <div className="mb-5">
           <FieldLabel htmlFor="contact-name" required>
             {contactFormCopy.labels.name}
           </FieldLabel>
           <input
-            className="h-[49px] w-full rounded-[5px] border-[1.5px] border-[#dfdfdf] px-4 text-base leading-[23px] font-medium text-[#090909] placeholder:text-[#9a9a9a] outline-none focus:border-[#090909] max-[991px]:text-sm"
+            className="h-[49px] w-full rounded-[5px] border-[1.5px] border-[#dfdfdf] px-4 text-base leading-[23px] font-medium text-[#090909] placeholder:text-[#9a9a9a] outline-none focus:border-[#090909] max-[992px]:text-sm"
             id="contact-name"
             name="name"
             type="text"
@@ -124,7 +124,7 @@ export function ContactForm() {
             {contactFormCopy.labels.email}
           </FieldLabel>
           <input
-            className="h-[49px] w-full rounded-[5px] border-[1.5px] border-[#dfdfdf] px-4 text-base leading-[23px] font-medium text-[#090909] placeholder:text-[#9a9a9a] outline-none focus:border-[#090909] max-[991px]:text-sm"
+            className="h-[49px] w-full rounded-[5px] border-[1.5px] border-[#dfdfdf] px-4 text-base leading-[23px] font-medium text-[#090909] placeholder:text-[#9a9a9a] outline-none focus:border-[#090909] max-[992px]:text-sm"
             id="contact-email"
             name="email"
             type="email"
@@ -154,7 +154,7 @@ export function ContactForm() {
             {contactFormCopy.labels.company}
           </FieldLabel>
           <input
-            className="h-[49px] w-full rounded-[5px] border-[1.5px] border-[#dfdfdf] px-4 text-base leading-[23px] font-medium text-[#090909] placeholder:text-[#9a9a9a] outline-none focus:border-[#090909] max-[991px]:text-sm"
+            className="h-[49px] w-full rounded-[5px] border-[1.5px] border-[#dfdfdf] px-4 text-base leading-[23px] font-medium text-[#090909] placeholder:text-[#9a9a9a] outline-none focus:border-[#090909] max-[992px]:text-sm"
             id="contact-company"
             name="company"
             type="text"
@@ -163,12 +163,12 @@ export function ContactForm() {
             maxLength={400}
           />
         </div>
-        <div className="col-span-2 mb-5 max-[767px]:col-span-1">
+        <div className="col-span-2 mb-5 max-[768px]:col-span-1">
           <FieldLabel htmlFor="contact-project">
             {contactFormCopy.labels.project}
           </FieldLabel>
           <textarea
-            className="h-[136px] w-full resize-none rounded-[5px] border-[1.5px] border-[#dfdfdf] px-4 py-3 text-base leading-[23px] font-medium text-[#090909] placeholder:text-[#9a9a9a] outline-none focus:border-[#090909] max-[991px]:text-sm"
+            className="h-[136px] w-full resize-none rounded-[5px] border-[1.5px] border-[#dfdfdf] px-4 py-3 text-base leading-[23px] font-medium text-[#090909] placeholder:text-[#9a9a9a] outline-none focus:border-[#090909] max-[992px]:text-sm"
             id="contact-project"
             name="project"
             placeholder={contactFormCopy.placeholders.project}
@@ -191,12 +191,12 @@ export function ContactForm() {
         ) : null}
       </div>
 
-      <div className="flex items-center justify-between gap-5 max-[767px]:flex-col-reverse max-[767px]:items-center">
-        <div className="max-[767px]:text-center">
+      <div className="flex items-center justify-between gap-5 max-[768px]:flex-col-reverse max-[768px]:items-center">
+        <div className="max-[768px]:text-center">
           <p className="text-xs font-normal text-[#090909]">{contactFormCopy.note}</p>
         </div>
         <button
-          className="group/contact-submit relative inline-flex min-h-[49px] shrink-0 cursor-pointer overflow-hidden rounded-[30px] border-2 border-brand-red px-6 py-[15px] text-center text-base leading-none font-bold text-white uppercase transition-colors duration-600 hover:border-[#4f4f4f] hover:text-[#4f4f4f] disabled:cursor-wait disabled:opacity-70 max-[767px]:w-full max-[767px]:justify-center"
+          className="group/contact-submit relative inline-flex min-h-[49px] shrink-0 cursor-pointer overflow-hidden rounded-[30px] border-2 border-brand-red px-6 py-[15px] text-center text-base leading-none font-bold text-white uppercase transition-colors duration-600 hover:border-[#4f4f4f] hover:text-[#4f4f4f] disabled:cursor-wait disabled:opacity-70 max-[768px]:w-full max-[768px]:justify-center"
           type="submit"
           disabled={isPending}
         >

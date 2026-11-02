@@ -36,28 +36,28 @@ export function QuoteLeftColumn({
 }: QuoteLeftColumnProps = {}) {
 
   return (
-    <div className="left-col relative w-full py-[150px] pr-[46px] pb-[140px] max-[1199px]:pr-[30px] max-[992px]:pt-[50px] max-[992px]:pr-0 max-[992px]:pb-[100px]">
-      <h1 className="font-display text-[35px] leading-[48.475px] font-normal tracking-normal text-ink max-[1199px]:text-[29px] max-[359px]:text-2xl">
+    <div className="left-col relative w-full py-[150px] pr-[46px] pb-[140px] max-[1200px]:pr-[30px] max-[992px]:pt-[50px] max-[992px]:pr-0 max-[992px]:pb-[100px]">
+      <h1 className="font-display text-[35px] leading-[48.475px] font-normal tracking-normal text-ink max-[1200px]:text-[29px] max-[359px]:text-2xl">
         {hero.title}
       </h1>
-      <p className="mt-2 text-base leading-7 font-medium text-[#535353] min-[768px]:mt-3 min-[992px]:mt-3 max-[1199px]:leading-[30.4px] max-[992px]:text-sm max-[992px]:leading-6">
+      <p className="mt-2 text-base leading-7 font-medium text-[#535353] min-[768px]:mt-3 min-[992px]:mt-3 max-[1200px]:leading-[30.4px] max-[992px]:text-sm max-[992px]:leading-6">
         {hero.description}
       </p>
 
-      <div className="deliver-wrapper mt-[50px] flex items-center max-[1199px]:mt-[30px] max-[767px]:mt-5">
+      <div className="deliver-wrapper mt-[50px] flex items-center max-[1200px]:mt-[30px] max-[768px]:mt-5">
         {counters.map((counter, index) => (
           <div
             key={counter.label}
             className={
               index === 0
                 ? "deliver-counter"
-                : "deliver-counter ml-[52px] border-l border-[rgba(0,0,0,0.08)] pl-[52px] max-[1299px]:ml-10 max-[1299px]:pl-10 max-[1199px]:ml-[25px] max-[1199px]:pl-[25px] max-[767px]:ml-[15px] max-[767px]:pl-[15px]"
+                : "deliver-counter ml-[52px] border-l border-[rgba(0,0,0,0.08)] pl-[52px] max-[1299px]:ml-10 max-[1299px]:pl-10 max-[1200px]:ml-[25px] max-[1200px]:pl-[25px] max-[768px]:ml-[15px] max-[768px]:pl-[15px]"
             }
           >
             <div className="text-counter mb-1 text-left text-sm leading-[20.7px] font-semibold text-[rgba(9,9,9,0.63)] uppercase max-[575px]:text-xs">
               {counter.label}
             </div>
-            <div className="counter-text flex items-center text-left text-[35px] leading-[43.925px] font-bold text-black max-[1199px]:text-[30px] max-[767px]:text-[26px] max-[359px]:text-2xl">
+            <div className="counter-text flex items-center text-left text-[35px] leading-[43.925px] font-bold text-black max-[1200px]:text-[30px] max-[768px]:text-[26px] max-[359px]:text-2xl">
               <div>{counter.count}</div>
               {"unit" in counter && counter.unit ? (
                 <span className="ml-2 text-base font-semibold">{counter.unit}</span>
@@ -67,15 +67,15 @@ export function QuoteLeftColumn({
         ))}
       </div>
 
-      <div className="review-wraper my-[50px] flex flex-wrap items-center justify-between gap-y-2.5 max-[1199px]:my-[30px] max-[767px]:flex-col max-[767px]:gap-y-0 max-[767px]:[&>div:not(:last-child)]:mb-2.5">
+      <div className="review-wraper my-[50px] flex flex-wrap items-center justify-between gap-y-2.5 max-[1200px]:my-[30px] max-[768px]:flex-col max-[768px]:gap-y-0 max-[768px]:[&>div:not(:last-child)]:mb-2.5">
         {badges.map((badge) => (
           <div
             key={badge.alt}
-            className="review-col w-[calc(25%-5px)] max-[1199px]:w-[calc(50%-5px)] max-[767px]:w-full"
+            className="review-col w-[calc(25%-5px)] max-[1200px]:w-[calc(50%-5px)] max-[768px]:w-full"
           >
             <div className="review-link relative rounded-[9px] bg-[linear-gradient(to_right,#15c064,#00d1ff)] p-[1px] after:absolute after:inset-0 after:-z-10 after:rounded-[9px] after:bg-black/10 after:blur-[9px] after:content-['']">
               <a
-                className="flex lg:h-21 h-19 w-full items-center justify-center rounded-[9px] bg-white px-2.5 py-[19.5px] transition-opacity hover:opacity-90  max-[1199px]:py-[15px]"
+                className="flex lg:h-21 h-19 w-full items-center justify-center rounded-[9px] bg-white px-2.5 py-[19.5px] transition-opacity hover:opacity-90  max-[1200px]:py-[15px]"
                 href={badge.href}
                 target="_blank"
                 rel="nofollow noopener noreferrer"

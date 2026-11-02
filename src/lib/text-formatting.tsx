@@ -118,7 +118,7 @@ function parseInlineFormatting(
  * Formats a string or string array into React JSX.
  * When `text` is a string array (`string[]`), renders line breaks between elements.
  * When `brClassName` is provided, applies that class to the line break element
- * (e.g. "max-[1199px]:hidden" or "max-[992px]:hidden").
+ * (e.g. "max-[1200px]:hidden" or "max-[992px]:hidden").
  * Also supports inline Markdown formatting (`**bold**`, `***bold-italic***`, `*italic*`, `[label](url)`).
  */
 export function formatBrText(

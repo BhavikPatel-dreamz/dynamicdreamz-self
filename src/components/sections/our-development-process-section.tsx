@@ -36,7 +36,7 @@ export function OurDevelopmentProcessSection({
     <section
       id={id}
       className={cn(
-        "our-development-process py-20 max-[991px]:py-[50px]",
+        "our-development-process py-20 max-[992px]:py-[50px]",
         bg,
       )}
     >
@@ -63,26 +63,26 @@ export function OurDevelopmentProcessSection({
                       idx < 3 ? "min-[1200px]:border-b-0" : "min-[1200px]:border-b",
                       idx % 3 === 0 && "min-[1200px]:border-l",
                       // Tablet 2-col
-                      "max-[1199px]:w-1/2 max-[1199px]:border-b",
-                      idx < 2 ? "max-[1199px]:border-t" : "max-[1199px]:border-t-0",
+                      "max-[1200px]:w-1/2 max-[1200px]:border-b",
+                      idx < 2 ? "max-[1200px]:border-t" : "max-[1200px]:border-t-0",
                       idx % 2 === 0
-                        ? "max-[1199px]:border-l max-[1199px]:border-r-0"
-                        : "max-[1199px]:border-l max-[1199px]:border-r",
+                        ? "max-[1200px]:border-l max-[1200px]:border-r-0"
+                        : "max-[1200px]:border-l max-[1200px]:border-r",
                       // Mobile 1-col
-                      "max-[767px]:w-full max-[767px]:border-t! max-[767px]:border-l! max-[767px]:border-r! max-[767px]:border-b-0! max-[767px]:p-[18px] max-[767px]:last:border-b!",
+                      "max-[768px]:w-full max-[768px]:border-t! max-[768px]:border-l! max-[768px]:border-r! max-[768px]:border-b-0! max-[768px]:p-[18px] max-[768px]:last:border-b!",
                     )
                   : cn(
                       "item w-1/4 p-5 border-t border-r border-b border-[rgba(40,40,40,0.11)]",
                       idx === 0 && "border-l",
-                      "max-[1199px]:w-1/2 max-[1199px]:[&:nth-child(odd)]:border-l max-[1199px]:[&:nth-child(n+3)]:border-t-0",
-                      "max-[767px]:w-full max-[767px]:border-t! max-[767px]:border-l! max-[767px]:border-r! max-[767px]:border-b-0! max-[767px]:p-[18px] max-[767px]:last:border-b!",
+                      "max-[1200px]:w-1/2 max-[1200px]:[&:nth-child(odd)]:border-l max-[1200px]:[&:nth-child(n+3)]:border-t-0",
+                      "max-[768px]:w-full max-[768px]:border-t! max-[768px]:border-l! max-[768px]:border-r! max-[768px]:border-b-0! max-[768px]:p-[18px] max-[768px]:last:border-b!",
                     ),
               )}
             >
               <span className="mb-[15px] block text-xs font-semibold uppercase text-brand-red">
                 {item.step}
               </span>
-              <h3 className="mb-2 font-montreal-medium text-[20px] font-normal leading-[28.8px] text-ink max-[991px]:text-[18px] max-[991px]:leading-[26px]">
+              <h3 className="mb-2 font-montreal-medium text-[20px] font-normal leading-[28.8px] text-ink max-[992px]:text-[18px] max-[992px]:leading-[26px]">
                 {item.title}
               </h3>
               <p className="text-sm font-normal leading-[22px] text-[#535353]">

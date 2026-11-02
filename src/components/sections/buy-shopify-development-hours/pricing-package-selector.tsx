@@ -31,15 +31,15 @@ export function PricingPackageSelector({
   const fillPercentage = (selectedIndex / (packages.length - 1)) * 100;
 
   return (
-    <div className="pricing-slider-card rounded-[25px] border-[1.5px] border-black/10 p-[39px_24px_24px] max-[767px]:p-[20px_15px]" data-pricing-selector>
-      <h3 className="border-b border-[#dedbd2] px-2.5 pb-[25px] text-center font-display text-xl leading-[28.8px] font-normal tracking-[-0.4px] max-[1199px]:text-lg max-[1199px]:leading-[26px]">
+    <div className="pricing-slider-card rounded-[25px] border-[1.5px] border-black/10 p-[39px_24px_24px] max-[768px]:p-[20px_15px]" data-pricing-selector>
+      <h3 className="border-b border-[#dedbd2] px-2.5 pb-[25px] text-center font-display text-xl leading-[28.8px] font-normal tracking-[-0.4px] max-[1200px]:text-lg max-[1200px]:leading-[26px]">
         {heading.prefix} <span className="text-brand-red">{heading.accent}</span>{" "}
         {heading.suffix}
       </h3>
 
       <div
         aria-live="polite"
-        className="stats-grid mt-[25px] grid grid-cols-3 gap-2.5 max-[1199px]:grid-cols-2 [&>*:last-child]:max-[1199px]:col-span-2"
+        className="stats-grid mt-[25px] grid grid-cols-3 gap-2.5 max-[1200px]:grid-cols-2 [&>*:last-child]:max-[1200px]:col-span-2"
         data-pricing-stats
       >
         <PricingStat label={shopifyHoursSectionCopy.pricing.hours}>
@@ -60,7 +60,7 @@ export function PricingPackageSelector({
         </PricingStat>
       </div>
 
-      <div className="slider-container custom-slider mt-[70px] pb-[35px] max-[767px]:mt-10">
+      <div className="slider-container custom-slider mt-[70px] pb-[35px] max-[768px]:mt-10">
         <label className="sr-only" htmlFor={inputId}>
           {shopifyHoursSectionCopy.pricing.packageLabel}
         </label>
@@ -127,12 +127,12 @@ function PricingStat({
 }) {
   return (
     <div
-      className={`stat-box flex min-h-[186px] flex-col items-center rounded-[10px] bg-white/60 px-[15px] py-[30px] text-center max-[767px]:min-h-[135px] max-[767px]:px-2.5 max-[767px]:py-5 ${className}`}
+      className={`stat-box flex min-h-[186px] flex-col items-center rounded-[10px] bg-white/60 px-[15px] py-[30px] text-center max-[768px]:min-h-[135px] max-[768px]:px-2.5 max-[768px]:py-5 ${className}`}
     >
-      <span className="label mb-5 w-20 rounded-[20px] border border-[#555] px-2.5 py-[5px] text-[15px] leading-6 font-semibold text-muted max-[767px]:mb-[15px] max-[767px]:w-[75px] max-[767px]:py-[3px] max-[767px]:text-sm">
+      <span className="label mb-5 w-20 rounded-[20px] border border-[#555] px-2.5 py-[5px] text-[15px] leading-6 font-semibold text-muted max-[768px]:mb-[15px] max-[768px]:w-[75px] max-[768px]:py-[3px] max-[768px]:text-sm">
         {label}
       </span>
-      <div className="flex flex-col text-xl leading-8 text-ink max-[767px]:text-base max-[767px]:leading-6 [&_del]:font-medium [&_del]:text-brand-red [&_span]:font-bold [&_strong]:font-bold">
+      <div className="flex flex-col text-xl leading-8 text-ink max-[768px]:text-base max-[768px]:leading-6 [&_del]:font-medium [&_del]:text-brand-red [&_span]:font-bold [&_strong]:font-bold">
         {children}
       </div>
     </div>

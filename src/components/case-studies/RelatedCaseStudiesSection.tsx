@@ -48,19 +48,19 @@ export function CaseStudyRelated({
   }
 
   return (
-    <section className="bg-[#eff4ef] py-20 max-[991px]:py-[50px]" aria-labelledby="related-case-studies-heading">
+    <section className="bg-[#eff4ef] py-20 max-[992px]:py-[50px]" aria-labelledby="related-case-studies-heading">
       <Container>
         <div >
-          <div className="relative mb-4 inline-flex items-center pl-10 text-[14px] font-semibold uppercase leading-[1.2] text-[#535353] before:absolute before:left-0 before:top-[7px] before:h-0.5 before:w-[30px] before:bg-[#ad5151] max-[767px]:pl-[23px] max-[767px]:before:top-1 max-[767px]:before:w-[15px]">
+          <div className="relative mb-4 inline-flex items-center pl-10 text-[14px] font-semibold uppercase leading-[1.2] text-[#535353] before:absolute before:left-0 before:top-[7px] before:h-0.5 before:w-[30px] before:bg-[#ad5151] max-[768px]:pl-[23px] max-[768px]:before:top-1 max-[768px]:before:w-[15px]">
             <span>{caseStudiesUiCopy.relatedEyebrow}</span>
           </div>
           <h2
             id="related-case-studies-heading"
-            className="mb-4 font-montreal-medium text-[35px] font-normal leading-[1.38] text-ink max-[1199px]:text-[28px] max-[767px]:text-2xl"
+            className="mb-4 font-montreal-medium text-[35px] font-normal leading-[1.38] text-ink max-[1200px]:text-[28px] max-[768px]:text-2xl"
           >
             {caseStudiesUiCopy.relatedHeading}
           </h2>
-          <p className="m-0 font-sans text-[16px] font-medium leading-[30.4px] text-[#535353] max-[767px]:text-sm">
+          <p className="m-0 font-sans text-[16px] font-medium leading-[30.4px] text-[#535353] max-[768px]:text-sm">
             {caseStudiesUiCopy.relatedDescription}
           </p>
         </div>
@@ -71,7 +71,7 @@ export function CaseStudyRelated({
             return (
               <article
                 key={item.slug}
-                className="flex w-[calc(33.333%-14px)] flex-col overflow-hidden rounded-[20px] border border-[rgba(40,40,40,0.06)] bg-white transition-shadow duration-300 hover:shadow-[0_10px_30px_rgba(0,0,0,0.08)] max-[1199px]:w-[calc(50%-10px)] max-[767px]:w-full"
+                className="flex w-[calc(33.333%-14px)] flex-col overflow-hidden rounded-[20px] border border-[rgba(40,40,40,0.06)] bg-white transition-shadow duration-300 hover:shadow-[0_10px_30px_rgba(0,0,0,0.08)] max-[1200px]:w-[calc(50%-10px)] max-[768px]:w-full"
               >
                 <div className="flex h-full flex-col">
                   <div className="w-full">
@@ -88,7 +88,7 @@ export function CaseStudyRelated({
                       />
                     </Link>
                   </div>
-                  <div className="flex flex-grow flex-col p-5 max-[767px]:p-[15px]">
+                  <div className="flex flex-grow flex-col p-5 max-[768px]:p-[15px]">
                     <div className="flex h-full flex-col justify-between">
                       <div>
                         <Link
@@ -103,7 +103,7 @@ export function CaseStudyRelated({
                               {item.industry}
                             </span>
                           </div>
-                          <h3 className="mb-2.5 line-clamp-2 font-display text-[20px] font-medium leading-[1.4] tracking-[-.4px] text-[#090909] transition-colors group-hover/title:text-[#ad5151] max-[767px]:text-[18px]">
+                          <h3 className="mb-2.5 line-clamp-2 font-display text-[20px] font-medium leading-[1.4] tracking-[-.4px] text-[#090909] transition-colors group-hover/title:text-[#ad5151] max-[768px]:text-[18px]">
                             {item.title}
                           </h3>
                         </Link>

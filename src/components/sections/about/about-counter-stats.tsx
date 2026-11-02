@@ -34,7 +34,7 @@ function OdometerNumber({ value }: { value: string }) {
         const target = value[digitIndex];
 
         return (
-          <span className="relative inline-block h-[1lh] w-[0.64em] overflow-hidden max-[767px]:w-[0.625em]" key={`${target}-${digitIndex}`}>
+          <span className="relative inline-block h-[1lh] w-[0.64em] overflow-hidden max-[768px]:w-[0.625em]" key={`${target}-${digitIndex}`}>
             <span className="invisible block">{aboutSectionCopy.counterDigitPlaceholder}</span>
             <span
               className={`${styles.ribbon} absolute inset-x-0 top-0 block text-left`}
@@ -61,19 +61,19 @@ export function AboutCounterStats({ statistics }: AboutCounterStatsProps) {
 
         return (
           <div
-            className="w-max border-l border-white/25 pl-[30px] text-left first:ml-0 first:border-l-0 first:pl-0 not-first:ml-[30px] max-[1199px]:pl-5 max-[1199px]:not-first:ml-5 max-[992px]:text-center max-[359px]:pl-2.5 max-[359px]:not-first:ml-2.5"
+            className="w-max border-l border-white/25 pl-[30px] text-left first:ml-0 first:border-l-0 first:pl-0 not-first:ml-[30px] max-[1200px]:pl-5 max-[1200px]:not-first:ml-5 max-[992px]:text-center max-[359px]:pl-2.5 max-[359px]:not-first:ml-2.5"
             key={stat.label}
           >
-            <dt className="mb-3 text-[16px] leading-[18.4px] font-bold text-white/60 uppercase max-[1199px]:text-[14px] max-[767px]:mb-0 max-[767px]:text-[10px] max-[359px]:text-[9px]">
+            <dt className="mb-3 text-[16px] leading-[18.4px] font-bold text-white/60 uppercase max-[1200px]:text-[14px] max-[768px]:mb-0 max-[768px]:text-[10px] max-[359px]:text-[9px]">
               {stat.label}
             </dt>
             <dd
-              className="flex h-[49.48px] items-center justify-start text-[45px] leading-[45px] font-semibold tracking-[-0.56px] text-white max-[1199px]:h-[38.81px] max-[1199px]:text-[40px] max-[1199px]:leading-[35px] max-[992px]:justify-center max-[767px]:h-[31.66px] max-[767px]:text-xl max-[767px]:leading-[30px]"
+              className="flex h-[49.48px] items-center justify-start text-[45px] leading-[45px] font-semibold tracking-[-0.56px] text-white max-[1200px]:h-[38.81px] max-[1200px]:text-[40px] max-[1200px]:leading-[35px] max-[992px]:justify-center max-[768px]:h-[31.66px] max-[768px]:text-xl max-[768px]:leading-[30px]"
               aria-label={stat.value}
               data-about-counter={stat.label}
             >
               <OdometerNumber value={number} />
-              <span className="ml-0.5 text-[40px] leading-[45px] max-[1199px]:leading-[35px] max-[767px]:text-xl max-[767px]:leading-[30px]" aria-hidden="true">
+              <span className="ml-0.5 text-[40px] leading-[45px] max-[1200px]:leading-[35px] max-[768px]:text-xl max-[768px]:leading-[30px]" aria-hidden="true">
                 +
               </span>
             </dd>

@@ -18,7 +18,7 @@ function PrevArrow({ onClick }: ArrowProps) {
   return (
     <button
       type="button"
-      className="absolute -bottom-[52px] right-[61px] z-10 flex size-10 cursor-pointer items-center justify-center rounded-[5px] border-0 bg-white shadow-sm transition-opacity hover:opacity-80 max-[767px]:right-[55px]"
+      className="absolute -bottom-[52px] right-[61px] z-10 flex size-10 cursor-pointer items-center justify-center rounded-[5px] border-0 bg-white shadow-sm transition-opacity hover:opacity-80 max-[768px]:right-[55px]"
       onClick={onClick}
       aria-label="Previous testimonial"
     >
@@ -64,7 +64,7 @@ export type QuoteTestimonialsProps = {
 function QuoteTestimonialCard({ testimonial }: { testimonial: QuoteTestimonialItem }) {
   return (
     <div className="flex h-full rounded-[10px] bg-[linear-gradient(to_right,#15c064,#00d1ff)] p-[1px] max-[575px]:min-h-[285px]">
-      <div className="flex min-h-0 flex-1 flex-col justify-between rounded-[10px] bg-white p-[32px_45px_32px_32px] max-[1199px]:p-5">
+      <div className="flex min-h-0 flex-1 flex-col justify-between rounded-[10px] bg-white p-[32px_45px_32px_32px] max-[1200px]:p-5">
         <div>
           <div className="mb-5 flex items-center justify-between">
             <div className="flex items-center gap-3">
@@ -75,7 +75,7 @@ function QuoteTestimonialCard({ testimonial }: { testimonial: QuoteTestimonialIt
                 width={48}
                 height={48}
               />
-              <h3 className="m-0 font-montreal-medium text-lg leading-[23px] font-normal text-ink max-[767px]:text-base">
+              <h3 className="m-0 font-montreal-medium text-lg leading-[23px] font-normal text-ink max-[768px]:text-base">
                 {testimonial.name}
               </h3>
             </div>
