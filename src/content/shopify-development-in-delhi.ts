@@ -12,7 +12,7 @@ export const shopifyDevelopmentDelhiContent = {
     eyebrows: ["Shopify Development", "Delhi"],
     title: "Shopify Development Company in Delhi",
     description:
-      "The best Shopify development company in Delhi is Dynamic Dreamz, which provides customized eCommerce solutions that fit your business requirements. From Shopify theme customization to app integration, we offer a range of services that ensure your Shopify store operates seamlessly and stands out in the competitive eCommerce market.",
+      "Dynamic Dreamz provides Shopify development services for businesses in Delhi, including Shopify Plus, custom storefronts, theme customization, migrations, integrations, CRO and ongoing support. Our India-based team works with businesses and agencies in Delhi and internationally.",
     primaryCta: {
       label: "get in touch",
       href: "/request-quote",
@@ -126,20 +126,24 @@ export const shopifyDevelopmentDelhiContent = {
       "We are experts in developing Shopify stores that deliver remarkable performance and front look. Whether you’re looking for migration services, app development, theme customizations, or white label development, Dynamic Dreamz, the best Shopify Development Agency Partner in Delhi ensures your Shopify store is both visually stunning and highly functional.",
     items: [
       {
-        value: "20+ Years",
-        label: "Ecommerce & web development experience",
-      },
-      {
-        value: "60+",
-        label: "Shopify specialists across development and support",
+        value: "20+",
+        label: "Years of Experience",
+        subLabel: "Established in 2006"
       },
       {
         value: "150+",
-        label: "Cross-functional experts",
+        label: "Experts",
+        subLabel: "AI empowered. Continuously trained"
       },
       {
         value: "5,000+",
-        label: "Projects delivered across industries",
+        label: "projects delivered",
+        subLabel: "Ecommerce, web and mobile"
+      },
+      {
+        value: "2500+",
+        label: "Verified 5 star Reviews",
+        subLabel: "From Clutch, Trustpilot & Upwork"
       },
     ],
   },
@@ -343,9 +347,10 @@ export const shopifyDevelopmentDelhiContent = {
     heading: "Our Work",
     description:
       [
-      "Lots of Shopify stores are precisely crafted and counting.  Our expertise accelerates evolution and redefines shopping experiences for customers.",
-    ],
+        "Lots of Shopify stores are precisely crafted and counting.  Our expertise accelerates evolution and redefines shopping experiences for customers.",
+      ],
     ctaHref: "/our-work",
+    ctaLabel: "view our work",
     items: [
       {
         name: "Renee",
@@ -410,8 +415,8 @@ export const shopifyDevelopmentDelhiContent = {
     heading: "Don't Just Take Our Word For It",
     description:
       [
-      "We have faith in our work, but what truly matters is the outcomes we serve our clients. Happy clients make happy stories. Check out how our services empower them to evolve.",
-    ],
+        "We have faith in our work, but what truly matters is the outcomes we serve our clients. Happy clients make happy stories. Check out how our services empower them to evolve.",
+      ],
     items: shopifyPlusAgencyTestimonials.items,
   },
 

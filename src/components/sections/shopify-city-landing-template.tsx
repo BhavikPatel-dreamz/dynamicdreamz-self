@@ -101,6 +101,7 @@ export function ShopifyCityLandingTemplate({
         eyebrowVariant="dash"
       />
       <AgencyServicesSection
+        className="pb-20"
         cardVariant="services-box"
         columns={2}
         content={content.services}

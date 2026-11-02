@@ -54,7 +54,7 @@ export function CityPageCounterSection({
                 "max-[767px]:w-full max-[767px]:border-t! max-[767px]:border-l! max-[767px]:border-r! max-[767px]:border-b-0! max-[767px]:p-[18px] max-[767px]:last:border-b!",
               )}
             >
-              <h3 className="text-[28px] font-normal leading-tight text-ink mb-1.5 max-[767px]:text-[22px] max-[767px]:mb-1">
+              <h3 className="text-[28px] font-normal leading-[28.5px] text-ink mb-3 max-[767px]:text-[22px] max-[767px]:mb-1">
                 {item.value}
               </h3>
               {item.subLabel ? (
@@ -62,12 +62,12 @@ export function CityPageCounterSection({
                   <span className="mb-4 block text-xs font-semibold uppercase leading-none text-brand-red">
                     {item.label}
                   </span>
-                  <p className="text-sm font-medium leading-[22px] text-[#535353]">
+                  <p className="text-sm leading-6 text-[#535353]">
                     {item.subLabel}
                   </p>
                 </>
               ) : (
-                <p className="text-sm font-medium leading-[22px] text-[#535353]">
+                <p className="text-sm font-medium text-[#535353]">
                   {item.label}
                 </p>
               )}
