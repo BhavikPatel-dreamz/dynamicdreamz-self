@@ -22,6 +22,7 @@ export function ShopifyPlusProofSection({
     >
       <Container>
         <SplitSectionHeading
+          className="max-[767px]:mb-0"
           description={content.intro}
           eyebrow={content.eyebrow}
           heading={content.heading}

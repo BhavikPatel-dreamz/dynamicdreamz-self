@@ -31,11 +31,11 @@ export function WhiteLabelCounterSection({
               }`}
               key={item.label}
             >
-              <div className="stats_box text-left mx-auto w-fit max-[992px]:max-w-[205px]">
+              <div className="stats_box text-left mx-auto w-fit max-[992px]:w-[205px]">
                 <div className="stats_number font-sans text-2xl font-bold leading-none text-[#282828] max-[1200px]:text-xl max-[768px]:text-base">
                   {item.value}
                 </div>
-                <p className="counter_title mt-2 font-montserrat text-[13px] font-medium leading-none text-[#535353] max-[1200px]:leading-[18px] max-[768px]:mx-auto max-[768px]:max-w-[135px]">
+                <p className="counter_title mt-2 font-montserrat text-[13px] font-medium leading-none text-[#535353] max-[1200px]:leading-[18px] max-[768px]:w-[100px]">
                   {item.label}
                 </p>
               </div>

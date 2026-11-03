@@ -90,11 +90,11 @@ export function ShopifyStageServicesSection({
               >
                 <div className="top">
                   {item.tag ? (
-                    <span className="mb-[15px] block font-montserrat text-[10px] font-bold uppercase tracking-[0.8px] text-[#ad5151]">
+                    <span className="mb-[15px] block font-montserrat text-[10px] font-bold uppercase tracking-[0.8px] leading-[14px] text-[#ad5151]">
                       {item.tag}
                     </span>
                   ) : null}
-                  <h3 className="mb-3 font-display text-[20px] font-normal leading-[28.8px] text-ink max-[1200px]:text-[18px] max-[1200px]:leading-[26px]">
+                  <h3 className="mb-3 font-display text-[20px] font-normal leading-[28.8px] text-ink max-[991px]:text-lg max-[1200px]:leading-[28.8px]">
                     {item.title}
                   </h3>
                   <div className="description">

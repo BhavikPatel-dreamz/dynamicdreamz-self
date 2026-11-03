@@ -85,7 +85,7 @@ export function ServiceHeroVideoSection({
           >
             <div className="hero-content w-full">
               {content.eyebrowSpans && content.eyebrowSpans.length > 0 ? (
-                <div className="eyebrow relative mb-[15px] inline-flex items-center pl-10 before:absolute before:left-0 before:top-[7px] before:inline-block before:h-[2px] before:w-[30px] before:bg-brand-red before:content-[''] max-[1200px]:mx-auto max-[1200px]:justify-center max-[768px]:mx-auto max-[768px]:justify-center max-[768px]:pl-6 max-[768px]:before:top-1 max-[768px]:before:w-[15px]">
+                <div className="eyebrow relative mb-[15px] flex w-fit items-center pl-10 before:absolute before:left-0 before:top-[7px] before:inline-block before:h-[2px] before:w-[30px] before:bg-brand-red before:content-[''] max-[1200px]:mx-auto max-[1200px]:justify-center max-[1200px]:before:top-[6px] max-[768px]:mx-auto max-[768px]:justify-center max-[768px]:pl-6 max-[768px]:before:top-1 max-[768px]:before:w-[15px]">
                   {content.eyebrowSpans.map((span, idx) => (
                     <span
                       className={cn(
@@ -102,7 +102,7 @@ export function ServiceHeroVideoSection({
                   ))}
                 </div>
               ) : content.eyebrow ? (
-                <div className="eyebrow relative mb-[15px] inline-flex items-center pl-10 before:absolute before:left-0 before:top-[7px] before:inline-block before:h-[2px] before:w-[30px] before:bg-brand-red before:content-[''] max-[1200px]:mx-auto max-[1200px]:justify-center max-[768px]:mx-auto max-[768px]:justify-center max-[768px]:pl-6 max-[768px]:before:top-1 max-[768px]:before:w-[15px]">
+                <div className="eyebrow relative mb-[15px] flex w-fit items-center pl-10 before:absolute before:left-0 before:top-[7px] before:inline-block before:h-[2px] before:w-[30px] before:bg-brand-red before:content-[''] max-[1200px]:mx-auto max-[1200px]:justify-center max-[1200px]:before:top-[6px] max-[768px]:mx-auto max-[768px]:justify-center max-[768px]:pl-6 max-[768px]:before:top-1 max-[768px]:before:w-[15px]">
                   <span className="relative inline-flex items-center font-montserrat text-sm font-semibold uppercase leading-[1.2] text-[#535353] max-[768px]:text-[10px] max-[768px]:before:absolute max-[768px]:before:-left-6 max-[768px]:before:top-1/2 max-[768px]:before:-translate-y-1/2 max-[768px]:before:inline-block max-[768px]:before:h-[2px] max-[768px]:before:w-[15px] max-[768px]:before:bg-brand-red max-[768px]:before:content-['']">
                     {content.eyebrow}
                   </span>

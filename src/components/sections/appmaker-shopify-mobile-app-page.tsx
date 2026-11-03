@@ -42,7 +42,6 @@ export function AppmakerShopifyMobileAppPage() {
 
       {/* 6. FAQ Section */}
       <SplitFaqSection
-        bgOffWhite
         idPrefix="appmaker-faq"
         heading={faqCopy.heading}
         items={faqs}

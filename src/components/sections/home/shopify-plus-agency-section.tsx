@@ -53,7 +53,7 @@ export function ShopifyPlusAgencySection({ content }: ShopifyPlusAgencySectionPr
           eyebrow={eyebrow}
           heading={title}
           headingId="shopify-plus-agency-title"
-          titleColumnClassName="w-[42%] max-[1200px]:w-full max-[1200px]:mb-0 max-[992px]:mb-0"
+          titleColumnClassName="max-[1200px]:mb-0 max-[992px]:mb-0"
           variant="left"
         />
 

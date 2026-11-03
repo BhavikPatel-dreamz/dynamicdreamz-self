@@ -9,7 +9,6 @@ export function HomeFaqSection() {
       idPrefix="home-faq"
       items={homeFaqs}
       lazyAccordion
-      bgOffWhite
     />
   );
 }

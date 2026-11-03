@@ -52,7 +52,7 @@ export function SplitSectionHeading({
   if (variant === "centered") {
     return (
       <header
-        className={cn("mx-auto mb-10 max-w-[840px] text-center max-[992px]:mb-[30px]", className)}
+        className={cn("section_title_with_eyebrow mx-auto mb-10 max-w-[840px] text-center max-[992px]:mb-[30px]", className)}
         data-aos={aosAnimation || undefined}
       >
         {eyebrow ? (
@@ -70,7 +70,7 @@ export function SplitSectionHeading({
         ) : null}
         <h2
           className={cn(
-            "font-montreal-medium text-[35px] font-normal leading-[49px] tracking-normal max-[992px]:text-[30px] max-[992px]:leading-10 max-[768px]:text-2xl max-[768px]:leading-[33.24px]",
+            "font-montreal-medium text-[35px] font-normal leading-[49px] tracking-normal max-[1200px]:text-[30px] max-[1200px]:leading-10 max-[992px]:text-[30px] max-[992px]:leading-10 max-[768px]:text-2xl max-[768px]:leading-[33.24px]",
             dark ? "text-white" : "text-ink",
             titleClassName,
           )}
@@ -100,7 +100,7 @@ export function SplitSectionHeading({
   return (
     <header
       className={cn(
-        "mb-10 flex items-end justify-between gap-10 max-[992px]:mb-[30px] max-[992px]:flex-col max-[992px]:gap-2.5",
+        "section_title_with_eyebrow mb-10 flex items-end justify-between gap-10 max-[1200px]:gap-6 max-[992px]:mb-[30px] max-[992px]:flex-col max-[992px]:gap-2.5",
         services || leftAligned || portfolio
           ? "max-[992px]:items-start max-[992px]:text-left max-[992px]:gap-0"
           : "max-[992px]:text-center",
@@ -112,12 +112,12 @@ export function SplitSectionHeading({
         className={cn(
           titleColumnClassName ??
           // Live `.section_title_with_eyebrow .title` is 44% wide until 991px.
-          (portfolio ? "w-[50%]" : "w-[44%]"),
+          (portfolio && "w-[50%] max-[1200px]:w-[44%]"),
           // Live `.title` is a 14px/24px block. Its line box is the strut the
           // inline-flex `.eyebrow` aligns to, which produces the live 4px gap
           // between the title box and the eyebrow.
           "text-[14px] leading-6",
-          "max-[992px]:w-full",
+          "w-[44%] max-[992px]:w-full",
           titleClassName,
         )}
       >
@@ -137,14 +137,14 @@ export function SplitSectionHeading({
         ) : null}
         <h2
           className={cn(
-            "font-montreal-medium text-[35px] font-normal leading-[49px] tracking-normal max-[1200px]:text-[30px] max-[992px]:mb-[10px] max-[992px]:text-[30px] max-[992px]:leading-10 max-[768px]:text-2xl max-[768px]:leading-[33.24px]",
+            "font-montreal-medium text-[35px] font-normal leading-[49px] tracking-normal max-[1200px]:text-[30px] max-[1200px]:leading-[42px] max-[768px]:text-2xl max-[768px]:leading-[31.2px]",
             dark ? "text-white" : "text-ink",
           )}
           id={headingId}
         >
           {formatBrText(
             preserveBreaks ? heading : removeBreakTags(heading),
-            "max-[768px]:hidden",
+            "max-[1200px]:hidden",
           )}
         </h2>
       </div>
@@ -153,7 +153,7 @@ export function SplitSectionHeading({
           className={cn(
             textColumnClassName ??
             // Live `.section_title_with_eyebrow .section_text` is 48.3% (50% ≤1199px).
-            "w-[48.3%] max-[1200px]:w-1/2",
+            "w-[48.3%] max-[1200px]:w-[50%]",
             "max-[992px]:w-full",
             textClassName,
           )}
@@ -163,9 +163,9 @@ export function SplitSectionHeading({
               className={cn(
                 "not-last:mb-[15px]",
                 services || leftAligned
-                  ? "font-sans xl:text-base text-sm font-medium leading-7 max-[768px]:leading-6"
+                  ? "font-sans xl:text-base text-sm font-medium leading-7 max-[1200px]:leading-6 max-[768px]:leading-6"
                   : portfolio
-                    ? "font-sans text-[16px] font-medium leading-7 max-[992px]:text-sm max-[992px]:leading-[24px] max-[768px]:text-sm max-[768px]:leading-6"
+                    ? "font-sans text-[16px] font-medium leading-7 max-[1200px]:text-sm max-[1200px]:leading-6 max-[992px]:text-sm max-[992px]:leading-[24px] max-[768px]:text-sm max-[768px]:leading-6"
                     : "font-sans text-base font-medium leading-7 max-[1200px]:text-sm max-[1200px]:leading-6 not-last:mb-2.5",
                 dark ? "text-white" : "text-muted", pClassName
               )}  
@@ -173,7 +173,7 @@ export function SplitSectionHeading({
             >
               {formatBrText(
                 preserveBreaks ? paragraph : removeBreakTags(paragraph),
-                "max-[768px]:hidden",
+                "max-[1200px]:hidden",
               )}
             </p>
           ))}

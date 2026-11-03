@@ -131,7 +131,7 @@ export function ServiceHeroSection({
             <div className="left-col w-full">
               <div className={`inner-hero-content mx-auto ${maxWidth} text-center`}>
                 {content.eyebrows && content.eyebrows.length > 0 && (
-                  <div className="eyebrow relative mb-[15px] inline-flex items-center pl-10 before:absolute before:left-0 before:top-[7px] before:inline-block before:h-0.5 before:w-[30px] before:bg-brand-red before:content-[''] max-[1200px]:justify-center max-[768px]:flex max-[768px]:w-full max-[768px]:justify-start max-[768px]:pl-6 max-[768px]:text-left max-[768px]:before:top-1 max-[768px]:before:w-[15px]">
+                  <div className="eyebrow relative mb-[15px] flex w-fit mx-auto items-center pl-10 before:absolute before:left-0 before:top-[7px] before:inline-block before:h-0.5 before:w-[30px] before:bg-brand-red before:content-[''] max-[1200px]:justify-center max-[1200px]:before:top-[6px] max-[768px]:flex max-[768px]:w-full max-[768px]:justify-start max-[768px]:pl-6 max-[768px]:text-left max-[768px]:before:top-1 max-[768px]:before:w-[15px]">
                     {content.eyebrows.map((item, idx) => (
                       <span
                         key={idx}
@@ -173,7 +173,7 @@ export function ServiceHeroSection({
                 )}
                 <h1
                   className={cn(
-                    "mb-2.5 inline-block font-montreal-medium text-[50px] font-normal leading-[60px] tracking-normal text-ink max-[1200px]:text-[40px] max-[1200px]:leading-[50px] max-[768px]:text-[30px] max-[768px]:leading-[40px] max-[379px]:text-[28px] max-[379px]:leading-[38px]",
+                    "mb-2.5 block font-montreal-medium text-[50px] font-normal leading-[60px] tracking-normal text-ink max-[1200px]:text-[40px] max-[1200px]:leading-[50px] max-[768px]:text-[30px] max-[768px]:leading-[40px] max-[379px]:text-[28px] max-[379px]:leading-[38px]",
                     headingClass,
                   )}
                 >
@@ -325,7 +325,7 @@ export function ServiceHeroSection({
           <div className={cn(defaultLeftCol, leftColClassName)}>
             <div className="hero-content w-full">
               {content.eyebrows && content.eyebrows.length > 0 && (
-                <div className="eyebrow relative mb-[15px] inline-flex items-center pl-10 before:absolute before:left-0 before:top-[7px] before:h-0.5 before:w-[30px] before:bg-brand-red before:content-[''] max-[1200px]:mx-auto max-[1200px]:justify-center max-[768px]:mx-auto max-[768px]:justify-center max-[768px]:pl-6 max-[768px]:before:top-1 max-[768px]:before:w-[15px]">
+                <div className="eyebrow relative mb-[15px] flex w-fit items-center pl-10 before:absolute before:left-0 before:top-[7px] before:h-0.5 before:w-[30px] before:bg-brand-red before:content-[''] max-[1200px]:mx-auto max-[1200px]:justify-center max-[1200px]:before:top-[6px] max-[768px]:mx-auto max-[768px]:justify-center max-[768px]:pl-6 max-[768px]:before:top-1 max-[768px]:before:w-[15px]">
                   {content.eyebrows.map((item, idx) => (
                     <span
                       key={idx}
@@ -342,7 +342,7 @@ export function ServiceHeroSection({
               )}
               <h1
                 className={cn(
-                  "mb-2.5 inline-block font-montreal-medium text-[50px] font-normal leading-[60px] tracking-normal text-ink max-[1200px]:text-[40px] max-[1200px]:leading-[50px] max-[768px]:text-[30px] max-[768px]:leading-[40px]",
+                  "mb-2.5 block font-montreal-medium text-[50px] font-normal leading-[60px] tracking-normal text-ink max-[1200px]:text-[40px] max-[1200px]:leading-[50px] max-[768px]:text-[30px] max-[768px]:leading-[40px]",
                   headingClassName,
                 )}
               >
@@ -377,7 +377,7 @@ export function ServiceHeroSection({
                 content.paragraphs.map((paragraph, idx) => (
                   <p
                     className={cn(
-                      "mt-0 mb-2.5 font-sans text-[16px] font-medium leading-[28px] text-[#535353] max-[1200px]:text-[14px] max-[1200px]:leading-[24px] max-[768px]:leading-[27px]",
+                      "mt-0 mb-2.5 font-sans text-[16px] font-medium leading-[28px] text-[#535353] max-[1200px]:text-[14px] max-[1200px]:leading-[24px]",
                       splitBodyClass,
                     )}
                     key={idx}
@@ -389,7 +389,7 @@ export function ServiceHeroSection({
                 <>
                   <p
                     className={cn(
-                      "mt-0 mb-2.5 font-sans text-[16px] font-medium leading-[28px] text-[#535353] max-[1200px]:text-[14px] max-[1200px]:leading-[24px] max-[768px]:leading-[27px]",
+                      "mt-0 mb-[15px] font-sans text-[16px] font-medium leading-[28px] text-[#535353] max-[1200px]:text-[14px] max-[1200px]:leading-[24px]",
                       splitBodyClass,
                     )}
                   >
@@ -408,7 +408,7 @@ export function ServiceHeroSection({
                 </>
               ) : null}
               {content.secondaryCta ? (
-                <div className="services-hero-btn mt-2.5 flex flex-wrap items-center gap-5 max-[1200px]:justify-center max-[575px]:flex-col max-[575px]:items-center max-[575px]:gap-[13px] max-[575px]:w-full [&_a]:max-[575px]:w-full [&_button]:max-[575px]:w-full">
+                <div className="services-hero-btn mt-3 flex flex-wrap items-center gap-5 max-[1200px]:justify-center max-[768px]:flex-col max-[768px]:items-center max-[768px]:gap-2.5 max-[576px]:w-full [&_a]:max-[576px]:w-full [&_button]:max-[576px]:w-full">
                   {content.ctaLabel && (
                     <ButtonLink
                       

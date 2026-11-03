@@ -191,7 +191,6 @@ export function WordPressThemeCustomizationTemplate({
 
       {/* 9. Frequently Asked Questions */}
       <SplitFaqSection
-        bgOffWhite
         heading={content.faqsHeading}
         idPrefix={faqIdPrefix}
         items={content.faqs}

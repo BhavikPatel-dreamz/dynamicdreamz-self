@@ -31,7 +31,7 @@ export function TextBoxSection({
         >
           <div className="title mb-3">
             <h2 className="text-center font-montreal-medium text-[30px] font-normal leading-[42px] tracking-normal text-ink min-[1200px]:text-[35px] min-[1200px]:leading-[49px] max-[768px]:text-2xl max-[768px]:leading-8">
-              {formatBrText(heading, "max-[1200px]:hidden")}
+              {formatBrText(heading)}
             </h2>
           </div>
           <div className="text m-0">

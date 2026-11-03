@@ -65,7 +65,7 @@ export function CityPageHeroSection({
           className={cn(
             "wrapper flex",
             hasTabletSlider
-              ? "flex-wrap items-end justify-between max-[992px]:flex-col max-[992px]:items-center"
+              ? "flex-wrap items-end justify-between max-[1200px]:flex-col max-[1200px]:items-center max-[992px]:flex-col max-[992px]:items-center"
               : "max-[992px]:flex-col",
           )}
         >
@@ -73,7 +73,7 @@ export function CityPageHeroSection({
             className={cn(
               "left-col z-1 flex flex-col justify-center",
               hasTabletSlider
-                ? "w-[51%] py-[60px] max-[1200px]:w-1/2 max-[992px]:w-full max-[992px]:text-center max-[992px]:py-8"
+                ? "w-[51%] py-[60px] max-[1200px]:w-full max-[1200px]:text-center max-[992px]:w-full max-[992px]:text-center max-[1200px]:pt-[60px] max-[1200px]:pb-10 max-[992px]:py-10"
                 : "w-full max-w-[760px] max-[1200px]:max-w-none max-[1200px]:text-center",
             )}
           >
@@ -108,7 +108,7 @@ export function CityPageHeroSection({
                 </p>
               )}
               {(primaryCta || content.secondaryCta) && (
-                <div className="btn-group mt-6 flex items-center gap-3.5 max-[1200px]:justify-center max-[768px]:flex-col max-[768px]:gap-2.5 [&_a]:max-[768px]:w-full [&_button]:max-[768px]:w-full">
+                <div className="btn-group mt-6 flex items-center gap-3.5 max-[1200px]:justify-center max-[768px]:flex-col max-[768px]:items-center max-[768px]:gap-3.5 [&_a]:w-fit [&_a]:max-[768px]:mx-auto [&_a]:max-[576px]:w-full">
                   {primaryCta && (
                     <ButtonLink
                       variant="primary"

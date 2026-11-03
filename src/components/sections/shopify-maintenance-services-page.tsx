@@ -47,7 +47,6 @@ export function ShopifyMaintenanceServicesPage() {
         items={shopifyMaintenanceServicesContent.testimonials.items}
       />
       <SplitFaqSection
-        bgOffWhite
         heading={shopifyMaintenanceServicesContent.sectionCopy.faqHeading}
         idPrefix="shopify-maintenance-services-faqs"
         items={shopifyMaintenanceServicesContent.faqs}

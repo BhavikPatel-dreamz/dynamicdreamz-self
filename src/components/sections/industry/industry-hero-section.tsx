@@ -86,11 +86,11 @@ export function IndustryHeroSection({
             {resolvedTitle}
           </h1>
           {fullDescription ? (
-            <p className="mb-6 text-muted max-[992px]:text-base max-[992px]:leading-[30.4px]">
+            <p className="text-muted text-sm font-small leading-6">
               {fullDescription}
             </p>
           ) : (
-            <p className="mb-6 text-muted max-[992px]:text-base max-[992px]:leading-[30.4px]">
+            <p className="text-muted text-sm font-small leading-6">
               {resolvedDescBefore}
               {resolvedDescAfter ? (
                 <>

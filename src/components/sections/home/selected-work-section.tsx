@@ -104,8 +104,8 @@ export function SelectedWorkSection({
           description={description}
           heading={title}
           className="!mb-0"
-          titleColumnClassName="mr-5 max-w-[600px] max-[992px]:m-0 max-[992px]:max-w-full"
-          textColumnClassName="max-w-[580px] max-[992px]:mt-0 max-[992px]:max-w-full"
+          titleColumnClassName="mr-5 max-w-[600px] max-[1200px]:w-[44%] max-[992px]:m-0 max-[992px]:max-w-full"
+          textColumnClassName="max-w-[580px] max-[1200px]:w-[50%] max-[992px]:mt-0 max-[992px]:max-w-full"
           variant="left"
         />
       </Container>

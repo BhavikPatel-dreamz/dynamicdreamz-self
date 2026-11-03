@@ -168,7 +168,6 @@ export function ShopifyMigrationLandingTemplate({
         idPrefix={faq.idPrefix}
         items={faq.items}
         sectionId="faqs"
-        bgOffWhite
       />
 
       {children}

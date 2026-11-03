@@ -105,7 +105,6 @@ export function MagentoToShopifyPlusMigrationPage() {
 
       {/* 8. Frequently Asked Questions */}
       <SplitFaqSection
-        bgOffWhite
         idPrefix="magento-plus-migration-faq"
         items={magentoPlusFaqs}
         sectionId="faqs"

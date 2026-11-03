@@ -26,7 +26,6 @@ export type SplitFaqSectionProps = {
   panelContentClassName?: string;
   iconVariant?: "default" | "circle-cross";
   className?: string;
-  bgOffWhite?:boolean
 };
 
 /**
@@ -57,23 +56,13 @@ export function SplitFaqSection({
   panelContentClassName,
   iconVariant = "circle-cross",
   className,
-  bgOffWhite,
 }: SplitFaqSectionProps) {
   const titleId = `${idPrefix}-title`;
 
-  const bg =
-    bgOffWhite ||
-    idPrefix.startsWith("white-label-website-design") ||
-    idPrefix.startsWith("white-label-wordpress") ||
-    idPrefix.startsWith("white-label-shopify") ||
-    idPrefix.startsWith("shopify-certified-developers") ||
-    idPrefix.startsWith("shopify-cro");
   const isPt0 = idPrefix.startsWith("risks-of-shopify-outsourcing");
   const isMobileAppFaq = idPrefix.startsWith("shopify-mobile-app");
 
-  const bgClass = bg
-    ? "bg-[#fafaf7]"
-    : "bg-white"
+  const bgClass = "bg-[#fafaf7]"
   const paddingClass =
     isPt0
       ? "pt-0 pb-20 max-[992px]:py-[60px] max-[768px]:pt-10 max-[768px]:pb-5"
