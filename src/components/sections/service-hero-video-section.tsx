@@ -2,6 +2,7 @@ import Image from "next/image";
 
 import { ButtonLink } from "@/components/ui/button-link";
 import { Container } from "@/components/ui/container";
+import { Eyebrow } from "@/components/ui/eyebrow";
 import { formatBrText } from "@/lib/text-formatting";
 import { cn } from "@/lib/class-names";
 
@@ -85,28 +86,22 @@ export function ServiceHeroVideoSection({
           >
             <div className="hero-content w-full">
               {content.eyebrowSpans && content.eyebrowSpans.length > 0 ? (
-                <div className="eyebrow relative mb-[15px] flex w-fit items-center pl-10 before:absolute before:left-0 before:top-[7px] before:inline-block before:h-[2px] before:w-[30px] before:bg-brand-red before:content-[''] max-[1200px]:mx-auto max-[1200px]:justify-center max-[1200px]:before:top-[6px] max-[768px]:mx-auto max-[768px]:justify-center max-[768px]:pl-6 max-[768px]:before:top-1 max-[768px]:before:w-[15px]">
-                  {content.eyebrowSpans.map((span, idx) => (
-                    <span
-                      className={cn(
-                        "relative inline-flex items-center font-montserrat text-sm font-semibold uppercase leading-[1.2] text-[#535353] max-[768px]:text-[10px]",
-                        idx === 0 &&
-                          "max-[768px]:before:absolute max-[768px]:before:-left-6 max-[768px]:before:top-1/2 max-[768px]:before:-translate-y-1/2 max-[768px]:before:inline-block max-[768px]:before:h-[2px] max-[768px]:before:w-[15px] max-[768px]:before:bg-brand-red max-[768px]:before:content-['']",
-                        idx > 0 &&
-                          "ml-2.5 pl-2.5 after:absolute after:-left-[2px] after:top-1/2 after:-translate-y-1/2 after:inline-block after:size-[3px] after:rounded-full after:bg-[#535353] after:content-['']",
-                      )}
-                      key={span}
-                    >
-                      {span}
-                    </span>
-                  ))}
-                </div>
+                <Eyebrow
+                  align="start"
+                  as="div"
+                  items={content.eyebrowSpans}
+                  linePosition="overlay"
+                  lineWidth="responsive"
+                />
               ) : content.eyebrow ? (
-                <div className="eyebrow relative mb-[15px] flex w-fit items-center pl-10 before:absolute before:left-0 before:top-[7px] before:inline-block before:h-[2px] before:w-[30px] before:bg-brand-red before:content-[''] max-[1200px]:mx-auto max-[1200px]:justify-center max-[1200px]:before:top-[6px] max-[768px]:mx-auto max-[768px]:justify-center max-[768px]:pl-6 max-[768px]:before:top-1 max-[768px]:before:w-[15px]">
-                  <span className="relative inline-flex items-center font-montserrat text-sm font-semibold uppercase leading-[1.2] text-[#535353] max-[768px]:text-[10px] max-[768px]:before:absolute max-[768px]:before:-left-6 max-[768px]:before:top-1/2 max-[768px]:before:-translate-y-1/2 max-[768px]:before:inline-block max-[768px]:before:h-[2px] max-[768px]:before:w-[15px] max-[768px]:before:bg-brand-red max-[768px]:before:content-['']">
-                    {content.eyebrow}
-                  </span>
-                </div>
+                <Eyebrow
+                  align="start"
+                  as="div"
+                  linePosition="overlay"
+                  lineWidth="responsive"
+                >
+                  {content.eyebrow}
+                </Eyebrow>
               ) : null}
 
               <h1 className="mb-2.5 font-montreal-medium text-[50px] font-normal leading-[60px] text-ink max-[1200px]:text-[40px] max-[1200px]:leading-[50px] max-[768px]:text-[30px] max-[768px]:leading-[40px]">

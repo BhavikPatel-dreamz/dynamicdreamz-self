@@ -64,17 +64,17 @@ export function ShopifyMobileAppHeroSection({
   const mobileBadgeLayout = content.mobileBadgeLayout ?? "divided";
   const badgeRowLayout = mobileBadgeLayout === "row";
   const frameImage = content.frameImage ?? {
-    src: "/assets/shopify-mobile-app/phone-frame.png",
-    alt: "Phone frame",
-    width: 280,
-    height: 574,
+    src: "/assets/services/shopify-mobile-app-development/hero/phone-frame.png",
+    alt: "Mobile app frame mockup",
+    width: 235,
+    height: 498,
   };
 
   return (
     <section className="hero-new-section relative overflow-hidden bg-[#f7f4e9] pt-[91px] max-[992px]:pt-16">
       <Container className="max-w-[1408px] px-[15px]">
         <div className="wrapper flex items-center justify-between max-[1200px]:flex-col">
-          <div className="left-col z-1 w-[53%] min-[1400px]:w-[51%] py-[60px] max-[1200px]:w-full max-[1200px]:py-10 max-[1200px]:text-center max-[768px]:py-8">
+          <div className="left-col z-1 w-[53%] min-[1400px]:w-[51%] min-[1200px]:max-[1400px]:w-[50%] py-[60px] max-[1200px]:w-full max-[1200px]:py-10 max-[1200px]:text-center max-[768px]:py-8">
             <div className="hero-content">
               {content.eyebrows && content.eyebrows.length > 0 && (
                 <div className="eyebrow relative mb-[15px] inline-flex items-center pl-10 before:absolute before:left-0 before:top-1/2 before:-translate-y-1/2 before:inline-block before:h-[2px] before:w-[30px] before:bg-brand-red before:content-[''] max-[1200px]:mx-auto max-[1200px]:justify-center max-[768px]:mx-auto max-[768px]:justify-center max-[768px]:pl-6 max-[768px]:before:w-[15px]">
@@ -163,7 +163,7 @@ export function ShopifyMobileAppHeroSection({
             </div>
           </div>
 
-          <div className="right-col w-[48%] max-[1200px]:w-[50%] max-[1200px]:mx-auto max-[992px]:hidden">
+          <div className="right-col w-[48%] max-[1200px]:w-[50%] max-[1200px]:mx-auto max-[1200px]:mt-5 max-[992px]:hidden">
             <PhoneAppSlider
               slides={content.slides}
               frameImage={frameImage}

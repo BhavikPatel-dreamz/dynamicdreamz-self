@@ -5,7 +5,7 @@ export const phpDevelopmentContent = {
     eyebrowSpans: ["Established in 2006", "PHP Development Company"] as const,
     title: "PHP Development Company in India",
     paragraphs: [
-      "Dynamic Dreamz is a top PHP Development Company in India. We are specializing in PHP and MySQL. We create custom web solutions to help your business grow. Whether you are a web design company or an individual, our experienced PHP/MySQL developers can help you with your project.",
+      "Dynamic Dreamz provides PHP and MySQL development for custom web applications, APIs, ecommerce solutions and ongoing backend development. Our PHP developers work with Laravel, Symfony, CodeIgniter and custom PHP to build solutions around your business requirements.",
     ] as const,
     cta: "request a quote",
     ctaHref: "/request-quote",
@@ -93,7 +93,7 @@ export const phpDevelopmentContent = {
   services: {
     title: "Our PHP Web Development Services",
     subtitle:
-      "We create custom eCommerce solutions using Prestashop, a popular online store platform. Our PHP developers build attractive and functional online stores to boost your sales. Hire a PHP Development Company in India to exacl your business.",
+      "Our PHP developers build custom ecommerce and web solutions around your business requirements.",
     items: [
       {
         title: "Custom Laravel Development",
