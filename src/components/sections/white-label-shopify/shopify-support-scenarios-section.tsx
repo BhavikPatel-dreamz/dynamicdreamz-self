@@ -59,7 +59,7 @@ function ShopifySupportScenarioCard({ panel }: { panel: ShopifySupportScenario }
           {panel.meta}
         </div>
       </div>
-      <div className="btns_group mt-4 flex flex-col gap-2.5 max-[575px]:w-full [&_a]:w-full [&_a]:text-center">
+      <div className="btns_group mt-4 flex flex-col gap-2.5 max-[576px]:w-full [&_a]:w-full [&_a]:text-center">
         <ButtonLink href={panel.primaryCta.href} variant="primary">
           {panel.primaryCta.label}
         </ButtonLink>
@@ -124,7 +124,7 @@ export function ShopifySupportScenariosSection({
         >
           <div
             aria-label={content.heading}
-            className="scenario-tabs w-[37%] max-[1399px]:w-[35%]"
+            className="scenario-tabs w-[37%] max-[1400px]:w-[35%]"
             role="tablist"
           >
             {content.items.map((tab) => {
@@ -155,7 +155,7 @@ export function ShopifySupportScenariosSection({
             })}
           </div>
 
-          <div className="scenario-panels sticky top-[108px] flex h-fit w-[61%] flex-col justify-between rounded-[20px] bg-[#EFF4EF] p-[30px] max-[1399px]:w-[63%] max-[992px]:p-6">
+          <div className="scenario-panels sticky top-[108px] flex h-fit w-[61%] flex-col justify-between rounded-[20px] bg-[#EFF4EF] p-[30px] max-[1400px]:w-[63%] max-[992px]:p-6">
             {activePanel && (
               <div
                 aria-labelledby={`scenario-tab-${activePanel.id}`}
@@ -206,7 +206,7 @@ export function ShopifySupportScenariosSection({
         {/* Mobile Slider (< 768px) matching live Slick slider */}
         <div
           data-aos="fade-up"
-          className="scenario-mobile block md:hidden max-[768px]:mr-[calc(-100vw/2+508px/2)] max-[575px]:-mr-4 [&_.slick-list]:pr-[40px] [&_.slick-track]:flex"
+          className="scenario-mobile block md:hidden max-[768px]:mr-[calc(-100vw/2+508px/2)] max-[576px]:-mr-4 [&_.slick-list]:pr-[40px] [&_.slick-track]:flex"
         >
           <LazyMount
             fallback={content.items[0] ? (

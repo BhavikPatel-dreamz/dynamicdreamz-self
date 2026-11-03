@@ -54,7 +54,7 @@ export function CredentialTabs({
     <div data-aos="fade-up" className="overflow-hidden rounded-[29px] border border-ink/10">
       <div
         aria-label="Shopify credential requirements"
-        className="grid grid-cols-4 max-[575px]:grid-cols-1"
+        className="grid grid-cols-4 max-[576px]:grid-cols-1"
         role="tablist"
       >
         {items.map((item, index) => {
@@ -67,9 +67,9 @@ export function CredentialTabs({
               aria-controls={panelId}
               aria-selected={isActive}
               className={cn(
-                "cursor-pointer border-t-0 border-r border-b border-l-0 border-ink/15 px-2.5 py-[26px] text-center text-[16px] leading-none font-semibold last:border-r-0 focus-visible:z-10 focus-visible:outline-2 focus-visible:outline-offset-[-4px] focus-visible:outline-[#2f72d2] max-[992px]:text-sm max-[575px]:w-full max-[575px]:rounded-none max-[575px]:border-r-0 max-[575px]:py-5",
+                "cursor-pointer border-t-0 border-r border-b border-l-0 border-ink/15 px-2.5 py-[26px] text-center text-[16px] leading-none font-semibold last:border-r-0 focus-visible:z-10 focus-visible:outline-2 focus-visible:outline-offset-[-4px] focus-visible:outline-[#2f72d2] max-[992px]:text-sm max-[576px]:w-full max-[576px]:rounded-none max-[576px]:border-r-0 max-[576px]:py-5",
                 isActive
-                  ? "rounded-tr-[29px] bg-brand-red text-white max-[575px]:rounded-none"
+                  ? "rounded-tr-[29px] bg-brand-red text-white max-[576px]:rounded-none"
                   : "bg-white text-ink",
               )}
               id={tabId}
@@ -97,7 +97,7 @@ export function CredentialTabs({
         return (
           <div
             aria-labelledby={tabId}
-            className="flex items-center justify-between bg-[#fafaf7] p-10 max-[992px]:flex-col max-[992px]:p-[30px] max-[575px]:p-[30px_20px]"
+            className="flex items-center justify-between bg-[#fafaf7] p-10 max-[992px]:flex-col max-[992px]:p-[30px] max-[576px]:p-[30px_20px]"
             hidden={!isActive}
             id={panelId}
             key={item.id}
@@ -108,17 +108,17 @@ export function CredentialTabs({
               <span className="mb-2.5 block text-[10px] leading-[18px] font-bold text-brand-red uppercase">
                 {item.eyebrow}
               </span>
-              <h3 className="mb-2.5 text-[28px] leading-[39.2px] font-normal tracking-normal text-ink max-[575px]:text-[22px] max-[575px]:leading-[30px]">
+              <h3 className="mb-2.5 text-[28px] leading-[39.2px] font-normal tracking-normal text-ink max-[576px]:text-[22px] max-[576px]:leading-[30px]">
                 {item.title}
               </h3>
               <p className="text-sm leading-[26.6px] font-small text-muted">
                 {item.description}
               </p>
             </div>
-            <div className="grid w-[59%] grid-cols-2 gap-3.5 max-[992px]:w-full max-[575px]:grid-cols-1">
+            <div className="grid w-[59%] grid-cols-2 gap-3.5 max-[992px]:w-full max-[576px]:grid-cols-1">
               {item.details.map((detail) => (
                 <article
-                  className="rounded-[20px] border border-[#d0d0ce] bg-[#fafaf7] p-[35px_25px] shadow-[2px_2px_0_rgba(40,40,40,0.2)] max-[575px]:p-5"
+                  className="rounded-[20px] border border-[#d0d0ce] bg-[#fafaf7] p-[35px_25px] shadow-[2px_2px_0_rgba(40,40,40,0.2)] max-[576px]:p-5"
                   key={detail.label}
                 >
                   <h4 className="mb-2.5 text-[10px] leading-[18px] font-bold text-brand-red uppercase">

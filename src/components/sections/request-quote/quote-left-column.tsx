@@ -54,7 +54,7 @@ export function QuoteLeftColumn({
                 : "deliver-counter ml-[52px] border-l border-[rgba(0,0,0,0.08)] pl-[52px] max-[1299px]:ml-10 max-[1299px]:pl-10 max-[1200px]:ml-[25px] max-[1200px]:pl-[25px] max-[768px]:ml-[15px] max-[768px]:pl-[15px]"
             }
           >
-            <div className="text-counter mb-1 text-left text-sm leading-[20.7px] font-semibold text-[rgba(9,9,9,0.63)] uppercase max-[575px]:text-xs">
+            <div className="text-counter mb-1 text-left text-sm leading-[20.7px] font-semibold text-[rgba(9,9,9,0.63)] uppercase max-[576px]:text-xs">
               {counter.label}
             </div>
             <div className="counter-text flex items-center text-left text-[35px] leading-[43.925px] font-bold text-black max-[1200px]:text-[30px] max-[768px]:text-[26px] max-[359px]:text-2xl">

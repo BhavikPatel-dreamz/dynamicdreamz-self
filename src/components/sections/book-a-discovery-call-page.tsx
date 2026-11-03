@@ -20,7 +20,7 @@ export function BookDiscoveryCallPage({
     >
       <Container>
         <div className="flex flex-wrap justify-between">
-          <aside className="w-[36%] max-[1399px]:w-[41%] max-[1200px]:w-[51%] max-[992px]:w-full">
+          <aside className="w-[36%] max-[1400px]:w-[41%] max-[1200px]:w-[51%] max-[992px]:w-full">
             <div className="mb-5 flex items-center gap-2.5 max-[768px]:mb-4">
               <span
                 aria-hidden="true"

@@ -68,7 +68,7 @@ export function ShopifyStageServicesSection({
               <article
                 data-aos="fade-up"
                 className={cn(
-                  "item relative overflow-hidden rounded-[22px] border border-[rgba(40,40,40,0.11)] p-[27px] transition-all max-[1399px]:p-5 max-[768px]:rounded-[16px] flex flex-col",
+                  "item relative overflow-hidden rounded-[22px] border border-[rgba(40,40,40,0.11)] p-[27px] transition-all max-[1400px]:p-5 max-[768px]:rounded-[16px] flex flex-col",
                   isFirst
                     ? "row-span-2 min-h-[440px] bg-[#f7f4ea] justify-between max-[768px]:row-auto max-[768px]:min-h-0"
                     : isFourth
@@ -94,7 +94,7 @@ export function ShopifyStageServicesSection({
                       {item.tag}
                     </span>
                   ) : null}
-                  <h3 className="mb-3 font-display text-[20px] font-normal leading-[28.8px] text-ink max-[991px]:text-lg max-[1200px]:leading-[28.8px]">
+                  <h3 className="mb-3 font-display text-[20px] font-normal leading-[28.8px] text-ink max-[992px]:text-lg max-[1200px]:leading-[28.8px]">
                     {item.title}
                   </h3>
                   <div className="description">

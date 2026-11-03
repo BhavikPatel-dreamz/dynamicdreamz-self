@@ -28,7 +28,7 @@ export function WhiteLabelProcessSection({
 
   return (
     <section className="white_label_how_partnership_works_section py-20 max-[992px]:py-[50px]">
-      <Container className={cn("max-[575px]:px-4", containerClass)}>
+      <Container className={cn("max-[576px]:px-4", containerClass)}>
         {eyebrow || description ? (
           <div
             data-aos="fade-up"

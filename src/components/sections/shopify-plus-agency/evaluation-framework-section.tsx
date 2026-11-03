@@ -47,7 +47,7 @@ export function EvaluationFrameworkSection({
               className="spa-col w-1/4 max-[992px]:w-1/2 max-[768px]:w-full"
               key={index}
             >
-              <article className="spa-item flex h-full flex-col border-r border-b border-[#2828281c] p-6 max-[1399px]:p-5">
+              <article className="spa-item flex h-full flex-col border-r border-b border-[#2828281c] p-6 max-[1400px]:p-5">
                 <div className="spa-title">
                   <span
                     aria-hidden="true"

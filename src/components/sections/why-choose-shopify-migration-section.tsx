@@ -498,12 +498,12 @@ export function WhyChooseShopifyMigrationSection({
                     return (
                       <div
                         className={cn(
-                          "box rounded-[20px] p-[25px_15px] text-center max-[1399px]:rounded-[16px] max-[1399px]:p-[22px_10px]",
+                          "box rounded-[20px] p-[25px_15px] text-center max-[1400px]:rounded-[16px] max-[1400px]:p-[22px_10px]",
                           bgColors[idx % bgColors.length],
                         )}
                         key={stat.label}
                       >
-                        <span className="block font-display text-[32px] font-semibold leading-tight text-ink max-[1399px]:text-[28px]">
+                        <span className="block font-display text-[32px] font-semibold leading-tight text-ink max-[1400px]:text-[28px]">
                           {stat.value}
                         </span>
                         <p className="mt-1 font-sans text-xs font-regular uppercase leading-[150%] text-[#535353]">

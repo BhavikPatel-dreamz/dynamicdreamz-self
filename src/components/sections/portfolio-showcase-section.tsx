@@ -118,7 +118,7 @@ export function PortfolioShowcaseSection({
         </div>
 
         {!hideCta && (
-          <div className="mt-[51px] flex flex-wrap justify-center gap-4 max-[768px]:mt-10 max-[575px]:flex-col [&_a]:max-[575px]:w-full" data-aos="fade-up">
+          <div className="mt-[51px] flex flex-wrap justify-center gap-4 max-[768px]:mt-10 max-[576px]:flex-col [&_a]:max-[576px]:w-full" data-aos="fade-up">
             <ButtonLink href={resolvedCtaHref} variant="primary" className="text-center">
               {resolvedCtaLabel}
             </ButtonLink>

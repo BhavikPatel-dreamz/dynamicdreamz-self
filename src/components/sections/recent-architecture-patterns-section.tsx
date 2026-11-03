@@ -66,7 +66,7 @@ export function RecentArchitecturePatternsSection({
                   </p>
                 </div>
                 <div className="bottom_text">
-                  <p className="rounded-[10px] border border-[#D0D0CE] bg-[#FAFAF7] p-[8.5px_7px] text-center font-sans text-[10px] font-bold leading-[150%] tracking-[-0.33px] text-[#282828] max-[1399px]:flex max-[1399px]:min-h-[49px] max-[1399px]:items-center max-[1399px]:p-[8.5px_10px] max-[1399px]:text-left max-[1200px]:min-h-0 max-[1200px]:w-fit">
+                  <p className="rounded-[10px] border border-[#D0D0CE] bg-[#FAFAF7] p-[8.5px_7px] text-center font-sans text-[10px] font-bold leading-[150%] tracking-[-0.33px] text-[#282828] max-[1400px]:flex max-[1400px]:min-h-[49px] max-[1400px]:items-center max-[1400px]:p-[8.5px_10px] max-[1400px]:text-left max-[1200px]:min-h-0 max-[1200px]:w-fit">
                     {item.stack}
                   </p>
                 </div>

@@ -28,8 +28,8 @@ export function OurWorkCaseStudiesSection({
           eyebrow={eyebrow}
           heading={title}
           headingId="our-work-case-studies-title"
-          titleColumnClassName="w-[44%] max-[1399px]:w-[35%] max-[1200px]:w-[36%] max-[992px]:w-full"
-          textColumnClassName="w-[49%] max-[1399px]:w-[56%] max-[1200px]:w-[51%] max-[992px]:w-full"
+          titleColumnClassName="w-[44%] max-[1400px]:w-[35%] max-[1200px]:w-[36%] max-[992px]:w-full"
+          textColumnClassName="w-[49%] max-[1400px]:w-[56%] max-[1200px]:w-[51%] max-[992px]:w-full"
           variant="left"
         />
 

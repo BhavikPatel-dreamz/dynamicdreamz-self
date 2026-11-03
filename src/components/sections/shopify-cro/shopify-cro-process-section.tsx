@@ -62,7 +62,7 @@ export function ShopifyCroProcessSection({
                     />
                     {!isLast && (
                       <svg
-                        className="pointer-events-none absolute top-1/2 left-[97px] -z-10 h-[13px] w-[204px] -translate-y-1/2 overflow-visible max-[1399px]:w-[185px] max-[1200px]:w-[160px] max-[992px]:hidden"
+                        className="pointer-events-none absolute top-1/2 left-[97px] -z-10 h-[13px] w-[204px] -translate-y-1/2 overflow-visible max-[1400px]:w-[185px] max-[1200px]:w-[160px] max-[992px]:hidden"
                         viewBox="0 0 204 13"
                         preserveAspectRatio="none"
                         aria-hidden="true"

@@ -66,13 +66,13 @@ function Overlay({ persistent = false }: { persistent?: boolean }) {
 function AppStoreLinks({ appLinks }: { appLinks: readonly PortfolioAppLink[] }) {
   return (
     <span
-      className="absolute right-0 bottom-[30px] left-0 z-2 flex items-center justify-center opacity-0 transition-opacity duration-500 ease-in-out group-hover/project:opacity-100 group-focus-within/project:opacity-100 max-[1200px]:opacity-100 max-[575px]:bottom-[15px]"
+      className="absolute right-0 bottom-[30px] left-0 z-2 flex items-center justify-center opacity-0 transition-opacity duration-500 ease-in-out group-hover/project:opacity-100 group-focus-within/project:opacity-100 max-[1200px]:opacity-100 max-[576px]:bottom-[15px]"
       data-project-app-links
     >
       {appLinks.map((link, index) => (
         <a
           className={cn(
-            "inline-flex items-center whitespace-nowrap px-[15px] text-[15px] font-bold leading-[25.2px] text-white max-[1399px]:text-[12px] max-[1200px]:px-[15px] max-[1200px]:text-sm max-[1200px]:leading-[18px] max-[575px]:px-[11px] max-[575px]:text-[0px] max-[359px]:px-2.5",
+            "inline-flex items-center whitespace-nowrap px-[15px] text-[15px] font-bold leading-[25.2px] text-white max-[1400px]:text-[12px] max-[1200px]:px-[15px] max-[1200px]:text-sm max-[1200px]:leading-[18px] max-[576px]:px-[11px] max-[576px]:text-[0px] max-[359px]:px-2.5",
             index > 0 && "border-l-[1.5px] border-white",
           )}
           href={link.href}
@@ -81,7 +81,7 @@ function AppStoreLinks({ appLinks }: { appLinks: readonly PortfolioAppLink[] }) 
           target="_blank"
         >
           <Image
-            className="mr-2.5 h-[30px] w-[30px] max-[1399px]:mr-[5px] max-[1399px]:h-[22px] max-[1399px]:w-[22px] max-[1200px]:h-7 max-[1200px]:w-7 max-[575px]:mr-0 max-[575px]:h-6 max-[575px]:w-6"
+            className="mr-2.5 h-[30px] w-[30px] max-[1400px]:mr-[5px] max-[1400px]:h-[22px] max-[1400px]:w-[22px] max-[1200px]:h-7 max-[1200px]:w-7 max-[576px]:mr-0 max-[576px]:h-6 max-[576px]:w-6"
             src={link.icon}
             alt=""
             width={39}
@@ -144,7 +144,7 @@ export function PortfolioProjectCard({
               <h3
                 className={cn(
                   category ? "mt-2.5 max-[1200px]:mt-2 max-[768px]:mt-[6px]" : "mt-0",
-                  "font-montserrat text-lg leading-5 font-bold text-ink capitalize max-[1399px]:text-base max-[1200px]:leading-[18px]",
+                  "font-montserrat text-lg leading-5 font-bold text-ink capitalize max-[1400px]:text-base max-[1200px]:leading-[18px]",
                 )}
               >
                 {name}
@@ -189,7 +189,7 @@ export function PortfolioProjectCard({
               <h3
                 className={cn(
                   category ? "mt-2.5 max-[1200px]:mt-2 max-[768px]:mt-[6px]" : "mt-0",
-                  "font-montserrat text-lg leading-5 font-bold text-ink capitalize max-[1399px]:text-base max-[1200px]:leading-[18px]",
+                  "font-montserrat text-lg leading-5 font-bold text-ink capitalize max-[1400px]:text-base max-[1200px]:leading-[18px]",
                 )}
               >
                 {name}

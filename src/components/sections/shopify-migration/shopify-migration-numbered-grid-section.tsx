@@ -57,7 +57,7 @@ export function ShopifyMigrationNumberedGridSection({
                 >
                   {item.number}
                 </span>
-                <h3 className="mb-2.5 font-montreal-medium text-[22px] font-normal leading-[132%] text-[#282828] max-[1399px]:text-lg max-[1399px]:leading-[26px] max-[992px]:text-base max-[992px]:leading-6">
+                <h3 className="mb-2.5 font-montreal-medium text-[22px] font-normal leading-[132%] text-[#282828] max-[1400px]:text-lg max-[1400px]:leading-[26px] max-[992px]:text-base max-[992px]:leading-6">
                   {item.title}
                 </h3>
                 <p className="font-sans text-sm font-normal leading-6 text-[#535353]">

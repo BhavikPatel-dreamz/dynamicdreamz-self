@@ -62,7 +62,7 @@ export function IndustriesServedSection({
                         {item.eyebrow}
                       </span>
                     ) : null}
-                    <h3 className="mb-2.5 font-display text-xl font-medium leading-6 text-ink max-[1399px]:text-[18px]">
+                    <h3 className="mb-2.5 font-display text-xl font-medium leading-6 text-ink max-[1400px]:text-[18px]">
                       {item.title}
                     </h3>
                     <p className="m-0 text-sm font-normal leading-6 text-[#535353]">

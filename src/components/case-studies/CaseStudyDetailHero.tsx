@@ -59,7 +59,7 @@ export function CaseStudyHero({ caseStudy }: CaseStudyHeroProps) {
               <p className="mb-[15px] font-montserrat text-sm font-normal leading-6 text-[#535353]">
                 {caseStudy.summary}
               </p>
-              <div className="btns_group flex flex-wrap items-center gap-2.5 pt-2.5 max-[575px]:w-full max-[575px]:flex-col [&_a]:max-[575px]:w-full [&_a]:text-center">
+              <div className="btns_group flex flex-wrap items-center gap-2.5 pt-2.5 max-[576px]:w-full max-[576px]:flex-col [&_a]:max-[576px]:w-full [&_a]:text-center">
                 {caseStudy.websiteUrl ? (
                   <ButtonLink
                     href={caseStudy.websiteUrl}

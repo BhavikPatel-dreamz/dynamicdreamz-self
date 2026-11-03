@@ -225,10 +225,10 @@ export function MigrationProcessSection({
                           ) : null}
                           {box.items && box.items.length > 0 ? (
                             <div className="box-description ">
-                              <ul className="m-0 grid grid-cols-3 gap-2.5 p-0 list-none max-[1200px]:grid-cols-5 max-[992px]:grid-cols-4 max-[768px]:grid-cols-2 max-[575px]:block">
+                              <ul className="m-0 grid grid-cols-3 gap-2.5 p-0 list-none max-[1200px]:grid-cols-5 max-[992px]:grid-cols-4 max-[768px]:grid-cols-2 max-[576px]:block">
                                 {box.items.map((item, iIdx) => (
                                   <li
-                                    className="relative pl-[15px] font-montserrat text-sm font-normal leading-normal text-[#535353] before:absolute before:left-0 before:top-1/2 before:size-1 before:-translate-y-1/2 before:rounded-full before:bg-brand-red before:content-[''] max-[575px]:mb-[5px] max-[575px]:last:mb-0"
+                                    className="relative pl-[15px] font-montserrat text-sm font-normal leading-normal text-[#535353] before:absolute before:left-0 before:top-1/2 before:size-1 before:-translate-y-1/2 before:rounded-full before:bg-brand-red before:content-[''] max-[576px]:mb-[5px] max-[576px]:last:mb-0"
                                     key={iIdx}
                                   >
                                     {item}

@@ -43,7 +43,7 @@ export function CredentialEvidenceSection({
           textClassName="w-[56%]"
           titleClassName="w-[41%]"
         />
-        <div className="grid grid-cols-4 gap-x-10 max-[1200px]:gap-x-5 max-[992px]:grid-cols-2 max-[992px]:gap-y-[30px] max-[575px]:grid-cols-1">
+        <div className="grid grid-cols-4 gap-x-10 max-[1200px]:gap-x-5 max-[992px]:grid-cols-2 max-[992px]:gap-y-[30px] max-[576px]:grid-cols-1">
           {content.items.map((item) => (
             <article data-aos="fade-up" className="flex h-full flex-col text-center" key={item.title}>
               <a
@@ -55,7 +55,7 @@ export function CredentialEvidenceSection({
               >
                 <Image
                   alt={item.imageAlt ?? item.title}
-                  className="h-[213px] w-[174px] translate-y-[18px] object-contain transition-transform duration-300 hover:translate-y-2.5 motion-reduce:transition-none max-[1200px]:h-auto max-[1200px]:w-[165px] max-[575px]:w-[150px]"
+                  className="h-[213px] w-[174px] translate-y-[18px] object-contain transition-transform duration-300 hover:translate-y-2.5 motion-reduce:transition-none max-[1200px]:h-auto max-[1200px]:w-[165px] max-[576px]:w-[150px]"
                   height={213}
                   src={item.image}
                   width={174}
@@ -72,7 +72,7 @@ export function CredentialEvidenceSection({
             </article>
           ))}
         </div>
-        <p className="mt-[50px] text-center text-sm leading-[26.6px] font-semibold italic text-[#535353] max-[575px]:mt-[30px]">
+        <p className="mt-[50px] text-center text-sm leading-[26.6px] font-semibold italic text-[#535353] max-[576px]:mt-[30px]">
           {content.note}
         </p>
       </Container>

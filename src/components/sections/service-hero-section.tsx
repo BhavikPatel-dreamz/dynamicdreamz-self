@@ -239,7 +239,7 @@ export function ServiceHeroSection({
                   </>
                 ) : null}
                 {content.secondaryCta ? (
-                  <div className="btn-group pt-2.5 flex flex-wrap items-center justify-center gap-[15px] max-[575px]:flex-col">
+                  <div className="btn-group pt-2.5 flex flex-wrap items-center justify-center gap-[15px] max-[576px]:flex-col">
                     {content.ctaLabel && (
                       <ButtonLink
                         
@@ -295,13 +295,13 @@ export function ServiceHeroSection({
   const isHeroNew = hasVideo || isShopifyPlus;
 
   const defaultLeftCol = isHeroNew
-    ? "left-col flex w-[51%] max-[1399px]:w-[50%] max-[1200px]:w-full max-[1200px]:items-center max-[1200px]:text-center max-[1200px]:pb-[30px] max-[992px]:py-10 max-[768px]:py-8 py-[60px] flex-col items-start justify-center"
+    ? "left-col flex w-[51%] max-[1400px]:w-[50%] max-[1200px]:w-full max-[1200px]:items-center max-[1200px]:text-center max-[1200px]:pb-[30px] max-[992px]:py-10 max-[768px]:py-8 py-[60px] flex-col items-start justify-center"
     : content.image
     ? "left-col w-[58%] max-[1200px]:w-full max-[1200px]:text-center"
     : "left-col w-[55.7%] max-[1200px]:w-full max-[1200px]:text-center";
 
   const defaultRightCol = isHeroNew
-    ? "right-col w-[43.182%] max-[1399px]:w-[40%] max-[1200px]:w-[60%] max-[1200px]:mx-auto max-[1200px]:mb-10 max-[992px]:hidden flex"
+    ? "right-col w-[43.182%] max-[1400px]:w-[40%] max-[1200px]:w-[60%] max-[1200px]:mx-auto max-[1200px]:mb-10 max-[992px]:hidden flex"
     : content.image
     ? "right-col w-[40%] max-[1200px]:mx-auto max-[1200px]:mt-[50px] max-[1200px]:w-1/2 max-[992px]:w-full"
     : "right-col w-[43.182%] max-[1200px]:mx-auto max-[1200px]:mt-[50px] max-[1200px]:w-1/2 max-[992px]:w-full";
@@ -431,7 +431,7 @@ export function ServiceHeroSection({
               ) : content.ctaLabel ? (
                 <div className="btn-group pt-2.5 max-[1200px]:text-center">
                   <ButtonLink
-                    className="max-[992px]:!px-5 max-[992px]:!py-3 max-[575px]:!w-full"
+                    className="max-[992px]:!px-5 max-[992px]:!py-3 max-[576px]:!w-full"
                     aria-label={content.ctaLabel}
                     href={ctaHref}
                     variant="primary"

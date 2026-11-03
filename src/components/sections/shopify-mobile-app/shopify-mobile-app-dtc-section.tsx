@@ -57,7 +57,7 @@ export function ShopifyMobileAppDtcSection({
                   <span className="mb-[15px] block font-montserrat text-[13px] font-bold uppercase leading-5 text-[#AD5151] max-[768px]:mb-2.5">
                     {card.tag}
                   </span>
-                  <h3 className="mb-2.5 font-montreal-medium text-[28px] font-medium leading-[36.4px] text-ink max-[1399px]:text-[22px] max-[1399px]:leading-[30px] max-[1200px]:text-[18px] max-[1200px]:leading-[26px] max-[768px]:mb-2.5">
+                  <h3 className="mb-2.5 font-montreal-medium text-[28px] font-medium leading-[36.4px] text-ink max-[1400px]:text-[22px] max-[1400px]:leading-[30px] max-[1200px]:text-[18px] max-[1200px]:leading-[26px] max-[768px]:mb-2.5">
                     {card.title}
                   </h3>
                   <p className="font-sans text-sm leading-6 text-[#535353]">

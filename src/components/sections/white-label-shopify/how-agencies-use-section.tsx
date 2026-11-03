@@ -44,10 +44,10 @@ export function HowAgenciesUseSection({
               key={card.tag}
             >
               <div>
-                <span className="mb-5 block font-montserrat text-sm font-bold uppercase text-[#AD5151] max-[1399px]:text-xs">
+                <span className="mb-5 block font-montserrat text-sm font-bold uppercase text-[#AD5151] max-[1400px]:text-xs">
                   {card.tag}
                 </span>
-                <h3 className="mb-2.5 font-display text-[22px] font-medium leading-[1.35] text-[#282828] max-[1399px]:text-lg max-[992px]:text-base">
+                <h3 className="mb-2.5 font-display text-[22px] font-medium leading-[1.35] text-[#282828] max-[1400px]:text-lg max-[992px]:text-base">
                   {card.heading}
                 </h3>
                 <p className="font-sans text-base font-medium leading-7 text-[#535353] max-[992px]:text-sm max-[992px]:leading-6">
@@ -56,7 +56,7 @@ export function HowAgenciesUseSection({
               </div>
 
               <div className="cta-link mt-[25px] border-t border-[rgba(0,0,0,0.10)] pt-[25px]">
-                <span className="mb-5 inline-block rounded-[10px] border border-[#D0D0CE] bg-[#FAFAF7] px-2.5 py-1.5 text-sm font-bold leading-normal text-[#282828] max-[1399px]:text-xs">
+                <span className="mb-5 inline-block rounded-[10px] border border-[#D0D0CE] bg-[#FAFAF7] px-2.5 py-1.5 text-sm font-bold leading-normal text-[#282828] max-[1400px]:text-xs">
                   {card.pill}
                 </span>
                 <div>

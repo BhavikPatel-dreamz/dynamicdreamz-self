@@ -135,7 +135,7 @@ export function OurWorkHeroSection({
     <section className="hero-new-section overflow-hidden bg-cream pt-[91px] max-[992px]:pt-16">
       <Container className="relative" variant="fullBleedTablet">
         <div className="wrapper flex flex-wrap justify-between max-[991.98px]:flex-col">
-          <div className="left-col z-1 flex flex-col justify-center w-[44.697%] py-[60px] max-[1399px]:w-1/2 max-[1200px]:w-[57%] max-[991.98px]:w-full max-[991.98px]:px-[calc((100%-680px)/2)] max-[991.98px]:pt-[30px] max-[991.98px]:pb-10 max-[767.98px]:px-[calc((100%-500px)/2)] max-[575px]:px-5 max-[991.98px]:items-center max-[991.98px]:text-center">
+          <div className="left-col z-1 flex flex-col justify-center w-[44.697%] py-[60px] max-[1400px]:w-1/2 max-[1200px]:w-[57%] max-[991.98px]:w-full max-[991.98px]:px-[calc((100%-680px)/2)] max-[991.98px]:pt-[30px] max-[991.98px]:pb-10 max-[767.98px]:px-[calc((100%-500px)/2)] max-[576px]:px-5 max-[991.98px]:items-center max-[991.98px]:text-center">
             <div className="hero-content">
               <Eyebrow align="responsive-center" className="mb-4" tone="muted">
                 {heroContent.eyebrow}
@@ -146,7 +146,7 @@ export function OurWorkHeroSection({
               <p className="mt-2.5 max-w-[690px] text-base leading-[190%] font-medium text-muted max-[768px]:mt-4 max-[992px]:text-[14px] max-[992px]:leading-[25.2px]">
                 {heroContent.description}
               </p>
-              <div className="mt-6 flex flex-wrap justify-center gap-[15px] lg:justify-start max-[768px]:inline-flex max-[768px]:w-full max-[768px]:flex-col max-[768px]:gap-2.5 [&_a]:max-[768px]:w-auto [&_a]:max-w-max [&_a]:max-[575px]:max-w-full [&_a]:max-[768px]:mx-auto [&_a]:max-[575px]:w-full">
+              <div className="mt-6 flex flex-wrap justify-center gap-[15px] lg:justify-start max-[768px]:inline-flex max-[768px]:w-full max-[768px]:flex-col max-[768px]:gap-2.5 [&_a]:max-[768px]:w-auto [&_a]:max-w-max [&_a]:max-[576px]:max-w-full [&_a]:max-[768px]:mx-auto [&_a]:max-[576px]:w-full">
                 {heroContent.primaryCta ? (
                   <ButtonLink href={heroContent.primaryCta.href} variant="primary">
                     {heroContent.primaryCta.label}
@@ -190,7 +190,7 @@ export function OurWorkHeroSection({
 
           <div
             className={cn(
-              "right-col relative flex w-[43.182%] shrink-0 overflow-hidden max-[1399px]:w-1/2 max-[1200px]:w-[43%] max-[991.98px]:h-[227px] max-[991.98px]:w-full max-[991.98px]:right-auto max-[991.98px]:left-1/2 max-[991.98px]:h-[227px]! max-[991.98px]:min-h-[227px] max-[991.98px]:w-screen max-[991.98px]:max-w-[100vw] max-[991.98px]:-translate-x-1/2",
+              "right-col relative flex w-[43.182%] shrink-0 overflow-hidden max-[1400px]:w-1/2 max-[1200px]:w-[43%] max-[991.98px]:h-[227px] max-[991.98px]:w-full max-[991.98px]:right-auto max-[991.98px]:left-1/2 max-[991.98px]:h-[227px]! max-[991.98px]:min-h-[227px] max-[991.98px]:w-screen max-[991.98px]:max-w-[100vw] max-[991.98px]:-translate-x-1/2",
               hideShowcaseOnMobile && "max-[767.98px]:hidden",
             )}
           >

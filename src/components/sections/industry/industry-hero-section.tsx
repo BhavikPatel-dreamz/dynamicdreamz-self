@@ -111,7 +111,7 @@ export function IndustryHeroSection({
         </div>
 
         {resolvedImage ? (
-          <div className="industries-img mx-auto mt-[55px] mb-[-80px] w-full max-w-[840px] pb-[5px] max-[992px]:mt-[60.4px] max-[992px]:pb-[10px] max-[768px]:mt-[30.4px] max-[768px]:mb-[-70px] max-[575px]:pb-[10.75px]">
+          <div className="industries-img mx-auto mt-[55px] mb-[-80px] w-full max-w-[840px] pb-[5px] max-[992px]:mt-[60.4px] max-[992px]:pb-[10px] max-[768px]:mt-[30.4px] max-[768px]:mb-[-70px] max-[576px]:pb-[10.75px]">
             <Image
               className="h-auto w-full"
               src={resolvedImage.src}

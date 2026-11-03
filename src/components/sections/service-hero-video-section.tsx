@@ -81,7 +81,7 @@ export function ServiceHeroVideoSection({
           <div
             className={cn(
               "left-col flex w-[51%] flex-col items-start justify-center py-[60px] max-[1200px]:w-full max-[1200px]:items-center max-[1200px]:py-10 max-[1200px]:text-center max-[768px]:py-8",
-              isShopifyMigration ? "max-[1399px]:w-[59%]" : "max-[1399px]:w-[50%]",
+              isShopifyMigration ? "max-[1400px]:w-[59%]" : "max-[1400px]:w-[50%]",
             )}
           >
             <div className="hero-content w-full">
@@ -240,7 +240,7 @@ export function ServiceHeroVideoSection({
           </div>
 
           {content.video ? (
-            <div className="right-col flex w-[43.182%] max-[1399px]:w-[40%] max-[1200px]:w-[60%] max-[1200px]:mx-auto max-[1200px]:mb-10 max-[992px]:hidden">
+            <div className="right-col flex w-[43.182%] max-[1400px]:w-[40%] max-[1200px]:w-[60%] max-[1200px]:mx-auto max-[1200px]:mb-10 max-[992px]:hidden">
               <div className="video-wrapper relative w-full min-h-[386px]">
                 <video
                   autoPlay
@@ -257,7 +257,7 @@ export function ServiceHeroVideoSection({
           ) : content.image ? (
             <div
               className={cn(
-                "right-col flex w-[43.182%] max-[1399px]:w-[48%] max-[1200px]:w-[50%] max-[1200px]:mx-auto max-[1200px]:mb-10 max-[992px]:hidden",
+                "right-col flex w-[43.182%] max-[1400px]:w-[48%] max-[1200px]:w-[50%] max-[1200px]:mx-auto max-[1200px]:mb-10 max-[992px]:hidden",
                 rightColClassName,
               )}
             >

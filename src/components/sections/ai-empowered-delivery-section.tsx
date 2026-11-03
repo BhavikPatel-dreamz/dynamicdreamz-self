@@ -62,7 +62,7 @@ export function AiEmpoweredDeliverySection({
                 ) : null}
                 <h2
                   className={cn(
-                    "mb-3 font-montreal-medium text-[35px] font-normal leading-[1.2] tracking-normal max-[992px]:text-[30px] max-[768px]:text-2xl",
+                    "mb-3 font-montreal-medium text-[35px] font-normal leading-[1.2] tracking-normal max-[1200px]:text-[30px] max-[1200px]:leading-[36px] max-[768px]:text-2xl max-[768px]:leading-[28.8px]",
                     isDark ? "text-white" : "text-ink",
                   )}
                 >

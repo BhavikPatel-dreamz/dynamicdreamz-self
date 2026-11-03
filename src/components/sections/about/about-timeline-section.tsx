@@ -50,7 +50,7 @@ export function AboutTimelineSection({
               const isLast = !milestone.year;
 
               return (
-                <li className="relative h-[535px] w-[410px] shrink-0 snap-start px-[15px] text-center max-[575px]:w-[320px]" key={milestone.year || `milestone-${index}`}>
+                <li className="relative h-[535px] w-[410px] shrink-0 snap-start px-[15px] text-center max-[576px]:w-[320px]" key={milestone.year || `milestone-${index}`}>
                   {isLast ? (
                     <div className="flex h-full items-center justify-center">
                       <Image className="h-auto max-w-full" src={milestone.image} alt={milestone.alt} width={milestone.width} height={milestone.height} sizes="(max-width: 575px) 290px, 380px" draggable={false} />

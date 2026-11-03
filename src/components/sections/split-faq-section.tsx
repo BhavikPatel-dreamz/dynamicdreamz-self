@@ -79,7 +79,7 @@ export function SplitFaqSection({
       id={sectionId ?? `${idPrefix}-section`}
     >
       <Container className={containerClass}>
-        <div className="wrapper flex justify-between gap-[105px] max-[1399px]:gap-8 max-[992px]:flex-col max-[992px]:gap-2.5">
+        <div className="wrapper flex justify-between gap-[105px] max-[1400px]:gap-8 max-[992px]:flex-col max-[992px]:gap-2.5">
           <div className="w-[41%] max-[1200px]:w-[44%] max-[992px]:w-full" data-aos="fade-up">
             <header className="header-text mb-0 flex flex-col items-start text-left min-[992px]:sticky min-[992px]:top-[20px]">
               {eyebrow ? (

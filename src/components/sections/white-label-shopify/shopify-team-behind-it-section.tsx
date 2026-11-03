@@ -64,7 +64,7 @@ export function ShopifyTeamBehindItSection({
               key={card.title}
             >
               <div>
-                <h3 className="mb-2.5 font-display text-[22px] font-medium leading-[1.32] text-[#282828] max-[1399px]:text-lg max-[992px]:text-base">
+                <h3 className="mb-2.5 font-display text-[22px] font-medium leading-[1.32] text-[#282828] max-[1400px]:text-lg max-[992px]:text-base">
                   {card.title}
                 </h3>
                 <p className="font-sans text-sm font-small leading-7 text-[#535353] max-[992px]:text-sm max-[992px]:leading-6">

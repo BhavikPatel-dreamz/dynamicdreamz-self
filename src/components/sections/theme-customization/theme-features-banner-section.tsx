@@ -34,7 +34,7 @@ export function ThemeFeaturesBannerSection({
                 </span>
               </div>
             )}
-            <h2 className="mb-0 text-[32px] font-normal leading-tight tracking-normal text-ink max-[1399px]:text-[28px] max-[992px]:text-2xl">
+            <h2 className="mb-0 text-[32px] font-normal leading-tight tracking-normal text-ink max-[1400px]:text-[28px] max-[992px]:text-2xl">
               {content.title || content.heading}
             </h2>
             {content.description && (

@@ -155,8 +155,8 @@ export function CaseStudiesListing({ content }: CaseStudiesListingProps) {
             description={sectionTitle.description}
             eyebrow={sectionTitle.eyebrow}
             heading={sectionTitle.heading}
-            titleColumnClassName="w-[44%] max-[1399px]:w-[35%] max-[1200px]:w-[36%] max-[992px]:w-full"
-            textColumnClassName="w-[49%] max-[1399px]:w-[56%] max-[1200px]:w-[51%] max-[992px]:w-full"
+            titleColumnClassName="w-[44%] max-[1400px]:w-[35%] max-[1200px]:w-[36%] max-[992px]:w-full"
+            textColumnClassName="w-[49%] max-[1400px]:w-[56%] max-[1200px]:w-[51%] max-[992px]:w-full"
             variant="left"
           />
 
