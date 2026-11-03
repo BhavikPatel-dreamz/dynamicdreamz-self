@@ -4093,7 +4093,6 @@ export function BlockRenderer({ sections }: BlockRendererProps) {
                 hideCta={psBlock.hideCta}
                 key={blockKey}
                 sectionId={psBlock.sectionId || "our_work"}
-                variant={isLiveGrid ? "liveGrid" : psBlock.variant || "default"}
               />
             );
           }
