@@ -78,7 +78,6 @@ export function IndustryBrandsSection({
                         : "max-[991.98px]:mb-5",
                     ),
             )}
-            data-aos="fade-up"
           >
             <h2
               className={cn(
@@ -106,7 +105,6 @@ export function IndustryBrandsSection({
                   ? "w-[69%] max-[1200px]:w-[70%]"
                   : "w-full",
           )}
-          data-aos="fade-up"
         >
           <ClientLogoSlider
             ariaLabel={ariaLabel}

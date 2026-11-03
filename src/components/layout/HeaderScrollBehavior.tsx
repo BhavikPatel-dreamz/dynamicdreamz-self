@@ -1,6 +1,7 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
+import { usePathname } from "next/navigation";
 
 type HeaderScrollState = "top" | "up" | "down";
 
@@ -10,33 +11,59 @@ function applyScrollState(header: HTMLElement, state: HeaderScrollState) {
 }
 
 export function HeaderScrollBehavior() {
+  const pathname = usePathname();
+  const stateRef = useRef<{
+    previousPosition: number;
+    scrollState: HeaderScrollState;
+  }>({
+    previousPosition: 0,
+    scrollState: "top",
+  });
+
+  // When navigating to another page, open directly from top (instant scroll, no scroll-up animation)
+  // and reset the header to its initial top state.
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      document.documentElement.classList.remove("enable-smooth-scroll");
+      if (!window.location.hash) {
+        window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+      }
+    }
+
+    const header = document.querySelector<HTMLElement>(".site-header");
+    if (header) {
+      stateRef.current.previousPosition = 0;
+      stateRef.current.scrollState = "top";
+      applyScrollState(header, "top");
+    }
+  }, [pathname]);
+
   useEffect(() => {
     const header = document.querySelector<HTMLElement>(".site-header");
     if (!header) return;
     const siteHeader = header;
 
-    let previousPosition = window.scrollY;
-    let scrollState: HeaderScrollState = previousPosition > 0 ? "down" : "top";
     let frame = 0;
-
-    applyScrollState(siteHeader, scrollState);
+    stateRef.current.previousPosition = window.scrollY;
+    stateRef.current.scrollState = window.scrollY > 0 ? "down" : "top";
+    applyScrollState(siteHeader, stateRef.current.scrollState);
 
     function updateHeader() {
       const position = window.scrollY;
       const nextState: HeaderScrollState =
         position <= 0
           ? "top"
-          : position < previousPosition
+          : position < stateRef.current.previousPosition
             ? "up"
-            : position > previousPosition
+            : position > stateRef.current.previousPosition
               ? "down"
-              : scrollState;
+              : stateRef.current.scrollState;
 
-      previousPosition = position;
+      stateRef.current.previousPosition = position;
       frame = 0;
 
-      if (nextState === scrollState) return;
-      scrollState = nextState;
+      if (nextState === stateRef.current.scrollState) return;
+      stateRef.current.scrollState = nextState;
       applyScrollState(siteHeader, nextState);
     }
 
@@ -44,20 +71,10 @@ export function HeaderScrollBehavior() {
       if (!frame) frame = window.requestAnimationFrame(updateHeader);
     }
 
-    function enableSmoothScroll() {
-      document.documentElement.classList.add("enable-smooth-scroll");
-      window.removeEventListener("pointerdown", enableSmoothScroll);
-      window.removeEventListener("keydown", enableSmoothScroll);
-    }
-
     window.addEventListener("scroll", onScroll, { passive: true });
-    window.addEventListener("pointerdown", enableSmoothScroll, { passive: true });
-    window.addEventListener("keydown", enableSmoothScroll);
 
     return () => {
       window.removeEventListener("scroll", onScroll);
-      window.removeEventListener("pointerdown", enableSmoothScroll);
-      window.removeEventListener("keydown", enableSmoothScroll);
       if (frame) window.cancelAnimationFrame(frame);
     };
   }, []);
