@@ -92,7 +92,6 @@ export function UpgradeToShopifyPlusPage() {
         headerLayout="split"
         hideCta={true}
         sectionId="our_work"
-        variant="liveGrid"
       />
 
       {/* 11. Flexible Shopify Engagements */}

@@ -57,7 +57,6 @@ export function WebflowDevelopmentPage() {
         eyebrow={webflowDevelopmentPortfolio.eyebrow}
         hideCta={false}
         sectionId="our_work"
-        variant="liveGrid"
       />
       <CityPageCounterSection content={webflowDevelopmentMilestones} />
       <HappyClientSection

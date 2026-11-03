@@ -71,16 +71,17 @@ export function CaseStudyCardsSection({
                 <div className="cs-col-right flex flex-1 flex-col justify-between p-[18px]">
                   <div className="cs-title">
                     {item.platform || item.industry ? (
-                      <div className="cs-cate-wrapp mb-[7px] flex flex-wrap items-center">
+                      <div className="cs-cate-wrapp mb-[7px] flex min-w-0 flex-nowrap items-center overflow-hidden">
                         {item.platform && (
-                          <span className="text-[10px] font-bold uppercase leading-[1.4] tracking-[0.8px] text-brand-red">
+                          <span className="shrink-0 text-[10px] font-bold uppercase leading-[1.4] tracking-[0.8px] text-brand-red">
                             {item.platform}
                           </span>
                         )}
+
                         {item.industry && (
                           <>
-                            <span className="relative mx-[7px] inline-block size-[3px] rounded-full bg-brand-red align-middle" />
-                            <span className="text-[10px] font-bold uppercase leading-[1.4] tracking-[0.8px] text-brand-red">
+                            <span className="relative mx-[7px] inline-block size-[3px] shrink-0 rounded-full bg-brand-red" />
+                            <span className="min-w-0 truncate text-[10px] font-bold uppercase leading-[1.4] tracking-[0.8px] text-brand-red">
                               {item.industry}
                             </span>
                           </>

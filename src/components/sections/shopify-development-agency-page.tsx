@@ -39,7 +39,6 @@ export function ShopifyDevelopmentAgencyPage() {
         content={shopifyDevelopmentAgencyPortfolio}
         headerLayout="split"
         sectionId="our_work"
-        variant="liveGrid"
       />
       <ShopifyTeamBoxesSection content={shopifyDevelopmentAgencyTeam} />
       <PricingTableSection content={shopifyDevelopmentAgencyPricing} />

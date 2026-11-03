@@ -42,7 +42,6 @@ export function PhpDevelopmentPage() {
         content={phpDevelopmentContent.whyChoose}
       />
       <AgencyServicesSection
-        cardVariant="services-box"
         className="pt-0"
         columns={2}
         content={servicesContent}
@@ -60,7 +59,6 @@ export function PhpDevelopmentPage() {
         eyebrow={phpDevelopmentContent.portfolio.eyebrow}
         headerLayout="split"
         sectionId="our_work"
-        variant="liveGrid"
       />
       <HappyClientSection
         description={phpDevelopmentContent.testimonials.description}

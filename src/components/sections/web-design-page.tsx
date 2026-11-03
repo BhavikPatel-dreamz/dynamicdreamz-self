@@ -26,7 +26,6 @@ export function WebDesignPage() {
         items={webDesignBrands}
       />
       <AgencyServicesSection
-        cardVariant="services-box"
         content={webDesignServices}
         id="services"
       />
@@ -36,7 +35,6 @@ export function WebDesignPage() {
         columns={4}
         content={webDesignPortfolio}
         sectionId="our_work"
-        variant="liveGrid"
       />
       <HappyClientSection
         description={webDesignTestimonials.description}

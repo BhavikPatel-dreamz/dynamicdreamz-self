@@ -51,7 +51,6 @@ export function WooCommerceDevelopmentPage() {
         eyebrow={woocommerceDevelopmentPortfolio.eyebrow}
         headerLayout="split"
         sectionId="our_work"
-        variant="liveGrid"
       />
       <HappyClientSection
         description={woocommerceDevelopmentTestimonials.description}

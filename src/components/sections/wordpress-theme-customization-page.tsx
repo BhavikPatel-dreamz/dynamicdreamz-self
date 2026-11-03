@@ -151,7 +151,6 @@ export function WordPressThemeCustomizationPage() {
         columns={4}
         content={portfolioContent}
         sectionId="our_work"
-        variant="liveGrid"
       />
 
       {/* 10. Don't Just Take Our Word For It */}

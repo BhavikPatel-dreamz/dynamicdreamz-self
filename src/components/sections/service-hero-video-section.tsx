@@ -66,6 +66,7 @@ export function ServiceHeroVideoSection({
   rightColClassName,
 }: ServiceHeroVideoSectionProps) {
   const isShopifyMigration = wrapperClassName?.includes("hero-shopify-migration");
+  const isThreeBadges = content.badges?.length === 3;
 
   return (
     <section
@@ -201,13 +202,21 @@ export function ServiceHeroVideoSection({
               ) : null}
 
               {content.badges && content.badges.length > 0 ? (
-                <div className="global_brands_grid_wrap relative mt-[30px] -mx-[15px] flex flex-wrap items-center max-[1200px]:justify-center max-[768px]:overflow-hidden max-[768px]:before:absolute max-[768px]:before:left-1/2 max-[768px]:before:top-0 max-[768px]:before:h-full max-[768px]:before:w-[1px] max-[768px]:before:-translate-x-1/2 max-[768px]:before:bg-[#d9d9d9] max-[768px]:before:content-[''] max-[768px]:after:absolute max-[768px]:after:left-5 max-[768px]:after:top-1/2 max-[768px]:after:h-[1px] max-[768px]:after:w-[calc(100%-40px)] max-[768px]:after:bg-[#d9d9d9] max-[768px]:after:content-['']">
+                <div
+                  className={cn(
+                    "global_brands_grid_wrap relative mt-[30px] flex items-center max-[1200px]:justify-center",
+                    isThreeBadges
+                      ? "-mx-[15px] flex-nowrap max-[768px]:mx-0 max-[768px]:w-full"
+                      : "-mx-[15px] flex-wrap max-[768px]:overflow-hidden max-[768px]:before:absolute max-[768px]:before:left-1/2 max-[768px]:before:top-0 max-[768px]:before:h-full max-[768px]:before:w-[1px] max-[768px]:before:-translate-x-1/2 max-[768px]:before:bg-[#d9d9d9] max-[768px]:before:content-[''] max-[768px]:after:absolute max-[768px]:after:left-5 max-[768px]:after:top-1/2 max-[768px]:after:h-[1px] max-[768px]:after:w-[calc(100%-40px)] max-[768px]:after:bg-[#d9d9d9] max-[768px]:after:content-['']",
+                  )}
+                >
                   {content.badges.map((badge, idx) => (
                     <div
                       className={cn(
-                        "global_brands_item px-[15px] max-[1200px]:px-3",
-                        "border-r border-[#d9d9d9] last:border-r-0 max-[768px]:border-r-0",
-                        "max-[768px]:w-1/2 max-[768px]:p-[15px] max-[768px]:text-center",
+                        "global_brands_item border-r border-[#d9d9d9] last:border-r-0",
+                        isThreeBadges
+                          ? "w-1/3 px-[15px] max-[1200px]:px-2.5 max-[768px]:w-1/3 max-[768px]:px-2 max-[768px]:py-2 max-[768px]:text-center min-[769px]:w-auto"
+                          : "px-[15px] max-[1200px]:px-3 max-[768px]:border-r-0 max-[768px]:w-1/2 max-[768px]:p-[15px] max-[768px]:text-center",
                       )}
                       key={badge.label || badge.name || idx}
                     >
@@ -219,7 +228,10 @@ export function ServiceHeroVideoSection({
                       >
                         <Image
                           alt={badge.alt}
-                          className="h-auto w-auto max-w-[100px] object-contain max-[768px]:max-h-[44px]"
+                          className={cn(
+                            "h-auto w-auto max-w-[100px] object-contain max-[768px]:max-h-[44px]",
+                            isThreeBadges && "max-[768px]:max-w-[90px]",
+                          )}
                           height={badge.height}
                           src={badge.icon || badge.src || ""}
                           width={badge.width}

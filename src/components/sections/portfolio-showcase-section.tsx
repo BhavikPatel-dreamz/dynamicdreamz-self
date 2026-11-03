@@ -42,7 +42,6 @@ export type PortfolioShowcaseSectionProps = {
   headingBreakClassName?: string;
   headerLayout?: "centered" | "split";
   itemsClassName?: string;
-  variant?: "default" | "liveGrid";
   sectionId?: string;
   className?: string;
 };
@@ -60,7 +59,6 @@ export function PortfolioShowcaseSection({
   eyebrowClassName = "mb-4!",
   itemsClassName,
   sectionId = "portfolio-showcase",
-  variant = "default",
   className,
 }: PortfolioShowcaseSectionProps) {
   const resolvedColumns = columns ?? 4;
@@ -78,12 +76,9 @@ export function PortfolioShowcaseSection({
   const effectiveCardVariant = cardVariant ?? "ourWorkRefresh";
 
   const isShopifyPlusCategory = content.category === "SHOPIFY PLUS";
-  const isLiveGrid = variant === "liveGrid";
   const sectionClassName = isShopifyPlusCategory
     ? "our-work-sec bg-white pt-0 pb-20 max-[992px]:pt-0 max-[992px]:pb-[50px]"
-    : isLiveGrid
-      ? "our-work-sec pt-20 pb-20 max-[992px]:pt-0 max-[768px]:pt-0"
-      : "our-work-sec py-20 max-[992px]:py-[50px]";
+    : "our-work-sec py-20 max-[992px]:py-[50px]";
 
   const gridColsClass =
     resolvedColumns === 4

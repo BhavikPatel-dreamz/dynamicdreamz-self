@@ -64,7 +64,6 @@ export function HireWordPressDevelopersPage() {
         headerLayout="split"
         hideCta
         sectionId="our_work"
-        variant="liveGrid"
       />
       <HappyClientSection
         description={hireWordPressTestimonials.description}

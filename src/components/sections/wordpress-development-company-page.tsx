@@ -89,7 +89,6 @@ export function WordPressDevelopmentCompanyPage() {
         eyebrow={wordpressDevelopmentCompanyPortfolio.eyebrow}
         headerLayout="split"
         sectionId="our_work"
-        variant="liveGrid"
       />
       <HappyClientSection
         description={wordpressDevelopmentCompanyTestimonials.description}

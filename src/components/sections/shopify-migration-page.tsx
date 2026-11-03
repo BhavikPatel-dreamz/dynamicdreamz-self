@@ -78,7 +78,6 @@ export function ShopifyMigrationPage() {
         columns={4}
         content={shopifyMigrationPortfolio}
         sectionId="our_work"
-        variant="liveGrid"
       />
 
       {/* 9. Client Stories / Testimonials */}

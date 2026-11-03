@@ -43,7 +43,6 @@ export function DentalClinicWebsiteDevelopmentCompanyPage() {
         content={dentalClinicWebsiteDevelopmentCompanyContent.portfolio}
         headerLayout="split"
         sectionId="our_work"
-        variant="liveGrid"
       />
       <HappyClientSection
         description={dentalClinicWebsiteDevelopmentCompanyContent.testimonials.description}

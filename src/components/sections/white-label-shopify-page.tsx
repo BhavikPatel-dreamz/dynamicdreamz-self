@@ -45,7 +45,6 @@ export function WhiteLabelShopifyPage() {
         content={whiteLabelShopifyPortfolio}
         headerLayout="split"
         sectionId="our_work"
-        variant="liveGrid"
       />
 
       {/* 6. Pricing / Engagement Models */}

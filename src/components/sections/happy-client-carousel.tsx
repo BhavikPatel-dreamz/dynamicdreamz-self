@@ -52,8 +52,8 @@ export function HappyClientCarousel({ items, ariaLabel, controls }: HappyClientC
   const isAtEnd = activeSlide >= finalSlide;
 
   useEffect(() => {
-    const mobileQuery = window.matchMedia("(max-width: 767px)");
-    const tabletQuery = window.matchMedia("(max-width: 991px)");
+    const mobileQuery = window.matchMedia("(max-width: 768px)");
+    const tabletQuery = window.matchMedia("(max-width: 1200px)");
     const updateVisibleSlides = () => {
       setVisibleSlides(mobileQuery.matches ? 1 : tabletQuery.matches ? 2 : 3);
     };

@@ -46,7 +46,7 @@ export function CtaBannerSection({
             <h2
               id="cta-banner-title"
               className={cn(
-                "font-display text-[30px] font-normal leading-[43.2px] tracking-[-0.6px] text-white max-[1200px]:text-[26px] max-[1200px]:leading-9 max-[768px]:text-[20px] max-[768px]:leading-7",
+                "font-display text-[30px] font-normal leading-[43.2px] tracking-[-0.6px] text-white max-[1200px]:text-[26px] max-[1200px]:leading-9",
                 isMobileAppCta && "!font-montreal-medium !font-normal !tracking-normal",
               )}
             >
@@ -61,7 +61,7 @@ export function CtaBannerSection({
           <ButtonLink
             href={ctaHref}
             variant="light"
-            className="min-h-[50px] px-6 py-[15px] font-montserrat text-base font-bold uppercase text-[#121212] rounded-[30px] max-[575px]:w-full text-center"
+            className="min-h-[50px] px-6 py-[15px] font-montserrat text-base font-bold uppercase text-[#121212] rounded-[30px] max-[575px]:text-center"
           >
             {ctaLabel}
           </ButtonLink>

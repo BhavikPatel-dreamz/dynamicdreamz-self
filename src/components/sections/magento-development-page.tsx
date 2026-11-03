@@ -61,7 +61,6 @@ export function MagentoDevelopmentPage() {
         eyebrow={magentoDevelopmentPortfolio.eyebrow}
         headerLayout="split"
         sectionId="our_work"
-        variant="liveGrid"
       />
       <HappyClientSection
         description={magentoDevelopmentTestimonials.description}
