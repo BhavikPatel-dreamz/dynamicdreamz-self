@@ -1,4 +1,5 @@
 import { Container } from "@/components/ui/container";
+import { Eyebrow } from "@/components/ui/eyebrow";
 import { cn } from "@/lib/class-names";
 
 export type IndustryCustomDevelopmentContent = {
@@ -28,15 +29,9 @@ export function IndustryCustomDevelopmentSection({
         <div className="wrapper mx-auto max-w-[900px]" data-aos="fade-up">
           <div className="title-block">
             {content.eyebrow ? (
-              <div className="eyebrow mb-4 relative pl-10 font-sans">
-                <span
-                  className="absolute left-0 top-1/2 -translate-y-1/2 w-[30px] h-[2px] bg-[#AD5151]"
-                  aria-hidden="true"
-                />
-                <span className="text-sm font-semibold uppercase tracking-normal text-white">
-                  {content.eyebrow}
-                </span>
-              </div>
+              <Eyebrow as="div" className="mb-4" linePosition="overlay" tone="inverse">
+                {content.eyebrow}
+              </Eyebrow>
             ) : null}
             <h2 className="mb-4 font-montreal-medium font-normal text-[35px] leading-[1.4] tracking-normal text-white max-[992px]:text-[30px] max-[992px]:leading-[1.4] max-[768px]:text-2xl max-[768px]:leading-[1.4]">
               {content.heading}

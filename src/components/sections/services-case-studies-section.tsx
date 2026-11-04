@@ -1,10 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Container } from "@/components/ui/container";
+import { SplitSectionHeading } from "@/components/ui/split-section-heading";
 import { TextArrowLink } from "@/components/ui/text-arrow-link";
 import { sharedUiCopy } from "@/content/common";
 import { cn } from "@/lib/class-names";
-import { formatBrText } from "@/lib/text-formatting";
 
 export type CaseStudyPreviewItem = {
   title: string;
@@ -47,36 +47,13 @@ export function ServicesCaseStudiesSection({
       id={id}
     >
       <Container className={containerClass}>
-        <div
-          data-aos="fade-up"
-          className={cn(
-            "section_title_with_eyebrow mb-10 max-[992px]:mb-[30px]",
-            description &&
-              "flex flex-wrap items-end justify-between max-[992px]:flex-col max-[992px]:items-start",
-          )}
-        >
-          <div
-            className={cn("title", description && "w-[44%] max-[992px]:w-full")}
-          >
-            {eyebrow && (
-              <div className="eyebrow relative mb-4 inline-flex items-center pl-10 before:absolute before:left-0 before:top-[7px] before:inline-block before:h-[2px] before:w-[30px] before:bg-brand-red before:content-[''] max-[1200px]:before:top-[6px] max-[768px]:pl-6 max-[768px]:before:top-[4px] max-[768px]:before:w-[15px]">
-                <span className="font-montserrat text-sm font-semibold uppercase leading-[1.2] text-[#535353] max-[1200px]:text-xs max-[768px]:text-[10px]">
-                  {eyebrow}
-                </span>
-              </div>
-            )}
-            <h2 className="m-0 font-montreal-medium text-[35px] font-normal leading-[49px] text-[#282828] max-[1200px]:[&_br]:hidden max-[992px]:mb-2.5 max-[992px]:text-[30px] max-[992px]:leading-10 max-[768px]:text-2xl max-[768px]:leading-[33px]">
-              {formatBrText(heading, "max-[1200px]:hidden")}
-            </h2>
-          </div>
-          {description && (
-            <div className="section_text w-[48.3%] max-[1200px]:w-[50%] max-[992px]:w-full max-[992px]:mt-2.5">
-              <p className="m-0 font-sans text-base font-medium leading-7 text-[#535353] max-[1200px]:text-sm max-[1200px]:leading-6">
-                {formatBrText(description)}
-              </p>
-            </div>
-          )}
-        </div>
+        <SplitSectionHeading
+          description={description}
+          eyebrow={eyebrow}
+          heading={heading}
+          titleColumnClassName={!description ? "w-full" : undefined}
+          variant="left"
+        />
 
         <div className="cs-listing-main three-col -mb-5 flex flex-wrap justify-between">
           {items.map((item) => (

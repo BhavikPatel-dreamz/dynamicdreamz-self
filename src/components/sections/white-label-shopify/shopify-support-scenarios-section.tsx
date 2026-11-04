@@ -6,8 +6,8 @@ import "slick-carousel/slick/slick.css";
 
 import { ButtonLink } from "@/components/ui/button-link";
 import { Container } from "@/components/ui/container";
-import { Eyebrow } from "@/components/ui/eyebrow";
 import { LazyMount } from "@/components/ui/lazy-mount";
+import { SplitSectionHeading } from "@/components/ui/split-section-heading";
 import {
   whiteLabelShopifyScenarios,
 } from "@/content/white-label-shopify-development";
@@ -98,24 +98,15 @@ export function ShopifySupportScenariosSection({
   return (
     <section className="scenario-tab-sec overflow-hidden bg-white py-20 max-[992px]:py-15 max-[768px]:py-10">
       <Container>
-        <div
-          data-aos="fade-up"
-          className="section_title mb-10 max-[992px]:mb-[30px]"
-        >
-          {content.eyebrow ? (
-            <Eyebrow className="mb-4">{content.eyebrow}</Eyebrow>
-          ) : null}
-          <div className="flex flex-wrap items-start justify-between gap-6 max-[992px]:flex-col">
-            <h2 className="w-full max-w-[580px] font-montreal-medium text-[35px] font-normal leading-[49px] text-ink max-[992px]:text-[28px] max-[768px]:text-2xl">
-              {content.heading}
-            </h2>
-            {content.description ? (
-              <p className="w-full max-w-[540px] font-sans text-base font-medium leading-7 text-[#535353]">
-                {content.description}
-              </p>
-            ) : null}
-          </div>
-        </div>
+        <SplitSectionHeading
+          className="mb-10 max-[992px]:mb-[30px]"
+          description={content.description}
+          eyebrow={content.eyebrow}
+          heading={content.heading}
+          textColumnClassName="w-full max-w-[540px]"
+          titleColumnClassName="w-full max-w-[580px]"
+          variant="left"
+        />
 
         {/* Desktop & Tablet Split View (>= 768px) */}
         <div

@@ -2,6 +2,7 @@ import Image from "next/image";
 import { useId } from "react";
 
 import { ClientAfterViewport } from "@/components/ui/client-after-viewport";
+import { SplitSectionHeading } from "@/components/ui/split-section-heading";
 import { whiteLabelShopifySectionCopy, whiteLabelShopifyToolRows } from "@/content/white-label-shopify-development";
 import { cn } from "@/lib/class-names";
 import type { WhiteLabelTool } from "@/types/white-label-service";
@@ -107,26 +108,15 @@ export function WhiteLabelToolsSection({
         className,
       )}
     >
-      <div
-        data-aos="fade-up"
-        className="wide_range_technologies_top_part mb-10 px-4 text-center max-[1200px]:mb-[35px] max-[992px]:mb-[30px] max-[768px]:mb-5"
-      >
-        {eyebrow ? (
-          <div className="title mb-5 text-[13px] font-bold uppercase tracking-[1.5px] text-[#e33d37]">
-            <span>{eyebrow}</span>
-          </div>
-        ) : null}
-        <div className="wide_range_technologies_heading">
-          <h2 className="mx-auto mb-6 max-w-[1000px] font-montreal-medium text-[35px] leading-[48.475px] font-normal tracking-normal text-ink max-[1200px]:mb-[22px] max-[992px]:mb-5 max-[992px]:text-[30px] max-[992px]:leading-10 max-[768px]:mb-[15px] max-[768px]:text-2xl max-[768px]:leading-[33.24px]">
-            {title}
-          </h2>
-        </div>
-        <div className="wide_range_technologies_para mx-auto max-w-[1000px]">
-          <p className="text-base leading-[30.4px] font-medium text-muted max-[1200px]:leading-[26px] max-[768px]:text-sm max-[768px]:leading-5">
-            {description}
-          </p>
-        </div>
-      </div>
+      <SplitSectionHeading
+        className="wide_range_technologies_top_part mb-10 max-w-[1000px] px-4 max-[1200px]:mb-[35px] max-[992px]:mb-[30px] max-[768px]:mb-5"
+        description={description}
+        eyebrow={eyebrow}
+        heading={title}
+        pClassName="leading-[30.4px] max-[1200px]:leading-[26px] max-[768px]:text-sm max-[768px]:leading-5"
+        titleClassName="max-w-[1000px] mx-auto mb-6 max-[1200px]:mb-[22px] max-[992px]:mb-5 max-[768px]:mb-[15px]"
+        variant="centered"
+      />
       <div aria-label={ariaLabel} className="wide_range_technologies_bottom_part">
         <div className="our_partners_logo_wrap">
           {rows[0] ? (

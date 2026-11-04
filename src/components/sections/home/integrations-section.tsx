@@ -1,7 +1,7 @@
 import { LoopingLogoTrack } from "@/components/sections/home/looping-logo-track";
 import styles from "@/components/sections/home/integrations-section.module.css";
 import { Container } from "@/components/ui/container";
-import { SectionHeading } from "@/components/ui/section-heading";
+import { SplitSectionHeading } from "@/components/ui/split-section-heading";
 import { homeSectionCopy, integrationLogoRows } from "@/content/home";
 import { cn } from "@/lib/class-names";
 
@@ -15,14 +15,11 @@ export function IntegrationsSection({
   return (
     <section className="our_partners overflow-hidden bg-[#fafaf7] py-20 max-[992px]:py-15 max-[768px]:py-10">
       <Container>
-        <div
-          data-aos="fade-up"
-          className="section_title mx-auto mb-[57px] max-w-[540px] text-center max-[1200px]:max-w-[400px] max-[992px]:max-w-full max-[1200px]:mb-10 min-[768px]:max-[992px]:mb-[30px] max-[768px]:mb-[29px]"
-        >
-          <SectionHeading size="xl" className="m-0">
-            {title}
-          </SectionHeading>
-        </div>
+        <SplitSectionHeading
+          className="mb-[57px] max-w-[540px] max-[1200px]:mb-10 max-[1200px]:max-w-[400px] max-[992px]:max-w-full min-[768px]:max-[992px]:mb-[30px] max-[768px]:mb-[29px]"
+          heading={title}
+          variant="centered"
+        />
       </Container>
       <div
         data-aos="fade-up"

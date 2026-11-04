@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { Container } from "@/components/ui/container";
+import { SplitSectionHeading } from "@/components/ui/split-section-heading";
 import { sharedUiCopy } from "@/content/common";
 import { cn } from "@/lib/class-names";
 import { formatBrText } from "@/lib/text-formatting";
@@ -72,29 +73,17 @@ export function FeaturesGridSection({
       id={id}
     >
       <Container>
-        <div
-          data-aos="fade-up"
+        <SplitSectionHeading
           className={cn(
-            "title mb-12 max-[768px]:mb-6",
+            "mb-12 max-[768px]:mb-6",
             titleAlign === "center" ? "mx-auto max-w-[850px] text-center" : "text-left",
           )}
-        >
-          {resolvedEyebrow ? (
-            <div className="mb-2.5">
-              <span className="font-montserrat text-sm font-semibold uppercase text-[#535353]">
-                {resolvedEyebrow}
-              </span>
-            </div>
-          ) : null}
-          <h2 className="font-montreal-medium text-[35px] font-normal leading-[48.475px] tracking-normal text-ink max-[992px]:text-[30px] max-[992px]:leading-10 max-[768px]:text-2xl max-[768px]:leading-[33px]">
-            {formatBrText(resolvedHeading, "max-[1200px]:hidden")}
-          </h2>
-          {resolvedDescription ? (
-            <p className="mt-2.5 font-sans text-base font-medium leading-[27px] text-[#535353] max-[768px]:text-sm">
-              {formatBrText(resolvedDescription, "max-[1200px]:hidden")}
-            </p>
-          ) : null}
-        </div>
+          description={resolvedDescription}
+          eyebrow={resolvedEyebrow}
+          heading={resolvedHeading}
+          pClassName="leading-[27px]"
+          variant={titleAlign === "center" ? "centered" : "left"}
+        />
 
         <div data-aos="fade-up" className="-mx-3 flex flex-wrap justify-center">
           {resolvedItems.map((item, idx) => (

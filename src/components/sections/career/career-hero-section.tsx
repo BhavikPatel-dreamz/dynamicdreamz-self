@@ -4,6 +4,7 @@ import { useId } from "react";
 import styles from "@/components/sections/career/career-hero-section.module.css";
 import { ClientAfterViewport } from "@/components/ui/client-after-viewport";
 import { Container } from "@/components/ui/container";
+import { Eyebrow } from "@/components/ui/eyebrow";
 import { careerHero } from "@/content/career";
 import { cn } from "@/lib/class-names";
 
@@ -46,9 +47,13 @@ export function CareerHeroSection({
           <div className="left-col z-1 flex w-[51%] flex-col justify-center py-[60px] max-[1200px]:w-1/2 max-[992px]:w-full max-[992px]:py-8 max-[992px]:text-center">
             <div className="hero-content">
               {eyebrow ? (
-                <div className="eyebrow relative mb-[15px] inline-flex items-center pl-10 text-[#535353] before:absolute before:left-0 before:top-[7px] before:h-0.5 before:w-[30px] before:bg-brand-red before:content-[''] max-[1200px]:mx-auto max-[1200px]:justify-center max-[992px]:mx-auto max-[768px]:pl-6 max-[768px]:before:top-1 max-[768px]:before:w-[15px]">
-                  <span className="font-montserrat text-[14px] font-semibold uppercase leading-[1.2] max-[1200px]:text-[12px] max-[768px]:text-[10px]">{eyebrow}</span>
-                </div>
+                <Eyebrow
+                  align="responsive-center"
+                  className="mb-[15px]"
+                  linePosition="overlay"
+                >
+                  {eyebrow}
+                </Eyebrow>
               ) : null}
 
               <h1 className="mb-2.5 font-montreal-medium text-[50px] font-normal leading-[60px] tracking-normal text-[#282828] max-[1200px]:text-[40px] max-[1200px]:leading-[50px] max-[768px]:text-[30px] max-[768px]:leading-[40px]">

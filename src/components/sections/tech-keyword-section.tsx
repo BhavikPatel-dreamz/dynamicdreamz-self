@@ -34,9 +34,7 @@ export function TechKeywordSection({
           <div className="section_title_with_eyebrow mb-0">
             <div className="title w-full">
               {content.eyebrow ? (
-                <div className="eyebrow mb-4">
-                  <Eyebrow as="span">{content.eyebrow}</Eyebrow>
-                </div>
+                <Eyebrow className="mb-4">{content.eyebrow}</Eyebrow>
               ) : null}
               <h2 className="font-display text-[35px] font-medium leading-[48px] tracking-[-0.7px] text-ink max-[1200px]:text-[28px] max-[1200px]:leading-[38px] max-[768px]:text-2xl max-[768px]:leading-[33px]">
                 {content.heading}

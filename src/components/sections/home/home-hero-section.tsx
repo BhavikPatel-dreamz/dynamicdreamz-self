@@ -1,7 +1,7 @@
 import Image from "next/image";
 
 import { ButtonLink } from "@/components/ui/button-link";
-import { Container } from "@/components/ui/container";
+import { Container, Eyebrow } from "@/components/ui/container";
 import { homeAnswerSummary, homeSectionCopy, proofLogos } from "@/content/home";
 
 export type ProofLogoItem = {
@@ -39,12 +39,13 @@ export function HomeHeroSection({
     <section className="flex h-screen items-center justify-center overflow-hidden bg-[linear-gradient(180deg,#fbeed5_16.38%,rgb(251_238_213/0%)_100%)] pt-[90px] max-[992px]:pt-16">
       <Container className="text-center">
         <div className="banner-badge mb-6">
-          <div className="eyebrow mx-auto inline-flex items-center justify-center text-muted uppercase max-[1200px]:text-[12px] max-[768px]:text-[10px] max-[640px]:w-max">
-            <span className="relative mr-2.5 leading-[1.2] inline-flex items-center pr-2.5 text-sm font-semibold max-[1200px]:text-[12px] max-[768px]:text-[10px] before:mr-3 before:h-0.5 before:w-[30px] before:bg-brand-red before:content-[''] after:absolute after:right-[-2px] after:h-[3px] after:w-[3px] after:rounded-full after:bg-muted after:content-[''] max-[640px]:before:mr-2.5 max-[640px]:before:w-[25px]">
-              {established}
-            </span>
-            <span className="leading-[1.2] text-sm font-semibold max-[1200px]:text-[12px] max-[768px]:text-[10px]">{partnerBadge}</span>
-          </div>
+          <Eyebrow
+            as="div"
+            align="center"
+            lineWidth="responsive"
+            linePosition="flow"
+            items={[established, partnerBadge]}
+          />
         </div>
         <h1 className="mx-auto mb-5 max-w-[1100px] font-montreal-medium text-[56px] leading-[1.14] font-normal text-ink max-[1200px]:text-[48px] max-[1200px]:leading-[60px] max-[992px]:text-[38px] max-[992px]:leading-[48px] max-[768px]:mb-4 max-[768px]:max-w-[358px] max-[768px]:text-[27px] max-[768px]:leading-[37px]">
           {title}

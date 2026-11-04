@@ -6,6 +6,7 @@ import {
 import { ReviewAnimation } from "@/components/sections/shopify-plus-agency/review-animation";
 import { ButtonLink } from "@/components/ui/button-link";
 import { Container } from "@/components/ui/container";
+import { Eyebrow } from "@/components/ui/eyebrow";
 import { shopifyPlusAgencyHero } from "@/content/shopify-plus-agency";
 import { siteConfig } from "@/data/site";
 import { cn } from "@/lib/class-names";
@@ -131,20 +132,13 @@ export function ServiceHeroSection({
             <div className="left-col w-full">
               <div className={`inner-hero-content mx-auto ${maxWidth} text-center`}>
                 {content.eyebrows && content.eyebrows.length > 0 && (
-                  <div className="eyebrow relative mb-[15px] flex w-fit mx-auto items-center pl-10 before:absolute before:left-0 before:top-[7px] before:inline-block before:h-0.5 before:w-[30px] before:bg-brand-red before:content-[''] max-[1200px]:justify-center max-[1200px]:before:top-[6px] max-[768px]:flex max-[768px]:w-full max-[768px]:justify-start max-[768px]:pl-6 max-[768px]:text-left max-[768px]:before:top-1 max-[768px]:before:w-[15px]">
-                    {content.eyebrows.map((item, idx) => (
-                      <span
-                        key={idx}
-                        className={cn(
-                          "relative inline-flex items-center font-montserrat text-[14px] font-semibold uppercase leading-[1.2] text-[#535353] max-[1200px]:text-[12px] max-[768px]:text-[10px]",
-                          idx > 0 &&
-                            "ml-2.5 pl-2.5 after:absolute after:-left-[2px] after:top-1/2 after:size-[3px] after:-translate-y-1/2 after:rounded-full after:bg-[#535353] after:content-['']",
-                        )}
-                      >
-                        {item}
-                      </span>
-                    ))}
-                  </div>
+                  <Eyebrow
+                    align="center"
+                    as="div"
+                    className="mb-[15px] mx-auto w-fit max-[768px]:w-full max-[768px]:justify-start"
+                    items={content.eyebrows}
+                    linePosition="overlay"
+                  />
                 )}
                 {content.coBranding && (
                   <div className="mobile-app-wrapper mb-[35px] flex items-center justify-center max-[768px]:mb-[25px]">
@@ -325,20 +319,13 @@ export function ServiceHeroSection({
           <div className={cn(defaultLeftCol, leftColClassName)}>
             <div className="hero-content w-full">
               {content.eyebrows && content.eyebrows.length > 0 && (
-                <div className="eyebrow relative mb-[15px] flex w-fit items-center pl-10 before:absolute before:left-0 before:top-[7px] before:h-0.5 before:w-[30px] before:bg-brand-red before:content-[''] max-[1200px]:mx-auto max-[1200px]:justify-center max-[1200px]:before:top-[6px] max-[768px]:mx-auto max-[768px]:justify-center max-[768px]:pl-6 max-[768px]:before:top-1 max-[768px]:before:w-[15px]">
-                  {content.eyebrows.map((item, idx) => (
-                    <span
-                      key={idx}
-                      className={cn(
-                        "relative inline-flex items-center font-montserrat text-[14px] font-semibold uppercase leading-[1.2] text-[#535353] max-[1200px]:text-[12px] max-[768px]:text-[10px]",
-                        idx > 0 &&
-                          "ml-2.5 pl-2.5 after:absolute after:-left-[2px] after:top-1/2 after:size-[3px] after:-translate-y-1/2 after:rounded-full after:bg-[#535353] after:content-['']",
-                      )}
-                    >
-                      {item}
-                    </span>
-                  ))}
-                </div>
+                <Eyebrow
+                  align="responsive-center"
+                  as="div"
+                  className="mb-[15px] w-fit max-[1200px]:mx-auto"
+                  items={content.eyebrows}
+                  linePosition="overlay"
+                />
               )}
               <h1
                 className={cn(

@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { ButtonLink } from "@/components/ui/button-link";
 import { Container } from "@/components/ui/container";
+import { Eyebrow } from "@/components/ui/eyebrow";
 import { PhoneAppSlider } from "@/components/sections/shopify-mobile-app/phone-app-slider";
 import { cn } from "@/lib/class-names";
 
@@ -77,20 +78,13 @@ export function ShopifyMobileAppHeroSection({
           <div className="left-col z-1 w-[53%] min-[1400px]:w-[51%] min-[1200px]:max-[1400px]:w-[50%] py-[60px] max-[1200px]:w-full max-[1200px]:py-10 max-[1200px]:text-center max-[768px]:py-8">
             <div className="hero-content">
               {content.eyebrows && content.eyebrows.length > 0 && (
-                <div className="eyebrow relative mb-[15px] inline-flex items-center pl-10 before:absolute before:left-0 before:top-1/2 before:-translate-y-1/2 before:inline-block before:h-[2px] before:w-[30px] before:bg-brand-red before:content-[''] max-[1200px]:mx-auto max-[1200px]:justify-center max-[768px]:mx-auto max-[768px]:justify-center max-[768px]:pl-6 max-[768px]:before:w-[15px]">
-                  {content.eyebrows.map((item, idx) => (
-                    <span
-                      key={item}
-                      className={cn(
-                        "relative inline-flex items-center font-montserrat text-sm font-semibold uppercase leading-[1.2] text-[#535353] max-[768px]:text-[11px]",
-                        idx > 0 &&
-                          "ml-2.5 pl-2.5 after:absolute after:-left-[2px] after:top-1/2 after:-translate-y-1/2 after:inline-block after:size-[3px] after:rounded-full after:bg-[#535353] after:content-['']",
-                      )}
-                    >
-                      {item}
-                    </span>
-                  ))}
-                </div>
+                <Eyebrow
+                  align="responsive-center"
+                  as="div"
+                  className="mb-[15px]"
+                  items={content.eyebrows}
+                  linePosition="overlay"
+                />
               )}
 
               <h1 className="mb-3 font-montreal-medium text-[50px] font-normal leading-[60px] tracking-normal text-[#282828] max-[1200px]:text-[40px] max-[1200px]:leading-[50px] max-[768px]:text-[30px] max-[768px]:leading-[40px]">

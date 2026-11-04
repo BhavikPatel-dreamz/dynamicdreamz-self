@@ -1,6 +1,7 @@
 import React from "react";
 import { CmsFormClient } from "@/components/forms/CmsFormClient";
 import { Container } from "@/components/ui/container";
+import { Eyebrow } from "@/components/ui/eyebrow";
 import type { Form as PayloadForm } from "@/types/payload-types";
 
 export type FormSectionProps = {
@@ -36,15 +37,9 @@ export function FormSection({
         {(eyebrow || displayTitle || description) && (
           <div className="mb-10 max-[768px]:mb-6">
             {eyebrow && (
-              <div className="mb-3 flex items-center gap-2.5">
-                <span
-                  aria-hidden="true"
-                  className="h-0.5 w-[30px] shrink-0 bg-brand-red max-[768px]:hidden"
-                />
-                <span className="text-sm font-medium uppercase tracking-wider text-[#66635f]">
-                  {eyebrow}
-                </span>
-              </div>
+              <Eyebrow className="mb-3">
+                {eyebrow}
+              </Eyebrow>
             )}
             {displayTitle && (
               <h2 className="mb-3 font-montreal-medium text-[35px] font-normal leading-[1.25] tracking-normal text-ink max-[1200px]:text-[30px] max-[768px]:text-[26px]">

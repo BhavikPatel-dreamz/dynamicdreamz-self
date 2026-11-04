@@ -264,17 +264,13 @@ export function ContactDetailsSection({
       aria-labelledby="contact-details-title"
     >
       <Container>
-        <div data-aos="fade-up" className="mb-10 text-center">
-          <Eyebrow align="center" className="mb-4">
-            {eyebrow}
-          </Eyebrow>
-          <h2
-            id="contact-details-title"
-            className="font-montreal-medium text-[32px] leading-[42px] font-normal text-ink max-[992px]:text-[28px] max-[768px]:text-2xl"
-          >
-            {title}
-          </h2>
-        </div>
+        <SplitSectionHeading
+          className="mb-10"
+          eyebrow={eyebrow}
+          heading={title}
+          headingId="contact-details-title"
+          variant="centered"
+        />
 
           <div
             data-aos="fade-up"

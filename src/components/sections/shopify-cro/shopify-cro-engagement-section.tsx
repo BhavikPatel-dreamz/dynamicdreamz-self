@@ -2,6 +2,7 @@ import Image from "next/image";
 
 import { ButtonLink } from "@/components/ui/button-link";
 import { Container } from "@/components/ui/container";
+import { SplitSectionHeading } from "@/components/ui/split-section-heading";
 import { shopifyCroEngagements } from "@/content/shopify-cro-agency";
 
 export type ShopifyCroEngagementItem = {
@@ -33,11 +34,11 @@ export function ShopifyCroEngagementSection({
   return (
     <section className={className}>
       <Container>
-        <div data-aos="fade-up" className="section-title mx-auto mb-[35px] text-center">
-          <h2 className="font-display text-[35px] font-normal leading-[48.475px] tracking-normal text-ink max-[1200px]:text-[30px] max-[768px]:text-2xl">
-            {content.heading}
-          </h2>
-        </div>
+        <SplitSectionHeading
+          className="mb-[35px]"
+          heading={content.heading}
+          variant="centered"
+        />
 
         <div className="shopify-cro-engagement-grid mx-auto -mb-4 flex max-w-[956px] flex-wrap justify-between">
           {content.items.map((item) => (

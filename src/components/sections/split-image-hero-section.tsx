@@ -2,6 +2,7 @@ import Image from "next/image";
 
 import { ButtonLink } from "@/components/ui/button-link";
 import { Container } from "@/components/ui/container";
+import { Eyebrow } from "@/components/ui/eyebrow";
 import { siteConfig } from "@/data/site";
 import { cn } from "@/lib/class-names";
 import { formatBrText } from "@/lib/text-formatting";
@@ -70,26 +71,15 @@ function SplitImageHeroText({
   return (
     <div className={className}>
       {eyebrow && (
-        <div className="eyebrow relative mb-[15px] inline-flex items-center pl-10 before:absolute before:left-0 before:top-[7px] before:h-0.5 before:w-[30px] before:bg-brand-red before:content-[''] max-[1200px]:mx-auto max-[1200px]:justify-center max-[768px]:mx-auto max-[768px]:justify-center max-[768px]:pl-6 max-[768px]:before:top-1 max-[768px]:before:w-[15px]">
-          {Array.isArray(eyebrow) ? (
-            eyebrow.map((item, index) => (
-              <span
-                className={cn(
-                  "relative inline-flex items-center font-montserrat text-[14px] font-semibold uppercase leading-[1.2] text-[#535353] max-[1200px]:text-[12px] max-[768px]:text-[10px]",
-                  index > 0 &&
-                    "ml-2.5 pl-2.5 after:absolute after:-left-[2px] after:top-1/2 after:size-[3px] after:-translate-y-1/2 after:rounded-full after:bg-[#535353] after:content-['']",
-                )}
-                key={item}
-              >
-                {item}
-              </span>
-            ))
-          ) : (
-            <span className="font-montserrat text-[14px] font-semibold uppercase leading-[1.2] text-[#535353] max-[1200px]:text-[12px] max-[768px]:text-[10px]">
-              {eyebrow}
-            </span>
-          )}
-        </div>
+        <Eyebrow
+          align="responsive-center"
+          as="div"
+          className="mb-[15px]"
+          items={Array.isArray(eyebrow) ? eyebrow : undefined}
+          linePosition="overlay"
+        >
+          {!Array.isArray(eyebrow) ? eyebrow : undefined}
+        </Eyebrow>
       )}
       <h1 className={titleClassName}>{formatBrText(title, breakClassName)}</h1>
       <p className={descriptionClassName}>

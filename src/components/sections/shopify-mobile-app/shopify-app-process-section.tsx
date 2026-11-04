@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { Container } from "@/components/ui/container";
+import { SplitSectionHeading } from "@/components/ui/split-section-heading";
 import { formatBrText } from "@/lib/text-formatting";
 
 export type ShopifyAppProcessStep = {
@@ -25,11 +26,12 @@ export function ShopifyAppProcessSection({
   return (
     <section className={className} data-section="how-it-works" id="how-it-works">
       <Container>
-        <div data-aos="fade-up" className="heading-text mb-[90px] text-center max-[992px]:mb-[50px] max-[768px]:mb-[30px]">
-          <h2 className="font-display text-[35px] font-medium leading-[48.475px] tracking-[-0.7px] text-ink max-[992px]:text-[30px] max-[992px]:leading-10 max-[768px]:text-2xl max-[768px]:leading-[33px] max-[768px]:tracking-[-0.48px]">
-            {formatBrText(content.heading)}
-          </h2>
-        </div>
+        <SplitSectionHeading
+          className="mb-[90px] max-[992px]:mb-[50px] max-[768px]:mb-[30px]"
+          eyebrow={content.eyebrow}
+          heading={content.heading}
+          variant="centered"
+        />
 
         <div
           data-aos="fade-up"

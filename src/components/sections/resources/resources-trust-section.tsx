@@ -1,15 +1,19 @@
 import { ResourcesCounterGrid } from "@/components/sections/resources/resources-counter-grid";
 import { Container } from "@/components/ui/container";
+import { SplitSectionHeading } from "@/components/ui/split-section-heading";
 import { resourcesSectionCopy } from "@/content/resources";
 
 export function ResourcesTrustSection() {
   return (
     <section className="trusted-web-sec py-20 max-[992px]:py-15 max-[768px]:py-10" aria-labelledby="resources-trust-title">
       <Container>
-        <div className="resources-trust-intro mx-auto mb-[70px] max-w-[650px] text-center">
-          <h2 id="resources-trust-title" className="mb-3 text-[35px] leading-[49px] font-normal tracking-normal text-ink max-[992px]:text-[30px] max-[992px]:leading-10 max-[768px]:text-[24px] max-[768px]:leading-[33.24px]">{resourcesSectionCopy.trustTitle}</h2>
-          <p className="text-muted">{resourcesSectionCopy.trustDescription}</p>
-        </div>
+        <SplitSectionHeading
+          className="mx-auto mb-[70px] max-w-[650px]"
+          description={resourcesSectionCopy.trustDescription}
+          heading={resourcesSectionCopy.trustTitle}
+          headingId="resources-trust-title"
+          variant="centered"
+        />
         <ResourcesCounterGrid />
       </Container>
     </section>

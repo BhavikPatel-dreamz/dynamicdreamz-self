@@ -1,5 +1,6 @@
 import { ButtonLink } from "@/components/ui/button-link";
 import { Container } from "@/components/ui/container";
+import { SplitSectionHeading } from "@/components/ui/split-section-heading";
 import { shopifyCroAssessment } from "@/content/shopify-cro-agency";
 
 export type ShopifyCroAssessmentContent = {
@@ -26,12 +27,12 @@ export function ShopifyCroAssessmentSection({
     <section className={className}>
       <Container>
         <div data-aos="fade-up" className="content-box text-center">
-          <h2 className="mb-2.5 font-display text-[35px] font-normal leading-[48.475px] tracking-normal text-ink max-[1200px]:text-[30px] max-[768px]:text-2xl">
-            {content.heading}
-          </h2>
-          <p className="mb-6 font-sans text-base font-medium leading-7 text-muted">
-            {content.description}
-          </p>
+          <SplitSectionHeading
+            className="mb-6"
+            description={content.description}
+            heading={content.heading}
+            variant="centered"
+          />
 
           <ul className="-m-1.5 flex flex-wrap justify-center p-0 list-none">
             {content.points.map((point) => (

@@ -1,4 +1,5 @@
 import { Container } from "@/components/ui/container";
+import { Eyebrow } from "@/components/ui/eyebrow";
 
 export type ThemeFeaturesBannerContent = {
   eyebrow?: string;
@@ -28,11 +29,9 @@ export function ThemeFeaturesBannerSection({
         >
           <div className="left-block w-[37%] border-r border-[rgba(40,40,40,0.11)] bg-[#fbefd7] p-[30px] max-[1200px]:p-5 max-[992px]:w-full max-[992px]:border-r-0 max-[992px]:border-b max-[992px]:p-[25px_20px]">
             {content.eyebrow && (
-              <div className="eyebrow relative mb-[15px] inline-flex items-center pl-10 before:absolute before:left-0 before:top-[7px] before:h-0.5 before:w-[30px] before:bg-brand-red before:content-[''] max-[768px]:pl-6 max-[768px]:before:top-1 max-[768px]:before:w-[15px]">
-                <span className="font-montserrat text-[14px] font-semibold uppercase leading-[1.2] text-[#535353] max-[1200px]:text-[12px] max-[768px]:text-[10px]">
-                  {content.eyebrow}
-                </span>
-              </div>
+              <Eyebrow as="div" className="mb-[15px]" linePosition="overlay">
+                {content.eyebrow}
+              </Eyebrow>
             )}
             <h2 className="mb-0 text-[32px] font-normal leading-tight tracking-normal text-ink max-[1400px]:text-[28px] max-[992px]:text-2xl">
               {content.title || content.heading}

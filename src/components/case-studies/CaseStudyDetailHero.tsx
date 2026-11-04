@@ -2,8 +2,8 @@ import Image from "next/image";
 
 import { ButtonLink } from "@/components/ui/button-link";
 import { Container } from "@/components/ui/container";
+import { Eyebrow } from "@/components/ui/eyebrow";
 import { caseStudiesUiCopy } from "@/content/case-studies-ui";
-import { cn } from "@/lib/class-names";
 import type { CaseStudyDetail } from "@/types/case-study";
 
 import { CaseStudyKeyMetrics } from "./CaseStudyMetricsStrip";
@@ -35,20 +35,12 @@ export function CaseStudyHero({ caseStudy }: CaseStudyHeroProps) {
           <div className="left-col w-[47%] max-[1200px]:w-1/2 max-[992px]:mt-10 max-[992px]:w-full">
             <div className="hero-content">
               {eyebrowBadges.length > 0 && (
-                <div className="eyebrow relative mb-[15px] inline-flex items-center pl-10 before:absolute before:left-0 before:top-[7px] before:h-0.5 before:w-[30px] before:bg-[#ad5151] max-[768px]:pl-6 max-[768px]:before:top-1 max-[768px]:before:w-[15px]">
-                  {eyebrowBadges.map((badge, index) => (
-                    <span
-                      key={badge}
-                      className={cn(
-                        "font-montserrat text-[14px] font-semibold uppercase leading-[1.2] text-[#282828] max-[1200px]:text-[12px] max-[768px]:text-[10px]",
-                        index > 0 &&
-                          "relative ml-2.5 pl-2.5 after:absolute after:left-[-2px] after:top-1/2 after:size-[3px] after:-translate-y-1/2 after:rounded-full after:bg-[#535353] after:content-['']",
-                      )}
-                    >
-                      {badge}
-                    </span>
-                  ))}
-                </div>
+                <Eyebrow
+                  as="div"
+                  className="mb-[15px]"
+                  items={eyebrowBadges}
+                  linePosition="overlay"
+                />
               )}
               <h1
                 id="case-study-title"

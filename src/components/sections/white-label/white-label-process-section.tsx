@@ -1,7 +1,7 @@
 import { Container } from "@/components/ui/container";
+import { SplitSectionHeading } from "@/components/ui/split-section-heading";
 import { whiteLabelShopifyProcess, whiteLabelShopifySectionCopy } from "@/content/white-label-shopify-development";
 import { cn } from "@/lib/class-names";
-import { formatBrText } from "@/lib/text-formatting";
 import type { WhiteLabelProcessStep } from "@/types/white-label-service";
 
 type WhiteLabelProcessSectionProps = {
@@ -29,45 +29,17 @@ export function WhiteLabelProcessSection({
   return (
     <section className="white_label_how_partnership_works_section py-20 max-[992px]:py-15 max-[768px]:py-10">
       <Container className={cn("max-[576px]:px-4", containerClass)}>
-        {eyebrow || description ? (
-          <div
-            data-aos="fade-up"
-            className={cn(
-              "section_title_with_eyebrow mb-10 max-[992px]:mb-[30px] max-[768px]:mb-5",
-              description &&
-                "flex flex-wrap items-end justify-between max-[992px]:flex-col max-[992px]:items-start",
-            )}
-          >
-            <div
-              className={cn("title", description && "w-[44%] max-[992px]:w-full")}
-            >
-              {eyebrow && (
-                <div className="eyebrow relative mb-4 inline-flex items-center pl-10 before:absolute before:left-0 before:top-[7px] before:inline-block before:h-[2px] before:w-[30px] before:bg-brand-red before:content-[''] max-[1200px]:before:top-[6px] max-[768px]:mb-3 max-[768px]:pl-[23px] max-[768px]:before:top-[4px] max-[768px]:before:w-[15px]">
-                  <span className="font-montserrat text-sm font-semibold uppercase leading-[1.2] text-[#535353] max-[1200px]:text-xs max-[768px]:text-[10px]">
-                    {eyebrow}
-                  </span>
-                </div>
-              )}
-              <h2 className="m-0 font-montreal-medium text-[35px] font-normal leading-[49px] text-[#282828] max-[1200px]:[&_br]:hidden max-[992px]:mb-2.5 max-[992px]:text-[30px] max-[992px]:leading-10 max-[768px]:text-2xl max-[768px]:leading-[33px]">
-                {formatBrText(title, "max-[1200px]:hidden")}
-              </h2>
-            </div>
-            {description && (
-              <div className="section_text w-[48.3%] max-[1200px]:w-[50%] max-[992px]:w-full max-[992px]:mt-2.5">
-                <p className="m-0 font-sans text-base font-medium leading-7 text-[#535353] max-[1200px]:text-sm max-[1200px]:leading-6">
-                  {description}
-                </p>
-              </div>
-            )}
-          </div>
-        ) : (
-          <h2
-            data-aos="fade-up"
-            className="mb-[60px] text-center font-montreal-medium text-[35px] leading-[48.475px] font-normal tracking-normal text-ink max-[1200px]:mb-[50px] max-[992px]:mb-[30px] max-[992px]:text-[30px] max-[992px]:leading-10 max-[768px]:mb-5 max-[768px]:text-2xl max-[768px]:leading-[33.24px]"
-          >
-            {formatBrText(title)}
-          </h2>
-        )}
+        <SplitSectionHeading
+          className={cn(
+            "max-[768px]:mb-5",
+            !eyebrow && !description && "mb-[60px] max-[1200px]:mb-[50px] max-[992px]:mb-[30px]",
+          )}
+          description={description}
+          eyebrow={eyebrow}
+          heading={title}
+          titleColumnClassName={!description ? "w-full" : undefined}
+          variant={eyebrow || description ? "left" : "centered"}
+        />
         <div data-aos="fade-up" className="partnership_steps flex max-[992px]:flex-wrap">
           {steps.map((step, index) => (
             <article

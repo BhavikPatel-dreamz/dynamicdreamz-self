@@ -1,6 +1,7 @@
 import Image from "next/image";
 
 import { Container } from "@/components/ui/container";
+import { Eyebrow } from "@/components/ui/eyebrow";
 import {
   bookDiscoveryCallContent,
   type BookDiscoveryCallContent,
@@ -21,15 +22,9 @@ export function BookDiscoveryCallPage({
       <Container>
         <div className="flex flex-wrap justify-between">
           <aside className="w-[36%] max-[1400px]:w-[41%] max-[1200px]:w-[51%] max-[992px]:w-full">
-            <div className="mb-5 flex items-center gap-2.5 max-[768px]:mb-4">
-              <span
-                aria-hidden="true"
-                className="h-0.5 w-[30px] shrink-0 bg-brand-red max-[768px]:w-[15px]"
-              />
-              <span className="uppercase text-sm font-semibold leading-normal text-[#535353]">
-                {content.eyebrow}
-              </span>
-            </div>
+            <Eyebrow className="mb-5 max-[768px]:mb-4">
+              {content.eyebrow}
+            </Eyebrow>
 
             <h1
               className="mb-2.5 font-montreal-medium text-[35px] leading-[45px] font-normal tracking-[-0.7px] text-ink max-[992px]:text-[30px] max-[992px]:leading-10 max-[768px]:text-[26px] max-[768px]:leading-[34px]"

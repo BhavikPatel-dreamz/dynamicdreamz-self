@@ -1,6 +1,7 @@
 import Image from "next/image";
 
 import { Container } from "@/components/ui/container";
+import { SplitSectionHeading } from "@/components/ui/split-section-heading";
 import { sharedUiCopy } from "@/content/common";
 import { formatBrText } from "@/lib/text-formatting";
 
@@ -136,28 +137,16 @@ export function MigrationProcessSection({
         id={id}
       >
         <Container>
-          <div
-            data-aos="fade-up"
-            className="section_title_with_eyebrow mb-10 max-[768px]:mb-[30px]"
-          >
-            <div className="title">
-              {content.eyebrow ? (
-                <div className="eyebrow relative mb-4 inline-flex items-center pl-10 font-montserrat text-sm font-semibold uppercase leading-[1.2] text-[#535353] before:absolute before:left-0 before:top-[7px] before:h-[2px] before:w-[30px] before:bg-brand-red before:content-[''] max-[768px]:pl-[23px] max-[768px]:text-xs max-[768px]:leading-[1.2] max-[768px]:before:top-[6px] max-[768px]:before:w-[15px]">
-                  <span>{content.eyebrow}</span>
-                </div>
-              ) : null}
-              <h2 className="m-0 font-montreal-medium text-[35px] font-normal leading-[49px] tracking-normal text-ink max-[992px]:mb-2.5 max-[992px]:text-[30px] max-[992px]:leading-[42px] max-[768px]:text-2xl max-[768px]:leading-[31.2px]">
-                {formatBrText(content.heading, "max-[1200px]:hidden")}
-              </h2>
-            </div>
-            {content.description ? (
-              <div className="section_text mt-2.5 max-w-[850px]">
-                <p className="font-montserrat text-sm font-normal leading-6 text-[#535353]">
-                  {formatBrText(content.description)}
-                </p>
-              </div>
-            ) : null}
-          </div>
+          <SplitSectionHeading
+            className="mb-10 max-[768px]:mb-[30px]"
+            description={content.description}
+            eyebrow={content.eyebrow}
+            heading={content.heading}
+            pClassName="font-montserrat text-sm leading-6"
+            textColumnClassName="max-w-[850px]"
+            titleColumnClassName={!content.description ? "w-full" : undefined}
+            variant="left"
+          />
 
           <div
             data-aos="fade-up"
@@ -266,20 +255,13 @@ export function MigrationProcessSection({
   return (
     <section className={resolvedClassName} id={id}>
       <Container>
-        <div
-          data-aos="fade-up"
-          className={`title ${isCentered ? "text-center mx-auto max-w-[850px]" : ""
-            } max-[768px]:mb-6`}
-        >
-          <h2 className="mb-1.5 font-montreal-medium text-[35px] font-medium leading-[48.475px] tracking-[-0.7px] text-ink max-[992px]:text-[30px] max-[992px]:leading-10 max-[768px]:text-2xl max-[768px]:leading-[33px] max-[768px]:tracking-[-0.48px] text-center">
-            {formatBrText(content.heading, "max-[1200px]:hidden")}
-          </h2>
-          {content.description && (
-            <p className="mt-2.5 font-sans text-sm font-normal leading-[27.2px] text-[#535353] max-[768px]:text-sm">
-              {formatBrText(content.description, "max-[1200px]:hidden")}
-            </p>
-          )}
-        </div>
+        <SplitSectionHeading
+          className={cn(isCentered ? "mx-auto max-w-[850px] text-center" : "", "max-[768px]:mb-6")}
+          description={content.description}
+          heading={content.heading}
+          pClassName="text-sm leading-[27.2px]"
+          variant={isCentered ? "centered" : "left"}
+        />
 
         <div data-aos="fade-up" className="migration-process-inner">
           {content.steps.map((step, index) => (
