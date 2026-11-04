@@ -15,23 +15,22 @@ export function WhiteLabelFinalCtaSection({
   ctaHref = siteConfig.quotePath,
 }: WhiteLabelFinalCtaSectionProps) {
   return (
-    <section className="bg-white py-20 max-[992px]:py-15 max-[768px]:py-10">
+    <section className="white_label_lets_build_cta_section bg-white py-15 max-[992px]:py-[30px]">
       <Container>
-        <div data-aos="fade-up" className="flex items-center justify-between max-[992px]:flex-wrap max-[992px]:gap-5">
-          <div className="flex-1 max-w-[560px] flex-none pr-0 max-[992px]:mx-auto max-[992px]:max-w-none max-[992px]:text-center">
-            <h2 className="mb-[15px] font-display text-[30px] leading-[42px] font-medium text-ink max-[1200px]:text-[26px] max-[1200px]:leading-9 max-[992px]:mb-2.5 max-[992px]:text-[22px] max-[992px]:leading-8 max-[768px]:tracking-[-0.48px]">
+        <div
+          data-aos="fade-up"
+          className="cta_wrapper flex items-center justify-between max-[992px]:flex-col max-[992px]:gap-5"
+        >
+          <div className="cta_content flex-1 pr-[46px] max-[1200px]:pr-[30px] max-[992px]:w-full max-[992px]:max-w-none max-[992px]:pr-0 max-[992px]:text-left">
+            <h2 className="cta_heading mb-[15px] font-display text-[30px] font-medium leading-[42px] text-ink max-[1200px]:text-[26px] max-[1200px]:leading-9 max-[992px]:mb-2.5 max-[992px]:text-[22px] max-[992px]:leading-8 max-[768px]:tracking-[-0.48px]">
               {formatBrText(cta.title)}
             </h2>
-            <p className="text-base leading-[30.4px] font-medium text-muted max-[1200px]:leading-[26px] max-[992px]:text-[15px] max-[992px]:leading-[22px]">
+            <p className="cta_text font-montserrat text-base font-medium leading-[30.4px] text-muted max-[1200px]:leading-[26px] max-[992px]:text-[15px] max-[992px]:leading-[22px]">
               {formatBrText(cta.description)}
             </p>
           </div>
-          <div className="shrink-0 max-[992px]:w-full max-[992px]:pb-[10.4px] max-[992px]:text-center">
-            <ButtonLink
-              
-              href={ctaHref}
-              variant="primary"
-            >
+          <div className="cta_action shrink-0 max-[992px]:w-full max-[992px]:text-left">
+            <ButtonLink href={ctaHref} variant="primary">
               {cta.label}
             </ButtonLink>
           </div>

@@ -36,7 +36,7 @@ function ShopifySupportScenarioCard({ panel }: { panel: ShopifySupportScenario }
   return (
     <div className="scenario-panel flex min-h-[460px] flex-col justify-between rounded-[20px] bg-[#EFF4EF] p-[25px_20px]">
       <div>
-        <span className="section-kicker mb-2.5 block text-xs font-bold uppercase tracking-[1.5px] text-[#AD5151]">
+        <span className="section-kicker mb-2.5 block text-xs font-bold uppercase text-[#AD5151]">
           {panel.kicker}
         </span>
         <h3 className="mb-3 font-display text-[20px] font-medium leading-7 text-[#282828]">
@@ -48,7 +48,7 @@ function ShopifySupportScenarioCard({ panel }: { panel: ShopifySupportScenario }
         <div className="service-features mt-4 flex flex-wrap gap-2">
           {panel.features.map((feature) => (
             <div
-              className="service-feature w-[calc(50%-4px)] rounded-full border border-[rgba(40,40,40,0.10)] bg-white px-2.5 py-[9px] text-center text-[10px] font-bold leading-none text-[#282828]"
+              className="service-feature rounded-full border border-[rgba(40,40,40,0.10)] bg-white px-2.5 py-[9px] text-center text-[10px] font-bold leading-none text-[#282828]"
               key={feature}
             >
               {feature}
@@ -135,7 +135,7 @@ export function ShopifySupportScenariosSection({
                   role="tab"
                   type="button"
                 >
-                  <strong className="mb-2 block text-base font-semibold leading-none text-[#282828]">
+                  <strong className="mb-2 block font-montreal-medium text-base font-medium leading-none text-[#282828]">
                     {tab.title}
                   </strong>
                   <span className="block font-sans text-xs font-medium leading-5 text-[#535353]">
@@ -146,7 +146,7 @@ export function ShopifySupportScenariosSection({
             })}
           </div>
 
-          <div className="scenario-panels sticky top-[108px] flex h-fit w-[61%] flex-col justify-between rounded-[20px] bg-[#EFF4EF] p-[30px] max-[1400px]:w-[63%] max-[992px]:p-6">
+          <div className="scenario-panels sticky top-[108px] flex w-[61%] flex-col justify-between rounded-[20px] bg-[#EFF4EF] p-[30px] max-[1400px]:w-[63%] max-[992px]:p-6">
             {activePanel && (
               <div
                 aria-labelledby={`scenario-tab-${activePanel.id}`}
@@ -161,20 +161,20 @@ export function ShopifySupportScenariosSection({
                   <h3 className="mb-4 max-w-[530px] font-display text-[28px] font-medium leading-[1.4] tracking-[-0.56px] text-[#282828] max-[992px]:text-xl max-[992px]:leading-7">
                     {activePanel.heading}
                   </h3>
-                  <p className="max-w-[650px] font-sans text-sm font-medium leading-6 text-[#535353] max-[992px]:text-sm max-[992px]:leading-6">
+                  <p className="max-w-[650px] font-sans text-sm font-medium leading-6 text-[#535353] max-[992px]:text-[12px] max-[992px]:leading-[22px]">
                     {activePanel.description}
                   </p>
                   <div className="service-features mt-6 flex flex-wrap gap-3">
                     {activePanel.features.map((feat) => (
                       <div
-                        className="service-feature w-[calc(33.33%-8px)] rounded-[17px] border border-[#D0D0CE] bg-[#FAFAF7] px-2.5 py-3.5 text-center text-sm font-bold leading-none text-[#282828] shadow-[2px_2px_0_0_rgba(40,40,40,0.20)] max-[992px]:w-[calc(50%-8px)] max-[992px]:rounded-full max-[992px]:border-[rgba(40,40,40,0.10)] max-[992px]:bg-white max-[992px]:text-xs max-[992px]:shadow-none"
+                        className="service-feature w-[calc(33.33%-8px)] rounded-[17px] border border-[#D0D0CE] bg-[#FAFAF7] px-2.5 py-3.5 text-center text-sm font-bold leading-none text-[#282828] shadow-[2px_2px_0_0_rgba(40,40,40,0.20)] max-[992px]:w-[calc(50%-8px)] max-[992px]:rounded-full max-[992px]:border-[rgba(40,40,40,0.10)] max-[992px]:bg-white max-[992px]:text-[10px] max-[992px]:shadow-none"
                         key={feat}
                       >
                         {feat}
                       </div>
                     ))}
                   </div>
-                  <div className="scenario-meta my-5 font-sans text-sm font-medium text-[#535353]">
+                  <div className="scenario-meta my-5 font-sans text-xs font-medium text-[#535353] leading-[22px]">
                     {activePanel.meta}
                   </div>
                 </div>

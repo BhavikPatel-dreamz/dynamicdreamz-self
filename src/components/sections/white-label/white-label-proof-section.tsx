@@ -119,7 +119,7 @@ export function WhiteLabelWhySection({
                   isEmpty && "max-[768px]:hidden",
                   !isEmpty &&
                     !isLastVisible &&
-                    "max-[768px]:px-0 max-[768px]:pt-0 max-[768px]:pb-5 max-[768px]:after:hidden max-[768px]:before:absolute max-[768px]:before:right-0 max-[768px]:before:bottom-0 max-[768px]:before:left-0 max-[768px]:before:h-px max-[768px]:before:bg-[linear-gradient(90deg,transparent,rgba(51,51,51,0.2),transparent)]",
+                    "max-[768px]:px-0 max-[768px]:pt-0 max-[768px]:pb-5 max-[768px]:after:hidden max-[768px]:before:absolute max-[768px]:before:right-0 max-[768px]:before:bottom-0 max-[768px]:before:left-0 max-[768px]:before:h-px max-[768px]:before:opacity-100 max-[768px]:before:bg-[linear-gradient(90deg,rgba(40,40,40,0)_0%,rgba(40,40,40,0.35)_50%,rgba(40,40,40,0)_100%)]",
                   isLastVisible &&
                     "max-[768px]:px-0 max-[768px]:pt-0 max-[768px]:pb-5 max-[768px]:after:hidden max-[768px]:before:hidden",
                 )}

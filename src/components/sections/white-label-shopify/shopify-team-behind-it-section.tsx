@@ -64,10 +64,10 @@ export function ShopifyTeamBehindItSection({
               key={card.title}
             >
               <div>
-                <h3 className="mb-2.5 font-display text-[22px] font-medium leading-[1.32] text-[#282828] max-[1400px]:text-lg max-[992px]:text-base">
+                <h3 className="mb-2.5 font-display text-lg font-small leading-[26px] text-[#282828] max-[992px]:text-[16px] max-[992px]:leading-6">
                   {card.title}
                 </h3>
-                <p className="font-sans text-sm font-small leading-7 text-[#535353] max-[992px]:text-sm max-[992px]:leading-6">
+                <p className="font-sans text-sm font-small leading-6 text-[#535353]">
                   {card.description}
                 </p>
               </div>
@@ -78,7 +78,7 @@ export function ShopifyTeamBehindItSection({
         {!hideCtas && content.ctas ? (
           <div
             data-aos="fade-up"
-            className="mt-10 flex flex-wrap items-center justify-center gap-4 max-[768px]:flex-col"
+            className="mt-10 flex flex-wrap items-center justify-center gap-4 max-[768px]:flex-col max-[576px]:w-full [&_a]:max-[576px]:justify-center [&_a]:max-[576px]:w-full"
           >
             <ButtonLink href={content.ctas.primary.href} variant="primary">
               {content.ctas.primary.label}

@@ -33,41 +33,42 @@ export function DeliveryModelComparisonSection({
   content = whiteLabelShopifyDeliveryComparison,
 }: DeliveryModelComparisonSectionProps) {
   return (
-    <section className="choose_the_right_delivery_model_section bg-white py-20 max-[992px]:py-15 max-[768px]:py-10">
+    <section className="choose_the_right_delivery_model_section bg-white py-20 max-[992px]:py-[50px] max-[768px]:py-10">
       <Container>
         <SplitSectionHeading
           variant="centered"
           eyebrow={content.eyebrow}
           heading={content.heading}
           description={content.description}
+          className="max-[992px]:mb-[30px]"
         />
 
-        <div className="compare-wrap -mx-4 overflow-x-auto px-4 scrollbar-thin">
-          <div
-            data-aos="fade-up"
-            className="compare-table-main overflow-hidden rounded-[24px] border border-[rgba(0,0,0,0.10)]"
-          >
-            <table className="compare-table w-full min-w-[860px] border-collapse bg-white">
+        <div
+          data-aos="fade-up"
+          className="compare-table-main w-full max-w-full min-w-0 overflow-hidden rounded-[24px] border border-[rgba(0,0,0,0.10)] bg-white"
+        >
+          <div className="compare-wrap w-full max-w-full min-w-0 overflow-x-auto max-[992px]:overflow-x-scroll touch-pan-x overscroll-x-contain scrollbar-thin [scrollbar-width:thin] [-webkit-overflow-scrolling:touch] max-[992px]:[&::-webkit-scrollbar]:h-[6px] max-[992px]:[&::-webkit-scrollbar-track]:bg-[#eee] max-[992px]:[&::-webkit-scrollbar-thumb]:bg-[#999] max-[992px]:[&::-webkit-scrollbar-thumb]:rounded-[10px]">
+            <table className="compare-table w-full min-w-[900px] border-separate border-spacing-0 bg-white">
               <thead>
                 <tr>
                   {content.columns.map((col, idx) => (
                     <th
-                      className={`p-4 text-left text-sm font-bold uppercase tracking-wider ${
+                      className={`px-[18px] py-[17px] text-left font-montserrat text-sm font-bold uppercase tracking-[0.06em] text-[#282828] transition-colors max-[992px]:px-[14px] max-[992px]:py-2 max-[992px]:text-[12px] max-[992px]:leading-[13px] max-[992px]:whitespace-nowrap ${
                         col.isWinner
-                          ? "border-t border-x border-b border-t-[#AD5151] border-x-[#AD5151] border-b-[rgba(0,0,0,0.10)] bg-[#F7F4E9] text-[#282828]"
-                          : "border-b border-[rgba(0,0,0,0.10)] bg-[#FAFAF7] text-[#282828]"
+                          ? "winner-head border-t border-x border-b border-t-[#AD5151] border-x-[#AD5151] border-b-[rgba(0,0,0,0.20)] bg-[#F7F4E9] rounded-tr-[24px] whitespace-nowrap"
+                          : "border-b border-[rgba(0,0,0,0.10)] bg-[#FAFAF7]"
                       } ${idx === 0 ? "w-[20%]" : ""}`}
                       key={col.label}
                     >
                       {col.isWinner && col.kicker ? (
-                        <span className="mb-1.5 block font-montserrat text-[10px] font-bold uppercase text-[#AD5151]">
+                        <span className="mb-[7px] block font-montserrat text-[10px] font-bold uppercase leading-[13px] text-[#AD5151]">
                           {col.kicker}
                         </span>
                       ) : null}
                       <span className="inline-flex items-center">
                         {col.label}
                         {"pill" in col && col.pill ? (
-                          <span className="platinum-pill ml-2 inline-flex items-center rounded-full bg-[#AD5151] px-2.5 py-1 text-[10px] font-bold uppercase text-white">
+                          <span className="platinum-pill ml-2 inline-flex items-center rounded-full bg-[#AD5151] px-2.5 py-[6px] font-montserrat text-[10px] font-bold uppercase leading-[13px] text-white">
                             {col.pill}
                           </span>
                         ) : null}
@@ -80,28 +81,39 @@ export function DeliveryModelComparisonSection({
                 {content.rows.map((row, idx) => {
                   const isLastRow = idx === content.rows.length - 1;
                   return (
-                    <tr
-                      className="border-b border-[rgba(0,0,0,0.10)] last:border-b-0"
-                      key={row.feature}
-                    >
-                      <td className="p-4 text-left font-sans text-sm font-bold text-[#282828]">
-                        {row.feature}
+                    <tr key={row.feature}>
+                      <td
+                        className={`px-[18px] py-[17px] text-left font-sans text-sm font-bold leading-none text-[#282828] max-[992px]:px-[14px] max-[992px]:py-2 max-[992px]:text-[12px] max-[992px]:leading-[18px] max-[992px]:whitespace-nowrap ${
+                          isLastRow ? "border-b-0" : "border-b border-[rgba(0,0,0,0.10)]"
+                        }`}
+                      >
+                        <strong>{row.feature}</strong>
                       </td>
-                      <td className="p-4 text-left font-sans text-sm font-medium text-[#535353]">
+                      <td
+                        className={`px-[18px] py-[17px] text-left font-sans text-sm font-medium leading-6 text-[#535353] max-[992px]:px-[14px] max-[992px]:py-2 max-[992px]:text-[12px] max-[992px]:leading-[18px] max-[992px]:whitespace-nowrap ${
+                          isLastRow ? "border-b-0" : "border-b border-[rgba(0,0,0,0.10)]"
+                        }`}
+                      >
                         {row.inHouse}
                       </td>
-                      <td className="p-4 text-left font-sans text-sm font-medium text-[#535353]">
+                      <td
+                        className={`px-[18px] py-[17px] text-left font-sans text-sm font-medium leading-6 text-[#535353] max-[992px]:px-[14px] max-[992px]:py-2 max-[992px]:text-[12px] max-[992px]:leading-[18px] max-[992px]:whitespace-nowrap ${
+                          isLastRow ? "border-b-0" : "border-b border-[rgba(0,0,0,0.10)]"
+                        }`}
+                      >
                         {row.freelancer}
                       </td>
                       <td
-                        className={`p-4 text-left font-sans text-sm font-bold text-[#282828] border-x border-[#AD5151] bg-[#F7F4E9] ${
-                          isLastRow ? "border-b border-b-[#AD5151] rounded-br-[24px]" : ""
+                        className={`winner px-[18px] py-[17px] text-left font-sans text-sm font-bold leading-5 text-[#282828] border-x border-[#AD5151] bg-[#F7F4E9] whitespace-nowrap max-[992px]:px-[14px] max-[992px]:py-2 max-[992px]:text-[12px] max-[992px]:leading-[18px] ${
+                          isLastRow
+                            ? "border-b border-b-[#AD5151] rounded-br-[24px]"
+                            : "border-b border-b-[rgba(0,0,0,0.20)]"
                         }`}
                       >
-                        <div className="flex items-start gap-2">
+                        <div className="winmark inline-flex items-start gap-[7px]">
                           <svg
                             aria-hidden="true"
-                            className="mt-0.5 h-[18px] w-[18px] shrink-0 text-[#AD5151]"
+                            className="mt-0.5 h-[18px] w-[18px] shrink-0 text-[#AD5151] max-[992px]:h-[15px] max-[992px]:w-[15px] max-[992px]:mt-0"
                             fill="none"
                             viewBox="0 0 18 18"
                           >
@@ -123,11 +135,19 @@ export function DeliveryModelComparisonSection({
           </div>
         </div>
 
-        <div className="mt-10 flex flex-wrap items-center justify-center gap-4 max-[768px]:flex-col">
-          <ButtonLink href={content.ctas.primary.href} variant="primary">
+        <div className="btns_group mt-10 flex flex-wrap items-center justify-center gap-4 max-[992px]:mt-[30px] max-[576px]:flex-col max-[576px]:items-stretch max-[576px]:gap-[15px] max-[576px]:w-full">
+          <ButtonLink
+            href={content.ctas.primary.href}
+            variant="primary"
+            className="max-[768px]:text-[12px] max-[576px]:w-full max-[576px]:justify-center"
+          >
             {content.ctas.primary.label}
           </ButtonLink>
-          <ButtonLink href={content.ctas.secondary.href} variant="outline">
+          <ButtonLink
+            href={content.ctas.secondary.href}
+            variant="outline"
+            className="max-[768px]:text-[12px] max-[576px]:w-full max-[576px]:justify-center"
+          >
             {content.ctas.secondary.label}
           </ButtonLink>
         </div>

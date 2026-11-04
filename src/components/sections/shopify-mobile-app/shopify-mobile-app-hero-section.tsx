@@ -98,7 +98,7 @@ export function ShopifyMobileAppHeroSection({
                 {content.description}
               </p>
 
-              <div className="btn-group mt-[30px] flex flex-wrap items-center gap-[15px] max-[1200px]:justify-center max-[768px]:flex-col max-[768px]:items-stretch max-[575px]:w-full [&_a]:max-[575px]:w-full">
+              <div className="btn-group mt-[30px] flex flex-wrap items-center gap-[15px] max-[1200px]:justify-center max-[768px]:flex-col max-[768px]:items-stretch max-[576px]:w-full [&_a]:max-[576px]:w-full">
                 <ButtonLink
                   href={content.primaryCta.href}
                   variant="primary"
