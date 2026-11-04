@@ -13,23 +13,29 @@ type ToolRowProps = {
   direction: "forward" | "reverse";
   row: readonly WhiteLabelTool[];
   itemClassName?: string;
+  isSeoTools?: boolean;
 };
 
 function ToolGroup({
   duplicate = false,
   row,
   itemClassName,
+  isSeoTools,
 }: {
   duplicate?: boolean;
   row: ToolRowProps["row"];
   itemClassName?: string;
+  isSeoTools?: boolean;
 }) {
   return (
     <div aria-hidden={duplicate || undefined} className="flex shrink-0 items-center">
       {row.map((item) => (
         <div
           className={cn(
-            "our_partners_logo_item relative mx-1.5 h-[94px] w-[202px] shrink-0 max-[1200px]:w-[200px] max-[992px]:w-[180px] max-[768px]:w-[170px]",
+            "our_partners_logo_item relative shrink-0",
+            isSeoTools
+              ? "mx-10 h-[60px] w-[130px] max-[992px]:mx-5 max-[992px]:w-[100px]"
+              : "mx-1.5 h-[94px] w-[202px] max-[1200px]:w-[200px] max-[992px]:w-[180px] max-[768px]:w-[170px]",
             itemClassName,
           )}
           key={item.name}
@@ -39,7 +45,11 @@ function ToolGroup({
             src={item.image}
             alt={duplicate ? "" : item.name}
             fill
-            sizes="(max-width: 767px) 170px, (max-width: 991px) 180px, (max-width: 1199px) 200px, 202px"
+            sizes={
+              isSeoTools
+                ? "(max-width: 991px) 100px, 130px"
+                : "(max-width: 767px) 170px, (max-width: 991px) 180px, (max-width: 1199px) 200px, 202px"
+            }
           />
         </div>
       ))}
@@ -47,7 +57,7 @@ function ToolGroup({
   );
 }
 
-function ToolRow({ className, direction, row, itemClassName }: ToolRowProps) {
+function ToolRow({ className, direction, row, itemClassName, isSeoTools }: ToolRowProps) {
   const trackId = useId();
 
   return (
@@ -55,14 +65,14 @@ function ToolRow({ className, direction, row, itemClassName }: ToolRowProps) {
       <div
         className={cn("logo_holder", styles.group, direction === "forward" ? styles.forward : styles.reverse)}
       >
-        <ToolGroup itemClassName={itemClassName} row={row} />
+        <ToolGroup isSeoTools={isSeoTools} itemClassName={itemClassName} row={row} />
       </div>
       <ClientAfterViewport rootId={trackId}>
         <div
           data-tool-track-clone
           className={cn("logo_holder", styles.group, direction === "forward" ? styles.forward : styles.reverse)}
         >
-          <ToolGroup duplicate itemClassName={itemClassName} row={row} />
+          <ToolGroup duplicate isSeoTools={isSeoTools} itemClassName={itemClassName} row={row} />
         </div>
       </ClientAfterViewport>
     </div>
@@ -88,6 +98,8 @@ export function WhiteLabelToolsSection({
   rows = whiteLabelShopifyToolRows,
   itemClassName,
 }: WhiteLabelToolsSectionProps) {
+  const isSeoTools = Boolean(className?.includes("seo-tools"));
+
   return (
     <section
       className={cn(
@@ -116,11 +128,12 @@ export function WhiteLabelToolsSection({
         </div>
       </div>
       <div aria-label={ariaLabel} className="wide_range_technologies_bottom_part">
-        <div data-aos="fade-up" className="our_partners_logo_wrap">
+        <div className="our_partners_logo_wrap">
           {rows[0] ? (
             <ToolRow
               className="logos_partner_top"
               direction="forward"
+              isSeoTools={isSeoTools}
               itemClassName={itemClassName}
               row={rows[0]}
             />
@@ -129,6 +142,7 @@ export function WhiteLabelToolsSection({
             <ToolRow
               className="logos_partner_bottom"
               direction="reverse"
+              isSeoTools={isSeoTools}
               itemClassName={itemClassName}
               row={rows[1]}
             />

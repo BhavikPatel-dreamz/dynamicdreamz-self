@@ -66,7 +66,7 @@ export function SplitFaqSection({
   const paddingClass =
     isPt0
       ? "pt-0 pb-20 max-[992px]:py-[60px] max-[768px]:pt-10 max-[768px]:pb-5"
-      : "py-[60px] max-[768px]:pt-10 max-[768px]:pb-5";
+      : "py-[60px] max-[992px]:py-10";
   const containerClass = isMobileAppFaq
     ? "min-[1400px]:max-w-[1408px] px-[15px]"
     : undefined;
@@ -79,7 +79,7 @@ export function SplitFaqSection({
       id={sectionId ?? `${idPrefix}-section`}
     >
       <Container className={containerClass}>
-        <div className="wrapper flex justify-between gap-[105px] max-[1400px]:gap-8 max-[992px]:flex-col max-[992px]:gap-2.5">
+        <div className="wrapper flex justify-between gap-[105px] max-[1400px]:gap-8 max-[992px]:flex-col max-[992px]:gap-[30px]">
           <div className="w-[41%] max-[1200px]:w-[44%] max-[992px]:w-full" data-aos="fade-up">
             <header className="header-text mb-0 flex flex-col items-start text-left min-[992px]:sticky min-[992px]:top-[20px]">
               {eyebrow ? (

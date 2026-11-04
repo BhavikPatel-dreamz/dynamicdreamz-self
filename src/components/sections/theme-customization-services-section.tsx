@@ -44,8 +44,8 @@ export function ThemeCustomizationServicesSection({
       className={cn(
         "theme-customization-services",
         variant === "transparent"
-          ? "transparent bg-transparent py-20 max-[992px]:pt-0 max-[992px]:pt-0 max-[992px]:pb-[50px] max-[992px]:pb-[50px]"
-          : "py-20 max-[992px]:py-[50px] max-[992px]:py-[50px]",
+          ? "transparent bg-transparent py-20 max-[992px]:pt-0 max-[992px]:pb-[50px]"
+          : "py-20 max-[992px]:py-[50px]",
         variant === "green"
           ? "green bg-[#eff4ef]"
           : variant === "yellow"
@@ -63,17 +63,17 @@ export function ThemeCustomizationServicesSection({
           variant="left"
         />
 
-        <div className="wrapper grid grid-cols-3 gap-4 max-[1200px]:grid-cols-2 max-[768px]:flex max-[768px]:flex max-[768px]:flex-col max-[768px]:flex-col max-[768px]:gap-4 max-[768px]:gap-4">
+        <div className="wrapper grid grid-cols-3 gap-4 max-[1200px]:grid-cols-2 max-[768px]:flex max-[768px]:flex-col max-[768px]:gap-4">
           {content.boxes.map((box, idx) => (
             <div
-              className="box rounded-[20px] border border-[rgba(40,40,40,0.11)] bg-white p-[25px] max-[992px]:p-5 max-[992px]:p-5"
+              className="box rounded-[20px] border border-[rgba(40,40,40,0.11)] bg-white p-[25px] max-[992px]:p-5"
               data-aos="fade-up"
               key={box.number ?? (typeof box.title === "string" ? box.title : Array.isArray(box.title) ? box.title.join(" ") : idx)}
             >
               {box.icon ? (
                 <div
                   className={cn(
-                    "icon mb-[15px] flex font-montserrat text-sm font-medium text-brand-red [&>svg]:h-auto [&>svg]:size-6",
+                    "icon mb-[15px] flex font-montserrat text-sm font-medium text-brand-red [&:not(:has(svg))]:pb-2.5 [&>svg]:h-auto [&>svg]:size-6",
                     box.iconWrapperClassName,
                   )}
                 >
@@ -92,7 +92,7 @@ export function ThemeCustomizationServicesSection({
                 </div>
               ) : box.number && !isRoundedNumber ? (
                 <div className="number">
-                  <span className="mb-5 flex size-[34px] items-center justify-center rounded-full bg-[#fbefd7] font-montserrat text-[10px] font-bold text-brand-red max-[992px]:mb-3 max-[992px]:mb-3">
+                  <span className="mb-5 flex size-[34px] items-center justify-center rounded-full bg-[#fbefd7] font-montserrat text-[10px] font-bold text-brand-red max-[992px]:mb-3">
                     {box.number}
                   </span>
                 </div>
@@ -105,7 +105,7 @@ export function ThemeCustomizationServicesSection({
               <h3 className="mb-2 font-montreal-medium text-[20px] font-normal leading-[28.8px] text-[#282828] max-[992px]:text-lg">
                 {formatBrText(box.title)}
                 {box.badge ? (
-                  <span className="mt-2.5 mb-[5px] inline-block rounded-[30px] bg-[rgba(173,81,81,0.05)] px-[12.5px] py-[5.5px] font-montserrat text-xs font-bold uppercase leading-none text-[#ad5151] max-[768px]:text-[11px] max-[768px]:text-[11px] max-[768px]:px-[13.5px] max-[768px]:px-[13.5px] max-[768px]:py-[6.5px] max-[768px]:py-[6.5px]">
+                  <span className="mt-2.5 mb-[5px] inline-block rounded-[30px] bg-[rgba(173,81,81,0.05)] px-[12.5px] py-[5.5px] font-montserrat text-xs font-bold uppercase leading-none text-[#ad5151] max-[768px]:text-[11px] max-[768px]:px-[13.5px] max-[768px]:py-[6.5px]">
                     {box.badge}
                   </span>
                 ) : null}

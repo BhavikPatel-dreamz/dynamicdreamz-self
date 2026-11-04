@@ -35,7 +35,6 @@ export function SeoServicesPage() {
         variant="green"
       />
       <AgencyServicesSection
-        cardVariant="services-box"
         columns={2}
         content={seoServicesWhatWeProvide}
         headerLayout="split"
@@ -54,7 +53,6 @@ export function SeoServicesPage() {
         description={seoServicesSectionCopy.toolsDescription}
         title={seoServicesSectionCopy.toolsHeading}
         rows={[seoServicesTools]}
-        itemClassName="[&.our_partners_logo_item]:mx-10 max-[768px]:[&.our_partners_logo_item]:mx-5 [&.our_partners_logo_item]:h-[60px] [&.our_partners_logo_item]:w-[130px] max-[768px]:[&.our_partners_logo_item]:w-[100px]"
       />
       <ThemeCustomizationServicesSection
         content={seoServicesWhyChooseUs}

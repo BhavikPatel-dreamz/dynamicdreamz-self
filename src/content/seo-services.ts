@@ -28,6 +28,7 @@ export const seoServicesHeroContent: ServiceHeroContent = {
     "Our SEO services help businesses grow organically by enhancing visibility across search engines like Google. We offer strategic SEO optimization, which involves link building, technical improvements, content upgrades, and keyword research. We focus on increasing search rankings, attracting high-quality traffic, and driving long-term growth. Whether you are a service provider, local business, or eCommerce brand, our expert SEO services are designed to deliver measurable results.",
   ctaLabel: "Book a Discovery Call",
   ctaHref: "/request-quote",
+  videoSrc: "/assets/home/why-dynamic-dreamz.mp4",
   badges: [
     {
       name: "Clutch",
@@ -54,7 +55,6 @@ export const seoServicesHeroContent: ServiceHeroContent = {
       height: 54,
     },
   ],
-  videoSrc: "/assets/home/why-dynamic-dreamz.mp4",
 };
 
 export const seoServicesWhyChoose: ThemeCustomizationServicesContent = {
