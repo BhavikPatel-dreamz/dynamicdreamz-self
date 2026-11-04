@@ -5,6 +5,7 @@ import { SplitSectionHeading } from "@/components/ui/split-section-heading";
 import { TextArrowLink } from "@/components/ui/text-arrow-link";
 import { sharedUiCopy } from "@/content/common";
 import { cn } from "@/lib/class-names";
+import { formatBrText } from "@/lib/text-formatting";
 
 export type CaseStudyPreviewItem = {
   title: string;
@@ -13,6 +14,7 @@ export type CaseStudyPreviewItem = {
   imageAlt: string;
   technology: string;
   industry: string;
+  description?: string | readonly string[];
   tags?: readonly string[];
   ctaLabel?: string;
 };
@@ -92,6 +94,11 @@ export function ServicesCaseStudiesSection({
                         {item.title}
                       </h3>
                     </Link>
+                    {item.description ? (
+                      <p className="mb-[15px] font-sans text-sm font-normal leading-6 text-[#535353]">
+                        {formatBrText(item.description)}
+                      </p>
+                    ) : null}
                     {item.tags && item.tags.length > 0 ? (
                       <div className="cs-meta flex flex-wrap gap-2">
                         {item.tags.map((tag) => (

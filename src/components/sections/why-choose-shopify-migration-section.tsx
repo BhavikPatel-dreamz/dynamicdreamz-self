@@ -447,7 +447,7 @@ export function WhyChooseShopifyMigrationSection({
                 </div>
                 <div className="text">
                   {item.title ? (
-                    <h3 className="mb-[5px] font-montreal-medium text-[20px] font-medium leading-normal text-ink">
+                    <h3 className="mb-[5px] font-montreal-medium text-[20px] font-medium leading-normal text-ink max-[992px]:text-lg">
                       {item.title}
                     </h3>
                   ) : null}

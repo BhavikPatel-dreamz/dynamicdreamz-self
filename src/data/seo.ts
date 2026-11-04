@@ -2699,6 +2699,35 @@ export const pageSeo = {
       priority: 0.9,
     },
   },
+  shopifyB2b: {
+    path: "/shopify-b2b",
+    title: "Shopify B2B & Wholesale Development | Dynamic Dreamz",
+    description:
+      "Shopify B2B and wholesale development for company accounts, catalogs, pricing, payment terms, buyer portals, integrations, custom apps and Shopify Plus.",
+    socialDescription:
+      "Shopify B2B and wholesale development for company accounts, catalogs, pricing, payment terms, buyer portals, integrations, custom apps and Shopify Plus.",
+    keywords: [
+      "Shopify B2B",
+      "Shopify wholesale development",
+      "Shopify Plus B2B",
+      "SmartB2B",
+      "Shopify B2B integrations",
+      "Shopify wholesale portal",
+    ],
+    openGraphType: "website",
+    publishedTime: "2024-05-02T09:33:21+00:00",
+    modifiedTime: "2026-10-25T07:16:48+00:00",
+    image: {
+      path: "/assets/og/dynamic-dreamz-company.png",
+      width: 1200,
+      height: 630,
+      alt: "Shopify B2B & Wholesale Development | Dynamic Dreamz",
+    },
+    sitemap: {
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
+  },
   risksOfShopifyOutsourcing: {
     path: "/risks-of-shopify-outsourcing",
     title: "Risks of Shopify Outsourcing: Expert Breakdown",

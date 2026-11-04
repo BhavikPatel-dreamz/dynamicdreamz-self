@@ -15,6 +15,7 @@ import { PhpDevelopmentPage } from "@/components/sections/php-development-page";
 import { RisksOfShopifyOutsourcingPage } from "@/components/sections/risks-of-shopify-outsourcing-page";
 import { SeoServicesPage } from "@/components/sections/seo-services-page";
 import { ShopifyAppsPage } from "@/components/sections/shopify-apps-page";
+import { ShopifyB2BPage } from "@/components/sections/shopify-b2b/shopify-b2b-page";
 import { ShopifyCertifiedDevelopersPage } from "@/components/sections/shopify-certified-developers-page";
 import { ShopifyCroAgencyPage } from "@/components/sections/shopify-cro-agency-page";
 import { ShopifyDevelopmentAgencyPage } from "@/components/sections/shopify-development-agency-page";
@@ -53,6 +54,7 @@ import {
   createRisksOfShopifyOutsourcingPageSchema,
   createSeoServicesPageSchema,
   createShopifyAppsPageSchema,
+  createShopifyB2bPageSchema,
   createShopifyCertifiedDevelopersPageSchema,
   createShopifyCroPageSchema,
   createShopifyDevelopmentAgencyPageSchema,
@@ -171,6 +173,12 @@ export const coreServicesRegistry: readonly ServicePageEntry[] = [
     metadata: pageMetadata.shopifyApps,
     getSchema: createShopifyAppsPageSchema,
     render: () => <ShopifyAppsPage />,
+  },
+  {
+    slug: "shopify-b2b",
+    metadata: pageMetadata.shopifyB2b,
+    getSchema: createShopifyB2bPageSchema,
+    render: () => <ShopifyB2BPage />,
   },
   {
     slug: "shopify-certified-developers",

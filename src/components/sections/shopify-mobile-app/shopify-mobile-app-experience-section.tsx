@@ -1,6 +1,8 @@
 import { Container } from "@/components/ui/container";
 import { SplitSectionHeading } from "@/components/ui/split-section-heading";
 
+import { cn } from "@/lib/class-names";
+
 export type ShopifyMobileAppMoment = {
   step: string;
   title: string;
@@ -14,15 +16,29 @@ export type ShopifyMobileAppExperienceContent = {
   moments: readonly ShopifyMobileAppMoment[];
 };
 
-type ShopifyMobileAppExperienceSectionProps = {
+export type ShopifyMobileAppExperienceSectionProps = {
   content: ShopifyMobileAppExperienceContent;
+  id?: string;
+  columns?: 3 | 4;
+  className?: string;
 };
 
 export function ShopifyMobileAppExperienceSection({
   content,
+  id = "shopping_eperience",
+  columns = 4,
+  className,
 }: ShopifyMobileAppExperienceSectionProps) {
+  const isThreeCol = columns === 3;
+
   return (
-    <section id="shopping_eperience" className="mobile-shopping-eperience-sec bg-[#FAFAF7] py-20 max-[992px]:py-15 max-[768px]:py-10">
+    <section
+      id={id}
+      className={cn(
+        "mobile-shopping-eperience-sec bg-[#FAFAF7] py-20 max-[992px]:py-15 max-[768px]:py-10",
+        className
+      )}
+    >
       <Container variant="wide">
         <SplitSectionHeading
           variant="services"
@@ -32,12 +48,21 @@ export function ShopifyMobileAppExperienceSection({
           className="mb-[50px]"
         />
 
-        <div data-aos="fade-up" className="wrapper flex flex-wrap -mx-[10px] -mb-5">
+        <div
+          data-aos="fade-up"
+          className={cn(
+            "wrapper flex flex-wrap -mx-[10px] -mb-5",
+            isThreeCol && "three-col"
+          )}
+        >
           {content.moments.map((item) => (
             <div
               key={item.step}
               data-aos="fade-up"
-              className="eperience-col w-1/4 px-[10px] mb-5 max-[1200px]:w-1/2 max-[768px]:w-full"
+              className={cn(
+                "eperience-col px-[10px] mb-5 max-[1200px]:w-1/2 max-[768px]:w-full",
+                isThreeCol ? "w-1/3" : "w-1/4"
+              )}
             >
               <div className="eperience-box flex h-full flex-col justify-start rounded-[20px] border border-[rgba(40,40,40,0.10)] bg-white p-[35px_25px] max-[1400px]:p-[30px_20px]">
                 <span className="mb-[15px] block font-montserrat text-[13px] font-bold uppercase leading-5 text-[#ad5151] max-[768px]:mb-2.5">

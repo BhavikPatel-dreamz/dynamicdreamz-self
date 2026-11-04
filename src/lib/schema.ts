@@ -94,6 +94,10 @@ import {
   shopifyDevelopmentAgencyServices,
 } from "@/content/shopify-development-agency";
 import {
+  shopifyB2bFaqs,
+  shopifyB2bServices,
+} from "@/content/shopify-b2b";
+import {
   risksShopifyOutsourcingFaqs,
 } from "@/content/risks-of-shopify-outsourcing";
 import { shopifyExpertsContent } from "@/content/shopify-experts";
@@ -729,6 +733,11 @@ const shopifyDevelopmentAgencyPageId = `${shopifyDevelopmentAgencyPageUrl}#webpa
 const shopifyDevelopmentAgencyServiceId = `${shopifyDevelopmentAgencyPageUrl}#service`;
 const shopifyDevelopmentAgencyFaqId = `${shopifyDevelopmentAgencyPageUrl}#faq`;
 const shopifyDevelopmentAgencyBreadcrumbId = `${shopifyDevelopmentAgencyPageUrl}#breadcrumb`;
+const shopifyB2bPageUrl = absoluteUrl(pageSeo.shopifyB2b.path);
+const shopifyB2bPageId = `${shopifyB2bPageUrl}#webpage`;
+const shopifyB2bServiceId = `${shopifyB2bPageUrl}#service`;
+const shopifyB2bFaqId = `${shopifyB2bPageUrl}#faq`;
+const shopifyB2bBreadcrumbId = `${shopifyB2bPageUrl}#breadcrumb`;
 const risksShopifyOutsourcingPageUrl = absoluteUrl(pageSeo.risksOfShopifyOutsourcing.path);
 const risksShopifyOutsourcingPageId = `${risksShopifyOutsourcingPageUrl}#webpage`;
 const risksShopifyOutsourcingFaqId = `${risksShopifyOutsourcingPageUrl}#faq`;
@@ -4440,6 +4449,31 @@ export function createShopifyDevelopmentAgencyPageSchema() {
       "DTC brands, B2B merchants, store owners, and digital agencies seeking comprehensive Shopify development services",
     faqs: shopifyDevelopmentAgencyFaqs,
     offers: shopifyDevelopmentAgencyServices.items,
+  });
+}
+
+export function createShopifyB2bPageSchema() {
+  return createServicePageSchema({
+    page: pageSeo.shopifyB2b,
+    pageUrl: shopifyB2bPageUrl,
+    pageId: shopifyB2bPageId,
+    serviceId: shopifyB2bServiceId,
+    faqId: shopifyB2bFaqId,
+    breadcrumbId: shopifyB2bBreadcrumbId,
+    serviceName: "Shopify B2B & Wholesale Development Services",
+    serviceType:
+      "Shopify B2B and wholesale development for company accounts, catalogs, pricing, payment terms, buyer portals, integrations, custom apps and Shopify Plus",
+    breadcrumbName: "Shopify B2B",
+    audienceType:
+      "Manufacturers, wholesalers, distributors, enterprise brands, and B2B merchants building self-service wholesale experiences on Shopify",
+    faqs: shopifyB2bFaqs.items.map((item) => ({
+      question: item.question,
+      answer: item.answer,
+    })),
+    offers: shopifyB2bServices.moments.map((item) => ({
+      title: item.title,
+      description: item.description,
+    })),
   });
 }
 

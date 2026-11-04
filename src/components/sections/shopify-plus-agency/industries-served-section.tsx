@@ -30,8 +30,8 @@ export function IndustriesServedSection({
 }) {
   const sectionClass =
     variant === "grid"
-      ? "industries_box_section bg-white pt-0 pb-20 max-[992px]:pt-0 max-[992px]:pb-15 max-[768px]:pt-0 max-[768px]:pb-10"
-      : "industries-served-sec pt-0 pb-20 max-[992px]:pt-0 max-[992px]:pb-15 max-[768px]:pt-0 max-[768px]:pb-10";
+      ? "industries_box_section bg-white py-20 max-[992px]:py-15 max-[768px]:py-10"
+      : "industries-served-sec py-20 max-[992px]:py-15 max-[768px]:py-10";
 
   return (
     <section className={sectionClass} data-section="industries" id="industries-served">

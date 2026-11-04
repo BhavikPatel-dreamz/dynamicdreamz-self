@@ -39,7 +39,7 @@ export function ThemeCustomizationServicesSection({
   variant = "green",
   isRoundedNumber,
 }: ThemeCustomizationServicesSectionProps) {
-  const isPt0 = className?.includes("pt-0") || variant === "transparent";
+  const isPt0 = className?.includes("pt-0");
   const isPb0 = className?.includes("pb-0");
   const paddingClass = isPt0 && isPb0
     ? "pt-0 pb-0 max-[992px]:pt-0 max-[992px]:pb-0 max-[768px]:pt-0 max-[768px]:pb-0"

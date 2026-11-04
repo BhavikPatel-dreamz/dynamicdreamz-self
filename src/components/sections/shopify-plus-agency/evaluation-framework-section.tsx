@@ -20,12 +20,14 @@ export type EvaluationFrameworkSectionProps = {
   content?: EvaluationFrameworkContent;
   id?: string;
   className?: string;
+  theme?: "white" | "cyan";
 };
 
 export function EvaluationFrameworkSection({
   content = shopifyPlusAgencyHowToChoose,
   id = "evaluation-framework",
   className,
+  theme = "white",
 }: EvaluationFrameworkSectionProps) {
   const isPt0 = className?.includes("pt-0");
   const isPb0 = className?.includes("pb-0");
@@ -37,9 +39,16 @@ export function EvaluationFrameworkSection({
     ? "pt-20 pb-0 max-[992px]:pt-15 max-[992px]:pb-0 max-[768px]:pt-10 max-[768px]:pb-0"
     : "py-20 max-[992px]:py-15 max-[768px]:py-10";
 
+  const isCyan = theme === "cyan";
+
   return (
     <section
-      className={cn("how-to-choose-spa-sec bg-white", paddingClass, className)}
+      className={cn(
+        "how-to-choose-spa-sec",
+        isCyan ? "bg-cyan bg-[#eff4ef]" : "bg-white",
+        paddingClass,
+        className
+      )}
       data-section="evaluation-framework"
       id={id}
     >
@@ -61,7 +70,10 @@ export function EvaluationFrameworkSection({
                 <div className="spa-title">
                   <span
                     aria-hidden="true"
-                    className="mb-5 flex size-[34px] items-center justify-center rounded-full bg-[#fbefd7] font-montserrat text-[10px] font-bold text-brand-red max-[992px]:mb-2.5"
+                    className={cn(
+                      "mb-5 flex size-[34px] items-center justify-center rounded-full font-montserrat text-[10px] font-bold text-brand-red max-[992px]:mb-2.5",
+                      isCyan ? "bg-white" : "bg-[#fbefd7]"
+                    )}
                   >
                     {String(index + 1).padStart(2, "0")}
                   </span>
