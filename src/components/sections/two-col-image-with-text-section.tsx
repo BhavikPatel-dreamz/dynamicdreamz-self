@@ -67,7 +67,7 @@ export function TwoColImageWithTextSection({
             )}
           >
             <div className="text-block">
-              <h2 className="font-display text-[35px] font-medium leading-[48.475px] tracking-[-0.7px] text-ink mb-4 max-[992px]:text-[30px] max-[992px]:leading-10 max-[768px]:text-2xl max-[768px]:leading-[33px]">
+              <h2 className="font-display text-[35px] font-small leading-[48.475px] tracking-[-0.7px] text-ink mb-3 max-[1200px]:text-[30px] max-[1200px]:leading-[42px] max-[768px]:text-2xl max-[768px]:leading-[31.2px]">
                 {heading}
               </h2>
               {Array.isArray(description) ? (

@@ -80,25 +80,27 @@ export function ServiceHeroVideoSection({
         <div className={cn("wrapper flex flex-wrap items-center justify-between", wrapperClassName)}>
           <div
             className={cn(
-              "left-col flex w-[51%] flex-col items-start justify-center py-[60px] max-[1200px]:w-full max-[1200px]:items-center max-[1200px]:py-10 max-[1200px]:text-center max-[768px]:py-8",
+              "left-col flex w-[51%] flex-col items-start justify-center py-[60px] max-[1200px]:w-full max-[1200px]:items-center max-[1200px]:pt-15 max-[1200px]:pb-[30px] max-[1200px]:text-center max-[992px]:py-10",
               isShopifyMigration ? "max-[1400px]:w-[59%]" : "max-[1400px]:w-[50%]",
             )}
           >
             <div className="hero-content w-full">
               {content.eyebrowSpans && content.eyebrowSpans.length > 0 ? (
                 <Eyebrow
-                  align="start"
+                  align="responsive-center"
                   as="div"
                   items={content.eyebrowSpans}
-                  linePosition="overlay"
+                  linePosition="flow"
                   lineWidth="responsive"
+                  className="mb-[15px]"
                 />
               ) : content.eyebrow ? (
                 <Eyebrow
-                  align="start"
+                  align="responsive-center"
                   as="div"
                   linePosition="overlay"
                   lineWidth="responsive"
+                  className="mb-[15px]"
                 >
                   {content.eyebrow}
                 </Eyebrow>
@@ -168,7 +170,7 @@ export function ServiceHeroVideoSection({
 
               {(content.paragraphs ?? []).map((p, index) => (
                 <p
-                  className="mb-[15px] font-sans text-base font-medium leading-7 text-[#535353] max-[1200px]:text-sm max-[1200px]:leading-6 max-[768px]:text-sm max-[768px]:leading-[27px]"
+                  className="mb-[15px] font-sans text-base font-medium leading-7 text-[#535353] max-[1200px]:text-sm max-[1200px]:leading-6 max-[768px]:text-sm"
                   key={index}
                 >
                   {formatBrText(p)}
@@ -176,7 +178,7 @@ export function ServiceHeroVideoSection({
               ))}
 
               {content.cta && content.ctaHref ? (
-                <div className="btn-group flex items-center gap-2.5 pt-2.5 max-[1200px]:justify-center max-[768px]:w-full max-[768px]:flex-col max-[768px]:items-center max-[768px]:gap-2.5 [&_a]:max-[768px]:w-full">
+                <div className="btn-group flex items-center gap-2.5 pt-2.5 max-[1200px]:justify-center max-[768px]:w-full max-[768px]:flex-col max-[768px]:items-center max-[768px]:gap-2.5 [&_a]:max-[576px]:w-full">
                   <ButtonLink
                     className="px-5"
                     href={content.ctaHref}

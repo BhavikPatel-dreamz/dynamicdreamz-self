@@ -120,7 +120,7 @@ export function AgencyServicesSection({
                         ) : null}
                       </div>
                       <div className="text-block w-[calc(100%-24px)] pl-4 max-[768px]:w-full max-[768px]:pl-0">
-                        <h3 className="m-0 mb-2.5 font-montreal-medium max-[1200px]:text-[20px] font-normal leading-[28.8px] tracking-[0.32px] text-ink max-[768px]:text-lg">
+                        <h3 className="m-0 mb-2.5 text-xl font-montreal-medium max-[992px]:text-lg max-[992px]:leading-[26px] font-normal leading-[28.8px] tracking-[0.32px] text-ink max-[768px]:text-lg">
                           {formatBrText(service.title)}
                         </h3>
                         <p className="mt-2.5 mb-0 font-sans text-[14px] font-normal leading-6 tracking-[0.32px] text-[#535353]">

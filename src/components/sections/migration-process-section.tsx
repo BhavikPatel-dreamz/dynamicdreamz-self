@@ -71,10 +71,10 @@ function StepItem({
 
           {/* Step Content */}
           <div className="text w-[calc(100%-121px)] max-[768px]:w-[calc(100%-70px)]">
-            <h3 className="mb-2.5 font-montreal-medium text-[20px] font-medium leading-[28px] text-ink max-[992px]:text-lg max-[992px]:leading-[26px]">
+            <h3 className="mb-2.5 font-montreal-medium text-[20px] font-small leading-[28.8px] text-ink max-[992px]:text-lg max-[992px]:leading-[26px]">
               {formatBrText(step.title, "max-[768px]:hidden")}
             </h3>
-            <p className="text-[#535353] max-[768px]:text-sm">
+            <p className="text-[#535353] leading-6 text-sm">
               {formatBrText(step.description, "max-[768px]:hidden")}
             </p>
           </div>

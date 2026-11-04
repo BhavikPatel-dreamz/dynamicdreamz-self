@@ -73,7 +73,7 @@ export function LifeHeroSection({
     >
       <Container>
         <div className="mx-auto max-w-[900px] text-center">
-          <h1 className="mb-6 inline-block text-[50px] leading-[60px] font-normal tracking-normal text-ink max-[992px]:text-[40px] max-[992px]:leading-[60px] max-[768px]:text-[30px]">
+          <h1 className="mb-3 inline-block text-[50px] leading-[60px] font-normal tracking-normal text-ink max-[992px]:text-[40px] max-[992px]:leading-[60px] max-[768px]:text-[30px]">
             {titleBeforeTeamwork}{" "}
             <span className="relative whitespace-nowrap">
               {teamwork}
@@ -92,7 +92,7 @@ export function LifeHeroSection({
               />
             </span>
           </h1>
-          <p className="text-[16px] leading-[28px] font-medium text-muted max-[992px]:text-base max-[992px]:leading-[30.4px]">
+          <p className="text-[16px] leading-[28px] pt-5 font-medium text-muted max-[992px]:text-sm max-[992px]:leading-[24px]">
             {description}
           </p>
         </div>

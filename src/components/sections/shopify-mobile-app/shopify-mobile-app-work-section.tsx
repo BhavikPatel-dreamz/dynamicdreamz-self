@@ -89,6 +89,7 @@ export function ShopifyMobileAppWorkSection({
               href={content.secondaryCta.href}
               variant="outline"
               aria-label={content.secondaryCta.ariaLabel}
+              className="max-[576px]:mt-[15px]"
             >
               {content.secondaryCta.label}
             </ButtonLink>
