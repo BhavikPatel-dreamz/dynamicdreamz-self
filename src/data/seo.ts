@@ -1230,7 +1230,7 @@ export const pageSeo = {
   },
   seoServices: {
     path: "/seo-services",
-    title: "#1 SEO Services | Best SEO Company in India | Dynamic Dreamz",
+    title: "SEO Services for Ecommerce & Businesses | Dynamic Dreamz",
     description:
       "Customized SEO services that deliver real results. Trusted SEO services from India’s top SEO company. Increase your rankings, traffic, and conversions.",
     keywords: [

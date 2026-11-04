@@ -9,6 +9,7 @@ import { formatBrText } from "@/lib/text-formatting";
 export type ThemeCustomizationBox = {
   number?: string;
   icon?: ReactNode | string;
+  iconAlt?: string;
   iconWrapperClassName?: string;
   title: string | readonly string[];
   badge?: string;
@@ -76,10 +77,11 @@ export function ThemeCustomizationServicesSection({
                     box.iconWrapperClassName,
                   )}
                 >
-                  {typeof box.icon === "string" ? (
+                  {typeof box.icon === "string" &&
+                  (box.icon.startsWith("/") || box.icon.startsWith("http")) ? (
                     <Image
                       src={box.icon}
-                      alt=""
+                      alt={box.iconAlt ?? ""}
                       width={24}
                       height={24}
                       className="object-contain"

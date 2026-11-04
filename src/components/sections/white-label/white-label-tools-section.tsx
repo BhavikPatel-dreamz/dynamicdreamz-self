@@ -12,14 +12,26 @@ type ToolRowProps = {
   className?: string;
   direction: "forward" | "reverse";
   row: readonly WhiteLabelTool[];
+  itemClassName?: string;
 };
 
-function ToolGroup({ duplicate = false, row }: { duplicate?: boolean; row: ToolRowProps["row"] }) {
+function ToolGroup({
+  duplicate = false,
+  row,
+  itemClassName,
+}: {
+  duplicate?: boolean;
+  row: ToolRowProps["row"];
+  itemClassName?: string;
+}) {
   return (
     <div aria-hidden={duplicate || undefined} className="flex shrink-0 items-center">
       {row.map((item) => (
         <div
-          className="our_partners_logo_item relative mx-1.5 h-[94px] w-[202px] shrink-0 max-[1200px]:w-[200px] max-[992px]:w-[180px] max-[768px]:w-[170px]"
+          className={cn(
+            "our_partners_logo_item relative mx-1.5 h-[94px] w-[202px] shrink-0 max-[1200px]:w-[200px] max-[992px]:w-[180px] max-[768px]:w-[170px]",
+            itemClassName,
+          )}
           key={item.name}
         >
           <Image
@@ -35,7 +47,7 @@ function ToolGroup({ duplicate = false, row }: { duplicate?: boolean; row: ToolR
   );
 }
 
-function ToolRow({ className, direction, row }: ToolRowProps) {
+function ToolRow({ className, direction, row, itemClassName }: ToolRowProps) {
   const trackId = useId();
 
   return (
@@ -43,14 +55,14 @@ function ToolRow({ className, direction, row }: ToolRowProps) {
       <div
         className={cn("logo_holder", styles.group, direction === "forward" ? styles.forward : styles.reverse)}
       >
-        <ToolGroup row={row} />
+        <ToolGroup itemClassName={itemClassName} row={row} />
       </div>
       <ClientAfterViewport rootId={trackId}>
         <div
           data-tool-track-clone
           className={cn("logo_holder", styles.group, direction === "forward" ? styles.forward : styles.reverse)}
         >
-          <ToolGroup duplicate row={row} />
+          <ToolGroup duplicate itemClassName={itemClassName} row={row} />
         </div>
       </ClientAfterViewport>
     </div>
@@ -64,6 +76,7 @@ type WhiteLabelToolsSectionProps = {
   description?: string;
   ariaLabel?: string;
   rows?: readonly (readonly WhiteLabelTool[])[];
+  itemClassName?: string;
 };
 
 export function WhiteLabelToolsSection({
@@ -73,6 +86,7 @@ export function WhiteLabelToolsSection({
   description = whiteLabelShopifySectionCopy.toolsDescription,
   ariaLabel = whiteLabelShopifySectionCopy.toolsAriaLabel,
   rows = whiteLabelShopifyToolRows,
+  itemClassName,
 }: WhiteLabelToolsSectionProps) {
   return (
     <section
@@ -103,8 +117,22 @@ export function WhiteLabelToolsSection({
       </div>
       <div aria-label={ariaLabel} className="wide_range_technologies_bottom_part">
         <div data-aos="fade-up" className="our_partners_logo_wrap">
-          <ToolRow className="logos_partner_top" direction="forward" row={rows[0]} />
-          <ToolRow className="logos_partner_bottom" direction="reverse" row={rows[1]} />
+          {rows[0] ? (
+            <ToolRow
+              className="logos_partner_top"
+              direction="forward"
+              itemClassName={itemClassName}
+              row={rows[0]}
+            />
+          ) : null}
+          {rows[1] ? (
+            <ToolRow
+              className="logos_partner_bottom"
+              direction="reverse"
+              itemClassName={itemClassName}
+              row={rows[1]}
+            />
+          ) : null}
         </div>
       </div>
     </section>

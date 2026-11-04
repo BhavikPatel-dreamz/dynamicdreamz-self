@@ -29,7 +29,7 @@ export function InsightsSection({
             <BlogCard item={insight} variant="home" isLast={insightIndex === insights.length - 1} key={insight.href} />
           ))}
         </div>
-        <div data-aos="fade-up" className="mt-[50px] flex justify-center max-[992px]:mt-[25px] max-[768px]:mt-5">
+        <div data-aos="fade-up" className="mt-[50px] flex justify-center max-[992px]:mt-0 max-[768px]:mt-0">
           <ButtonLink className="normal-case" variant="dark" href={ctaHref}>{ctaLabel}</ButtonLink>
         </div>
       </Container>
