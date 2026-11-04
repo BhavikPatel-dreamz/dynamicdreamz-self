@@ -29,7 +29,7 @@ export function LifeHiringSection({
     (typeof image === "object" && image?.alt ? image.alt : hiringCallout.image.alt);
 
   return (
-    <section className="py-20 max-[992px]:py-[50px]" data-life="hiring">
+    <section className="py-20 max-[992px]:py-15 max-[768px]:py-10" data-life="hiring">
       <Container>
         <div
           className="flex justify-between max-[992px]:flex-col-reverse"

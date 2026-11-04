@@ -48,7 +48,7 @@ export function CaseStudyRelated({
   }
 
   return (
-    <section className="bg-[#eff4ef] py-20 max-[992px]:py-[50px]" aria-labelledby="related-case-studies-heading">
+    <section className="bg-[#eff4ef] py-20 max-[992px]:py-15 max-[768px]:py-10" aria-labelledby="related-case-studies-heading">
       <Container>
         <div >
           <div className="relative mb-4 inline-flex items-center pl-10 text-[14px] font-semibold uppercase leading-[1.2] text-[#535353] before:absolute before:left-0 before:top-[7px] before:h-0.5 before:w-[30px] before:bg-[#ad5151] max-[768px]:pl-[23px] max-[768px]:before:top-1 max-[768px]:before:w-[15px]">

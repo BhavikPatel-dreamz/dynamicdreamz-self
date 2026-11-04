@@ -13,7 +13,7 @@ export function ShopifyHoursComparisonSection() {
   return (
     <section
       aria-labelledby="shopify-hours-comparison-title"
-      className="bulk-shopify-fulltime-resources bg-[#FAFAF7] py-[75px] max-[1200px]:py-[60px] max-[768px]:py-[50px]"
+      className="bulk-shopify-fulltime-resources bg-[#FAFAF7] py-20 max-[992px]:py-15 max-[768px]:py-10"
     >
       <Container>
         <div className="bulk-shopify-fulltime-resources-row flex items-center justify-between gap-0 max-[1200px]:flex-wrap">
@@ -114,7 +114,7 @@ export function ShopifyHoursTasksSection() {
   return (
     <section
       aria-labelledby="shopify-hours-tasks-title"
-      className="can-you-use-shopify-hours py-20 max-[992px]:py-[50px]"
+      className="can-you-use-shopify-hours py-20 max-[992px]:py-15 max-[768px]:py-10"
     >
       <Container>
         <div className="can-you-use-shopify-hours-row">

@@ -160,7 +160,7 @@ export function BlogRelatedSection({ posts }: BlogRelatedSectionProps) {
 
   return (
     <section
-      className="related-blog-sec mt-20 bg-[#eff4ef] py-20 max-[992px]:mt-[50px] max-[992px]:py-[50px]"
+      className="related-blog-sec mt-20 bg-[#eff4ef] py-20 max-[992px]:mt-[50px] max-[992px]:py-15 max-[768px]:py-10"
       aria-labelledby="related-blogs-title"
     >
       <Container>

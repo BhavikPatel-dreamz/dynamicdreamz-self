@@ -65,8 +65,8 @@ export function SplitFaqSection({
   const bgClass = "bg-[#fafaf7]"
   const paddingClass =
     isPt0
-      ? "pt-0 pb-20 max-[992px]:py-[60px] max-[768px]:pt-10 max-[768px]:pb-5"
-      : "py-[60px] max-[992px]:py-10";
+      ? "pt-0 pb-20 max-[992px]:pt-0 max-[992px]:pb-15 max-[768px]:pt-0 max-[768px]:pb-10"
+      : "py-20 max-[992px]:py-15 max-[768px]:py-10";
   const containerClass = isMobileAppFaq
     ? "min-[1400px]:max-w-[1408px] px-[15px]"
     : undefined;

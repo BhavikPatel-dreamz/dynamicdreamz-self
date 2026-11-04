@@ -98,7 +98,7 @@ export function ServiceHeroVideoSection({
                 <Eyebrow
                   align="responsive-center"
                   as="div"
-                  linePosition="overlay"
+                  linePosition="flow"
                   lineWidth="responsive"
                   className="mb-[15px]"
                 >

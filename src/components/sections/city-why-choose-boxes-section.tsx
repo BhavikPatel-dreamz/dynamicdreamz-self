@@ -57,8 +57,8 @@ export function CityWhyChooseBoxesSection({
       className={cn(
         isDynamic ? "city-page-why-choose-dynamic" : "city-page-why-choose-boxes",
         isPb0
-          ? "pt-20 pb-0 max-[992px]:pt-[50px] max-[992px]:pb-0"
-          : "py-20 max-[992px]:py-[50px]",
+          ? "pt-20 pb-0 max-[992px]:pt-15 max-[992px]:pb-0 max-[768px]:pt-10 max-[768px]:pb-0"
+          : "py-20 max-[992px]:py-15 max-[768px]:py-10",
         defaultBg,
         className,
       )}

@@ -29,7 +29,7 @@ export function ShopifyHorizontalProcessSection({
   return (
     <section
       className={cn(
-        "shopify-development-process py-20 max-[992px]:py-[50px]",
+        "shopify-development-process py-20 max-[992px]:py-15 max-[768px]:py-10",
         className,
       )}
       id={id}

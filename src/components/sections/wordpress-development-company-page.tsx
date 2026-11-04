@@ -63,7 +63,7 @@ export function WordPressDevelopmentCompanyPage() {
       />
       <AgencyServicesSection
         cardVariant="services-box"
-        className="pb-20 max-[992px]:pb-[50px]"
+        className="pb-20 max-[992px]:pb-15 max-[768px]:pb-10"
         content={servicesContent}
         headerLayout="split"
         hideCta

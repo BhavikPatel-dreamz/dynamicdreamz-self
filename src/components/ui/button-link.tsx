@@ -3,7 +3,7 @@ import type { AnchorHTMLAttributes, ButtonHTMLAttributes, ReactNode } from "reac
 
 import { cn } from "@/lib/class-names";
 
-export type ButtonVariant = "primary"| "primaryDark" | "outline" | "dark" | "light";
+export type ButtonVariant = "primary" | "primaryDark" | "outline" | "dark" | "light";
 
 export type ButtonLinkProps = {
   children: ReactNode;
@@ -70,7 +70,7 @@ export function ButtonLink({
   const isAnchor = typeof href === "string" && href.startsWith("#");
 
   const commonClasses = cn(
-    "group/button relative z-[1] inline-flex items-center justify-center align-top overflow-hidden rounded-[30px] min-h-[49px] h-[49px] px-6 py-[15px] text-center font-montserrat text-base leading-[normal] font-bold text-[#4f4f4f] not-italic uppercase no-underline! transition-all duration-600 ease shrink-0 max-[992px]:min-h-[44px] max-[992px]:h-[44px] max-[992px]:text-[14px] max-[992px]:px-6 max-[992px]:py-[12px] max-[768px]:min-h-[44px] max-[768px]:h-[44px] max-[768px]:text-[14px] disabled:pointer-events-none disabled:opacity-60 max-[576px]:py-3 max-[576px]:px-6 ",
+    "group/button relative z-[1] inline-flex items-center justify-center align-top overflow-hidden rounded-[30px] min-h-[49px] h-[49px] px-6 py-[15px] text-center font-montserrat text-base leading-[normal] font-bold text-[#4f4f4f] not-italic uppercase no-underline! transition-all duration-600 ease shrink-0 max-[992px]:min-h-[44px] max-[992px]:h-[44px] max-[992px]:text-[14px] max-[992px]:px-6 max-[992px]:py-[12px] max-[768px]:min-h-[44px] max-[768px]:h-[44px] max-[768px]:text-[14px] disabled:pointer-events-none disabled:opacity-60 max-[576px]:py-3 max-[576px]:px-6",
     variantClasses[variant],
     className,
   );

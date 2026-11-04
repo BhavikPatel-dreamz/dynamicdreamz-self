@@ -21,7 +21,7 @@ export function TextBoxSection({
 
   return (
     <section
-      className="single-text-box-sec pb-0 pt-20 max-[992px]:pt-[50px]"
+      className="single-text-box-sec pb-0 max-[992px]:pb-0 max-[768px]:pb-0 pt-20 max-[992px]:pt-15 max-[768px]:pt-10"
       data-section="single-text-box"
     >
       <Container>

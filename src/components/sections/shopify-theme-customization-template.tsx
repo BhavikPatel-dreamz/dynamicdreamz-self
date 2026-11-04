@@ -131,7 +131,7 @@ export function ShopifyThemeCustomizationTemplate({
       {portfolioContent ? (
         <PortfolioShowcaseSection
           cardVariant="ourWorkRefresh"
-          className="pt-0"
+          className="pt-0 max-[992px]:pt-0 max-[768px]:pt-0"
           columns={4}
           content={portfolioContent}
           eyebrow={content.portfolio?.eyebrow}

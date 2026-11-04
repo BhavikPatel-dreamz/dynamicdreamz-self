@@ -25,7 +25,7 @@ export function HowAgenciesUseSection({
   content = whiteLabelShopifyAgencyUseCases,
 }: HowAgenciesUseSectionProps) {
   return (
-    <section className="how_agencies_use_dynamic_dreamz_section py-20 max-[992px]:py-[50px]">
+    <section className="how_agencies_use_dynamic_dreamz_section py-20 max-[992px]:py-15 max-[768px]:py-10">
       <Container>
         <SplitSectionHeading
           variant="services"

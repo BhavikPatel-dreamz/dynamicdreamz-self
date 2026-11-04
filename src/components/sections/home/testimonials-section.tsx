@@ -15,7 +15,7 @@ export function TestimonialsSection({
   description = homeSectionCopy.testimonialsDescription,
 }: TestimonialsSectionProps = {}) {
   return (
-    <section className="bg-cream py-[60px] max-[768px]:py-[50px]" aria-labelledby="testimonials-title">
+    <section className="bg-cream py-20 max-[992px]:py-15 max-[768px]:py-10" aria-labelledby="testimonials-title">
       <Container>
         <SplitSectionHeading
           className="gap-8 max-[1200px]:mb-8 max-[992px]:mb-[30px] max-[992px]:gap-0"

@@ -63,7 +63,7 @@ export function PrivacyPolicyPage({ content }: PrivacyPolicyPageProps = {}) {
         </Container>
       </section>
 
-      <section className="py-20 max-[992px]:py-[50px]" aria-label="Privacy and cookies policy details">
+      <section className="py-20 max-[992px]:py-15 max-[768px]:py-10" aria-label="Privacy and cookies policy details">
         <Container>
           {sections.map((section) => {
             const Heading = section.level === 3 ? "h3" : "h2";

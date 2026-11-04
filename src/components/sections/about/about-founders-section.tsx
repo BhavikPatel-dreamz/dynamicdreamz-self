@@ -1,7 +1,6 @@
 import Image from "next/image";
 
 import { Container } from "@/components/ui/container";
-import { Eyebrow } from "@/components/ui/eyebrow";
 import { aboutSectionCopy, founders, type AboutPerson } from "@/content/about";
 import { SplitSectionHeading } from "@/components/ui/split-section-heading";
 
@@ -31,7 +30,7 @@ export function AboutFoundersSection({
     customFounders && customFounders.length > 0 ? customFounders : founders;
 
   return (
-    <section data-about="founders" aria-labelledby="about-founders-title" className="pt-20 max-[1200px]:pt-[60px]">
+    <section data-about="founders" aria-labelledby="about-founders-title" className="pt-20 max-[992px]:pt-15 max-[768px]:pt-10">
       <Container>
         <SplitSectionHeading 
         heading={title}

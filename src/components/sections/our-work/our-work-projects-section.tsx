@@ -30,7 +30,7 @@ export function OurWorkProjectsSection({
 }: OurWorkProjectsSectionProps = {}) {
   return (
     <section
-      className="scroll-mt-20 py-20 max-[992px]:py-[50px]"
+      className="scroll-mt-20 py-20 max-[992px]:py-15 max-[768px]:py-10"
       id="our-work-projects"
       aria-labelledby="our-work-projects-title"
     >

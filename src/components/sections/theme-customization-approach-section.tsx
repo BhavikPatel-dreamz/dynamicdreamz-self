@@ -51,7 +51,7 @@ export function ThemeCustomizationApproachSection({
   return (
     <section
       className={cn(
-        "choose-the-right-approach py-20 max-[992px]:py-[50px]",
+        "choose-the-right-approach py-20 max-[992px]:py-15 max-[768px]:py-10",
         className,
       )}
       id={id}

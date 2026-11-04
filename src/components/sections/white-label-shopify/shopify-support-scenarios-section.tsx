@@ -96,7 +96,7 @@ export function ShopifySupportScenariosSection({
     content.items.find((item) => item.id === activeTabId) ?? content.items[0];
 
   return (
-    <section className="scenario-tab-sec overflow-hidden bg-white py-20 max-[992px]:py-[50px]">
+    <section className="scenario-tab-sec overflow-hidden bg-white py-20 max-[992px]:py-15 max-[768px]:py-10">
       <Container>
         <div
           data-aos="fade-up"

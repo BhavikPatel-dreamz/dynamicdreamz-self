@@ -31,8 +31,8 @@ export function ThemeWhyChooseSection({
 }: ThemeWhyChooseSectionProps) {
   const backgroundVariantClassName = {
     gradient:
-      "why_dynamic_dreamz_sec dev two-column-icon-text-bg mb-12.5 py-12.5 bg-[linear-gradient(97.18deg,#e8f9ef_28.5%,#e6fafd_91.82%)] lg:mb-20 lg:py-20",
-    white: "why_dynamic_dreamz_sec dev two-column-icon-text-bg bg-white",
+      "why_dynamic_dreamz_sec dev two-column-icon-text-bg mb-12.5 bg-[linear-gradient(97.18deg,#e8f9ef_28.5%,#e6fafd_91.82%)] py-20 max-[992px]:py-15 max-[768px]:py-10",
+    white: "why_dynamic_dreamz_sec dev two-column-icon-text-bg bg-white py-20 max-[992px]:py-15 max-[768px]:py-10",
   } as const;
   const sectionClassName = backgroundVariantClassName[backgroundVariant];
 

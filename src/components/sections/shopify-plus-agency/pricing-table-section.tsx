@@ -27,7 +27,7 @@ export function PricingTableSection({
 }) {
   return (
     <section
-      className="white_label_wp_develop_plan_section shopify-plus-engagement mb-0 bg-[#edf2ee] py-20 max-[992px]:py-[50px]"
+      className="white_label_wp_develop_plan_section shopify-plus-engagement mb-0 bg-[#edf2ee] py-20 max-[992px]:py-15 max-[768px]:py-10"
       data-section="pricing"
       id="our_white_label_pricing"
     >

@@ -13,7 +13,7 @@ export function IntegrationsSection({
   title = homeSectionCopy.integrationsTitle,
 }: IntegrationsSectionProps = {}) {
   return (
-    <section className="our_partners overflow-hidden bg-[#fafaf7] py-[55px] max-[768px]:py-[50px]">
+    <section className="our_partners overflow-hidden bg-[#fafaf7] py-20 max-[992px]:py-15 max-[768px]:py-10">
       <Container>
         <div
           data-aos="fade-up"

@@ -26,7 +26,7 @@ export type ShopifyCroServicesSectionProps = {
 
 export function ShopifyCroServicesSection({
   content = shopifyCroServices,
-  className = "shopify-cro-services bg-white py-20 max-[992px]:py-[50px]",
+  className = "shopify-cro-services bg-white py-20 max-[992px]:py-15 max-[768px]:py-10",
 }: ShopifyCroServicesSectionProps) {
   return (
     <section className={className}>

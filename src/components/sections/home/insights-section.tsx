@@ -19,7 +19,7 @@ export function InsightsSection({
   className,
 }: InsightsSectionProps = {}) {
   return (
-    <section className={cn("overflow-hidden bg-white py-20 max-[992px]:pt-[50px] max-[992px]:pb-[30px] max-[768px]:pt-[40px] max-[768px]:pb-6", className)}>
+    <section className={cn("overflow-hidden bg-white py-20 max-[992px]:py-15 max-[768px]:py-10", className)}>
       <Container>
         <div data-aos="fade-up" className="mx-auto mb-[47px] max-w-[700px] text-center max-[992px]:mb-[30px]">
           <SectionHeading size="xl" className="mb-6">{title}</SectionHeading>

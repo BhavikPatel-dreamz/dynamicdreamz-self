@@ -29,7 +29,7 @@ export function NumberedProcessTimelineSection({
     <section
       aria-labelledby={headingId}
       className={cn(
-        "bg-[#fafaf7] py-[110px] max-[1200px]:py-[60px] max-[768px]:py-[50px]",
+        "bg-[#fafaf7] py-20 max-[992px]:py-15 max-[768px]:py-10",
         className,
       )}
     >

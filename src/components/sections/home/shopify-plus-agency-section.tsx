@@ -45,7 +45,7 @@ export function ShopifyPlusAgencySection({ content }: ShopifyPlusAgencySectionPr
   const videoSrc = content?.videoSrc || shopifyPlusAgencyContent.videoSrc;
 
   return (
-    <section className="bg-[#fbeed5] py-[43px] max-[992px]:py-[30px]" aria-labelledby="shopify-plus-agency-title">
+    <section className="bg-[#fbeed5] py-20 max-[992px]:py-15 max-[768px]:py-10" aria-labelledby="shopify-plus-agency-title">
       <Container>
         <SplitSectionHeading
           className="gap-8 max-[1200px]:mb-5 max-[992px]:gap-0"

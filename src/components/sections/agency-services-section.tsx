@@ -66,9 +66,19 @@ export function AgencyServicesSection({
   className,
 }: AgencyServicesSectionProps) {
   const resolvedEyebrow = eyebrow ?? content.eyebrow;
+  const isPt0 = className?.includes("pt-0");
+  const isPb0 = className?.includes("pb-0") || (cardVariant === "services-box" && !className?.includes("pb-"));
+  const paddingClass = isPt0 && isPb0
+    ? "pt-0 pb-0 max-[992px]:pt-0 max-[992px]:pb-0 max-[768px]:pt-0 max-[768px]:pb-0"
+    : isPt0
+    ? "pt-0 pb-20 max-[992px]:pt-0 max-[992px]:pb-15 max-[768px]:pt-0 max-[768px]:pb-10"
+    : isPb0
+    ? "pt-20 pb-0 max-[992px]:pt-15 max-[992px]:pb-0 max-[768px]:pt-10 max-[768px]:pb-0"
+    : "py-20 max-[992px]:py-15 max-[768px]:py-10";
+
   const sectionClass = cn(
-    "what-we-provide-sec py-20 max-[992px]:py-[50px]",
-    cardVariant === "services-box" && !className?.includes("pb-") && "pb-0 max-[992px]:pb-0",
+    "what-we-provide-sec",
+    paddingClass,
     className,
   );
 

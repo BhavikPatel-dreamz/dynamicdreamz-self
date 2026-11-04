@@ -27,7 +27,7 @@ export function VerifiedKnowledgeSection({
 }: VerifiedKnowledgeSectionProps) {
   return (
     <section
-      className="verified-shopify-knowledge-section py-20 max-[992px]:py-[50px]"
+      className="verified-shopify-knowledge-section py-20 max-[992px]:py-15 max-[768px]:py-10"
       aria-labelledby="verified-shopify-knowledge-title"
     >
       <Container>

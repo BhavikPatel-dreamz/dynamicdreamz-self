@@ -25,7 +25,7 @@ export function AboutStorySection({
   overlay = aboutStory.overlay,
 }: AboutStorySectionProps = {}) {
   return (
-    <section data-about="story" aria-labelledby="about-story-title" className="we-are-dyanamic-dreamz-sec py-20 max-[992px]:py-[50px]">
+    <section data-about="story" aria-labelledby="about-story-title" className="we-are-dyanamic-dreamz-sec py-20 max-[992px]:py-15 max-[768px]:py-10">
       <Container>
         <SplitSectionHeading
           heading={title}

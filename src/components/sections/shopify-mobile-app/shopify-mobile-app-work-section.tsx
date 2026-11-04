@@ -44,7 +44,7 @@ export function ShopifyMobileAppWorkSection({
   return (
     <section
       id={id}
-      className="our-work-sec scroll-mt-20 bg-white py-20 max-[992px]:py-[50px]"
+      className="our-work-sec scroll-mt-20 bg-white py-20 max-[992px]:py-15 max-[768px]:py-10"
     >
       <Container>
         <SplitSectionHeading

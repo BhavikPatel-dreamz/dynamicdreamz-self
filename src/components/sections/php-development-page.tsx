@@ -42,7 +42,7 @@ export function PhpDevelopmentPage() {
         content={phpDevelopmentContent.whyChoose}
       />
       <AgencyServicesSection
-        className="pt-0"
+        className="pt-0 max-[992px]:pt-0 max-[768px]:pt-0"
         columns={2}
         content={servicesContent}
         headerLayout="split"

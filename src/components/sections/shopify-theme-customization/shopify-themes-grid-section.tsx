@@ -39,7 +39,7 @@ export function ShopifyThemesGridSection({
   if (isPista) {
     return (
       <section
-        className="shopify-themes-customize-section bg-[#eff4ef] py-20 max-[992px]:py-[50px]"
+        className="shopify-themes-customize-section bg-[#eff4ef] py-20 max-[992px]:py-15 max-[768px]:py-10"
         id={sectionId}
       >
         <Container>
@@ -102,7 +102,7 @@ export function ShopifyThemesGridSection({
 
   return (
     <section
-      className="shopify-themes-customize-section pt-0 pb-20 max-[768px]:pb-10"
+      className="shopify-themes-customize-section pt-0 pb-20 max-[992px]:pt-0 max-[992px]:pb-15 max-[768px]:pt-0 max-[768px]:pb-10"
       id={sectionId}
     >
       <Container>

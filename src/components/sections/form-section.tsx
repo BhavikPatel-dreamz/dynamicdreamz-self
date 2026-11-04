@@ -31,7 +31,7 @@ export function FormSection({
     title || (typeof form === "object" && form !== null ? form.title : "");
 
   return (
-    <section className="cms-form-section bg-white py-20 max-[992px]:py-14 max-[768px]:py-10">
+    <section className="cms-form-section bg-white py-20 max-[992px]:py-15 max-[768px]:py-10">
       <Container className={containerClass}>
         {(eyebrow || displayTitle || description) && (
           <div className="mb-10 max-[768px]:mb-6">

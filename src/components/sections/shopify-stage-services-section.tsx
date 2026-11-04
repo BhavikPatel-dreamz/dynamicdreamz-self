@@ -40,7 +40,7 @@ export function ShopifyStageServicesSection({
   return (
     <section
       className={cn(
-        "shopify-development-services bg-[#fafaf7] py-20 max-[992px]:py-[50px]",
+        "shopify-development-services bg-[#fafaf7] py-20 max-[992px]:py-15 max-[768px]:py-10",
         lastColFull && "last-col-100",
         isSixCards && "six-cards",
       )}

@@ -28,7 +28,7 @@ export function TechnologiesWorkWithSection({
   return (
     <section
       className={cn(
-        "technologies_we_work_with_section bg-[#EFF4EF] py-20 max-[992px]:py-[50px]",
+        "technologies_we_work_with_section bg-[#EFF4EF] py-20 max-[992px]:py-15 max-[768px]:py-10",
         className,
       )}
       id={id}

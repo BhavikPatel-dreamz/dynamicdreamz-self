@@ -22,7 +22,7 @@ export type ShopifyAppBenefitsSectionProps = {
 
 export function ShopifyAppBenefitsSection({
   content,
-  className = "benefit_box_sec py-20 max-[1200px]:py-[50px]",
+  className = "benefit_box_sec py-20 max-[992px]:py-15 max-[768px]:py-10",
   id = "benefits",
 }: ShopifyAppBenefitsSectionProps) {
   const isJustifyLeft = className.includes("justify-left");

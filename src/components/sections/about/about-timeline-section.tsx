@@ -31,7 +31,7 @@ export function AboutTimelineSection({
       : milestones;
 
   return (
-    <section data-about="timeline" aria-labelledby="about-timeline-title" className="overflow-hidden bg-[#fbf7ed] pt-[100px] pb-[60px] max-[992px]:py-[50px]">
+    <section data-about="timeline" aria-labelledby="about-timeline-title" className="overflow-hidden bg-[#fbf7ed] py-20 max-[992px]:py-15 max-[768px]:py-10">
       <Container>
         <SplitSectionHeading
           heading={title}

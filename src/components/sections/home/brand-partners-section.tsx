@@ -33,8 +33,8 @@ export function BrandPartnersSection({
       className={cn(
         "trusted_leading_brands overflow-hidden",
         isShopifyHours
-          ? "py-20 max-[992px]:py-[60px] max-[768px]:min-h-[365px] max-[768px]:pt-10 max-[768px]:pb-[50px]"
-          : "py-20 max-[992px]:pb-20 max-[992px]:pt-[50px] max-[768px]:pt-10 max-[768px]:pb-[50px]",
+          ? "py-20 max-[992px]:py-15 max-[768px]:min-h-[365px] max-[768px]:py-10"
+          : "py-20 max-[992px]:py-15 max-[768px]:py-10",
       )}
     >
       <Container>

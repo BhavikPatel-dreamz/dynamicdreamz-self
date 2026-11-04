@@ -27,7 +27,7 @@ export function WhiteLabelProcessSection({
     : undefined;
 
   return (
-    <section className="white_label_how_partnership_works_section py-20 max-[992px]:py-[50px]">
+    <section className="white_label_how_partnership_works_section py-20 max-[992px]:py-15 max-[768px]:py-10">
       <Container className={cn("max-[576px]:px-4", containerClass)}>
         {eyebrow || description ? (
           <div

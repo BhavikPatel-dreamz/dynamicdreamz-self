@@ -39,7 +39,7 @@ export function CareerOpportunitiesSection({
   return (
     <section
       aria-labelledby="career-opportunities-title"
-      className="current-openings-sec py-20 max-[992px]:py-[50px]"
+      className="current-openings-sec py-20 max-[992px]:py-15 max-[768px]:py-10"
       data-career="opportunities"
       id="current-opportunities"
     >

@@ -29,7 +29,7 @@ export function CredentialEvidenceSection({
 }: CredentialEvidenceSectionProps) {
   return (
     <section
-      className="evidence_you_can_see_section scroll-mt-24 bg-[#fafaf7] py-[54px] max-[992px]:py-10"
+      className="evidence_you_can_see_section scroll-mt-24 bg-[#fafaf7] py-20 max-[992px]:py-15 max-[768px]:py-10"
       id="see_our_certifications"
       aria-labelledby="shopify-credential-evidence-title"
     >

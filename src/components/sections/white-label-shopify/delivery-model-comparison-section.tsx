@@ -33,7 +33,7 @@ export function DeliveryModelComparisonSection({
   content = whiteLabelShopifyDeliveryComparison,
 }: DeliveryModelComparisonSectionProps) {
   return (
-    <section className="choose_the_right_delivery_model_section bg-white py-20 max-[992px]:py-[50px]">
+    <section className="choose_the_right_delivery_model_section bg-white py-20 max-[992px]:py-15 max-[768px]:py-10">
       <Container>
         <SplitSectionHeading
           variant="centered"

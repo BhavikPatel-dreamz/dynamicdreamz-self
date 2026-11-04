@@ -37,7 +37,7 @@ export function ProofCounterSection({
   if (safeContent.stats && safeContent.stats.length > 0) {
     return (
       <section
-        className={cn("py-20 max-[992px]:py-[50px] max-[768px]:pt-[30px] max-[768px]:pb-[60px]", className)}
+        className={cn("py-20 max-[992px]:py-15 max-[768px]:py-10", className)}
         aria-labelledby="proof-counter-title"
       >
         <Container>
@@ -70,7 +70,7 @@ export function ProofCounterSection({
   const items = safeContent.items || [];
 
   return (
-    <section className={cn("city-page-counter py-20 max-[992px]:py-[50px]", className)}>
+    <section className={cn("city-page-counter py-20 max-[992px]:py-15 max-[768px]:py-10", className)}>
       <Container>
         {(safeContent.heading || safeContent.description) && (
           <SplitSectionHeading

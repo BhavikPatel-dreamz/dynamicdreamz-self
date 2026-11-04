@@ -36,7 +36,7 @@ export function OurDevelopmentProcessSection({
     <section
       id={id}
       className={cn(
-        "our-development-process py-20 max-[992px]:py-[50px]",
+        "our-development-process py-20 max-[992px]:py-15 max-[768px]:py-10",
         bg,
       )}
     >

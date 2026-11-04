@@ -24,7 +24,7 @@ export function TechKeywordSection({
   return (
     <section
       className={cn(
-        "tech-keyword-box bg-[#fafaf7] py-20 max-[992px]:py-[50px]",
+        "tech-keyword-box bg-[#fafaf7] py-20 max-[992px]:py-15 max-[768px]:py-10",
         className,
       )}
       id={id}

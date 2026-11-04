@@ -35,7 +35,7 @@ export function ShopifyMobileAppDtcSection({
     : undefined;
 
   return (
-    <section className="shopify_mobile_app_development_for_dtc_brands bg-[#FAFAF7] py-20 max-[992px]:py-[50px]">
+    <section className="shopify_mobile_app_development_for_dtc_brands bg-[#FAFAF7] py-20 max-[992px]:py-15 max-[768px]:py-10">
       <Container variant="wide">
         <SplitSectionHeading
           variant="services"

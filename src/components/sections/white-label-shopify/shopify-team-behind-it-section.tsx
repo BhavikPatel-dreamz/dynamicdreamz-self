@@ -42,7 +42,7 @@ export function ShopifyTeamBehindItSection({
   return (
     <section
       className={cn(
-        "our_shopify_team_behind_it_section bg-[#EFF4EF] py-20 max-[992px]:py-[50px]",
+        "our_shopify_team_behind_it_section bg-[#EFF4EF] py-20 max-[992px]:py-15 max-[768px]:py-10",
         className,
       )}
     >

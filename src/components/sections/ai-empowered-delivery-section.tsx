@@ -38,7 +38,7 @@ export function AiEmpoweredDeliverySection({
   return (
     <section
       className={cn(
-        "seo_safe_shopify_migration_section py-20 max-[992px]:py-[50px]",
+        "seo_safe_shopify_migration_section py-20 max-[992px]:py-15 max-[768px]:py-10",
         isDark && "box-bg-green",
         className,
       )}

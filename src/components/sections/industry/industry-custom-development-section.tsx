@@ -21,7 +21,7 @@ export function IndustryCustomDevelopmentSection({
 }: IndustryCustomDevelopmentSectionProps) {
   return (
     <section
-      className={cn("industry-custom-development bg-[#192019] py-20 max-[992px]:py-[50px]", className)}
+      className={cn("industry-custom-development bg-[#192019] py-20 max-[992px]:py-15 max-[768px]:py-10", className)}
       id={id}
     >
       <Container>

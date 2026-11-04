@@ -34,22 +34,22 @@ export function getSectionSpacingClasses({
   // If the current section is a colored container, it always retains its internal padding
   if (currentBg === "colored") {
     return hasBottomPadding
-      ? "py-20 max-[992px]:py-[50px]"
-      : "pt-20 pb-0 max-[992px]:pt-[50px] max-[992px]:pb-0";
+      ? "py-20 max-[992px]:py-15 max-[768px]:py-10"
+      : "pt-20 pb-0 max-[992px]:pt-15 max-[992px]:pb-0 max-[768px]:pt-10 max-[768px]:pb-0";
   }
 
   // If the current section is white/transparent and follows another white/transparent section:
   // Drop redundant top padding so the combined gap is 80px, not 160px!
   if (!isFirst && (previousBg === "white" || previousBg === "transparent")) {
     return hasBottomPadding
-      ? "pt-0 pb-20 max-[992px]:pt-0 max-[992px]:pb-[50px]"
+      ? "pt-0 pb-20 max-[992px]:pt-0 max-[992px]:pb-15 max-[768px]:pt-0 max-[768px]:pb-10"
       : "py-0";
   }
 
   // White section following a colored section or as the first section
   return hasBottomPadding
-    ? "py-20 max-[992px]:py-[50px]"
-    : "pt-20 pb-0 max-[992px]:pt-[50px] max-[992px]:pb-0";
+    ? "py-20 max-[992px]:py-15 max-[768px]:py-10"
+    : "pt-20 pb-0 max-[992px]:pt-15 max-[992px]:pb-0 max-[768px]:pt-10 max-[768px]:pb-0";
 }
 
 /**

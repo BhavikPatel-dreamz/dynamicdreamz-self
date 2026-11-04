@@ -24,7 +24,7 @@ export function WorkCultureSection({
 
   return (
     <section
-      className="pt-20 pb-0 max-[992px]:pt-[50px]"
+      className="pt-20 pb-0 max-[992px]:pt-15 max-[992px]:pb-0 max-[768px]:pt-10 max-[768px]:pb-0"
       data-life="culture"
       aria-labelledby="work-culture-title"
     >

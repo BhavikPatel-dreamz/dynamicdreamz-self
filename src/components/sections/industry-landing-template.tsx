@@ -109,7 +109,7 @@ export function IndustryLandingTemplate({
           eyebrow={caseStudies.eyebrow}
           heading={caseStudies.heading}
           items={caseStudies.items}
-          className="py-20"
+          className="py-20 max-[992px]:py-15 max-[768px]:py-10"
         />
       ) : null}
       <ThemeCustomizationServicesSection

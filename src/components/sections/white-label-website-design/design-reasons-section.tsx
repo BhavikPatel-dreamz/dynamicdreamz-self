@@ -19,7 +19,7 @@ export function DesignReasonsSection({
   return (
     <section
       className={cn(
-        "white_label_wp_development_service_accordion_section website-design bg-[#fafaf7] py-[60px] max-[768px]:py-10",
+        "white_label_wp_development_service_accordion_section website-design bg-[#fafaf7] py-20 max-[992px]:py-15 max-[768px]:py-10",
         className,
       )}
     >

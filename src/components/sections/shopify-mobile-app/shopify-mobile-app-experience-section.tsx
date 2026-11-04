@@ -22,7 +22,7 @@ export function ShopifyMobileAppExperienceSection({
   content,
 }: ShopifyMobileAppExperienceSectionProps) {
   return (
-    <section id="shopping_eperience" className="mobile-shopping-eperience-sec bg-[#FAFAF7] py-20 max-[992px]:py-[50px]">
+    <section id="shopping_eperience" className="mobile-shopping-eperience-sec bg-[#FAFAF7] py-20 max-[992px]:py-15 max-[768px]:py-10">
       <Container variant="wide">
         <SplitSectionHeading
           variant="services"

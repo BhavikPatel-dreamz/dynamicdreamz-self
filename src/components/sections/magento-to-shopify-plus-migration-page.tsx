@@ -90,7 +90,7 @@ export function MagentoToShopifyPlusMigrationPage() {
 
       {/* 6. Why Choose Dynamic Dreamz for Migration Services? */}
       <EvaluationFrameworkSection
-      className="pt-0"
+        className="pt-0 max-[992px]:pt-0 max-[768px]:pt-0"
         content={magentoPlusWhyChooseContent}
         id="why-choose-dynamic-dreamz"
       />

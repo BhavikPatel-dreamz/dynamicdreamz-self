@@ -25,7 +25,7 @@ export function CertifiedServicesSection({
 }: CertifiedServicesSectionProps) {
   return (
     <section
-      className="certified-process-section pt-20 pb-20 max-[992px]:py-[50px]"
+      className="certified-process-section py-20 max-[992px]:py-15 max-[768px]:py-10"
       aria-labelledby="certified-shopify-services-title"
     >
       <Container>

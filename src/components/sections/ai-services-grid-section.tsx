@@ -34,7 +34,7 @@ export function AiServicesGridSection({
   return (
     <section
       className={cn(
-        "our-ai-services-section bg-[#eff4ef] py-20 max-[992px]:py-[50px]",
+        "our-ai-services-section bg-[#eff4ef] py-20 max-[992px]:py-15 max-[768px]:py-10",
         className,
       )}
       id={sectionId}

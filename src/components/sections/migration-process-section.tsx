@@ -123,8 +123,8 @@ export function MigrationProcessSection({
 }: MigrationProcessSectionProps) {
   const resolvedClassName =
     variant === "cards"
-      ? "py-20"
-      : "migration-process-step-sec py-20 max-[992px]:py-[50px]";
+      ? "py-20 max-[992px]:py-15 max-[768px]:py-10"
+      : "migration-process-step-sec py-20 max-[992px]:py-15 max-[768px]:py-10";
 
   if (variant === "cards") {
     return (

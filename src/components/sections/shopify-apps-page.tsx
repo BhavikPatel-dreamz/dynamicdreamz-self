@@ -20,7 +20,7 @@ export function ShopifyAppsHeroSection({ title }: { title?: string }) {
 export function ShopifyAppsGridSection({ apps }: { apps?: readonly ShopifyAppItem[] }) {
   const items = apps && apps.length > 0 ? apps : shopifyAppsContent.apps;
   return (
-    <section className="shopify-apps-list py-20 max-[992px]:py-[50px]">
+    <section className="shopify-apps-list py-20 max-[992px]:py-15 max-[768px]:py-10">
       <Container>
         <div className="wrapper -mx-[10px] flex flex-wrap list-none gap-y-[15px] max-[1200px]:gap-y-[30px] max-[768px]:mx-0">
           {items.map((app) => (

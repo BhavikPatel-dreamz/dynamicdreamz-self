@@ -103,7 +103,7 @@ export function WhiteLabelToolsSection({
   return (
     <section
       className={cn(
-        "white_label_wide_range_technologies_section overflow-hidden bg-[#fafaf7] py-[70px] max-[1200px]:py-[60px] max-[992px]:py-10 max-[768px]:py-[30px]",
+        "white_label_wide_range_technologies_section overflow-hidden bg-[#fafaf7] py-20 max-[992px]:py-15 max-[768px]:py-10",
         className,
       )}
     >

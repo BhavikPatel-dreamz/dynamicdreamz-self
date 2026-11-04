@@ -24,7 +24,7 @@ export function ShopifyMobileAppComparisonSection({
   content,
 }: ShopifyMobileAppComparisonSectionProps) {
   return (
-    <section className="why_build_a_custom_shopify_mobile_app bg-[#F7F4E9] py-20 max-[992px]:py-[50px]">
+    <section className="why_build_a_custom_shopify_mobile_app bg-[#F7F4E9] py-20 max-[992px]:py-15 max-[768px]:py-10">
       <Container variant="wide">
         <SplitSectionHeading
           variant="services"

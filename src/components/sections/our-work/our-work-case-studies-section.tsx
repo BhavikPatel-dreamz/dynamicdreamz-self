@@ -19,7 +19,7 @@ export function OurWorkCaseStudiesSection({
 }: OurWorkCaseStudiesSectionProps = {}) {
   return (
     <section
-      className="see-the-work-sec bg-[#eff4ef] py-20"
+      className="see-the-work-sec bg-[#eff4ef] py-20 max-[992px]:py-15 max-[768px]:py-10"
       aria-labelledby="our-work-case-studies-title"
     >
       <Container>

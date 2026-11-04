@@ -40,7 +40,7 @@ export function TermsOfServicePage({ content }: TermsOfServicePageProps = {}) {
       </section>
 
       <section
-        className="py-20 max-[992px]:py-[50px]"
+        className="py-20 max-[992px]:py-15 max-[768px]:py-10"
         aria-label="Terms of service details"
       >
         <Container>

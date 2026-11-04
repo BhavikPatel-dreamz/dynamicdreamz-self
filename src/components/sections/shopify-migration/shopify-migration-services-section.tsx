@@ -39,7 +39,7 @@ export function ShopifyMigrationServicesSection({
   return (
     <section
       className={cn(
-        "migration-services-sec bg-[#f7f4e9] py-20 max-[992px]:py-[50px]",
+        "migration-services-sec bg-[#f7f4e9] py-20 max-[992px]:py-15 max-[768px]:py-10",
         className,
       )}
       id={id}

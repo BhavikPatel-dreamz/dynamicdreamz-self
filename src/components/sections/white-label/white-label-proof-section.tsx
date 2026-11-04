@@ -87,7 +87,7 @@ export function WhiteLabelWhySection({
     <section
       className={cn(
         isPistaBg ? "bg-[#EFF4EF]" : "bg-[#fafaf7]",
-        "pt-[70px] pb-[82px] max-[1200px]:py-20 max-[992px]:py-[50px]",
+        "py-20 max-[992px]:py-15 max-[768px]:py-10",
       )}
     >
       <Container>

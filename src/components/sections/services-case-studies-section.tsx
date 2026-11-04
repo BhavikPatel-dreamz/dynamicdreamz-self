@@ -43,7 +43,7 @@ export function ServicesCaseStudiesSection({
 
   return (
     <section
-      className={cn("see-the-work-sec bg-[#eff4ef] py-10", className)}
+      className={cn("see-the-work-sec bg-[#eff4ef] py-20 max-[992px]:py-15 max-[768px]:py-10", className)}
       id={id}
     >
       <Container className={containerClass}>

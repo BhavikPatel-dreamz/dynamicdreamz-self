@@ -35,7 +35,7 @@ export function TwoColImageWithTextSection({
   return (
     <section
       className={cn(
-        "two-col-image-with-text-section py-20 max-[992px]:py-[50px]",
+        "two-col-image-with-text-section py-20 max-[992px]:py-15 max-[768px]:py-10",
         className,
       )}
       id={id}

@@ -29,7 +29,7 @@ export function CityPageCounterSection({
   return (
     <section
       className={cn(
-        "city-page-counter py-20 max-[992px]:py-[50px]",
+        "city-page-counter py-20 max-[992px]:py-15 max-[768px]:py-10",
         className,
       )}
     >

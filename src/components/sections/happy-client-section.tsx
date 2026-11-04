@@ -37,8 +37,8 @@ export function HappyClientSection({
       className={cn(
         "happy-client-sec overflow-hidden",
         hasTopPadding
-          ? "pt-20 pb-20 max-[992px]:py-[50px]"
-          : "pt-0 pb-20 max-[992px]:pt-0 max-[992px]:pb-[50px]",
+          ? "py-20 max-[992px]:py-15 max-[768px]:py-10"
+          : "pt-0 pb-20 max-[992px]:pt-0 max-[992px]:pb-15 max-[768px]:pt-0 max-[768px]:pb-10",
         isWhite ? "bg-white" : undefined,
         className,
       )}

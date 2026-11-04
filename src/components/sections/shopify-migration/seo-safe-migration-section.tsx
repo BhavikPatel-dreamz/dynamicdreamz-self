@@ -37,7 +37,7 @@ export function SeoSafeMigrationSection({
     <section
       className={cn(
         "seo_safe_shopify_migration_section bg-white",
-        isPt0 ? "pt-0 pb-0" : "py-20 max-[992px]:py-[50px]",
+        isPt0 ? "pt-0 pb-0" : "py-20 max-[992px]:py-15 max-[768px]:py-10",
       )}
       id={id}
     >

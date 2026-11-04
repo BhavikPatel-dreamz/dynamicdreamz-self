@@ -49,7 +49,7 @@ export function ShopifyThemeTechSection({
 
   return (
     <section
-      className="wordpress-page-builders_sec pt-0 pb-20 max-[768px]:pb-10"
+      className="wordpress-page-builders_sec pt-0 pb-20 max-[992px]:pt-0 max-[992px]:pb-15 max-[768px]:pt-0 max-[768px]:pb-10"
       id="technologies"
     >
       <Container>

@@ -15,7 +15,7 @@ export function WhiteLabelFinalCtaSection({
   ctaHref = siteConfig.quotePath,
 }: WhiteLabelFinalCtaSectionProps) {
   return (
-    <section className="bg-white py-[52px] max-[1200px]:py-[52px] max-[992px]:py-10">
+    <section className="bg-white py-20 max-[992px]:py-15 max-[768px]:py-10">
       <Container>
         <div data-aos="fade-up" className="flex items-center justify-between max-[992px]:flex-wrap max-[992px]:gap-5">
           <div className="flex-1 max-w-[560px] flex-none pr-0 max-[992px]:mx-auto max-[992px]:max-w-none max-[992px]:text-center">

@@ -17,7 +17,7 @@ export type ShopifyCroWhySectionProps = {
 
 export function ShopifyCroWhySection({
   content = shopifyCroWhyDynamicDreamz,
-  className = "shopify-cro-dynamic-dreamz bg-white pt-0 pb-20 max-[992px]:pb-[50px]",
+  className = "shopify-cro-dynamic-dreamz bg-white pt-0 pb-20 max-[992px]:pt-0 max-[992px]:pb-15 max-[768px]:pt-0 max-[768px]:pb-10",
 }: ShopifyCroWhySectionProps) {
   return (
     <section className={className}>

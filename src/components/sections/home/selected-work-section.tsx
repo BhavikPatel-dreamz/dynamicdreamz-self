@@ -97,7 +97,7 @@ export function SelectedWorkSection({
   const projectTrackId = useId();
 
   return (
-    <section className="overflow-hidden bg-dark-green pt-[60px] pb-[52px] text-white max-[768px]:py-[30px]">
+    <section className="overflow-hidden bg-dark-green py-20 max-[992px]:py-15 max-[768px]:py-10 text-white">
       <Container data-aos="fade-up">
         <SplitSectionHeading
           dark

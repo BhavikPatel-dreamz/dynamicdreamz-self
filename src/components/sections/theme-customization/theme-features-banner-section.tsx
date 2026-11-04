@@ -16,7 +16,7 @@ export type ThemeFeaturesBannerSectionProps = {
 
 export function ThemeFeaturesBannerSection({
   content,
-  className = "theme-features py-20 max-[992px]:py-[50px]",
+  className = "theme-features py-20 max-[992px]:py-15 max-[768px]:py-10",
   id = "theme-features",
 }: ThemeFeaturesBannerSectionProps) {
   return (
