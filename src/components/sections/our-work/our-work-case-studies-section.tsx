@@ -28,16 +28,14 @@ export function OurWorkCaseStudiesSection({
           eyebrow={eyebrow}
           heading={title}
           headingId="our-work-case-studies-title"
-          titleColumnClassName="w-[44%] max-[1400px]:w-[35%] max-[1200px]:w-[36%] max-[992px]:w-full"
-          textColumnClassName="w-[49%] max-[1400px]:w-[56%] max-[1200px]:w-[51%] max-[992px]:w-full"
           variant="left"
         />
 
-        <div className="cs-listing-main three-col flex flex-wrap justify-between gap-y-5">
+        <div className="cs-listing-main three-col flex flex-wrap justify-between gap-y-5 max-[992px]:gap-y-[30px] max-[768px]:gap-y-5">
           {ourWorkCaseStudies.map((item) => (
             <article
               data-aos="fade-up"
-              className="cs-listing-row flex w-[calc(33.333%_-_14px)] flex-col overflow-hidden rounded-[20px] border border-[rgba(40,40,40,0.06)] bg-white transition-shadow duration-300 hover:shadow-[0_10px_30px_rgba(0,0,0,0.08)] max-[992px]:w-[calc(50%_-_10px)] max-[768px]:w-full"
+              className="cs-listing-row flex w-[calc(33.333%_-_14px)] flex-col overflow-hidden rounded-[20px] border border-[rgba(40,40,40,0.06)] bg-white transition-shadow duration-300 hover:shadow-[0_10px_30px_rgba(0,0,0,0.08)] max-[1200px]:w-[calc(50%_-_10px)] max-[992px]:w-full"
               key={item.slug}
             >
               <div className="cs-wrapper flex h-full flex-col">
@@ -52,7 +50,7 @@ export function OurWorkCaseStudiesSection({
                       src={item.image}
                       alt={item.imageAlt}
                       fill
-                      sizes="(max-width: 767px) 100vw, (max-width: 991px) 50vw, 410px"
+                      sizes="(max-width: 991px) 100vw, (max-width: 1199px) 50vw, 410px"
                     />
                   </Link>
                 </div>

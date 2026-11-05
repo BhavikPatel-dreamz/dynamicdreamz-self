@@ -111,7 +111,7 @@ export function ShopifyB2BApproachSection({
                       >
                         <svg
                           aria-hidden="true"
-                          className="absolute left-0 top-3.5 size-4 shrink-0"
+                          className="absolute left-0 top-4 size-4 shrink-0"
                           fill="none"
                           viewBox="0 0 16 16"
                         >

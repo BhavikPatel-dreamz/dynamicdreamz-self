@@ -267,7 +267,18 @@ export const petIndustryPortfolio = {
       category: "Mobile Apps",
       image: "/assets/pet-industry/portfolio/supertails-dog.webp",
       imageAlt: "Supertails Pet Supplies Shopify Storefront by Dynamic Dreamz",
-      href: "",
+      appLinks: [
+        {
+          label: "Android App",
+          href: "https://play.google.com/store/apps/details?id=com.coffye.dqiabm",
+          icon: "/assets/our-work/platforms/android-icon.svg",
+        },
+        {
+          label: "IOS App",
+          href: "https://apps.apple.com/in/app/supertails-online-pet-shop/id1670908360",
+          icon: "/assets/our-work/platforms/app-store-ios.svg",
+        },
+      ],
     },
     {
       name: "Paw Labs",

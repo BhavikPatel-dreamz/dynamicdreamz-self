@@ -38,8 +38,6 @@ export function CityPageCounterSection({
           description={content.description}
           eyebrow={content.eyebrow}
           heading={content.heading}
-          textColumnClassName="max-w-[560px]"
-          titleColumnClassName="max-w-[620px]"
           variant="left"
         />
 

@@ -34,8 +34,6 @@ export function WhiteLabelServicesSection({
           description={description}
           eyebrow={eyebrow}
           heading={title || ""}
-          textColumnClassName="max-w-[560px]"
-          titleColumnClassName="max-w-[620px]"
           variant={eyebrow ? "left" : "centered"}
         />
         <WhiteLabelServiceAccordion flushEnd={!showCta} idPrefix={idPrefix} services={services} />

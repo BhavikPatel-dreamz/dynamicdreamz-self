@@ -28,17 +28,16 @@ export function TextArrowLink({
         href.startsWith("tel:")));
 
   const commonClasses = cn(
-    "text-arrow-link inline-flex items-center font-montserrat text-sm font-bold uppercase leading-none text-[#AD5151] transition-colors hover:text-[#282828]",
+    "text-arrow-link group/arrow-link inline-flex items-center font-montserrat text-sm font-bold uppercase leading-none text-[#AD5151] transition-colors duration-300 hover:text-[#282828]",
     className,
   );
 
   const inner = (
     <>
-      <span>{children}</span>
+      <span className="transition-colors duration-300">{children}</span>
       <svg
         aria-hidden="true"
-        className="ml-2.5 h-auto w-[10px] shrink-0"
-        fill="none"
+        className="ml-2.5 h-auto w-[10px] shrink-0 fill-current text-[#AD5151] transition-colors duration-300 group-hover/arrow-link:text-[#282828]"
         viewBox="0 0 12 12"
       >
         <path

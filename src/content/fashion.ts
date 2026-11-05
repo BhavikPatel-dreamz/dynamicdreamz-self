@@ -358,6 +358,18 @@ export const fashionPortfolio = {
       href: "",
       image: "/assets/our-work/projects/fashor.webp",
       imageAlt: "Fashor Indian & Indo-Western Wear Shopify Storefront by Dynamic Dreamz",
+      appLinks: [
+        {
+          "label": "Android App",
+          "href": "https://play.google.com/store/apps/details?id=co.tapcart.app.id_INu2PrmT53",
+          "icon": "/assets/our-work/platforms/android-icon.svg"
+        },
+        {
+          "label": "IOS App",
+          "href": "https://apps.apple.com/in/app/fashor/id1458834104",
+          "icon": "/assets/our-work/platforms/app-store-ios.svg"
+        }
+      ]
     },
     {
       name: "Balticborn",

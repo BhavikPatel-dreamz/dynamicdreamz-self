@@ -1,6 +1,5 @@
 import { AgencyServicesSection } from "@/components/sections/agency-services-section";
 import { CityPageHeroSection } from "@/components/sections/city-page-hero-section";
-import { CtaBannerSection } from "@/components/sections/cta-banner-section";
 import { PortfolioShowcaseSection } from "@/components/sections/portfolio-showcase-section";
 import { PricingTableSection } from "@/components/sections/shopify-plus-agency/pricing-table-section";
 import { HappyClientSection } from "@/components/sections/happy-client-section";
@@ -53,11 +52,6 @@ export function WordPressDevelopmentPage() {
       <SplitFaqSection
         idPrefix="wordpress-development-faq"
         items={wordpressDevelopmentFaqs}
-      />
-      <CtaBannerSection
-        ctaHref={wordpressDevelopmentCta.ctaHref}
-        ctaLabel={wordpressDevelopmentCta.ctaLabel}
-        heading={wordpressDevelopmentCta.heading}
       />
     </div>
   );

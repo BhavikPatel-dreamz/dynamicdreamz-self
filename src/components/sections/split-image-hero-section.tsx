@@ -76,7 +76,7 @@ function SplitImageHeroText({
           as="div"
           className="mb-[15px]"
           items={Array.isArray(eyebrow) ? eyebrow : undefined}
-          linePosition="overlay"
+          linePosition="flow"
         >
           {!Array.isArray(eyebrow) ? eyebrow : undefined}
         </Eyebrow>
