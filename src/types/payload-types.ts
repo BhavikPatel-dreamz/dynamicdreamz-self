@@ -682,6 +682,124 @@ export interface Page {
   sections?:
     | (
         | {
+            variant: 'video' | 'tablet-slider' | 'image' | 'reviews' | 'centered' | 'home' | 'text-only';
+            backgroundColor?: ('cream' | 'white') | null;
+            eyebrows?:
+              | {
+                  text: string;
+                  id?: string | null;
+                }[]
+              | null;
+            title: string;
+            titleAccent?: string | null;
+            titleAccentTag?: ('i' | 'span') | null;
+            titleAccentPosition?: ('end' | 'start') | null;
+            subtitle?: string | null;
+            lead?: string | null;
+            description?: string | null;
+            secondaryDescription?: string | null;
+            paragraphs?:
+              | {
+                  text: string;
+                  id?: string | null;
+                }[]
+              | null;
+            primaryCta?: {
+              label?: string | null;
+              href?: string | null;
+            };
+            secondaryCta?: {
+              label?: string | null;
+              href?: string | null;
+            };
+            /**
+             * e.g. /assets/home/why-dynamic-dreamz.mp4 or CDN URL
+             */
+            videoSrc?: string | null;
+            videoPoster?: (number | null) | Media;
+            videoLogo?: {
+              logo?: (number | null) | Media;
+              src?: string | null;
+              alt?: string | null;
+              width?: number | null;
+              height?: number | null;
+            };
+            image?: (number | null) | Media;
+            imageSrc?: string | null;
+            imageAlt?: string | null;
+            imageWidth?: number | null;
+            imageHeight?: number | null;
+            imageBlend?: ('normal' | 'darken') | null;
+            imageAlignment?: ('center' | 'bottom') | null;
+            slides?:
+              | {
+                  image?: (number | null) | Media;
+                  src?: string | null;
+                  alt?: string | null;
+                  width?: number | null;
+                  height?: number | null;
+                  id?: string | null;
+                }[]
+              | null;
+            topBadge?: {
+              image?: (number | null) | Media;
+              src?: string | null;
+              alt?: string | null;
+              width?: number | null;
+              height?: number | null;
+            };
+            bottomBadge?: {
+              image?: (number | null) | Media;
+              src?: string | null;
+              alt?: string | null;
+              width?: number | null;
+              height?: number | null;
+            };
+            bgShape?: (number | null) | Media;
+            bgShapeSrc?: string | null;
+            showReviews?: boolean | null;
+            maxWidth?: ('default' | 'wide') | null;
+            coBranding?: {
+              enabled?: boolean | null;
+              leftLogo?: {
+                logo?: (number | null) | Media;
+                src?: string | null;
+                alt?: string | null;
+                width?: number | null;
+                height?: number | null;
+              };
+              separator?: {
+                logo?: (number | null) | Media;
+                src?: string | null;
+                alt?: string | null;
+                width?: number | null;
+                height?: number | null;
+              };
+              rightLogo?: {
+                logo?: (number | null) | Media;
+                src?: string | null;
+                alt?: string | null;
+                width?: number | null;
+                height?: number | null;
+              };
+            };
+            badges?:
+              | {
+                  logo?: (number | null) | Media;
+                  src?: string | null;
+                  name?: string | null;
+                  alt?: string | null;
+                  href?: string | null;
+                  width?: number | null;
+                  height?: number | null;
+                  id?: string | null;
+                }[]
+              | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'service-hero';
+          }
+        | {
             eyebrow?: string | null;
             title: string;
             description: string;
@@ -1732,6 +1850,140 @@ export interface PagesSelect<T extends boolean = true> {
   sections?:
     | T
     | {
+        'service-hero'?:
+          | T
+          | {
+              variant?: T;
+              backgroundColor?: T;
+              eyebrows?:
+                | T
+                | {
+                    text?: T;
+                    id?: T;
+                  };
+              title?: T;
+              titleAccent?: T;
+              titleAccentTag?: T;
+              titleAccentPosition?: T;
+              subtitle?: T;
+              lead?: T;
+              description?: T;
+              secondaryDescription?: T;
+              paragraphs?:
+                | T
+                | {
+                    text?: T;
+                    id?: T;
+                  };
+              primaryCta?:
+                | T
+                | {
+                    label?: T;
+                    href?: T;
+                  };
+              secondaryCta?:
+                | T
+                | {
+                    label?: T;
+                    href?: T;
+                  };
+              videoSrc?: T;
+              videoPoster?: T;
+              videoLogo?:
+                | T
+                | {
+                    logo?: T;
+                    src?: T;
+                    alt?: T;
+                    width?: T;
+                    height?: T;
+                  };
+              image?: T;
+              imageSrc?: T;
+              imageAlt?: T;
+              imageWidth?: T;
+              imageHeight?: T;
+              imageBlend?: T;
+              imageAlignment?: T;
+              slides?:
+                | T
+                | {
+                    image?: T;
+                    src?: T;
+                    alt?: T;
+                    width?: T;
+                    height?: T;
+                    id?: T;
+                  };
+              topBadge?:
+                | T
+                | {
+                    image?: T;
+                    src?: T;
+                    alt?: T;
+                    width?: T;
+                    height?: T;
+                  };
+              bottomBadge?:
+                | T
+                | {
+                    image?: T;
+                    src?: T;
+                    alt?: T;
+                    width?: T;
+                    height?: T;
+                  };
+              bgShape?: T;
+              bgShapeSrc?: T;
+              showReviews?: T;
+              maxWidth?: T;
+              coBranding?:
+                | T
+                | {
+                    enabled?: T;
+                    leftLogo?:
+                      | T
+                      | {
+                          logo?: T;
+                          src?: T;
+                          alt?: T;
+                          width?: T;
+                          height?: T;
+                        };
+                    separator?:
+                      | T
+                      | {
+                          logo?: T;
+                          src?: T;
+                          alt?: T;
+                          width?: T;
+                          height?: T;
+                        };
+                    rightLogo?:
+                      | T
+                      | {
+                          logo?: T;
+                          src?: T;
+                          alt?: T;
+                          width?: T;
+                          height?: T;
+                        };
+                  };
+              badges?:
+                | T
+                | {
+                    logo?: T;
+                    src?: T;
+                    name?: T;
+                    alt?: T;
+                    href?: T;
+                    width?: T;
+                    height?: T;
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
         'contact-hero'?:
           | T
           | {

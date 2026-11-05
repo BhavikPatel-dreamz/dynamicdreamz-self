@@ -6,6 +6,7 @@ import { ContactOfficesBlock } from "@/payload/blocks/ContactOfficesBlock";
 import { ContactDetailsBlock } from "@/payload/blocks/ContactDetailsBlock";
 import { RequestQuoteHeroBlock } from "@/payload/blocks/RequestQuoteHeroBlock";
 import { CareerApplyBlock } from "@/payload/blocks/CareerApplyBlock";
+import { ServiceHeroBlock } from "@/payload/blocks/ServiceHeroBlock";
 import { previewDraftPath } from "@/lib/preview-url";
 import { safeRevalidatePath } from "@/lib/revalidate";
 
@@ -67,6 +68,7 @@ export const Pages: CollectionConfig = {
       type: "blocks",
       label: "Page Layout Sections (Drag & Drop)",
       blocks: [
+        ServiceHeroBlock,
         ContactHeroBlock,
         ContactFormBlock,
         FormBlock,
