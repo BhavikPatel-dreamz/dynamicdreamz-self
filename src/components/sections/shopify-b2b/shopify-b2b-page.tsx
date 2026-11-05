@@ -29,6 +29,7 @@ export function ShopifyB2BPage() {
       <ServiceHeroVideoSection content={shopifyB2bHero} />
       <IndustryBrandsSection
         content={shopifyB2bBrands}
+        heading={shopifyB2bBrands.heading}
         items={globalBrandLogos}
         showHeading
       />

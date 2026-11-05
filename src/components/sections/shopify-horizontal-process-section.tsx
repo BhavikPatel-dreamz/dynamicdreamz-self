@@ -36,7 +36,6 @@ export function ShopifyHorizontalProcessSection({
     >
       <Container>
         <SplitSectionHeading
-          className="mb-[50px]"
           description={content.description}
           eyebrow={content.eyebrow}
           heading={content.heading}

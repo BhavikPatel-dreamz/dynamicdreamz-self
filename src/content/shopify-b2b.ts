@@ -9,6 +9,8 @@ export const shopifyB2bHero = {
   eyebrow: "Shopify Platinum Partner • Shopify B2B",
   eyebrowSpans: ["Shopify Platinum Partner", "Shopify B2B"] as const,
   title: "Shopify B2B & Wholesale Development for Complex Buying Workflows",
+  subtitle:
+    "Build a B2B storefront that makes it easier for companies to buy — with the right catalogs, pricing, payment terms, buyer accounts, quick ordering and business-system integrations.",
   paragraphs: [
     "Dynamic Dreamz helps manufacturers, wholesalers, distributors and established brands plan, build and improve B2B commerce on Shopify. We work across native Shopify B2B, Shopify Plus, custom storefronts, our SmartB2B public app, custom Shopify apps and ERP/CRM/PIM integrations.",
   ],
@@ -57,7 +59,7 @@ export const shopifyB2bHero = {
 
 export const shopifyB2bBrands = {
   slug: "shopify-b2b",
-  heading: ["Trusted by", "Leading Brands"] as const,
+  heading: ["Trusted by Leading Brands"] as const,
   ariaLabel: "Trusted by Leading Brands",
 } as const;
 
@@ -70,22 +72,22 @@ export const shopifyB2bBehind: EvaluationFrameworkContent = {
     {
       title: "Complex Pricing",
       description:
-        "Different buyer tiers, custom price lists, volume discounts, customer-specific catalogs and negotiated terms require structured pricing logic rather than manual overrides.",
+        "Different buyers, catalogs, price lists, quantity breaks and contractual pricing create complexity quickly.",
     },
     {
       title: "Manual Ordering",
       description:
-        "Phone, email and spreadsheet orders create administrative drag, slow down fulfillment and prevent business customers from ordering when they need to.",
+        "Email, spreadsheets and WhatsApp create avoidable work when buyers should be able to order and reorder themselves.",
     },
     {
       title: "Disconnected Systems",
       description:
-        "When Shopify doesn't talk cleanly to your ERP, CRM, inventory or accounting systems, order processing slows down and data gets out of sync.",
+        "B2B storefronts often depend on ERP, CRM, PIM, inventory and warehouse data that must stay synchronized.",
     },
     {
       title: "Buyer-Specific Workflows",
       description:
-        "Business buyers need company accounts, multiple purchasing locations, order approvals, purchase orders, saved carts and payment terms like Net 30 or Net 60.",
+        "Approvals, payment terms, credit, locations, permissions and procurement processes rarely fit a generic D2C flow.",
     },
   ],
 };
@@ -101,54 +103,108 @@ export const shopifyB2bServices: ShopifyMobileAppExperienceContent = {
       title: "Plan the right B2B architecture",
       description:
         "Map the buyers, catalogs, pricing, payment terms, D2C overlap and operations before choosing the Shopify plan and implementation model.",
+      points: [
+        "Blended vs dedicated B2B",
+        "Plan and feature assessment",
+        "Companies & locations",
+        "B2B market setup",
+      ],
     },
     {
       step: "02 · Storefront Development",
       title: "Build a self-service experience for business buyers",
       description:
         "Customize Shopify themes and customer accounts around repeat purchasing, technical product information and wholesale workflows.",
+      points: [
+        "Trade / Horizon theme customization",
+        "Custom B2B UI/UX",
+        "Gated content",
+        "Buyer account experience",
+      ],
     },
     {
       step: "03 · Catalogs & Pricing",
       title: "Show the right assortment and price to each buyer",
       description:
         "Configure catalogs, company-level pricing where supported, volume pricing, quantity rules and product availability.",
+      points: [
+        "B2B catalogs",
+        "Volume pricing",
+        "Quantity rules",
+        "Customer-specific availability",
+      ],
     },
     {
       step: "04 · Ordering & Payments",
       title: "Reduce friction for high-frequency B2B orders",
       description:
         "Support quick ordering, repeat ordering, payment terms, credit workflows and custom validations around business purchasing.",
+      points: [
+        "Quick order",
+        "Repeat order",
+        "Net payment terms",
+        "Credit / approval workflows",
+      ],
     },
     {
       step: "05 · Systems Integration",
       title: "Connect the storefront to your operational stack",
       description:
-        "Build custom APIs and middleware connections between Shopify and your ERP, CRM, PIM, WMS or accounting software.",
+        "Build API and middleware integrations so product, customer, inventory, pricing and order data moves between Shopify and business systems.",
+      points: [
+        "ERP integrations",
+        "CRM / PIM / WMS",
+        "Inventory & order sync",
+        "Middleware and APIs",
+      ],
     },
     {
       step: "06 · Custom B2B Development",
       title: "Extend Shopify where standard workflows stop",
       description:
-        "Develop custom Shopify apps, Shopify Functions, buyer portals, quote-request journeys and specialized logic for your business.",
+        "Build custom Shopify apps, Functions, admin tools and buyer workflows when your B2B requirements go beyond native features or packaged apps.",
+      points: [
+        "Custom Shopify apps",
+        "Shopify Functions",
+        "Buyer portals",
+        "Custom approvals & data logic",
+      ],
     },
     {
       step: "07 · B2B Migration",
       title: "Move wholesale operations to Shopify without losing business logic",
       description:
-        "Migrate buyer accounts, historical data, price lists, volume tiers and integrations from legacy platforms cleanly.",
+        "Plan data, pricing, customer/company structures, redirects, integrations and cutover when migrating B2B commerce from another platform.",
+      points: [
+        "Customer & company migration",
+        "Catalog / pricing migration",
+        "SEO redirects",
+        "Integration rebuilds",
+      ],
     },
     {
       step: "08 · Optimization & Support",
       title: "Improve B2B adoption after launch",
       description:
-        "Track order completion, buyer onboarding and checkout drop-off, with dedicated developer support for continuous improvement.",
+        "Refine buyer journeys, ordering speed, integrations, storefront UX and ongoing B2B functionality as the wholesale channel grows.",
+      points: [
+        "Performance & UX",
+        "Workflow improvements",
+        "Feature releases",
+        "Ongoing Shopify support",
+      ],
     },
     {
       step: "09 · Shopify Plus B2B",
       title: "Enterprise B2B for more complex requirements",
       description:
-        "Deploy company locations, direct catalogs, custom checkout rules and advanced B2B capabilities with Shopify Plus.",
+        "Use Shopify Plus when company-specific catalogs, advanced payment capabilities and larger-scale B2B operations require greater control.",
+      points: [
+        "Unlimited B2B market catalogs",
+        "Direct company catalogs",
+        "Advanced payments",
+        "Enterprise integrations",
+      ],
     },
   ],
 };
@@ -333,49 +389,49 @@ export const shopifyB2bIndustries: IndustriesServedContent = {
 };
 
 export const shopifyB2bProcess: ShopifyHorizontalProcessContent = {
-  eyebrow: "Our B2B Process",
+  eyebrow: "How We Deliver Shopify B2B",
   heading: "Map the workflow first. Build the commerce system second.",
   description:
-    "Successful B2B projects depend on business rules, operational systems and buyer habits as much as the storefront design. We follow a structured delivery model to keep scope clear and risk low.",
+    "B2B projects become expensive when storefront development begins before pricing, accounts, ordering and integrations are understood. Our process starts with the operational model.",
   steps: [
     {
       number: "01",
       title: "Discovery & Buyer Journey",
       description:
-        "We map out your customer tiers, catalogs, pricing models, payment terms, buyer roles, approval chains, and existing ERP, CRM, and order processes.",
+        "Map buyers, roles, locations, pricing, catalogs, approvals, ordering, payment terms and current systems.",
     },
     {
       number: "02",
       title: "Shopify Architecture",
       description:
-        "We determine the optimal setup: Native Shopify B2B, Shopify Plus, SmartB2B, blended vs. dedicated B2B store, custom apps, and required integrations.",
+        "Choose blended vs dedicated B2B, the Shopify plan and the right mix of native B2B, SmartB2B, apps and custom development.",
     },
     {
       number: "03",
       title: "Build & Integrate",
       description:
-        "We design and develop the buyer-facing storefront, configure B2B catalogs and pricing, build custom workflows, and connect third-party business systems.",
+        "Configure the store, customize the buyer experience and connect ERP, CRM, PIM, WMS or other systems.",
     },
     {
       number: "04",
       title: "B2B QA",
       description:
-        "We test company accounts, permissions, tier pricing, payment terms, checkout rules, draft orders, and ERP data sync across multiple test buyer profiles.",
+        "Test buyer roles, company locations, pricing, catalogs, payment terms, orders, integrations and responsive behaviour.",
     },
     {
       number: "05",
       title: "Launch & Optimize",
       description:
-        "We migrate buyer data, deploy the store, train your internal team, and provide ongoing developer support to optimize B2B ordering.",
+        "Support rollout, buyer migration, team training, monitoring and ongoing improvements as your B2B channel grows.",
     },
   ],
 };
 
 export const shopifyB2bCaseStudies = {
-  eyebrow: "Featured B2B Case Studies",
+  eyebrow: "CASE STUDIES",
   heading: "Real B2B work across Shopify, Shopify Plus, wholesale pricing and technical buyer journeys.",
   description:
-    "Selected case studies showing how we help B2B and wholesale brands build better purchasing workflows on Shopify.",
+    "These projects show different types of B2B requirements — from Shopify Plus with ERP middleware to professional pricing tiers, medical procurement workflows and technical B2B storefronts.",
   items: [
     {
       technology: "Shopify / Shopify Plus",
@@ -394,7 +450,7 @@ export const shopifyB2bCaseStudies = {
       industry: "Health & Nutrition",
       title: "Essential Whitening: Custom Shopify 2.0 Store with B2B Pricing Tiers for Dental Professionals",
       description:
-        "See how Dynamic Dreamz developed Essential Whitening's Shopify 2.0 store with B2B pricing tiers for dental professionals and custom buyer workflows.",
+        "See how Dynamic Dreamz developed Essential Whitening's Shopify 2.0 store with B2B pricing tiers for dental professionals and DTC customers.",
       tags: ["B2B Pricing Tiers", "Dental Industry"],
       href: "/case-studies/essential-whitening",
       image: "/assets/case-studies/essential-whitening.webp",
@@ -406,7 +462,7 @@ export const shopifyB2bCaseStudies = {
       industry: "Home & Living",
       title: "Furnified: Shopify Plus B2B Commerce System with Custom ERP Middleware Integration",
       description:
-        "See how Dynamic Dreamz developed a Shopify Plus B2B solution for Furnified with custom ERP middleware and connected commerce operations.",
+        "See how Dynamic Dreamz developed a Shopify Plus B2B solution for Furnified with custom ERP middleware and connected commerce workflows.",
       tags: ["B2B Ecommerce", "Furniture"],
       href: "/case-studies/furnified",
       image: "/assets/case-studies/furnified.webp",
@@ -420,31 +476,31 @@ export const shopifyB2bWhyChoose: ShopifyMobileAppExperienceContent = {
   eyebrow: "Why Dynamic Dreamz",
   heading: "One Shopify team across storefront, apps and integrations.",
   description:
-    "B2B projects usually require more than design and liquid templating. We bring storefront design, custom Shopify app development, systems integration and ongoing technical support under one roof.",
+    "B2B projects often touch Shopify configuration, frontend development, custom apps, APIs and operational systems at the same time. Our team can work across those layers.",
   moments: [
     {
       step: "Shopify Platinum Partner",
       title: "Shopify-first delivery",
       description:
-        "Deep technical knowledge of Shopify APIs, Functions, Plus features, Checkout Extensibility and the Shopify app ecosystem.",
+        "Shopify, Shopify Plus, migration, apps, integrations, CRO and ongoing development within one team.",
     },
     {
       step: "Native + App + Custom",
       title: "No forced implementation model",
       description:
-        "We recommend native B2B, Shopify Plus, SmartB2B, existing apps or custom development based on what genuinely fits your business.",
+        "Use native B2B when it fits, SmartB2B for an app-led portal, or custom development when the workflow needs more.",
     },
     {
       step: "Full-Stack Capability",
       title: "Integrate beyond the storefront",
       description:
-        "In-house developers build middleware and custom APIs to connect Shopify with your ERP, CRM, PIM, WMS or accounting software.",
+        "APIs, middleware, external systems and custom business logic can be handled alongside the Shopify build.",
     },
     {
       step: "20+ Years · 150+ Experts",
       title: "Long-term delivery capacity",
       description:
-        "A 150+ person team capable of delivering initial builds, complex migrations and continuous development as B2B volume grows.",
+        "Design, Shopify, backend, app development, QA and support teams for both initial implementation and ongoing work.",
     },
   ],
 };
@@ -463,32 +519,32 @@ export const shopifyB2bFaqs: {
     {
       question: "Is Shopify B2B available without Shopify Plus?",
       answer:
-        "Yes. Shopify B2B is available on Basic, Grow, Advanced and Shopify Plus. Most core B2B capabilities — including companies, buyer-specific pricing, B2B catalogs, quantity rules and net payment terms — are supported across these plans. However, catalog flexibility and international market controls expand significantly as you move to Advanced and Shopify Plus.",
+        "Yes. Shopify B2B is available on Basic, Grow, Advanced and Shopify Plus. Most core B2B capabilities are available across plans, while Advanced and Plus add more control for contextual storefronts, catalogs and payment workflows.",
     },
     {
       question: "When should a B2B business use Shopify Plus?",
       answer:
-        "Shopify Plus is a stronger fit when you need unlimited B2B market catalogs, direct catalog assignment to specific companies and locations, deposit and partial-payment capabilities, payment requests per fulfilment, more advanced checkout customizations, or greater flexibility for high-volume enterprise operations.",
+        "Shopify Plus is a stronger fit when you need unlimited B2B market catalogs, direct catalog assignment to specific companies or locations, advanced payment workflows, and more complex enterprise requirements. We assess the plan around your actual B2B model instead of assuming every wholesale project needs Plus.",
     },
     {
       question: "Can we run B2B and D2C from the same Shopify store?",
       answer:
-        "Yes. Shopify supports blended B2B and D2C commerce, or you can run a dedicated B2B store. We help determine whether a blended or separated approach is best based on your catalog structure, currency needs, brand positioning, customer experience and backend fulfillment.",
+        "Yes. Shopify supports blended B2B and D2C commerce, or you can run a dedicated B2B store. We help decide the model based on pricing, catalogs, buyer experience, operations and integrations.",
     },
     {
       question: "Can Dynamic Dreamz integrate Shopify B2B with our ERP, CRM, PIM or warehouse system?",
       answer:
-        "Yes. We build API and middleware integrations for product data, company accounts, inventory, pricing, orders, payment terms and fulfillment. We have integrated Shopify with SAP, NetSuite, Microsoft Dynamics, Salesforce, Katana, Brightpearl and custom in-house systems.",
+        "Yes. We build API and middleware integrations for product data, company accounts, inventory, pricing, orders, fulfilment and other operational data across ERP, CRM, PIM, WMS and custom business systems.",
     },
     {
       question: "What is SmartB2B?",
       answer:
-        "SmartB2B is a public Shopify app developed by Dynamic Dreamz. It adds B2B buyer onboarding and approval workflows, self-service buyer portals, quick order forms, repeat purchasing, team management, multiple buyer locations, credit limits and B2B sales analytics to Shopify.",
+        "SmartB2B is a public Shopify app developed by Dynamic Dreamz. It adds B2B buyer onboarding and approval, a self-service portal, quick and repeat ordering, credit management, wishlists, company management and B2B reporting.",
     },
     {
       question: "Can you build custom B2B features beyond Shopify's native functionality or SmartB2B?",
       answer:
-        "Yes. We develop custom Shopify apps, Functions, buyer portals, ordering tools, pricing workflows, approval flows, custom quote builders and bespoke integrations for complex B2B business logic that standard tools cannot handle.",
+        "Yes. We develop custom Shopify apps, Functions, buyer portals, ordering tools, pricing workflows, approvals and integrations when the business requirement goes beyond native Shopify B2B or an off-the-shelf app.",
     },
   ],
 };

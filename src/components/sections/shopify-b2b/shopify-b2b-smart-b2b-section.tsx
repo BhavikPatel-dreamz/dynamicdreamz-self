@@ -47,26 +47,32 @@ export function ShopifyB2BSmartB2BSection({
     >
       <Container>
         <div
-          className="wrapper flex flex-wrap -mx-[10px] items-start min-[1200px]:-mx-5"
+          className="wrapper flex flex-wrap -mx-5 items-center max-[1200px]:-mx-[10px] max-[1200px]:items-start"
           data-aos="fade-up"
         >
-          <div className="left-col w-[55%] px-[10px] min-[1200px]:px-5 max-[992px]:w-full max-[992px]:p-0">
-            <div className="section_title_with_eyebrow flex-wrap text-left">
-              <div className="title text-left">
+          <div className="left-col w-1/2 px-5 max-[1200px]:w-[55%] max-[1200px]:px-[10px] max-[992px]:w-full">
+            <div className="section_title_with_eyebrow flex-wrap !m-0 !text-left">
+              <div className="title w-full !text-left">
                 {content.eyebrow ? (
-                  <Eyebrow as="div" className="mb-4">
-                    {content.eyebrow}
+                  <Eyebrow
+                    align="start"
+                    as="div"
+                    className="mb-4 text-[#535353]"
+                    linePosition="overlay"
+                    lineThickness="thin"
+                  >
+                    <span>{content.eyebrow}</span>
                   </Eyebrow>
                 ) : null}
-                <h2 className="mb-4 font-display text-[35px] font-normal leading-[45px] text-ink max-[1200px]:text-[30px] max-[768px]:text-2xl max-[768px]:leading-[32px]">
+                <h2 className="mb-2.5 font-montreal-medium text-[35px] font-normal leading-[1.4] text-ink max-[992px]:text-[30px] max-[768px]:text-2xl max-[768px]:leading-[1.3]">
                   {formatBrText(content.heading)}
                 </h2>
               </div>
-              <div className="section_text text-left">
+              <div className="section_text w-full !text-left">
                 {content.paragraphs.map((p, idx) => (
                   <p
                     key={idx}
-                    className="mb-4 font-sans text-sm font-normal leading-[24px] text-[#535353] last:mb-0"
+                    className="mb-[15px] font-sans text-sm font-normal leading-[24px] text-[#535353] last:mb-0"
                   >
                     {formatBrText(p)}
                   </p>
@@ -78,14 +84,14 @@ export function ShopifyB2BSmartB2BSection({
               {content.features.map((feat) => (
                 <div
                   key={feat}
-                  className="app-feature w-[calc(50%-5px)] max-[576px]:w-full rounded-[12px] border border-[rgba(40,40,40,0.08)] bg-white px-5 py-[9px] font-montreal-medium text-sm font-medium leading-normal text-ink"
+                  className="app-feature w-[calc(50%-5px)] rounded-[12px] border border-[rgba(40,40,40,0.08)] bg-white px-5 py-[9px] font-sans text-sm font-medium leading-6 text-[#535353]"
                 >
                   {feat}
                 </div>
               ))}
             </div>
 
-            <div className="btns_group flex flex-wrap gap-[15px] pt-1">
+            <div className="btns_group flex flex-wrap items-center gap-[15px] pt-1 max-[576px]:flex-col max-[576px]:items-start max-[576px]:w-full">
               {content.buttons.map((btn) => (
                 <ButtonLink
                   key={btn.label}
@@ -94,7 +100,7 @@ export function ShopifyB2BSmartB2BSection({
                   rel="nofollow noopener noreferrer"
                   variant="primary"
                   aria-label={btn.ariaLabel}
-                  className="px-5 py-3"
+                  className="max-[576px]:w-full"
                 >
                   {btn.label}
                 </ButtonLink>
@@ -113,15 +119,15 @@ export function ShopifyB2BSmartB2BSection({
             </div>
           </div>
 
-          <div className="right-col w-[45%] px-[10px] min-[1200px]:px-5 max-[992px]:w-full max-[992px]:mt-[30px] text-center">
+          <div className="right-col w-1/2 px-5 max-[1200px]:w-[45%] max-[1200px]:px-[10px] max-[1200px]:mt-[30px] max-[992px]:w-full max-[992px]:px-0 max-[992px]:mt-[30px] text-center">
             <div className="image-wrapper text-center">
               <Image
                 src={content.image.src}
                 alt={content.image.alt}
                 width={content.image.width}
                 height={content.image.height}
-                sizes="(max-width: 991px) 100vw, 550px"
-                className="mx-auto h-auto max-w-full rounded-[30px] shadow-sm"
+                sizes="(max-width: 991px) 100vw, (max-width: 1199px) 45vw, 680px"
+                className="mx-auto h-auto max-w-full rounded-[30px]"
               />
             </div>
           </div>

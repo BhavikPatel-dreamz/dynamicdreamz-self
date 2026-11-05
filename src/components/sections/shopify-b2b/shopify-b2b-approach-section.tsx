@@ -1,7 +1,6 @@
 import { Container } from "@/components/ui/container";
-import { Eyebrow } from "@/components/ui/eyebrow";
+import { SplitSectionHeading } from "@/components/ui/split-section-heading";
 import { cn } from "@/lib/class-names";
-import { formatBrText } from "@/lib/text-formatting";
 
 export type ShopifyB2BApproachCard = {
   badge?: string;
@@ -44,26 +43,13 @@ export function ShopifyB2BApproachSection({
       id={id}
     >
       <Container>
-        <div
-          className="section_title_with_eyebrow mb-[50px] flex flex-wrap justify-between gap-y-4 max-[992px]:flex-col"
-          data-aos="fade-up"
-        >
-          <div className="title w-[45%] max-[992px]:w-full">
-            {content.eyebrow ? (
-              <Eyebrow as="div" className="mb-4 text-white">
-                {content.eyebrow}
-              </Eyebrow>
-            ) : null}
-            <h2 className="m-0 font-display text-[35px] font-normal leading-[45px] text-white max-[1200px]:text-[30px] max-[768px]:text-2xl max-[768px]:leading-[33px]">
-              {formatBrText(content.heading)}
-            </h2>
-          </div>
-          <div className="section_text w-[48%] max-[992px]:w-full">
-            <p className="m-0 font-sans text-base font-normal leading-[26px] text-white/80 max-[768px]:text-sm">
-              {formatBrText(content.description)}
-            </p>
-          </div>
-        </div>
+        <SplitSectionHeading
+          dark
+          variant="services"
+          eyebrow={content.eyebrow}
+          heading={content.heading}
+          description={content.description}
+        />
 
         <div
           className="wrapper flex flex-wrap -mx-[10px] min-[1200px]:-mx-2.5"
@@ -86,7 +72,7 @@ export function ShopifyB2BApproachSection({
                   {item.badge ? (
                     <span
                       className={cn(
-                        "mb-2.5 block font-montserrat text-sm font-semibold uppercase tracking-[0.5px]",
+                        "mb-2.5 block font-montserrat text-sm font-medium uppercase leading-6",
                         item.isHighlighted ? "text-white/65" : "text-[#ad5151]"
                       )}
                     >
@@ -95,7 +81,7 @@ export function ShopifyB2BApproachSection({
                   ) : null}
                   <h3
                     className={cn(
-                      "mb-2 font-display text-[22px] font-medium leading-tight max-[768px]:text-lg",
+                      "mb-2 font-display text-[20px] font-medium max-[768px]:text-lg",
                       item.isHighlighted ? "text-white" : "text-ink"
                     )}
                   >
@@ -148,7 +134,7 @@ export function ShopifyB2BApproachSection({
         </div>
 
         <div
-          className="proof-row flex flex-wrap -mx-[10px] mt-5 max-[1200px]:-mb-5"
+          className="proof-row flex flex-wrap -mx-[10px] mt-5 max-[1200px]:mt-0"
           data-aos="fade-up"
         >
           {content.proofs.map((proof) => (
