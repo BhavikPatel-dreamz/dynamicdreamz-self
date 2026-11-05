@@ -99,11 +99,11 @@ export function CityPageHeroSection({
                   {content.subtitle}
                 </span>
               )}
-              <p className="mt-3 font-montserrat text-base font-medium leading-7 text-[#535353] max-[992px]:text-[14px] max-[992px]:leading-[24px]">
+              <p className="mt-3 font-montserrat text-base font-medium leading-7 text-[#535353] max-[1200px]:text-[14px] max-[1200px]:leading-[24px]">
                 {content.description}
               </p>
               {content.secondaryDescription && (
-                <p className="mt-3 font-montserrat text-base font-medium leading-7 text-[#535353] max-[992px]:text-[14px] max-[992px]:leading-[24px]">
+                <p className="mt-3 font-montserrat text-base font-medium leading-7 text-[#535353] max-[1200px]:text-[14px] max-[1200px]:leading-[24px]">
                   {content.secondaryDescription}
                 </p>
               )}

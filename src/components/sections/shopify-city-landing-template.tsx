@@ -1,6 +1,10 @@
 import type { ReactNode } from "react";
 
 import { AgencyServicesSection } from "@/components/sections/agency-services-section";
+import {
+  AiEmpoweredDeliverySection,
+  type AiEmpoweredDeliveryContent,
+} from "@/components/sections/ai-empowered-delivery-section";
 import { CityPageCounterSection } from "@/components/sections/city-page-counter-section";
 import {
   CityPageHeroSection,
@@ -16,6 +20,10 @@ import { IndustryBrandsSection } from "@/components/sections/industry/industry-b
 import { OurDevelopmentProcessSection } from "@/components/sections/our-development-process-section";
 import { PortfolioShowcaseSection } from "@/components/sections/portfolio-showcase-section";
 import { SplitFaqSection } from "@/components/sections/split-faq-section";
+import {
+  WhyChooseShopifyMigrationSection,
+  type WhyChooseMigrationContent,
+} from "@/components/sections/why-choose-shopify-migration-section";
 import type { ClientLogoSliderItem } from "@/components/ui/client-logo-slider";
 import type { CityPageCounterContent } from "@/components/sections/city-page-counter-section";
 import type { CityWhyChooseBoxesContent } from "@/components/sections/city-why-choose-boxes-section";
@@ -36,11 +44,13 @@ export type ShopifyCityLandingContent = {
     title: string;
     items: readonly ClientLogoSliderItem[];
   };
-  counter: CityPageCounterContent;
-  whyChoose: CityWhyChooseBoxesContent;
+  counter?: CityPageCounterContent;
+  officeTeam?: AiEmpoweredDeliveryContent;
+  whyChoose: CityWhyChooseBoxesContent & { columns?: 3 | 4 | 5 };
   services: AgencyServicesContent;
   process: OurDevelopmentProcessContent;
   whyDynamicDreamz: CityWhyChooseBoxesContent;
+  whyChooseMigration?: WhyChooseMigrationContent;
   portfolio: {
     heading: string | readonly string[];
     description: string | readonly string[];
@@ -92,17 +102,25 @@ export function ShopifyCityLandingTemplate({
         heading={content.brands.title}
         items={content.brands.items}
       />
-      <CityPageCounterSection
-        content={content.counter}
-        eyebrowVariant="dash"
-      />
+      {content.officeTeam ? (
+        <AiEmpoweredDeliverySection
+          content={content.officeTeam}
+          variant="dark-green"
+        />
+      ) : content.counter ? (
+        <CityPageCounterSection
+          content={content.counter}
+          eyebrowVariant="dash"
+        />
+      ) : null}
       <CityWhyChooseBoxesSection
+        columns={content.whyChoose.columns ?? 5}
         content={content.whyChoose}
         eyebrowVariant="dash"
       />
       <AgencyServicesSection
-        className="pb-20"
         cardVariant="services-box"
+        className="pb-20"
         columns={2}
         content={content.services}
         eyebrow={content.services.eyebrow}
@@ -119,7 +137,13 @@ export function ShopifyCityLandingTemplate({
         content={content.whyDynamicDreamz}
         eyebrowVariant="dash"
         theme="white"
+        className={content.whyChooseMigration && "!py-20 !max-[992px]:py-15 !max-[768px]:py-10"}
       />
+      {content.whyChooseMigration ? (
+        <WhyChooseShopifyMigrationSection
+          content={content.whyChooseMigration}
+        />
+      ) : null}
       <PortfolioShowcaseSection
         cardVariant="ourWorkRefresh"
         columns={4}

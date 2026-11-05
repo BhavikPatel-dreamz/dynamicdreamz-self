@@ -205,6 +205,8 @@ import { dentalClinicWebsiteDevelopmentCompanyContent } from "@/content/dental-c
 import { shopifyDevelopmentDelhiContent } from "@/content/shopify-development-in-delhi";
 import { shopifyDevelopmentHyderabadContent } from "@/content/shopify-development-in-hyderabad";
 import { shopifyDevelopmentPuneContent } from "@/content/shopify-development-in-pune";
+import { shopifyDevelopmentAhmedabadContent } from "@/content/shopify-development-in-ahmedabad";
+import { shopifyDevelopmentSuratContent } from "@/content/shopify-development-in-surat";
 import { shopifyDevelopmentBangaloreContent } from "@/content/shopify-development-in-bangalore";
 import { shopifyDevelopmentTexasContent } from "@/content/shopify-development-in-texas";
 import { shopifyDevelopmentNewYorkContent } from "@/content/shopify-development-in-new-york";
@@ -889,6 +891,16 @@ const shopifyDevelopmentBangalorePageId = `${shopifyDevelopmentBangalorePageUrl}
 const shopifyDevelopmentBangaloreServiceId = `${shopifyDevelopmentBangalorePageUrl}#service`;
 const shopifyDevelopmentBangaloreFaqId = `${shopifyDevelopmentBangalorePageUrl}#faq`;
 const shopifyDevelopmentBangaloreBreadcrumbId = `${shopifyDevelopmentBangalorePageUrl}#breadcrumb`;
+const shopifyDevelopmentAhmedabadPageUrl = absoluteUrl(pageSeo.shopifyDevelopmentInAhmedabad.path);
+const shopifyDevelopmentAhmedabadPageId = `${shopifyDevelopmentAhmedabadPageUrl}#webpage`;
+const shopifyDevelopmentAhmedabadServiceId = `${shopifyDevelopmentAhmedabadPageUrl}#service`;
+const shopifyDevelopmentAhmedabadFaqId = `${shopifyDevelopmentAhmedabadPageUrl}#faq`;
+const shopifyDevelopmentAhmedabadBreadcrumbId = `${shopifyDevelopmentAhmedabadPageUrl}#breadcrumb`;
+const shopifyDevelopmentSuratPageUrl = absoluteUrl(pageSeo.shopifyDevelopmentInSurat.path);
+const shopifyDevelopmentSuratPageId = `${shopifyDevelopmentSuratPageUrl}#webpage`;
+const shopifyDevelopmentSuratServiceId = `${shopifyDevelopmentSuratPageUrl}#service`;
+const shopifyDevelopmentSuratFaqId = `${shopifyDevelopmentSuratPageUrl}#faq`;
+const shopifyDevelopmentSuratBreadcrumbId = `${shopifyDevelopmentSuratPageUrl}#breadcrumb`;
 const shopifyDevelopmentTexasPageUrl = absoluteUrl(pageSeo.shopifyDevelopmentInTexas.path);
 const shopifyDevelopmentTexasPageId = `${shopifyDevelopmentTexasPageUrl}#webpage`;
 const shopifyDevelopmentTexasServiceId = `${shopifyDevelopmentTexasPageUrl}#service`;
@@ -5433,6 +5445,70 @@ export function createShopifyDevelopmentInBangalorePageSchema() {
       })),
     ],
     areaServed: ["Bangalore","Bengaluru","Karnataka","India"],
+  });
+}
+
+export function createShopifyDevelopmentInAhmedabadPageSchema() {
+  return createServicePageSchema({
+    page: pageSeo.shopifyDevelopmentInAhmedabad,
+    pageUrl: shopifyDevelopmentAhmedabadPageUrl,
+    pageId: shopifyDevelopmentAhmedabadPageId,
+    serviceId: shopifyDevelopmentAhmedabadServiceId,
+    faqId: shopifyDevelopmentAhmedabadFaqId,
+    breadcrumbId: shopifyDevelopmentAhmedabadBreadcrumbId,
+    serviceName: "Shopify Development in Ahmedabad",
+    serviceType:
+      "Custom Shopify development, theme customization, Shopify Plus, app integration, migration, and store maintenance for businesses in Ahmedabad",
+    breadcrumbName: "Shopify Development in Ahmedabad",
+    audienceType:
+      "Brands, retailers, manufacturers, D2C businesses and agencies in Ahmedabad seeking custom Shopify development services",
+    faqs: shopifyDevelopmentAhmedabadContent.faqs.map((item) => ({
+      question: item.question,
+      answer: cleanFaqSchemaText(item.answer),
+    })),
+    offers: [
+      ...shopifyDevelopmentAhmedabadContent.services.items.map((item) => ({
+        title: item.title,
+        description: item.description,
+      })),
+      ...shopifyDevelopmentAhmedabadContent.whyDynamicDreamz.items.map((item) => ({
+        title: item.title,
+        description: item.description,
+      })),
+    ],
+    areaServed: ["Ahmedabad", "Gujarat", "India"],
+  });
+}
+
+export function createShopifyDevelopmentInSuratPageSchema() {
+  return createServicePageSchema({
+    page: pageSeo.shopifyDevelopmentInSurat,
+    pageUrl: shopifyDevelopmentSuratPageUrl,
+    pageId: shopifyDevelopmentSuratPageId,
+    serviceId: shopifyDevelopmentSuratServiceId,
+    faqId: shopifyDevelopmentSuratFaqId,
+    breadcrumbId: shopifyDevelopmentSuratBreadcrumbId,
+    serviceName: "Shopify Development in Surat",
+    serviceType:
+      "Custom Shopify development, theme customization, Shopify Plus, app integration, migration, and store maintenance for businesses in Surat",
+    breadcrumbName: "Shopify Development in Surat",
+    audienceType:
+      "Brands, retailers, manufacturers, D2C businesses and agencies in Surat seeking custom Shopify development services",
+    faqs: shopifyDevelopmentSuratContent.faqs.map((item) => ({
+      question: item.question,
+      answer: cleanFaqSchemaText(item.answer),
+    })),
+    offers: [
+      ...shopifyDevelopmentSuratContent.services.items.map((item) => ({
+        title: item.title,
+        description: item.description,
+      })),
+      ...shopifyDevelopmentSuratContent.whyDynamicDreamz.items.map((item) => ({
+        title: item.title,
+        description: item.description,
+      })),
+    ],
+    areaServed: ["Surat", "Gujarat", "India"],
   });
 }
 

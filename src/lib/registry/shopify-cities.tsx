@@ -1,4 +1,5 @@
 import { ShopifyCityLandingTemplate } from "@/components/sections/shopify-city-landing-template";
+import { shopifyDevelopmentAhmedabadContent } from "@/content/shopify-development-in-ahmedabad";
 import { shopifyDevelopmentChennaiContent } from "@/content/shopify-development-company-in-chennai";
 import { shopifyDevelopmentBangaloreContent } from "@/content/shopify-development-in-bangalore";
 import { shopifyDevelopmentBarcelonaContent } from "@/content/shopify-development-in-barcelona-spain";
@@ -9,9 +10,11 @@ import { shopifyDevelopmentMiamiContent } from "@/content/shopify-development-in
 import { shopifyDevelopmentMumbaiContent } from "@/content/shopify-development-in-mumbai";
 import { shopifyDevelopmentNewYorkContent } from "@/content/shopify-development-in-new-york";
 import { shopifyDevelopmentPuneContent } from "@/content/shopify-development-in-pune";
+import { shopifyDevelopmentSuratContent } from "@/content/shopify-development-in-surat";
 import { shopifyDevelopmentTexasContent } from "@/content/shopify-development-in-texas";
 import { pageMetadata } from "@/data/seo";
 import {
+  createShopifyDevelopmentInAhmedabadPageSchema,
   createShopifyDevelopmentCompanyInChennaiPageSchema,
   createShopifyDevelopmentInBangalorePageSchema,
   createShopifyDevelopmentBarcelonaPageSchema,
@@ -22,11 +25,24 @@ import {
   createShopifyDevelopmentInMumbaiPageSchema,
   createShopifyDevelopmentInNewYorkPageSchema,
   createShopifyDevelopmentInPunePageSchema,
+  createShopifyDevelopmentInSuratPageSchema,
   createShopifyDevelopmentInTexasPageSchema,
 } from "@/lib/schema";
 import type { ServicePageEntry } from "@/lib/registry/types";
 
 export const shopifyCitiesRegistry: readonly ServicePageEntry[] = [
+  {
+    slug: "shopify-development-in-ahmedabad",
+    metadata: pageMetadata.shopifyDevelopmentInAhmedabad,
+    getSchema: createShopifyDevelopmentInAhmedabadPageSchema,
+    render: () => (
+      <ShopifyCityLandingTemplate
+        content={shopifyDevelopmentAhmedabadContent}
+        faqIdPrefix="ahmedabad-faq"
+        slug="shopify-development-in-ahmedabad"
+      />
+    ),
+  },
   {
     slug: "shopify-development-company-in-chennai",
     metadata: pageMetadata.shopifyDevelopmentCompanyInChennai,
@@ -144,6 +160,18 @@ export const shopifyCitiesRegistry: readonly ServicePageEntry[] = [
         content={shopifyDevelopmentPuneContent}
         faqIdPrefix="pune-faq"
         slug="shopify-development-in-pune"
+      />
+    ),
+  },
+  {
+    slug: "shopify-development-in-surat",
+    metadata: pageMetadata.shopifyDevelopmentInSurat,
+    getSchema: createShopifyDevelopmentInSuratPageSchema,
+    render: () => (
+      <ShopifyCityLandingTemplate
+        content={shopifyDevelopmentSuratContent}
+        faqIdPrefix="surat-faq"
+        slug="shopify-development-in-surat"
       />
     ),
   },

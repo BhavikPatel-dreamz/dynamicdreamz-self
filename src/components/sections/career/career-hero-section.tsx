@@ -60,7 +60,7 @@ export function CareerHeroSection({
                 {title}
               </h1>
 
-              <p className="mt-3 font-montserrat text-base font-medium leading-7 text-[#535353] max-[992px]:text-[14px] max-[992px]:leading-[24px]">
+              <p className="mt-3 font-montserrat text-base font-medium leading-7 text-[#535353] max-[1200px]:text-[14px] max-[1200px]:leading-[24px]">
                 {description}
               </p>
             </div>

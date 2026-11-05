@@ -3620,6 +3620,62 @@ export const pageSeo = {
       priority: 0.8,
     },
   },
+  shopifyDevelopmentInAhmedabad: {
+    path: "/shopify-development-in-ahmedabad",
+    title: "Shopify Development Company in Ahmedabad | DynamicDreamz",
+    description:
+      "Shopify development company in Ahmedabad for custom stores, Shopify Plus, theme customization, migration, integrations, CRO, and ongoing support.",
+    socialDescription:
+      "Shopify development company in Ahmedabad for custom stores, Shopify Plus, theme customization, migration, integrations, CRO, and ongoing support.",
+    keywords: [
+      "Shopify development in Ahmedabad",
+      "Shopify development company in Ahmedabad",
+      "Shopify agency Ahmedabad",
+      "Shopify developers Ahmedabad",
+      "Shopify Plus Ahmedabad",
+    ],
+    openGraphType: "website",
+    publishedTime: "2024-11-20T00:00:00+00:00",
+    modifiedTime: "2026-09-02T00:00:00+05:30",
+    image: {
+      path: "/assets/og/homepage.png",
+      width: 1200,
+      height: 630,
+      alt: "Shopify Development Company in Ahmedabad | Dynamic Dreamz",
+    },
+    sitemap: {
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+  },
+  shopifyDevelopmentInSurat: {
+    path: "/shopify-development-in-surat",
+    title: "Shopify Development Company in Surat | DynamicDreamz",
+    description:
+      "Shopify development company in Surat for custom stores, Shopify Plus, theme customization, migration, integrations, CRO and ongoing support.",
+    socialDescription:
+      "Shopify development company in Surat for custom stores, Shopify Plus, theme customization, migration, integrations, CRO and ongoing support.",
+    keywords: [
+      "Shopify development in Surat",
+      "Shopify development company in Surat",
+      "Shopify agency Surat",
+      "Shopify developers Surat",
+      "Shopify Plus Surat",
+    ],
+    openGraphType: "website",
+    publishedTime: "2024-11-20T00:00:00+00:00",
+    modifiedTime: "2026-09-02T00:00:00+05:30",
+    image: {
+      path: "/assets/og/homepage.png",
+      width: 1200,
+      height: 630,
+      alt: "Shopify Development Company in Surat | Dynamic Dreamz",
+    },
+    sitemap: {
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+  },
   shopifyDevelopmentInTexas: {
     path: "/shopify-development-in-texas",
     title: "Shopify Development Company in Texas | Dynamic Dreamz",

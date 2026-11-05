@@ -427,7 +427,6 @@ export function WhyChooseShopifyMigrationSection({
           dark
           description={content.description}
           eyebrow={content.eyebrow}
-          eyebrowClassName="text-white"
           heading={content.heading}
           variant="left"
         />

@@ -60,6 +60,7 @@ export interface BlockServiceHero {
   blockType?: string;
   id?: string | number;
   variant?:
+    | "home"
     | "video"
     | "tablet-slider"
     | "image"

@@ -519,7 +519,7 @@ export const hireShopifyWork = {
 
 export const hireShopifyTestimonials = {
   eyebrow: "Client Stories",
-  heading: "Our Customers' Testimonials",
+  heading: "Our Customer's Testimonials",
   description:
     "We have faith in our work, but what truly matters is the outcomes we serve our clients.",
 } as const;
