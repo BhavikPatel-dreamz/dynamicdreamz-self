@@ -7,17 +7,17 @@ import { cn } from "@/lib/class-names";
 
 export type WhyChooseMigrationItem = {
   icon?:
-    | "certified"
-    | "verticals"
-    | "team"
-    | "design"
-    | "expertise"
-    | "qa"
-    | "support"
-    | "shopify-bag"
-    | "custom-build"
-    | "long-term-support"
-    | string;
+  | "certified"
+  | "verticals"
+  | "team"
+  | "design"
+  | "expertise"
+  | "qa"
+  | "support"
+  | "shopify-bag"
+  | "custom-build"
+  | "long-term-support"
+  | string;
   iconSvg?: ReactNode;
   title?: string;
   description: string;
@@ -423,7 +423,7 @@ export function WhyChooseShopifyMigrationSection({
     >
       <Container>
         <SplitSectionHeading
-          
+
           dark
           description={content.description}
           eyebrow={content.eyebrow}
@@ -451,9 +451,11 @@ export function WhyChooseShopifyMigrationSection({
                       {item.title}
                     </h3>
                   ) : null}
-                  <p className="whitespace-pre-line font-sans text-sm font-regular leading-6 text-[#535353]">
-                    {item.description}
-                  </p>
+                  {item.description && (
+                    <p className="whitespace-pre-line font-sans text-sm font-regular leading-6 text-[#535353]">
+                      {item.description}
+                    </p>
+                  )}
                 </div>
               </div>
             ))}

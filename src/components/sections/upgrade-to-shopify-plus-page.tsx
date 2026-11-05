@@ -7,6 +7,7 @@ import { ServicesCaseStudiesSection } from "@/components/sections/services-case-
 import { PricingTableSection } from "@/components/sections/shopify-plus-agency/pricing-table-section";
 import { SplitFaqSection } from "@/components/sections/split-faq-section";
 import { ThemeCustomizationServicesSection } from "@/components/sections/theme-customization-services-section";
+import { ShopifyPlusServiceIcon } from "@/components/sections/upgrade-to-shopify-plus/shopify-plus-services-icons";
 import { WhyChooseShopifyMigrationSection } from "@/components/sections/why-choose-shopify-migration-section";
 import {
   upgradeShopifyPlusAdvantage,
@@ -25,6 +26,18 @@ import {
 } from "@/content/upgrade-to-shopify-plus";
 
 export function UpgradeToShopifyPlusPage() {
+  const whenPlusMakesSenseBoxes = upgradeShopifyPlusWhenPlusMakesSense.boxes.map((box) => ({
+    icon: <ShopifyPlusServiceIcon name={box.iconName} />,
+    title: box.title,
+    description: box.description,
+  }));
+
+  const whatWeImplementBoxes = upgradeShopifyPlusWhatWeImplement.boxes.map((box) => ({
+    icon: <ShopifyPlusServiceIcon name={box.iconName} />,
+    title: box.title,
+    description: box.description,
+  }));
+
   return (
     <div>
       {/* 1. Hero */}
@@ -49,17 +62,27 @@ export function UpgradeToShopifyPlusPage() {
 
       {/* 4. When Shopify Plus Makes Sense */}
       <ThemeCustomizationServicesSection
-        content={upgradeShopifyPlusWhenPlusMakesSense}
+        content={{
+          eyebrow: upgradeShopifyPlusWhenPlusMakesSense.eyebrow,
+          heading: upgradeShopifyPlusWhenPlusMakesSense.heading,
+          description: upgradeShopifyPlusWhenPlusMakesSense.description,
+          boxes: whenPlusMakesSenseBoxes,
+        }}
         id="plus-fit"
         variant="yellow"
       />
 
       {/* 5. Why Upgrade to Shopify Plus? / Advantages */}
-      <OurDevelopmentProcessSection content={upgradeShopifyPlusAdvantage} />
+      <OurDevelopmentProcessSection isBgTransparent content={upgradeShopifyPlusAdvantage} />
 
       {/* 6. What Dynamic Dreamz can implement after the decision to upgrade */}
       <ThemeCustomizationServicesSection
-        content={upgradeShopifyPlusWhatWeImplement}
+        content={{
+          eyebrow: upgradeShopifyPlusWhatWeImplement.eyebrow,
+          heading: upgradeShopifyPlusWhatWeImplement.heading,
+          description: upgradeShopifyPlusWhatWeImplement.description,
+          boxes: whatWeImplementBoxes,
+        }}
         id="plus-services"
         variant="green"
       />
@@ -90,7 +113,7 @@ export function UpgradeToShopifyPlusPage() {
         columns={4}
         content={upgradeShopifyPlusPortfolio}
         headerLayout="split"
-        hideCta={true}
+        hideCta={false}
         sectionId="our_work"
       />
 

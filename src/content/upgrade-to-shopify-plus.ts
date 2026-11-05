@@ -4,7 +4,7 @@ import type { WhyChooseMigrationContent } from "@/components/sections/why-choose
 import type { FaqAccordionItem } from "@/components/ui/faq-accordion";
 
 export const upgradeShopifyPlusHero = {
-  eyebrows: ["Established in 2006", "Shopify Platinum Partner"] as const,
+  eyebrowSpans: ["Established in 2006", "Shopify Platinum Partner"] as const,
   title: "Upgrade to Shopify Plus with Confidence",
   titleAccent: "with Confidence",
   paragraphs: [
@@ -73,31 +73,37 @@ export const upgradeShopifyPlusWhenPlusMakesSense = {
     "Shopify Plus should solve a real commercial or operational constraint. These are the situations where we most often see a clear reason to evaluate the upgrade.",
   boxes: [
     {
+      iconName: "more-checkout-control",
       title: "More Checkout Control",
       description:
         "You need supported checkout extensions, branding, validation, content or other advanced checkout experiences.",
     },
     {
+      iconName: "advanced-b2b-requirements",
       title: "Advanced B2B Requirements",
       description:
         "You need Plus-level B2B controls such as unlimited catalogs, direct company catalog assignment, deposits or partial payments.",
     },
     {
+      iconName: "multiple-storefronts",
       title: "Multiple Storefronts",
       description:
         "You need eligible expansion stores for international, B2B, employee or other approved multi-store use cases.",
     },
     {
+      iconName: "complex-integrations",
       title: "Complex Integrations",
       description:
         "Your ERP, PIM, OMS, WMS or custom middleware needs higher platform and API capacity.",
     },
     {
+      iconName: "high-demand-events",
       title: "High-Demand Events",
       description:
         "Product drops and flash sales need stronger event tooling, automation and bot protection.",
     },
     {
+      iconName: "enterprise-operations",
       title: "Enterprise Operations",
       description:
         "Priority support, organization management, staff controls and staging matter more as your operation grows.",
@@ -112,25 +118,25 @@ export const upgradeShopifyPlusAdvantage = {
     "The value is not in the Plus label itself. It comes from using the right capabilities to simplify operations, improve buying journeys and support the next stage of growth.",
   steps: [
     {
-      step: "01",
+      step: "step 01",
       title: "Stronger Checkout UX",
       description:
         "Extend checkout and customer-account experiences around requirements standard Shopify does not cover.",
     },
     {
-      step: "02",
+      step: "step 02",
       title: "More Flexible B2B",
       description:
         "Support more complex catalogs, company pricing and advanced wholesale payment workflows.",
     },
     {
-      step: "03",
+      step: "step 03",
       title: "Multi-Store Control",
       description:
         "Manage eligible regional, B2B or specialized storefronts within a Plus organization.",
     },
     {
-      step: "04",
+      step: "step 04",
       title: "Integration Headroom",
       description:
         "Give larger ERP, PIM, OMS and custom integration environments more room to operate.",
@@ -145,31 +151,37 @@ export const upgradeShopifyPlusWhatWeImplement = {
     "We can keep the scope focused on one Plus capability or handle a broader program covering checkout, B2B, integrations, international stores and ongoing development.",
   boxes: [
     {
+      iconName: "plus-readiness-assessment",
       title: "Plus Readiness Assessment",
       description:
         "Review current constraints, apps, checkout, B2B, integrations and operating needs before recommending Plus.",
     },
     {
+      iconName: "checkout-account-extensibility",
       title: "Checkout & Account Extensibility",
       description:
         "Design and build supported checkout, thank-you, order-status and customer-account extensions.",
     },
     {
+      iconName: "advanced-b2b-implementation",
       title: "Advanced B2B Implementation",
       description:
         "Companies, catalogs, pricing, quantity rules, deposits, payment workflows and connected wholesale experiences.",
     },
     {
+      iconName: "expansion-stores-markets",
       title: "Expansion Stores & Markets",
       description:
         "Plan eligible international, B2B or specialized storefronts and the operations that sit behind them.",
     },
     {
+      iconName: "apps-apis-integrations",
       title: "Apps, APIs & Integrations",
       description:
         "ERP, PIM, CRM, OMS, WMS, 3PL, custom apps, middleware and Shopify Functions where required.",
     },
     {
+      iconName: "ongoing-plus-development",
       title: "Ongoing Plus Development",
       description:
         "Continue with performance, CRO, new features, integration work and long-term Shopify Plus development.",
@@ -186,7 +198,7 @@ export const upgradeShopifyPlusTurnCapabilities: AiEmpoweredDeliveryContent = {
   eyebrow: "Beyond the Plan Upgrade",
   heading: "Turn Plus capabilities into practical workflows.",
   description:
-    "Paying for Shopify Plus only creates value when the capabilities are built and adopted properly. We translate native Plus features into working commercial and operational setups.",
+    "Paying for Shopify Plus does not automatically improve checkout, B2B or operations. The value comes from deciding what should change, implementing it cleanly and connecting Plus to the rest of your commerce stack.",
   tools: [
     {
       name: "Checkout",
@@ -221,7 +233,12 @@ export const upgradeShopifyPlusWhyWorkWithUs: WhyChooseMigrationContent = {
     {
       icon: "certified",
       description:
-        "More than 20 developers hold verified Shopify credentials across development fundamentals, storefronts and B2B.",
+        "Shopify work can be supported by UI/UX, QA, integrations, full-stack and mobile specialists when required.",
+    },
+     {
+      icon: "custom-build",
+      description:
+        "ERP, PIM, OMS, middleware and custom API work can stay with the same delivery team.",
     },
     {
       icon: "long-term-support",
@@ -301,34 +318,64 @@ export const upgradeShopifyPlusPortfolio = {
   heading: "Selected Shopify Experience",
   description:
     "Explore selected projects across Shopify, WordPress, mobile apps and custom development. See how we help brands and agencies build high-performing digital experiences.",
+  ctaLabel: "Explore Our Portfolio",
+  ctaHref: "/our-work",
   items: [
     {
       name: "Ranavat",
-      category: "Shopify / Shopify Plus",
+      category: "SHOPIFY PLUS",
       href: "https://www.ranavat.com/",
       image: "/assets/beauty-cosmetics/portfolio/ranavat-skincare.webp",
       imageAlt: "Ranavat Shopify Plus Storefront built by Dynamic Dreamz",
     },
     {
       name: "Atolea Jewelry",
-      category: "Shopify / Shopify Plus",
+      category: "SHOPIFY PLUS",
       href: "https://atoleajewelry.com/",
       image: "/assets/our-work/projects/atolea-jewelry.webp",
       imageAlt: "Atolea Jewelry Waterproof Shopify Storefront by Dynamic Dreamz",
     },
     {
-      name: "Naakbar",
-      category: "Shopify / Shopify Plus",
-      href: "https://www.naak.com/",
-      image: "/assets/health-nutrition/portfolio/naakbar-energy-products.webp",
-      imageAlt: "Naak Energy Bars Shopify Storefront by Dynamic Dreamz",
-    },
-    {
-      name: "Tropicfeel",
-      category: "Shopify / Shopify Plus",
+      name: "Tropic Feel",
+      category: "SHOPIFY PLUS",
       href: "https://shop.tropicfeel.com/",
       image: "/assets/fashion/portfolio/tropicfeel-fashion.webp",
-      imageAlt: "Tropicfeel Sustainable Travel Gear Shopify Storefront by Dynamic Dreamz",
+      imageAlt: "Tropic Feel Sustainable Travel Gear Shopify Plus Storefront by Dynamic Dreamz",
+    },
+    {
+      name: "Sculpt Neon",
+      category: "SHOPIFY PLUS",
+      href: "https://sculptneonsigns.com/",
+      image: "/assets/our-work/projects/sculpt-neon.webp",
+      imageAlt: "Sculpt Neon Custom Signs Shopify Plus Storefront by Dynamic Dreamz",
+    },
+    {
+      name: "Headsets",
+      category: "SHOPIFY PLUS",
+      href: "https://www.headsets.com/",
+      image: "/assets/our-work/projects/headsets.webp",
+      imageAlt: "Headsets Shopify Plus Storefront by Dynamic Dreamz",
+    },
+    {
+      name: "Perfect Locks",
+      category: "SHOPIFY PLUS",
+      href: "https://www.perfectlocks.com/",
+      image: "/assets/shopify-plus-agency/portfolio/perfect-locks.webp",
+      imageAlt: "Perfect Locks Shopify Plus Storefront by Dynamic Dreamz",
+    },
+    {
+      name: "Nekter Juice Bar",
+      category: "SHOPIFY PLUS",
+      href: "https://www.nekterjuicebar.com/",
+      image: "/assets/food-beverages/portfolio/nekter-juice-bar.webp",
+      imageAlt: "Nekter Juice Bar Shopify Plus Storefront by Dynamic Dreamz",
+    },
+    {
+      name: "The Somewhere Co.",
+      category: "SHOPIFY PLUS",
+      href: "https://thesomewhereco.com/",
+      image: "/assets/fashion/portfolio/somewhereco-fashion.webp",
+      imageAlt: "The Somewhere Co. Shopify Plus Storefront by Dynamic Dreamz",
     },
   ],
 };

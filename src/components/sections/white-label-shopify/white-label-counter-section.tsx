@@ -14,7 +14,7 @@ export function WhiteLabelCounterSection({
   counters = whiteLabelShopifyCounters,
 }: WhiteLabelCounterSectionProps) {
   return (
-    <section className="white_label_counter_section relative border-y border-[rgba(0,0,0,0.10)] bg-white py-0">
+    <section className="white_label_counter_section relative overflow-hidden border-y border-[rgba(0,0,0,0.10)] bg-white py-0">
       <Container variant="fullBleedTablet">
         <div
           data-aos="fade-up"
@@ -31,7 +31,7 @@ export function WhiteLabelCounterSection({
               }`}
               key={item.label}
             >
-              <div className="stats_box text-left mx-auto w-fit max-[992px]:w-[205px]">
+              <div className="stats_box text-left mx-auto w-fit max-[992px]:w-[205px] max-[768px]:w-auto max-[768px]:max-w-full">
                 <div className="stats_number font-sans text-2xl font-bold leading-none text-[#282828] max-[1200px]:text-xl max-[768px]:text-base">
                   {item.value}
                 </div>
