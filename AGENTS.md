@@ -291,7 +291,7 @@ Core proof points from the live site:
   alt text for all content images, preserving or improving the live site's alt
   text. Only truly decorative images may use empty alt text, and that choice
   must be intentional.
-- Add or update `src/app/sitemap.ts` and `src/app/robots.ts` whenever routes are
+- Add or update sitemap data in `src/data/seo.ts` and `src/app/robots.ts` whenever routes are
   added, removed, or renamed.
 - Preserve legacy URL equity with redirects for migrated or renamed pages.
 - Verify with `npm run lint` and `npm run build` before calling work complete.

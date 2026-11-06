@@ -17,7 +17,7 @@ implements the production standards and 12 audit gates from
   - `ClaudeBot`
   - `Google-Extended`
   - `Applebot-Extended`
-- `src/app/sitemap.ts` includes every indexable route.
+- Sitemaps are segmented into clean index and sub-sitemaps (`/sitemap.xml`, `/page-sitemap.xml`, `/case-study-sitemap.xml`, `/post-sitemap.xml`) generated via `src/lib/sitemap.ts` and include every indexable route.
 - `/llms.txt` and `/llms-full.txt` exist at the domain root, returning clean Markdown entity facts, credentials, core offerings, and canonical links under 600 tokens.
 - IndexNow route (`/api/indexnow`) and key verification file exist for instant multi-engine discovery.
 - `src/app/not-found.tsx` exists before launch.
