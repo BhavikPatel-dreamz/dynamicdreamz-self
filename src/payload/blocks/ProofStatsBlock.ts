@@ -32,6 +32,9 @@ export const ProofStatsBlock: Block = {
         { label: "Shopify Team Behind It (Expertise Boxes)", value: "team-boxes" },
         { label: "Shopify Plus Proof Metrics", value: "shopify-plus-proof" },
         { label: "Why Choose Shopify Migration", value: "why-choose-migration" },
+        { label: "Why Choose Boxes (City & Specialized)", value: "why-choose-boxes" },
+        { label: "White Label Counters & Metrics", value: "white-label-counters" },
+        { label: "Credential Evidence & Certifications", value: "credential-evidence" },
       ],
     },
     {

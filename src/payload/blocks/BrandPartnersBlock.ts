@@ -16,6 +16,8 @@ export const BrandPartnersBlock: Block = {
         { label: "Brand Grid", value: "grid" },
         { label: "Home Brand Partners", value: "home" },
         { label: "Platform & App Integrations", value: "integrations" },
+        { label: "White Label Tools Grid (Categorized Logos)", value: "tools-grid" },
+        { label: "Full-Stack Technologies Stack (Tabbed / Categorized)", value: "tech-stack" },
       ],
     },
     {

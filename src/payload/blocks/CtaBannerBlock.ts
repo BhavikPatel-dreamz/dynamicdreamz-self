@@ -15,7 +15,14 @@ export const CtaBannerBlock: Block = {
         { label: "Gradient Strip (#15c064 -> #00d1ff)", value: "gradient" },
         { label: "Image Background Card", value: "image" },
         { label: "White Label Closing CTA", value: "white-label" },
+        { label: "Home White Label Partner Split Banner", value: "home-white-label" },
+        { label: "Two Column Image with Text CTA", value: "two-col-cta" },
       ],
+    },
+    {
+      name: "eyebrow",
+      type: "text",
+      label: "Eyebrow Text",
     },
     {
       name: "heading",
@@ -68,6 +75,44 @@ export const CtaBannerBlock: Block = {
       name: "backgroundImageSrc",
       type: "text",
       label: "Static Background Image Fallback Path",
+    },
+    {
+      name: "imagePosition",
+      type: "select",
+      defaultValue: "left",
+      options: [
+        { label: "Left", value: "left" },
+        { label: "Right", value: "right" },
+      ],
+    },
+    {
+      name: "image",
+      type: "upload",
+      relationTo: "media",
+      label: "Featured Image (For Two Column CTA)",
+    },
+    {
+      name: "imageSrc",
+      type: "text",
+      label: "Static Image Fallback Path",
+    },
+    {
+      name: "imageAlt",
+      type: "text",
+      label: "Image Alt Text",
+    },
+    {
+      name: "bullets",
+      type: "array",
+      dbName: "cb_blts",
+      label: "Bullets / Tags",
+      fields: [
+        {
+          name: "text",
+          type: "text",
+          required: true,
+        },
+      ],
     },
   ],
 };

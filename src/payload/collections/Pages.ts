@@ -16,6 +16,16 @@ import { PortfolioShowcaseBlock } from "@/payload/blocks/PortfolioShowcaseBlock"
 import { ProofStatsBlock } from "@/payload/blocks/ProofStatsBlock";
 import { ProcessTimelineBlock } from "@/payload/blocks/ProcessTimelineBlock";
 import { PricingTableBlock } from "@/payload/blocks/PricingTableBlock";
+import { AboutTimelineBlock } from "@/payload/blocks/AboutTimelineBlock";
+import { AboutFoundersBlock } from "@/payload/blocks/AboutFoundersBlock";
+import { LifeGalleryBlock } from "@/payload/blocks/LifeGalleryBlock";
+import { OurWorkProjectsBlock } from "@/payload/blocks/OurWorkProjectsBlock";
+import { HoursComparisonBlock } from "@/payload/blocks/HoursComparisonBlock";
+import { CroBarriersBlock } from "@/payload/blocks/CroBarriersBlock";
+import { EvaluationFrameworkBlock } from "@/payload/blocks/EvaluationFrameworkBlock";
+import { WhiteLabelDeliveryBlock } from "@/payload/blocks/WhiteLabelDeliveryBlock";
+import { B2bArchitectureBlock } from "@/payload/blocks/B2bArchitectureBlock";
+import { ResourcesHubBlock } from "@/payload/blocks/ResourcesHubBlock";
 import { previewDraftPath } from "@/lib/preview-url";
 import { safeRevalidatePath } from "@/lib/revalidate";
 
@@ -94,6 +104,16 @@ export const Pages: CollectionConfig = {
         ContactDetailsBlock,
         RequestQuoteHeroBlock,
         CareerApplyBlock,
+        AboutTimelineBlock,
+        AboutFoundersBlock,
+        LifeGalleryBlock,
+        OurWorkProjectsBlock,
+        HoursComparisonBlock,
+        CroBarriersBlock,
+        EvaluationFrameworkBlock,
+        WhiteLabelDeliveryBlock,
+        B2bArchitectureBlock,
+        ResourcesHubBlock,
       ],
     },
     {

@@ -25,6 +25,17 @@ export const PortfolioShowcaseBlock: Block = {
       label: "Description",
     },
     {
+      name: "variant",
+      type: "select",
+      defaultValue: "default",
+      options: [
+        { label: "Portfolio Showcase Grid (Default)", value: "default" },
+        { label: "Live Store Grid", value: "liveGrid" },
+        { label: "Case Studies Slider (Services)", value: "case-studies-slider" },
+        { label: "Case Study Cards (Shopify Plus)", value: "case-studies-cards" },
+      ],
+    },
+    {
       name: "columns",
       type: "select",
       defaultValue: "4",

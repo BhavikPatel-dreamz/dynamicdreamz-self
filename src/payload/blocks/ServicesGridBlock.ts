@@ -32,6 +32,10 @@ export const ServicesGridBlock: Block = {
         { label: "Theme Customization Boxes (Numbered Icon Cards)", value: "theme-boxes" },
         { label: "Agency Services (Interactive 3-Col Cards)", value: "agency-services" },
         { label: "Shopify Migration Services", value: "migration-services" },
+        { label: "AI Services & Automations Grid", value: "ai-services" },
+        { label: "Shopify App Features & Capabilities", value: "app-features" },
+        { label: "Industries Served 4x3 Grid", value: "industries-grid" },
+        { label: "Shopify Themes Catalog Grid", value: "theme-catalog" },
       ],
     },
     {

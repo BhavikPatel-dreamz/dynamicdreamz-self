@@ -32,6 +32,8 @@ export const ProcessTimelineBlock: Block = {
         { label: "Shopify Migration Numbered Grid", value: "migration-grid" },
         { label: "Shopify Horizontal Process Stepper", value: "horizontal-process" },
         { label: "Numbered Process Timeline with Bullets", value: "numbered-timeline" },
+        { label: "Shopify Migration 5-Step Process", value: "migration-process" },
+        { label: "Shopify App Process (Appmaker)", value: "app-process" },
       ],
     },
     {

@@ -9,7 +9,19 @@ import {
   shopifyHoursTasks,
 } from "@/content/buy-shopify-development-hours";
 
-export function ShopifyHoursComparisonSection() {
+export type ShopifyHoursComparisonSectionProps = {
+  eyebrow?: string;
+  heading?: string;
+  description?: string;
+  badge?: string;
+};
+
+export function ShopifyHoursComparisonSection({
+  eyebrow = shopifyHoursComparison.eyebrow,
+  heading = shopifyHoursComparison.heading,
+  description = shopifyHoursComparison.description,
+  badge = shopifyHoursComparison.ribbon,
+}: ShopifyHoursComparisonSectionProps = {}) {
   return (
     <section
       aria-labelledby="shopify-hours-comparison-title"
@@ -27,18 +39,18 @@ export function ShopifyHoursComparisonSection() {
                 className="eyebrow mb-4 inline-flex w-fit max-[768px]:pl-[23px]"
                 linePosition="overlay"
               >
-                <span>{shopifyHoursComparison.eyebrow}</span>
+                <span>{eyebrow}</span>
               </Eyebrow>
               <h2
                 className="font-montreal-medium text-[35px] font-normal leading-[49px] tracking-normal text-ink max-[992px]:text-[30px] max-[992px]:leading-[42px] max-[992px]:mb-2.5 max-[768px]:text-2xl max-[768px]:leading-[31.2px]"
                 id="shopify-hours-comparison-title"
               >
-                {shopifyHoursComparison.heading}
+                {heading}
               </h2>
             </div>
             <div className="section_text w-full text-left">
               <p className="m-0 font-sans text-base font-medium leading-7 text-[#535353] max-[1200px]:text-sm max-[1200px]:leading-6">
-                {shopifyHoursComparison.description}
+                {description}
               </p>
             </div>
           </div>
@@ -49,7 +61,7 @@ export function ShopifyHoursComparisonSection() {
           >
             <div className="offer-both-fits-text relative z-1 mx-auto w-full max-w-[566px] rounded-t-[25px] bg-[#1a1e1a] px-10 py-[3px] text-center text-white before:absolute before:bottom-[-1px] before:left-0 before:-z-1 before:h-full before:w-5 before:-skew-x-[27deg] before:[border-top-left-radius:365px] before:bg-[#1a1e1a] after:absolute after:right-0 after:bottom-[-1px] after:-z-1 after:h-full after:w-5 after:skew-x-[26deg] after:[border-top-right-radius:365px] after:bg-[#1a1e1a] max-[768px]:max-w-[457px] max-[599px]:max-w-[390px] max-[475px]:max-w-[280px] max-[374px]:max-w-[240px]">
               <span className="bg-italic inline-block font-sans text-base font-semibold leading-[30.4px] text-white italic max-[768px]:text-sm max-[599px]:text-[11px] max-[599px]:leading-[normal] max-[475px]:relative max-[475px]:top-1 max-[374px]:text-[9px]">
-                {shopifyHoursComparison.ribbon}
+                {badge}
               </span>
             </div>
             <div className="bulk-shopify-fulltime-resources-table flex items-stretch rounded-[20px] border-2 border-[#171E16] bg-white p-[20px_32px_20px_20px] min-[768px]:max-[992px]:p-[20px_10px] max-[768px]:flex-wrap max-[768px]:p-[30px_15px]">

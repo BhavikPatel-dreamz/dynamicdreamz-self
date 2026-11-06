@@ -25,21 +25,31 @@ export type DeliveryModelComparisonContent = {
   };
 };
 
-type DeliveryModelComparisonSectionProps = {
+export type DeliveryModelComparisonSectionProps = {
   content?: DeliveryModelComparisonContent;
+  eyebrow?: string;
+  heading?: string;
+  description?: string;
+  primaryCta?: { label: string; href: string };
+  secondaryCta?: { label: string; href: string };
 };
 
 export function DeliveryModelComparisonSection({
   content = whiteLabelShopifyDeliveryComparison,
-}: DeliveryModelComparisonSectionProps) {
+  eyebrow = content.eyebrow,
+  heading = content.heading,
+  description = content.description,
+  primaryCta = content.ctas.primary,
+  secondaryCta = content.ctas.secondary,
+}: DeliveryModelComparisonSectionProps = {}) {
   return (
     <section className="choose_the_right_delivery_model_section overflow-x-clip bg-white py-20 max-[992px]:py-[50px] max-[768px]:py-10">
       <Container>
         <SplitSectionHeading
           variant="centered"
-          eyebrow={content.eyebrow}
-          heading={content.heading}
-          description={content.description}
+          eyebrow={eyebrow}
+          heading={heading}
+          description={description}
           className="max-[992px]:mb-[30px]"
         />
 
@@ -137,18 +147,18 @@ export function DeliveryModelComparisonSection({
 
         <div className="btns_group mt-10 flex flex-wrap items-center justify-center gap-4 max-[992px]:mt-[30px] max-[576px]:flex-col max-[576px]:items-stretch max-[576px]:gap-[15px] max-[576px]:w-full">
           <ButtonLink
-            href={content.ctas.primary.href}
+            href={primaryCta.href}
             variant="primary"
             className="max-[768px]:text-[12px] max-[576px]:w-full max-[576px]:justify-center"
           >
-            {content.ctas.primary.label}
+            {primaryCta.label}
           </ButtonLink>
           <ButtonLink
-            href={content.ctas.secondary.href}
+            href={secondaryCta.href}
             variant="outline"
             className="max-[768px]:text-[12px] max-[576px]:w-full max-[576px]:justify-center"
           >
-            {content.ctas.secondary.label}
+            {secondaryCta.label}
           </ButtonLink>
         </div>
       </Container>

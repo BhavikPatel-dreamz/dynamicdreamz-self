@@ -682,7 +682,22 @@ export interface Page {
   sections?:
     | (
         | {
-            variant: 'video' | 'tablet-slider' | 'image' | 'reviews' | 'centered' | 'home' | 'text-only';
+            variant:
+              | 'video'
+              | 'tablet-slider'
+              | 'image'
+              | 'reviews'
+              | 'centered'
+              | 'home'
+              | 'text-only'
+              | 'theme'
+              | 'about'
+              | 'career'
+              | 'life'
+              | 'our-work'
+              | 'resources'
+              | 'buy-hours'
+              | 'industry';
             backgroundColor?: ('cream' | 'white') | null;
             eyebrows?:
               | {
@@ -800,7 +815,7 @@ export interface Page {
             blockType: 'service-hero';
           }
         | {
-            variant?: ('slider' | 'grid' | 'home' | 'integrations') | null;
+            variant?: ('slider' | 'grid' | 'home' | 'integrations' | 'tools-grid' | 'tech-stack') | null;
             heading?: string | null;
             description?: string | null;
             density?: ('standard' | 'compact' | 'flexible') | null;
@@ -842,7 +857,8 @@ export interface Page {
             blockType: 'faq-accordion';
           }
         | {
-            variant?: ('gradient' | 'image' | 'white-label') | null;
+            variant?: ('gradient' | 'image' | 'white-label' | 'home-white-label' | 'two-col-cta') | null;
+            eyebrow?: string | null;
             heading: string;
             description?: string | null;
             ctaLabel?: string | null;
@@ -853,6 +869,16 @@ export interface Page {
             };
             backgroundImage?: (number | null) | Media;
             backgroundImageSrc?: string | null;
+            imagePosition?: ('left' | 'right') | null;
+            image?: (number | null) | Media;
+            imageSrc?: string | null;
+            imageAlt?: string | null;
+            bullets?:
+              | {
+                  text: string;
+                  id?: string | null;
+                }[]
+              | null;
             id?: string | null;
             blockName?: string | null;
             blockType: 'cta-banner';
@@ -888,7 +914,18 @@ export interface Page {
             eyebrow?: string | null;
             heading: string;
             description?: string | null;
-            variant?: ('stage-services' | 'theme-boxes' | 'agency-services' | 'migration-services') | null;
+            variant?:
+              | (
+                  | 'stage-services'
+                  | 'theme-boxes'
+                  | 'agency-services'
+                  | 'migration-services'
+                  | 'ai-services'
+                  | 'app-features'
+                  | 'industries-grid'
+                  | 'theme-catalog'
+                )
+              | null;
             cardVariant?: ('green' | 'yellow' | 'transparent') | null;
             sixCards?: boolean | null;
             lastColFull?: boolean | null;
@@ -929,6 +966,7 @@ export interface Page {
             eyebrow?: string | null;
             heading: string;
             description?: string | null;
+            variant?: ('default' | 'liveGrid' | 'case-studies-slider' | 'case-studies-cards') | null;
             columns?: ('4' | '3' | '2') | null;
             headerLayout?: ('split' | 'centered') | null;
             cardVariant?: ('default' | 'ourWorkRefresh') | null;
@@ -964,7 +1002,17 @@ export interface Page {
             heading?: string | null;
             description?: string | null;
             variant?:
-              ('counters-bar' | 'city-counters' | 'team-boxes' | 'shopify-plus-proof' | 'why-choose-migration') | null;
+              | (
+                  | 'counters-bar'
+                  | 'city-counters'
+                  | 'team-boxes'
+                  | 'shopify-plus-proof'
+                  | 'why-choose-migration'
+                  | 'why-choose-boxes'
+                  | 'white-label-counters'
+                  | 'credential-evidence'
+                )
+              | null;
             counters?:
               | {
                   value: string;
@@ -994,7 +1042,16 @@ export interface Page {
             eyebrow?: string | null;
             heading: string;
             description?: string | null;
-            variant?: ('development-process' | 'migration-grid' | 'horizontal-process' | 'numbered-timeline') | null;
+            variant?:
+              | (
+                  | 'development-process'
+                  | 'migration-grid'
+                  | 'horizontal-process'
+                  | 'numbered-timeline'
+                  | 'migration-process'
+                  | 'app-process'
+                )
+              | null;
             columns?: ('4' | '3') | null;
             isBgTransparent?: boolean | null;
             steps?:
@@ -1182,6 +1239,174 @@ export interface Page {
             id?: string | null;
             blockName?: string | null;
             blockType: 'career-apply';
+          }
+        | {
+            title?: string | null;
+            description?: string | null;
+            milestones?:
+              | {
+                  year?: string | null;
+                  description?: string | null;
+                  image?: (number | null) | Media;
+                  imageSrc?: string | null;
+                  alt?: string | null;
+                  width?: number | null;
+                  height?: number | null;
+                  id?: string | null;
+                }[]
+              | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'about-timeline';
+          }
+        | {
+            eyebrow?: string | null;
+            title?: string | null;
+            description?: string | null;
+            founders?:
+              | {
+                  name: string;
+                  role: string;
+                  bio?: string | null;
+                  image?: (number | null) | Media;
+                  imageSrc?: string | null;
+                  alt?: string | null;
+                  linkedin?: string | null;
+                  id?: string | null;
+                }[]
+              | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'about-founders';
+          }
+        | {
+            eyebrow?: string | null;
+            title?: string | null;
+            description?: string | null;
+            images?:
+              | {
+                  caption?: string | null;
+                  image?: (number | null) | Media;
+                  src?: string | null;
+                  alt?: string | null;
+                  width?: number | null;
+                  height?: number | null;
+                  id?: string | null;
+                }[]
+              | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'life-gallery';
+          }
+        | {
+            eyebrow?: string | null;
+            title?: string | null;
+            description?: string | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'our-work-projects';
+          }
+        | {
+            eyebrow?: string | null;
+            heading?: string | null;
+            description?: string | null;
+            badge?: string | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'hours-comparison';
+          }
+        | {
+            eyebrow?: string | null;
+            heading: string;
+            description?: string | null;
+            items?:
+              | {
+                  title: string;
+                  icon?: (number | null) | Media;
+                  iconSrc?: string | null;
+                  alt?: string | null;
+                  id?: string | null;
+                }[]
+              | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'cro-barriers';
+          }
+        | {
+            eyebrow?: string | null;
+            heading: string;
+            description?: string | null;
+            theme?: ('white' | 'cyan') | null;
+            items?:
+              | {
+                  number?: string | null;
+                  title: string;
+                  description: string;
+                  id?: string | null;
+                }[]
+              | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'evaluation-framework';
+          }
+        | {
+            eyebrow?: string | null;
+            heading: string;
+            description?: string | null;
+            primaryCta?: {
+              label?: string | null;
+              href?: string | null;
+            };
+            secondaryCta?: {
+              label?: string | null;
+              href?: string | null;
+            };
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'white-label-delivery';
+          }
+        | {
+            eyebrow?: string | null;
+            heading: string;
+            description?: string | null;
+            approaches?:
+              | {
+                  badge?: string | null;
+                  title: string;
+                  description?: string | null;
+                  points?:
+                    | {
+                        text: string;
+                        id?: string | null;
+                      }[]
+                    | null;
+                  isHighlighted?: boolean | null;
+                  id?: string | null;
+                }[]
+              | null;
+            proofs?:
+              | {
+                  title: string;
+                  description?: string | null;
+                  id?: string | null;
+                }[]
+              | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'b2b-architecture';
+          }
+        | {
+            title?: string | null;
+            description?: string | null;
+            points?:
+              | {
+                  text: string;
+                  id?: string | null;
+                }[]
+              | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'resources-hub';
           }
       )[]
     | null;
@@ -2275,6 +2500,7 @@ export interface PagesSelect<T extends boolean = true> {
           | T
           | {
               variant?: T;
+              eyebrow?: T;
               heading?: T;
               description?: T;
               ctaLabel?: T;
@@ -2287,6 +2513,16 @@ export interface PagesSelect<T extends boolean = true> {
                   };
               backgroundImage?: T;
               backgroundImageSrc?: T;
+              imagePosition?: T;
+              image?: T;
+              imageSrc?: T;
+              imageAlt?: T;
+              bullets?:
+                | T
+                | {
+                    text?: T;
+                    id?: T;
+                  };
               id?: T;
               blockName?: T;
             };
@@ -2366,6 +2602,7 @@ export interface PagesSelect<T extends boolean = true> {
               eyebrow?: T;
               heading?: T;
               description?: T;
+              variant?: T;
               columns?: T;
               headerLayout?: T;
               cardVariant?: T;
@@ -2604,6 +2841,188 @@ export interface PagesSelect<T extends boolean = true> {
               emailHref?: T;
               note?: T;
               form?: T;
+              id?: T;
+              blockName?: T;
+            };
+        'about-timeline'?:
+          | T
+          | {
+              title?: T;
+              description?: T;
+              milestones?:
+                | T
+                | {
+                    year?: T;
+                    description?: T;
+                    image?: T;
+                    imageSrc?: T;
+                    alt?: T;
+                    width?: T;
+                    height?: T;
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        'about-founders'?:
+          | T
+          | {
+              eyebrow?: T;
+              title?: T;
+              description?: T;
+              founders?:
+                | T
+                | {
+                    name?: T;
+                    role?: T;
+                    bio?: T;
+                    image?: T;
+                    imageSrc?: T;
+                    alt?: T;
+                    linkedin?: T;
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        'life-gallery'?:
+          | T
+          | {
+              eyebrow?: T;
+              title?: T;
+              description?: T;
+              images?:
+                | T
+                | {
+                    caption?: T;
+                    image?: T;
+                    src?: T;
+                    alt?: T;
+                    width?: T;
+                    height?: T;
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        'our-work-projects'?:
+          | T
+          | {
+              eyebrow?: T;
+              title?: T;
+              description?: T;
+              id?: T;
+              blockName?: T;
+            };
+        'hours-comparison'?:
+          | T
+          | {
+              eyebrow?: T;
+              heading?: T;
+              description?: T;
+              badge?: T;
+              id?: T;
+              blockName?: T;
+            };
+        'cro-barriers'?:
+          | T
+          | {
+              eyebrow?: T;
+              heading?: T;
+              description?: T;
+              items?:
+                | T
+                | {
+                    title?: T;
+                    icon?: T;
+                    iconSrc?: T;
+                    alt?: T;
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        'evaluation-framework'?:
+          | T
+          | {
+              eyebrow?: T;
+              heading?: T;
+              description?: T;
+              theme?: T;
+              items?:
+                | T
+                | {
+                    number?: T;
+                    title?: T;
+                    description?: T;
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        'white-label-delivery'?:
+          | T
+          | {
+              eyebrow?: T;
+              heading?: T;
+              description?: T;
+              primaryCta?:
+                | T
+                | {
+                    label?: T;
+                    href?: T;
+                  };
+              secondaryCta?:
+                | T
+                | {
+                    label?: T;
+                    href?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        'b2b-architecture'?:
+          | T
+          | {
+              eyebrow?: T;
+              heading?: T;
+              description?: T;
+              approaches?:
+                | T
+                | {
+                    badge?: T;
+                    title?: T;
+                    description?: T;
+                    points?:
+                      | T
+                      | {
+                          text?: T;
+                          id?: T;
+                        };
+                    isHighlighted?: T;
+                    id?: T;
+                  };
+              proofs?:
+                | T
+                | {
+                    title?: T;
+                    description?: T;
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        'resources-hub'?:
+          | T
+          | {
+              title?: T;
+              description?: T;
+              points?:
+                | T
+                | {
+                    text?: T;
+                    id?: T;
+                  };
               id?: T;
               blockName?: T;
             };
