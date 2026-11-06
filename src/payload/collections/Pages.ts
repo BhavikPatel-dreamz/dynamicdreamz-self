@@ -7,6 +7,15 @@ import { ContactDetailsBlock } from "@/payload/blocks/ContactDetailsBlock";
 import { RequestQuoteHeroBlock } from "@/payload/blocks/RequestQuoteHeroBlock";
 import { CareerApplyBlock } from "@/payload/blocks/CareerApplyBlock";
 import { ServiceHeroBlock } from "@/payload/blocks/ServiceHeroBlock";
+import { BrandPartnersBlock } from "@/payload/blocks/BrandPartnersBlock";
+import { FaqAccordionBlock } from "@/payload/blocks/FaqAccordionBlock";
+import { CtaBannerBlock } from "@/payload/blocks/CtaBannerBlock";
+import { TestimonialsCarouselBlock } from "@/payload/blocks/TestimonialsCarouselBlock";
+import { ServicesGridBlock } from "@/payload/blocks/ServicesGridBlock";
+import { PortfolioShowcaseBlock } from "@/payload/blocks/PortfolioShowcaseBlock";
+import { ProofStatsBlock } from "@/payload/blocks/ProofStatsBlock";
+import { ProcessTimelineBlock } from "@/payload/blocks/ProcessTimelineBlock";
+import { PricingTableBlock } from "@/payload/blocks/PricingTableBlock";
 import { previewDraftPath } from "@/lib/preview-url";
 import { safeRevalidatePath } from "@/lib/revalidate";
 
@@ -69,6 +78,15 @@ export const Pages: CollectionConfig = {
       label: "Page Layout Sections (Drag & Drop)",
       blocks: [
         ServiceHeroBlock,
+        BrandPartnersBlock,
+        FaqAccordionBlock,
+        CtaBannerBlock,
+        TestimonialsCarouselBlock,
+        ServicesGridBlock,
+        PortfolioShowcaseBlock,
+        ProofStatsBlock,
+        ProcessTimelineBlock,
+        PricingTableBlock,
         ContactHeroBlock,
         ContactFormBlock,
         FormBlock,

@@ -1,6 +1,8 @@
 import React from "react";
 import dynamic from "next/dynamic";
 import { appmakerHeroCoBranding } from "@/content/appmaker-shopify-mobile-app-development";
+import { shopifyPlusAgencyWhyChoose } from "@/content/shopify-plus-agency";
+import { shopifyMigrationWhyChoose } from "@/content/shopify-migration";
 
 // Active Section Components
 import {
@@ -27,6 +29,33 @@ import { ServiceHeroVideoSection } from "@/components/sections/service-hero-vide
 import { CityPageHeroSection } from "@/components/sections/city-page-hero-section";
 import { SplitImageHeroSection } from "@/components/sections/split-image-hero-section";
 import { HomeHeroSection } from "@/components/sections/home/home-hero-section";
+
+// Universal Master Blocks Section Components
+import { IndustryBrandsSection } from "@/components/sections/industry/industry-brands-section";
+import { BrandPartnersSection } from "@/components/sections/home/brand-partners-section";
+import { IntegrationsSection } from "@/components/sections/home/integrations-section";
+import { SplitFaqSection } from "@/components/sections/split-faq-section";
+import { HomeFaqSection } from "@/components/sections/home/home-faq-section";
+import { CtaBannerSection } from "@/components/sections/cta-banner-section";
+import { ImageCtaSection } from "@/components/sections/image-cta-section";
+import { WhiteLabelFinalCtaSection } from "@/components/sections/white-label/white-label-closing-sections";
+import { HappyClientSection } from "@/components/sections/happy-client-section";
+import { TestimonialsSection } from "@/components/sections/home/testimonials-section";
+import { ShopifyStageServicesSection } from "@/components/sections/shopify-stage-services-section";
+import { ThemeCustomizationServicesSection } from "@/components/sections/theme-customization-services-section";
+import { AgencyServicesSection } from "@/components/sections/agency-services-section";
+import { ShopifyMigrationServicesSection } from "@/components/sections/shopify-migration/shopify-migration-services-section";
+import { PortfolioShowcaseSection } from "@/components/sections/portfolio-showcase-section";
+import { ProofCounterSection } from "@/components/sections/proof-counter-section";
+import { CityPageCounterSection } from "@/components/sections/city-page-counter-section";
+import { ShopifyTeamBoxesSection } from "@/components/sections/shopify-team-boxes-section";
+import { ShopifyPlusProofSection } from "@/components/sections/shopify-plus-agency/shopify-plus-proof-section";
+import { WhyChooseShopifyMigrationSection } from "@/components/sections/why-choose-shopify-migration-section";
+import { OurDevelopmentProcessSection } from "@/components/sections/our-development-process-section";
+import { ShopifyMigrationNumberedGridSection } from "@/components/sections/shopify-migration/shopify-migration-numbered-grid-section";
+import { ShopifyHorizontalProcessSection } from "@/components/sections/shopify-horizontal-process-section";
+import { NumberedProcessTimelineSection } from "@/components/sections/numbered-process-timeline-section";
+import { PricingTableSection } from "@/components/sections/shopify-plus-agency/pricing-table-section";
 
 // Common CMS Types
 export type CmsMedia =
@@ -264,8 +293,221 @@ export interface BlockCareerApply {
   form?: any;
 }
 
+export interface BlockBrandPartners {
+  __component?: string;
+  blockType?: string;
+  id?: string | number;
+  variant?: "slider" | "grid" | "home" | "integrations";
+  heading?: string;
+  description?: string;
+  density?: "standard" | "compact" | "flexible";
+  mobileSpacing?: "standard" | "spacious";
+  showHeading?: boolean;
+  brands?: readonly {
+    name?: string;
+    logo?: CmsMedia;
+    src?: string;
+    alt?: string;
+    width?: number;
+    height?: number;
+    href?: string;
+  }[];
+}
+
+export interface BlockFaqAccordion {
+  __component?: string;
+  blockType?: string;
+  id?: string | number;
+  eyebrow?: string;
+  heading?: string;
+  description?: string;
+  idPrefix?: string;
+  variant?: "split" | "home";
+  iconVariant?: "circle-cross" | "default";
+  animateOnReveal?: boolean;
+  faqs?: readonly {
+    question: string;
+    answer: string;
+  }[];
+}
+
+export interface BlockCtaBanner {
+  __component?: string;
+  blockType?: string;
+  id?: string | number;
+  variant?: "gradient" | "image" | "white-label";
+  heading: string;
+  description?: string;
+  ctaLabel?: string;
+  ctaHref?: string;
+  secondaryCta?: {
+    label?: string;
+    href?: string;
+  };
+  backgroundImage?: CmsMedia;
+  backgroundImageSrc?: string;
+}
+
+export interface BlockTestimonialsCarousel {
+  __component?: string;
+  blockType?: string;
+  id?: string | number;
+  eyebrow?: string;
+  heading?: string;
+  description?: string;
+  variant?: "classic" | "client-stories" | "home";
+  hasTopPadding?: boolean;
+  items?: readonly {
+    name: string;
+    company?: string;
+    quote: string;
+    videoId?: string;
+    image?: CmsMedia;
+    imageSrc?: string;
+    imageAlt?: string;
+    logo?: CmsMedia;
+    logoSrc?: string;
+    logoAlt?: string;
+    logoWidth?: number;
+    logoHeight?: number;
+  }[];
+}
+
+export interface BlockServicesGrid {
+  __component?: string;
+  blockType?: string;
+  id?: string | number;
+  eyebrow?: string;
+  heading: string;
+  description?: string;
+  variant?: "stage-services" | "theme-boxes" | "agency-services" | "migration-services";
+  cardVariant?: "green" | "yellow" | "transparent";
+  sixCards?: boolean;
+  lastColFull?: boolean;
+  isRoundedNumber?: boolean;
+  bottomNote?: string;
+  services?: readonly {
+    tag?: string;
+    number?: string;
+    badge?: string;
+    title: string;
+    description?: string;
+    pills?: readonly (string | { text?: string })[];
+    bullets?: readonly (string | { text?: string })[];
+    icon?: CmsMedia;
+    iconSrc?: string;
+    iconAlt?: string;
+    ctaLabel?: string;
+    ctaHref?: string;
+  }[];
+}
+
+export interface BlockPortfolioShowcase {
+  __component?: string;
+  blockType?: string;
+  id?: string | number;
+  eyebrow?: string;
+  heading: string;
+  description?: string;
+  columns?: "2" | "3" | "4";
+  headerLayout?: "split" | "centered";
+  cardVariant?: "default" | "ourWorkRefresh";
+  hideCta?: boolean;
+  ctaLabel?: string;
+  ctaHref?: string;
+  secondaryCtaLabel?: string;
+  secondaryCtaHref?: string;
+  platformMark?: {
+    image?: CmsMedia;
+    src?: string;
+    width?: number;
+    height?: number;
+  };
+  items?: readonly {
+    name: string;
+    href?: string;
+    image?: CmsMedia;
+    imageSrc?: string;
+    imageAlt?: string;
+    category?: string;
+    metrics?: string;
+  }[];
+}
+
+export interface BlockProofStats {
+  __component?: string;
+  blockType?: string;
+  id?: string | number;
+  eyebrow?: string;
+  heading?: string;
+  description?: string;
+  variant?: "counters-bar" | "city-counters" | "team-boxes" | "shopify-plus-proof" | "why-choose-migration";
+  counters?: readonly {
+    value: string;
+    suffix?: string;
+    label: string;
+    subLabel?: string;
+  }[];
+  boxes?: readonly {
+    number?: string;
+    title: string;
+    description?: string;
+    badgeText?: string;
+    icon?: CmsMedia;
+    iconSrc?: string;
+    iconAlt?: string;
+  }[];
+}
+
+export interface BlockProcessTimeline {
+  __component?: string;
+  blockType?: string;
+  id?: string | number;
+  eyebrow?: string;
+  heading: string;
+  description?: string;
+  variant?: "development-process" | "migration-grid" | "horizontal-process" | "numbered-timeline";
+  columns?: "3" | "4";
+  isBgTransparent?: boolean;
+  steps?: readonly {
+    step?: string;
+    title: string;
+    description?: string;
+    bullets?: readonly (string | { text?: string })[];
+  }[];
+}
+
+export interface BlockPricingTable {
+  __component?: string;
+  blockType?: string;
+  id?: string | number;
+  eyebrow?: string;
+  heading: string;
+  description?: string;
+  variant?: "tiers" | "hours";
+  plans?: readonly {
+    label: string;
+    badge?: string;
+    price: string;
+    period?: string;
+    description?: string;
+    bullets?: readonly (string | { text?: string })[];
+    ctaLabel?: string;
+    ctaHref?: string;
+  }[];
+}
+
 export type CmsSectionBlock =
   | BlockServiceHero
+  | BlockBrandPartners
+  | BlockFaqAccordion
+  | BlockCtaBanner
+  | BlockTestimonialsCarousel
+  | BlockServicesGrid
+  | BlockPortfolioShowcase
+  | BlockProofStats
+  | BlockProcessTimeline
+  | BlockPricingTable
   | BlockContactHero
   | BlockContactForm
   | BlockForm
@@ -698,6 +940,501 @@ export function BlockRenderer({ sections }: BlockRendererProps) {
                       }
                     : undefined,
                   badges: badges.length > 0 ? badges : undefined,
+                }}
+              />
+            );
+          }
+
+          // Block 2: Brand Partners
+          case "brand-partners": {
+            const bpBlock = block as BlockBrandPartners;
+            const brands = (bpBlock.brands ?? []).map((b) => ({
+              name: b.name || "",
+              src: resolveMediaUrl(b.logo) || b.src || "",
+              alt: b.alt || b.name || "",
+              width: b.width || 120,
+              height: b.height || 44,
+              href: b.href || "#",
+            }));
+
+            if (bpBlock.variant === "home") {
+              return (
+                <BrandPartnersSection
+                  key={blockKey}
+                  heading={bpBlock.heading}
+                  description={bpBlock.description}
+                  items={brands}
+                />
+              );
+            }
+
+            if (bpBlock.variant === "integrations") {
+              return <IntegrationsSection key={blockKey} title={bpBlock.heading} />;
+            }
+
+            return (
+              <IndustryBrandsSection
+                key={blockKey}
+                heading={bpBlock.heading}
+                density={bpBlock.density || "standard"}
+                mobileSpacing={bpBlock.mobileSpacing || "standard"}
+                showHeading={bpBlock.showHeading ?? true}
+                content={{
+                  slug: "brand-partners",
+                  ariaLabel: bpBlock.heading || "Brand Partners",
+                }}
+                items={brands}
+              />
+            );
+          }
+
+          // Block 3: FAQ Accordion
+          case "faq-accordion": {
+            const faBlock = block as BlockFaqAccordion;
+            if (faBlock.variant === "home") {
+              return <HomeFaqSection key={blockKey} />;
+            }
+
+            const faqs = (faBlock.faqs ?? []).map((f) => ({
+              question: f.question,
+              answer: f.answer,
+            }));
+
+            return (
+              <SplitFaqSection
+                key={blockKey}
+                idPrefix={faBlock.idPrefix || "faq"}
+                eyebrow={faBlock.eyebrow}
+                heading={faBlock.heading}
+                description={faBlock.description}
+                iconVariant={faBlock.iconVariant || "circle-cross"}
+                animateOnReveal={faBlock.animateOnReveal}
+                items={faqs}
+              />
+            );
+          }
+
+          // Block 4: CTA Banner
+          case "cta-banner": {
+            const cbBlock = block as BlockCtaBanner;
+            const ctaHref = cbBlock.ctaHref || "/request-a-quote";
+            const ctaLabel = cbBlock.ctaLabel || "Let's Talk";
+
+            if (cbBlock.variant === "image") {
+              const bgImage =
+                resolveMediaUrl(cbBlock.backgroundImage) ||
+                cbBlock.backgroundImageSrc ||
+                "/assets/services/cta-bg.webp";
+              return (
+                <ImageCtaSection
+                  key={blockKey}
+                  heading={cbBlock.heading}
+                  description={cbBlock.description || ""}
+                  ctaLabel={ctaLabel}
+                  ctaHref={ctaHref}
+                  backgroundImage={bgImage}
+                />
+              );
+            }
+
+            if (cbBlock.variant === "white-label") {
+              return (
+                <WhiteLabelFinalCtaSection
+                  key={blockKey}
+                  cta={{
+                    title: cbBlock.heading,
+                    description: cbBlock.description || "",
+                    label: ctaLabel,
+                  }}
+                  ctaHref={ctaHref}
+                />
+              );
+            }
+
+            return (
+              <CtaBannerSection
+                key={blockKey}
+                heading={cbBlock.heading}
+                description={cbBlock.description}
+                ctaLabel={ctaLabel}
+                ctaHref={ctaHref}
+              />
+            );
+          }
+
+          // Block 5: Testimonials Carousel
+          case "testimonials-carousel": {
+            const tcBlock = block as BlockTestimonialsCarousel;
+            if (tcBlock.variant === "home") {
+              return (
+                <TestimonialsSection
+                  key={blockKey}
+                  eyebrow={tcBlock.eyebrow}
+                  title={tcBlock.heading}
+                  description={tcBlock.description}
+                />
+              );
+            }
+
+            const items = (tcBlock.items ?? []).map((item) => ({
+              name: item.name,
+              company: item.company || "",
+              quote: item.quote,
+              videoId: item.videoId || "",
+              image: resolveMediaUrl(item.image) || item.imageSrc || "",
+              imageAlt: item.imageAlt || item.name || "",
+              logo: resolveMediaUrl(item.logo) || item.logoSrc || undefined,
+              logoAlt: item.logoAlt || item.company || undefined,
+              logoWidth: item.logoWidth || 120,
+              logoHeight: item.logoHeight || 40,
+            }));
+
+            return (
+              <HappyClientSection
+                key={blockKey}
+                eyebrow={tcBlock.eyebrow}
+                heading={tcBlock.heading}
+                description={tcBlock.description}
+                variant={tcBlock.variant === "client-stories" ? "client-stories" : undefined}
+                hasTopPadding={tcBlock.hasTopPadding}
+                items={items}
+              />
+            );
+          }
+
+          // Block 6: Services Grid
+          case "services-grid": {
+            const sgBlock = block as BlockServicesGrid;
+            const services = sgBlock.services ?? [];
+
+            if (sgBlock.variant === "theme-boxes") {
+              return (
+                <ThemeCustomizationServicesSection
+                  key={blockKey}
+                  variant={sgBlock.cardVariant || "green"}
+                  isRoundedNumber={sgBlock.isRoundedNumber}
+                  content={{
+                    eyebrow: sgBlock.eyebrow,
+                    heading: sgBlock.heading,
+                    description: sgBlock.description,
+                    bottomNote: sgBlock.bottomNote,
+                    boxes: services.map((s) => ({
+                      number: s.number,
+                      badge: s.badge,
+                      title: s.title,
+                      description: s.description,
+                      icon: resolveMediaUrl(s.icon) || s.iconSrc,
+                      iconAlt: s.iconAlt,
+                    })),
+                  }}
+                />
+              );
+            }
+
+            if (sgBlock.variant === "agency-services") {
+              return (
+                <AgencyServicesSection
+                  key={blockKey}
+                  content={{
+                    eyebrow: sgBlock.eyebrow,
+                    heading: sgBlock.heading,
+                    description: sgBlock.description || "",
+                    items: services.map((s) => ({
+                      title: s.title,
+                      description: s.description || "",
+                      tag: s.tag,
+                      pills: (s.pills ?? [])
+                        .map((p) => (typeof p === "string" ? p : p.text || ""))
+                        .filter(Boolean),
+                      cta:
+                        s.ctaLabel && s.ctaHref
+                          ? { label: s.ctaLabel, href: s.ctaHref }
+                          : null,
+                    })),
+                  }}
+                />
+              );
+            }
+
+            if (sgBlock.variant === "migration-services") {
+              return (
+                <ShopifyMigrationServicesSection
+                  key={blockKey}
+                  eyebrow={sgBlock.eyebrow}
+                  heading={sgBlock.heading}
+                  description={sgBlock.description}
+                  items={services.map((s) => ({
+                    title: s.title,
+                    description: s.description || "",
+                    image: resolveMediaUrl(s.icon) || s.iconSrc || "/assets/services/shopify-migration-default.webp",
+                    imageAlt: s.iconAlt || s.title,
+                    href: s.ctaHref || "#",
+                    ctaLabel: s.ctaLabel || "",
+                  }))}
+                />
+              );
+            }
+
+            return (
+              <ShopifyStageServicesSection
+                key={blockKey}
+                sixCards={sgBlock.sixCards}
+                lastColFull={sgBlock.lastColFull}
+                content={{
+                  eyebrow: sgBlock.eyebrow,
+                  heading: sgBlock.heading,
+                  description: sgBlock.description || "",
+                  items: services.map((s) => ({
+                    tag: s.tag,
+                    title: s.title,
+                    description: s.description || "",
+                    pills: (s.pills ?? [])
+                      .map((p) => (typeof p === "string" ? p : p.text || ""))
+                      .filter(Boolean),
+                    cta:
+                      s.ctaLabel && s.ctaHref
+                        ? { label: s.ctaLabel, href: s.ctaHref }
+                        : null,
+                  })),
+                }}
+              />
+            );
+          }
+
+          // Block 7: Portfolio Showcase
+          case "portfolio-showcase": {
+            const psBlock = block as BlockPortfolioShowcase;
+            const items = (psBlock.items ?? []).map((item) => ({
+              name: item.name,
+              href: item.href,
+              image: resolveMediaUrl(item.image) || item.imageSrc || "",
+              imageAlt: item.imageAlt || item.name,
+              category: item.category,
+            }));
+
+            const platformMark = psBlock.platformMark
+              ? {
+                  src:
+                    resolveMediaUrl(psBlock.platformMark.image) ||
+                    psBlock.platformMark.src ||
+                    "",
+                  width: psBlock.platformMark.width || 130,
+                  height: psBlock.platformMark.height || 36,
+                }
+              : undefined;
+
+            const cols = psBlock.columns
+              ? (parseInt(psBlock.columns, 10) as 2 | 3 | 4)
+              : 4;
+
+            return (
+              <PortfolioShowcaseSection
+                key={blockKey}
+                columns={cols}
+                headerLayout={psBlock.headerLayout || "split"}
+                cardVariant={psBlock.cardVariant || "default"}
+                hideCta={psBlock.hideCta}
+                ctaLabel={psBlock.ctaLabel}
+                ctaHref={psBlock.ctaHref}
+                content={{
+                  eyebrow: psBlock.eyebrow,
+                  heading: psBlock.heading || "Selected Ecommerce Work",
+                  description: psBlock.description,
+                  platformMark,
+                  ctaLabel: psBlock.ctaLabel,
+                  ctaHref: psBlock.ctaHref,
+                  secondaryCtaLabel: psBlock.secondaryCtaLabel,
+                  secondaryCtaHref: psBlock.secondaryCtaHref,
+                  items,
+                }}
+              />
+            );
+          }
+
+          // Block 8: Proof & Stats
+          case "proof-stats": {
+            const prBlock = block as BlockProofStats;
+
+            if (prBlock.variant === "city-counters") {
+              return (
+                <CityPageCounterSection
+                  key={blockKey}
+                  content={{
+                    eyebrow: prBlock.eyebrow,
+                    heading: prBlock.heading || "",
+                    description: prBlock.description || "",
+                    items: (prBlock.counters ?? []).map((c) => ({
+                      value: `${c.value}${c.suffix || ""}`,
+                      label: c.label,
+                      subLabel: c.subLabel,
+                    })),
+                  }}
+                />
+              );
+            }
+
+            if (prBlock.variant === "team-boxes") {
+              return (
+                <ShopifyTeamBoxesSection
+                  key={blockKey}
+                  content={{
+                    eyebrow: prBlock.eyebrow,
+                    heading: prBlock.heading || "",
+                    description: prBlock.description || "",
+                    items: (prBlock.boxes ?? []).map((b) => ({
+                      title: b.title,
+                      description: b.description || "",
+                    })),
+                  }}
+                />
+              );
+            }
+
+            if (prBlock.variant === "shopify-plus-proof") {
+              const proofContent = {
+                eyebrow: prBlock.eyebrow || shopifyPlusAgencyWhyChoose.eyebrow,
+                heading: prBlock.heading || shopifyPlusAgencyWhyChoose.heading,
+                intro: prBlock.description || shopifyPlusAgencyWhyChoose.intro,
+                text: shopifyPlusAgencyWhyChoose.text,
+                stats:
+                  (prBlock.counters ?? []).length > 0
+                    ? (prBlock.counters ?? []).map(
+                        (c) => `${c.value}${c.suffix || ""} ${c.label}`,
+                      )
+                    : shopifyPlusAgencyWhyChoose.stats,
+              };
+              return <ShopifyPlusProofSection key={blockKey} content={proofContent} />;
+            }
+
+            if (prBlock.variant === "why-choose-migration") {
+              const migrationContent = {
+                ...shopifyMigrationWhyChoose,
+                eyebrow: prBlock.eyebrow || shopifyMigrationWhyChoose.eyebrow,
+                heading: prBlock.heading || shopifyMigrationWhyChoose.heading,
+                description:
+                  prBlock.description || shopifyMigrationWhyChoose.description,
+              };
+              return (
+                <WhyChooseShopifyMigrationSection
+                  key={blockKey}
+                  content={migrationContent}
+                />
+              );
+            }
+
+            return (
+              <ProofCounterSection
+                key={blockKey}
+                content={{
+                  eyebrow: prBlock.eyebrow,
+                  heading: prBlock.heading,
+                  description: prBlock.description,
+                  stats: (prBlock.counters ?? []).map((c) => ({
+                    value: c.value,
+                    suffix: c.suffix,
+                    label: c.label,
+                  })),
+                }}
+              />
+            );
+          }
+
+          // Block 9: Process Timeline
+          case "process-timeline": {
+            const ptBlock = block as BlockProcessTimeline;
+            const steps = ptBlock.steps ?? [];
+
+            if (ptBlock.variant === "migration-grid") {
+              return (
+                <ShopifyMigrationNumberedGridSection
+                  key={blockKey}
+                  eyebrow={ptBlock.eyebrow}
+                  heading={ptBlock.heading}
+                  description={ptBlock.description}
+                  items={steps.map((s) => ({
+                    number: s.step || "",
+                    title: s.title,
+                    description: s.description || "",
+                  }))}
+                />
+              );
+            }
+
+            if (ptBlock.variant === "horizontal-process") {
+              return (
+                <ShopifyHorizontalProcessSection
+                  key={blockKey}
+                  content={{
+                    eyebrow: ptBlock.eyebrow,
+                    heading: ptBlock.heading,
+                    description: ptBlock.description || "",
+                    steps: steps.map((s) => ({
+                      title: s.title,
+                      description: s.description || "",
+                    })),
+                  }}
+                />
+              );
+            }
+
+            if (ptBlock.variant === "numbered-timeline") {
+              return (
+                <NumberedProcessTimelineSection
+                  key={blockKey}
+                  eyebrow={ptBlock.eyebrow}
+                  heading={ptBlock.heading}
+                  description={ptBlock.description}
+                  items={steps.map((s) => s.title)}
+                />
+              );
+            }
+
+            const cols = ptBlock.columns
+              ? (parseInt(ptBlock.columns, 10) as 3 | 4)
+              : 4;
+
+            return (
+              <OurDevelopmentProcessSection
+                key={blockKey}
+                columns={cols}
+                isBgTransparent={ptBlock.isBgTransparent}
+                content={{
+                  eyebrow: ptBlock.eyebrow,
+                  heading: ptBlock.heading,
+                  description: ptBlock.description,
+                  steps: steps.map((s) => ({
+                    step: s.step || "",
+                    title: s.title,
+                    description: s.description || "",
+                  })),
+                }}
+              />
+            );
+          }
+
+          // Block 10: Pricing Table
+          case "pricing-table": {
+            const prBlock = block as BlockPricingTable;
+            const items = (prBlock.plans ?? []).map((p) => ({
+              label: p.label,
+              badge: p.badge || "",
+              price: p.price,
+              description: p.description || "",
+              bullets: (p.bullets ?? [])
+                .map((b) => (typeof b === "string" ? b : b.text || ""))
+                .filter(Boolean),
+              ctaLabel: p.ctaLabel || "Get Started",
+              ctaHref: p.ctaHref || "/request-a-quote",
+            }));
+
+            return (
+              <PricingTableSection
+                key={blockKey}
+                content={{
+                  eyebrow: prBlock.eyebrow,
+                  heading: prBlock.heading,
+                  description: prBlock.description,
+                  items,
                 }}
               />
             );

@@ -800,6 +800,249 @@ export interface Page {
             blockType: 'service-hero';
           }
         | {
+            variant?: ('slider' | 'grid' | 'home' | 'integrations') | null;
+            heading?: string | null;
+            description?: string | null;
+            density?: ('standard' | 'compact' | 'flexible') | null;
+            mobileSpacing?: ('standard' | 'spacious') | null;
+            showHeading?: boolean | null;
+            brands?:
+              | {
+                  name?: string | null;
+                  logo?: (number | null) | Media;
+                  src?: string | null;
+                  alt?: string | null;
+                  width?: number | null;
+                  height?: number | null;
+                  href?: string | null;
+                  id?: string | null;
+                }[]
+              | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'brand-partners';
+          }
+        | {
+            eyebrow?: string | null;
+            heading?: string | null;
+            description?: string | null;
+            idPrefix?: string | null;
+            variant?: ('split' | 'home') | null;
+            iconVariant?: ('circle-cross' | 'default') | null;
+            animateOnReveal?: boolean | null;
+            faqs?:
+              | {
+                  question: string;
+                  answer: string;
+                  id?: string | null;
+                }[]
+              | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'faq-accordion';
+          }
+        | {
+            variant?: ('gradient' | 'image' | 'white-label') | null;
+            heading: string;
+            description?: string | null;
+            ctaLabel?: string | null;
+            ctaHref?: string | null;
+            secondaryCta?: {
+              label?: string | null;
+              href?: string | null;
+            };
+            backgroundImage?: (number | null) | Media;
+            backgroundImageSrc?: string | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'cta-banner';
+          }
+        | {
+            eyebrow?: string | null;
+            heading?: string | null;
+            description?: string | null;
+            variant?: ('classic' | 'client-stories' | 'home') | null;
+            hasTopPadding?: boolean | null;
+            items?:
+              | {
+                  name: string;
+                  company?: string | null;
+                  quote: string;
+                  videoId?: string | null;
+                  image?: (number | null) | Media;
+                  imageSrc?: string | null;
+                  imageAlt?: string | null;
+                  logo?: (number | null) | Media;
+                  logoSrc?: string | null;
+                  logoAlt?: string | null;
+                  logoWidth?: number | null;
+                  logoHeight?: number | null;
+                  id?: string | null;
+                }[]
+              | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'testimonials-carousel';
+          }
+        | {
+            eyebrow?: string | null;
+            heading: string;
+            description?: string | null;
+            variant?: ('stage-services' | 'theme-boxes' | 'agency-services' | 'migration-services') | null;
+            cardVariant?: ('green' | 'yellow' | 'transparent') | null;
+            sixCards?: boolean | null;
+            lastColFull?: boolean | null;
+            isRoundedNumber?: boolean | null;
+            bottomNote?: string | null;
+            services?:
+              | {
+                  tag?: string | null;
+                  number?: string | null;
+                  badge?: string | null;
+                  title: string;
+                  description?: string | null;
+                  pills?:
+                    | {
+                        text: string;
+                        id?: string | null;
+                      }[]
+                    | null;
+                  bullets?:
+                    | {
+                        text: string;
+                        id?: string | null;
+                      }[]
+                    | null;
+                  icon?: (number | null) | Media;
+                  iconSrc?: string | null;
+                  iconAlt?: string | null;
+                  ctaLabel?: string | null;
+                  ctaHref?: string | null;
+                  id?: string | null;
+                }[]
+              | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'services-grid';
+          }
+        | {
+            eyebrow?: string | null;
+            heading: string;
+            description?: string | null;
+            columns?: ('4' | '3' | '2') | null;
+            headerLayout?: ('split' | 'centered') | null;
+            cardVariant?: ('default' | 'ourWorkRefresh') | null;
+            hideCta?: boolean | null;
+            ctaLabel?: string | null;
+            ctaHref?: string | null;
+            secondaryCtaLabel?: string | null;
+            secondaryCtaHref?: string | null;
+            platformMark?: {
+              image?: (number | null) | Media;
+              src?: string | null;
+              width?: number | null;
+              height?: number | null;
+            };
+            items?:
+              | {
+                  name: string;
+                  href?: string | null;
+                  image?: (number | null) | Media;
+                  imageSrc?: string | null;
+                  imageAlt?: string | null;
+                  category?: string | null;
+                  metrics?: string | null;
+                  id?: string | null;
+                }[]
+              | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'portfolio-showcase';
+          }
+        | {
+            eyebrow?: string | null;
+            heading?: string | null;
+            description?: string | null;
+            variant?:
+              ('counters-bar' | 'city-counters' | 'team-boxes' | 'shopify-plus-proof' | 'why-choose-migration') | null;
+            counters?:
+              | {
+                  value: string;
+                  suffix?: string | null;
+                  label: string;
+                  subLabel?: string | null;
+                  id?: string | null;
+                }[]
+              | null;
+            boxes?:
+              | {
+                  number?: string | null;
+                  title: string;
+                  description?: string | null;
+                  badgeText?: string | null;
+                  icon?: (number | null) | Media;
+                  iconSrc?: string | null;
+                  iconAlt?: string | null;
+                  id?: string | null;
+                }[]
+              | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'proof-stats';
+          }
+        | {
+            eyebrow?: string | null;
+            heading: string;
+            description?: string | null;
+            variant?: ('development-process' | 'migration-grid' | 'horizontal-process' | 'numbered-timeline') | null;
+            columns?: ('4' | '3') | null;
+            isBgTransparent?: boolean | null;
+            steps?:
+              | {
+                  step?: string | null;
+                  title: string;
+                  description?: string | null;
+                  bullets?:
+                    | {
+                        text: string;
+                        id?: string | null;
+                      }[]
+                    | null;
+                  id?: string | null;
+                }[]
+              | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'process-timeline';
+          }
+        | {
+            eyebrow?: string | null;
+            heading: string;
+            description?: string | null;
+            variant?: ('tiers' | 'hours') | null;
+            plans?:
+              | {
+                  label: string;
+                  badge?: string | null;
+                  price: string;
+                  period?: string | null;
+                  description?: string | null;
+                  bullets?:
+                    | {
+                        text: string;
+                        id?: string | null;
+                      }[]
+                    | null;
+                  ctaLabel?: string | null;
+                  ctaHref?: string | null;
+                  id?: string | null;
+                }[]
+              | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'pricing-table';
+          }
+        | {
             eyebrow?: string | null;
             title: string;
             description: string;
@@ -1979,6 +2222,261 @@ export interface PagesSelect<T extends boolean = true> {
                     href?: T;
                     width?: T;
                     height?: T;
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        'brand-partners'?:
+          | T
+          | {
+              variant?: T;
+              heading?: T;
+              description?: T;
+              density?: T;
+              mobileSpacing?: T;
+              showHeading?: T;
+              brands?:
+                | T
+                | {
+                    name?: T;
+                    logo?: T;
+                    src?: T;
+                    alt?: T;
+                    width?: T;
+                    height?: T;
+                    href?: T;
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        'faq-accordion'?:
+          | T
+          | {
+              eyebrow?: T;
+              heading?: T;
+              description?: T;
+              idPrefix?: T;
+              variant?: T;
+              iconVariant?: T;
+              animateOnReveal?: T;
+              faqs?:
+                | T
+                | {
+                    question?: T;
+                    answer?: T;
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        'cta-banner'?:
+          | T
+          | {
+              variant?: T;
+              heading?: T;
+              description?: T;
+              ctaLabel?: T;
+              ctaHref?: T;
+              secondaryCta?:
+                | T
+                | {
+                    label?: T;
+                    href?: T;
+                  };
+              backgroundImage?: T;
+              backgroundImageSrc?: T;
+              id?: T;
+              blockName?: T;
+            };
+        'testimonials-carousel'?:
+          | T
+          | {
+              eyebrow?: T;
+              heading?: T;
+              description?: T;
+              variant?: T;
+              hasTopPadding?: T;
+              items?:
+                | T
+                | {
+                    name?: T;
+                    company?: T;
+                    quote?: T;
+                    videoId?: T;
+                    image?: T;
+                    imageSrc?: T;
+                    imageAlt?: T;
+                    logo?: T;
+                    logoSrc?: T;
+                    logoAlt?: T;
+                    logoWidth?: T;
+                    logoHeight?: T;
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        'services-grid'?:
+          | T
+          | {
+              eyebrow?: T;
+              heading?: T;
+              description?: T;
+              variant?: T;
+              cardVariant?: T;
+              sixCards?: T;
+              lastColFull?: T;
+              isRoundedNumber?: T;
+              bottomNote?: T;
+              services?:
+                | T
+                | {
+                    tag?: T;
+                    number?: T;
+                    badge?: T;
+                    title?: T;
+                    description?: T;
+                    pills?:
+                      | T
+                      | {
+                          text?: T;
+                          id?: T;
+                        };
+                    bullets?:
+                      | T
+                      | {
+                          text?: T;
+                          id?: T;
+                        };
+                    icon?: T;
+                    iconSrc?: T;
+                    iconAlt?: T;
+                    ctaLabel?: T;
+                    ctaHref?: T;
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        'portfolio-showcase'?:
+          | T
+          | {
+              eyebrow?: T;
+              heading?: T;
+              description?: T;
+              columns?: T;
+              headerLayout?: T;
+              cardVariant?: T;
+              hideCta?: T;
+              ctaLabel?: T;
+              ctaHref?: T;
+              secondaryCtaLabel?: T;
+              secondaryCtaHref?: T;
+              platformMark?:
+                | T
+                | {
+                    image?: T;
+                    src?: T;
+                    width?: T;
+                    height?: T;
+                  };
+              items?:
+                | T
+                | {
+                    name?: T;
+                    href?: T;
+                    image?: T;
+                    imageSrc?: T;
+                    imageAlt?: T;
+                    category?: T;
+                    metrics?: T;
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        'proof-stats'?:
+          | T
+          | {
+              eyebrow?: T;
+              heading?: T;
+              description?: T;
+              variant?: T;
+              counters?:
+                | T
+                | {
+                    value?: T;
+                    suffix?: T;
+                    label?: T;
+                    subLabel?: T;
+                    id?: T;
+                  };
+              boxes?:
+                | T
+                | {
+                    number?: T;
+                    title?: T;
+                    description?: T;
+                    badgeText?: T;
+                    icon?: T;
+                    iconSrc?: T;
+                    iconAlt?: T;
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        'process-timeline'?:
+          | T
+          | {
+              eyebrow?: T;
+              heading?: T;
+              description?: T;
+              variant?: T;
+              columns?: T;
+              isBgTransparent?: T;
+              steps?:
+                | T
+                | {
+                    step?: T;
+                    title?: T;
+                    description?: T;
+                    bullets?:
+                      | T
+                      | {
+                          text?: T;
+                          id?: T;
+                        };
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        'pricing-table'?:
+          | T
+          | {
+              eyebrow?: T;
+              heading?: T;
+              description?: T;
+              variant?: T;
+              plans?:
+                | T
+                | {
+                    label?: T;
+                    badge?: T;
+                    price?: T;
+                    period?: T;
+                    description?: T;
+                    bullets?:
+                      | T
+                      | {
+                          text?: T;
+                          id?: T;
+                        };
+                    ctaLabel?: T;
+                    ctaHref?: T;
                     id?: T;
                   };
               id?: T;
