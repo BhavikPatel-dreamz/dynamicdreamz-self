@@ -256,12 +256,12 @@ To populate all 142 pages in Payload CMS without manual data entry:
 [✓] Block 20: Resources Hub & Filter (resources-hub) -> Completed & verified on /test-page
 
 === PHASE 2.5: EXTEND 7 MASTER BLOCKS + BUILD 15 NEW SIGNATURE BLOCKS ===
-[ ] Step 2.5.1: Extend 7 Master Blocks with variants in src/payload/blocks/ & RenderBlocks.tsx
-[ ] Step 2.5.2: Build 15 New Dedicated Signature Blocks in src/payload/blocks/
-[ ] Step 2.5.3: Register 15 New Blocks in src/payload/collections/Pages.ts
-[ ] Step 2.5.4: Safely run PostgreSQL DDL for 15 new block tables with short dbName
-[ ] Step 2.5.5: Run npx payload generate:types & compile updated types
-[ ] Step 2.5.6: Dispatch all remaining components in src/components/RenderBlocks.tsx
+[✓] Step 2.5.1: Extend 7 Master Blocks with variants in src/payload/blocks/ & RenderBlocks.tsx
+[✓] Step 2.5.2: Build 15 New Dedicated Signature Blocks in src/payload/blocks/
+[✓] Step 2.5.3: Register 15 New Blocks in src/payload/collections/Pages.ts
+[✓] Step 2.5.4: Safely run PostgreSQL DDL for 15 new block tables with short dbName
+[✓] Step 2.5.5: Run npx payload generate:types & compile updated types
+[✓] Step 2.5.6: Dispatch all remaining components in src/components/RenderBlocks.tsx
 
 === PHASE 3: AUTOMATED SEEDING & PRODUCTION LAUNCH (BY TIER) ===
 [ ] Tier 1: Seed all 46 Theme Customization pages into CMS

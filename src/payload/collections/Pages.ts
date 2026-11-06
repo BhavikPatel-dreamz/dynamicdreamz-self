@@ -26,6 +26,22 @@ import { EvaluationFrameworkBlock } from "@/payload/blocks/EvaluationFrameworkBl
 import { WhiteLabelDeliveryBlock } from "@/payload/blocks/WhiteLabelDeliveryBlock";
 import { B2bArchitectureBlock } from "@/payload/blocks/B2bArchitectureBlock";
 import { ResourcesHubBlock } from "@/payload/blocks/ResourcesHubBlock";
+import { ThemeFeaturesBannerBlock } from "@/payload/blocks/ThemeFeaturesBannerBlock";
+import { AiEmpoweredDeliveryBlock } from "@/payload/blocks/AiEmpoweredDeliveryBlock";
+import { ShopifyPlusAgencySplitBlock } from "@/payload/blocks/ShopifyPlusAgencySplitBlock";
+import { CommerceSolutionsAccordionBlock } from "@/payload/blocks/CommerceSolutionsAccordionBlock";
+import { SelectedWorkVideoBlock } from "@/payload/blocks/SelectedWorkVideoBlock";
+import { InsightsBlogGridBlock } from "@/payload/blocks/InsightsBlogGridBlock";
+import { CredentialTabsBlock } from "@/payload/blocks/CredentialTabsBlock";
+import { PartnerDirectoryProofBlock } from "@/payload/blocks/PartnerDirectoryProofBlock";
+import { ShopifyCroAssessmentBlock } from "@/payload/blocks/ShopifyCroAssessmentBlock";
+import { ShopifySupportScenariosBlock } from "@/payload/blocks/ShopifySupportScenariosBlock";
+import { AboutStoryBlock } from "@/payload/blocks/AboutStoryBlock";
+import { AboutValuesBlock } from "@/payload/blocks/AboutValuesBlock";
+import { LifeCultureHiringBlock } from "@/payload/blocks/LifeCultureHiringBlock";
+import { CareerOpportunitiesBlock } from "@/payload/blocks/CareerOpportunitiesBlock";
+import { ShopifyHoursTasksBlock } from "@/payload/blocks/ShopifyHoursTasksBlock";
+import { MobileAppComparisonBlock } from "@/payload/blocks/MobileAppComparisonBlock";
 import { previewDraftPath } from "@/lib/preview-url";
 import { safeRevalidatePath } from "@/lib/revalidate";
 
@@ -114,6 +130,22 @@ export const Pages: CollectionConfig = {
         WhiteLabelDeliveryBlock,
         B2bArchitectureBlock,
         ResourcesHubBlock,
+        ThemeFeaturesBannerBlock,
+        AiEmpoweredDeliveryBlock,
+        ShopifyPlusAgencySplitBlock,
+        CommerceSolutionsAccordionBlock,
+        SelectedWorkVideoBlock,
+        InsightsBlogGridBlock,
+        CredentialTabsBlock,
+        PartnerDirectoryProofBlock,
+        ShopifyCroAssessmentBlock,
+        ShopifySupportScenariosBlock,
+        AboutStoryBlock,
+        AboutValuesBlock,
+        LifeCultureHiringBlock,
+        CareerOpportunitiesBlock,
+        ShopifyHoursTasksBlock,
+        MobileAppComparisonBlock,
       ],
     },
     {

@@ -1408,6 +1408,283 @@ export interface Page {
             blockName?: string | null;
             blockType: 'resources-hub';
           }
+        | {
+            eyebrow?: string | null;
+            heading: string;
+            description?: string | null;
+            items?:
+              | {
+                  text: string;
+                  id?: string | null;
+                }[]
+              | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'theme-features-banner';
+          }
+        | {
+            variant?: ('default' | 'dark-green') | null;
+            eyebrow?: string | null;
+            heading: string;
+            description: string;
+            callout?: string | null;
+            cta?: {
+              label?: string | null;
+              href?: string | null;
+            };
+            tools?:
+              | {
+                  name: string;
+                  description: string;
+                  id?: string | null;
+                }[]
+              | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'ai-empowered-delivery';
+          }
+        | {
+            eyebrow?: string | null;
+            title: string;
+            intro?: string | null;
+            paragraphs?:
+              | {
+                  text: string;
+                  id?: string | null;
+                }[]
+              | null;
+            videoSrc?: string | null;
+            counters?:
+              | {
+                  value: string;
+                  label: string;
+                  note?: string | null;
+                  tone?: ('green' | 'stone' | 'peach' | 'lime') | null;
+                  id?: string | null;
+                }[]
+              | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'home-shopify-plus-agency';
+          }
+        | {
+            title: string;
+            description?: string | null;
+            solutions?:
+              | {
+                  title: string;
+                  summary: string;
+                  body: string;
+                  href: string;
+                  cta: string;
+                  id?: string | null;
+                }[]
+              | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'home-commerce-solutions';
+          }
+        | {
+            title: string;
+            description?: string | null;
+            ctaLabel?: string | null;
+            ctaHref?: string | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'home-selected-work';
+          }
+        | {
+            title: string;
+            ctaLabel?: string | null;
+            ctaHref?: string | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'home-insights';
+          }
+        | {
+            eyebrow?: string | null;
+            heading: string;
+            description?: string | null;
+            items?:
+              | {
+                  tabId: string;
+                  label: string;
+                  eyebrow?: string | null;
+                  title: string;
+                  description: string;
+                  details?:
+                    | {
+                        label: string;
+                        value: string;
+                        id?: string | null;
+                      }[]
+                    | null;
+                  id?: string | null;
+                }[]
+              | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'credential-tabs';
+          }
+        | {
+            heading: string;
+            description?: string | null;
+            href?: string | null;
+            items?:
+              | {
+                  kind?: ('text' | 'rating' | 'image') | null;
+                  label: string;
+                  value?: string | null;
+                  image?: (number | null) | Media;
+                  imageSrc?: string | null;
+                  imageAlt?: string | null;
+                  id?: string | null;
+                }[]
+              | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'partner-directory-proof';
+          }
+        | {
+            heading: string;
+            description?: string | null;
+            ctaLabel?: string | null;
+            ctaHref?: string | null;
+            points?:
+              | {
+                  text: string;
+                  id?: string | null;
+                }[]
+              | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'cro-assessment';
+          }
+        | {
+            eyebrow?: string | null;
+            heading: string;
+            description?: string | null;
+            items?:
+              | {
+                  scenarioId?: string | null;
+                  kicker?: string | null;
+                  heading: string;
+                  description: string;
+                  features?:
+                    | {
+                        text: string;
+                        id?: string | null;
+                      }[]
+                    | null;
+                  primaryCtaLabel?: string | null;
+                  primaryCtaHref?: string | null;
+                  secondaryCtaLabel?: string | null;
+                  secondaryCtaHref?: string | null;
+                  id?: string | null;
+                }[]
+              | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'support-scenarios';
+          }
+        | {
+            title: string;
+            description?: string | null;
+            caption?: string | null;
+            videoId?: string | null;
+            videoTitle?: string | null;
+            poster?: (number | null) | Media;
+            posterSrc?: string | null;
+            posterAlt?: string | null;
+            overlay?: (number | null) | Media;
+            overlaySrc?: string | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'about-story';
+          }
+        | {
+            title: string;
+            description?: string | null;
+            values?:
+              | {
+                  title: string;
+                  description: string;
+                  iconName: string;
+                  id?: string | null;
+                }[]
+              | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'about-values';
+          }
+        | {
+            variant?: ('culture' | 'hiring') | null;
+            title: string;
+            description?: string | null;
+            cta?: string | null;
+            href?: string | null;
+            image?: (number | null) | Media;
+            imageSrc?: string | null;
+            imageAlt?: string | null;
+            values?:
+              | {
+                  title: string;
+                  description: string;
+                  icon?: (number | null) | Media;
+                  iconSrc?: string | null;
+                  iconAlt?: string | null;
+                  id?: string | null;
+                }[]
+              | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'life-culture-hiring';
+          }
+        | {
+            eyebrow?: string | null;
+            title: string;
+            description?: string | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'career-opportunities';
+          }
+        | {
+            eyebrow?: string | null;
+            heading: string;
+            description?: string | null;
+            items?:
+              | {
+                  text: string;
+                  id?: string | null;
+                }[]
+              | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'hours-tasks';
+          }
+        | {
+            eyebrow?: string | null;
+            heading: string;
+            description?: string | null;
+            tableHeaders?:
+              | {
+                  text: string;
+                  id?: string | null;
+                }[]
+              | null;
+            rows?:
+              | {
+                  title: string;
+                  subtitle?: string | null;
+                  appBuilder: string;
+                  custom: string;
+                  id?: string | null;
+                }[]
+              | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'mobile-app-comparison';
+          }
       )[]
     | null;
   seo?: {
@@ -3021,6 +3298,301 @@ export interface PagesSelect<T extends boolean = true> {
                 | T
                 | {
                     text?: T;
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        'theme-features-banner'?:
+          | T
+          | {
+              eyebrow?: T;
+              heading?: T;
+              description?: T;
+              items?:
+                | T
+                | {
+                    text?: T;
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        'ai-empowered-delivery'?:
+          | T
+          | {
+              variant?: T;
+              eyebrow?: T;
+              heading?: T;
+              description?: T;
+              callout?: T;
+              cta?:
+                | T
+                | {
+                    label?: T;
+                    href?: T;
+                  };
+              tools?:
+                | T
+                | {
+                    name?: T;
+                    description?: T;
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        'home-shopify-plus-agency'?:
+          | T
+          | {
+              eyebrow?: T;
+              title?: T;
+              intro?: T;
+              paragraphs?:
+                | T
+                | {
+                    text?: T;
+                    id?: T;
+                  };
+              videoSrc?: T;
+              counters?:
+                | T
+                | {
+                    value?: T;
+                    label?: T;
+                    note?: T;
+                    tone?: T;
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        'home-commerce-solutions'?:
+          | T
+          | {
+              title?: T;
+              description?: T;
+              solutions?:
+                | T
+                | {
+                    title?: T;
+                    summary?: T;
+                    body?: T;
+                    href?: T;
+                    cta?: T;
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        'home-selected-work'?:
+          | T
+          | {
+              title?: T;
+              description?: T;
+              ctaLabel?: T;
+              ctaHref?: T;
+              id?: T;
+              blockName?: T;
+            };
+        'home-insights'?:
+          | T
+          | {
+              title?: T;
+              ctaLabel?: T;
+              ctaHref?: T;
+              id?: T;
+              blockName?: T;
+            };
+        'credential-tabs'?:
+          | T
+          | {
+              eyebrow?: T;
+              heading?: T;
+              description?: T;
+              items?:
+                | T
+                | {
+                    tabId?: T;
+                    label?: T;
+                    eyebrow?: T;
+                    title?: T;
+                    description?: T;
+                    details?:
+                      | T
+                      | {
+                          label?: T;
+                          value?: T;
+                          id?: T;
+                        };
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        'partner-directory-proof'?:
+          | T
+          | {
+              heading?: T;
+              description?: T;
+              href?: T;
+              items?:
+                | T
+                | {
+                    kind?: T;
+                    label?: T;
+                    value?: T;
+                    image?: T;
+                    imageSrc?: T;
+                    imageAlt?: T;
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        'cro-assessment'?:
+          | T
+          | {
+              heading?: T;
+              description?: T;
+              ctaLabel?: T;
+              ctaHref?: T;
+              points?:
+                | T
+                | {
+                    text?: T;
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        'support-scenarios'?:
+          | T
+          | {
+              eyebrow?: T;
+              heading?: T;
+              description?: T;
+              items?:
+                | T
+                | {
+                    scenarioId?: T;
+                    kicker?: T;
+                    heading?: T;
+                    description?: T;
+                    features?:
+                      | T
+                      | {
+                          text?: T;
+                          id?: T;
+                        };
+                    primaryCtaLabel?: T;
+                    primaryCtaHref?: T;
+                    secondaryCtaLabel?: T;
+                    secondaryCtaHref?: T;
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        'about-story'?:
+          | T
+          | {
+              title?: T;
+              description?: T;
+              caption?: T;
+              videoId?: T;
+              videoTitle?: T;
+              poster?: T;
+              posterSrc?: T;
+              posterAlt?: T;
+              overlay?: T;
+              overlaySrc?: T;
+              id?: T;
+              blockName?: T;
+            };
+        'about-values'?:
+          | T
+          | {
+              title?: T;
+              description?: T;
+              values?:
+                | T
+                | {
+                    title?: T;
+                    description?: T;
+                    iconName?: T;
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        'life-culture-hiring'?:
+          | T
+          | {
+              variant?: T;
+              title?: T;
+              description?: T;
+              cta?: T;
+              href?: T;
+              image?: T;
+              imageSrc?: T;
+              imageAlt?: T;
+              values?:
+                | T
+                | {
+                    title?: T;
+                    description?: T;
+                    icon?: T;
+                    iconSrc?: T;
+                    iconAlt?: T;
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        'career-opportunities'?:
+          | T
+          | {
+              eyebrow?: T;
+              title?: T;
+              description?: T;
+              id?: T;
+              blockName?: T;
+            };
+        'hours-tasks'?:
+          | T
+          | {
+              eyebrow?: T;
+              heading?: T;
+              description?: T;
+              items?:
+                | T
+                | {
+                    text?: T;
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        'mobile-app-comparison'?:
+          | T
+          | {
+              eyebrow?: T;
+              heading?: T;
+              description?: T;
+              tableHeaders?:
+                | T
+                | {
+                    text?: T;
+                    id?: T;
+                  };
+              rows?:
+                | T
+                | {
+                    title?: T;
+                    subtitle?: T;
+                    appBuilder?: T;
+                    custom?: T;
                     id?: T;
                   };
               id?: T;

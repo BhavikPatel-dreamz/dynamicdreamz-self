@@ -93,6 +93,34 @@ import { CaseStudyCardsSection } from "@/components/sections/shopify-plus-agency
 import { WhiteLabelPartnerSection } from "@/components/sections/home/white-label-partner-section";
 import { TwoColImageWithTextSection } from "@/components/sections/two-col-image-with-text-section";
 
+// Phase 2.5 Signature Block Section Components
+import { ThemeFeaturesBannerSection } from "@/components/sections/theme-customization/theme-features-banner-section";
+import { AiEmpoweredDeliverySection } from "@/components/sections/ai-empowered-delivery-section";
+import { ShopifyPlusAgencySection } from "@/components/sections/home/shopify-plus-agency-section";
+import { CommerceSolutionsSection } from "@/components/sections/home/commerce-solutions-section";
+import { SelectedWorkSection } from "@/components/sections/home/selected-work-section";
+import { InsightsSection } from "@/components/sections/home/insights-section";
+import { CredentialTabsSection } from "@/components/sections/shopify-certified-developers/credential-tabs-section";
+import { PartnerDirectoryProofSection } from "@/components/sections/shopify-certified-developers/partner-directory-proof-section";
+import { ShopifyCroAssessmentSection } from "@/components/sections/shopify-cro/shopify-cro-assessment-section";
+import { ShopifySupportScenariosSection } from "@/components/sections/white-label-shopify/shopify-support-scenarios-section";
+import { AboutStorySection } from "@/components/sections/about/about-story-section";
+import { AboutValuesSection } from "@/components/sections/about/about-values-section";
+import { WorkCultureSection } from "@/components/sections/life-dynamicdreamz/work-culture-section";
+import { LifeHiringSection } from "@/components/sections/life-dynamicdreamz/life-hiring-section";
+import { CareerOpportunitiesSection } from "@/components/sections/career/career-opportunities-section";
+import { ShopifyHoursTasksSection } from "@/components/sections/buy-shopify-development-hours/shopify-hours-content-sections";
+import { ShopifyMobileAppComparisonSection } from "@/components/sections/shopify-mobile-app/shopify-mobile-app-comparison-section";
+
+// Phase 2.5 Canonical Content Fallbacks
+import { shopifyPlusAgencyContent } from "@/content/home";
+import { commerceSolutions } from "@/content/home-client";
+import { shopifyCredentialTabs, shopifyPartnerDirectoryProof } from "@/content/shopify-certified-developers";
+import { shopifyCroAssessment } from "@/content/shopify-cro-agency";
+import { whiteLabelShopifyScenarios } from "@/content/white-label-shopify-development";
+import { aboutStory } from "@/content/about";
+import { hiringCallout } from "@/content/life-dynamicdreamz";
+
 // Common CMS Types
 export type CmsMedia =
   | {
@@ -717,6 +745,239 @@ export interface BlockResourcesHub {
   points?: { text: string }[];
 }
 
+export interface BlockThemeFeaturesBanner {
+  __component?: string;
+  blockType?: string;
+  id?: string | number;
+  eyebrow?: string;
+  heading: string;
+  description?: string;
+  items?: readonly (string | { text?: string })[];
+}
+
+export interface BlockAiEmpoweredDelivery {
+  __component?: string;
+  blockType?: string;
+  id?: string | number;
+  variant?: "default" | "dark-green";
+  eyebrow?: string;
+  heading: string;
+  description: string;
+  callout?: string;
+  cta?: {
+    label?: string;
+    href?: string;
+  };
+  tools?: readonly {
+    name: string;
+    description: string;
+  }[];
+}
+
+export interface BlockShopifyPlusAgencySplit {
+  __component?: string;
+  blockType?: string;
+  id?: string | number;
+  eyebrow?: string;
+  title: string;
+  intro?: string;
+  paragraphs?: readonly (string | { text?: string })[];
+  videoSrc?: string;
+  counters?: readonly {
+    value: string;
+    label: string;
+    note?: string;
+    tone?: "green" | "stone" | "peach" | "lime";
+  }[];
+}
+
+export interface BlockCommerceSolutionsAccordion {
+  __component?: string;
+  blockType?: string;
+  id?: string | number;
+  title: string;
+  description?: string;
+  solutions?: readonly {
+    title: string;
+    summary: string;
+    body: string;
+    href: string;
+    cta: string;
+  }[];
+}
+
+export interface BlockSelectedWorkVideo {
+  __component?: string;
+  blockType?: string;
+  id?: string | number;
+  title: string;
+  description?: string;
+  ctaLabel?: string;
+  ctaHref?: string;
+}
+
+export interface BlockInsightsBlogGrid {
+  __component?: string;
+  blockType?: string;
+  id?: string | number;
+  title: string;
+  ctaLabel?: string;
+  ctaHref?: string;
+}
+
+export interface BlockCredentialTabs {
+  __component?: string;
+  blockType?: string;
+  id?: string | number;
+  eyebrow?: string;
+  heading: string;
+  description?: string;
+  items?: readonly {
+    tabId?: string;
+    label: string;
+    eyebrow?: string;
+    title: string;
+    description: string;
+    details?: readonly {
+      label: string;
+      value: string;
+    }[];
+  }[];
+}
+
+export interface BlockPartnerDirectoryProof {
+  __component?: string;
+  blockType?: string;
+  id?: string | number;
+  heading: string;
+  description?: string;
+  href?: string;
+  items?: readonly {
+    kind?: "text" | "rating" | "image";
+    label: string;
+    value?: string;
+    image?: CmsMedia;
+    imageSrc?: string;
+    imageAlt?: string;
+  }[];
+}
+
+export interface BlockShopifyCroAssessment {
+  __component?: string;
+  blockType?: string;
+  id?: string | number;
+  heading: string;
+  description?: string;
+  ctaLabel?: string;
+  ctaHref?: string;
+  points?: readonly (string | { text?: string })[];
+}
+
+export interface BlockShopifySupportScenarios {
+  __component?: string;
+  blockType?: string;
+  id?: string | number;
+  eyebrow?: string;
+  heading: string;
+  description?: string;
+  items?: readonly {
+    scenarioId?: string;
+    kicker?: string;
+    heading: string;
+    description: string;
+    features?: readonly (string | { text?: string })[];
+    primaryCtaLabel?: string;
+    primaryCtaHref?: string;
+    secondaryCtaLabel?: string;
+    secondaryCtaHref?: string;
+  }[];
+}
+
+export interface BlockAboutStory {
+  __component?: string;
+  blockType?: string;
+  id?: string | number;
+  title: string;
+  description?: string;
+  caption?: string;
+  videoId?: string;
+  videoTitle?: string;
+  poster?: CmsMedia;
+  posterSrc?: string;
+  posterAlt?: string;
+  overlay?: CmsMedia;
+  overlaySrc?: string;
+}
+
+export interface BlockAboutValues {
+  __component?: string;
+  blockType?: string;
+  id?: string | number;
+  title: string;
+  description?: string;
+  values?: readonly {
+    title: string;
+    description: string;
+    iconName: string;
+  }[];
+}
+
+export interface BlockLifeCultureHiring {
+  __component?: string;
+  blockType?: string;
+  id?: string | number;
+  variant?: "culture" | "hiring";
+  title: string;
+  description?: string;
+  cta?: string;
+  href?: string;
+  image?: CmsMedia;
+  imageSrc?: string;
+  imageAlt?: string;
+  values?: readonly {
+    title: string;
+    description: string;
+    icon?: CmsMedia;
+    iconSrc?: string;
+    iconAlt?: string;
+  }[];
+}
+
+export interface BlockCareerOpportunities {
+  __component?: string;
+  blockType?: string;
+  id?: string | number;
+  eyebrow?: string;
+  title: string;
+  description?: string;
+}
+
+export interface BlockShopifyHoursTasks {
+  __component?: string;
+  blockType?: string;
+  id?: string | number;
+  eyebrow?: string;
+  heading: string;
+  description?: string;
+  items?: readonly (string | { text?: string })[];
+}
+
+export interface BlockMobileAppComparison {
+  __component?: string;
+  blockType?: string;
+  id?: string | number;
+  eyebrow?: string;
+  heading: string;
+  description?: string;
+  tableHeaders?: readonly (string | { text?: string })[];
+  rows?: readonly {
+    title: string;
+    subtitle?: string;
+    appBuilder: string;
+    custom: string;
+  }[];
+}
+
 export type CmsSectionBlock =
   | BlockServiceHero
   | BlockBrandPartners
@@ -738,6 +999,22 @@ export type CmsSectionBlock =
   | BlockWhiteLabelDelivery
   | BlockB2bArchitecture
   | BlockResourcesHub
+  | BlockThemeFeaturesBanner
+  | BlockAiEmpoweredDelivery
+  | BlockShopifyPlusAgencySplit
+  | BlockCommerceSolutionsAccordion
+  | BlockSelectedWorkVideo
+  | BlockInsightsBlogGrid
+  | BlockCredentialTabs
+  | BlockPartnerDirectoryProof
+  | BlockShopifyCroAssessment
+  | BlockShopifySupportScenarios
+  | BlockAboutStory
+  | BlockAboutValues
+  | BlockLifeCultureHiring
+  | BlockCareerOpportunities
+  | BlockShopifyHoursTasks
+  | BlockMobileAppComparison
   | BlockContactHero
   | BlockContactForm
   | BlockForm
@@ -1315,7 +1592,7 @@ export function BlockRenderer({ sections }: BlockRendererProps) {
                   key={blockKey}
                   heading={bpBlock.heading}
                   description={bpBlock.description}
-                  items={brands}
+                  items={brands.length > 0 ? brands : undefined}
                 />
               );
             }
@@ -2461,6 +2738,388 @@ export function BlockRenderer({ sections }: BlockRendererProps) {
                 key={blockKey}
                 title={rhBlock.title || undefined}
                 points={points && points.length > 0 ? points : undefined}
+              />
+            );
+          }
+
+          case "theme-features-banner": {
+            const tfBlock = block as BlockThemeFeaturesBanner;
+            const items = (tfBlock.items ?? [])
+              .map((i) => (typeof i === "string" ? i : i?.text || ""))
+              .filter(Boolean);
+
+            return (
+              <ThemeFeaturesBannerSection
+                key={blockKey}
+                content={{
+                  eyebrow: tfBlock.eyebrow,
+                  title: tfBlock.heading,
+                  heading: tfBlock.heading,
+                  description: tfBlock.description,
+                  items,
+                }}
+              />
+            );
+          }
+
+          case "ai-empowered-delivery": {
+            const aedBlock = block as BlockAiEmpoweredDelivery;
+            const tools = (aedBlock.tools ?? []).map((t) => ({
+              name: t.name,
+              description: t.description,
+            }));
+
+            return (
+              <AiEmpoweredDeliverySection
+                key={blockKey}
+                variant={aedBlock.variant || "default"}
+                content={{
+                  eyebrow: aedBlock.eyebrow,
+                  heading: aedBlock.heading,
+                  description: aedBlock.description,
+                  callout: aedBlock.callout,
+                  cta:
+                    aedBlock.cta?.label && aedBlock.cta?.href
+                      ? { label: aedBlock.cta.label, href: aedBlock.cta.href }
+                      : undefined,
+                  tools,
+                }}
+              />
+            );
+          }
+
+          case "home-shopify-plus-agency": {
+            const hspaBlock = block as BlockShopifyPlusAgencySplit;
+            const paragraphs = (hspaBlock.paragraphs ?? [])
+              .map((p) => (typeof p === "string" ? p : p?.text || ""))
+              .filter(Boolean);
+            const counters = (hspaBlock.counters ?? []).map((c) => ({
+              value: c.value,
+              label: c.label,
+              note: c.note,
+              tone: c.tone || "green",
+            }));
+
+            return (
+              <ShopifyPlusAgencySection
+                key={blockKey}
+                content={{
+                  eyebrow: hspaBlock.eyebrow || shopifyPlusAgencyContent.eyebrow,
+                  title: hspaBlock.title || shopifyPlusAgencyContent.title,
+                  intro: hspaBlock.intro || shopifyPlusAgencyContent.intro,
+                  paragraphs:
+                    paragraphs.length > 0
+                      ? paragraphs
+                      : shopifyPlusAgencyContent.paragraphs,
+                  counters:
+                    counters.length > 0
+                      ? counters
+                      : shopifyPlusAgencyContent.counters,
+                  videoSrc:
+                    hspaBlock.videoSrc || shopifyPlusAgencyContent.videoSrc,
+                }}
+              />
+            );
+          }
+
+          case "home-commerce-solutions": {
+            const hcsBlock = block as BlockCommerceSolutionsAccordion;
+            const solutions = (hcsBlock.solutions ?? []).map((s) => ({
+              title: s.title,
+              summary: s.summary,
+              body: s.body,
+              href: s.href,
+              cta: s.cta || "Learn More",
+            }));
+
+            return (
+              <CommerceSolutionsSection
+                key={blockKey}
+                title={hcsBlock.title}
+                description={hcsBlock.description}
+                solutions={solutions.length > 0 ? solutions : commerceSolutions}
+              />
+            );
+          }
+
+          case "home-selected-work": {
+            const hswBlock = block as BlockSelectedWorkVideo;
+
+            return (
+              <SelectedWorkSection
+                key={blockKey}
+                title={hswBlock.title}
+                description={hswBlock.description}
+                ctaLabel={hswBlock.ctaLabel}
+                ctaHref={hswBlock.ctaHref}
+              />
+            );
+          }
+
+          case "home-insights": {
+            const hiBlock = block as BlockInsightsBlogGrid;
+
+            return (
+              <InsightsSection
+                key={blockKey}
+                title={hiBlock.title}
+                ctaLabel={hiBlock.ctaLabel}
+                ctaHref={hiBlock.ctaHref}
+              />
+            );
+          }
+
+          case "credential-tabs": {
+            const ctBlock = block as BlockCredentialTabs;
+            const items = (ctBlock.items ?? []).map((item) => ({
+              id: item.tabId || item.title.toLowerCase().replace(/\s+/g, "-"),
+              label: item.label,
+              eyebrow: item.eyebrow || "",
+              title: item.title,
+              description: item.description,
+              details: (item.details ?? []).map((d) => ({
+                label: d.label,
+                value: d.value,
+              })),
+            }));
+
+            return (
+              <CredentialTabsSection
+                key={blockKey}
+                content={{
+                  eyebrow: ctBlock.eyebrow,
+                  heading: ctBlock.heading,
+                  description: ctBlock.description || "",
+                  items: items.length > 0 ? items : shopifyCredentialTabs.items,
+                }}
+              />
+            );
+          }
+
+          case "partner-directory-proof": {
+            const pdpBlock = block as BlockPartnerDirectoryProof;
+            const items = (pdpBlock.items ?? []).map((item) => {
+              if (item.kind === "image") {
+                return {
+                  kind: "image" as const,
+                  image:
+                    resolveMediaUrl(item.image) ||
+                    item.imageSrc ||
+                    "/assets/proof/shopify-badge.webp",
+                  imageAlt: item.imageAlt || item.label,
+                  label: item.label,
+                };
+              }
+              return {
+                kind: (item.kind || "text") as "rating" | "text",
+                value: item.value || "",
+                label: item.label,
+              };
+            });
+
+            return (
+              <PartnerDirectoryProofSection
+                key={blockKey}
+                content={{
+                  heading: pdpBlock.heading,
+                  description: pdpBlock.description || "",
+                  href: pdpBlock.href || shopifyPartnerDirectoryProof.href,
+                  items:
+                    items.length > 0
+                      ? items
+                      : shopifyPartnerDirectoryProof.items,
+                }}
+              />
+            );
+          }
+
+          case "cro-assessment": {
+            const caBlock = block as BlockShopifyCroAssessment;
+            const points = (caBlock.points ?? [])
+              .map((p) => (typeof p === "string" ? p : p?.text || ""))
+              .filter(Boolean);
+
+            return (
+              <ShopifyCroAssessmentSection
+                key={blockKey}
+                content={{
+                  heading: caBlock.heading,
+                  description: caBlock.description || "",
+                  points:
+                    points.length > 0 ? points : shopifyCroAssessment.points,
+                  cta: {
+                    label: caBlock.ctaLabel || shopifyCroAssessment.cta.label,
+                    href: caBlock.ctaHref || shopifyCroAssessment.cta.href,
+                  },
+                }}
+              />
+            );
+          }
+
+          case "support-scenarios": {
+            const ssBlock = block as BlockShopifySupportScenarios;
+            const items = (ssBlock.items ?? []).map((item) => ({
+              id: item.scenarioId || item.heading.toLowerCase().replace(/\s+/g, "-"),
+              title: item.heading,
+              kicker: item.kicker,
+              heading: item.heading,
+              description: item.description,
+              features: (item.features ?? [])
+                .map((f) => (typeof f === "string" ? f : f?.text || ""))
+                .filter(Boolean),
+              primaryCta: {
+                label: item.primaryCtaLabel || "Discuss Scenario",
+                href: item.primaryCtaHref || "/request-a-quote",
+              },
+              secondaryCta: {
+                label: item.secondaryCtaLabel || "View Details",
+                href: item.secondaryCtaHref || "/contact-us",
+              },
+            }));
+
+            return (
+              <ShopifySupportScenariosSection
+                key={blockKey}
+                content={{
+                  eyebrow: ssBlock.eyebrow,
+                  heading: ssBlock.heading,
+                  description: ssBlock.description,
+                  items:
+                    items.length > 0 ? items : whiteLabelShopifyScenarios.items,
+                }}
+              />
+            );
+          }
+
+          case "about-story": {
+            const asBlock = block as BlockAboutStory;
+            const poster =
+              resolveMediaUrl(asBlock.poster) ||
+              asBlock.posterSrc ||
+              aboutStory.poster;
+            const overlay =
+              resolveMediaUrl(asBlock.overlay) ||
+              asBlock.overlaySrc ||
+              aboutStory.overlay;
+
+            return (
+              <AboutStorySection
+                key={blockKey}
+                title={asBlock.title}
+                description={asBlock.description}
+                caption={asBlock.caption || aboutStory.caption}
+                videoId={asBlock.videoId || aboutStory.videoId}
+                videoTitle={asBlock.videoTitle || aboutStory.videoTitle}
+                poster={poster}
+                posterAlt={asBlock.posterAlt || aboutStory.posterAlt}
+                overlay={overlay}
+              />
+            );
+          }
+
+          case "about-values": {
+            const avBlock = block as BlockAboutValues;
+            const values = (avBlock.values ?? []).map((v) => ({
+              title: v.title,
+              description: v.description,
+              iconName: v.iconName,
+            }));
+
+            return (
+              <AboutValuesSection
+                key={blockKey}
+                title={avBlock.title}
+                description={avBlock.description}
+                values={values.length > 0 ? values : undefined}
+              />
+            );
+          }
+
+          case "life-culture-hiring": {
+            const lchBlock = block as BlockLifeCultureHiring;
+
+            if (lchBlock.variant === "hiring") {
+              const imageUrl =
+                resolveMediaUrl(lchBlock.image) ||
+                lchBlock.imageSrc ||
+                hiringCallout.image.src;
+
+              return (
+                <LifeHiringSection
+                  key={blockKey}
+                  title={lchBlock.title}
+                  description={lchBlock.description}
+                  cta={lchBlock.cta || hiringCallout.cta}
+                  href={lchBlock.href || hiringCallout.href}
+                  image={imageUrl}
+                  imageAlt={lchBlock.imageAlt || hiringCallout.image.alt}
+                />
+              );
+            }
+
+            const values = (lchBlock.values ?? []).map((v) => ({
+              title: v.title,
+              description: v.description,
+              icon: resolveMediaUrl(v.icon) || v.iconSrc,
+              alt: v.iconAlt,
+            }));
+
+            return (
+              <WorkCultureSection
+                key={blockKey}
+                title={lchBlock.title}
+                description={lchBlock.description}
+                values={values.length > 0 ? values : undefined}
+              />
+            );
+          }
+
+          case "career-opportunities": {
+            const coBlock = block as BlockCareerOpportunities;
+
+            return (
+              <CareerOpportunitiesSection
+                key={blockKey}
+                eyebrow={coBlock.eyebrow}
+                title={coBlock.title}
+                description={coBlock.description}
+              />
+            );
+          }
+
+          case "hours-tasks": {
+            return <ShopifyHoursTasksSection key={blockKey} />;
+          }
+
+          case "mobile-app-comparison": {
+            const macBlock = block as BlockMobileAppComparison;
+            const tableHeaders = (macBlock.tableHeaders ?? [])
+              .map((h) => (typeof h === "string" ? h : h?.text || ""))
+              .filter(Boolean);
+            const rows = (macBlock.rows ?? []).map((r) => ({
+              title: r.title,
+              subtitle: r.subtitle || "",
+              appBuilder: r.appBuilder,
+              custom: r.custom,
+            }));
+
+            return (
+              <ShopifyMobileAppComparisonSection
+                key={blockKey}
+                content={{
+                  eyebrow: macBlock.eyebrow,
+                  heading: macBlock.heading,
+                  description: macBlock.description || "",
+                  tableHeaders:
+                    tableHeaders.length > 0
+                      ? tableHeaders
+                      : [
+                          "Features & Capabilities",
+                          "Shopify App Builders",
+                          "Custom Shopify Mobile App (Dynamic Dreamz)",
+                        ],
+                  rows: rows.length > 0 ? rows : [],
+                }}
               />
             );
           }
