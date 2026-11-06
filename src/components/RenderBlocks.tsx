@@ -464,7 +464,9 @@ export interface BlockServicesGrid {
     | "app-features"
     | "industries-grid"
     | "theme-catalog";
-  cardVariant?: "green" | "yellow" | "transparent";
+  cardVariant?: "green" | "yellow" | "transparent" | "services-box";
+  columns?: string;
+  sectionId?: string;
   sixCards?: boolean;
   lastColFull?: boolean;
   isRoundedNumber?: boolean;
@@ -534,6 +536,9 @@ export interface BlockProofStats {
     | "why-choose-boxes"
     | "white-label-counters"
     | "credential-evidence";
+  columns?: string;
+  theme?: "light" | "dark" | "white" | "warm" | string;
+  eyebrowVariant?: "dash" | "pill";
   counters?: readonly {
     value: string;
     suffix?: string;
@@ -566,6 +571,7 @@ export interface BlockProcessTimeline {
     | "migration-process"
     | "app-process";
   columns?: "3" | "4";
+  eyebrowVariant?: "dash" | "pill";
   isBgTransparent?: boolean;
   steps?: readonly {
     step?: string;
@@ -764,6 +770,14 @@ export interface BlockAiEmpoweredDelivery {
   cta?: {
     label?: string;
     href?: string;
+  };
+  address?: {
+    title?: string;
+    address?: string;
+    link?: {
+      label?: string;
+      href?: string;
+    };
   };
   tools?: readonly {
     name: string;
@@ -1806,7 +1820,7 @@ export function BlockRenderer({ sections }: BlockRendererProps) {
               return (
                 <ThemeCustomizationServicesSection
                   key={blockKey}
-                  variant={sgBlock.cardVariant || "green"}
+                  variant={sgBlock.cardVariant === "yellow" || sgBlock.cardVariant === "transparent" ? sgBlock.cardVariant : "green"}
                   isRoundedNumber={sgBlock.isRoundedNumber}
                   content={{
                     eyebrow: sgBlock.eyebrow,
@@ -1827,9 +1841,17 @@ export function BlockRenderer({ sections }: BlockRendererProps) {
             }
 
             if (sgBlock.variant === "agency-services") {
+              const cardVariant = sgBlock.cardVariant === "services-box" ? "services-box" : "default";
+              const cols = sgBlock.columns ? (parseInt(sgBlock.columns, 10) as 2 | 3 | 4) : 2;
               return (
                 <AgencyServicesSection
                   key={blockKey}
+                  id={sgBlock.sectionId || "services"}
+                  cardVariant={cardVariant}
+                  columns={cols}
+                  hideCta={cardVariant === "services-box"}
+                  showDescription={true}
+                  className={cardVariant === "services-box" ? "pb-20" : undefined}
                   content={{
                     eyebrow: sgBlock.eyebrow,
                     heading: sgBlock.heading,
@@ -1838,6 +1860,9 @@ export function BlockRenderer({ sections }: BlockRendererProps) {
                       title: s.title,
                       description: s.description || "",
                       tag: s.tag,
+                      icon: resolveMediaUrl(s.icon) || s.iconSrc,
+                      iconAlt: s.iconAlt || (typeof s.title === "string" ? s.title : "Service Icon"),
+                      href: s.ctaHref,
                       pills: (s.pills ?? [])
                         .map((p) => (typeof p === "string" ? p : p.text || ""))
                         .filter(Boolean),
@@ -2105,6 +2130,7 @@ export function BlockRenderer({ sections }: BlockRendererProps) {
               return (
                 <CityPageCounterSection
                   key={blockKey}
+                  eyebrowVariant={prBlock.eyebrowVariant || "dash"}
                   content={{
                     eyebrow: prBlock.eyebrow,
                     heading: prBlock.heading || "",
@@ -2153,12 +2179,31 @@ export function BlockRenderer({ sections }: BlockRendererProps) {
             }
 
             if (prBlock.variant === "why-choose-migration") {
+              const items =
+                (prBlock.boxes ?? []).length > 0
+                  ? (prBlock.boxes ?? []).map((b) => ({
+                      title: b.title,
+                      description: b.description || "",
+                      icon: b.badgeText || "certified",
+                    }))
+                  : shopifyMigrationWhyChoose.items;
+
+              const stats =
+                (prBlock.counters ?? []).length > 0
+                  ? (prBlock.counters ?? []).map((c) => ({
+                      value: `${c.value}${c.suffix || ""}`,
+                      label: c.label,
+                    }))
+                  : shopifyMigrationWhyChoose.stats;
+
               const migrationContent = {
                 ...shopifyMigrationWhyChoose,
                 eyebrow: prBlock.eyebrow || shopifyMigrationWhyChoose.eyebrow,
                 heading: prBlock.heading || shopifyMigrationWhyChoose.heading,
                 description:
                   prBlock.description || shopifyMigrationWhyChoose.description,
+                items,
+                stats,
               };
               return (
                 <WhyChooseShopifyMigrationSection
@@ -2169,9 +2214,18 @@ export function BlockRenderer({ sections }: BlockRendererProps) {
             }
 
             if (prBlock.variant === "why-choose-boxes") {
+              const cols = prBlock.columns
+                ? (parseInt(prBlock.columns, 10) as 3 | 4 | 5)
+                : 5;
+              const theme = (prBlock.theme as "light" | "dark" | "white" | "warm") || "light";
+              const eyebrowVariant = prBlock.eyebrowVariant || "dash";
+
               return (
                 <CityWhyChooseBoxesSection
                   key={blockKey}
+                  columns={cols}
+                  theme={theme}
+                  eyebrowVariant={eyebrowVariant}
                   content={{
                     eyebrow: prBlock.eyebrow,
                     heading: prBlock.heading || "",
@@ -2181,7 +2235,7 @@ export function BlockRenderer({ sections }: BlockRendererProps) {
                       description: b.description || "",
                       subtitle: b.badgeText || b.number,
                       icon: resolveMediaUrl(b.icon) || b.iconSrc,
-                      iconAlt: b.iconAlt || b.title,
+                      iconAlt: b.iconAlt || (typeof b.title === "string" ? b.title : "Icon"),
                     })),
                   }}
                 />
@@ -2334,6 +2388,7 @@ export function BlockRenderer({ sections }: BlockRendererProps) {
               <OurDevelopmentProcessSection
                 key={blockKey}
                 columns={cols}
+                eyebrowVariant={ptBlock.eyebrowVariant || "dash"}
                 isBgTransparent={ptBlock.isBgTransparent}
                 content={{
                   eyebrow: ptBlock.eyebrow,
@@ -2761,6 +2816,17 @@ export function BlockRenderer({ sections }: BlockRendererProps) {
               description: t.description,
             }));
 
+            const address = aedBlock.address?.title
+              ? {
+                  title: aedBlock.address.title,
+                  address: aedBlock.address.address || "",
+                  link: {
+                    label: aedBlock.address.link?.label || "View contact details",
+                    href: aedBlock.address.link?.href || "/contact-us",
+                  },
+                }
+              : undefined;
+
             return (
               <AiEmpoweredDeliverySection
                 key={blockKey}
@@ -2775,6 +2841,7 @@ export function BlockRenderer({ sections }: BlockRendererProps) {
                       ? { label: aedBlock.cta.label, href: aedBlock.cta.href }
                       : undefined,
                   tools,
+                  address,
                 }}
               />
             );

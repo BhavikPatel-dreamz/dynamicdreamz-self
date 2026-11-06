@@ -38,6 +38,36 @@ export const ProofStatsBlock: Block = {
       ],
     },
     {
+      name: "columns",
+      type: "select",
+      defaultValue: "5",
+      options: [
+        { label: "3 Columns (Dynamic Grid)", value: "3" },
+        { label: "4 Columns", value: "4" },
+        { label: "5 Columns (Standard Grid)", value: "5" },
+      ],
+    },
+    {
+      name: "theme",
+      type: "select",
+      defaultValue: "light",
+      options: [
+        { label: "Light Background (#eff4ef)", value: "light" },
+        { label: "White Background", value: "white" },
+        { label: "Dark Background", value: "dark" },
+        { label: "Warm Background", value: "warm" },
+      ],
+    },
+    {
+      name: "eyebrowVariant",
+      type: "select",
+      defaultValue: "dash",
+      options: [
+        { label: "Dash Prefix", value: "dash" },
+        { label: "Pill Badge", value: "pill" },
+      ],
+    },
+    {
       name: "counters",
       type: "array",
       dbName: "pr_cntrs",

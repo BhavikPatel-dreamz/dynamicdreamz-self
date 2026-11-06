@@ -48,6 +48,24 @@ export const AiEmpoweredDeliveryBlock: Block = {
       ],
     },
     {
+      name: "address",
+      type: "group",
+      label: "Office Address (City Landing Pages)",
+      fields: [
+        { name: "title", type: "text", label: "Office Title (e.g. Dynamic Dreamz · Ahmedabad)" },
+        { name: "address", type: "textarea", label: "Street Address" },
+        {
+          name: "link",
+          type: "group",
+          label: "Contact Link",
+          fields: [
+            { name: "label", type: "text", label: "Link Label (e.g. View contact details)" },
+            { name: "href", type: "text", label: "Link URL (e.g. /contact-us)" },
+          ],
+        },
+      ],
+    },
+    {
       name: "tools",
       type: "array",
       dbName: "aed_tools",

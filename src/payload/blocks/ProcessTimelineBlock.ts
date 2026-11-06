@@ -46,6 +46,15 @@ export const ProcessTimelineBlock: Block = {
       ],
     },
     {
+      name: "eyebrowVariant",
+      type: "select",
+      defaultValue: "dash",
+      options: [
+        { label: "Dash Prefix", value: "dash" },
+        { label: "Pill Badge", value: "pill" },
+      ],
+    },
+    {
       name: "isBgTransparent",
       type: "checkbox",
       defaultValue: false,

@@ -926,7 +926,9 @@ export interface Page {
                   | 'theme-catalog'
                 )
               | null;
-            cardVariant?: ('green' | 'yellow' | 'transparent') | null;
+            cardVariant?: ('green' | 'yellow' | 'transparent' | 'services-box') | null;
+            columns?: ('2' | '3' | '4') | null;
+            sectionId?: string | null;
             sixCards?: boolean | null;
             lastColFull?: boolean | null;
             isRoundedNumber?: boolean | null;
@@ -1013,6 +1015,9 @@ export interface Page {
                   | 'credential-evidence'
                 )
               | null;
+            columns?: ('3' | '4' | '5') | null;
+            theme?: ('light' | 'white' | 'dark' | 'warm') | null;
+            eyebrowVariant?: ('dash' | 'pill') | null;
             counters?:
               | {
                   value: string;
@@ -1053,6 +1058,7 @@ export interface Page {
                 )
               | null;
             columns?: ('4' | '3') | null;
+            eyebrowVariant?: ('dash' | 'pill') | null;
             isBgTransparent?: boolean | null;
             steps?:
               | {
@@ -1431,6 +1437,14 @@ export interface Page {
             cta?: {
               label?: string | null;
               href?: string | null;
+            };
+            address?: {
+              title?: string | null;
+              address?: string | null;
+              link?: {
+                label?: string | null;
+                href?: string | null;
+              };
             };
             tools?:
               | {
@@ -2839,6 +2853,8 @@ export interface PagesSelect<T extends boolean = true> {
               description?: T;
               variant?: T;
               cardVariant?: T;
+              columns?: T;
+              sectionId?: T;
               sixCards?: T;
               lastColFull?: T;
               isRoundedNumber?: T;
@@ -2918,6 +2934,9 @@ export interface PagesSelect<T extends boolean = true> {
               heading?: T;
               description?: T;
               variant?: T;
+              columns?: T;
+              theme?: T;
+              eyebrowVariant?: T;
               counters?:
                 | T
                 | {
@@ -2950,6 +2969,7 @@ export interface PagesSelect<T extends boolean = true> {
               description?: T;
               variant?: T;
               columns?: T;
+              eyebrowVariant?: T;
               isBgTransparent?: T;
               steps?:
                 | T
@@ -3331,6 +3351,18 @@ export interface PagesSelect<T extends boolean = true> {
                 | {
                     label?: T;
                     href?: T;
+                  };
+              address?:
+                | T
+                | {
+                    title?: T;
+                    address?: T;
+                    link?:
+                      | T
+                      | {
+                          label?: T;
+                          href?: T;
+                        };
                   };
               tools?:
                 | T

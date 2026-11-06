@@ -46,7 +46,23 @@ export const ServicesGridBlock: Block = {
         { label: "Green Accent (#15c064)", value: "green" },
         { label: "Yellow Accent", value: "yellow" },
         { label: "Transparent Background", value: "transparent" },
+        { label: "Services Box (City Services)", value: "services-box" },
       ],
+    },
+    {
+      name: "columns",
+      type: "select",
+      defaultValue: "3",
+      options: [
+        { label: "2 Columns", value: "2" },
+        { label: "3 Columns", value: "3" },
+        { label: "4 Columns", value: "4" },
+      ],
+    },
+    {
+      name: "sectionId",
+      type: "text",
+      label: "HTML Section ID (e.g. services)",
     },
     {
       name: "sixCards",

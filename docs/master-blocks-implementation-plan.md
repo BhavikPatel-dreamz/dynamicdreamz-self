@@ -63,7 +63,7 @@ flowchart TD
 | :--- | :--- | :---: | :--- | :--- |
 | **Tier 1** | **Shopify Theme Customization** | 24 | Requires 3 blocks | `service-hero` (`variant: theme`), `ThemeFeaturesBannerBlock`, `proof-stats` (`variant: why-choose-boxes`) |
 | **Tier 1** | **WordPress Theme Customization** | 22 | Requires 2 blocks | `service-hero` (`variant: theme`), `proof-stats` (`variant: why-choose-boxes`) |
-| **Tier 2** | **Shopify City Landing Pages** | 11 | **100% Ready** | `service-hero` (`city`), `proof-stats` (`city-counters`), `proof-stats` (`team-boxes`), `faq-accordion`, `cta-banner` |
+| **Tier 2** | **Shopify City Landing Pages** | 13 | **100% Ready** | `service-hero` (`city`), `proof-stats` (`city-counters`), `proof-stats` (`team-boxes`), `faq-accordion`, `cta-banner` |
 | **Tier 2** | **WordPress City Landing Pages** | 6 | **100% Ready** | `service-hero` (`city`), `proof-stats` (`city-counters`), `proof-stats` (`team-boxes`), `faq-accordion`, `cta-banner` |
 | **Tier 3** | **Platform Migration Pages** | 12 | **100% Ready** | `service-hero`, `proof-stats` (`why-choose-migration`), `process-timeline` (`numbered-grid`), `services-grid`, `faq-accordion` |
 | **Tier 4** | **Industry Ecommerce Pages** | 9 | Core Ready (~85%) | Core blocks ready; needs `brand-partners` (`tools-grid`), `portfolio-showcase` (`case-studies-slider`) |
@@ -265,7 +265,7 @@ To populate all 142 pages in Payload CMS without manual data entry:
 
 === PHASE 3: AUTOMATED SEEDING & PRODUCTION LAUNCH (BY TIER) ===
 [ ] Tier 1: Seed all 46 Theme Customization pages into CMS
-[ ] Tier 2: Seed all 17 City Landing pages into CMS
+[✓] Tier 2: Seed all 19 City Landing pages into CMS (13 Shopify + 6 WordPress)
 [ ] Tier 3: Seed all 12 Platform Migration pages into CMS
 [ ] Tier 4: Seed all 9 Industry Ecommerce pages into CMS
 [ ] Tier 5: Seed all 6 Mobile App pages into CMS
