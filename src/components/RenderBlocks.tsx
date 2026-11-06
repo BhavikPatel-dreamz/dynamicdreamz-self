@@ -178,7 +178,6 @@ export interface BlockServiceHero {
   title: string;
   titleAccent?: string;
   titleAccentTag?: "i" | "span";
-  titleAccentClassName?: string;
   titleAccentPosition?: "start" | "end";
   subtitle?: string;
   lead?: string;
@@ -215,7 +214,6 @@ export interface BlockServiceHero {
   imageHeight?: number;
   imageBlend?: "normal" | "darken";
   imageAlignment?: "center" | "bottom";
-  imageClassName?: string;
   // Media - Tablet Slider
   slides?: readonly {
     image?: CmsMedia;
@@ -243,7 +241,6 @@ export interface BlockServiceHero {
   // Media - Centered & Reviews
   showReviews?: boolean;
   maxWidth?: "default" | "wide";
-  wrapperClassName?: string;
   coBranding?: {
     enabled?: boolean;
     leftLogo?: { logo?: CmsMedia; src?: string; alt?: string; width?: number; height?: number };
@@ -1052,8 +1049,7 @@ export function BlockRenderer({ sections }: BlockRendererProps) {
           case "service-hero-video": {
             const shBlock = block as BlockServiceHero;
             const isShopifyPlusExperts =
-              shBlock.variant === "shopify-plus-experts" ||
-              shBlock.wrapperClassName?.includes("shopify-plus-experts");
+              shBlock.variant === "shopify-plus-experts";
 
             const variant = isShopifyPlusExperts
               ? "video"
@@ -1331,13 +1327,10 @@ export function BlockRenderer({ sections }: BlockRendererProps) {
             // 2. Centered Variant (with optional Co-branding & Review cards)
             if (variant === "centered") {
               const isAppmaker =
-                shBlock.wrapperClassName?.includes("appmaker") ||
-                shBlock.wrapperClassName?.includes("full-width-sec") ||
                 shBlock.title?.includes("App in Minutes");
 
               const isRisks =
                 shBlock.maxWidth === "wide" ||
-                shBlock.wrapperClassName?.includes("max-w-[830px]") ||
                 shBlock.title?.includes("Risks Of Shopify Outsourcing");
 
               const coBranding = shBlock.coBranding?.enabled
@@ -1528,19 +1521,18 @@ export function BlockRenderer({ sections }: BlockRendererProps) {
             const wrapperClass =
               shBlock.variant === "migration"
                 ? "hero-shopify-migration"
-                : shBlock.wrapperClassName;
+                : undefined;
 
             const imageClass =
               shBlock.imageBlend === "darken"
                 ? "mix-blend-darken"
-                : shBlock.imageClassName;
+                : undefined;
 
             return (
               <ServiceHeroVideoSection
                 key={blockKey}
                 className={isWhiteBg ? "bg-white" : undefined}
                 titleAccentTag={shBlock.titleAccentTag}
-                titleAccentClassName={shBlock.titleAccentClassName}
                 titleAccentPosition={shBlock.titleAccentPosition}
                 wrapperClassName={wrapperClass}
                 content={{
