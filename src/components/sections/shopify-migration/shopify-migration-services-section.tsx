@@ -61,7 +61,7 @@ export function ShopifyMigrationServicesSection({
         >
           {items.map((item) => (
             <div
-              className="migration-col mb-5 w-1/3 px-2 transition-all duration-300 ease-in-out max-[1200px]:mb-4 max-[1200px]:w-1/2 max-[768px]:w-full"
+              className="migration-col mb-5 w-1/3 px-2 transition-all duration-300 ease-in-out max-[992px]:mb-4 max-[992px]:w-1/2 max-[768px]:w-full"
               data-aos="fade-up"
               key={item.title}
             >

@@ -134,7 +134,7 @@ export function PortfolioProjectCard({
             />
             <Overlay />
           </div>
-          <div className="mt-3.5 flex items-start justify-between gap-2 max-[768px]:mt-[15px] max-[768px]:gap-1.5">
+          <div className="mt-3.5 min-w-0 flex items-start justify-between gap-2 max-[768px]:mt-[15px] max-[768px]:gap-1.5">
             <div className="min-w-0 flex-1">
               {category ? (
                 <p className={cn("font-montserrat text-[10px] leading-[14px] font-bold uppercase tracking-[0.8px] text-brand-red", categoryClassName)}>
@@ -144,7 +144,7 @@ export function PortfolioProjectCard({
               <h3
                 className={cn(
                   category ? "mt-2.5 max-[1200px]:mt-2 max-[768px]:mt-[6px]" : "mt-0",
-                  "font-montserrat text-lg leading-5 font-bold text-ink capitalize max-[1400px]:text-base max-[1200px]:leading-[18px]",
+                  "min-w-0 break-words [overflow-wrap:anywhere] font-montserrat text-lg leading-5 font-bold text-ink capitalize max-[1400px]:text-base max-[1200px]:leading-[18px]",
                 )}
               >
                 {name}
@@ -179,7 +179,7 @@ export function PortfolioProjectCard({
             <Overlay persistent={Boolean(isAppProject)} />
             {isAppProject ? <AppStoreLinks appLinks={appLinks} /> : null}
           </div>
-          <div className="mt-3.5 flex items-start justify-between gap-2 max-[768px]:mt-[15px] max-[768px]:gap-1.5">
+          <div className="mt-3.5 min-w-0 flex items-start justify-between gap-2 max-[768px]:mt-[15px] max-[768px]:gap-1.5">
             <div className="min-w-0 flex-1">
               {category ? (
                 <p className={cn("font-montserrat text-[10px] leading-[14px] font-bold uppercase tracking-[0.8px] text-brand-red", categoryClassName)}>
@@ -189,7 +189,7 @@ export function PortfolioProjectCard({
               <h3
                 className={cn(
                   category ? "mt-2.5 max-[1200px]:mt-2 max-[768px]:mt-[6px]" : "mt-0",
-                  "font-montserrat text-lg leading-5 font-bold text-ink capitalize max-[1400px]:text-base max-[1200px]:leading-[18px]",
+                  "min-w-0 break-words [overflow-wrap:anywhere] font-montserrat text-lg leading-5 font-bold text-ink capitalize max-[1400px]:text-base max-[1200px]:leading-[18px]",
                 )}
               >
                 {name}

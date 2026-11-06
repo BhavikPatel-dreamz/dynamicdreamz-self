@@ -89,7 +89,7 @@ export function SeoSafeMigrationSection({
                     </div>
                     <div className="redirect flex w-[55%] items-center gap-[15px] px-2.5 max-[768px]:w-full max-[768px]:gap-2 max-[768px]:px-0">
                       <div className="url flex items-center gap-1.5 font-bold text-[#ad5151]">
-                        <h3 className="m-0 font-montreal-medium text-[20px] font-normal text-[#282828]">
+                        <h3 className="m-0 font-montreal-medium text-[20px] font-normal leading-[28.8px] text-[#282828] max-[992px]:text-lg max-[992px]:leading-[26px]">
                           {row.statusCode ?? "301"}
                         </h3>
                         <span aria-hidden="true">→</span>
@@ -111,7 +111,7 @@ export function SeoSafeMigrationSection({
                     key={check}
                   >
                     <div className="code border-l-2 border-[#ad5151] bg-[#ad5151]/[0.07] px-3 py-[7px]">
-                      <p className="font-sans text-xs font-medium text-[#535353] md:text-sm">
+                      <p className="font-sans text-sm leading-6 font-medium text-[#535353]">
                         {check}
                       </p>
                     </div>
