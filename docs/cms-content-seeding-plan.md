@@ -53,6 +53,7 @@ When local data references static paths (e.g. `"/assets/clients/supertails.svg"`
 1. **Pre-seeded Media Records**: All canonical assets from `public/assets/` have corresponding documents in the `media` collection in PostgreSQL.
 2. **Sharp & Derivative Generation**: Payload processes raster assets through `sharp` (WebP derivatives: `thumbnail`: 400x300, `card`: 768x512, `hero`: 1920x1080). SVGs (`image/svg+xml`) are uploaded directly without raster resizing.
 3. **Relationship Resolution**: When seeding a page, query the `media` collection (or query PostgreSQL directly) to resolve filenames to their Payload relationship ID `{ image: mediaId }`.
+4. **Continuous Asset Synchronization**: Whenever any new asset is introduced, downloaded, created, or modified in `public/assets/**`, it must immediately be seeded or updated in Payload CMS (`media` collection) and uploaded to the media server (`https://media.dynamicdreamz.net`), ensuring local assets and CMS media records maintain 100% 1-to-1 parity. Obsolete local assets must likewise be removed from the CMS.
 
 ```typescript
 // Helper to resolve media ID by asset filename

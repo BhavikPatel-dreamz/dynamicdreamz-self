@@ -177,6 +177,13 @@ Core proof points from the live site:
      or a legacy string path, cleanly fall back to the canonical local static asset
      path (`/assets/...`). During one-time migration seeding, scripts can seed or
      reference media records while preserving local asset fallbacks so no route breaks.
+  4. Mandatory CMS & media server synchronization: Whenever any new asset is
+     introduced, downloaded, created, or modified in `public/assets/**`, it MUST
+     also be seeded/synced into Payload CMS (`media` collection) and uploaded
+     to the dedicated media server (`https://media.dynamicdreamz.net`). If an
+     asset is removed or superseded in `public/assets/**`, its corresponding
+     media document in Payload CMS must be removed so that local assets and
+     Payload CMS media records remain in 100% 1-to-1 sync at all times.
 - Pragmatic component & block creation: when no component or block matches the
   live site's visual and functional requirements 100%, build a new component and
   dedicated block cleanly without hesitation.
@@ -217,6 +224,13 @@ Core proof points from the live site:
   5. **Mandatory zero-duplicate verification**: Run a SHA-256 duplicate audit on
      `public/assets/` before completing any migration task. Total duplicate hash
      groups must remain 0.
+  6. **Mandatory CMS & Media Server Sync**: Immediately upon introducing a new
+     canonical asset or modifying/updating an existing asset in `public/assets/`,
+     seed or update the asset into Payload CMS (`media` collection) and upload to
+     the dedicated media server (`https://media.dynamicdreamz.net`) via Payload
+     Local API (using `overwriteExistingFiles: true` for updates). When an asset
+     is deleted locally, remove its document from Payload CMS. Local assets and
+     Payload CMS media records must stay 100% in sync at all times.
 - For styling and animation work, follow `docs/visual-parity-workflow.md`.
   Inspect live CSS/JS, computed styles, keyframes, transitions, interaction
   states, and responsive layout before implementing. Static HTML alone is not
@@ -334,6 +348,10 @@ Production-ready means the page is complete enough to deploy:
 - No missing, generic, keyword-stuffed, or duplicated image alt text.
 - No duplicate image/media files stored under different paths or names when one
   canonical project-owned asset can serve every usage.
+- All newly introduced, modified, or deleted local assets in `public/assets/`
+  are synchronized with Payload CMS (`media` collection) and the dedicated
+  media server (`https://media.dynamicdreamz.net`); local assets and CMS media
+  records maintain 100% 1-to-1 parity.
 - No duplicate or near-equivalent components when an existing component can
   satisfy the requirement directly or through clean direct modification
   (updating all callers with zero breakage).

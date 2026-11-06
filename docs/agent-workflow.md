@@ -295,6 +295,11 @@ Never download assets directly from the live site into `public/assets/`. Always 
 4. **Step 4: Mandatory Zero-Duplicate Audit**:
    - Run the SHA-256 duplicate audit script before completing the task. Total duplicate hash groups across `public/assets/` MUST remain 0.
 
+5. **Step 5: Immediate CMS & Media Server Synchronization**:
+   - Whenever any new asset is introduced, created, downloaded, or modified in `public/assets/**`, immediately seed or sync it into Payload CMS (`media` collection) and upload to the dedicated media server (`https://media.dynamicdreamz.net`) using Payload's Local API (`payload.create` for new assets, `payload.update` with `overwriteExistingFiles: true` for updated assets).
+   - If an asset is deleted locally, delete its corresponding document from Payload CMS (`payload.delete`) so that the media server file and database record are cleanly purged.
+   - Maintain 100% 1-to-1 parity between local files in `public/assets/` and Payload CMS media records.
+
 ## SEO Workflow
 
 Every indexable page must include:
@@ -572,6 +577,9 @@ place page/component styles there.
 14. Before completion, scan project-owned media and ensure no redundant duplicate
     media files were created.
 15. Never use `dynamicdreamz.com` asset URLs in final code.
+16. Immediately seed any new or modified local asset into Payload CMS (`media` collection)
+    and upload to the dedicated media server (`https://media.dynamicdreamz.net`),
+    ensuring local assets and CMS media records maintain 100% 1-to-1 parity.
 
 ### 4. Custom Media Server & Cloud Storage Adapter
 16. **Payload CMS Uploads Route to Dedicated Media Server**:
@@ -629,6 +637,7 @@ A task is complete only when:
 - No visible page/business copy is hardcoded in `src/components/**` or
   `src/app/**`, and `npm run check:component-content` passes.
 - Existing assets across `public/assets/**` were discovered (beyond name matching) and reused via canonical paths; no redundant duplicate image files exist.
+- All newly introduced, modified, or deleted local assets in `public/assets/` are synchronized with Payload CMS (`media` collection) and the dedicated media server (`https://media.dynamicdreamz.net`).
 - It uses local assets/content, not old-site runtime URLs.
 - SEO was handled for touched routes.
 - AEO/GEO work strictly preserves live-visible UI and content.

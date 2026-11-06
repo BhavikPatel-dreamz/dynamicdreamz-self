@@ -154,6 +154,12 @@ All media uploaded through Payload CMS is automatically offloaded to Dynamic Dre
   ```
 - **Admin `_objectKey` Column**: `@payloadcms/plugin-cloud-storage` generates an internal `_objectKey` column. In this server adapter, file paths are deterministic (`prefix + filename`), so `_objectKey` is intentionally null. Editors can hide this column via the **Columns** dropdown in Payload Admin.
 
+### 3. Continuous Asset Synchronization Policy
+Whenever any new asset is introduced, created, downloaded, or modified in `public/assets/**`:
+1. **Immediate Ingestion**: Seed or update the asset in Payload CMS (`media` collection) and upload to the media server (`https://media.dynamicdreamz.net`) via Payload's Local API (`payload.create` for new files, or `payload.update` with `overwriteExistingFiles: true` for modified files).
+2. **Deletion Sync**: If an asset is removed or superseded locally, delete its corresponding document from Payload CMS (`payload.delete`) so the binary file and responsive derivatives on the media server are cleanly purged.
+3. **100% 1-to-1 Parity**: Local assets in `public/assets/**` and Payload CMS `media` records must remain in continuous 1-to-1 synchronization. Never leave newly added local assets unseeded in the CMS.
+
 ---
 
 ## 4. Frontend Data Layer & Fetch Patterns (`src/lib/payload.ts`)
