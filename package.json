@@ -10,11 +10,12 @@
     "check:case-studies": "node scripts/check-case-studies.mjs",
     "check:blog-posts": "node scripts/check-blog-posts.mjs",
     "check:component-content": "node scripts/check-component-content.mjs",
+    "check:payload-blocks": "node scripts/check-payload-blocks.mjs",
     "check:urls": "node scripts/check-url-policy.mjs",
     "security:scan": "bash .githooks/pre-commit --ci",
-    "build": "bash -c 'if [ \"${VERCEL:-}\" = \"1\" ] || [ \"${GITHUB_ACTIONS:-}\" = \"true\" ]; then bash .githooks/pre-commit --ci; fi' && npm run check:urls && npm run check:component-content && npm run check:case-studies && npm run check:blog-posts && npm run check:asset-duplicates && next build --webpack",
+    "build": "bash -c 'if [ \"${VERCEL:-}\" = \"1\" ] || [ \"${GITHUB_ACTIONS:-}\" = \"true\" ]; then bash .githooks/pre-commit --ci; fi' && npm run check:urls && npm run check:component-content && npm run check:payload-blocks && npm run check:case-studies && npm run check:blog-posts && npm run check:asset-duplicates && next build --webpack",
     "start": "next start",
-    "lint": "npm run check:urls && npm run check:component-content && npm run check:case-studies && npm run check:blog-posts && npm run check:asset-duplicates && eslint"
+    "lint": "npm run check:urls && npm run check:component-content && npm run check:payload-blocks && npm run check:case-studies && npm run check:blog-posts && npm run check:asset-duplicates && eslint"
   },
   "dependencies": {
     "@payloadcms/db-postgres": "^3.90.2",

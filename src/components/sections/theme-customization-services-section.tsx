@@ -77,7 +77,7 @@ export function ThemeCustomizationServicesSection({
             <div
               className="box rounded-[20px] border border-[rgba(40,40,40,0.11)] bg-white p-[25px] max-[992px]:p-5"
               data-aos="fade-up"
-              key={box.number ?? (typeof box.title === "string" ? box.title : Array.isArray(box.title) ? box.title.join(" ") : idx)}
+              key={`tc-box-${idx}-${box.number || (typeof box.title === "string" ? box.title : Array.isArray(box.title) ? box.title.join(" ") : idx)}`}
             >
               {box.icon ? (
                 <div

@@ -207,35 +207,39 @@ export function ServiceHeroVideoSection({
                       : "-mx-[15px] flex-wrap max-[768px]:overflow-hidden max-[768px]:before:absolute max-[768px]:before:left-1/2 max-[768px]:before:top-0 max-[768px]:before:h-full max-[768px]:before:w-[1px] max-[768px]:before:-translate-x-1/2 max-[768px]:before:bg-[#d9d9d9] max-[768px]:before:content-[''] max-[768px]:after:absolute max-[768px]:after:left-5 max-[768px]:after:top-1/2 max-[768px]:after:h-[1px] max-[768px]:after:w-[calc(100%-40px)] max-[768px]:after:bg-[#d9d9d9] max-[768px]:after:content-['']",
                   )}
                 >
-                  {content.badges.map((badge, idx) => (
-                    <div
-                      className={cn(
-                        "global_brands_item border-r border-[#d9d9d9] last:border-r-0",
-                        isThreeBadges
-                          ? "w-1/3 px-[15px] max-[1200px]:px-2.5 max-[768px]:w-1/3 max-[768px]:px-2 max-[768px]:py-2 max-[768px]:text-center min-[769px]:w-auto"
-                          : "px-[15px] max-[1200px]:px-3 max-[768px]:border-r-0 max-[768px]:w-1/2 max-[768px]:p-[15px] max-[768px]:text-center",
-                      )}
-                      key={badge.label || badge.name || idx}
-                    >
-                      <a
-                        className="flex items-center justify-center"
-                        href={badge.href}
-                        rel="nofollow noopener noreferrer"
-                        target="_blank"
+                  {content.badges.map((badge, idx) => {
+                    const badgeSrc = badge.icon || badge.src;
+                    if (!badgeSrc) return null;
+                    return (
+                      <div
+                        className={cn(
+                          "global_brands_item border-r border-[#d9d9d9] last:border-r-0",
+                          isThreeBadges
+                            ? "w-1/3 px-[15px] max-[1200px]:px-2.5 max-[768px]:w-1/3 max-[768px]:px-2 max-[768px]:py-2 max-[768px]:text-center min-[769px]:w-auto"
+                            : "px-[15px] max-[1200px]:px-3 max-[768px]:border-r-0 max-[768px]:w-1/2 max-[768px]:p-[15px] max-[768px]:text-center",
+                        )}
+                        key={badge.label || badge.name || idx}
                       >
-                        <Image
-                          alt={badge.alt}
-                          className={cn(
-                            "h-auto w-auto max-w-[100px] object-contain max-[768px]:max-h-[44px]",
-                            isThreeBadges && "max-[768px]:max-w-[90px]",
-                          )}
-                          height={badge.height}
-                          src={badge.icon || badge.src || ""}
-                          width={badge.width}
-                        />
-                      </a>
-                    </div>
-                  ))}
+                        <a
+                          className="flex items-center justify-center"
+                          href={badge.href}
+                          rel="nofollow noopener noreferrer"
+                          target="_blank"
+                        >
+                          <Image
+                            alt={badge.alt}
+                            className={cn(
+                              "h-auto w-auto max-w-[100px] object-contain max-[768px]:max-h-[44px]",
+                              isThreeBadges && "max-[768px]:max-w-[90px]",
+                            )}
+                            height={badge.height}
+                            src={badgeSrc}
+                            width={badge.width}
+                          />
+                        </a>
+                      </div>
+                    );
+                  })}
                 </div>
               ) : null}
             </div>

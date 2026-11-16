@@ -732,6 +732,10 @@ export interface Page {
              */
             videoSrc?: string | null;
             videoPoster?: (number | null) | Media;
+            /**
+             * e.g. /assets/services/hero-video-poster.webp
+             */
+            videoPosterSrc?: string | null;
             videoLogo?: {
               logo?: (number | null) | Media;
               src?: string | null;
@@ -929,6 +933,9 @@ export interface Page {
             cardVariant?: ('green' | 'yellow' | 'transparent' | 'services-box') | null;
             columns?: ('2' | '3' | '4') | null;
             sectionId?: string | null;
+            themeSlug?: string | null;
+            iconKind?: ('feature' | 'benefit' | 'service') | null;
+            removeBottomPadding?: boolean | null;
             sixCards?: boolean | null;
             lastColFull?: boolean | null;
             isRoundedNumber?: boolean | null;
@@ -952,6 +959,7 @@ export interface Page {
                         id?: string | null;
                       }[]
                     | null;
+                  iconName?: string | null;
                   icon?: (number | null) | Media;
                   iconSrc?: string | null;
                   iconAlt?: string | null;
@@ -969,6 +977,8 @@ export interface Page {
             heading: string;
             description?: string | null;
             variant?: ('default' | 'liveGrid' | 'case-studies-slider' | 'case-studies-cards') | null;
+            sectionId?: string | null;
+            removeTopPadding?: boolean | null;
             columns?: ('4' | '3' | '2') | null;
             headerLayout?: ('split' | 'centered') | null;
             cardVariant?: ('default' | 'ourWorkRefresh') | null;
@@ -1205,6 +1215,7 @@ export interface Page {
                   href?: string | null;
                   ariaLabel?: string | null;
                   logo?: (number | null) | Media;
+                  src?: string | null;
                   alt?: string | null;
                   width?: number | null;
                   height?: number | null;
@@ -1216,6 +1227,7 @@ export interface Page {
                   name: string;
                   quote: string;
                   avatar?: (number | null) | Media;
+                  avatarSrc?: string | null;
                   id?: string | null;
                 }[]
               | null;
@@ -1343,6 +1355,7 @@ export interface Page {
             heading: string;
             description?: string | null;
             theme?: ('white' | 'cyan') | null;
+            sectionId?: string | null;
             items?:
               | {
                   number?: string | null;
@@ -2648,6 +2661,7 @@ export interface PagesSelect<T extends boolean = true> {
                   };
               videoSrc?: T;
               videoPoster?: T;
+              videoPosterSrc?: T;
               videoLogo?:
                 | T
                 | {
@@ -2855,6 +2869,9 @@ export interface PagesSelect<T extends boolean = true> {
               cardVariant?: T;
               columns?: T;
               sectionId?: T;
+              themeSlug?: T;
+              iconKind?: T;
+              removeBottomPadding?: T;
               sixCards?: T;
               lastColFull?: T;
               isRoundedNumber?: T;
@@ -2879,6 +2896,7 @@ export interface PagesSelect<T extends boolean = true> {
                           text?: T;
                           id?: T;
                         };
+                    iconName?: T;
                     icon?: T;
                     iconSrc?: T;
                     iconAlt?: T;
@@ -2896,6 +2914,8 @@ export interface PagesSelect<T extends boolean = true> {
               heading?: T;
               description?: T;
               variant?: T;
+              sectionId?: T;
+              removeTopPadding?: T;
               columns?: T;
               headerLayout?: T;
               cardVariant?: T;
@@ -3104,6 +3124,7 @@ export interface PagesSelect<T extends boolean = true> {
                     href?: T;
                     ariaLabel?: T;
                     logo?: T;
+                    src?: T;
                     alt?: T;
                     width?: T;
                     height?: T;
@@ -3115,6 +3136,7 @@ export interface PagesSelect<T extends boolean = true> {
                     name?: T;
                     quote?: T;
                     avatar?: T;
+                    avatarSrc?: T;
                     id?: T;
                   };
               budgetOptions?:
@@ -3246,6 +3268,7 @@ export interface PagesSelect<T extends boolean = true> {
               heading?: T;
               description?: T;
               theme?: T;
+              sectionId?: T;
               items?:
                 | T
                 | {

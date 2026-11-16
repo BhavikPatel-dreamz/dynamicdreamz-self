@@ -44,6 +44,7 @@ import { HappyClientSection } from "@/components/sections/happy-client-section";
 import { TestimonialsSection } from "@/components/sections/home/testimonials-section";
 import { ShopifyStageServicesSection } from "@/components/sections/shopify-stage-services-section";
 import { ThemeCustomizationServicesSection } from "@/components/sections/theme-customization-services-section";
+import { resolveThemeIcon } from "@/lib/theme-icon-resolver";
 import { AgencyServicesSection } from "@/components/sections/agency-services-section";
 import { ShopifyMigrationServicesSection } from "@/components/sections/shopify-migration/shopify-migration-services-section";
 import { PortfolioShowcaseSection } from "@/components/sections/portfolio-showcase-section";
@@ -199,6 +200,7 @@ export interface BlockServiceHero {
   video?: string;
   videoSrc?: string;
   videoPoster?: CmsMedia;
+  videoPosterSrc?: string;
   videoLogo?: {
     logo?: CmsMedia;
     src?: string;
@@ -1562,7 +1564,7 @@ export function BlockRenderer({ sections }: BlockRendererProps) {
                   secondaryCta,
                   eyebrowSpans: eyebrows.length > 0 ? eyebrows : undefined,
                   video: (variant === "video" || !imageUrl) ? videoSrc : undefined,
-                  videoPoster: resolveMediaUrl(shBlock.videoPoster),
+                  videoPoster: resolveMediaUrl(shBlock.videoPoster) || shBlock.videoPosterSrc,
                   image: imageUrl
                     ? {
                         src: imageUrl,
@@ -1583,14 +1585,20 @@ export function BlockRenderer({ sections }: BlockRendererProps) {
           // Block 2: Brand Partners
           case "brand-partners": {
             const bpBlock = block as BlockBrandPartners;
-            const brands = (bpBlock.brands ?? []).map((b) => ({
-              name: b.name || "",
-              src: resolveMediaUrl(b.logo) || b.src || "",
-              alt: b.alt || b.name || "",
-              width: b.width || 120,
-              height: b.height || 44,
-              href: b.href || "#",
-            }));
+            const brands = (bpBlock.brands ?? [])
+              .map((b) => {
+                const src = resolveMediaUrl(b.logo) || b.src;
+                if (!src) return null;
+                return {
+                  name: b.name || b.alt || "",
+                  src,
+                  alt: b.alt || b.name || "",
+                  width: b.width || 120,
+                  height: b.height || 44,
+                  href: b.href || "#",
+                };
+              })
+              .filter((b): b is NonNullable<typeof b> => Boolean(b && b.src));
 
             if (bpBlock.variant === "home") {
               return (
@@ -1653,10 +1661,45 @@ export function BlockRenderer({ sections }: BlockRendererProps) {
               return <HomeFaqSection key={blockKey} />;
             }
 
-            const faqs = (faBlock.faqs ?? []).map((f) => ({
-              question: f.question,
-              answer: f.answer,
-            }));
+            const faqs = (faBlock.faqs ?? []).map((f) => {
+              let answer: string | readonly string[] = f.answer;
+              let listItems = (f as any).listItems;
+              let listPosition = (f as any).listPosition;
+
+              if (typeof f.answer === "string") {
+                const trimmed = f.answer.trim();
+                if (trimmed.startsWith("{") || trimmed.startsWith("[")) {
+                  try {
+                    const parsed = JSON.parse(trimmed);
+                    if (parsed && typeof parsed === "object") {
+                      if (Array.isArray(parsed)) {
+                        answer = parsed;
+                      } else {
+                        if (parsed.answer) answer = parsed.answer;
+                        if (parsed.listItems) listItems = parsed.listItems;
+                        if (parsed.listPosition) listPosition = parsed.listPosition;
+                      }
+                    }
+                  } catch {
+                    // Not valid JSON, check for PostgreSQL text array format {"item1", "item2"}
+                    if (trimmed.startsWith("{\"") && trimmed.endsWith("\"}")) {
+                      const inner = trimmed.slice(1, -1);
+                      const parts = inner
+                        .split(/","/)
+                        .map((p) => p.replace(/^"|"$/g, "").replace(/\\"/g, '"'));
+                      answer = parts;
+                    }
+                  }
+                }
+              }
+
+              return {
+                question: f.question,
+                answer,
+                listItems,
+                listPosition,
+              };
+            });
 
             return (
               <SplitFaqSection
@@ -1806,7 +1849,7 @@ export function BlockRenderer({ sections }: BlockRendererProps) {
                 description={tcBlock.description}
                 variant={tcBlock.variant === "client-stories" ? "client-stories" : undefined}
                 hasTopPadding={tcBlock.hasTopPadding}
-                items={items}
+                items={items.length > 0 ? items : undefined}
               />
             );
           }
@@ -1820,6 +1863,7 @@ export function BlockRenderer({ sections }: BlockRendererProps) {
               return (
                 <ThemeCustomizationServicesSection
                   key={blockKey}
+                  id={sgBlock.sectionId || undefined}
                   variant={sgBlock.cardVariant === "yellow" || sgBlock.cardVariant === "transparent" ? sgBlock.cardVariant : "green"}
                   isRoundedNumber={sgBlock.isRoundedNumber}
                   content={{
@@ -1827,14 +1871,24 @@ export function BlockRenderer({ sections }: BlockRendererProps) {
                     heading: sgBlock.heading,
                     description: sgBlock.description,
                     bottomNote: sgBlock.bottomNote,
-                    boxes: services.map((s) => ({
-                      number: s.number,
-                      badge: s.badge,
-                      title: s.title,
-                      description: s.description,
-                      icon: resolveMediaUrl(s.icon) || s.iconSrc,
-                      iconAlt: s.iconAlt,
-                    })),
+                    boxes: services.map((s) => {
+                      const themeIcon = (s as { iconName?: string }).iconName
+                        ? resolveThemeIcon(
+                            (s as { iconName?: string }).iconName,
+                            (sgBlock as { themeSlug?: string }).themeSlug,
+                            (sgBlock as { iconKind?: "feature" | "benefit" | "service" }).iconKind ||
+                              (sgBlock.cardVariant === "yellow" ? "feature" : "benefit"),
+                          )
+                        : null;
+                      return {
+                        number: s.number || undefined,
+                        badge: s.badge || undefined,
+                        title: s.title,
+                        description: s.description || undefined,
+                        icon: themeIcon || resolveMediaUrl(s.icon) || s.iconSrc || undefined,
+                        iconAlt: s.iconAlt || undefined,
+                      };
+                    }),
                   }}
                 />
               );
@@ -1843,6 +1897,11 @@ export function BlockRenderer({ sections }: BlockRendererProps) {
             if (sgBlock.variant === "agency-services") {
               const cardVariant = sgBlock.cardVariant === "services-box" ? "services-box" : "default";
               const cols = sgBlock.columns ? (parseInt(sgBlock.columns, 10) as 2 | 3 | 4) : 2;
+              const paddingClass = (sgBlock as { removeBottomPadding?: boolean }).removeBottomPadding
+                ? "pb-0"
+                : cardVariant === "services-box"
+                  ? "pb-20"
+                  : undefined;
               return (
                 <AgencyServicesSection
                   key={blockKey}
@@ -1851,26 +1910,36 @@ export function BlockRenderer({ sections }: BlockRendererProps) {
                   columns={cols}
                   hideCta={cardVariant === "services-box"}
                   showDescription={true}
-                  className={cardVariant === "services-box" ? "pb-20" : undefined}
+                  className={paddingClass}
                   content={{
                     eyebrow: sgBlock.eyebrow,
                     heading: sgBlock.heading,
                     description: sgBlock.description || "",
-                    items: services.map((s) => ({
-                      title: s.title,
-                      description: s.description || "",
-                      tag: s.tag,
-                      icon: resolveMediaUrl(s.icon) || s.iconSrc,
-                      iconAlt: s.iconAlt || (typeof s.title === "string" ? s.title : "Service Icon"),
-                      href: s.ctaHref,
-                      pills: (s.pills ?? [])
-                        .map((p) => (typeof p === "string" ? p : p.text || ""))
-                        .filter(Boolean),
-                      cta:
-                        s.ctaLabel && s.ctaHref
-                          ? { label: s.ctaLabel, href: s.ctaHref }
-                          : null,
-                    })),
+                    items: services.map((s) => {
+                      const themeIcon = (s as { iconName?: string }).iconName
+                        ? resolveThemeIcon(
+                            (s as { iconName?: string }).iconName,
+                            (sgBlock as { themeSlug?: string }).themeSlug,
+                            "service",
+                          )
+                        : null;
+                      return {
+                        title: s.title,
+                        description: s.description || "",
+                        tag: s.tag,
+                        icon: resolveMediaUrl(s.icon) || s.iconSrc || undefined,
+                        iconAlt: s.iconAlt || (typeof s.title === "string" ? s.title : "Service Icon"),
+                        iconSvg: themeIcon || undefined,
+                        href: s.ctaHref || undefined,
+                        pills: (s.pills ?? [])
+                          .map((p) => (typeof p === "string" ? p : p.text || ""))
+                          .filter(Boolean),
+                        cta:
+                          s.ctaLabel && s.ctaHref
+                            ? { label: s.ctaLabel, href: s.ctaHref }
+                            : null,
+                      };
+                    }),
                   }}
                 />
               );
@@ -2077,10 +2146,10 @@ export function BlockRenderer({ sections }: BlockRendererProps) {
 
             const items = (psBlock.items ?? []).map((item) => ({
               name: item.name,
-              href: item.href,
+              href: item.href || undefined,
               image: resolveMediaUrl(item.image) || item.imageSrc || "",
               imageAlt: item.imageAlt || item.name,
-              category: item.category,
+              category: item.category || undefined,
             }));
 
             const platformMark = psBlock.platformMark
@@ -2101,6 +2170,12 @@ export function BlockRenderer({ sections }: BlockRendererProps) {
             return (
               <PortfolioShowcaseSection
                 key={blockKey}
+                sectionId={(psBlock as { sectionId?: string }).sectionId || undefined}
+                className={
+                  (psBlock as { removeTopPadding?: boolean }).removeTopPadding
+                    ? "pt-0 max-[992px]:pt-0 max-[768px]:pt-0"
+                    : undefined
+                }
                 columns={cols}
                 headerLayout={psBlock.headerLayout || "split"}
                 cardVariant={psBlock.cardVariant || "default"}
@@ -2234,7 +2309,7 @@ export function BlockRenderer({ sections }: BlockRendererProps) {
                       title: b.title,
                       description: b.description || "",
                       subtitle: b.badgeText || b.number,
-                      icon: resolveMediaUrl(b.icon) || b.iconSrc,
+                      icon: resolveMediaUrl(b.icon) || b.iconSrc || undefined,
                       iconAlt: b.iconAlt || (typeof b.title === "string" ? b.title : "Icon"),
                     })),
                   }}
@@ -2527,7 +2602,7 @@ export function BlockRenderer({ sections }: BlockRendererProps) {
                 ? rqBlock.testimonials.map((t) => ({
                     name: t.name,
                     quote: t.quote,
-                    avatar: resolveMediaUrl(t.avatar),
+                    avatar: resolveMediaUrl(t.avatar) || (t as any).avatarSrc || undefined,
                   }))
                 : undefined;
 
@@ -2715,6 +2790,7 @@ export function BlockRenderer({ sections }: BlockRendererProps) {
             return (
               <EvaluationFrameworkSection
                 key={blockKey}
+                id={(efBlock as { sectionId?: string }).sectionId || undefined}
                 theme={efBlock.theme || "white"}
                 content={{
                   eyebrow: efBlock.eyebrow || undefined,

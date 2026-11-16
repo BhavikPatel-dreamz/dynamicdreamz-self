@@ -65,6 +65,27 @@ export const ServicesGridBlock: Block = {
       label: "HTML Section ID (e.g. services)",
     },
     {
+      name: "themeSlug",
+      type: "text",
+      label: "Theme Slug (for bespoke theme SVGs)",
+    },
+    {
+      name: "iconKind",
+      type: "select",
+      label: "Theme Icon Kind",
+      options: [
+        { label: "Features", value: "feature" },
+        { label: "Benefits", value: "benefit" },
+        { label: "Services", value: "service" },
+      ],
+    },
+    {
+      name: "removeBottomPadding",
+      type: "checkbox",
+      defaultValue: false,
+      label: "Remove bottom padding (pb-0)",
+    },
+    {
       name: "sixCards",
       type: "checkbox",
       defaultValue: false,
@@ -144,6 +165,11 @@ export const ServicesGridBlock: Block = {
               required: true,
             },
           ],
+        },
+        {
+          name: "iconName",
+          type: "text",
+          label: "Theme Icon Name (for bespoke theme SVGs)",
         },
         {
           name: "icon",

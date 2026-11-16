@@ -198,8 +198,8 @@ export function ClientLogoSlider({
           className={sliderClassName}
           key={`${variant}-${slidesToShow}-${reducedMotion ? "reduced" : "motion"}-${autoplayReady ? "ready" : "waiting"}-${compact ? "compact" : "standard"}`}
         >
-          {items.map((logo) => (
-            <div key={logo.src}>
+          {items.map((logo, idx) => (
+            <div key={`${logo.src || "logo"}-${idx}`}>
               <ClientLogoSlide hasCompactRail={hasCompactRail} logo={logo} variant={variant} />
             </div>
           ))}
@@ -207,10 +207,10 @@ export function ClientLogoSlider({
       ) : (
         <div className={cn(sliderClassName, "overflow-hidden")}>
           <div className="flex h-full">
-            {items.map((logo) => (
+            {items.map((logo, idx) => (
               <div
                 className="h-full shrink-0"
-                key={logo.src}
+                key={`${logo.src || "logo"}-${idx}`}
                 style={{ flexBasis: `${100 / slidesToShow}%` }}
               >
                 <ClientLogoSlide hasCompactRail={hasCompactRail} logo={logo} variant={variant} />

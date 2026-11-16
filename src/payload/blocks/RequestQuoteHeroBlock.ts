@@ -37,6 +37,7 @@ export const RequestQuoteHeroBlock: Block = {
         { name: "href", type: "text" },
         { name: "ariaLabel", type: "text" },
         { name: "logo", type: "upload", relationTo: "media" },
+        { name: "src", type: "text", label: "Static Fallback Path" },
         { name: "alt", type: "text" },
         { name: "width", type: "number" },
         { name: "height", type: "number" },
@@ -50,6 +51,7 @@ export const RequestQuoteHeroBlock: Block = {
         { name: "name", type: "text", required: true },
         { name: "quote", type: "textarea", required: true },
         { name: "avatar", type: "upload", relationTo: "media" },
+        { name: "avatarSrc", type: "text", label: "Static Fallback Path" },
       ],
     },
     {

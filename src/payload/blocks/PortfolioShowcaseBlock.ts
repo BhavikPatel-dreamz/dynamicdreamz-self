@@ -36,6 +36,17 @@ export const PortfolioShowcaseBlock: Block = {
       ],
     },
     {
+      name: "sectionId",
+      type: "text",
+      label: "HTML Section ID (e.g. our_work)",
+    },
+    {
+      name: "removeTopPadding",
+      type: "checkbox",
+      defaultValue: false,
+      label: "Remove top padding (pt-0)",
+    },
+    {
       name: "columns",
       type: "select",
       defaultValue: "4",

@@ -46,10 +46,10 @@ export function ThemeFeaturesBannerSection({
           </div>
           <div className="right-block flex w-[63%] max-[992px]:w-full">
             <div className="inner-wrapper flex w-full flex-wrap">
-              {content.items.map((item) => (
+              {content.items.map((item, idx) => (
                 <div
                   className="item w-1/2 border-b border-[rgba(40,40,40,0.11)] p-6 max-[992px]:p-5 max-[768px]:w-full max-[768px]:!border-t max-[768px]:!border-b-0 max-[768px]:!border-l-0 max-[768px]:p-[15px_20px] [&:nth-child(even)]:border-l [&:nth-child(even)]:border-[rgba(40,40,40,0.11)] [&:nth-last-of-type(1)]:border-b-0 [&:nth-last-of-type(2)]:border-b-0"
-                  key={item}
+                  key={`tf-item-${idx}-${item}`}
                 >
                   <h5 className="m-0 text-base font-normal tracking-normal text-ink">
                     {item}

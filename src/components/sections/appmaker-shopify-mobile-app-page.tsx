@@ -1,4 +1,3 @@
-import { CtaBannerSection } from "@/components/sections/cta-banner-section";
 import { IndustryBrandsSection } from "@/components/sections/industry/industry-brands-section";
 import { ServiceHeroSection } from "@/components/sections/service-hero-section";
 import { ShopifyAppBenefitsSection } from "@/components/sections/shopify-mobile-app/shopify-app-benefits-section";
@@ -8,7 +7,7 @@ import { SplitFaqSection } from "@/components/sections/split-faq-section";
 import { appmakerShopifyMobileAppDevelopmentContent } from "@/content/appmaker-shopify-mobile-app-development";
 
 export function AppmakerShopifyMobileAppPage() {
-  const { hero, brands, benefits, features, process, faqs, faqCopy, ctaBanner } =
+  const { hero, brands, benefits, features, process, faqs, faqCopy } =
     appmakerShopifyMobileAppDevelopmentContent;
 
   const brandsContent = {

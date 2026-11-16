@@ -35,6 +35,11 @@ export const EvaluationFrameworkBlock: Block = {
       ],
     },
     {
+      name: "sectionId",
+      type: "text",
+      label: "HTML Section ID (e.g. why-choose)",
+    },
+    {
       name: "items",
       type: "array",
       dbName: "ef_items",

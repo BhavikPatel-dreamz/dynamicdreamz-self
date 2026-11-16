@@ -6,7 +6,6 @@ import { HappyClientSection } from "@/components/sections/happy-client-section";
 import { SplitFaqSection } from "@/components/sections/split-faq-section";
 import { WordPressCustomizationIcon } from "@/components/sections/wordpress/wordpress-customization-icons";
 import {
-  wordpressDevelopmentCta,
   wordpressDevelopmentEngagement,
   wordpressDevelopmentFaqs,
   wordpressDevelopmentHero,

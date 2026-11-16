@@ -33,7 +33,6 @@ export function VideoDialog({
   overlayWidth,
   overlayHeight,
   overlayCaption,
-  caption: _caption,
   className,
   overlayClassName,
   playClassName,

@@ -1,5 +1,22 @@
 import type { Block } from "payload";
 
+/**
+ * Hero Variant Classifications
+ * Centralized to guarantee that any new or existing hero variant
+ * correctly exposes its corresponding media and settings fields in Payload Admin.
+ */
+export const HERO_VIDEO_VARIANTS = ["video"] as const;
+export const HERO_SLIDER_VARIANTS = ["tablet-slider"] as const;
+export const HERO_IMAGE_VARIANTS = ["image", "theme", "industry", "life"] as const;
+export const HERO_REVIEWS_VARIANTS = ["reviews", "centered"] as const;
+export const HERO_CENTERED_VARIANTS = ["centered"] as const;
+
+export const isHeroVideoVariant = (v?: string) => !v || HERO_VIDEO_VARIANTS.includes(v as any);
+export const isHeroSliderVariant = (v?: string) => HERO_SLIDER_VARIANTS.includes(v as any);
+export const isHeroImageVariant = (v?: string) => HERO_IMAGE_VARIANTS.includes(v as any);
+export const isHeroReviewsVariant = (v?: string) => HERO_REVIEWS_VARIANTS.includes(v as any);
+export const isHeroCenteredVariant = (v?: string) => HERO_CENTERED_VARIANTS.includes(v as any);
+
 export const ServiceHeroBlock: Block = {
   slug: "service-hero",
   labels: {
@@ -138,8 +155,7 @@ export const ServiceHeroBlock: Block = {
               label: "Video URL / Path (MP4)",
               admin: {
                 description: "e.g. /assets/home/why-dynamic-dreamz.mp4 or CDN URL",
-                condition: (data, siblingData) =>
-                  siblingData?.variant === "video" || !siblingData?.variant,
+                condition: (data, siblingData) => isHeroVideoVariant(siblingData?.variant),
               },
             },
             {
@@ -148,8 +164,16 @@ export const ServiceHeroBlock: Block = {
               relationTo: "media",
               label: "Video Poster Image",
               admin: {
-                condition: (data, siblingData) =>
-                  siblingData?.variant === "video" || !siblingData?.variant,
+                condition: (data, siblingData) => isHeroVideoVariant(siblingData?.variant),
+              },
+            },
+            {
+              name: "videoPosterSrc",
+              type: "text",
+              label: "Video Poster Fallback Path",
+              admin: {
+                description: "e.g. /assets/services/hero-video-poster.webp",
+                condition: (data, siblingData) => isHeroVideoVariant(siblingData?.variant),
               },
             },
             {
@@ -157,8 +181,7 @@ export const ServiceHeroBlock: Block = {
               type: "group",
               label: "Floating Partner Badge on Video (e.g. Shopify Plus White Badge)",
               admin: {
-                condition: (data, siblingData) =>
-                  siblingData?.variant === "video" || !siblingData?.variant,
+                condition: (data, siblingData) => isHeroVideoVariant(siblingData?.variant),
               },
               fields: [
                 { name: "logo", type: "upload", relationTo: "media" },
@@ -175,7 +198,7 @@ export const ServiceHeroBlock: Block = {
               relationTo: "media",
               label: "Hero Image",
               admin: {
-                condition: (data, siblingData) => siblingData?.variant === "image",
+                condition: (data, siblingData) => isHeroImageVariant(siblingData?.variant),
               },
             },
             {
@@ -183,7 +206,7 @@ export const ServiceHeroBlock: Block = {
               type: "text",
               label: "Static Image Fallback Path",
               admin: {
-                condition: (data, siblingData) => siblingData?.variant === "image",
+                condition: (data, siblingData) => isHeroImageVariant(siblingData?.variant),
               },
             },
             {
@@ -191,7 +214,7 @@ export const ServiceHeroBlock: Block = {
               type: "text",
               label: "Image Alt Text",
               admin: {
-                condition: (data, siblingData) => siblingData?.variant === "image",
+                condition: (data, siblingData) => isHeroImageVariant(siblingData?.variant),
               },
             },
             {
@@ -199,7 +222,7 @@ export const ServiceHeroBlock: Block = {
               type: "number",
               defaultValue: 684,
               admin: {
-                condition: (data, siblingData) => siblingData?.variant === "image",
+                condition: (data, siblingData) => isHeroImageVariant(siblingData?.variant),
               },
             },
             {
@@ -207,7 +230,7 @@ export const ServiceHeroBlock: Block = {
               type: "number",
               defaultValue: 550,
               admin: {
-                condition: (data, siblingData) => siblingData?.variant === "image",
+                condition: (data, siblingData) => isHeroImageVariant(siblingData?.variant),
               },
             },
             {
@@ -219,7 +242,7 @@ export const ServiceHeroBlock: Block = {
                 { label: "Darken (mix-blend-darken)", value: "darken" },
               ],
               admin: {
-                condition: (data, siblingData) => siblingData?.variant === "image",
+                condition: (data, siblingData) => isHeroImageVariant(siblingData?.variant),
               },
             },
             {
@@ -231,7 +254,7 @@ export const ServiceHeroBlock: Block = {
                 { label: "Bottom Aligned (Mockup Overlap)", value: "bottom" },
               ],
               admin: {
-                condition: (data, siblingData) => siblingData?.variant === "image",
+                condition: (data, siblingData) => isHeroImageVariant(siblingData?.variant),
               },
             },
             // Tablet Slider Options
@@ -241,8 +264,7 @@ export const ServiceHeroBlock: Block = {
               dbName: "sh_ts_s",
               label: "Tablet Mockup Slider Slides",
               admin: {
-                condition: (data, siblingData) =>
-                  siblingData?.variant === "tablet-slider",
+                condition: (data, siblingData) => isHeroSliderVariant(siblingData?.variant),
               },
               fields: [
                 { name: "image", type: "upload", relationTo: "media" },
@@ -257,8 +279,7 @@ export const ServiceHeroBlock: Block = {
               type: "group",
               label: "Top Floating Technology Badge (e.g. Node.js Badge)",
               admin: {
-                condition: (data, siblingData) =>
-                  siblingData?.variant === "tablet-slider",
+                condition: (data, siblingData) => isHeroSliderVariant(siblingData?.variant),
               },
               fields: [
                 { name: "image", type: "upload", relationTo: "media" },
@@ -273,8 +294,7 @@ export const ServiceHeroBlock: Block = {
               type: "group",
               label: "Bottom Floating Technology Badge (e.g. Next.js Badge)",
               admin: {
-                condition: (data, siblingData) =>
-                  siblingData?.variant === "tablet-slider",
+                condition: (data, siblingData) => isHeroSliderVariant(siblingData?.variant),
               },
               fields: [
                 { name: "image", type: "upload", relationTo: "media" },
@@ -290,8 +310,7 @@ export const ServiceHeroBlock: Block = {
               relationTo: "media",
               label: "Background Decorative Shape SVG",
               admin: {
-                condition: (data, siblingData) =>
-                  siblingData?.variant === "tablet-slider",
+                condition: (data, siblingData) => isHeroSliderVariant(siblingData?.variant),
               },
             },
             {
@@ -299,8 +318,7 @@ export const ServiceHeroBlock: Block = {
               type: "text",
               label: "Background Shape Fallback Path",
               admin: {
-                condition: (data, siblingData) =>
-                  siblingData?.variant === "tablet-slider",
+                condition: (data, siblingData) => isHeroSliderVariant(siblingData?.variant),
               },
             },
             // Reviews & Centered Layout Options
@@ -310,9 +328,7 @@ export const ServiceHeroBlock: Block = {
               defaultValue: true,
               label: "Show Interactive Review Cards Animation",
               admin: {
-                condition: (data, siblingData) =>
-                  siblingData?.variant === "reviews" ||
-                  siblingData?.variant === "centered",
+                condition: (data, siblingData) => isHeroReviewsVariant(siblingData?.variant),
               },
             },
             {
@@ -324,8 +340,7 @@ export const ServiceHeroBlock: Block = {
                 { label: "Wide Width (max-w-[830px] - Risks Outsourcing)", value: "wide" },
               ],
               admin: {
-                condition: (data, siblingData) =>
-                  siblingData?.variant === "centered",
+                condition: (data, siblingData) => isHeroCenteredVariant(siblingData?.variant),
               },
             },
             {
@@ -333,8 +348,7 @@ export const ServiceHeroBlock: Block = {
               type: "group",
               label: "Co-Branding Header (e.g. Partner X Dynamic Dreamz)",
               admin: {
-                condition: (data, siblingData) =>
-                  siblingData?.variant === "centered",
+                condition: (data, siblingData) => isHeroCenteredVariant(siblingData?.variant),
               },
               fields: [
                 { name: "enabled", type: "checkbox", defaultValue: false },

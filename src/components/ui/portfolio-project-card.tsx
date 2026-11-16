@@ -37,6 +37,8 @@ function ProjectImage({
 }: Pick<PortfolioProjectCardProps, "image" | "imageAlt" | "eagerImage"> & {
   className?: string;
 }) {
+  if (!image) return null;
+
   return (
     <Image
       className={cn("absolute inset-0 h-full w-full object-cover", className)}
@@ -105,7 +107,6 @@ export function PortfolioProjectCard({
   imageAspectClassName,
   eagerImage = false,
   showArrow = false,
-  variant: _variant,
 }: PortfolioProjectCardProps) {
   const isAppProject = !href && appLinks?.length;
 

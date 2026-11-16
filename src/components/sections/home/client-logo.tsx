@@ -11,6 +11,8 @@ export function ClientLogo({
   decorative?: boolean;
   sizes?: string;
 }) {
+  if (!logo?.src) return null;
+
   return (
     <Image
       src={logo.src}
