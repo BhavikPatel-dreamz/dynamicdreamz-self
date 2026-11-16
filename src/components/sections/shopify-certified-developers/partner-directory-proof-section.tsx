@@ -49,7 +49,7 @@ export function PartnerDirectoryProofSection({
             >
               {content.heading}
             </h2>
-            <p className="text-base leading-[30.4px] font-medium text-muted">
+            <p className="text-base leading-[30.4px] max-[768px]:text-sm max-[768px]:leading-[26.6px] font-medium text-muted">
               {content.description}
             </p>
           </header>

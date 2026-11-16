@@ -72,7 +72,7 @@ export function ShopifyCroRevenueImpactSection({
           <div className="revenue-card mb-[30px] w-1/2 px-[30px] max-[1200px]:px-2.5 max-[1200px]:mb-5 max-[768px]:w-full max-[768px]:px-0">
             <div className="revenue-card-body-box h-full">
               <div className="revenue-card-body relative z-10 flex h-full flex-col justify-between rounded-[20px] bg-[#1E251D] p-[70px_40px_40px] before:absolute before:-inset-[1.5px] before:-z-20 before:rounded-[20px] before:bg-gradient-to-b before:from-white/50 before:to-transparent after:absolute after:inset-0 after:-z-10 after:rounded-[20px] after:bg-[#1E251D] max-[1200px]:p-[50px_30px_30px] max-[992px]:p-[50px_20px_20px] max-[768px]:p-[45px_16px_20px]">
-                <span className="badge absolute -top-[15px] left-0 right-0 mx-auto w-fit z-10 rounded-[11px] border-[2.5px] border-white/50 bg-[#171E16] px-2.5 py-[1px] font-sans text-base font-semibold uppercase leading-[190%] text-white max-[768px]:text-sm">
+                <span className="badge absolute -top-[15px] left-0 right-0 mx-auto w-fit z-10 rounded-[11px] border-[2.5px] border-white/50 bg-[#171E16] px-2.5 py-[1px] font-sans text-base font-semibold uppercase leading-[190%] text-white">
                   {content.before.badge}
                 </span>
 
@@ -205,7 +205,7 @@ export function ShopifyCroRevenueImpactSection({
         </div>
 
         <div data-aos="fade-up" className="revenue-impact-footer mt-11 text-center max-[768px]:mt-8">
-          <p className="m-0 font-sans text-xl font-semibold leading-none text-white max-[768px]:text-base">
+          <p className="m-0 font-sans text-xl font-semibold leading-none text-white">
             {content.footer.text}{" "}
             <strong className="font-semibold text-[#35F3A3]">
               {content.footer.highlight}

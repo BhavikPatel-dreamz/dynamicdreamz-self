@@ -39,6 +39,7 @@ export function VerifiedKnowledgeSection({
           headingId="verified-shopify-knowledge-title"
           textClassName="w-[calc(54%-15px)]"
           titleClassName="w-[calc(46%-15px)]"
+          variant="left"
         />
         <div className="grid grid-cols-3 divide-x divide-[#333]/10 max-[992px]:grid-cols-1 max-[992px]:divide-x-0 max-[992px]:divide-y">
           {content.items.map((item) => (

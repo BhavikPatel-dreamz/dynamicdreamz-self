@@ -67,7 +67,7 @@ export function CertifiedAgencySupportSection({
                 <span className="absolute top-0 left-0">
                   <CheckIcon />
                 </span>
-                <h3 className="mb-2.5 text-[20px] leading-[20.5px] font-normal text-white">
+                <h3 className="mb-2.5 text-[20px] leading-[28.8px] max-[992px]:text-lg max-[992px]:leading-[26px] font-normal text-white">
                   {item.title}
                 </h3>
                 <p className="text-sm leading-[26.6px] font-small text-white">

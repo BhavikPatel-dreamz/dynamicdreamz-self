@@ -51,7 +51,7 @@ export function CertifiedServicesSection({
               <span className="mb-5 inline-block rounded-[5px] bg-brand-red/10 px-2.5 py-[5px] text-xs leading-[18px] font-semibold text-brand-red">
                 {item.eyebrow}
               </span>
-              <h3 className="mb-[15px] text-[20px] leading-[27px] font-normal text-ink">
+              <h3 className="mb-[15px] text-[20px] leading-[28.8px] max-[992px]:text-lg max-[992px]:leading-[26px] font-normal text-ink">
                 {item.title}
               </h3>
               <p className="text-sm leading-[24px] font-small text-muted">

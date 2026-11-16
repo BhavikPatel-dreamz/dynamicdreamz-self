@@ -51,7 +51,7 @@ export function ShopifyThemesGridSection({
             variant="left"
           />
 
-          <div className="wrapper grid grid-cols-3 gap-[22px] max-[1200px]:grid-cols-2 max-[768px]:block max-[768px]:space-y-4">
+          <div className="wrapper grid grid-cols-3 gap-[22px] max-[1200px]:grid-cols-3 max-[768px]:block max-[768px]:space-y-4">
             {content.items.map((theme) => {
               const title = theme.title ?? theme.name ?? "";
               const alt = theme.alt ?? `${title} Image`;
@@ -61,7 +61,7 @@ export function ShopifyThemesGridSection({
               return (
                 <div className="col" data-aos="fade-up" key={title}>
                   <Link
-                    className="shopify-theme-card group block h-full rounded-[24px] border border-[rgba(40,40,40,0.11)] bg-white p-4 transition-all duration-300 ease-[ease] hover:-translate-y-[5px] hover:shadow-[0_22px_50px_rgba(40,40,40,0.10)] [will-change:transform]"
+                    className="shopify-theme-card group block h-full rounded-[24px] border border-[rgba(40,40,40,0.11)] bg-white p-4 max-[992px]:p-2.5 max-[992px]:rounded-[12px] transition-all duration-300 ease-[ease] hover:-translate-y-[5px] hover:shadow-[0_22px_50px_rgba(40,40,40,0.10)] [will-change:transform]"
                     href={href}
                   >
                     <div className="theme-img relative mb-5 w-full overflow-hidden rounded-[17px] border border-[#efefef] pb-[90.75%]">
@@ -73,11 +73,11 @@ export function ShopifyThemesGridSection({
                         src={theme.image}
                       />
                     </div>
-                    <div className="text flex items-center justify-between">
-                      <h3 className="mb-0 font-display text-[20px] font-medium text-ink">
+                    <div className="text flex items-center justify-between max-[992px]:flex-col max-[992px]:items-start max-[992px]:gap-2.5">
+                      <h3 className="mb-0 font-display text-[20px] max-[1200px]:text-[16px] font-small text-ink">
                         {title}
                       </h3>
-                      <span className="learn_more flex items-center text-xs font-medium uppercase leading-none text-brand-red transition-colors duration-300 group-hover:text-ink">
+                      <span className="learn_more flex items-center text-xs font-medium max-[992px]:font-semibold uppercase leading-none text-[#ad5151] transition-colors duration-300 group-hover:text-ink">
                         <span>{ctaText}</span>
                         <svg
                           aria-hidden="true"

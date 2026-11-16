@@ -43,7 +43,7 @@ export function CredentialEvidenceSection({
           textClassName="w-[56%]"
           titleClassName="w-[41%]"
         />
-        <div className="grid grid-cols-4 gap-x-10 max-[1200px]:gap-x-5 max-[992px]:grid-cols-2 max-[992px]:gap-y-[30px] max-[576px]:grid-cols-1">
+        <div className="grid grid-cols-4 gap-x-10 max-[1200px]:gap-x-5 max-[992px]:grid-cols-2 max-[992px]:gap-y-[30px] max-[390px]:grid-cols-1">
           {content.items.map((item) => (
             <article data-aos="fade-up" className="flex h-full flex-col text-center" key={item.title}>
               <a
@@ -65,7 +65,7 @@ export function CredentialEvidenceSection({
                 <h3 className="mb-4 text-center text-[15px] leading-[22.5px] font-normal text-ink">
                   {item.title}
                 </h3>
-                <span className="mx-auto inline-block w-[257.5px] rounded-[5px] bg-brand-red/10 px-2.5 py-[5px] text-center text-xs leading-[18px] font-semibold text-brand-red">
+                <span className="mx-auto inline-block w-full max-[992px]:w-fit rounded-[5px] bg-brand-red/10 px-2.5 py-[5px] text-center text-xs leading-[18px] font-semibold text-brand-red">
                   {item.count}
                 </span>
               </div>

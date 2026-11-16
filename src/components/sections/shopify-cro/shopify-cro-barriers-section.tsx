@@ -30,7 +30,7 @@ export function ShopifyCroBarriersSection({
     <section className={className}>
       <Container>
         <SplitSectionHeading
-          
+          variant="left"
           description={content.description}
           eyebrow={content.eyebrow}
           heading={content.heading}
@@ -40,7 +40,7 @@ export function ShopifyCroBarriersSection({
           {content.items.map((item) => (
             <div
               key={item.title}
-              className="conversion-cro-col mb-6 w-1/4 px-3 max-[1200px]:w-1/3 max-[992px]:w-1/2 max-[576px]:w-full"
+              className="conversion-cro-col mb-6 w-1/4 px-3 max-[992px]:w-1/3 max-[768px]:w-1/2 max-[576px]:w-full"
               data-aos="fade-up"
             >
               <div className="cro-card flex h-full flex-col items-center justify-center rounded-[15px] border border-black/10 bg-white p-[22px] text-center">
