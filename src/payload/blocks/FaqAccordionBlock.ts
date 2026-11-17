@@ -30,6 +30,11 @@ export const FaqAccordionBlock: Block = {
       label: "ID Prefix for ARIA Accessibility",
     },
     {
+      name: "sectionId",
+      type: "text",
+      label: "HTML Section ID (e.g. faqs)",
+    },
+    {
       name: "variant",
       type: "select",
       defaultValue: "split",

@@ -65,6 +65,11 @@ export const ServicesGridBlock: Block = {
       label: "HTML Section ID (e.g. services)",
     },
     {
+      name: "className",
+      type: "text",
+      label: "Custom CSS Class (e.g. pt-20, pb-0)",
+    },
+    {
       name: "themeSlug",
       type: "text",
       label: "Theme Slug (for bespoke theme SVGs)",
@@ -107,6 +112,18 @@ export const ServicesGridBlock: Block = {
       name: "bottomNote",
       type: "text",
       label: "Bottom Note / Clarification Text",
+    },
+    {
+      name: "banner",
+      type: "group",
+      label: "Bottom Banner (for migration services)",
+      fields: [
+        { name: "badge", type: "text", label: "Banner Badge" },
+        { name: "title", type: "text", label: "Banner Title" },
+        { name: "description", type: "textarea", label: "Banner Description" },
+        { name: "ctaLabel", type: "text", label: "Banner CTA Label" },
+        { name: "ctaHref", type: "text", label: "Banner CTA Link" },
+      ],
     },
     {
       name: "services",

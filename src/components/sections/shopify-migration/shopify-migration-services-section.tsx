@@ -76,6 +76,7 @@ export function ShopifyMigrationServicesSection({
                       className="block h-[184px] w-full rounded-2xl object-cover"
                       height={184}
                       src={item.image}
+                      unoptimized={item.image.endsWith(".svg") || item.image.includes(".svg")}
                       width={380}
                     />
                   </div>

@@ -31,6 +31,11 @@ export const BrandPartnersBlock: Block = {
       label: "Description",
     },
     {
+      name: "slug",
+      type: "text",
+      label: "Platform / Landing Slug (for aria-labelledby, e.g. shopify-migration)",
+    },
+    {
       name: "density",
       type: "select",
       defaultValue: "standard",

@@ -42,6 +42,9 @@ import { LifeCultureHiringBlock } from "@/payload/blocks/LifeCultureHiringBlock"
 import { CareerOpportunitiesBlock } from "@/payload/blocks/CareerOpportunitiesBlock";
 import { ShopifyHoursTasksBlock } from "@/payload/blocks/ShopifyHoursTasksBlock";
 import { MobileAppComparisonBlock } from "@/payload/blocks/MobileAppComparisonBlock";
+import { SeoSafeMigrationBlock } from "@/payload/blocks/SeoSafeMigrationBlock";
+import { ThemeCustomizationApproachBlock } from "@/payload/blocks/ThemeCustomizationApproachBlock";
+import { MigrationProcessBlock } from "@/payload/blocks/MigrationProcessBlock";
 import { previewDraftPath } from "@/lib/preview-url";
 import { safeRevalidatePath } from "@/lib/revalidate";
 
@@ -146,6 +149,9 @@ export const Pages: CollectionConfig = {
         CareerOpportunitiesBlock,
         ShopifyHoursTasksBlock,
         MobileAppComparisonBlock,
+        SeoSafeMigrationBlock,
+        ThemeCustomizationApproachBlock,
+        MigrationProcessBlock,
       ],
     },
     {

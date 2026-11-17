@@ -57,8 +57,8 @@ export function ShopifyMigrationNumberedGridSection({
 
         {/* Live keeps three equal columns down to 767px, then stacks. */}
         <div data-aos="fade-up" className="wrapper grid grid-cols-3 gap-4 max-[768px]:grid-cols-1">
-          {items.map((item) => (
-            <div data-aos="fade-up" className="col" key={item.number}>
+          {items.map((item, idx) => (
+            <div data-aos="fade-up" className="col" key={item.number || `${idx}-${item.title}`}>
               <div className="item h-full rounded-[20px] border border-[rgba(40,40,40,0.1)] bg-white p-[25px] max-[1200px]:rounded-[16px] max-[1200px]:p-5">
                 <span
                   className={cn(

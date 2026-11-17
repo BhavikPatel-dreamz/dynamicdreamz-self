@@ -63,6 +63,11 @@ export const ServiceHeroBlock: Block = {
               ],
             },
             {
+              name: "wrapperClassName",
+              type: "text",
+              label: "Custom Wrapper CSS Class (e.g. hero-shopify-migration)",
+            },
+            {
               name: "eyebrows",
               type: "array",
               dbName: "sh_eb",

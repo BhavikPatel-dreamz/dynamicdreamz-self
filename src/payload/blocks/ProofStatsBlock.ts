@@ -68,6 +68,16 @@ export const ProofStatsBlock: Block = {
       ],
     },
     {
+      name: "sectionId",
+      type: "text",
+      label: "HTML Section ID (e.g. why-choose)",
+    },
+    {
+      name: "themeSlug",
+      type: "text",
+      label: "Platform / Theme Slug (for resolving icon namespaces)",
+    },
+    {
       name: "counters",
       type: "array",
       dbName: "pr_cntrs",
@@ -123,6 +133,11 @@ export const ProofStatsBlock: Block = {
           name: "badgeText",
           type: "text",
           label: "Badge / Highlight Text",
+        },
+        {
+          name: "iconName",
+          type: "text",
+          label: "Icon Name (for migration & specialized SVGs)",
         },
         {
           name: "icon",

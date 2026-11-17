@@ -699,6 +699,7 @@ export interface Page {
               | 'buy-hours'
               | 'industry';
             backgroundColor?: ('cream' | 'white') | null;
+            wrapperClassName?: string | null;
             eyebrows?:
               | {
                   text: string;
@@ -822,6 +823,7 @@ export interface Page {
             variant?: ('slider' | 'grid' | 'home' | 'integrations' | 'tools-grid' | 'tech-stack') | null;
             heading?: string | null;
             description?: string | null;
+            slug?: string | null;
             density?: ('standard' | 'compact' | 'flexible') | null;
             mobileSpacing?: ('standard' | 'spacious') | null;
             showHeading?: boolean | null;
@@ -846,6 +848,7 @@ export interface Page {
             heading?: string | null;
             description?: string | null;
             idPrefix?: string | null;
+            sectionId?: string | null;
             variant?: ('split' | 'home') | null;
             iconVariant?: ('circle-cross' | 'default') | null;
             animateOnReveal?: boolean | null;
@@ -933,6 +936,7 @@ export interface Page {
             cardVariant?: ('green' | 'yellow' | 'transparent' | 'services-box') | null;
             columns?: ('2' | '3' | '4') | null;
             sectionId?: string | null;
+            className?: string | null;
             themeSlug?: string | null;
             iconKind?: ('feature' | 'benefit' | 'service') | null;
             removeBottomPadding?: boolean | null;
@@ -940,6 +944,13 @@ export interface Page {
             lastColFull?: boolean | null;
             isRoundedNumber?: boolean | null;
             bottomNote?: string | null;
+            banner?: {
+              badge?: string | null;
+              title?: string | null;
+              description?: string | null;
+              ctaLabel?: string | null;
+              ctaHref?: string | null;
+            };
             services?:
               | {
                   tag?: string | null;
@@ -1028,6 +1039,8 @@ export interface Page {
             columns?: ('3' | '4' | '5') | null;
             theme?: ('light' | 'white' | 'dark' | 'warm') | null;
             eyebrowVariant?: ('dash' | 'pill') | null;
+            sectionId?: string | null;
+            themeSlug?: string | null;
             counters?:
               | {
                   value: string;
@@ -1043,6 +1056,7 @@ export interface Page {
                   title: string;
                   description?: string | null;
                   badgeText?: string | null;
+                  iconName?: string | null;
                   icon?: (number | null) | Media;
                   iconSrc?: string | null;
                   iconAlt?: string | null;
@@ -1070,6 +1084,8 @@ export interface Page {
             columns?: ('4' | '3') | null;
             eyebrowVariant?: ('dash' | 'pill') | null;
             isBgTransparent?: boolean | null;
+            cardVariant?: ('pista' | 'white') | null;
+            sectionId?: string | null;
             steps?:
               | {
                   step?: string | null;
@@ -1356,6 +1372,7 @@ export interface Page {
             description?: string | null;
             theme?: ('white' | 'cyan') | null;
             sectionId?: string | null;
+            className?: string | null;
             items?:
               | {
                   number?: string | null;
@@ -1711,6 +1728,109 @@ export interface Page {
             id?: string | null;
             blockName?: string | null;
             blockType: 'mobile-app-comparison';
+          }
+        | {
+            eyebrow?: string | null;
+            heading: string;
+            description?: string | null;
+            sectionId?: string | null;
+            tags?:
+              | {
+                  tag: string;
+                  id?: string | null;
+                }[]
+              | null;
+            urlMappings?:
+              | {
+                  source: string;
+                  statusCode?: string | null;
+                  target: string;
+                  id?: string | null;
+                }[]
+              | null;
+            checks?:
+              | {
+                  text: string;
+                  id?: string | null;
+                }[]
+              | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'seo-safe-migration';
+          }
+        | {
+            eyebrow?: string | null;
+            heading: string;
+            description?: string | null;
+            sectionId?: string | null;
+            approaches?:
+              | {
+                  badge?: string | null;
+                  title?: string | null;
+                  description?: string | null;
+                  logo?: (number | null) | Media;
+                  logoSrc?: string | null;
+                  logoAlt?: string | null;
+                  isHighlighted?: boolean | null;
+                  points?:
+                    | {
+                        text?: string | null;
+                        label?: string | null;
+                        value?: string | null;
+                        ratingImage?: (number | null) | Media;
+                        ratingImageSrc?: string | null;
+                        id?: string | null;
+                      }[]
+                    | null;
+                  id?: string | null;
+                }[]
+              | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'theme-customization-approach';
+          }
+        | {
+            eyebrow?: string | null;
+            heading: string;
+            description?: string | null;
+            sectionId?: string | null;
+            variant?: ('cards' | 'default') | null;
+            steps?:
+              | {
+                  stepNumber: string;
+                  title: string;
+                  description?: string | null;
+                  subBoxes?:
+                    | {
+                        title?: string | null;
+                        description?: string | null;
+                        items?:
+                          | {
+                              text: string;
+                              id?: string | null;
+                            }[]
+                          | null;
+                        id?: string | null;
+                      }[]
+                    | null;
+                  categories?:
+                    | {
+                        title?: string | null;
+                        items?:
+                          | {
+                              text: string;
+                              id?: string | null;
+                            }[]
+                          | null;
+                        id?: string | null;
+                      }[]
+                    | null;
+                  id?: string | null;
+                }[]
+              | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'migration-process';
           }
       )[]
     | null;
@@ -2627,6 +2747,7 @@ export interface PagesSelect<T extends boolean = true> {
           | {
               variant?: T;
               backgroundColor?: T;
+              wrapperClassName?: T;
               eyebrows?:
                 | T
                 | {
@@ -2763,6 +2884,7 @@ export interface PagesSelect<T extends boolean = true> {
               variant?: T;
               heading?: T;
               description?: T;
+              slug?: T;
               density?: T;
               mobileSpacing?: T;
               showHeading?: T;
@@ -2788,6 +2910,7 @@ export interface PagesSelect<T extends boolean = true> {
               heading?: T;
               description?: T;
               idPrefix?: T;
+              sectionId?: T;
               variant?: T;
               iconVariant?: T;
               animateOnReveal?: T;
@@ -2869,6 +2992,7 @@ export interface PagesSelect<T extends boolean = true> {
               cardVariant?: T;
               columns?: T;
               sectionId?: T;
+              className?: T;
               themeSlug?: T;
               iconKind?: T;
               removeBottomPadding?: T;
@@ -2876,6 +3000,15 @@ export interface PagesSelect<T extends boolean = true> {
               lastColFull?: T;
               isRoundedNumber?: T;
               bottomNote?: T;
+              banner?:
+                | T
+                | {
+                    badge?: T;
+                    title?: T;
+                    description?: T;
+                    ctaLabel?: T;
+                    ctaHref?: T;
+                  };
               services?:
                 | T
                 | {
@@ -2957,6 +3090,8 @@ export interface PagesSelect<T extends boolean = true> {
               columns?: T;
               theme?: T;
               eyebrowVariant?: T;
+              sectionId?: T;
+              themeSlug?: T;
               counters?:
                 | T
                 | {
@@ -2973,6 +3108,7 @@ export interface PagesSelect<T extends boolean = true> {
                     title?: T;
                     description?: T;
                     badgeText?: T;
+                    iconName?: T;
                     icon?: T;
                     iconSrc?: T;
                     iconAlt?: T;
@@ -2991,6 +3127,8 @@ export interface PagesSelect<T extends boolean = true> {
               columns?: T;
               eyebrowVariant?: T;
               isBgTransparent?: T;
+              cardVariant?: T;
+              sectionId?: T;
               steps?:
                 | T
                 | {
@@ -3269,6 +3407,7 @@ export interface PagesSelect<T extends boolean = true> {
               description?: T;
               theme?: T;
               sectionId?: T;
+              className?: T;
               items?:
                 | T
                 | {
@@ -3648,6 +3787,112 @@ export interface PagesSelect<T extends boolean = true> {
                     subtitle?: T;
                     appBuilder?: T;
                     custom?: T;
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        'seo-safe-migration'?:
+          | T
+          | {
+              eyebrow?: T;
+              heading?: T;
+              description?: T;
+              sectionId?: T;
+              tags?:
+                | T
+                | {
+                    tag?: T;
+                    id?: T;
+                  };
+              urlMappings?:
+                | T
+                | {
+                    source?: T;
+                    statusCode?: T;
+                    target?: T;
+                    id?: T;
+                  };
+              checks?:
+                | T
+                | {
+                    text?: T;
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        'theme-customization-approach'?:
+          | T
+          | {
+              eyebrow?: T;
+              heading?: T;
+              description?: T;
+              sectionId?: T;
+              approaches?:
+                | T
+                | {
+                    badge?: T;
+                    title?: T;
+                    description?: T;
+                    logo?: T;
+                    logoSrc?: T;
+                    logoAlt?: T;
+                    isHighlighted?: T;
+                    points?:
+                      | T
+                      | {
+                          text?: T;
+                          label?: T;
+                          value?: T;
+                          ratingImage?: T;
+                          ratingImageSrc?: T;
+                          id?: T;
+                        };
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        'migration-process'?:
+          | T
+          | {
+              eyebrow?: T;
+              heading?: T;
+              description?: T;
+              sectionId?: T;
+              variant?: T;
+              steps?:
+                | T
+                | {
+                    stepNumber?: T;
+                    title?: T;
+                    description?: T;
+                    subBoxes?:
+                      | T
+                      | {
+                          title?: T;
+                          description?: T;
+                          items?:
+                            | T
+                            | {
+                                text?: T;
+                                id?: T;
+                              };
+                          id?: T;
+                        };
+                    categories?:
+                      | T
+                      | {
+                          title?: T;
+                          items?:
+                            | T
+                            | {
+                                text?: T;
+                                id?: T;
+                              };
+                          id?: T;
+                        };
                     id?: T;
                   };
               id?: T;

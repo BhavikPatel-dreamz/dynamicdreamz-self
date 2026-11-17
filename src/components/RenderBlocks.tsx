@@ -2,7 +2,7 @@ import React from "react";
 import dynamic from "next/dynamic";
 import { appmakerHeroCoBranding } from "@/content/appmaker-shopify-mobile-app-development";
 import { shopifyPlusAgencyWhyChoose } from "@/content/shopify-plus-agency";
-import { shopifyMigrationWhyChoose } from "@/content/shopify-migration";
+import { shopifyMigrationWhyChoose, shopifyMigrationServicesContent } from "@/content/shopify-migration";
 import { fullStackDevelopmentTechnologiesContent } from "@/content/full-stack-development";
 
 // Active Section Components
@@ -93,6 +93,9 @@ import { ServicesCaseStudiesSection } from "@/components/sections/services-case-
 import { CaseStudyCardsSection } from "@/components/sections/shopify-plus-agency/case-study-cards-section";
 import { WhiteLabelPartnerSection } from "@/components/sections/home/white-label-partner-section";
 import { TwoColImageWithTextSection } from "@/components/sections/two-col-image-with-text-section";
+import { SeoSafeMigrationSection } from "@/components/sections/shopify-migration/seo-safe-migration-section";
+import { ThemeCustomizationApproachSection } from "@/components/sections/theme-customization-approach-section";
+import { resolveMigrationIcon } from "@/lib/migration-icon-resolver";
 
 // Phase 2.5 Signature Block Section Components
 import { ThemeFeaturesBannerSection } from "@/components/sections/theme-customization/theme-features-banner-section";
@@ -473,6 +476,13 @@ export interface BlockServicesGrid {
   lastColFull?: boolean;
   isRoundedNumber?: boolean;
   bottomNote?: string;
+  banner?: {
+    badge?: string;
+    title?: string;
+    description?: string;
+    ctaLabel?: string;
+    ctaHref?: string;
+  };
   services?: readonly {
     tag?: string;
     number?: string;
@@ -481,6 +491,7 @@ export interface BlockServicesGrid {
     description?: string;
     pills?: readonly (string | { text?: string })[];
     bullets?: readonly (string | { text?: string })[];
+    iconName?: string;
     icon?: CmsMedia;
     iconSrc?: string;
     iconAlt?: string;
@@ -529,6 +540,7 @@ export interface BlockProofStats {
   eyebrow?: string;
   heading?: string;
   description?: string;
+  sectionId?: string;
   variant?:
     | "counters-bar"
     | "city-counters"
@@ -552,6 +564,7 @@ export interface BlockProofStats {
     title: string;
     description?: string;
     badgeText?: string;
+    iconName?: string;
     icon?: CmsMedia;
     iconSrc?: string;
     iconAlt?: string;
@@ -565,6 +578,8 @@ export interface BlockProcessTimeline {
   eyebrow?: string;
   heading: string;
   description?: string;
+  sectionId?: string;
+  cardVariant?: "white" | "pista";
   variant?:
     | "development-process"
     | "migration-grid"
@@ -991,6 +1006,77 @@ export interface BlockMobileAppComparison {
   }[];
 }
 
+export interface BlockSeoSafeMigration {
+  __component?: string;
+  blockType?: string;
+  id?: string | number;
+  eyebrow?: string;
+  heading: string;
+  description?: string;
+  sectionId?: string;
+  tags?: readonly (string | { tag?: string })[];
+  urlMappings?: readonly {
+    source: string;
+    statusCode?: string;
+    target: string;
+  }[];
+  checks?: readonly (string | { text?: string })[];
+}
+
+export interface BlockThemeCustomizationApproach {
+  __component?: string;
+  blockType?: string;
+  id?: string | number;
+  eyebrow?: string;
+  heading: string;
+  description?: string;
+  sectionId?: string;
+  approaches?: readonly {
+    badge?: string;
+    title?: string;
+    description?: string;
+    logo?: CmsMedia | null;
+    logoSrc?: string;
+    logoAlt?: string;
+    isHighlighted?: boolean;
+    points?: readonly (
+      | string
+      | {
+          text?: string;
+          label?: string;
+          value?: string;
+          ratingImage?: CmsMedia | null;
+          ratingImageSrc?: string;
+        }
+    )[];
+  }[];
+}
+
+export interface BlockMigrationProcess {
+  __component?: string;
+  blockType?: string;
+  id?: string | number;
+  eyebrow?: string;
+  heading: string;
+  description?: string;
+  sectionId?: string;
+  variant?: "cards" | "default";
+  steps?: readonly {
+    stepNumber: string;
+    title: string;
+    description?: string;
+    subBoxes?: readonly {
+      title?: string;
+      description?: string;
+      items?: readonly (string | { text?: string })[];
+    }[];
+    categories?: readonly {
+      title?: string;
+      items?: readonly (string | { text?: string })[];
+    }[];
+  }[];
+}
+
 export type CmsSectionBlock =
   | BlockServiceHero
   | BlockBrandPartners
@@ -1028,6 +1114,9 @@ export type CmsSectionBlock =
   | BlockCareerOpportunities
   | BlockShopifyHoursTasks
   | BlockMobileAppComparison
+  | BlockSeoSafeMigration
+  | BlockThemeCustomizationApproach
+  | BlockMigrationProcess
   | BlockContactHero
   | BlockContactForm
   | BlockForm
@@ -1394,7 +1483,7 @@ export function BlockRenderer({ sections }: BlockRendererProps) {
                     subheading: shBlock.subtitle,
                     description: shBlock.description || "",
                     secondaryDescription: shBlock.secondaryDescription,
-                    paragraphs: paragraphs.length > 0 ? paragraphs : undefined,
+                    paragraphs: paragraphs.length > 0 ? paragraphs : shBlock.description ? [shBlock.description] : undefined,
                     ctaLabel: primaryCta?.label,
                     ctaHref: primaryCta?.href,
                     secondaryCta,
@@ -1423,7 +1512,7 @@ export function BlockRenderer({ sections }: BlockRendererProps) {
                     subheading: shBlock.subtitle,
                     description: shBlock.description || "",
                     secondaryDescription: shBlock.secondaryDescription,
-                    paragraphs: paragraphs.length > 0 ? paragraphs : undefined,
+                    paragraphs: paragraphs.length > 0 ? paragraphs : shBlock.description ? [shBlock.description] : undefined,
                     ctaLabel: primaryCta?.label,
                     ctaHref: primaryCta?.href,
                     secondaryCta,
@@ -1514,7 +1603,7 @@ export function BlockRenderer({ sections }: BlockRendererProps) {
                     titleAccent: shBlock.titleAccent,
                     subheading: shBlock.subtitle,
                     description: shBlock.description,
-                    paragraphs: paragraphs.length > 0 ? paragraphs : undefined,
+                    paragraphs: paragraphs.length > 0 ? paragraphs : shBlock.description ? [shBlock.description] : undefined,
                     ctaLabel: primaryCta?.label,
                     ctaHref: primaryCta?.href,
                     secondaryCta,
@@ -1535,9 +1624,10 @@ export function BlockRenderer({ sections }: BlockRendererProps) {
 
             // 7. Standard Service Hero Video / Image Section
             const wrapperClass =
-              shBlock.variant === "migration"
+              (shBlock as { wrapperClassName?: string }).wrapperClassName ||
+              (shBlock.variant === "migration"
                 ? "hero-shopify-migration"
-                : undefined;
+                : undefined);
 
             const imageClass =
               shBlock.imageBlend === "darken"
@@ -1558,7 +1648,7 @@ export function BlockRenderer({ sections }: BlockRendererProps) {
                   lead: shBlock.lead,
                   description: shBlock.description,
                   body: shBlock.body,
-                  paragraphs: paragraphs.length > 0 ? paragraphs : undefined,
+                  paragraphs: paragraphs.length > 0 ? paragraphs : shBlock.description ? [shBlock.description] : undefined,
                   cta: primaryCta?.label,
                   ctaHref: primaryCta?.href,
                   secondaryCta,
@@ -1646,7 +1736,7 @@ export function BlockRenderer({ sections }: BlockRendererProps) {
                 mobileSpacing={bpBlock.mobileSpacing || "standard"}
                 showHeading={bpBlock.showHeading ?? true}
                 content={{
-                  slug: "brand-partners",
+                  slug: (bpBlock as { slug?: string }).slug || "brand-partners",
                   ariaLabel: bpBlock.heading || "Brand Partners",
                 }}
                 items={brands}
@@ -1705,6 +1795,7 @@ export function BlockRenderer({ sections }: BlockRendererProps) {
               <SplitFaqSection
                 key={blockKey}
                 idPrefix={faBlock.idPrefix || "faq"}
+                sectionId={(faBlock as { sectionId?: string }).sectionId || undefined}
                 eyebrow={faBlock.eyebrow}
                 heading={faBlock.heading}
                 description={faBlock.description}
@@ -1860,9 +1951,11 @@ export function BlockRenderer({ sections }: BlockRendererProps) {
             const services = sgBlock.services ?? [];
 
             if (sgBlock.variant === "theme-boxes") {
+              const customClass = (sgBlock as { className?: string }).className || ((sgBlock as { removeBottomPadding?: boolean }).removeBottomPadding ? "pb-0" : undefined);
               return (
                 <ThemeCustomizationServicesSection
                   key={blockKey}
+                  className={customClass}
                   id={sgBlock.sectionId || undefined}
                   variant={sgBlock.cardVariant === "yellow" || sgBlock.cardVariant === "transparent" ? sgBlock.cardVariant : "green"}
                   isRoundedNumber={sgBlock.isRoundedNumber}
@@ -1872,12 +1965,17 @@ export function BlockRenderer({ sections }: BlockRendererProps) {
                     description: sgBlock.description,
                     bottomNote: sgBlock.bottomNote,
                     boxes: services.map((s) => {
-                      const themeIcon = (s as { iconName?: string }).iconName
+                      const sAny = s as { iconName?: string };
+                      const themeIcon = sAny.iconName
                         ? resolveThemeIcon(
-                            (s as { iconName?: string }).iconName,
+                            sAny.iconName,
                             (sgBlock as { themeSlug?: string }).themeSlug,
                             (sgBlock as { iconKind?: "feature" | "benefit" | "service" }).iconKind ||
                               (sgBlock.cardVariant === "yellow" ? "feature" : "benefit"),
+                          ) ||
+                          resolveMigrationIcon(
+                            sAny.iconName,
+                            (sgBlock as { themeSlug?: string }).themeSlug,
                           )
                         : null;
                       return {
@@ -1946,20 +2044,49 @@ export function BlockRenderer({ sections }: BlockRendererProps) {
             }
 
             if (sgBlock.variant === "migration-services") {
+              const bannerFallback = shopifyMigrationServicesContent.banner;
+              const hasBanner = Boolean(sgBlock.banner?.title || bannerFallback);
+              const banner = hasBanner
+                ? {
+                    badge: sgBlock.banner?.badge || bannerFallback.badge,
+                    title: sgBlock.banner?.title || bannerFallback.title,
+                    description: sgBlock.banner?.description || bannerFallback.description,
+                    ctaLabel: sgBlock.banner?.ctaLabel || bannerFallback.ctaLabel,
+                    ctaHref: sgBlock.banner?.ctaHref || bannerFallback.ctaHref,
+                  }
+                : undefined;
+
+              const itemsToRender =
+                services.length > 0
+                  ? services.map((s) => {
+                      const fallbackItem = shopifyMigrationServicesContent.items.find(
+                        (item) => item.title.trim().toLowerCase() === s.title?.trim().toLowerCase()
+                      );
+
+                      return {
+                        title: s.title || fallbackItem?.title || "",
+                        description: s.description || fallbackItem?.description || "",
+                        image:
+                          resolveMediaUrl(s.icon) ||
+                          s.iconSrc ||
+                          fallbackItem?.image ||
+                          "",
+                        imageAlt: s.iconAlt || fallbackItem?.imageAlt || s.title || "",
+                        href: s.ctaHref || fallbackItem?.href || "#",
+                        ctaLabel: s.ctaLabel || fallbackItem?.ctaLabel || "Explore migration",
+                      };
+                    })
+                  : shopifyMigrationServicesContent.items;
+
               return (
                 <ShopifyMigrationServicesSection
                   key={blockKey}
-                  eyebrow={sgBlock.eyebrow}
-                  heading={sgBlock.heading}
-                  description={sgBlock.description}
-                  items={services.map((s) => ({
-                    title: s.title,
-                    description: s.description || "",
-                    image: resolveMediaUrl(s.icon) || s.iconSrc || "/assets/services/shopify-migration-default.webp",
-                    imageAlt: s.iconAlt || s.title,
-                    href: s.ctaHref || "#",
-                    ctaLabel: s.ctaLabel || "",
-                  }))}
+                  id={sgBlock.sectionId || undefined}
+                  eyebrow={sgBlock.eyebrow || shopifyMigrationServicesContent.eyebrow}
+                  heading={sgBlock.heading || shopifyMigrationServicesContent.heading}
+                  description={sgBlock.description || shopifyMigrationServicesContent.description}
+                  banner={banner}
+                  items={itemsToRender}
                 />
               );
             }
@@ -2298,6 +2425,7 @@ export function BlockRenderer({ sections }: BlockRendererProps) {
               return (
                 <CityWhyChooseBoxesSection
                   key={blockKey}
+                  id={prBlock.sectionId || undefined}
                   columns={cols}
                   theme={theme}
                   eyebrowVariant={eyebrowVariant}
@@ -2305,13 +2433,23 @@ export function BlockRenderer({ sections }: BlockRendererProps) {
                     eyebrow: prBlock.eyebrow,
                     heading: prBlock.heading || "",
                     description: prBlock.description,
-                    items: (prBlock.boxes ?? []).map((b) => ({
-                      title: b.title,
-                      description: b.description || "",
-                      subtitle: b.badgeText || b.number,
-                      icon: resolveMediaUrl(b.icon) || b.iconSrc || undefined,
-                      iconAlt: b.iconAlt || (typeof b.title === "string" ? b.title : "Icon"),
-                    })),
+                    items: (prBlock.boxes ?? []).map((b) => {
+                      const bAny = b as { iconName?: string };
+                      const iconNode = bAny.iconName
+                        ? resolveMigrationIcon(
+                            bAny.iconName,
+                            (prBlock as { themeSlug?: string }).themeSlug,
+                          )
+                        : undefined;
+                      return {
+                        title: b.title,
+                        description: b.description || "",
+                        subtitle: b.badgeText || b.number,
+                        icon: iconNode ? undefined : resolveMediaUrl(b.icon) || b.iconSrc || undefined,
+                        iconNode: iconNode || undefined,
+                        iconAlt: b.iconAlt || (typeof b.title === "string" ? b.title : "Icon"),
+                      };
+                    }),
                   }}
                 />
               );
@@ -2375,14 +2513,17 @@ export function BlockRenderer({ sections }: BlockRendererProps) {
             const steps = ptBlock.steps ?? [];
 
             if (ptBlock.variant === "migration-grid") {
+              const variant = (ptBlock as { cardVariant?: "white" | "pista" }).cardVariant || "pista";
               return (
                 <ShopifyMigrationNumberedGridSection
                   key={blockKey}
+                  id={(ptBlock as { sectionId?: string }).sectionId || undefined}
+                  variant={variant}
                   eyebrow={ptBlock.eyebrow}
                   heading={ptBlock.heading}
                   description={ptBlock.description}
-                  items={steps.map((s) => ({
-                    number: s.step || "",
+                  items={steps.map((s, idx) => ({
+                    number: s.step || String(idx + 1).padStart(2, "0"),
                     title: s.title,
                     description: s.description || "",
                   }))}
@@ -2423,6 +2564,8 @@ export function BlockRenderer({ sections }: BlockRendererProps) {
               return (
                 <MigrationProcessSection
                   key={blockKey}
+                  id={(ptBlock as { sectionId?: string }).sectionId || "migration-process"}
+                  variant="cards"
                   content={{
                     eyebrow: ptBlock.eyebrow,
                     heading: ptBlock.heading,
@@ -2791,6 +2934,7 @@ export function BlockRenderer({ sections }: BlockRendererProps) {
               <EvaluationFrameworkSection
                 key={blockKey}
                 id={(efBlock as { sectionId?: string }).sectionId || undefined}
+                className={(efBlock as { className?: string }).className || undefined}
                 theme={efBlock.theme || "white"}
                 content={{
                   eyebrow: efBlock.eyebrow || undefined,
@@ -3254,6 +3398,124 @@ export function BlockRenderer({ sections }: BlockRendererProps) {
                           "Custom Shopify Mobile App (Dynamic Dreamz)",
                         ],
                   rows: rows.length > 0 ? rows : [],
+                }}
+              />
+            );
+          }
+
+          case "seo-safe-migration": {
+            const ssmBlock = block as BlockSeoSafeMigration;
+            const tags = (ssmBlock.tags ?? [])
+              .map((t) => (typeof t === "string" ? t : t.tag || ""))
+              .filter(Boolean);
+            const checks = (ssmBlock.checks ?? [])
+              .map((c) => (typeof c === "string" ? c : c.text || ""))
+              .filter(Boolean);
+            const urlMappings = (ssmBlock.urlMappings ?? []).map((m) => ({
+              source: m.source,
+              statusCode: m.statusCode || "301 Moved Permanently",
+              target: m.target,
+            }));
+
+            return (
+              <SeoSafeMigrationSection
+                key={blockKey}
+                id={ssmBlock.sectionId || undefined}
+                content={{
+                  eyebrow: ssmBlock.eyebrow || undefined,
+                  heading: ssmBlock.heading,
+                  description: ssmBlock.description || "",
+                  tags,
+                  urlMappings,
+                  checks,
+                }}
+              />
+            );
+          }
+
+          case "theme-customization-approach": {
+            const tcaBlock = block as BlockThemeCustomizationApproach;
+            const approaches = (tcaBlock.approaches ?? []).map((app) => {
+              const points = (app.points ?? []).map((pt) => {
+                if (typeof pt === "string") return pt;
+                if (!pt.label && pt.text) return pt.text;
+                const ratingImgUrl = resolveMediaUrl(pt.ratingImage) || pt.ratingImageSrc;
+                return {
+                  label: pt.label || "",
+                  value: pt.value || "",
+                  ratingImage: ratingImgUrl
+                    ? {
+                        src: ratingImgUrl,
+                        alt: "Verified Customer Rating Stars",
+                        width: 108,
+                        height: 20,
+                      }
+                    : undefined,
+                };
+              });
+
+              const logoUrl = resolveMediaUrl(app.logo) || app.logoSrc;
+
+              return {
+                badge: app.badge || undefined,
+                title: app.title || undefined,
+                description: app.description || undefined,
+                isHighlighted: app.isHighlighted ?? false,
+                logo: logoUrl
+                  ? {
+                      src: logoUrl,
+                      alt: app.logoAlt || app.title || "Logo",
+                      width: 178,
+                      height: 40,
+                    }
+                  : undefined,
+                points,
+              };
+            });
+
+            return (
+              <ThemeCustomizationApproachSection
+                key={blockKey}
+                id={tcaBlock.sectionId || undefined}
+                content={{
+                  eyebrow: tcaBlock.eyebrow || undefined,
+                  heading: tcaBlock.heading,
+                  description: tcaBlock.description || "",
+                  approaches,
+                }}
+              />
+            );
+          }
+
+          case "migration-process": {
+            const mpBlock = block as unknown as BlockMigrationProcess;
+            return (
+              <MigrationProcessSection
+                key={blockKey}
+                id={mpBlock.sectionId || "migration-process"}
+                variant={mpBlock.variant || "cards"}
+                content={{
+                  eyebrow: mpBlock.eyebrow,
+                  heading: mpBlock.heading,
+                  description: mpBlock.description,
+                  steps: (mpBlock.steps ?? []).map((step) => ({
+                    stepNumber: step.stepNumber,
+                    title: step.title,
+                    description: step.description || "",
+                    subBoxes: (step.subBoxes ?? []).map((box) => ({
+                      title: box.title || undefined,
+                      description: box.description || undefined,
+                      items: (box.items ?? []).map((item) =>
+                        typeof item === "string" ? item : item.text || "",
+                      ),
+                    })),
+                    categories: (step.categories ?? []).map((cat) => ({
+                      title: cat.title || "",
+                      items: (cat.items ?? []).map((item) =>
+                        typeof item === "string" ? item : item.text || "",
+                      ),
+                    })),
+                  })),
                 }}
               />
             );

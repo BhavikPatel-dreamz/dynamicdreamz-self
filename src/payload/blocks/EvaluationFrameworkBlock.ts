@@ -40,6 +40,11 @@ export const EvaluationFrameworkBlock: Block = {
       label: "HTML Section ID (e.g. why-choose)",
     },
     {
+      name: "className",
+      type: "text",
+      label: "Custom CSS Class (e.g. pt-0 max-[992px]:pt-0 max-[768px]:pt-0)",
+    },
+    {
       name: "items",
       type: "array",
       dbName: "ef_items",

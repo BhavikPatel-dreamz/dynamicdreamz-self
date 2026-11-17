@@ -61,6 +61,20 @@ export const ProcessTimelineBlock: Block = {
       label: "Transparent Background",
     },
     {
+      name: "cardVariant",
+      type: "select",
+      defaultValue: "pista",
+      options: [
+        { label: "Pista Green (#EFF4EF)", value: "pista" },
+        { label: "White Background", value: "white" },
+      ],
+    },
+    {
+      name: "sectionId",
+      type: "text",
+      label: "HTML Section ID (e.g. migration-process)",
+    },
+    {
       name: "steps",
       type: "array",
       dbName: "pt_steps",

@@ -61,7 +61,7 @@ export function IndustryBrandsSection({
       aria-labelledby={showHeading ? `${content.slug}-brands-title` : undefined}
       data-industry="brands"
     >
-      <div className="main-wrapper flex items-center max-[991.98px]:block">
+      <div className="main-wrapper flex items-center max-h-[70px] max-[991.98px]:block">
         {showHeading ? (
           <div
             className={cn(
