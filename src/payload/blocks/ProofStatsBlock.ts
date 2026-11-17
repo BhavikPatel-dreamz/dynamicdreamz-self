@@ -157,5 +157,36 @@ export const ProofStatsBlock: Block = {
         },
       ],
     },
+    {
+      name: "partnerHeading",
+      type: "text",
+      label: "Partner Callout Heading (e.g. 20+ Years of Ecommerce Delivery)",
+    },
+    {
+      name: "partnerDescription",
+      type: "textarea",
+      label: "Partner Callout Description",
+    },
+    {
+      name: "partnerLogo",
+      type: "upload",
+      relationTo: "media",
+      label: "Partner Callout Logo (e.g. Platinum Partner)",
+    },
+    {
+      name: "partnerLogoSrc",
+      type: "text",
+      label: "Partner Callout Logo Static Path",
+    },
+    {
+      name: "partnerLogoAlt",
+      type: "text",
+      label: "Partner Callout Logo Alt Text",
+    },
+    {
+      name: "logoHref",
+      type: "text",
+      label: "Partner Callout Link URL",
+    },
   ],
 };

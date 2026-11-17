@@ -33,10 +33,10 @@ flowchart TD
   > [!CAUTION]
   > **STOP IMMEDIATELY.** Do not seed dummy or compromised blocks. Report the exact discrepancy to the user or fix the block/renderer first with approved semantic controls.
 
-### Rule 3: Zero Styling / CSS Controls in CMS
-* The CMS collection and block schemas must contain **zero styling fields** (`className`, `style`, `css`, `customCss`).
-* Use only high-level semantic tokens (e.g. `variant: "theme"`, `theme: "warm"`, `columns: "3"`, `eyebrowVariant: "dash"`).
-* React and Tailwind CSS own 100% of the styling, responsive breakpoints, and layout geometry.
+### Rule 3: Zero Arbitrary Styling / CSS Controls in CMS
+* The CMS collection and block schemas must contain **zero arbitrary CSS/style fields** (`style`, `css`, `customCss`).
+* Use only high-level semantic tokens (e.g. `variant: "theme"`, `theme: "warm"`, `columns: "3"`, `headerLayout: "split" | "centered"`, `row: "1" | "2"`).
+* React and Tailwind CSS own 100% of the styling, responsive breakpoints, and layout geometry. Dedicated blocks are used when layout geometry differs fundamentally.
 
 ### Rule 4: Mandatory Media Relations Attachment (All Local Assets Are Pre-Uploaded to CMS Media)
 * **Pre-Uploaded Media Collection:** All canonical project assets from `public/assets/**` have **already been synced and uploaded** into the Payload CMS `media` collection and dedicated media server (`https://media.dynamicdreamz.net`).

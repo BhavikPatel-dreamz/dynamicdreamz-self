@@ -60,6 +60,15 @@ export const ServicesGridBlock: Block = {
       ],
     },
     {
+      name: "headerLayout",
+      type: "select",
+      defaultValue: "centered",
+      options: [
+        { label: "Centered Heading", value: "centered" },
+        { label: "Split (Left Heading, Right Description)", value: "split" },
+      ],
+    },
+    {
       name: "sectionId",
       type: "text",
       label: "HTML Section ID (e.g. services)",

@@ -72,6 +72,15 @@ export const BrandPartnersBlock: Block = {
           label: "Brand Name",
         },
         {
+          name: "row",
+          type: "select",
+          defaultValue: "1",
+          options: [
+            { label: "Row 1 (Top / Forward)", value: "1" },
+            { label: "Row 2 (Bottom / Reverse)", value: "2" },
+          ],
+        },
+        {
           name: "logo",
           type: "upload",
           relationTo: "media",

@@ -217,7 +217,36 @@ export const CaseStudies: CollectionConfig = {
       fields: [
         { name: "metaTitle", type: "text" },
         { name: "metaDescription", type: "textarea" },
-        { name: "canonicalUrl", type: "text" },
+        {
+          name: "canonicalUrl",
+          type: "text",
+          label: "Canonical Path / Slug (e.g. /case-studies/my-study)",
+          admin: {
+            description: "Stores only the relative path (e.g. /case-studies/my-study). Domains are automatically stripped.",
+            placeholder: "/case-studies/study-slug",
+          },
+          hooks: {
+            beforeChange: [
+              ({ value, data }) => {
+                if (!value) {
+                  const slug = typeof data?.slug === "string" ? data.slug.trim().replace(/^\/+|\/+$/g, "") : "";
+                  return slug ? `/case-studies/${slug}` : "/case-studies";
+                }
+                let cleaned = String(value).trim();
+                if (cleaned.startsWith("http://") || cleaned.startsWith("https://")) {
+                  try {
+                    const u = new URL(cleaned);
+                    cleaned = u.pathname || "/case-studies";
+                  } catch {
+                    cleaned = cleaned.replace(/^https?:\/\/[^/]+/i, "") || "/case-studies";
+                  }
+                }
+                const normalized = cleaned.startsWith("/") ? cleaned : `/${cleaned}`;
+                return normalized === "/" ? "/" : normalized.replace(/\/+$/, "");
+              },
+            ],
+          },
+        },
         { name: "metaImage", type: "upload", relationTo: "media" },
       ],
     },

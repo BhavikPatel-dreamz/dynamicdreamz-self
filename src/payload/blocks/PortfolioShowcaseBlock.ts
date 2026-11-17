@@ -173,6 +173,11 @@ export const PortfolioShowcaseBlock: Block = {
           type: "text",
           label: "Key Result / Metric (Optional)",
         },
+        {
+          name: "tags",
+          type: "text",
+          label: "Comma-separated Tags (e.g. Dawn Theme Customization, Refillable Packaging Brand)",
+        },
       ],
     },
   ],

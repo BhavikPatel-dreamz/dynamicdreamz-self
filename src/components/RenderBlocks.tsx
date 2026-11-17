@@ -96,6 +96,7 @@ import { TwoColImageWithTextSection } from "@/components/sections/two-col-image-
 import { SeoSafeMigrationSection } from "@/components/sections/shopify-migration/seo-safe-migration-section";
 import { ThemeCustomizationApproachSection } from "@/components/sections/theme-customization-approach-section";
 import { resolveMigrationIcon } from "@/lib/migration-icon-resolver";
+import { IndustryCustomDevelopmentSection } from "@/components/sections/industry/industry-custom-development-section";
 
 // Phase 2.5 Signature Block Section Components
 import { ThemeFeaturesBannerSection } from "@/components/sections/theme-customization/theme-features-banner-section";
@@ -379,6 +380,7 @@ export interface BlockBrandPartners {
   showHeading?: boolean;
   brands?: readonly {
     name?: string;
+    row?: "1" | "2";
     logo?: CmsMedia;
     src?: string;
     alt?: string;
@@ -471,6 +473,8 @@ export interface BlockServicesGrid {
     | "theme-catalog";
   cardVariant?: "green" | "yellow" | "transparent" | "services-box";
   columns?: string;
+  headerLayout?: "centered" | "split";
+  className?: string;
   sectionId?: string;
   sixCards?: boolean;
   lastColFull?: boolean;
@@ -569,6 +573,12 @@ export interface BlockProofStats {
     iconSrc?: string;
     iconAlt?: string;
   }[];
+  partnerHeading?: string;
+  partnerDescription?: string;
+  partnerLogo?: CmsMedia;
+  partnerLogoSrc?: string;
+  partnerLogoAlt?: string;
+  logoHref?: string;
 }
 
 export interface BlockProcessTimeline {
@@ -1060,6 +1070,7 @@ export interface BlockMigrationProcess {
   heading: string;
   description?: string;
   sectionId?: string;
+  titleAlign?: "left" | "center";
   variant?: "cards" | "default";
   steps?: readonly {
     stepNumber: string;
@@ -1075,6 +1086,16 @@ export interface BlockMigrationProcess {
       items?: readonly (string | { text?: string })[];
     }[];
   }[];
+}
+
+export interface BlockIndustryCustomDevelopment {
+  __component?: string;
+  blockType?: string;
+  id?: string | number;
+  eyebrow?: string;
+  heading: string;
+  description: string;
+  items?: readonly (string | { text?: string })[];
 }
 
 export type CmsSectionBlock =
@@ -1117,6 +1138,7 @@ export type CmsSectionBlock =
   | BlockSeoSafeMigration
   | BlockThemeCustomizationApproach
   | BlockMigrationProcess
+  | BlockIndustryCustomDevelopment
   | BlockContactHero
   | BlockContactForm
   | BlockForm
@@ -1349,6 +1371,9 @@ export function BlockRenderer({ sections }: BlockRendererProps) {
               return (
                 <IndustryHeroSection
                   key={blockKey}
+                  variant={shBlock.backgroundColor === "white" ? "white" : "gradient"}
+                  showEyebrow={eyebrows.length > 0}
+                  showCta={Boolean(primaryCta?.label)}
                   eyebrow={eyebrows[0]}
                   title={shBlock.title}
                   description={shBlock.description}
@@ -1706,11 +1731,28 @@ export function BlockRenderer({ sections }: BlockRendererProps) {
             }
 
             if (bpBlock.variant === "tools-grid") {
+              const row1 = (bpBlock.brands ?? [])
+                .filter((b) => (b as { row?: string }).row !== "2")
+                .map((b) => ({
+                  name: b.name || b.alt || "",
+                  image: resolveMediaUrl(b.logo) || b.src || "",
+                }))
+                .filter((t) => Boolean(t.image));
+              const row2 = (bpBlock.brands ?? [])
+                .filter((b) => (b as { row?: string }).row === "2")
+                .map((b) => ({
+                  name: b.name || b.alt || "",
+                  image: resolveMediaUrl(b.logo) || b.src || "",
+                }))
+                .filter((t) => Boolean(t.image));
+              const rows = [row1, row2];
+
               return (
                 <WhiteLabelToolsSection
                   key={blockKey}
                   title={bpBlock.heading}
                   description={bpBlock.description}
+                  rows={row1.length > 0 || row2.length > 0 ? rows : undefined}
                 />
               );
             }
@@ -1995,11 +2037,13 @@ export function BlockRenderer({ sections }: BlockRendererProps) {
             if (sgBlock.variant === "agency-services") {
               const cardVariant = sgBlock.cardVariant === "services-box" ? "services-box" : "default";
               const cols = sgBlock.columns ? (parseInt(sgBlock.columns, 10) as 2 | 3 | 4) : 2;
-              const paddingClass = (sgBlock as { removeBottomPadding?: boolean }).removeBottomPadding
-                ? "pb-0"
-                : cardVariant === "services-box"
-                  ? "pb-20"
-                  : undefined;
+              const paddingClass =
+                (sgBlock as { className?: string }).className ||
+                ((sgBlock as { removeBottomPadding?: boolean }).removeBottomPadding
+                  ? "pb-0"
+                  : cardVariant === "services-box"
+                    ? "pb-20"
+                    : undefined);
               return (
                 <AgencyServicesSection
                   key={blockKey}
@@ -2008,6 +2052,7 @@ export function BlockRenderer({ sections }: BlockRendererProps) {
                   columns={cols}
                   hideCta={cardVariant === "services-box"}
                   showDescription={true}
+                  headerLayout={sgBlock.headerLayout === "split" ? "split" : undefined}
                   className={paddingClass}
                   content={{
                     eyebrow: sgBlock.eyebrow,
@@ -2238,14 +2283,24 @@ export function BlockRenderer({ sections }: BlockRendererProps) {
                   eyebrow={psBlock.eyebrow}
                   heading={psBlock.heading}
                   description={psBlock.description}
-                  items={(psBlock.items ?? []).map((item) => ({
-                    title: item.name,
-                    href: item.href || "#",
-                    image: resolveMediaUrl(item.image) || item.imageSrc || "",
-                    imageAlt: item.imageAlt || item.name,
-                    technology: item.metrics || "Shopify",
-                    industry: item.category || "Ecommerce",
-                  }))}
+                  className="py-20 max-[992px]:py-15 max-[768px]:py-10"
+                  items={(psBlock.items ?? []).map((item) => {
+                    const itemAny = item as { tags?: string };
+                    return {
+                      title: item.name,
+                      href: item.href || "#",
+                      image: resolveMediaUrl(item.image) || item.imageSrc || "",
+                      imageAlt: item.imageAlt || item.name,
+                      technology: item.metrics || "Shopify",
+                      industry: item.category || "Ecommerce",
+                      tags: itemAny.tags
+                        ? itemAny.tags
+                            .split(",")
+                            .map((t) => t.trim())
+                            .filter(Boolean)
+                        : undefined,
+                    };
+                  })}
                 />
               );
             }
@@ -2404,6 +2459,22 @@ export function BlockRenderer({ sections }: BlockRendererProps) {
                 heading: prBlock.heading || shopifyMigrationWhyChoose.heading,
                 description:
                   prBlock.description || shopifyMigrationWhyChoose.description,
+                partnerHeading:
+                  (prBlock as { partnerHeading?: string }).partnerHeading ||
+                  shopifyMigrationWhyChoose.partnerHeading,
+                partnerDescription:
+                  (prBlock as { partnerDescription?: string }).partnerDescription ||
+                  shopifyMigrationWhyChoose.partnerDescription,
+                partnerLogo:
+                  resolveMediaUrl((prBlock as { partnerLogo?: CmsMedia }).partnerLogo) ||
+                  (prBlock as { partnerLogoSrc?: string }).partnerLogoSrc ||
+                  shopifyMigrationWhyChoose.partnerLogo,
+                partnerLogoAlt:
+                  (prBlock as { partnerLogoAlt?: string }).partnerLogoAlt ||
+                  shopifyMigrationWhyChoose.partnerLogoAlt,
+                logoHref:
+                  (prBlock as { logoHref?: string }).logoHref ||
+                  shopifyMigrationWhyChoose.logoHref,
                 items,
                 stats,
               };
@@ -3494,6 +3565,7 @@ export function BlockRenderer({ sections }: BlockRendererProps) {
                 key={blockKey}
                 id={mpBlock.sectionId || "migration-process"}
                 variant={mpBlock.variant || "cards"}
+                titleAlign={(mpBlock as { titleAlign?: "left" | "center" }).titleAlign || undefined}
                 content={{
                   eyebrow: mpBlock.eyebrow,
                   heading: mpBlock.heading,
@@ -3516,6 +3588,24 @@ export function BlockRenderer({ sections }: BlockRendererProps) {
                       ),
                     })),
                   })),
+                }}
+              />
+            );
+          }
+
+          case "industry-custom-dev": {
+            const icdBlock = block as unknown as BlockIndustryCustomDevelopment;
+            const items = (icdBlock.items ?? [])
+              .map((item) => (typeof item === "string" ? item : item.text || ""))
+              .filter(Boolean);
+            return (
+              <IndustryCustomDevelopmentSection
+                key={blockKey}
+                content={{
+                  eyebrow: icdBlock.eyebrow,
+                  heading: icdBlock.heading || "",
+                  description: icdBlock.description || "",
+                  items,
                 }}
               />
             );

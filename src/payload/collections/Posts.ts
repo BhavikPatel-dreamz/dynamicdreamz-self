@@ -107,7 +107,36 @@ export const Posts: CollectionConfig = {
       fields: [
         { name: "metaTitle", type: "text" },
         { name: "metaDescription", type: "textarea" },
-        { name: "canonicalUrl", type: "text" },
+        {
+          name: "canonicalUrl",
+          type: "text",
+          label: "Canonical Path / Slug (e.g. /blogs/my-post)",
+          admin: {
+            description: "Stores only the relative path (e.g. /blogs/my-post). Domains are automatically stripped.",
+            placeholder: "/blogs/post-slug",
+          },
+          hooks: {
+            beforeChange: [
+              ({ value, data }) => {
+                if (!value) {
+                  const slug = typeof data?.slug === "string" ? data.slug.trim().replace(/^\/+|\/+$/g, "") : "";
+                  return slug ? `/blogs/${slug}` : "/blogs";
+                }
+                let cleaned = String(value).trim();
+                if (cleaned.startsWith("http://") || cleaned.startsWith("https://")) {
+                  try {
+                    const u = new URL(cleaned);
+                    cleaned = u.pathname || "/blogs";
+                  } catch {
+                    cleaned = cleaned.replace(/^https?:\/\/[^/]+/i, "") || "/blogs";
+                  }
+                }
+                const normalized = cleaned.startsWith("/") ? cleaned : `/${cleaned}`;
+                return normalized === "/" ? "/" : normalized.replace(/\/+$/, "");
+              },
+            ],
+          },
+        },
         { name: "metaImage", type: "upload", relationTo: "media" },
       ],
     },

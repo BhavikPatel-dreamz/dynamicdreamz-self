@@ -537,6 +537,9 @@ export interface Post {
   seo?: {
     metaTitle?: string | null;
     metaDescription?: string | null;
+    /**
+     * Stores only the relative path (e.g. /blogs/my-post). Domains are automatically stripped.
+     */
     canonicalUrl?: string | null;
     metaImage?: (number | null) | Media;
   };
@@ -665,6 +668,9 @@ export interface CaseStudy {
   seo?: {
     metaTitle?: string | null;
     metaDescription?: string | null;
+    /**
+     * Stores only the relative path (e.g. /case-studies/my-study). Domains are automatically stripped.
+     */
     canonicalUrl?: string | null;
     metaImage?: (number | null) | Media;
   };
@@ -830,6 +836,7 @@ export interface Page {
             brands?:
               | {
                   name?: string | null;
+                  row?: ('1' | '2') | null;
                   logo?: (number | null) | Media;
                   src?: string | null;
                   alt?: string | null;
@@ -935,6 +942,7 @@ export interface Page {
               | null;
             cardVariant?: ('green' | 'yellow' | 'transparent' | 'services-box') | null;
             columns?: ('2' | '3' | '4') | null;
+            headerLayout?: ('centered' | 'split') | null;
             sectionId?: string | null;
             className?: string | null;
             themeSlug?: string | null;
@@ -1013,6 +1021,7 @@ export interface Page {
                   imageAlt?: string | null;
                   category?: string | null;
                   metrics?: string | null;
+                  tags?: string | null;
                   id?: string | null;
                 }[]
               | null;
@@ -1063,6 +1072,12 @@ export interface Page {
                   id?: string | null;
                 }[]
               | null;
+            partnerHeading?: string | null;
+            partnerDescription?: string | null;
+            partnerLogo?: (number | null) | Media;
+            partnerLogoSrc?: string | null;
+            partnerLogoAlt?: string | null;
+            logoHref?: string | null;
             id?: string | null;
             blockName?: string | null;
             blockType: 'proof-stats';
@@ -1794,6 +1809,7 @@ export interface Page {
             heading: string;
             description?: string | null;
             sectionId?: string | null;
+            titleAlign?: ('left' | 'center') | null;
             variant?: ('cards' | 'default') | null;
             steps?:
               | {
@@ -1832,11 +1848,28 @@ export interface Page {
             blockName?: string | null;
             blockType: 'migration-process';
           }
+        | {
+            eyebrow?: string | null;
+            heading: string;
+            description: string;
+            items?:
+              | {
+                  text: string;
+                  id?: string | null;
+                }[]
+              | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'industry-custom-dev';
+          }
       )[]
     | null;
   seo?: {
     metaTitle?: string | null;
     metaDescription?: string | null;
+    /**
+     * Stores only the relative page path (e.g. /beauty-cosmetics). Domains like https://www.dynamicdreamz.com or localhost are automatically stripped.
+     */
     canonicalUrl?: string | null;
     metaImage?: (number | null) | Media;
   };
@@ -2892,6 +2925,7 @@ export interface PagesSelect<T extends boolean = true> {
                 | T
                 | {
                     name?: T;
+                    row?: T;
                     logo?: T;
                     src?: T;
                     alt?: T;
@@ -2991,6 +3025,7 @@ export interface PagesSelect<T extends boolean = true> {
               variant?: T;
               cardVariant?: T;
               columns?: T;
+              headerLayout?: T;
               sectionId?: T;
               className?: T;
               themeSlug?: T;
@@ -3075,6 +3110,7 @@ export interface PagesSelect<T extends boolean = true> {
                     imageAlt?: T;
                     category?: T;
                     metrics?: T;
+                    tags?: T;
                     id?: T;
                   };
               id?: T;
@@ -3114,6 +3150,12 @@ export interface PagesSelect<T extends boolean = true> {
                     iconAlt?: T;
                     id?: T;
                   };
+              partnerHeading?: T;
+              partnerDescription?: T;
+              partnerLogo?: T;
+              partnerLogoSrc?: T;
+              partnerLogoAlt?: T;
+              logoHref?: T;
               id?: T;
               blockName?: T;
             };
@@ -3861,6 +3903,7 @@ export interface PagesSelect<T extends boolean = true> {
               heading?: T;
               description?: T;
               sectionId?: T;
+              titleAlign?: T;
               variant?: T;
               steps?:
                 | T
@@ -3893,6 +3936,21 @@ export interface PagesSelect<T extends boolean = true> {
                               };
                           id?: T;
                         };
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        'industry-custom-dev'?:
+          | T
+          | {
+              eyebrow?: T;
+              heading?: T;
+              description?: T;
+              items?:
+                | T
+                | {
+                    text?: T;
                     id?: T;
                   };
               id?: T;

@@ -45,6 +45,7 @@ import { MobileAppComparisonBlock } from "@/payload/blocks/MobileAppComparisonBl
 import { SeoSafeMigrationBlock } from "@/payload/blocks/SeoSafeMigrationBlock";
 import { ThemeCustomizationApproachBlock } from "@/payload/blocks/ThemeCustomizationApproachBlock";
 import { MigrationProcessBlock } from "@/payload/blocks/MigrationProcessBlock";
+import { IndustryCustomDevelopmentBlock } from "@/payload/blocks/IndustryCustomDevelopmentBlock";
 import { previewDraftPath } from "@/lib/preview-url";
 import { safeRevalidatePath } from "@/lib/revalidate";
 
@@ -152,6 +153,7 @@ export const Pages: CollectionConfig = {
         SeoSafeMigrationBlock,
         ThemeCustomizationApproachBlock,
         MigrationProcessBlock,
+        IndustryCustomDevelopmentBlock,
       ],
     },
     {
@@ -160,7 +162,36 @@ export const Pages: CollectionConfig = {
       fields: [
         { name: "metaTitle", type: "text" },
         { name: "metaDescription", type: "textarea" },
-        { name: "canonicalUrl", type: "text" },
+        {
+          name: "canonicalUrl",
+          type: "text",
+          label: "Canonical Path / Slug (e.g. /beauty-cosmetics)",
+          admin: {
+            description: "Stores only the relative page path (e.g. /beauty-cosmetics). Domains like https://www.dynamicdreamz.com or localhost are automatically stripped.",
+            placeholder: "/page-slug",
+          },
+          hooks: {
+            beforeChange: [
+              ({ value, data }) => {
+                if (!value) {
+                  const slug = typeof data?.slug === "string" ? data.slug.trim().replace(/^\/+|\/+$/g, "") : "";
+                  return slug ? (slug === "home" || slug === "index" ? "/" : `/${slug}`) : "/";
+                }
+                let cleaned = String(value).trim();
+                if (cleaned.startsWith("http://") || cleaned.startsWith("https://")) {
+                  try {
+                    const u = new URL(cleaned);
+                    cleaned = u.pathname || "/";
+                  } catch {
+                    cleaned = cleaned.replace(/^https?:\/\/[^/]+/i, "") || "/";
+                  }
+                }
+                const normalized = cleaned.startsWith("/") ? cleaned : `/${cleaned}`;
+                return normalized === "/" ? "/" : normalized.replace(/\/+$/, "");
+              },
+            ],
+          },
+        },
         { name: "metaImage", type: "upload", relationTo: "media" },
       ],
     },

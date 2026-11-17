@@ -35,10 +35,11 @@ and responsive screenshots before claiming a section matches the live site.
 - React: 19.2.8
 - Styling: Tailwind CSS 4 via `@tailwindcss/postcss`
 - Language: TypeScript
-- Current state: fresh starter app with `src/app/page.tsx`,
-  `src/app/layout.tsx`, and starter public SVG assets
-- Existing scripts: `npm run dev`, `npm run build`, `npm run start`,
-  `npm run lint`
+- Current state: Fully migrated Next.js App Router application with Payload CMS 3
+  (Neon PostgreSQL), dedicated media server (https://media.dynamicdreamz.net),
+  47 modular page blocks, 93+ seeded pages, 58 case studies, and 119 blog posts
+- Core verification scripts: `npm run dev`, `npm run build`, `npm run lint`,
+  `npm run check:urls`, `npm run check:component-content`, `npm run check:payload-blocks`
 - `CLAUDE.md` points to `AGENTS.md`, so shared agent instructions belong in
   `AGENTS.md`
 

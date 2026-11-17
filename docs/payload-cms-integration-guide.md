@@ -405,10 +405,9 @@ npm run lint
 
 ---
 
-## 10. Non-Technical Operations Runbook
+## 10. Operations & Content Management
 
-For non-technical team members, editors, and clients managing pages, menus, or blog posts via the Admin Panel:
-> Refer to the dedicated guide: **[`docs/wordpress-team-operations-runbook.md`](wordpress-team-operations-runbook.md)**.
+Content editors manage pages, menus, blog posts, and testimonials directly via the Admin Panel at `/admin`. Structured content and SEO fields are populated using Payload collections, while React handles all visual presentation, layouts, and styling.
 
 ---
 

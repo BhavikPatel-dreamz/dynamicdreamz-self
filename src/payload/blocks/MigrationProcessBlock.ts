@@ -30,6 +30,15 @@ export const MigrationProcessBlock: Block = {
       label: "HTML Section ID",
     },
     {
+      name: "titleAlign",
+      type: "select",
+      defaultValue: "left",
+      options: [
+        { label: "Left Aligned", value: "left" },
+        { label: "Center Aligned", value: "center" },
+      ],
+    },
+    {
       name: "variant",
       type: "select",
       defaultValue: "cards",
