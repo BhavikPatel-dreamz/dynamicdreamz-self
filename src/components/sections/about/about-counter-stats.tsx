@@ -61,10 +61,10 @@ export function AboutCounterStats({ statistics }: AboutCounterStatsProps) {
 
         return (
           <div
-            className="w-max border-l border-white/25 pl-[30px] text-left first:ml-0 first:border-l-0 first:pl-0 not-first:ml-[30px] max-[1200px]:pl-5 max-[1200px]:not-first:ml-5 max-[992px]:text-center max-[359px]:pl-2.5 max-[359px]:not-first:ml-2.5"
+            className="w-max border-l border-white/25 pl-[30px] text-left first:ml-0 first:border-l-0 first:pl-0 not-first:ml-[30px] max-[1200px]:pl-5 max-[1200px]:not-first:ml-5 max-[768px]:pl-[15px] max-[768px]:not-first:ml-[15px] max-[992px]:text-center"
             key={stat.label}
           >
-            <dt className="mb-3 text-[16px] leading-[18.4px] font-bold text-white/60 uppercase max-[1200px]:text-[14px] max-[768px]:mb-0 max-[768px]:text-[10px] max-[359px]:text-[9px]">
+            <dt className="mb-3 text-[16px] leading-[18.4px] font-bold text-white/60 uppercase max-[1200px]:text-[14px] max-[768px]:mb-0 max-[768px]:text-[9px] max-[768px]:leading-[14px]">
               {stat.label}
             </dt>
             <dd

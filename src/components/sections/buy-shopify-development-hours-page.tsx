@@ -25,6 +25,7 @@ export function BuyShopifyDevelopmentHoursPage() {
       <ThemeCustomizationServicesSection
         content={shopifyHoursCommitments}
         variant="transparent"
+        className="pt-0"
       />
       <ShopifyTeamBoxesSection content={shopifyHoursAudiences} />
       <ShopifyHoursComparisonSection />

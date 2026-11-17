@@ -62,7 +62,7 @@ export function OurWorkCaseStudiesSection({
                         href={`/case-studies/${item.slug}`}
                       >
                         <div className="cs-cate-wrapp mb-2.5">
-                          <span className="font-montserrat text-[10px] font-bold uppercase tracking-[0.8px] text-[#ad5151]">
+                          <span className="font-montserrat text-[10px] font-bold uppercase tracking-[0.8px] text-[#ad5151] line-clamp-1">
                             {item.category}
                           </span>
                         </div>

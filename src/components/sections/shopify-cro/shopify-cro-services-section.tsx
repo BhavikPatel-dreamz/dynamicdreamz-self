@@ -69,7 +69,7 @@ export function ShopifyCroServicesSection({
                 <h3 className="h4 mb-5 font-display text-lg font-small leading-[26px] text-ink">
                   {item.title}
                 </h3>
-                <p className="m-0 font-sans text-sm font-medium leading-[190%] text-muted">
+                <p className="m-0 font-sans text-sm font-small leading-6 text-muted">
                   {item.description}
                 </p>
               </div>

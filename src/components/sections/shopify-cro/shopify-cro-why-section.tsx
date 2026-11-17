@@ -56,7 +56,7 @@ export function ShopifyCroWhySection({
                   {content.points.map((point) => (
                     <li
                       key={point}
-                      className="mb-[17px] border-b border-black/10 bg-[url('/assets/shopify-cro-agency/assessment/list-arrow.svg')] bg-[length:16px] bg-[left_top_5px] bg-no-repeat pb-[17px] pl-[25px] font-sans text-base font-semibold leading-[128%] text-ink last:mb-0 last:border-b-0 last:pb-0 max-[768px]:text-sm"
+                      className="mb-[17px] border-b border-black/10 bg-[url('/assets/shopify-cro-agency/assessment/list-arrow.svg')] bg-[length:16px] bg-[left_top_5px] bg-no-repeat pb-[17px] pl-[25px] font-sans text-base font-semibold leading-[128%] text-ink last:mb-0 last:border-b-0 last:pb-0"
                     >
                       {point}
                     </li>

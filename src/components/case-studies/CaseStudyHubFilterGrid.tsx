@@ -135,7 +135,7 @@ export function CaseStudiesListing({ content }: CaseStudiesListingProps) {
       <div id="explore_case_studies" className="cs-main-wrapp bg-[#eff4ef] px-0 pt-[54px] pb-[120px] max-[1200px]:pt-[50px] max-[1200px]:pb-10 max-[992px]:pt-10 max-[992px]:pb-[30px]">
         <Container>
           <div className="cs-filter-main">
-            <div className="mx-auto max-w-[1170px]">
+            <div className="mx-auto max-w-[1170px] max-[768px]:px-4">
               <div className="cs-filter grid grid-cols-[minmax(260px,1fr)_260px_260px] items-center gap-3 rounded-[20px] border-[1.5px] border-[rgba(18,18,18,0.1)] bg-white p-[13px] shadow-[0_8px_30px_rgba(40,40,40,0.04)] max-[992px]:grid-cols-2 max-[992px]:gap-[13px] max-[768px]:grid-cols-1 max-[768px]:gap-2.5 max-[768px]:p-[15px] max-[768px]:rounded-[10px]">
                 <label className="cs-search relative w-full max-[992px]:col-span-2 max-[768px]:col-span-1">
                   <span className="sr-only">{caseStudiesUiCopy.searchLabel}</span>
@@ -151,7 +151,7 @@ export function CaseStudiesListing({ content }: CaseStudiesListingProps) {
 
           <SplitSectionHeading
             className="cs-section-title mt-[54px] border-t border-black/10 pt-[54px] max-[992px]:mt-5 max-[992px]:pt-5"
-            pClassName="font-semibold"
+            pClassName="font-semibold text-[16px] leading-[30.4px] max-[1200px]:leading-[30.4px] max-[768px]:leading-[30.4px]"
             description={sectionTitle.description}
             eyebrow={sectionTitle.eyebrow}
             heading={sectionTitle.heading}

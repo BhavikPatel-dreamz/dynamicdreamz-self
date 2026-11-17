@@ -71,10 +71,9 @@ export function VideoDialog({
           <Image className="object-cover w-full h-full rounded-[15px]" src={poster} alt={posterAlt} fill sizes={sizes} />
         </div>
         {overlay ? (
-          <div className={cn("image-text min-h-13.5 flex flex-col items-center justify-center text-center z-10 lg:px-[30px] lg:pt-[30px] lg:pb-[50px] sm:p-7.5 px-5 py-3", overlayClassName)} aria-hidden="true">
+          <div className={cn("image-text min-h-13.5 flex flex-col items-center justify-center text-center z-10 px-[30px] pt-[30px] pb-[50px] max-[992px]:p-[30px] max-[768px]:px-5 max-[768px]:py-3", overlayClassName)} aria-hidden="true">
             <Image
-              className="w-auto h-auto max-w-full"
-              style={overlayWidth ? { maxWidth: `${overlayWidth}px` } : undefined}
+              className="h-auto max-w-full"
               src={overlay}
               alt=""
               width={overlayWidth ?? 940}

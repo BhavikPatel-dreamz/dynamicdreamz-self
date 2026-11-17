@@ -32,6 +32,7 @@ export function ShopifyCroAssessmentSection({
             description={content.description}
             heading={content.heading}
             variant="centered"
+            pClassName="max-[1200px]:text-[16px] max-[1200px]:leading-7"
           />
 
           <ul className="-m-1.5 flex flex-wrap justify-center p-0 list-none">

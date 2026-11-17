@@ -32,7 +32,7 @@ export function PricingPackageSelector({
 
   return (
     <div className="pricing-slider-card rounded-[25px] border-[1.5px] border-black/10 p-[39px_24px_24px] max-[768px]:p-[20px_15px]" data-pricing-selector>
-      <h3 className="border-b border-[#dedbd2] px-2.5 pb-[25px] text-center font-display text-xl leading-[28.8px] font-normal tracking-[-0.4px] max-[1200px]:text-lg max-[1200px]:leading-[26px]">
+      <h3 className="border-b border-[#dedbd2] px-2.5 pb-[25px] text-center font-display text-xl leading-[28.8px] font-normal tracking-[-0.4px] max-[992px]:text-lg max-[992px]:leading-[26px]">
         {heading.prefix} <span className="text-brand-red">{heading.accent}</span>{" "}
         {heading.suffix}
       </h3>
@@ -88,7 +88,7 @@ export function PricingPackageSelector({
             value={selectedIndex}
           />
         </div>
-        <div className="slider-labels mt-[15px] flex justify-between text-sm leading-[16.8px] font-semibold tracking-[-0.28px] text-ink/80 max-[475px]:text-[11px]">
+        <div className="slider-labels mt-[15px] flex justify-between text-sm leading-[16.8px] font-semibold tracking-[-0.28px] text-ink/80">
           {packages.map((item) => (
             <span key={item.hours}>{item.hours} {shopifyHoursSectionCopy.pricing.hoursSuffix}</span>
           ))}

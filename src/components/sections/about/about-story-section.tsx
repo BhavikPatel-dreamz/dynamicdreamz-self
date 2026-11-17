@@ -30,6 +30,7 @@ export function AboutStorySection({
         <SplitSectionHeading
           heading={title}
           description={description}
+          variant="left"
         />
 
         <div

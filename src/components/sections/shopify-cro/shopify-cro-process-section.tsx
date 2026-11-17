@@ -31,16 +31,16 @@ export function ShopifyCroProcessSection({
     <section className={className}>
       <Container>
         <SplitSectionHeading
-          
           description={content.description}
           eyebrow={content.eyebrow}
           heading={content.heading}
           preserveBreaks
+          variant="left"
         />
 
         <div
           data-aos="fade-up"
-          className="wrapper -mx-5 -mb-[30px] flex flex-wrap max-[1200px]:-mx-2.5 max-[768px]:m-0 max-[768px]:ml-[5px] max-[768px]:flex-col max-[768px]:border-l-2 max-[768px]:border-[#AD5151] max-[768px]:pl-5"
+          className="wrapper -mx-5 -mb-[30px] flex max-[1200px]:-mx-2.5 max-[768px]:m-0 max-[768px]:ml-[5px] max-[768px]:flex-col max-[768px]:border-l-2 max-[768px]:border-[#AD5151] max-[768px]:pl-5"
         >
           {content.steps.map((step, idx) => {
             const isLast = idx === content.steps.length - 1;
@@ -81,7 +81,7 @@ export function ShopifyCroProcessSection({
                       className="absolute top-1/2 -left-[26px] hidden size-2.5 -translate-y-1/2 rounded-full bg-[#AD5151] max-[768px]:block"
                     />
                   </div>
-                  <h3 className="mb-2.5 font-display text-[20px] font-small leading-[1.28] text-ink max-[768px]:text-base">
+                  <h3 className="mb-2.5 font-display text-[20px] font-small leading-[28.8px] text-ink max-[992px]:text-lg max-[992px]:leading-[26px]" >
                     {step.title}
                   </h3>
                   <p className="m-0 font-sans text-sm font-small leading-[190%] text-muted">

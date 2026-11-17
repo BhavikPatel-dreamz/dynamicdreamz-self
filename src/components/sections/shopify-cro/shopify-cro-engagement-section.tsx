@@ -49,7 +49,7 @@ export function ShopifyCroEngagementSection({
             >
               <div className="shopify-cro-engagement-box flex h-full flex-col justify-between rounded-[30px] border border-[rgba(40,40,40,0.10)] bg-white p-[25px] shadow-none">
                 <div>
-                  <div className="content-box relative mb-[26px] pb-[26px] before:absolute before:bottom-0 before:left-0 before:h-[1.5px] before:w-full before:bg-[linear-gradient(90deg,rgba(173,81,81,0)_0%,#AD5151_50.18%,rgba(173,81,81,0)_100%)]">
+                  <div className="content-box relative mb-[26px] pb-[26px] before:absolute before:bottom-0 before:left-0 before:h-[1.5px] before:w-full before:bg-[linear-gradient(90deg,rgba(173,81,81,0)_0%,#AD5151_50.18%,rgba(173,81,81,0)_100%)] max-[1200px]:before:h-[2px] max-[1200px]:before:bg-[linear-gradient(90deg,rgba(173,81,81,0)_0%,#9F4646_50%,rgba(173,81,81,0)_100%)]">
                     <span className="icon mb-6 inline-block size-10">
                       <Image
                         src={item.icon}

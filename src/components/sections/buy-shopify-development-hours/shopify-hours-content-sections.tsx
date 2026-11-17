@@ -42,7 +42,7 @@ export function ShopifyHoursComparisonSection({
                 <span>{eyebrow}</span>
               </Eyebrow>
               <h2
-                className="font-montreal-medium text-[35px] font-normal leading-[49px] tracking-normal text-ink max-[992px]:text-[30px] max-[992px]:leading-[42px] max-[992px]:mb-2.5 max-[768px]:text-2xl max-[768px]:leading-[31.2px]"
+                className="font-montreal-medium text-[35px] font-normal leading-[49px] tracking-normal text-ink max-[992px]:text-[30px] max-[992px]:leading-[42px] max-[768px]:text-2xl max-[768px]:leading-[31.2px]"
                 id="shopify-hours-comparison-title"
               >
                 {heading}
