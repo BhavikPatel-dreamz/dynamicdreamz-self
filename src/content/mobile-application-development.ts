@@ -135,33 +135,39 @@ export const mobileAppWhatWeBuildCopy = {
     "We work across customer experiences, operational tools and connected commerce. The architecture is selected around the product rather than forcing every project into the same framework.",
 };
 
-export const mobileAppWhatWeBuildBoxes: readonly Omit<ThemeCustomizationBox, "icon">[] = [
+export const mobileAppWhatWeBuildBoxes: readonly ThemeCustomizationBox[] = [
   {
+    icon: "utility",
     title: "Utility & Business Apps",
     description:
       "Workflow tools, calculators, dashboards, field-service apps, internal operations and task-driven products.",
   },
   {
+    icon: "consumer",
     title: "Consumer Mobile Apps",
     description:
       "Customer-facing applications for services, content, communities, memberships, lifestyle and digital products.",
   },
   {
+    icon: "booking",
     title: "Booking & Service Apps",
     description:
       "Appointments, scheduling, service requests, notifications, account management and location-aware workflows.",
   },
   {
+    icon: "marketplace",
     title: "Marketplace & Platform Apps",
     description:
       "Multi-user products connecting customers, providers, vendors or other participant groups.",
   },
   {
+    icon: "ecommerce",
     title: "Ecommerce Mobile Apps",
     description:
       "Shopping apps with products, accounts, cart, checkout, loyalty, subscriptions and marketing integrations.",
   },
   {
+    icon: "shopify-store-to-mobile-app",
     title: "Shopify Store to Mobile App",
     description:
       "A custom iOS and Android experience connected to an existing Shopify store and its commerce data.",
@@ -176,33 +182,39 @@ export const mobileAppLifecycleServicesCopy = {
     "From product definition through development, integrations, QA and ongoing updates, our team can support the complete mobile product lifecycle or join at the stage where you need additional capability.",
 };
 
-export const mobileAppLifecycleServicesBoxes: readonly Omit<ThemeCustomizationBox, "icon">[] = [
+export const mobileAppLifecycleServicesBoxes: readonly ThemeCustomizationBox[] = [
   {
+    icon: "discovery",
     title: "Product Discovery, Wireframes & UI/UX",
     description:
       "Translate business goals into user flows, wireframes, clickable prototypes and a mobile-first interface system.",
   },
   {
+    icon: "native-ios",
     title: "iOS App Development",
     description:
       "Build iPhone and iPad applications using native Apple technology or a suitable shared architecture.",
   },
   {
+    icon: "native-android",
     title: "Android App Development",
     description:
       "Develop Android applications using native Kotlin/Compose or a suitable shared architecture.",
   },
   {
+    icon: "cross-platform",
     title: "Cross-Platform App Development",
     description:
       "Use React Native or Flutter when a shared iOS and Android foundation is the right technical and commercial fit.",
   },
   {
+    icon: "backend",
     title: "Backend, APIs & Integrations",
     description:
       "Connect authentication, payments, CRM, ERP, maps, notifications, analytics, AI services and custom backends.",
   },
   {
+    icon: "qa-launch-support",
     title: "QA, App Store / Play Store Launch & Support",
     description:
       "Test important journeys, support release preparation and continue with app updates and new features.",
@@ -362,18 +374,22 @@ export const mobileAppWhyChooseCopy = {
     "Mobile apps rarely live in isolation. Our in-house teams can support UI/UX, backend APIs, ecommerce, full-stack development, QA and ongoing maintenance around the application.",
   items: [
     {
+      icon: "cross-platform" as const,
       description:
         "Designers and developers work together from flows and prototypes through implementation.",
     },
     {
+      icon: "backend" as const,
       description:
         "APIs, authentication, databases, business systems and admin tools can stay with the same delivery team.",
     },
     {
+      icon: "shield" as const,
       description:
-        "Important application journeys are tested across relevant devices, integrations and release conditions.",
+        "Important application journeys are tested across relevant devices, integrations and release candidates.",
     },
     {
+      icon: "update" as const,
       description:
         "Continue with OS changes, releases, new features, integrations and product evolution after launch.",
     },

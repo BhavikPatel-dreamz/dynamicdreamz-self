@@ -86,4 +86,11 @@ export const indexNowApiCopy = {
   missingUrls: "Missing or invalid urlList",
 } as const;
 
+export const mobileAppSharedCopy = {
+  discussApp: "Discuss Your App",
+  androidApp: "Android App",
+  iosApp: "IOS App",
+} as const;
+
+
 

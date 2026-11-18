@@ -4,6 +4,7 @@ import Link from "next/link";
 import { Container } from "@/components/ui/container";
 import { SplitSectionHeading } from "@/components/ui/split-section-heading";
 import { cn } from "@/lib/class-names";
+import { resolveMobileAppIcon } from "@/lib/theme-icon-resolver";
 
 export type WhyChooseMigrationItem = {
   icon?:
@@ -51,6 +52,9 @@ export type WhyChooseShopifyMigrationSectionProps = {
 };
 
 function MigrationFeatureIcon({ icon }: { icon: string }) {
+  const mobileIcon = resolveMobileAppIcon(icon);
+  if (mobileIcon) return mobileIcon;
+
   if (icon === "certified") {
     return (
       <svg
@@ -452,13 +456,13 @@ export function WhyChooseShopifyMigrationSection({
             data-aos="fade-up"
             className="left-col flex w-1/2 flex-col px-2.5 max-[992px]:w-full max-[992px]:px-0"
           >
-            {content.items.map((item) => (
+            {content.items.map((item, idx) => (
               <div
                 className="item-box mb-3 flex h-full items-start rounded-[20px] border border-[rgba(40,40,40,0.1)] bg-white p-5 last:mb-0 max-[768px]:rounded-[12px] max-[768px]:p-[20px_15px]"
-                key={item.title ?? item.description}
+                key={item.title || item.description || `why-choose-${idx}`}
               >
                 <div className="icon mr-5 flex size-10 shrink-0 items-center justify-center rounded-[10px] bg-[#EFF4EF] p-2.5 text-sm font-semibold leading-normal max-[768px]:mr-2.5">
-                  {item.iconSvg ?? (item.icon ? <MigrationFeatureIcon icon={item.icon} /> : null)}
+                  {item.iconSvg ?? (item.icon ? <MigrationFeatureIcon icon={item.icon} /> : (item.title ? resolveMobileAppIcon(item.title) : null))}
                 </div>
                 <div className="text">
                   {item.title ? (

@@ -46,6 +46,10 @@ import { SeoSafeMigrationBlock } from "@/payload/blocks/SeoSafeMigrationBlock";
 import { ThemeCustomizationApproachBlock } from "@/payload/blocks/ThemeCustomizationApproachBlock";
 import { MigrationProcessBlock } from "@/payload/blocks/MigrationProcessBlock";
 import { IndustryCustomDevelopmentBlock } from "@/payload/blocks/IndustryCustomDevelopmentBlock";
+import { ShopifyAppBenefitsBlock } from "@/payload/blocks/ShopifyAppBenefitsBlock";
+import { ShopifyMobileAppDtcBlock } from "@/payload/blocks/ShopifyMobileAppDtcBlock";
+import { ShopifyMobileAppExperienceBlock } from "@/payload/blocks/ShopifyMobileAppExperienceBlock";
+import { MobileAppWorkBlock } from "@/payload/blocks/MobileAppWorkBlock";
 import { previewDraftPath } from "@/lib/preview-url";
 import { safeRevalidatePath } from "@/lib/revalidate";
 
@@ -154,6 +158,10 @@ export const Pages: CollectionConfig = {
         ThemeCustomizationApproachBlock,
         MigrationProcessBlock,
         IndustryCustomDevelopmentBlock,
+        ShopifyAppBenefitsBlock,
+        ShopifyMobileAppDtcBlock,
+        ShopifyMobileAppExperienceBlock,
+        MobileAppWorkBlock,
       ],
     },
     {

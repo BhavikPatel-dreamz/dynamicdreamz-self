@@ -83,7 +83,8 @@ export function ShopifyMobileAppDtcSection({
                             alt={badge.alt}
                             width={badge.width}
                             height={badge.height}
-                            className="h-auto max-w-[140px] max-[1200px]:max-w-full"
+                            className="max-w-[140px] max-[1200px]:max-w-full"
+                            style={{ width: "auto", height: "auto" }}
                           />
                         </a>
                       </div>

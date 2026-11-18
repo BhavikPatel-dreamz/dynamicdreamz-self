@@ -56,12 +56,13 @@ function MenuIcon({ item }: { item: MegaMenuItem }) {
   return (
     <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center" aria-hidden="true">
       <Image
-        className="h-full w-full object-contain"
+        className="max-h-full max-w-full object-contain"
         src={item.icon.src}
         alt=""
         width={item.icon.width}
         height={item.icon.height}
         sizes="20px"
+        style={{ width: "auto", height: "auto" }}
       />
     </span>
   );
@@ -307,11 +308,12 @@ function MobileItemIcon({ item }: { item: MegaMenuItem }) {
   return (
     <span className="flex h-5 w-5 shrink-0 items-center justify-center" aria-hidden="true">
       <Image
-        className="h-full w-full object-contain"
+        className="max-h-full max-w-full object-contain"
         src={item.icon.src}
         alt=""
         width={item.icon.width}
         height={item.icon.height}
+        style={{ width: "auto", height: "auto" }}
       />
     </span>
   );

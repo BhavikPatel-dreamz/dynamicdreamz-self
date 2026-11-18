@@ -130,36 +130,39 @@ export const crossPlatformAppDevelopmentWhatWeBuildCopy = {
     "React Native and Flutter can support a broad range of products, from business utilities and mobile services to customer apps and connected commerce.",
 };
 
-export const crossPlatformAppDevelopmentWhatWeBuildBoxes: readonly Omit<
-  ThemeCustomizationBox,
-  "icon"
->[] = [
+export const crossPlatformAppDevelopmentWhatWeBuildBoxes: readonly ThemeCustomizationBox[] = [
   {
+    icon: "utility",
     title: "Business & Utility Apps",
     description:
       "Operational tools, staff apps, calculators, dashboards, service workflows and task-driven products.",
   },
   {
+    icon: "consumer",
     title: "Consumer Products",
     description:
       "Lifestyle, content, wellness, community, membership and customer-facing applications.",
   },
   {
+    icon: "booking",
     title: "Booking & On-Demand Apps",
     description:
       "Appointments, service requests, location-aware flows, notifications and account experiences.",
   },
   {
+    icon: "marketplace",
     title: "Marketplace Apps",
     description:
       "Multi-user products for customers, vendors, providers or other participant groups.",
   },
   {
+    icon: "ecommerce",
     title: "Ecommerce Apps",
     description:
       "Mobile shopping experiences with catalog, customer, cart, checkout and retention integrations.",
   },
   {
+    icon: "shopify-mobile-apps",
     title: "Shopify Mobile Apps",
     description:
       "React Native or Flutter applications connected to Shopify when custom commerce journeys are required.",
@@ -174,36 +177,39 @@ export const crossPlatformAppDevelopmentLifecycleServicesCopy = {
     "From product definition through development, integrations, QA and ongoing updates, our team can support the complete mobile product lifecycle or join at the stage where you need additional capability.",
 };
 
-export const crossPlatformAppDevelopmentLifecycleServicesBoxes: readonly Omit<
-  ThemeCustomizationBox,
-  "icon"
->[] = [
+export const crossPlatformAppDevelopmentLifecycleServicesBoxes: readonly ThemeCustomizationBox[] = [
   {
+    icon: "react-native",
     title: "React Native App Development",
     description:
       "Build iOS and Android applications with a shared React Native foundation and platform-specific code where needed.",
   },
   {
+    icon: "flutter",
     title: "Flutter App Development",
     description:
       "Develop cross-platform applications using Flutter for responsive, maintainable multi-platform UI.",
   },
   {
+    icon: "prototyping",
     title: "Prototyping, Wireframes & UI/UX",
     description:
       "Define journeys, interfaces and interactive prototypes before full application development.",
   },
   {
+    icon: "backend",
     title: "Backend & API Development",
     description:
       "Build or connect authentication, data services, payments, notifications, analytics and business-system integrations.",
   },
   {
+    icon: "native-modules",
     title: "Native Module & SDK Integration",
     description:
       "Connect platform-specific SDKs and device capabilities such as maps, camera, location, biometrics or notifications.",
   },
   {
+    icon: "qa-updates",
     title: "QA, Maintenance & App Updates",
     description:
       "Test across iOS and Android devices, support releases and continue with upgrades, fixes and roadmap development.",
@@ -387,18 +393,22 @@ export const crossPlatformAppDevelopmentWhyChooseCopy = {
     "Mobile apps rarely live in isolation. Our in-house teams can support UI/UX, backend APIs, ecommerce, full-stack development, QA and ongoing maintenance around the application.",
   items: [
     {
+      icon: "cross-platform" as const,
       description:
         "Designers and developers work together from flows and prototypes through implementation.",
     },
     {
+      icon: "backend" as const,
       description:
         "APIs, authentication, databases, business systems and admin tools can stay with the same delivery team.",
     },
     {
+      icon: "shield" as const,
       description:
-        "Important application journeys are tested across relevant devices, integrations and release conditions.",
+        "Important application journeys are tested across relevant devices, integrations and release candidates.",
     },
     {
+      icon: "update" as const,
       description:
         "Continue with OS changes, releases, new features, integrations and product evolution after launch.",
     },

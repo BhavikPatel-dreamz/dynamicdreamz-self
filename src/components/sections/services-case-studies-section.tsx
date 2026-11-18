@@ -58,9 +58,9 @@ export function ServicesCaseStudiesSection({
         />
 
         <div className="cs-listing-main three-col -mb-5 flex flex-wrap justify-between">
-          {items.map((item) => (
+          {items.map((item, index) => (
             <article
-              key={item.href}
+              key={`${item.href || "cs"}-${item.title || index}-${index}`}
               data-aos="fade-up"
               className="cs-listing-row relative mb-5 flex min-h-full w-[calc(33.33%-10px)] flex-col overflow-hidden rounded-[20px] border border-[rgba(40,40,40,0.06)] bg-white transition-[0.23s_ease] max-[1200px]:w-[calc(50%-10px)] max-[992px]:w-full"
             >

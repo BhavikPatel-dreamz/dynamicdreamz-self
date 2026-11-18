@@ -51,6 +51,7 @@ export function ShopifyAppProcessSection({
                       height={36}
                       src={step.icon}
                       width={36}
+                      style={{ width: "auto", height: "auto" }}
                     />
                   </div>
                 ) : null}

@@ -6,7 +6,7 @@ import type { Block } from "payload";
  * correctly exposes its corresponding media and settings fields in Payload Admin.
  */
 export const HERO_VIDEO_VARIANTS = ["video"] as const;
-export const HERO_SLIDER_VARIANTS = ["tablet-slider"] as const;
+export const HERO_SLIDER_VARIANTS = ["tablet-slider", "mobile-app"] as const;
 export const HERO_IMAGE_VARIANTS = ["image", "theme", "industry", "life"] as const;
 export const HERO_REVIEWS_VARIANTS = ["reviews", "centered"] as const;
 export const HERO_CENTERED_VARIANTS = ["centered"] as const;
@@ -51,7 +51,20 @@ export const ServiceHeroBlock: Block = {
                 { label: "Resources Hero", value: "resources" },
                 { label: "Shopify Hours Hero", value: "buy-hours" },
                 { label: "Industry Ecommerce Hero", value: "industry" },
+                { label: "Mobile App Hero (Mockup Device & Rating)", value: "mobile-app" },
               ],
+            },
+            {
+              name: "mobileBadgeLayout",
+              type: "select",
+              defaultValue: "divided",
+              options: [
+                { label: "Divided Grid (Default)", value: "divided" },
+                { label: "Single Row (Equal Width)", value: "row" },
+              ],
+              admin: {
+                condition: (data, siblingData) => siblingData?.variant === "mobile-app",
+              },
             },
             {
               name: "backgroundColor",

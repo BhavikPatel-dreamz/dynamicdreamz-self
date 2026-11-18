@@ -130,31 +130,37 @@ export const iosAppDevelopmentWhatWeBuildCopy = {
 export const iosAppDevelopmentWhatWeBuildBoxes: readonly ThemeCustomizationBox[] =
   [
     {
+      icon: "utility",
       title: "Business & Utility Apps",
       description:
         "Operational tools, calculators, internal apps, dashboards and workflow-focused iOS products.",
     },
     {
+      icon: "consumer",
       title: "Consumer Applications",
       description:
         "Lifestyle, content, community, membership, wellness and customer-facing digital products.",
     },
     {
+      icon: "booking",
       title: "Booking & Service Apps",
       description:
         "Appointments, account management, service requests, reminders and location-aware workflows.",
     },
     {
+      icon: "marketplace",
       title: "Marketplace & Platform Apps",
       description:
         "Multi-role iOS experiences connecting users, vendors, providers or other participant groups.",
     },
     {
+      icon: "ecommerce",
       title: "Ecommerce Apps",
       description:
         "Shopping applications with catalog, account, cart, checkout and retention features.",
     },
     {
+      icon: "shopify-ios-apps",
       title: "Shopify iOS Apps",
       description:
         "Custom iPhone and iPad shopping apps connected to Shopify and supported third-party services.",
@@ -172,41 +178,49 @@ export const iosAppDevelopmentLifecycleServicesCopy = {
 export const iosAppDevelopmentLifecycleServicesBoxes: readonly ThemeCustomizationBox[] =
   [
     {
+      icon: "prototyping",
       title: "Prototyping, Wireframes & Mockups",
       description:
         "Visualize application flows and interface direction before development begins.",
     },
     {
+      icon: "native-ios",
       title: "Native iOS App Development",
       description:
         "Develop iPhone and iPad applications using Swift and SwiftUI when native Apple development is the right fit.",
     },
     {
+      icon: "mobile-ui-ux",
       title: "Mobile UI/UX Design",
       description:
         "Design clear, responsive iOS interfaces around product goals and Apple interaction patterns.",
     },
     {
+      icon: "backend",
       title: "Backend & API Development",
       description:
         "Build or connect authentication, databases, payments, notifications, analytics and business systems.",
     },
     {
+      icon: "qa-testing",
       title: "App Testing & Quality Assurance",
       description:
         "Validate important journeys, devices, OS versions, performance and integration behavior before release.",
     },
     {
+      icon: "app-maintenance",
       title: "App Maintenance & Support",
       description:
         "Continue with compatibility updates, bug fixes, new features, analytics and ongoing releases.",
     },
     {
+      icon: "existing-app",
       title: "Existing App Customization",
       description:
         "Modernize an existing iOS app, add features, improve UI or update its technical foundation.",
     },
     {
+      icon: "shopify-cross-platform",
       title: "Shopify & Cross-Platform Extensions",
       description:
         "Connect iOS to Shopify or use React Native / Flutter where a shared iOS and Android roadmap makes more sense.",
@@ -389,18 +403,22 @@ export const iosAppDevelopmentWhyChooseCopy = {
     "Mobile apps rarely live in isolation. Our in-house teams can support UI/UX, backend APIs, ecommerce, full-stack development, QA and ongoing maintenance around the application.",
   items: [
     {
+      icon: "cross-platform" as const,
       description:
         "Designers and developers work together from flows and prototypes through implementation.",
     },
     {
+      icon: "backend" as const,
       description:
         "APIs, authentication, databases, business systems and admin tools can stay with the same delivery team.",
     },
     {
+      icon: "shield" as const,
       description:
-        "Important application journeys are tested across relevant devices, integrations and release conditions.",
+        "Important application journeys are tested across relevant devices, integrations and release candidates.",
     },
     {
+      icon: "update" as const,
       description:
         "Continue with OS changes, releases, new features, integrations and product evolution after launch.",
     },

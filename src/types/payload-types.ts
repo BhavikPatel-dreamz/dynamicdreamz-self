@@ -703,7 +703,9 @@ export interface Page {
               | 'our-work'
               | 'resources'
               | 'buy-hours'
-              | 'industry';
+              | 'industry'
+              | 'mobile-app';
+            mobileBadgeLayout?: ('divided' | 'row') | null;
             backgroundColor?: ('cream' | 'white') | null;
             wrapperClassName?: string | null;
             eyebrows?:
@@ -1062,7 +1064,7 @@ export interface Page {
             boxes?:
               | {
                   number?: string | null;
-                  title: string;
+                  title?: string | null;
                   description?: string | null;
                   badgeText?: string | null;
                   iconName?: string | null;
@@ -1094,6 +1096,7 @@ export interface Page {
                   | 'numbered-timeline'
                   | 'migration-process'
                   | 'app-process'
+                  | 'white-label-process'
                 )
               | null;
             columns?: ('4' | '3') | null;
@@ -1861,6 +1864,92 @@ export interface Page {
             id?: string | null;
             blockName?: string | null;
             blockType: 'industry-custom-dev';
+          }
+        | {
+            heading: string;
+            description?: string | null;
+            items?:
+              | {
+                  title?: string | null;
+                  description: string;
+                  icon?: (number | null) | Media;
+                  iconSrc?: string | null;
+                  iconAlt?: string | null;
+                  id?: string | null;
+                }[]
+              | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'shopify-app-benefits';
+          }
+        | {
+            eyebrow?: string | null;
+            heading: string;
+            description?: string | null;
+            cards?:
+              | {
+                  tag?: string | null;
+                  title: string;
+                  description: string;
+                  showBadges?: boolean | null;
+                  id?: string | null;
+                }[]
+              | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'shopify-mobile-app-dtc';
+          }
+        | {
+            eyebrow?: string | null;
+            heading: string;
+            description?: string | null;
+            columns?: ('4' | '3') | null;
+            moments?:
+              | {
+                  step: string;
+                  title: string;
+                  description: string;
+                  points?:
+                    | {
+                        text: string;
+                        id?: string | null;
+                      }[]
+                    | null;
+                  id?: string | null;
+                }[]
+              | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'shopify-mobile-app-experience';
+          }
+        | {
+            eyebrow?: string | null;
+            heading: string;
+            description?: string | null;
+            ctaLabel?: string | null;
+            ctaHref?: string | null;
+            ctaAriaLabel?: string | null;
+            secondaryCta?: {
+              label?: string | null;
+              href?: string | null;
+              ariaLabel?: string | null;
+            };
+            items?:
+              | {
+                  name: string;
+                  category?: string | null;
+                  image?: (number | null) | Media;
+                  imageSrc?: string | null;
+                  imageAlt?: string | null;
+                  href?: string | null;
+                  appStoreUrl?: string | null;
+                  playStoreUrl?: string | null;
+                  id?: string | null;
+                }[]
+              | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'mobile-app-work';
           }
       )[]
     | null;
@@ -2779,6 +2868,7 @@ export interface PagesSelect<T extends boolean = true> {
           | T
           | {
               variant?: T;
+              mobileBadgeLayout?: T;
               backgroundColor?: T;
               wrapperClassName?: T;
               eyebrows?:
@@ -3951,6 +4041,98 @@ export interface PagesSelect<T extends boolean = true> {
                 | T
                 | {
                     text?: T;
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        'shopify-app-benefits'?:
+          | T
+          | {
+              heading?: T;
+              description?: T;
+              items?:
+                | T
+                | {
+                    title?: T;
+                    description?: T;
+                    icon?: T;
+                    iconSrc?: T;
+                    iconAlt?: T;
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        'shopify-mobile-app-dtc'?:
+          | T
+          | {
+              eyebrow?: T;
+              heading?: T;
+              description?: T;
+              cards?:
+                | T
+                | {
+                    tag?: T;
+                    title?: T;
+                    description?: T;
+                    showBadges?: T;
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        'shopify-mobile-app-experience'?:
+          | T
+          | {
+              eyebrow?: T;
+              heading?: T;
+              description?: T;
+              columns?: T;
+              moments?:
+                | T
+                | {
+                    step?: T;
+                    title?: T;
+                    description?: T;
+                    points?:
+                      | T
+                      | {
+                          text?: T;
+                          id?: T;
+                        };
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        'mobile-app-work'?:
+          | T
+          | {
+              eyebrow?: T;
+              heading?: T;
+              description?: T;
+              ctaLabel?: T;
+              ctaHref?: T;
+              ctaAriaLabel?: T;
+              secondaryCta?:
+                | T
+                | {
+                    label?: T;
+                    href?: T;
+                    ariaLabel?: T;
+                  };
+              items?:
+                | T
+                | {
+                    name?: T;
+                    category?: T;
+                    image?: T;
+                    imageSrc?: T;
+                    imageAlt?: T;
+                    href?: T;
+                    appStoreUrl?: T;
+                    playStoreUrl?: T;
                     id?: T;
                   };
               id?: T;

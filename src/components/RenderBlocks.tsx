@@ -1,6 +1,7 @@
 import React from "react";
 import dynamic from "next/dynamic";
 import { appmakerHeroCoBranding } from "@/content/appmaker-shopify-mobile-app-development";
+import { mobileAppSharedCopy } from "@/content/common";
 import { shopifyPlusAgencyWhyChoose } from "@/content/shopify-plus-agency";
 import { shopifyMigrationWhyChoose, shopifyMigrationServicesContent } from "@/content/shopify-migration";
 import { fullStackDevelopmentTechnologiesContent } from "@/content/full-stack-development";
@@ -116,6 +117,13 @@ import { LifeHiringSection } from "@/components/sections/life-dynamicdreamz/life
 import { CareerOpportunitiesSection } from "@/components/sections/career/career-opportunities-section";
 import { ShopifyHoursTasksSection } from "@/components/sections/buy-shopify-development-hours/shopify-hours-content-sections";
 import { ShopifyMobileAppComparisonSection } from "@/components/sections/shopify-mobile-app/shopify-mobile-app-comparison-section";
+import { ShopifyMobileAppHeroSection } from "@/components/sections/shopify-mobile-app/shopify-mobile-app-hero-section";
+import { ShopifyAppBenefitsSection } from "@/components/sections/shopify-mobile-app/shopify-app-benefits-section";
+import { ShopifyMobileAppDtcSection } from "@/components/sections/shopify-mobile-app/shopify-mobile-app-dtc-section";
+import { ShopifyMobileAppExperienceSection } from "@/components/sections/shopify-mobile-app/shopify-mobile-app-experience-section";
+import { ShopifyMobileAppWorkSection } from "@/components/sections/shopify-mobile-app/shopify-mobile-app-work-section";
+import { WhiteLabelProcessSection } from "@/components/sections/white-label/white-label-process-section";
+import { resolveMobileAppIcon } from "@/lib/theme-icon-resolver";
 
 // Phase 2.5 Canonical Content Fallbacks
 import { shopifyPlusAgencyContent } from "@/content/home";
@@ -149,6 +157,44 @@ function resolveMediaAlt(media?: CmsMedia | null, fallback = ""): string {
   return media.alt?.trim() || fallback;
 }
 
+function parseTextOrArray(val: unknown): string | readonly string[] {
+  if (!val) return "";
+  if (Array.isArray(val)) return val;
+  if (typeof val !== "string") return String(val);
+  const trimmed = val.trim();
+  if (trimmed.startsWith("[") && trimmed.endsWith("]")) {
+    try {
+      const parsed = JSON.parse(trimmed);
+      if (Array.isArray(parsed)) return parsed;
+    } catch {}
+  }
+  if (trimmed.startsWith("{\"") && trimmed.endsWith("\"}")) {
+    try {
+      const parts = trimmed
+        .slice(1, -1)
+        .split(/","/)
+        .map((p) => p.replace(/^"|"$/g, "").replace(/\\"/g, '"'));
+      if (parts.length > 0) return parts.length === 1 ? parts[0] : parts;
+    } catch {}
+  }
+  if (trimmed.startsWith("{\\\"") && trimmed.endsWith("\\\"}")) {
+    try {
+      const unescaped = trimmed.replace(/\\"/g, '"');
+      const parts = unescaped
+        .slice(1, -1)
+        .split(/","/)
+        .map((p) => p.replace(/^"|"$/g, ""));
+      if (parts.length > 0) return parts.length === 1 ? parts[0] : parts;
+    } catch {}
+  }
+  return val;
+}
+
+function toText(val: unknown): string {
+  const parsed = parseTextOrArray(val);
+  return Array.isArray(parsed) ? parsed.join(" ") : (parsed as string) || "";
+}
+
 // ---------------------------------------------------------------------------
 // Block Interfaces (Matching Active Payload CMS Blocks in Pages.ts)
 // ---------------------------------------------------------------------------
@@ -173,9 +219,11 @@ export interface BlockServiceHero {
     | "resources"
     | "buy-hours"
     | "industry"
+    | "mobile-app"
     | "default"
     | "shopify-plus-experts"
     | "migration";
+  mobileBadgeLayout?: "divided" | "row";
   backgroundColor?: "cream" | "white";
   eyebrows?: readonly (string | { text?: string; id?: string | number })[];
   eyebrow?: string;
@@ -596,7 +644,8 @@ export interface BlockProcessTimeline {
     | "horizontal-process"
     | "numbered-timeline"
     | "migration-process"
-    | "app-process";
+    | "app-process"
+    | "white-label-process";
   columns?: "3" | "4";
   eyebrowVariant?: "dash" | "pill";
   isBgTransparent?: boolean;
@@ -1098,6 +1147,79 @@ export interface BlockIndustryCustomDevelopment {
   items?: readonly (string | { text?: string })[];
 }
 
+export interface BlockShopifyAppBenefits {
+  __component?: string;
+  blockType?: string;
+  id?: string | number;
+  heading: string;
+  description?: string;
+  items?: readonly {
+    title?: string;
+    description: string;
+    icon?: CmsMedia;
+    iconSrc?: string;
+    iconAlt?: string;
+  }[];
+}
+
+export interface BlockShopifyMobileAppDtc {
+  __component?: string;
+  blockType?: string;
+  id?: string | number;
+  eyebrow?: string;
+  heading: string;
+  description?: string;
+  cards?: readonly {
+    tag?: string;
+    title: string;
+    description: string;
+    showBadges?: boolean;
+  }[];
+}
+
+export interface BlockShopifyMobileAppExperience {
+  __component?: string;
+  blockType?: string;
+  id?: string | number;
+  eyebrow?: string;
+  heading: string;
+  description?: string;
+  columns?: "3" | "4";
+  moments?: readonly {
+    step: string;
+    title: string;
+    description: string;
+    points?: readonly (string | { text?: string })[];
+  }[];
+}
+
+export interface BlockMobileAppWork {
+  __component?: string;
+  blockType?: string;
+  id?: string | number;
+  eyebrow?: string;
+  heading: string;
+  description?: string;
+  ctaLabel?: string;
+  ctaHref?: string;
+  ctaAriaLabel?: string;
+  secondaryCta?: {
+    label?: string;
+    href?: string;
+    ariaLabel?: string;
+  };
+  items?: readonly {
+    name: string;
+    category?: string;
+    image?: CmsMedia;
+    imageSrc?: string;
+    imageAlt?: string;
+    href?: string;
+    appStoreUrl?: string;
+    playStoreUrl?: string;
+  }[];
+}
+
 export type CmsSectionBlock =
   | BlockServiceHero
   | BlockBrandPartners
@@ -1139,6 +1261,10 @@ export type CmsSectionBlock =
   | BlockThemeCustomizationApproach
   | BlockMigrationProcess
   | BlockIndustryCustomDevelopment
+  | BlockShopifyAppBenefits
+  | BlockShopifyMobileAppDtc
+  | BlockShopifyMobileAppExperience
+  | BlockMobileAppWork
   | BlockContactHero
   | BlockContactForm
   | BlockForm
@@ -1175,6 +1301,10 @@ export function BlockRenderer({ sections }: BlockRendererProps) {
           case "service-hero":
           case "service-hero-video": {
             const shBlock = block as BlockServiceHero;
+            const isAppmaker = Boolean(
+              shBlock.title?.includes("Appmaker") ||
+                shBlock.title?.includes("Shopify Store into a Mobile App"),
+            );
             const isShopifyPlusExperts =
               shBlock.variant === "shopify-plus-experts";
 
@@ -1395,6 +1525,43 @@ export function BlockRenderer({ sections }: BlockRendererProps) {
               );
             }
 
+            if (variant === "mobile-app") {
+              const slides = (shBlock.slides ?? []).map((s) => ({
+                src: resolveMediaUrl(s.image) || s.src || "",
+                alt: s.alt || "",
+                width: s.width || 224,
+                height: s.height || 487,
+              }));
+
+              const heroBadges = badges.map((b) => ({
+                src: b.src,
+                alt: b.alt,
+                href: b.href,
+                width: b.width,
+                height: b.height,
+              }));
+
+              return (
+                <ShopifyMobileAppHeroSection
+                  key={blockKey}
+                  content={{
+                    eyebrows: eyebrows.length > 0 ? eyebrows : undefined,
+                    title: shBlock.title,
+                    titleAccent: shBlock.titleAccent,
+                    description: shBlock.description || "",
+                    primaryCta: primaryCta || {
+                      label: mobileAppSharedCopy.discussApp,
+                      href: "/request-quote",
+                    },
+                    secondaryCta,
+                    badges: heroBadges.length > 0 ? heroBadges : undefined,
+                    mobileBadgeLayout: (shBlock as { mobileBadgeLayout?: "divided" | "row" }).mobileBadgeLayout || "divided",
+                    slides: slides.length > 0 ? slides : [],
+                  }}
+                />
+              );
+            }
+
             // 1. Tablet Slider Variant
             if (variant === "tablet-slider") {
               const slides = (shBlock.slides ?? []).map((s) => ({
@@ -1421,8 +1588,14 @@ export function BlockRenderer({ sections }: BlockRendererProps) {
                     subtitle: shBlock.subtitle,
                     description: shBlock.description || "",
                     secondaryDescription: shBlock.secondaryDescription,
-                    ctaLabel: primaryCta?.label,
-                    ctaHref: primaryCta?.href,
+                    ctaLabel:
+                      isAppmaker && (!primaryCta?.label || primaryCta.label === "Let's Talk")
+                        ? "start your free trial today!"
+                        : primaryCta?.label,
+                    ctaHref:
+                      isAppmaker && (!primaryCta?.href || primaryCta.href === "/request-a-quote")
+                        ? "/request-quote"
+                        : primaryCta?.href,
                     primaryCta,
                     secondaryCta,
                     badges: badges.length > 0 ? badges : undefined,
@@ -1509,8 +1682,14 @@ export function BlockRenderer({ sections }: BlockRendererProps) {
                     description: shBlock.description || "",
                     secondaryDescription: shBlock.secondaryDescription,
                     paragraphs: paragraphs.length > 0 ? paragraphs : shBlock.description ? [shBlock.description] : undefined,
-                    ctaLabel: primaryCta?.label,
-                    ctaHref: primaryCta?.href,
+                    ctaLabel:
+                      isAppmaker && (!primaryCta?.label || primaryCta.label === "Let's Talk")
+                        ? "start your free trial today!"
+                        : primaryCta?.label,
+                    ctaHref:
+                      isAppmaker && (!primaryCta?.href || primaryCta.href === "/request-a-quote")
+                        ? "/request-quote"
+                        : primaryCta?.href,
                     secondaryCta,
                     eyebrows: eyebrows.length > 0 ? eyebrows : undefined,
                     coBranding,
@@ -1538,8 +1717,14 @@ export function BlockRenderer({ sections }: BlockRendererProps) {
                     description: shBlock.description || "",
                     secondaryDescription: shBlock.secondaryDescription,
                     paragraphs: paragraphs.length > 0 ? paragraphs : shBlock.description ? [shBlock.description] : undefined,
-                    ctaLabel: primaryCta?.label,
-                    ctaHref: primaryCta?.href,
+                    ctaLabel:
+                      isAppmaker && (!primaryCta?.label || primaryCta.label === "Let's Talk")
+                        ? "start your free trial today!"
+                        : primaryCta?.label,
+                    ctaHref:
+                      isAppmaker && (!primaryCta?.href || primaryCta.href === "/request-a-quote")
+                        ? "/request-quote"
+                        : primaryCta?.href,
                     secondaryCta,
                     eyebrows: eyebrows.length > 0 ? eyebrows : undefined,
                     badges: badges.length > 0 ? badges : undefined,
@@ -1571,8 +1756,14 @@ export function BlockRenderer({ sections }: BlockRendererProps) {
                     title: shBlock.title,
                     description: shBlock.description || "",
                     secondaryDescription: shBlock.secondaryDescription,
-                    ctaLabel: primaryCta?.label,
-                    ctaHref: primaryCta?.href,
+                    ctaLabel:
+                      isAppmaker && (!primaryCta?.label || primaryCta.label === "Let's Talk")
+                        ? "start your free trial today!"
+                        : primaryCta?.label,
+                    ctaHref:
+                      isAppmaker && (!primaryCta?.href || primaryCta.href === "/request-a-quote")
+                        ? "/request-quote"
+                        : primaryCta?.href,
                     secondaryCtaLabel: secondaryCta?.label,
                     secondaryCtaHref: secondaryCta?.href,
                     image: {
@@ -1600,8 +1791,14 @@ export function BlockRenderer({ sections }: BlockRendererProps) {
                     subtitle: shBlock.subtitle,
                     description: shBlock.description || "",
                     secondaryDescription: shBlock.secondaryDescription,
-                    ctaLabel: primaryCta?.label,
-                    ctaHref: primaryCta?.href,
+                    ctaLabel:
+                      isAppmaker && (!primaryCta?.label || primaryCta.label === "Let's Talk")
+                        ? "start your free trial today!"
+                        : primaryCta?.label,
+                    ctaHref:
+                      isAppmaker && (!primaryCta?.href || primaryCta.href === "/request-a-quote")
+                        ? "/request-quote"
+                        : primaryCta?.href,
                     primaryCta,
                     secondaryCta,
                     badges: badges.length > 0 ? badges : undefined,
@@ -1629,8 +1826,14 @@ export function BlockRenderer({ sections }: BlockRendererProps) {
                     subheading: shBlock.subtitle,
                     description: shBlock.description,
                     paragraphs: paragraphs.length > 0 ? paragraphs : shBlock.description ? [shBlock.description] : undefined,
-                    ctaLabel: primaryCta?.label,
-                    ctaHref: primaryCta?.href,
+                    ctaLabel:
+                      isAppmaker && (!primaryCta?.label || primaryCta.label === "Let's Talk")
+                        ? "start your free trial today!"
+                        : primaryCta?.label,
+                    ctaHref:
+                      isAppmaker && (!primaryCta?.href || primaryCta.href === "/request-a-quote")
+                        ? "/request-quote"
+                        : primaryCta?.href,
                     secondaryCta,
                     eyebrows: eyebrows.length > 0 ? eyebrows : undefined,
                     videoSrc: videoSrc || "/assets/home/why-dynamic-dreamz.mp4",
@@ -1833,14 +2036,15 @@ export function BlockRenderer({ sections }: BlockRendererProps) {
               };
             });
 
+            const faqDesc = parseTextOrArray(faBlock.description);
             return (
               <SplitFaqSection
                 key={blockKey}
                 idPrefix={faBlock.idPrefix || "faq"}
                 sectionId={(faBlock as { sectionId?: string }).sectionId || undefined}
                 eyebrow={faBlock.eyebrow}
-                heading={faBlock.heading}
-                description={faBlock.description}
+                heading={parseTextOrArray(faBlock.heading)}
+                description={Array.isArray(faqDesc) ? faqDesc.join(" ") : faqDesc || undefined}
                 iconVariant={faBlock.iconVariant || "circle-cross"}
                 animateOnReveal={faBlock.animateOnReveal}
                 items={faqs}
@@ -1978,8 +2182,8 @@ export function BlockRenderer({ sections }: BlockRendererProps) {
               <HappyClientSection
                 key={blockKey}
                 eyebrow={tcBlock.eyebrow}
-                heading={tcBlock.heading}
-                description={tcBlock.description}
+                heading={parseTextOrArray(tcBlock.heading)}
+                description={parseTextOrArray(tcBlock.description)}
                 variant={tcBlock.variant === "client-stories" ? "client-stories" : undefined}
                 hasTopPadding={tcBlock.hasTopPadding}
                 items={items.length > 0 ? items : undefined}
@@ -2009,7 +2213,8 @@ export function BlockRenderer({ sections }: BlockRendererProps) {
                     boxes: services.map((s) => {
                       const sAny = s as { iconName?: string };
                       const themeIcon = sAny.iconName
-                        ? resolveThemeIcon(
+                        ? resolveMobileAppIcon(sAny.iconName) ||
+                          resolveThemeIcon(
                             sAny.iconName,
                             (sgBlock as { themeSlug?: string }).themeSlug,
                             (sgBlock as { iconKind?: "feature" | "benefit" | "service" }).iconKind ||
@@ -2019,7 +2224,7 @@ export function BlockRenderer({ sections }: BlockRendererProps) {
                             sAny.iconName,
                             (sgBlock as { themeSlug?: string }).themeSlug,
                           )
-                        : null;
+                        : resolveMobileAppIcon(s.title);
                       return {
                         number: s.number || undefined,
                         badge: s.badge || undefined,
@@ -2178,6 +2383,13 @@ export function BlockRenderer({ sections }: BlockRendererProps) {
                 title: s.title,
                 description: s.description || "",
               }));
+              const centerImageSrc =
+                resolveMediaUrl((sgBlock as { image?: CmsMedia }).image) ||
+                (sgBlock as { imageSrc?: string }).imageSrc ||
+                (sgBlock.heading?.includes("App Maker")
+                  ? "/assets/services/shopify-mobile-app-development/features/app-features-img.webp"
+                  : "/assets/services/shopify-mobile-app-development/features/center_phone_img.webp");
+              const isAppmakerImg = centerImageSrc.includes("app-features-img");
               return (
                 <ShopifyAppFeaturesSection
                   key={blockKey}
@@ -2185,10 +2397,10 @@ export function BlockRenderer({ sections }: BlockRendererProps) {
                     eyebrow: sgBlock.eyebrow,
                     heading: sgBlock.heading,
                     centerImage: {
-                      src: "/assets/services/shopify-mobile-app-development/features/center_phone_img.webp",
-                      alt: "App Features",
-                      width: 388,
-                      height: 600,
+                      src: centerImageSrc,
+                      alt: (sgBlock as { imageAlt?: string }).imageAlt || "App Features",
+                      width: isAppmakerImg ? 374 : 388,
+                      height: isAppmakerImg ? 518 : 600,
                     },
                     leftFeatures: left,
                     rightFeatures: right,
@@ -2281,8 +2493,8 @@ export function BlockRenderer({ sections }: BlockRendererProps) {
                 <ServicesCaseStudiesSection
                   key={blockKey}
                   eyebrow={psBlock.eyebrow}
-                  heading={psBlock.heading}
-                  description={psBlock.description}
+                  heading={parseTextOrArray(psBlock.heading)}
+                  description={parseTextOrArray(psBlock.description)}
                   className="py-20 max-[992px]:py-15 max-[768px]:py-10"
                   items={(psBlock.items ?? []).map((item) => {
                     const itemAny = item as { tags?: string };
@@ -2436,13 +2648,27 @@ export function BlockRenderer({ sections }: BlockRendererProps) {
             }
 
             if (prBlock.variant === "why-choose-migration") {
+              const defaultMobileIcons = ["cross-platform", "backend", "shield", "update"];
               const items =
                 (prBlock.boxes ?? []).length > 0
-                  ? (prBlock.boxes ?? []).map((b) => ({
-                      title: b.title,
-                      description: b.description || "",
-                      icon: b.badgeText || "certified",
-                    }))
+                  ? (prBlock.boxes ?? []).map((b, idx) => {
+                      const iconName =
+                        b.iconName ||
+                        (b.badgeText && b.badgeText !== "cross"
+                          ? b.badgeText
+                          : defaultMobileIcons[idx] || b.badgeText);
+                      const iconSvg = iconName
+                        ? resolveMobileAppIcon(iconName)
+                        : b.title
+                        ? resolveMobileAppIcon(b.title)
+                        : undefined;
+                      return {
+                        title: b.title,
+                        description: b.description || "",
+                        icon: b.badgeText || "certified",
+                        iconSvg,
+                      };
+                    })
                   : shopifyMigrationWhyChoose.items;
 
               const stats =
@@ -2456,9 +2682,9 @@ export function BlockRenderer({ sections }: BlockRendererProps) {
               const migrationContent = {
                 ...shopifyMigrationWhyChoose,
                 eyebrow: prBlock.eyebrow || shopifyMigrationWhyChoose.eyebrow,
-                heading: prBlock.heading || shopifyMigrationWhyChoose.heading,
+                heading: toText(prBlock.heading) || shopifyMigrationWhyChoose.heading,
                 description:
-                  prBlock.description || shopifyMigrationWhyChoose.description,
+                  toText(prBlock.description) || shopifyMigrationWhyChoose.description,
                 partnerHeading:
                   (prBlock as { partnerHeading?: string }).partnerHeading ||
                   shopifyMigrationWhyChoose.partnerHeading,
@@ -2566,8 +2792,8 @@ export function BlockRenderer({ sections }: BlockRendererProps) {
                 key={blockKey}
                 content={{
                   eyebrow: prBlock.eyebrow,
-                  heading: prBlock.heading,
-                  description: prBlock.description,
+                  heading: (parseTextOrArray(prBlock.heading) as string) || prBlock.heading,
+                  description: (parseTextOrArray(prBlock.description) as string) || prBlock.description,
                   stats: (prBlock.counters ?? []).map((c) => ({
                     value: c.value,
                     suffix: c.suffix,
@@ -2652,19 +2878,47 @@ export function BlockRenderer({ sections }: BlockRendererProps) {
             }
 
             if (ptBlock.variant === "app-process") {
+              const appProcessDefaultIcons = [
+                "/assets/services/shopify-mobile-app-development/process/signup-icon.svg",
+                "/assets/services/shopify-mobile-app-development/process/customize-app-icon.svg",
+                "/assets/services/shopify-mobile-app-development/process/connect-store-icon.svg",
+                "/assets/services/shopify-mobile-app-development/process/publish-icon.svg",
+              ];
               return (
                 <ShopifyAppProcessSection
                   key={blockKey}
                   content={{
                     eyebrow: ptBlock.eyebrow,
-                    heading: ptBlock.heading,
-                    steps: steps.map((s) => ({
+                    heading: parseTextOrArray(ptBlock.heading),
+                    steps: steps.map((s, idx) => ({
                       title: s.title,
                       description: s.description || "",
-                      icon: "/assets/services/shopify-mobile-app-development/process/process_icon_1.svg",
-                      iconAlt: s.title,
+                      icon:
+                        resolveMediaUrl((s as { icon?: CmsMedia }).icon) ||
+                        (s as { iconSrc?: string }).iconSrc ||
+                        (s as { imageSrc?: string }).imageSrc ||
+                        appProcessDefaultIcons[idx] ||
+                        appProcessDefaultIcons[0],
+                      iconAlt: (s as { iconAlt?: string }).iconAlt || s.title,
                     })),
                   }}
+                />
+              );
+            }
+
+            if (ptBlock.variant === "white-label-process") {
+              return (
+                <WhiteLabelProcessSection
+                  key={blockKey}
+                  eyebrow={ptBlock.eyebrow}
+                  title={parseTextOrArray(ptBlock.heading)}
+                  description={parseTextOrArray(ptBlock.description)}
+                  note={(ptBlock as { note?: string }).note ?? ""}
+                  steps={steps.map((s, idx) => ({
+                    step: s.step || String(idx + 1).padStart(2, "0"),
+                    title: s.title,
+                    description: s.description || "",
+                  }))}
                 />
               );
             }
@@ -2713,8 +2967,8 @@ export function BlockRenderer({ sections }: BlockRendererProps) {
                 key={blockKey}
                 content={{
                   eyebrow: prBlock.eyebrow,
-                  heading: prBlock.heading,
-                  description: prBlock.description,
+                  heading: (parseTextOrArray(prBlock.heading) as string) || prBlock.heading,
+                  description: (parseTextOrArray(prBlock.description) as string) || prBlock.description,
                   items,
                 }}
               />
@@ -3458,7 +3712,7 @@ export function BlockRenderer({ sections }: BlockRendererProps) {
                 key={blockKey}
                 content={{
                   eyebrow: macBlock.eyebrow,
-                  heading: macBlock.heading,
+                  heading: parseTextOrArray(macBlock.heading),
                   description: macBlock.description || "",
                   tableHeaders:
                     tableHeaders.length > 0
@@ -3605,6 +3859,152 @@ export function BlockRenderer({ sections }: BlockRendererProps) {
                   eyebrow: icdBlock.eyebrow,
                   heading: icdBlock.heading || "",
                   description: icdBlock.description || "",
+                  items,
+                }}
+              />
+            );
+          }
+
+          case "shopify-app-benefits": {
+            const sabBlock = block as BlockShopifyAppBenefits;
+            const items = (sabBlock.items ?? []).map((item) => ({
+              title: item.title,
+              description: item.description,
+              icon: resolveMediaUrl(item.icon) || item.iconSrc || "",
+              iconAlt: item.iconAlt || item.title || "",
+            }));
+
+            return (
+              <ShopifyAppBenefitsSection
+                key={blockKey}
+                content={{
+                  heading: toText(sabBlock.heading),
+                  description: sabBlock.description,
+                  items,
+                }}
+              />
+            );
+          }
+
+          case "shopify-mobile-app-dtc": {
+            const smdBlock = block as BlockShopifyMobileAppDtc;
+            const paragraphs = smdBlock.description
+              ? smdBlock.description.split("\n\n").map((p) => p.trim()).filter(Boolean)
+              : undefined;
+            const cards = (smdBlock.cards ?? []).map((card, idx) => ({
+              tag: card.tag,
+              title: card.title,
+              description: card.description,
+              badges: card.showBadges && (idx === 1 || card.tag?.includes("Proof"))
+                ? [
+                    {
+                      src: "/assets/proof/clutch-rating.svg",
+                      alt: "Dynamic Dreamz on Clutch — 4.9 rating",
+                      href: "https://clutch.co/profile/dynamic-dreamz",
+                      width: 111,
+                      height: 44,
+                    },
+                    {
+                      src: "/assets/proof/trustpilot-rating.svg",
+                      alt: "Dynamic Dreamz on Trustpilot — 4.9 TrustScore",
+                      href: "https://www.trustpilot.com/review/dynamicdreamz.com",
+                      width: 148,
+                      height: 50,
+                    },
+                  ]
+                : undefined,
+            }));
+
+            return (
+              <ShopifyMobileAppDtcSection
+                key={blockKey}
+                content={{
+                  eyebrow: smdBlock.eyebrow,
+                  heading: parseTextOrArray(smdBlock.heading),
+                  paragraphs: paragraphs && paragraphs.length > 0 ? paragraphs : undefined,
+                  cards,
+                }}
+              />
+            );
+          }
+
+          case "shopify-mobile-app-experience": {
+            const smeBlock = block as BlockShopifyMobileAppExperience;
+            const moments = (smeBlock.moments ?? []).map((m) => ({
+              step: m.step,
+              title: m.title,
+              description: m.description,
+              points: (m.points ?? []).map((p) => (typeof p === "string" ? p : p.text || "")).filter(Boolean),
+            }));
+
+            const cols = (smeBlock.columns === "3" ? 3 : 4) as 3 | 4;
+
+            return (
+              <ShopifyMobileAppExperienceSection
+                key={blockKey}
+                columns={cols}
+                content={{
+                  eyebrow: smeBlock.eyebrow,
+                  heading: parseTextOrArray(smeBlock.heading),
+                  description: smeBlock.description || "",
+                  moments,
+                }}
+              />
+            );
+          }
+
+          case "mobile-app-work": {
+            const mawBlock = block as BlockMobileAppWork;
+            const items = (mawBlock.items ?? []).map((item) => {
+              const appLinks = [];
+              if (item.playStoreUrl) {
+                appLinks.push({
+                  platform: "android" as const,
+                  label: mobileAppSharedCopy.androidApp,
+                  url: item.playStoreUrl,
+                  href: item.playStoreUrl,
+                  icon: "/assets/our-work/platforms/android-icon.svg",
+                  iconAlt: "Android",
+                });
+              }
+              if (item.appStoreUrl) {
+                appLinks.push({
+                  platform: "ios" as const,
+                  label: mobileAppSharedCopy.iosApp,
+                  url: item.appStoreUrl,
+                  href: item.appStoreUrl,
+                  icon: "/assets/our-work/platforms/app-store-ios.svg",
+                  iconAlt: "iOS",
+                });
+              }
+
+              return {
+                name: item.name,
+                category: item.category,
+                image: resolveMediaUrl(item.image) || item.imageSrc || "",
+                imageAlt: item.imageAlt || item.name,
+                href: item.href || (appLinks.length > 0 ? null : "#"),
+                appLinks: appLinks.length > 0 ? appLinks : undefined,
+              };
+            });
+
+            return (
+              <ShopifyMobileAppWorkSection
+                key={blockKey}
+                content={{
+                  eyebrow: mawBlock.eyebrow,
+                  heading: toText(mawBlock.heading),
+                  description: toText(mawBlock.description) || undefined,
+                  ctaLabel: mawBlock.ctaLabel || "View our work",
+                  ctaHref: mawBlock.ctaHref || "/our-work",
+                  ctaAriaLabel: mawBlock.ctaAriaLabel,
+                  secondaryCta: mawBlock.secondaryCta?.label
+                    ? {
+                        label: mawBlock.secondaryCta.label,
+                        href: mawBlock.secondaryCta.href || "#",
+                        ariaLabel: mawBlock.secondaryCta.ariaLabel,
+                      }
+                    : undefined,
                   items,
                 }}
               />

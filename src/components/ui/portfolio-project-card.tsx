@@ -78,7 +78,7 @@ function AppStoreLinks({ appLinks }: { appLinks: readonly PortfolioAppLink[] }) 
             index > 0 && "border-l-[1.5px] border-white",
           )}
           href={link.href}
-          key={link.href}
+          key={`${link.label || "app"}-${link.href || index}-${index}`}
           rel="nofollow noopener noreferrer"
           target="_blank"
         >

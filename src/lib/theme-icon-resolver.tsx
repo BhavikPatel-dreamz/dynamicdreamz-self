@@ -61,6 +61,27 @@ import {
   PopularfxFeatureIcon,
 } from "@/components/sections/popularfx-theme-customization/popularfx-icons";
 import {
+  AndroidAppDevelopmentIcon,
+  BackendApisIntegrationsIcon,
+  BookingServiceAppsIcon,
+  ConsumerMobileAppsIcon,
+  CrossPlatformAppDevelopmentIcon,
+  EcommerceMobileAppsIcon,
+  ExistingAppCustomizationIcon,
+  FlutterAppDevelopmentIcon,
+  IosAppDevelopmentIcon,
+  LifecycleUpdateIcon,
+  MarketplacePlatformAppsIcon,
+  NativeModuleSdkIntegrationIcon,
+  ProductDiscoveryUiUxIcon,
+  QaLaunchSupportIcon,
+  QaMaintenanceAppUpdatesIcon,
+  ReactNativeAppDevelopmentIcon,
+  ShopifyStoreToMobileAppIcon,
+  TestingShieldIcon,
+  UtilityBusinessAppsIcon,
+} from "@/components/sections/mobile-application/mobile-app-icons";
+import {
   RoyalElementorKitBenefitIcon,
   RoyalElementorKitFeatureIcon,
 } from "@/components/sections/royal-elementor-kit-theme-customization/royal-elementor-kit-icons";
@@ -215,5 +236,152 @@ export function resolveThemeIcon(
     return <ThemeServiceIcon name={iconName} />;
   }
 
+  if (iconName.startsWith("mobile:") || iconName.startsWith("mobile-")) {
+    return resolveMobileAppIcon(iconName);
+  }
+
   return null;
+}
+
+export function resolveMobileAppIcon(name?: string | null): ReactNode | null {
+  if (!name) return null;
+  const clean = name
+    .toLowerCase()
+    .replace(/^(mobile:|mobile-)/, "")
+    .replace(/[&/\\#,+()$~%.'":*?<>{}]/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+  const kebab = clean.replace(/\s+/g, "-");
+
+  switch (kebab) {
+    case "utility":
+    case "utility-business-apps":
+    case "business-utility-apps":
+      return <UtilityBusinessAppsIcon />;
+
+    case "consumer":
+    case "consumer-mobile-apps":
+    case "consumer-applications":
+    case "consumer-products":
+      return <ConsumerMobileAppsIcon />;
+
+    case "booking":
+    case "booking-service-apps":
+    case "booking-on-demand-apps":
+    case "booking-on-demand":
+      return <BookingServiceAppsIcon />;
+
+    case "marketplace":
+    case "marketplace-platform-apps":
+    case "marketplace-apps":
+      return <MarketplacePlatformAppsIcon />;
+
+    case "ecommerce":
+    case "ecommerce-mobile-apps":
+    case "ecommerce-apps":
+      return <EcommerceMobileAppsIcon />;
+
+    case "shopify":
+    case "shopify-to-app":
+    case "shopify-android-apps":
+    case "shopify-mobile-apps":
+    case "shopify-ios-apps":
+    case "shopify-cross-platform":
+    case "shopify-cross-platform-development":
+    case "shopify-cross-platform-extensions":
+    case "extensions":
+    case "shopify-store-to-mobile-app":
+      return <ShopifyStoreToMobileAppIcon />;
+
+    case "prototyping":
+    case "discovery":
+    case "ui-ux":
+    case "product-discovery-ui-ux":
+    case "prototyping-wireframes-mockups":
+    case "prototyping-wireframes-ui-ux":
+    case "product-discovery-wireframes-ui-ux":
+      return <ProductDiscoveryUiUxIcon />;
+
+    case "native-ios":
+    case "native-android":
+    case "ios":
+    case "native-ios-app-development":
+    case "native-android-app-development":
+    case "ios-app-development":
+      return <IosAppDevelopmentIcon />;
+
+    case "android-ui-ux":
+    case "mobile-ui-ux":
+    case "cross-platform":
+    case "cross":
+    case "design-dev":
+    case "android-ui-ux-design":
+    case "mobile-ui-ux-design":
+    case "cross-platform-app-development":
+    case "in-house-team-end-to-end-collaboration":
+    case "in-house-team":
+    case "collaboration":
+      return <CrossPlatformAppDevelopmentIcon />;
+
+    case "backend":
+    case "backend-apis-integrations":
+    case "backend-api-integration":
+    case "backend-api-development":
+    case "full-stack-storefront-architecture":
+    case "full-stack":
+      return <BackendApisIntegrationsIcon />;
+
+    case "google-play":
+    case "google-play-deployment-support":
+    case "app-maintenance-support":
+    case "app-maintenance":
+    case "qa":
+    case "qa-launch-support":
+    case "qa-app-store-play-store-launch-support":
+      return <QaLaunchSupportIcon />;
+
+    case "shield":
+    case "testing-shield":
+    case "disciplined-testing-across-devices-os-versions":
+    case "disciplined-testing":
+    case "device-testing":
+      return <TestingShieldIcon />;
+
+    case "update":
+    case "lifecycle-update":
+    case "built-for-product-evolution":
+    case "product-evolution":
+      return <LifecycleUpdateIcon />;
+
+    case "react-native":
+    case "react-native-app-development":
+      return <ReactNativeAppDevelopmentIcon />;
+
+    case "flutter":
+    case "flutter-app-development":
+      return <FlutterAppDevelopmentIcon />;
+
+    case "native-modules":
+    case "native-module-sdk-integration":
+      return <NativeModuleSdkIntegrationIcon />;
+
+    case "qa-updates":
+    case "qa-testing":
+    case "qa-maintenance-app-updates":
+    case "app-testing-quality-assurance":
+    case "app-testing-qa":
+      return <QaMaintenanceAppUpdatesIcon />;
+
+    case "existing-app":
+    case "customization":
+    case "existing-app-customization":
+      return <ExistingAppCustomizationIcon />;
+
+    case "android":
+    case "android-app-development":
+      return <AndroidAppDevelopmentIcon />;
+
+    default:
+      return null;
+  }
 }

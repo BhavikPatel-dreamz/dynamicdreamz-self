@@ -158,7 +158,7 @@ export function ServiceHeroSection({
                     />
                     <Image
                       alt={content.coBranding.rightLogo.alt}
-                      className="h-[39px] w-auto max-[992px]:max-w-[130px] max-[768px]:h-[30px] max-[768px]:max-w-[104px]"
+                      className="h-[39px] w-auto max-[992px]:h-auto max-[992px]:max-w-[130px] max-[768px]:max-w-[104px]"
                       height={content.coBranding.rightLogo.height}
                       src={content.coBranding.rightLogo.src}
                       width={content.coBranding.rightLogo.width}

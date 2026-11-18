@@ -57,6 +57,7 @@ export function ServiceHeroReviews({ items, className }: ServiceHeroReviewsProps
                 height={sharedLogo?.height ?? review.logoHeight}
                 src={sharedLogo?.src ?? review.logoSrc}
                 width={sharedLogo?.width ?? review.logoWidth}
+                style={{ width: "auto", height: "auto" }}
               />
               <div className="rating flex items-center justify-center gap-[7px]">
                 <Image

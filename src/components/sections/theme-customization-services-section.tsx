@@ -5,6 +5,7 @@ import { Container } from "@/components/ui/container";
 import { SplitSectionHeading } from "@/components/ui/split-section-heading";
 import { cn } from "@/lib/class-names";
 import { formatBrText } from "@/lib/text-formatting";
+import { resolveMobileAppIcon, resolveThemeIcon } from "@/lib/theme-icon-resolver";
 
 export type ThemeCustomizationBox = {
   number?: string;
@@ -73,44 +74,58 @@ export function ThemeCustomizationServicesSection({
         />
 
         <div className="wrapper grid grid-cols-3 gap-4 max-[1200px]:grid-cols-2 max-[768px]:flex max-[768px]:flex-col max-[768px]:gap-4">
-          {content.boxes.map((box, idx) => (
-            <div
-              className="box rounded-[20px] border border-[rgba(40,40,40,0.11)] bg-white p-[25px] max-[992px]:p-5"
-              data-aos="fade-up"
-              key={`tc-box-${idx}-${box.number || (typeof box.title === "string" ? box.title : Array.isArray(box.title) ? box.title.join(" ") : idx)}`}
-            >
-              {box.icon ? (
-                <div
-                  className={cn(
-                    "icon mb-[15px] flex font-montserrat text-sm font-medium text-brand-red [&:not(:has(svg))]:pb-2.5 [&>svg]:h-auto [&>svg]:size-6",
-                    box.iconWrapperClassName,
-                  )}
-                >
-                  {typeof box.icon === "string" &&
-                  (box.icon.startsWith("/") || box.icon.startsWith("http")) ? (
-                    <Image
-                      src={box.icon}
-                      alt={box.iconAlt ?? ""}
-                      width={24}
-                      height={24}
-                      className="object-contain"
-                    />
-                  ) : (
-                    box.icon
-                  )}
-                </div>
-              ) : box.number && !isRoundedNumber ? (
-                <div className="number">
-                  <span className="mb-5 flex size-[34px] items-center justify-center rounded-full bg-[#fbefd7] font-montserrat text-[10px] font-bold text-brand-red max-[992px]:mb-3">
-                    {box.number}
-                  </span>
-                </div>
-              ) : box.number && isRoundedNumber ? (
-                <div className="number mb-[15px]">
-                  <span className="font-montserrat font-medium text-brand-red">
-                    {box.number}
-                  </span>
-                </div>) : null}
+          {content.boxes.map((box, idx) => {
+            const resolvedIcon =
+              typeof box.icon === "string" &&
+              (box.icon.startsWith("/") || box.icon.startsWith("http")) ? (
+                <Image
+                  src={box.icon}
+                  alt={box.iconAlt ?? ""}
+                  width={24}
+                  height={24}
+                  className="object-contain"
+                />
+              ) : typeof box.icon === "string" ? (
+                resolveThemeIcon(box.icon) || resolveMobileAppIcon(box.icon)
+              ) : box.icon ??
+                (!box.number
+                  ? resolveMobileAppIcon(
+                      typeof box.title === "string"
+                        ? box.title
+                        : Array.isArray(box.title)
+                        ? box.title.join(" ")
+                        : null,
+                    )
+                  : null);
+
+            return (
+              <div
+                className="box rounded-[20px] border border-[rgba(40,40,40,0.11)] bg-white p-[25px] max-[992px]:p-5"
+                data-aos="fade-up"
+                key={`tc-box-${idx}-${box.number || (typeof box.title === "string" ? box.title : Array.isArray(box.title) ? box.title.join(" ") : idx)}`}
+              >
+                {resolvedIcon ? (
+                  <div
+                    className={cn(
+                      "icon mb-[15px] flex font-montserrat text-sm font-medium text-brand-red [&:not(:has(svg))]:pb-2.5 [&>svg]:h-auto [&>svg]:size-6",
+                      box.iconWrapperClassName,
+                    )}
+                  >
+                    {resolvedIcon}
+                  </div>
+                ) : box.number && !isRoundedNumber ? (
+                  <div className="number">
+                    <span className="mb-5 flex size-[34px] items-center justify-center rounded-full bg-[#fbefd7] font-montserrat text-[10px] font-bold text-brand-red max-[992px]:mb-3">
+                      {box.number}
+                    </span>
+                  </div>
+                ) : box.number && isRoundedNumber ? (
+                  <div className="number mb-[15px]">
+                    <span className="font-montserrat font-medium text-brand-red">
+                      {box.number}
+                    </span>
+                  </div>
+                ) : null}
               <h3 className="mb-2 font-montreal-medium text-[20px] font-normal leading-[28.8px] text-[#282828] max-[992px]:text-lg">
                 {formatBrText(box.title)}
                 {box.badge ? (
@@ -125,7 +140,8 @@ export function ThemeCustomizationServicesSection({
                 </p>
               ) : null}
             </div>
-          ))}
+          );
+        })}
         </div>
 
         {/* Live template always renders `.bottom-text` (margin-top: 20px), even when empty. */}

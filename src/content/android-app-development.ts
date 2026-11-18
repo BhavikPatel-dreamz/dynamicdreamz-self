@@ -133,36 +133,39 @@ export const androidAppDevelopmentWhatWeBuildCopy = {
     "We design around user journeys, device requirements and backend systems—not around a single ecommerce template.",
 };
 
-export const androidAppDevelopmentWhatWeBuildBoxes: readonly Omit<
-  ThemeCustomizationBox,
-  "icon"
->[] = [
+export const androidAppDevelopmentWhatWeBuildBoxes: readonly ThemeCustomizationBox[] = [
   {
+    icon: "utility",
     title: "Business & Utility Apps",
     description:
       "Operational tools, internal apps, calculators, dashboards and task-based Android products.",
   },
   {
+    icon: "consumer",
     title: "Consumer Applications",
     description:
       "Lifestyle, content, community, membership and other customer-facing digital experiences.",
   },
   {
+    icon: "booking",
     title: "Booking & Service Apps",
     description:
       "Appointments, service requests, account management, reminders and location-driven flows.",
   },
   {
+    icon: "marketplace",
     title: "Marketplace & Platform Apps",
     description:
       "Multi-role Android products for customers, providers, vendors or other user groups.",
   },
   {
+    icon: "ecommerce",
     title: "Ecommerce Apps",
     description:
       "Shopping applications with product discovery, account, cart, checkout, loyalty and retention integrations.",
   },
   {
+    icon: "shopify-android-apps",
     title: "Shopify Android Apps",
     description:
       "Custom Android shopping apps connected to Shopify and supported business systems.",
@@ -177,46 +180,51 @@ export const androidAppDevelopmentLifecycleServicesCopy = {
     "From product definition through development, integrations, QA and ongoing updates, our team can support the complete mobile product lifecycle or join at the stage where you need additional capability.",
 };
 
-export const androidAppDevelopmentLifecycleServicesBoxes: readonly Omit<
-  ThemeCustomizationBox,
-  "icon"
->[] = [
+export const androidAppDevelopmentLifecycleServicesBoxes: readonly ThemeCustomizationBox[] = [
   {
+    icon: "prototyping",
     title: "Prototyping, Wireframes & Mockups",
     description:
       "Define application flows and interface direction before full Android development begins.",
   },
   {
+    icon: "native-android",
     title: "Native Android App Development",
     description:
       "Build Android applications with Kotlin and Jetpack Compose when native Android is the right architecture.",
   },
   {
+    icon: "android-ui-ux",
     title: "Android UI/UX Design",
     description:
       "Create clear, adaptive interfaces around the product and modern Android interaction patterns.",
   },
   {
+    icon: "backend",
     title: "Backend & API Integration",
     description:
       "Connect authentication, payments, maps, CRM, ERP, analytics, notifications and custom business systems.",
   },
   {
+    icon: "qa-testing",
     title: "App Testing & Quality Assurance",
     description:
       "Test important workflows across relevant Android devices, screen sizes, OS versions and integrations.",
   },
   {
+    icon: "google-play",
     title: "Google Play Deployment & Support",
     description:
       "Prepare release builds, support Play Store submission and continue with app updates and maintenance.",
   },
   {
+    icon: "existing-app",
     title: "Existing App Customization",
     description:
       "Upgrade an Android app, add features, improve UI or performance and update dependencies.",
   },
   {
+    icon: "shopify-cross-platform",
     title: "Shopify & Cross-Platform Development",
     description:
       "Connect Android to Shopify or use React Native / Flutter when a shared iOS and Android roadmap is a better fit.",
@@ -403,18 +411,22 @@ export const androidAppDevelopmentWhyChooseCopy = {
     "Mobile apps rarely live in isolation. Our in-house teams can support UI/UX, backend APIs, ecommerce, full-stack development, QA and ongoing maintenance around the application.",
   items: [
     {
+      icon: "cross-platform" as const,
       description:
         "Designers and developers work together from flows and prototypes through implementation.",
     },
     {
+      icon: "backend" as const,
       description:
         "APIs, authentication, databases, business systems and admin tools can stay with the same delivery team.",
     },
     {
+      icon: "shield" as const,
       description:
-        "Important application journeys are tested across relevant devices, integrations and release conditions.",
+        "Important application journeys are tested across relevant devices, integrations and release candidates.",
     },
     {
+      icon: "update" as const,
       description:
         "Continue with OS changes, releases, new features, integrations and product evolution after launch.",
     },

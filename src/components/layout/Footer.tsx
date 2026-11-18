@@ -260,7 +260,7 @@ export function SiteFooter({
         <div className="grid grid-cols-6 gap-3 pt-[50px] max-[992px]:grid-cols-2 max-[992px]:gap-4 max-[992px]:pt-[35px] max-[768px]:pt-[30px]">
           {footerAwards.map((award) => (
             <a className="flex h-[81px] items-center justify-center rounded-[20px] bg-white px-[18px] py-4 max-[1200px]:rounded-[10px] max-[768px]:h-[60px] max-[768px]:border max-[768px]:border-[#efefef]/20 max-[768px]:px-[13px] max-[768px]:py-[5px]" href={award.href} target="_blank" rel="nofollow noopener noreferrer" key={award.src} aria-label={award.alt}>
-              <Image src={award.src} alt={award.alt} width={award.width} height={award.height} className="max-[768px]:h-10 object-contain"/>
+              <Image src={award.src} alt={award.alt} width={award.width} height={award.height} className="max-[768px]:h-10 h-auto w-auto object-contain" style={{ width: "auto", height: "auto" }}/>
             </a>
           ))}
         </div>

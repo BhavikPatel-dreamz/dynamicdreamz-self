@@ -105,13 +105,13 @@ function ReviewCircle({
           <div className="review_animation_text mb-6 text-center text-base leading-normal text-black max-[768px]:mb-[10px] max-[768px]:text-sm">{sharedUiCopy.reviewedOn}</div>
           <div className="review_animation_box_logo mb-5 max-[768px]:mb-0">
             <Image
-              className="mx-auto h-auto w-auto max-[768px]:max-h-10 max-[768px]:max-w-[130px]"
+              className="mx-auto max-[768px]:max-h-10 max-[768px]:max-w-[130px]"
               src={review.wordmark}
               alt={review.wordmarkAlt}
               width={review.wordmarkWidth}
               height={review.wordmarkHeight}
               priority={prioritizeImage}
-              style={{ width: `${review.wordmarkWidth}px` }}
+              style={{ width: "auto", height: "auto" }}
             />
           </div>
         </div>

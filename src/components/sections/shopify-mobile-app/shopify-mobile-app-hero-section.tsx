@@ -83,7 +83,7 @@ export function ShopifyMobileAppHeroSection({
                   as="div"
                   className="mb-[15px]"
                   items={content.eyebrows}
-                  linePosition="overlay"
+                  linePosition="flow"
                 />
               )}
 
@@ -148,6 +148,7 @@ export function ShopifyMobileAppHeroSection({
                           alt={badge.alt}
                           width={badge.width}
                           height={badge.height}
+                          style={{ width: "auto", height: "auto" }}
                         />
                       </a>
                     </div>
