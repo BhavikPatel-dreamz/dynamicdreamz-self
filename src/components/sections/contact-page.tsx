@@ -198,8 +198,6 @@ export function ContactOfficesSection({
           eyebrow={eyebrow}
           heading={title}
           headingId="offices-title"
-          textColumnClassName="w-full md:w-[48%] md:text-right max-[992px]:mt-3"
-          titleColumnClassName="w-full md:w-[48%]"
         />
         <div className="grid grid-cols-2 gap-[30px] max-[992px]:gap-5 max-[768px]:grid-cols-1">
           {activeOffices.map((office) => (
@@ -283,7 +281,7 @@ export function ContactDetailsSection({
               </span>
               <a
                 href={`mailto:${contactDetailsSection.sales.email}`}
-                className="text-base leading-7 font-semibold text-ink break-words transition-colors hover:text-brand-red"
+                className="text-base leading-7 font-semibold text-ink break-words transition-colors hover:text-brand-red max-[768px]:text-sm"
               >
                 {contactDetailsSection.sales.email}
               </a>
@@ -302,7 +300,7 @@ export function ContactDetailsSection({
               </span>
               <a
                 href={`mailto:${contactDetailsSection.hr.email}`}
-                className="text-base leading-7 font-semibold text-ink break-words transition-colors hover:text-brand-red"
+                className="text-base leading-7 font-semibold text-ink break-words transition-colors hover:text-brand-red max-[768px]:text-sm"
               >
                 {contactDetailsSection.hr.email}
               </a>
@@ -332,7 +330,7 @@ export function ContactDetailsSection({
               </span>
               <Link
                 href={contactDetailsSection.discoveryCall.actionHref}
-                className="text-base leading-7 font-semibold text-ink transition-colors hover:text-brand-red"
+                className="text-base leading-7 font-semibold text-ink transition-colors hover:text-brand-red max-[768px]:text-sm"
               >
                 {contactDetailsSection.discoveryCall.actionLabel}
               </Link>

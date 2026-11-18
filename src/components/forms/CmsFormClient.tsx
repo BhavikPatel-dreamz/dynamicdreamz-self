@@ -653,7 +653,7 @@ export function CmsFormClient({
         }
       >
         {footerNote && (
-          <div className="max-[768px]:text-center">
+          <div>
             <p className="text-xs font-normal text-[#090909]">
               {footerNote}
             </p>

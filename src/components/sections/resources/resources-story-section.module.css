@@ -1,0 +1,34 @@
+.reviewBox {
+  position: relative;
+}
+
+.reviewBox::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  background-image: url("/assets/reviews/review-card-gradient-border.svg");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  pointer-events: none;
+}
+
+@media (max-width: 992px) {
+  .reviewBox::before {
+    inset: 0;
+    width: auto;
+    height: auto;
+    padding: 1px;
+    border-radius: 10px;
+    background-image: none;
+    background: linear-gradient(to right, #15c064, #00d1ff);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+    pointer-events: none;
+  }
+}

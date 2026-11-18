@@ -192,7 +192,7 @@ export function ContactForm() {
       </div>
 
       <div className="flex items-center justify-between gap-5 max-[768px]:flex-col-reverse max-[768px]:items-center">
-        <div className="max-[768px]:text-center">
+        <div>
           <p className="text-xs font-normal text-[#090909]">{contactFormCopy.note}</p>
         </div>
         <button

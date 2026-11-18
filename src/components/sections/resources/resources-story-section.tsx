@@ -1,5 +1,6 @@
 import Image from "next/image";
 
+import styles from "@/components/sections/resources/resources-story-section.module.css";
 import { Container } from "@/components/ui/container";
 import { VideoDialog } from "@/components/ui/video-dialog";
 import { resourcesStory } from "@/content/resources";
@@ -10,8 +11,18 @@ function StoryReviews() {
     <ul className="mt-[55px] grid grid-cols-3 gap-4 max-[992px]:grid-cols-1 max-[992px]:gap-2">
       {resourcesStory.reviews.map((review) => (
         <li key={review.name}>
-          <a className="review-box relative flex h-full min-h-[104px] flex-col rounded-[15px] px-5 pt-[34px] pb-[18px] before:pointer-events-none before:absolute before:top-0 before:left-0 before:inline-block before:h-full before:w-full before:bg-[url('/assets/reviews/review-card-gradient-border.svg')] before:bg-[length:100%_100%] before:bg-no-repeat before:content-[''] max-[992px]:flex-row-reverse max-[992px]:items-center max-[992px]:justify-between max-[992px]:overflow-hidden max-[992px]:rounded-[10px] max-[992px]:bg-white max-[992px]:px-6 max-[992px]:py-[18px] max-[992px]:before:bg-[url('/assets/reviews/review-card-gradient-border-responsive.svg')] min-h-24" href={review.href} target="_blank" rel="nofollow noopener noreferrer" aria-label={`Read Dynamic Dreamz reviews on ${review.name}`}>
-            <span className="total-review absolute -top-4 left-1/2 min-w-33.25 -translate-x-1/2 rounded-[30px] p-px text-center text-[14px] leading-[19.6px] font-montreal-medium whitespace-nowrap text-[#535353] before:absolute before:inset-0 before:z-0 before:rounded-[30px] before:bg-[linear-gradient(to_right,#15c064,#00d1ff)] before:content-[''] max-[992px]:relative max-[992px]:top-auto max-[992px]:left-auto max-[992px]:translate-x-0"><span className="relative z-1 block rounded-[29px] bg-[#fbf7ed] px-3 py-1.5 max-[992px]:bg-white">{review.reviews}</span></span>
+          <a
+            className={cn(
+              "review-box relative flex h-full min-h-[104px] flex-col rounded-[15px] px-5 pt-[34px] pb-[18px]",
+              styles.reviewBox,
+              "max-[992px]:flex-row-reverse max-[992px]:items-center max-[992px]:justify-between max-[992px]:overflow-hidden max-[992px]:rounded-[10px] max-[992px]:bg-white max-[992px]:px-6 max-[992px]:py-[18px] min-h-24",
+            )}
+            href={review.href}
+            target="_blank"
+            rel="nofollow noopener noreferrer"
+            aria-label={`Read Dynamic Dreamz reviews on ${review.name}`}
+          >
+            <span className="total-review absolute -top-4 left-1/2 min-w-33.25 -translate-x-1/2 rounded-[30px] p-px text-center text-[14px] leading-[19.6px] font-montreal-medium whitespace-nowrap text-[#535353] before:absolute before:inset-0 before:z-0 before:rounded-[30px] before:bg-[linear-gradient(to_right,#15c064,#00d1ff)] before:content-[''] max-[992px]:relative max-[992px]:top-auto max-[992px]:left-auto max-[992px]:translate-x-0"><span className="relative z-1 block rounded-[29px] text-sm font-small leading-[19.6px] max-[1200px]:text-[11px] max-[992px]:text-sm bg-[#fbf7ed] px-3 py-1.5 max-[992px]:bg-white">{review.reviews}</span></span>
             <span className="flex flex-col items-start">
               <Image className={cn("mb-2 object-contain", review.logoClassName)} src={review.logo} alt={`${review.name} logo`} width={review.logoWidth} height={review.logoHeight} />
               <span className="flex items-center gap-1.75 min-h-6.75">
@@ -28,7 +39,7 @@ function StoryReviews() {
 
 export function ResourcesStorySection() {
   return (
-    <section className="resources-hero-div bg-[linear-gradient(97.18deg,#e8f9ef_28.5%,#e6fafd_91.82%)] py-[60px]" aria-labelledby="resources-story-title">
+    <section className="resources-hero-div bg-[linear-gradient(97.18deg,#e8f9ef_28.5%,#e6fafd_91.82%)] pt-[60px]" aria-labelledby="resources-story-title">
       <Container>
         <div className="hero-wrapper flex flex-row-reverse justify-between max-[992px]:flex-col">
           <div className="left-col w-[44.5%] max-[992px]:mb-[42px] max-[992px]:w-full">

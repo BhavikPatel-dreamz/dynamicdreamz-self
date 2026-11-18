@@ -26,7 +26,7 @@ export function CareerJobCard({ job, location }: CareerJobCardProps) {
       </div>
 
       <div className="job-position w-[32%] max-[992px]:w-full">
-        <h3 className="m-0 flex items-center text-[18px] font-normal capitalize text-ink max-[1200px]:text-base max-[1200px]:leading-6 max-[992px]:mt-[30px] max-[992px]:mb-2.5 max-[992px]:text-[18px]">
+        <h3 className="m-0 flex items-center text-[18px] leading-[28.8px] font-normal capitalize text-ink max-[1200px]:text-[16px] max-[1200px]:leading-6 max-[992px]:mt-[30px] max-[992px]:mb-2.5">
           <Image
             alt={job.iconAlt ?? ""}
             className="mr-3.5 size-9 shrink-0 object-contain max-[992px]:min-w-0"
