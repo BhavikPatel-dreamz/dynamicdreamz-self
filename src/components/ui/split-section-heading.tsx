@@ -18,6 +18,7 @@ export type SplitSectionHeadingProps = {
   dark?: boolean;
   variant?: "centered" | "default" | "portfolio" | "services" | "left";
   preserveBreaks?: boolean;
+  headingBrClassName?: string;
   aosAnimation?: string;
 };
 
@@ -41,9 +42,12 @@ export function SplitSectionHeading({
   pClassName,
   dark = false,
   variant = "default",
-  preserveBreaks = false,
+  preserveBreaks,
+  headingBrClassName,
   aosAnimation = "fade-up",
 }: SplitSectionHeadingProps) {
+  const shouldPreserve = preserveBreaks ?? Array.isArray(heading);
+  const brClass = headingBrClassName ?? (shouldPreserve ? (preserveBreaks ? "max-[389px]:hidden" : "max-[1200px]:hidden") : "max-[1200px]:hidden");
   const body = paragraphs ?? (description ? (Array.isArray(description) ? description : [description]) : []);
   const services = variant === "services";
   const portfolio = variant === "portfolio";
@@ -76,7 +80,7 @@ export function SplitSectionHeading({
           )}
           id={headingId}
         >
-          {formatBrText(heading, "max-[1200px]:hidden")}
+          {formatBrText(heading, brClass || undefined)}
         </h2>
         {body.length > 0 ? (
           <div className={textClassName}>
@@ -143,8 +147,8 @@ export function SplitSectionHeading({
           id={headingId}
         >
           {formatBrText(
-            preserveBreaks ? heading : removeBreakTags(heading),
-            "max-[1200px]:hidden",
+            shouldPreserve ? heading : removeBreakTags(heading),
+            brClass || undefined,
           )}
         </h2>
       </div>

@@ -30,6 +30,8 @@ export function ShopifyAppProcessSection({
           className="mb-[90px] max-[1200px]:mb-[50px] max-[768px]:mb-[30px]"
           eyebrow={content.eyebrow}
           heading={content.heading}
+          headingBrClassName="max-[389px]:hidden"
+          preserveBreaks
           variant="centered"
         />
 

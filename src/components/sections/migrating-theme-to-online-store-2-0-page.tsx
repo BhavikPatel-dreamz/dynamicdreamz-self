@@ -53,6 +53,7 @@ export function MigratingThemeToOnlineStore20Page() {
       {/* 1. Hero */}
       <ServiceHeroVideoSection
         content={migratingThemeToOnlineStore20Content.hero}
+        rightColClassName="max-[992px]:inline-block max-[768px]:hidden"
       />
 
       {/* 2. Client Brands */}

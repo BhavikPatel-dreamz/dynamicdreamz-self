@@ -67,7 +67,7 @@ flowchart TD
 | **Tier 2** | **WordPress City Landing Pages** | 6 | **100% Ready** | `service-hero` (`city`), `proof-stats` (`city-counters`), `proof-stats` (`team-boxes`), `faq-accordion`, `cta-banner` |
 | **Tier 3** | **Platform Migration Pages** | 12 | **100% Ready** | `service-hero`, `proof-stats` (`why-choose-migration`), `process-timeline` (`numbered-grid`), `services-grid`, `faq-accordion` |
 | **Tier 4** | **Industry Ecommerce Pages** | 9 | **100% Ready & Seeded** | `service-hero`, `brand-partners` (`tools-grid`), `portfolio-showcase` (`case-studies-slider`), `services-grid` (`theme-boxes`), `industry-custom-dev`, `proof-stats` (`why-choose-migration`), `testimonials-carousel`, `faq-accordion` |
-| **Tier 5** | **Mobile App Pages** | 6 | **100% Ready & Seeded** | `service-hero` (`mobile-app`), `brand-partners`, `ai-empowered-delivery`, `services-grid`, `process-timeline`, `mobile-app-work`, `pricing-table`, `proof-stats`, `testimonials-carousel`, `faq-accordion`, `shopify-app-benefits`, `shopify-mobile-app-dtc`, `shopify-mobile-app-experience`, `mobile-app-comparison` |
+| **Tier 5** | **Mobile App Pages** | 6 | **100% Ready & Seeded** | `service-hero` (`centered` / `mobile-app`), `brand-partners`, `ai-empowered-delivery`, `services-grid` (`app-features`), `process-timeline` (`app-process`), `portfolio-showcase` (`case-studies-slider`), `mobile-app-work`, `pricing-table`, `proof-stats`, `testimonials-carousel`, `faq-accordion`, `shopify-app-benefits`, `shopify-mobile-app-dtc`, `shopify-mobile-app-experience`, `mobile-app-comparison` |
 | **Tier 6** | **Standard Core Services** | 25 | **100% Ready & Seeded** | Standard hero, brand partners, capability grids, portfolio cards, and FAQs |
 | **Tier 7** | **Flagship Service Pages** | 15 | **100% Ready** | Covered by Phase 1 Master Blocks + Phase 2 Signature Blocks (`hours-comparison`, `cro-barriers`, etc.) |
 | **Tier 8** | **Company & Form Pages** | 9 | **100% Ready** | Covered by Phase 2 blocks (`about-timeline`, `about-founders`, `life-gallery`, `our-work-projects`, forms) |
@@ -98,16 +98,16 @@ All 10 Universal Master Blocks are built, synced in Neon PostgreSQL, typed in `s
 
 All 10 Dedicated Signature Blocks are built, safely synced with short table names (`dbName`), typed, and dispatched:
 
-1. **`AboutTimelineBlock` (`about-timeline`)** &rarr; [`AboutTimelineSection`](file:///home/ubuntu/Vatsal/DD/dynamicdreamz-self/src/components/sections/about/about-timeline-section.tsx) (Milestones table: `at_miles`).
-2. **`AboutFoundersBlock` (`about-founders`)** &rarr; [`AboutFoundersSection`](file:///home/ubuntu/Vatsal/DD/dynamicdreamz-self/src/components/sections/about/about-founders-section.tsx) (Founders table: `af_items`).
-3. **`LifeGalleryBlock` (`life-gallery`)** &rarr; [`LifeGallerySection`](file:///home/ubuntu/Vatsal/DD/dynamicdreamz-self/src/components/sections/life-dynamicdreamz/life-gallery-section.tsx) (Gallery table: `lg_imgs`).
-4. **`OurWorkProjectsBlock` (`our-work-projects`)** &rarr; [`OurWorkProjectsSection`](file:///home/ubuntu/Vatsal/DD/dynamicdreamz-self/src/components/sections/our-work/our-work-projects-section.tsx).
-5. **`HoursComparisonBlock` (`hours-comparison`)** &rarr; [`ShopifyHoursComparisonSection`](file:///home/ubuntu/Vatsal/DD/dynamicdreamz-self/src/components/sections/buy-shopify-development-hours/shopify-hours-content-sections.tsx).
-6. **`CroBarriersBlock` (`cro-barriers`)** &rarr; [`ShopifyCroBarriersSection`](file:///home/ubuntu/Vatsal/DD/dynamicdreamz-self/src/components/sections/shopify-cro/shopify-cro-barriers-section.tsx) (Barriers table: `cb_items`).
-7. **`EvaluationFrameworkBlock` (`evaluation-framework`)** &rarr; [`EvaluationFrameworkSection`](file:///home/ubuntu/Vatsal/DD/dynamicdreamz-self/src/components/sections/shopify-plus-agency/evaluation-framework-section.tsx) (Criteria table: `ef_items`).
-8. **`WhiteLabelDeliveryBlock` (`white-label-delivery`)** &rarr; [`DeliveryModelComparisonSection`](file:///home/ubuntu/Vatsal/DD/dynamicdreamz-self/src/components/sections/white-label-shopify/delivery-model-comparison-section.tsx).
-9. **`B2bArchitectureBlock` (`b2b-architecture`)** &rarr; [`ShopifyB2BApproachSection`](file:///home/ubuntu/Vatsal/DD/dynamicdreamz-self/src/components/sections/shopify-b2b/shopify-b2b-approach-section.tsx) (Tables: `ba_apps`, `ba_pts`, `ba_prfs`).
-10. **`ResourcesHubBlock` (`resources-hub`)** &rarr; [`ResourcesHubSection`](file:///home/ubuntu/Vatsal/DD/dynamicdreamz-self/src/components/sections/resources/resources-hub-section.tsx) (Points table: `rh_pts`).
+1. **`AboutTimelineBlock` (`about-timeline`)** &rarr; [`AboutTimelineSection`](file:///home/ubuntu/vandan/dd/dynamicdreamz-self/src/components/sections/about/about-timeline-section.tsx) (Milestones table: `at_miles`).
+2. **`AboutFoundersBlock` (`about-founders`)** &rarr; [`AboutFoundersSection`](file:///home/ubuntu/vandan/dd/dynamicdreamz-self/src/components/sections/about/about-founders-section.tsx) (Founders table: `af_items`).
+3. **`LifeGalleryBlock` (`life-gallery`)** &rarr; [`LifeGallerySection`](file:///home/ubuntu/vandan/dd/dynamicdreamz-self/src/components/sections/life-dynamicdreamz/life-gallery-section.tsx) (Gallery table: `lg_imgs`).
+4. **`OurWorkProjectsBlock` (`our-work-projects`)** &rarr; [`OurWorkProjectsSection`](file:///home/ubuntu/vandan/dd/dynamicdreamz-self/src/components/sections/our-work/our-work-projects-section.tsx).
+5. **`HoursComparisonBlock` (`hours-comparison`)** &rarr; [`ShopifyHoursComparisonSection`](file:///home/ubuntu/vandan/dd/dynamicdreamz-self/src/components/sections/buy-shopify-development-hours/shopify-hours-content-sections.tsx).
+6. **`CroBarriersBlock` (`cro-barriers`)** &rarr; [`ShopifyCroBarriersSection`](file:///home/ubuntu/vandan/dd/dynamicdreamz-self/src/components/sections/shopify-cro/shopify-cro-barriers-section.tsx) (Barriers table: `cb_items`).
+7. **`EvaluationFrameworkBlock` (`evaluation-framework`)** &rarr; [`EvaluationFrameworkSection`](file:///home/ubuntu/vandan/dd/dynamicdreamz-self/src/components/sections/shopify-plus-agency/evaluation-framework-section.tsx) (Criteria table: `ef_items`).
+8. **`WhiteLabelDeliveryBlock` (`white-label-delivery`)** &rarr; [`DeliveryModelComparisonSection`](file:///home/ubuntu/vandan/dd/dynamicdreamz-self/src/components/sections/white-label-shopify/delivery-model-comparison-section.tsx).
+9. **`B2bArchitectureBlock` (`b2b-architecture`)** &rarr; [`ShopifyB2BApproachSection`](file:///home/ubuntu/vandan/dd/dynamicdreamz-self/src/components/sections/shopify-b2b/shopify-b2b-approach-section.tsx) (Tables: `ba_apps`, `ba_pts`, `ba_prfs`).
+10. **`ResourcesHubBlock` (`resources-hub`)** &rarr; [`ResourcesHubSection`](file:///home/ubuntu/vandan/dd/dynamicdreamz-self/src/components/sections/resources/resources-hub-section.tsx) (Points table: `rh_pts`).
 
 ---
 
@@ -120,35 +120,35 @@ To achieve **100% visual parity across all 142 pages**, the remaining 73 section
 By extending the `variant` field of existing blocks, we cover **48 recurring components** without adding new database tables:
 
 1. **`service-hero`**:
-   - `variant: "theme"` &rarr; Maps to [`ThemeHeroSection`](file:///home/ubuntu/Vatsal/DD/dynamicdreamz-self/src/components/sections/theme-customization/theme-hero-section.tsx) (Covers all 46 Theme Customization pages).
-   - `variant: "about"` &rarr; Maps to [`AboutHeroSection`](file:///home/ubuntu/Vatsal/DD/dynamicdreamz-self/src/components/sections/about/about-hero-section.tsx).
-   - `variant: "career"` &rarr; Maps to [`CareerHeroSection`](file:///home/ubuntu/Vatsal/DD/dynamicdreamz-self/src/components/sections/career/career-hero-section.tsx).
-   - `variant: "life"` &rarr; Maps to [`LifeHeroSection`](file:///home/ubuntu/Vatsal/DD/dynamicdreamz-self/src/components/sections/life-dynamicdreamz/life-hero-section.tsx).
-   - `variant: "our-work"` &rarr; Maps to [`OurWorkHeroSection`](file:///home/ubuntu/Vatsal/DD/dynamicdreamz-self/src/components/sections/our-work/our-work-hero-section.tsx).
-   - `variant: "resources"` &rarr; Maps to [`ResourcesHeroSection`](file:///home/ubuntu/Vatsal/DD/dynamicdreamz-self/src/components/sections/resources/resources-hero-section.tsx).
-   - `variant: "buy-hours"` &rarr; Maps to [`ShopifyHoursHeroSection`](file:///home/ubuntu/Vatsal/DD/dynamicdreamz-self/src/components/sections/buy-shopify-development-hours/shopify-hours-content-sections.tsx).
-   - `variant: "industry"` &rarr; Maps to [`IndustryHeroSection`](file:///home/ubuntu/Vatsal/DD/dynamicdreamz-self/src/components/sections/industry/industry-hero-section.tsx).
+   - `variant: "theme"` &rarr; Maps to [`ThemeHeroSection`](file:///home/ubuntu/vandan/dd/dynamicdreamz-self/src/components/sections/theme-customization/theme-hero-section.tsx) (Covers all 46 Theme Customization pages).
+   - `variant: "about"` &rarr; Maps to [`AboutHeroSection`](file:///home/ubuntu/vandan/dd/dynamicdreamz-self/src/components/sections/about/about-hero-section.tsx).
+   - `variant: "career"` &rarr; Maps to [`CareerHeroSection`](file:///home/ubuntu/vandan/dd/dynamicdreamz-self/src/components/sections/career/career-hero-section.tsx).
+   - `variant: "life"` &rarr; Maps to [`LifeHeroSection`](file:///home/ubuntu/vandan/dd/dynamicdreamz-self/src/components/sections/life-dynamicdreamz/life-hero-section.tsx).
+   - `variant: "our-work"` &rarr; Maps to [`OurWorkHeroSection`](file:///home/ubuntu/vandan/dd/dynamicdreamz-self/src/components/sections/our-work/our-work-hero-section.tsx).
+   - `variant: "resources"` &rarr; Maps to [`ResourcesHeroSection`](file:///home/ubuntu/vandan/dd/dynamicdreamz-self/src/components/sections/resources/resources-hero-section.tsx).
+   - `variant: "buy-hours"` &rarr; Maps to [`ShopifyHoursHeroSection`](file:///home/ubuntu/vandan/dd/dynamicdreamz-self/src/components/sections/buy-shopify-development-hours/shopify-hours-content-sections.tsx).
+   - `variant: "industry"` &rarr; Maps to [`IndustryHeroSection`](file:///home/ubuntu/vandan/dd/dynamicdreamz-self/src/components/sections/industry/industry-hero-section.tsx).
 2. **`proof-stats`**:
-   - `variant: "why-choose-boxes"` &rarr; Maps to [`CityWhyChooseBoxesSection`](file:///home/ubuntu/Vatsal/DD/dynamicdreamz-self/src/components/sections/city-why-choose-boxes-section.tsx) (Covers 60+ City & Theme pages).
-   - `variant: "white-label-counters"` &rarr; Maps to [`WhiteLabelCounterSection`](file:///home/ubuntu/Vatsal/DD/dynamicdreamz-self/src/components/sections/white-label/white-label-counter-section.tsx).
-   - `variant: "credential-evidence"` &rarr; Maps to [`CredentialEvidenceSection`](file:///home/ubuntu/Vatsal/DD/dynamicdreamz-self/src/components/sections/shopify-certified-developers/shopify-certified-sections.tsx).
+   - `variant: "why-choose-boxes"` &rarr; Maps to [`CityWhyChooseBoxesSection`](file:///home/ubuntu/vandan/dd/dynamicdreamz-self/src/components/sections/city-why-choose-boxes-section.tsx) (Covers 60+ City & Theme pages).
+   - `variant: "white-label-counters"` &rarr; Maps to [`WhiteLabelCounterSection`](file:///home/ubuntu/vandan/dd/dynamicdreamz-self/src/components/sections/white-label/white-label-counter-section.tsx).
+   - `variant: "credential-evidence"` &rarr; Maps to [`CredentialEvidenceSection`](file:///home/ubuntu/vandan/dd/dynamicdreamz-self/src/components/sections/shopify-certified-developers/shopify-certified-sections.tsx).
 3. **`process-timeline`**:
-   - `variant: "migration-process"` &rarr; Maps to [`MigrationProcessSection`](file:///home/ubuntu/Vatsal/DD/dynamicdreamz-self/src/components/sections/shopify-migration/shopify-migration-content-sections.tsx) (Covers all 12 Migration pages).
-   - `variant: "app-process"` &rarr; Maps to [`ShopifyAppProcessSection`](file:///home/ubuntu/Vatsal/DD/dynamicdreamz-self/src/components/sections/appmaker-shopify-mobile-app/appmaker-shopify-sections.tsx).
+   - `variant: "migration-process"` &rarr; Maps to [`MigrationProcessSection`](file:///home/ubuntu/vandan/dd/dynamicdreamz-self/src/components/sections/shopify-migration/shopify-migration-content-sections.tsx) (Covers all 12 Migration pages).
+   - `variant: "app-process"` &rarr; Maps to [`ShopifyAppProcessSection`](file:///home/ubuntu/vandan/dd/dynamicdreamz-self/src/components/sections/appmaker-shopify-mobile-app/appmaker-shopify-sections.tsx).
 4. **`brand-partners`**:
-   - `variant: "tools-grid"` &rarr; Maps to [`WhiteLabelToolsSection`](file:///home/ubuntu/Vatsal/DD/dynamicdreamz-self/src/components/sections/white-label/white-label-tools-section.tsx).
-   - `variant: "tech-stack"` &rarr; Maps to [`TechnologiesWorkWithSection`](file:///home/ubuntu/Vatsal/DD/dynamicdreamz-self/src/components/sections/full-stack-development/full-stack-content-sections.tsx).
+   - `variant: "tools-grid"` &rarr; Maps to [`WhiteLabelToolsSection`](file:///home/ubuntu/vandan/dd/dynamicdreamz-self/src/components/sections/white-label/white-label-tools-section.tsx).
+   - `variant: "tech-stack"` &rarr; Maps to [`TechnologiesWorkWithSection`](file:///home/ubuntu/vandan/dd/dynamicdreamz-self/src/components/sections/full-stack-development/full-stack-content-sections.tsx).
 5. **`services-grid`**:
-   - `variant: "ai-services"` &rarr; Maps to [`AiServicesGridSection`](file:///home/ubuntu/Vatsal/DD/dynamicdreamz-self/src/components/sections/ai-services/ai-services-sections.tsx).
-   - `variant: "app-features"` &rarr; Maps to [`ShopifyAppFeaturesSection`](file:///home/ubuntu/Vatsal/DD/dynamicdreamz-self/src/components/sections/appmaker-shopify-mobile-app/appmaker-shopify-sections.tsx).
-   - `variant: "industries-grid"` &rarr; Maps to [`IndustriesServedSection`](file:///home/ubuntu/Vatsal/DD/dynamicdreamz-self/src/components/sections/shopify-plus-agency/industries-served-section.tsx).
-   - `variant: "theme-catalog"` &rarr; Maps to [`ShopifyThemesGridSection`](file:///home/ubuntu/Vatsal/DD/dynamicdreamz-self/src/components/sections/shopify-theme-customization/shopify-theme-customization-sections.tsx).
+   - `variant: "ai-services"` &rarr; Maps to [`AiServicesGridSection`](file:///home/ubuntu/vandan/dd/dynamicdreamz-self/src/components/sections/ai-services/ai-services-sections.tsx).
+   - `variant: "app-features"` &rarr; Maps to [`ShopifyAppFeaturesSection`](file:///home/ubuntu/vandan/dd/dynamicdreamz-self/src/components/sections/appmaker-shopify-mobile-app/appmaker-shopify-sections.tsx).
+   - `variant: "industries-grid"` &rarr; Maps to [`IndustriesServedSection`](file:///home/ubuntu/vandan/dd/dynamicdreamz-self/src/components/sections/shopify-plus-agency/industries-served-section.tsx).
+   - `variant: "theme-catalog"` &rarr; Maps to [`ShopifyThemesGridSection`](file:///home/ubuntu/vandan/dd/dynamicdreamz-self/src/components/sections/shopify-theme-customization/shopify-theme-customization-sections.tsx).
 6. **`portfolio-showcase`**:
-   - `variant: "case-studies-slider"` &rarr; Maps to [`ServicesCaseStudiesSection`](file:///home/ubuntu/Vatsal/DD/dynamicdreamz-self/src/components/sections/services-case-studies-section.tsx).
-   - `variant: "case-studies-cards"` &rarr; Maps to [`CaseStudyCardsSection`](file:///home/ubuntu/Vatsal/DD/dynamicdreamz-self/src/components/sections/shopify-plus-agency/case-study-cards-section.tsx).
+   - `variant: "case-studies-slider"` &rarr; Maps to [`ServicesCaseStudiesSection`](file:///home/ubuntu/vandan/dd/dynamicdreamz-self/src/components/sections/services-case-studies-section.tsx).
+   - `variant: "case-studies-cards"` &rarr; Maps to [`CaseStudyCardsSection`](file:///home/ubuntu/vandan/dd/dynamicdreamz-self/src/components/sections/shopify-plus-agency/case-study-cards-section.tsx).
 7. **`cta-banner`**:
-   - `variant: "home-white-label"` &rarr; Maps to [`WhiteLabelPartnerSection`](file:///home/ubuntu/Vatsal/DD/dynamicdreamz-self/src/components/sections/home/white-label-partner-section.tsx).
-   - `variant: "two-col-cta"` &rarr; Maps to [`TwoColImageWithTextSection`](file:///home/ubuntu/Vatsal/DD/dynamicdreamz-self/src/components/sections/food-beverage/two-col-image-with-text-section.tsx).
+   - `variant: "home-white-label"` &rarr; Maps to [`WhiteLabelPartnerSection`](file:///home/ubuntu/vandan/dd/dynamicdreamz-self/src/components/sections/home/white-label-partner-section.tsx).
+   - `variant: "two-col-cta"` &rarr; Maps to [`TwoColImageWithTextSection`](file:///home/ubuntu/vandan/dd/dynamicdreamz-self/src/components/sections/food-beverage/two-col-image-with-text-section.tsx).
 
 ---
 
@@ -158,55 +158,67 @@ To preserve bespoke layouts, video autoplay modals, and interactive tabs without
 
 1. **`ThemeFeaturesBannerBlock` (`theme-features-banner`)**:
    - Schema: Array of theme feature pill badges with icon uploads and captions.
-   - Component: [`ThemeFeaturesBannerSection`](file:///home/ubuntu/Vatsal/DD/dynamicdreamz-self/src/components/sections/theme-customization/theme-features-banner-section.tsx).
+   - Component: [`ThemeFeaturesBannerSection`](file:///home/ubuntu/vandan/dd/dynamicdreamz-self/src/components/sections/theme-customization/theme-features-banner-section.tsx).
 2. **`AiEmpoweredDeliveryBlock` (`ai-empowered-delivery`)**:
    - Schema: Dual Discovery & Automation split cards with capability badges and narrative copy.
-   - Component: [`AiEmpoweredDeliverySection`](file:///home/ubuntu/Vatsal/DD/dynamicdreamz-self/src/components/sections/ai-empowered-delivery-section.tsx).
+   - Component: [`AiEmpoweredDeliverySection`](file:///home/ubuntu/vandan/dd/dynamicdreamz-self/src/components/sections/ai-empowered-delivery-section.tsx).
 3. **`ShopifyPlusAgencySplitBlock` (`home-shopify-plus-agency`)**:
    - Schema: Left narrative + 4 tone-colored stat cards (`bg-[#eff4ef]`, `bg-[#f4f2ef]`, `bg-[#f6eee5]`, `bg-[#f0f6e5]`) and right autoplay looping video.
-   - Component: [`ShopifyPlusAgencySection`](file:///home/ubuntu/Vatsal/DD/dynamicdreamz-self/src/components/sections/home/shopify-plus-agency-section.tsx).
+   - Component: [`ShopifyPlusAgencySection`](file:///home/ubuntu/vandan/dd/dynamicdreamz-self/src/components/sections/home/shopify-plus-agency-section.tsx).
 4. **`CommerceSolutionsAccordionBlock` (`home-commerce-solutions`)**:
    - Schema: Interactive accordion tabs with solution metrics, deliverables, and tech tags.
-   - Component: [`CommerceSolutionsSection`](file:///home/ubuntu/Vatsal/DD/dynamicdreamz-self/src/components/sections/home/commerce-solutions-section.tsx).
+   - Component: [`CommerceSolutionsSection`](file:///home/ubuntu/vandan/dd/dynamicdreamz-self/src/components/sections/home/commerce-solutions-section.tsx).
 5. **`SelectedWorkVideoBlock` (`home-selected-work`)**:
    - Schema: Portfolio projects with platform tags, client name, and inline video modal preview URLs.
-   - Component: [`SelectedWorkSection`](file:///home/ubuntu/Vatsal/DD/dynamicdreamz-self/src/components/sections/home/selected-work-section.tsx).
+   - Component: [`SelectedWorkSection`](file:///home/ubuntu/vandan/dd/dynamicdreamz-self/src/components/sections/home/selected-work-section.tsx).
 6. **`InsightsBlogGridBlock` (`home-insights`)**:
    - Schema: 3-column featured blog cards with tag badges, reading times, and view all CTA.
-   - Component: [`InsightsSection`](file:///home/ubuntu/Vatsal/DD/dynamicdreamz-self/src/components/sections/home/insights-section.tsx).
+   - Component: [`InsightsSection`](file:///home/ubuntu/vandan/dd/dynamicdreamz-self/src/components/sections/home/insights-section.tsx).
 7. **`CredentialTabsBlock` (`credential-tabs`)**:
    - Schema: Multi-tab verified credentials directory for certified Shopify developers.
-   - Component: [`CredentialTabsSection`](file:///home/ubuntu/Vatsal/DD/dynamicdreamz-self/src/components/sections/shopify-certified-developers/shopify-certified-sections.tsx).
+   - Component: [`CredentialTabsSection`](file:///home/ubuntu/vandan/dd/dynamicdreamz-self/src/components/sections/shopify-certified-developers/shopify-certified-sections.tsx).
 8. **`PartnerDirectoryProofBlock` (`partner-directory-proof`)**:
    - Schema: Partner directory verified badge, star rating, client review count, and link.
-   - Component: [`PartnerDirectoryProofSection`](file:///home/ubuntu/Vatsal/DD/dynamicdreamz-self/src/components/sections/shopify-certified-developers/shopify-certified-sections.tsx).
+   - Component: [`PartnerDirectoryProofSection`](file:///home/ubuntu/vandan/dd/dynamicdreamz-self/src/components/sections/shopify-certified-developers/shopify-certified-sections.tsx).
 9. **`ShopifyCroAssessmentBlock` (`cro-assessment`)**:
    - Schema: Revenue leak evaluation matrix and store audit assessment steps.
-   - Component: [`ShopifyCroAssessmentSection`](file:///home/ubuntu/Vatsal/DD/dynamicdreamz-self/src/components/sections/shopify-cro/shopify-cro-content-sections.tsx).
+   - Component: [`ShopifyCroAssessmentSection`](file:///home/ubuntu/vandan/dd/dynamicdreamz-self/src/components/sections/shopify-cro/shopify-cro-content-sections.tsx).
 10. **`ShopifySupportScenariosBlock` (`support-scenarios`)**:
     - Schema: Monthly retainer scenarios, SLA response tiers, and emergency coverage cards.
-    - Component: [`ShopifySupportScenariosSection`](file:///home/ubuntu/Vatsal/DD/dynamicdreamz-self/src/components/sections/white-label/white-label-content-sections.tsx).
+    - Component: [`ShopifySupportScenariosSection`](file:///home/ubuntu/vandan/dd/dynamicdreamz-self/src/components/sections/white-label/white-label-content-sections.tsx).
 11. **`AboutStoryValuesBlock` (`about-story-values`)**:
     - Schema: Two-column agency narrative and values cards.
-    - Component: [`AboutStorySection`](file:///home/ubuntu/Vatsal/DD/dynamicdreamz-self/src/components/sections/about/about-story-section.tsx) and [`AboutValuesSection`](file:///home/ubuntu/Vatsal/DD/dynamicdreamz-self/src/components/sections/about/about-values-section.tsx).
+    - Component: [`AboutStorySection`](file:///home/ubuntu/vandan/dd/dynamicdreamz-self/src/components/sections/about/about-story-section.tsx) and [`AboutValuesSection`](file:///home/ubuntu/vandan/dd/dynamicdreamz-self/src/components/sections/about/about-values-section.tsx).
 12. **`LifeCultureHiringBlock` (`life-culture-hiring`)**:
     - Schema: Culture perk cards and open department hiring badges.
-    - Component: [`WorkCultureSection`](file:///home/ubuntu/Vatsal/DD/dynamicdreamz-self/src/components/sections/life-dynamicdreamz/work-culture-section.tsx) and [`LifeHiringSection`](file:///home/ubuntu/Vatsal/DD/dynamicdreamz-self/src/components/sections/life-dynamicdreamz/life-hiring-section.tsx).
+    - Component: [`WorkCultureSection`](file:///home/ubuntu/vandan/dd/dynamicdreamz-self/src/components/sections/life-dynamicdreamz/work-culture-section.tsx) and [`LifeHiringSection`](file:///home/ubuntu/vandan/dd/dynamicdreamz-self/src/components/sections/life-dynamicdreamz/life-hiring-section.tsx).
 13. **`CareerOpportunitiesBlock` (`career-opportunities`)**:
     - Schema: Open job listings, department filters, and requirements.
-    - Component: [`CareerOpportunitiesSection`](file:///home/ubuntu/Vatsal/DD/dynamicdreamz-self/src/components/sections/career/career-opportunities-section.tsx).
+    - Component: [`CareerOpportunitiesSection`](file:///home/ubuntu/vandan/dd/dynamicdreamz-self/src/components/sections/career/career-opportunities-section.tsx).
 14. **`ShopifyHoursTasksBlock` (`hours-tasks`)**:
     - Schema: Hourly task scope breakdown accordion and hours package selection.
-    - Component: [`ShopifyHoursTasksSection`](file:///home/ubuntu/Vatsal/DD/dynamicdreamz-self/src/components/sections/buy-shopify-development-hours/shopify-hours-content-sections.tsx).
+    - Component: [`ShopifyHoursTasksSection`](file:///home/ubuntu/vandan/dd/dynamicdreamz-self/src/components/sections/buy-shopify-development-hours/shopify-hours-content-sections.tsx).
 15. **`MobileAppComparisonBlock` (`mobile-app-comparison`)**:
-    - Schema: Native vs Hybrid vs PWA comparison feature matrix.
-    - Component: [`ShopifyMobileAppComparisonSection`](file:///home/ubuntu/Vatsal/DD/dynamicdreamz-self/src/components/sections/mobile-app-experience-sections.tsx).
+    - Schema: App Builder vs Custom Development side-by-side feature comparison table.
+    - Component: [`ShopifyMobileAppComparisonSection`](file:///home/ubuntu/vandan/dd/dynamicdreamz-self/src/components/sections/shopify-mobile-app/shopify-mobile-app-comparison-section.tsx).
+16. **`ShopifyAppBenefitsBlock` (`shopify-app-benefits`)**:
+    - Schema: 3-column key benefits cards with icon uploads, titles, and descriptions.
+    - Component: [`ShopifyAppBenefitsSection`](file:///home/ubuntu/vandan/dd/dynamicdreamz-self/src/components/sections/shopify-mobile-app/shopify-app-benefits-section.tsx).
+17. **`ShopifyMobileAppDtcBlock` (`shopify-mobile-app-dtc`)**:
+    - Schema: Two-column DTC brand narrative and proof callout cards.
+    - Component: [`ShopifyMobileAppDtcSection`](file:///home/ubuntu/vandan/dd/dynamicdreamz-self/src/components/sections/shopify-mobile-app/shopify-mobile-app-dtc-section.tsx).
+18. **`ShopifyMobileAppExperienceBlock` (`shopify-mobile-app-experience`)**:
+    - Schema: 4-step mobile shopping moments card grid.
+    - Component: [`ShopifyMobileAppExperienceSection`](file:///home/ubuntu/vandan/dd/dynamicdreamz-self/src/components/sections/shopify-mobile-app/shopify-mobile-app-experience-section.tsx).
+19. **`MobileAppWorkBlock` (`mobile-app-work`)**:
+    - Schema: Multi-column mobile app showcase cards with platform tags.
+    - Component: [`ShopifyMobileAppWorkSection`](file:///home/ubuntu/vandan/dd/dynamicdreamz-self/src/components/sections/shopify-mobile-app/shopify-mobile-app-work-section.tsx).
 
 ---
 
 ## 6. Programmatic Automated Seeding Strategy
 
-All copy, imagery, and metadata for all 142 pages already exist in clean, typed modules under [`src/content/`](file:///home/ubuntu/Vatsal/DD/dynamicdreamz-self/src/content/).
+All copy, imagery, and metadata for all 142 pages already exist in clean, typed modules under [`src/content/`](file:///home/ubuntu/vandan/dd/dynamicdreamz-self/src/content/).
 
 To populate all 142 pages in Payload CMS without manual data entry:
 
@@ -221,7 +233,7 @@ To populate all 142 pages in Payload CMS without manual data entry:
 3. **Database Verification**:
    - Query `payload.find({ collection: "pages", limit: 200 })` to verify that all 142 pages exist in PostgreSQL.
 4. **Instant Switchover**:
-   - In [`src/app/(frontend)/[[...slug]]/page.tsx`](file:///home/ubuntu/Vatsal/DD/dynamicdreamz-self/src/app/(frontend)/[[...slug]]/page.tsx), when `rawPage.sections.length > 0`, Next.js renders `<RenderBlocks sections={pageSections} />`.
+   - In [`src/app/(frontend)/[[...slug]]/page.tsx`](file:///home/ubuntu/vandan/dd/dynamicdreamz-self/src/app/(frontend)/[[...slug]]/page.tsx), when `rawPage.sections.length > 0`, Next.js renders `<RenderBlocks sections={pageSections} />`.
    - The entire website instantly serves from CMS with 100% visual parity!
 5. **Discard Scratch Script**:
    - Remove `scratch/seed-all-pages.mjs` immediately after execution.

@@ -33,7 +33,7 @@ export function ThemeFeaturesBannerSection({
                 {content.eyebrow}
               </Eyebrow>
             )}
-            <h2 className="mb-0 text-[32px] font-normal leading-tight tracking-normal text-ink max-[1400px]:text-[28px] max-[992px]:text-2xl">
+            <h2 className="mb-0 text-[32px] font-normal leading-[44.8px] tracking-normal text-ink max-[1400px]:text-[28px] max-[1400px]:leading-[39.2px] max-[1200px]:text-[30px] max-[1200px]:leading-[42px] max-[768px]:text-[24px] max-[768px]:leading-[31.2px]">
               {content.title || content.heading}
             </h2>
             {content.description && (

@@ -128,7 +128,11 @@ export function formatBrText(
 ): ReactNode {
   if (!text) return "";
   const parts: readonly string[] =
-    typeof text === "string" ? [text] : text;
+    typeof text === "string"
+      ? text.includes("\n")
+        ? text.split("\n")
+        : [text]
+      : text;
 
   if (
     parts.length === 1 &&
@@ -141,14 +145,30 @@ export function formatBrText(
 
   return (
     <>
-      {parts.map((part, index) => (
-        <Fragment key={`part-${index}`}>
-          {parseInlineFormatting(part, linkClassName)}
-          {index < parts.length - 1 ? (
-            brClassName ? <br className={brClassName} /> : <br />
-          ) : null}
-        </Fragment>
-      ))}
+      {parts.map((part, index) => {
+        const nextPart = parts[index + 1];
+        const needsSpace =
+          Boolean(brClassName) &&
+          index < parts.length - 1 &&
+          !part.endsWith(" ") &&
+          (!nextPart || !nextPart.startsWith(" "));
+
+        return (
+          <Fragment key={`part-${index}`}>
+            {parseInlineFormatting(part, linkClassName)}
+            {index < parts.length - 1 ? (
+              brClassName ? (
+                <>
+                  {needsSpace ? " " : null}
+                  <br className={brClassName} />
+                </>
+              ) : (
+                <br />
+              )
+            ) : null}
+          </Fragment>
+        );
+      })}
     </>
   );
 }

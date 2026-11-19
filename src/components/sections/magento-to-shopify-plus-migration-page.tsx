@@ -40,7 +40,10 @@ export function MagentoToShopifyPlusMigrationPage() {
   return (
     <div>
       {/* 1. Hero */}
-      <ServiceHeroVideoSection content={magentoPlusHeroContent} />
+      <ServiceHeroVideoSection 
+        content={magentoPlusHeroContent} 
+        rightColClassName="max-[992px]:inline-block max-[768px]:hidden"
+      />
 
       {/* 2. Brands */}
       <IndustryBrandsSection
