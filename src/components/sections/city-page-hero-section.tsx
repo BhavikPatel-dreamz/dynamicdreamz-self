@@ -82,9 +82,9 @@ export function CityPageHeroSection({
                 <Eyebrow
                   align="start"
                   as="span"
-                  className="eyebrow mb-[15px] font-montserrat max-[1200px]:mx-auto max-[1200px]:justify-center max-[768px]:mx-auto max-[768px]:justify-center"
                   items={content.eyebrows}
-                  linePosition="overlay"
+                  linePosition="flow"
+                  className="mb-[15px]"
                   lineWidth={lineWidth ?? "responsive"}
                 />
               )}

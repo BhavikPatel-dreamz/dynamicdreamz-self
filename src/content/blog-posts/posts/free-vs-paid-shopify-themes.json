@@ -666,7 +666,10 @@
     "slug": "woocommerce-seo",
     "title": "WooCommerce SEO Guide: How to Rank Your Store Higher in 2026"
   },
-  "next": null,
+  "next": {
+    "slug": "shopify-plus-benefits",
+    "title": "Shopify Plus Benefits: What Is Shopify Plus and Who Actually Needs It?"
+  },
   "seo": {
     "title": "Free vs Paid Shopify Themes: Which One Is Right for You?",
     "description": "Free vs paid Shopify themes: which is right for your store? Compare cost, speed, SEO, and features, and choose the best theme for your stage."

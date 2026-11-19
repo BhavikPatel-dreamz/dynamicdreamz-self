@@ -36,7 +36,7 @@ export function QuoteLeftColumn({
 }: QuoteLeftColumnProps = {}) {
 
   return (
-    <div className="left-col relative w-full py-[150px] pr-[46px] pb-[140px] max-[1200px]:pr-[30px] max-[992px]:pt-[50px] max-[992px]:pr-0 max-[992px]:pb-[100px]">
+    <div className="left-col relative w-full pt-[150px] pr-[46px] pb-[90px] max-[1200px]:pr-[30px] max-[992px]:pt-[50px] max-[992px]:pr-0 max-[992px]:pb-[50px]">
       <h1 className="font-display text-[35px] leading-[48.475px] font-normal tracking-normal text-ink max-[1200px]:text-[29px] max-[359px]:text-2xl">
         {hero.title}
       </h1>
@@ -60,7 +60,7 @@ export function QuoteLeftColumn({
             <div className="counter-text flex items-center text-left text-[35px] leading-[43.925px] font-bold text-black max-[1200px]:text-[30px] max-[768px]:text-[26px] max-[359px]:text-2xl">
               <div>{counter.count}</div>
               {"unit" in counter && counter.unit ? (
-                <span className="ml-2 text-base font-semibold">{counter.unit}</span>
+                <span className="ml-2 text-[16px] leading-[43.925px] max-[768px]:text-sm font-semibold">{counter.unit}</span>
               ) : null}
             </div>
           </div>

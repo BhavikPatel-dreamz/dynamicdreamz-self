@@ -54,7 +54,7 @@ export function ThankYouPage({
         <div className="thankyou-content mx-auto max-w-[800px] text-center">
           <h1
             id="thank-you-title"
-            className="font-montreal-medium text-[35px] font-normal leading-[48.475px] tracking-normal text-ink max-[768px]:text-[28px] max-[768px]:leading-tight"
+            className="font-montreal-medium text-[35px] font-normal leading-[49px] tracking-normal text-ink max-[768px]:text-[24px] max-[768px]:leading-[31.2px]"
           >
             {heading}
           </h1>

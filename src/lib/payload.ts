@@ -21,10 +21,12 @@ import type {
 } from "@/content/blogs";
 import type {
   BlogPostDetail,
+  BlogPostNavigationItem,
   BlogContentBlock,
   BlogInlineNode,
   BlogListItem,
 } from "@/types/blog-post";
+import { resolveBlogPostNavigation } from "@/content/blog-post-navigation";
 import type { CaseStudyDetail, CaseStudyItem } from "@/types/case-study";
 import caseStudiesItemsJson from "@/content/case-studies-items.json";
 
@@ -628,6 +630,11 @@ export function adaptPayloadPostToBlogPostDetail(
     }
   }
 
+  const resolvedNav = resolveBlogPostNavigation(post.slug, {
+    previous: fallbackDetail?.previous,
+    next: fallbackDetail?.next,
+  });
+
   return {
     slug: post.slug,
     title: post.title,
@@ -644,8 +651,8 @@ export function adaptPayloadPostToBlogPostDetail(
     contentAfterToc,
     toc,
     faqs,
-    previous: fallbackDetail?.previous || null,
-    next: fallbackDetail?.next || null,
+    previous: resolvedNav.previous,
+    next: resolvedNav.next,
     seo: {
       title:
         post.seo?.metaTitle ||
@@ -659,6 +666,32 @@ export function adaptPayloadPostToBlogPostDetail(
     },
     wordCount: words || fallbackDetail?.wordCount || 500,
   };
+}
+
+export async function getPayloadAdjacentPosts(
+  currentSlug: string,
+): Promise<{ previous: BlogPostNavigationItem | null; next: BlogPostNavigationItem | null }> {
+  try {
+    const payload = await getPayload({ config });
+    const res = await payload.find({
+      collection: "posts",
+      limit: 300,
+      sort: "date",
+      overrideAccess: true,
+      select: {
+        slug: true,
+        title: true,
+      },
+    });
+    const list = res.docs.map((doc) => ({
+      slug: doc.slug,
+      title: doc.title,
+    }));
+    return resolveBlogPostNavigation(currentSlug, undefined, list);
+  } catch (err) {
+    console.warn(`Payload getPayloadAdjacentPosts(${currentSlug}) warning:`, err);
+    return resolveBlogPostNavigation(currentSlug);
+  }
 }
 
 export function adaptPayloadCaseStudiesToItems(

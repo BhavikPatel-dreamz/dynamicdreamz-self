@@ -37,14 +37,14 @@ export function BlogAuthorBioBox({ post }: { post: BlogPostDetail }) {
                   width={211}
                   height={211}
                   sizes="211px"
-                  className="h-auto w-[211px] max-w-full rounded-full object-cover max-[768px]:mx-auto"
+                  className="h-auto w-[211px] max-w-full object-cover max-[768px]:mx-auto"
                 />
               </div>
             </div>
           ) : null}
           <div className="w-[calc(100%-245px)] max-[768px]:mt-[10px] max-[768px]:w-full">
             <div className="mb-1 flex items-center gap-2 max-[768px]:justify-center">
-              <h2 className="m-0 font-montreal-medium text-[20px] font-normal leading-[28.8px] text-[#282828]">
+              <h2 className="m-0 font-montreal-medium text-[20px] font-normal leading-[28.8px] max-[992px]:text-lg max-[992px]:leading-[26.8px] text-[#282828]">
                 {post.author.name.toUpperCase()}
               </h2>
               {post.author.linkedin ? (

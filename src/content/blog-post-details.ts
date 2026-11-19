@@ -1,4 +1,5 @@
 import blogPostIndexJson from "@/content/blog-posts/index.json";
+import { resolveBlogPostNavigation } from "@/content/blog-post-navigation";
 import type { BlogPostDetail } from "@/types/blog-post";
 
 export const blogDetailUiCopy = {
@@ -30,13 +31,23 @@ export const blogDetailUiCopy = {
 
 export const blogPostIndex = blogPostIndexJson;
 export const blogPostSlugs = blogPostIndex.map((post) => post.slug);
+export { resolveBlogPostNavigation, blogPostChronologicalNavItems } from "@/content/blog-post-navigation";
 
 const blogPostSlugSet = new Set(blogPostSlugs);
 
 export async function getBlogPostBySlug(slug: string): Promise<BlogPostDetail | undefined> {
   if (!blogPostSlugSet.has(slug)) return undefined;
   const postModule = await import(`@/content/blog-posts/posts/${slug}.json`);
-  return postModule.default as BlogPostDetail;
+  const rawPost = postModule.default as BlogPostDetail;
+  const nav = resolveBlogPostNavigation(slug, {
+    previous: rawPost.previous,
+    next: rawPost.next,
+  });
+  return {
+    ...rawPost,
+    previous: nav.previous,
+    next: nav.next,
+  };
 }
 
 export function getRelatedBlogPosts(

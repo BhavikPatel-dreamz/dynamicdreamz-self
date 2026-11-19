@@ -44,22 +44,23 @@ export function ShopifyAppFeaturesSection({
               <ul className="m-0 list-none p-0">
                 {content.leftFeatures.map((item, idx) => (
                   <li
-                    className={`flex py-[40px] ${idx === 0 ? "pt-0" : ""} ${idx !== content.leftFeatures.length - 1 ? "border-b border-[#efefef]" : "max-[768px]:border-b max-[768px]:border-[#efefef]"}`}
+                    className={`flex py-[30px] max-[1200px]:py-[30px] max-[992px]:flex-col max-[992px]:py-[20px] max-[768px]:flex-row max-[768px]:justify-between max-[768px]:py-[20px] ${idx === 0 ? "pt-0 max-[992px]:pt-[20px]" : ""} ${idx !== content.leftFeatures.length - 1 ? "border-b border-[#efefef]" : "max-[768px]:border-b max-[768px]:border-[#efefef]"}`}
                     key={item.title}
                   >
-                    <span className="icon mr-[30px] flex h-[66px] w-[66px] shrink-0 items-center justify-center rounded-[12px] border-[1.5px] border-[#efefef]">
+                    <span className="icon mr-[30px] flex h-[66px] w-[66px] shrink-0 items-center justify-center rounded-[12px] border-[1.5px] border-[#efefef] max-[1200px]:h-[55px] max-[1200px]:w-[55px] max-[1200px]:mr-[20px] max-[992px]:h-[45px] max-[992px]:w-[45px] max-[992px]:mr-0 max-[992px]:mb-[10px] max-[768px]:h-[50px] max-[768px]:w-[50px] max-[768px]:mr-[15px] max-[768px]:mb-0 max-[768px]:rounded-[8px]">
                       <Image
                         alt={item.iconAlt}
+                        className="h-auto w-[36px] max-[1200px]:w-[30px] max-[992px]:w-[25px] max-[768px]:w-[30px]"
                         height={36}
                         src={item.icon}
                         width={36}
                       />
                     </span>
-                    <div className="text w-[calc(100%-96px)]">
-                      <h3 className="mb-[10px] font-display text-[16px] font-medium leading-[26.72px] tracking-[0.32px] text-ink">
+                    <div className="text w-[calc(100%-96px)] max-[1200px]:w-[calc(100%-70px)] max-[992px]:w-full max-[768px]:w-[calc(100%-65px)]">
+                      <h3 className="mb-[10px] font-display text-[16px] font-normal leading-[26.72px] tracking-[0.32px] text-ink max-[992px]:mb-[5px] max-[992px]:text-[14px]">
                         {item.title}
                       </h3>
-                      <p className="font-sans text-[16px] font-medium leading-[27.2px] tracking-[0.32px] text-[#535353]">
+                      <p className="font-sans text-[16px] font-medium leading-[27.2px] tracking-[0.32px] text-[#535353] max-[992px]:text-[14px] max-[992px]:leading-[24px] max-[992px]:tracking-[0.24px]">
                         {item.description}
                       </p>
                     </div>
@@ -71,7 +72,7 @@ export function ShopifyAppFeaturesSection({
 
           {/* Center Column */}
           <div data-aos="fade-up" className="features-col-2 w-[35.6%] px-[25px] text-center max-[1200px]:w-[32%] max-[1200px]:px-[15px] max-[992px]:w-[28%] max-[992px]:px-[12px] max-[768px]:order-1 max-[768px]:mb-8 max-[768px]:w-full max-[768px]:px-0">
-            <div className="features-img inline-block">
+            <div className="features-img inline-block max-[768px]:block max-[768px]:w-full max-[768px]:max-w-[70%] max-[768px]:mx-auto max-[768px]:mb-[30px]">
               <Image
                 alt={content.centerImage.alt}
                 className="mx-auto h-auto max-w-full"
@@ -88,22 +89,23 @@ export function ShopifyAppFeaturesSection({
               <ul className="m-0 list-none p-0">
                 {content.rightFeatures.map((item, idx) => (
                   <li
-                    className={`flex py-[40px] ${idx === 0 ? "pt-0 max-[768px]:pt-[40px]" : ""} ${idx !== content.rightFeatures.length - 1 ? "border-b border-[#efefef]" : ""}`}
+                    className={`flex py-[40px] max-[1200px]:py-[30px] max-[992px]:flex-col max-[992px]:py-[20px] max-[768px]:flex-row max-[768px]:justify-between max-[768px]:py-[20px] ${idx === 0 ? "pt-0 max-[768px]:pt-[20px]" : ""} ${idx !== content.rightFeatures.length - 1 ? "border-b border-[#efefef]" : ""}`}
                     key={item.title}
                   >
-                    <span className="icon mr-[30px] flex h-[66px] w-[66px] shrink-0 items-center justify-center rounded-[12px] border-[1.5px] border-[#efefef]">
+                    <span className="icon mr-[30px] flex h-[66px] w-[66px] shrink-0 items-center justify-center rounded-[12px] border-[1.5px] border-[#efefef] max-[1200px]:h-[55px] max-[1200px]:w-[55px] max-[1200px]:mr-[20px] max-[992px]:h-[45px] max-[992px]:w-[45px] max-[992px]:mr-0 max-[992px]:mb-[10px] max-[768px]:h-[50px] max-[768px]:w-[50px] max-[768px]:mr-[15px] max-[768px]:mb-0 max-[768px]:rounded-[8px]">
                       <Image
                         alt={item.iconAlt}
+                        className="h-auto w-[36px] max-[1200px]:w-[30px] max-[992px]:w-[25px] max-[768px]:w-[30px]"
                         height={36}
                         src={item.icon}
                         width={36}
                       />
                     </span>
-                    <div className="text w-[calc(100%-96px)]">
-                      <h3 className="mb-[10px] font-display text-[16px] font-medium leading-[26.72px] tracking-[0.32px] text-ink">
+                    <div className="text w-[calc(100%-96px)] max-[1200px]:w-[calc(100%-70px)] max-[992px]:w-full max-[768px]:w-[calc(100%-65px)]">
+                      <h3 className="mb-[10px] font-display text-[16px] font-medium leading-[26.72px] tracking-[0.32px] text-ink max-[992px]:mb-[5px] max-[992px]:text-[14px]">
                         {item.title}
                       </h3>
-                      <p className="font-sans text-[16px] font-medium leading-[27.2px] tracking-[0.32px] text-[#535353]">
+                      <p className="font-sans text-[16px] font-medium leading-[27.2px] tracking-[0.32px] text-[#535353] max-[992px]:text-[14px] max-[992px]:leading-[24px] max-[992px]:tracking-[0.24px]">
                         {item.description}
                       </p>
                     </div>

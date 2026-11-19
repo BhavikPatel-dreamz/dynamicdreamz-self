@@ -62,29 +62,29 @@ export function RisksShopifyTopics({ items }: RisksShopifyTopicsProps) {
             {items.map((item) => (
               <article className="mb-[60px] last:mb-0" id={item.id} key={item.id}>
                 {item.introParagraphs?.map((paragraph) => (
-                  <p className="mb-4 text-base font-small leading-[30.4px] tracking-[0.32px] text-[#535353] max-[1200px]:text-sm max-[1200px]:leading-[26px]" key={paragraph}>
+                  <p className="mb-4 text-[16px] font-small leading-[30.4px] tracking-[0.32px] text-[#535353]" key={paragraph}>
                     {paragraph}
                   </p>
                 ))}
-                <h2 className="relative mb-5 pl-5 text-[35px] font-small leading-[1.4] text-[#282828] before:absolute before:top-[5px] before:left-0 before:block before:h-[34px] before:w-[5px] before:bg-[linear-gradient(111.61deg,#15c064_-0.6%,#00d1ff_92.42%)] max-[1200px]:text-2xl max-[768px]:text-[21px] max-[768px]:leading-[1.45]">
+                <h2 className="relative mb-5 pl-5 text-[35px] font-small leading-[49px] text-[#282828] before:absolute before:top-[5px] before:left-0 before:block before:h-[34px] before:w-[5px] before:bg-[linear-gradient(111.61deg,#15c064_-0.6%,#00d1ff_92.42%)] max-[1200px]:text-[30px] max-[1200px]:leading-[42px] max-[768px]:text-[24px] max-[768px]:leading-[31.2px]">
                   {item.heading}
                 </h2>
                 {item.paragraphs.map((paragraph) => (
-                  <p className="mb-4 text-base font-small leading-[30.4px] tracking-[0.32px] text-[#535353] max-[1200px]:text-sm max-[1200px]:leading-[26px]" key={paragraph}>
+                  <p className="mb-4 text-base font-small leading-[30.4px] tracking-[0.32px] text-[#535353]" key={paragraph}>
                     {paragraph}
                   </p>
                 ))}
                 {item.bullets ? (
                   <ul className="mb-6">
                     {item.bullets.map((bullet) => (
-                      <li className="relative mb-2.5 pl-[35px] text-base font-medium leading-[190%] text-[#535353] last:mb-0 max-[1200px]:text-sm max-[1200px]:leading-[26px] before:absolute before:top-0.5 before:left-0 before:size-[22px] before:bg-[url('/assets/icons/gradient-check.svg')] before:bg-contain before:bg-no-repeat" key={bullet.label}>
+                      <li className="relative mb-2.5 pl-[35px] text-[16px] font-medium leading-[30.4px] text-[#535353] last:mb-0 before:absolute before:top-0.5 before:left-0 before:size-[22px] before:bg-[url('/assets/icons/gradient-check.svg')] before:bg-contain before:bg-no-repeat" key={bullet.label}>
                         <strong className="text-black">{bullet.label}</strong> {bullet.text}
                       </li>
                     ))}
                   </ul>
                 ) : null}
                 {item.closingParagraphs?.map((paragraph) => (
-                  <p className="mb-4 text-base font-small leading-[30.4px] tracking-[0.32px] text-[#535353] max-[1200px]:text-sm max-[1200px]:leading-[26px]" key={paragraph}>
+                  <p className="mb-4 text-base font-small leading-[30.4px] tracking-[0.32px] text-[#535353]" key={paragraph}>
                     {paragraph}
                   </p>
                 ))}

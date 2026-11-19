@@ -20,8 +20,8 @@ export const appmakerHeroCoBranding = {
   rightLogo: {
     src: "/assets/services/shopify-mobile-app-development/hero/app-makker-logo.svg",
     alt: "App Makker Logo",
-    width: 147,
-    height: 39,
+    width: 130,
+    height: 34,
   },
 } as const;
 

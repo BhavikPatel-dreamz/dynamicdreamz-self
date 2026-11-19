@@ -80,17 +80,17 @@ export function BlogsArchiveSection({
               action={search.action}
               method="get"
               role="search"
-              className="custom-blog-search flex flex-wrap items-center justify-between gap-5 max-[992px]:flex-col-reverse max-[992px]:items-stretch"
+              className="custom-blog-search flex items-center justify-between gap-5 max-[768px]:flex-col max-[768px]:items-stretch"
             >
-              <div className="blog-filter-list">
+              <div className="blog-filter-list min-w-0">
                 <nav
-                  className="blog-category-filter flex flex-wrap items-center gap-2.5 max-[768px]:gap-2"
+                  className="blog-category-filter flex items-center gap-2.5 max-[992px]:gap-2 max-[768px]:flex-nowrap max-[768px]:justify-start max-[768px]:overflow-x-auto max-[768px]:whitespace-nowrap max-[768px]:py-0.5 max-[768px]:[scrollbar-width:none] max-[768px]:[&::-webkit-scrollbar]:hidden"
                   aria-label={categoriesLabel}
                 >
                   <Link
                     href={query ? `/blogs?s=${encodeURIComponent(query)}` : "/blogs"}
                     className={cn(
-                      "cat-link inline-block rounded-[30px] border border-[#dadada] px-[18px] py-2 text-center font-sans text-sm font-medium text-[#090909] transition-all duration-300 hover:border-brand-red hover:bg-brand-red hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-red max-[768px]:px-3.5 max-[768px]:py-1.5 max-[768px]:text-xs",
+                      "cat-link inline-block rounded-[30px] border border-[#dadada] px-[18px] py-2 text-center font-sans text-sm font-medium text-[#090909] transition-all duration-300 hover:border-brand-red hover:bg-brand-red hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-red max-[992px]:min-w-[60px] max-[992px]:px-[9px] max-[992px]:py-[7px] max-[992px]:text-sm max-[768px]:shrink-0",
                       !activeCategory && "border-brand-red bg-brand-red text-white",
                     )}
                     aria-current={!activeCategory ? "page" : undefined}
@@ -109,7 +109,7 @@ export function BlogsArchiveSection({
                         key={category.value}
                         href={catHref}
                         className={cn(
-                          "cat-link inline-block rounded-[30px] border border-[#dadada] px-[18px] py-2 text-center font-sans text-sm font-medium text-[#090909] transition-all duration-300 hover:border-brand-red hover:bg-brand-red hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-red max-[768px]:px-3.5 max-[768px]:py-1.5 max-[768px]:text-xs",
+                          "cat-link inline-block rounded-[30px] border border-[#dadada] px-[18px] py-2 text-center font-sans text-sm font-medium text-[#090909] transition-all duration-300 hover:border-brand-red hover:bg-brand-red hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-red max-[992px]:min-w-[60px] max-[992px]:px-[9px] max-[992px]:py-[7px] max-[992px]:text-sm max-[768px]:shrink-0",
                           isActive && "border-brand-red bg-brand-red text-white",
                         )}
                         aria-current={isActive ? "page" : undefined}
@@ -122,7 +122,7 @@ export function BlogsArchiveSection({
                 </nav>
               </div>
 
-              <div className="search-input-wrap relative w-[320px] max-w-full max-[992px]:w-full" data-blogs-search-wrap>
+              <div className="search-input-wrap relative w-[320px] max-w-full shrink-0 max-[992px]:max-w-[231px] max-[768px]:mx-auto" data-blogs-search-wrap>
                 <label className="sr-only" htmlFor="blogs-search">
                   {search.label}
                 </label>
@@ -172,7 +172,7 @@ export function BlogsArchiveSection({
 
             {showPagination ? (
               <nav
-                className="mt-10 h-6 w-full text-center leading-6"
+                className="cus-pagination mt-[42px] w-full text-center"
                 aria-label={paginationLabel}
                 data-blogs-pagination
               >
@@ -180,7 +180,7 @@ export function BlogsArchiveSection({
                   if (item.current) {
                     return (
                       <span
-                        className="rounded-md bg-[#ad5151hire-shopify-] px-[11.2px] py-[6.5px] text-base leading-[21px] font-medium tracking-[0.48px] text-white"
+                        className="page-numbers current inline-block rounded-[6px] bg-brand-red px-[11.2px] py-[6.5px] text-base leading-[21px] font-medium tracking-[0.48px] text-white"
                         aria-current="page"
                         key={item.label + "-" + index}
                       >
@@ -192,7 +192,7 @@ export function BlogsArchiveSection({
                   if (!item.href) {
                     return (
                       <span
-                        className="px-[11.2px] py-[6.5px] text-base leading-[21px] font-medium tracking-[0.48px] text-muted"
+                        className="page-numbers dots inline-block px-[11.2px] py-[6.5px] text-base leading-[21px] font-medium tracking-[0.48px] text-muted"
                         aria-hidden="true"
                         key={item.label + "-" + index}
                       >
@@ -203,7 +203,7 @@ export function BlogsArchiveSection({
 
                   return (
                     <Link
-                      className="px-[11.2px] py-[6.5px] text-base leading-[21px] font-medium tracking-[0.48px] text-muted transition-colors hover:text-brand-red focus-visible:text-brand-red [&_svg]:inline-block"
+                      className="page-numbers inline-block px-[11.2px] py-[6.5px] text-base leading-[21px] font-medium tracking-[0.48px] text-muted transition-colors hover:text-brand-red focus-visible:text-brand-red [&_svg]:inline-block"
                       href={item.href}
                       aria-label={item.next || item.previous ? item.label : undefined}
                       key={item.label + "-" + item.href}

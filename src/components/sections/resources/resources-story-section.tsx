@@ -22,7 +22,7 @@ function StoryReviews() {
             rel="nofollow noopener noreferrer"
             aria-label={`Read Dynamic Dreamz reviews on ${review.name}`}
           >
-            <span className="total-review absolute -top-4 left-1/2 min-w-33.25 -translate-x-1/2 rounded-[30px] p-px text-center text-[14px] leading-[19.6px] font-montreal-medium whitespace-nowrap text-[#535353] before:absolute before:inset-0 before:z-0 before:rounded-[30px] before:bg-[linear-gradient(to_right,#15c064,#00d1ff)] before:content-[''] max-[992px]:relative max-[992px]:top-auto max-[992px]:left-auto max-[992px]:translate-x-0"><span className="relative z-1 block rounded-[29px] text-sm font-small leading-[19.6px] max-[1200px]:text-[11px] max-[992px]:text-sm bg-[#fbf7ed] px-3 py-1.5 max-[992px]:bg-white">{review.reviews}</span></span>
+            <span className="total-review absolute -top-4 left-1/2 min-w-33.25 -translate-x-1/2 rounded-[30px] p-px text-center text-[14px] leading-[19.6px] font-montreal-medium whitespace-nowrap text-[#535353] before:absolute before:inset-0 before:z-0 before:rounded-[30px] before:bg-[linear-gradient(to_right,#15c064,#00d1ff)] before:content-[''] max-[1199.98px]:min-w-0 max-[1199.98px]:w-[113px] max-[992px]:relative max-[992px]:top-auto max-[992px]:left-auto max-[992px]:w-auto max-[992px]:translate-x-0"><span className="relative z-1 block rounded-[29px] text-sm leading-[19.6px] font-montreal-medium max-[1199.98px]:text-[11px] max-[992px]:text-sm bg-[#fbf7ed] px-3 py-1.5 max-[992px]:bg-white">{review.reviews}</span></span>
             <span className="flex flex-col items-start">
               <Image className={cn("mb-2 object-contain", review.logoClassName)} src={review.logo} alt={`${review.name} logo`} width={review.logoWidth} height={review.logoHeight} />
               <span className="flex items-center gap-1.75 min-h-6.75">
@@ -39,7 +39,7 @@ function StoryReviews() {
 
 export function ResourcesStorySection() {
   return (
-    <section className="resources-hero-div bg-[linear-gradient(97.18deg,#e8f9ef_28.5%,#e6fafd_91.82%)] pt-[60px]" aria-labelledby="resources-story-title">
+    <section className="resources-hero-div bg-[linear-gradient(97.18deg,#e8f9ef_28.5%,#e6fafd_91.82%)] py-[60px]" aria-labelledby="resources-story-title">
       <Container>
         <div className="hero-wrapper flex flex-row-reverse justify-between max-[992px]:flex-col">
           <div className="left-col w-[44.5%] max-[992px]:mb-[42px] max-[992px]:w-full">
@@ -47,12 +47,12 @@ export function ResourcesStorySection() {
               <p className="mb-6 text-muted last:mb-0 lg:text-left text-center" key={paragraph}>{paragraph}</p>
             ))}
           </div>
-          <div className="right-col w-1/2 max-[992px]:min-h-[949.63px] max-[992px]:w-full max-[768px]:min-h-[809.03px]">
+          <div className="right-col w-1/2 max-[992px]:w-full">
             <div className="mb-7">
               <h2 id="resources-story-title" className="mb-3 relative pl-5 text-[50px] leading-[60px] font-normal tracking-normal text-ink before:absolute before:top-1/2 before:left-0 before:h-[45px] before:w-[5px] before:-translate-y-1/2 before:bg-[linear-gradient(111.61deg,#15c064_-0.6%,#00d1ff_92.42%)] max-[992px]:text-[36px] max-[992px]:leading-[55px] max-[768px]:text-[26px] max-[768px]:leading-[47.2px]">{resourcesStory.title}</h2>
               <p className="text-[18px] leading-[1.4] font-bold text-ink">{resourcesStory.subtitle}</p>
             </div>
-            <div className="h-[360px] max-[992px]:h-[400px] max-[576px]:h-[300px] max-[480px]:h-[242px]">
+            <div className="h-[360px] max-[1199px]:h-[300px] max-[992px]:h-[400px] max-[576px]:h-[300px] max-[480px]:h-[242px]">
               <VideoDialog
                 videoId={resourcesStory.videoId}
                 title={resourcesStory.videoTitle}

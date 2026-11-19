@@ -47,13 +47,15 @@ export function ShopifyAppBenefitsSection({
             {content.items.map((item, idx) => (
               <div
                 data-aos="fade-up"
-                className={`benefit_box mb-[15px] px-[7.5px] max-[768px]:w-full ${
-                  isFourColumn ? "w-1/4 max-[1200px]:w-1/2" : "w-1/3 max-[992px]:w-1/2"
+                className={`benefit_box mb-[15px] px-[7.5px] ${
+                  isFourColumn
+                    ? "w-1/4 max-[1200px]:w-1/2 max-[992px]:w-full"
+                    : "w-1/3 max-[992px]:w-full"
                 }`}
                 key={item.title ?? idx}
               >
                 <div className="benefit_text group relative z-0 h-full rounded-[10px] border border-[#d9d9d9] p-[30px_30px_55px_30px] transition-all duration-300 hover:border-transparent hover:shadow-[0_4px_30px_0_rgba(0,0,0,0.1)] max-[1200px]:p-[30px_20px] max-[768px]:p-[25px_20px] before:pointer-events-none before:absolute before:-inset-0.5 before:-z-20 before:block before:rounded-[10px] before:bg-linear-to-r before:from-[#15c064] before:to-[#00d1ff] before:opacity-0 before:transition-all before:duration-300 before:ease-in-out hover:before:opacity-100 after:pointer-events-none after:absolute after:inset-0 after:-z-10 after:rounded-[9px] after:bg-white">
-                  <div className="icon mb-[30px] size-[50px] max-[768px]:mb-5">
+                  <div className="icon mb-[30px] size-[50px] max-[992px]:mb-5">
                     <Image
                       alt={item.iconAlt}
                       className="size-full object-contain"

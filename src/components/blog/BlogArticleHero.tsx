@@ -101,7 +101,7 @@ export function BlogArticleHero({ post }: { post: BlogPostDetail }) {
               >
                 {post.title}
               </h1>
-              <div className="mb-[22px] flex flex-wrap items-center gap-1.5 text-[14px] font-medium leading-[21px] tracking-[0.28px] uppercase text-[#090909]">
+              <div className="flex flex-wrap items-center gap-1.5 text-[14px] font-medium leading-[21px] tracking-[0.28px] uppercase text-[#090909]">
                 <Link
                   className="relative pr-2 transition-colors duration-300 hover:text-brand-red focus-visible:text-brand-red after:absolute after:right-0 after:content-['.']"
                   href={post.categoryHref}
@@ -220,8 +220,8 @@ function PostNavigationLink({ item, direction }: { item: BlogPostNavigationItem;
       href={`/blogs/${item.slug}`}
       className={`group flex flex-col px-[15px] text-[#282828] transition-colors duration-300 hover:text-brand-red focus-visible:text-brand-red ${direction === "next" ? "items-end text-right" : "items-start text-left"}`}
     >
-      <span className="block text-[16px] font-semibold leading-[30px] max-[768px]:hidden">{item.title}</span>
-      <span className="mt-[15px] inline-flex items-center gap-2 text-[13px] font-bold leading-5 uppercase text-brand-red max-[768px]:mt-0">
+      <span className="block font-montserrat text-[16px] font-semibold leading-[30px] max-[768px]:hidden">{item.title}</span>
+      <span className="mt-[15px] inline-flex items-center gap-2 font-montserrat text-[16px] font-bold leading-[30px] uppercase text-brand-red max-[768px]:mt-0">
         {direction === "previous" ? <NavArrow direction="previous" /> : null}
         {label}
         {direction === "next" ? <NavArrow direction="next" /> : null}
@@ -269,9 +269,9 @@ export function BlogDetailPage({ post, relatedPosts }: BlogDetailPageProps) {
 
         <footer className="entry-footer mt-4">
           <Container>
-            <div className="pb-0 text-[14px] font-medium leading-6 text-[#535353]">
+            <div className="pb-0 text-[14px] font-small leading-6 text-[#535353]">
               <span>{blogDetailUiCopy.postedInPrefix} </span>
-              <Link className="underline underline-offset-2 transition-colors duration-300 hover:text-brand-red focus-visible:text-brand-red" href={post.categoryHref}>{post.category}</Link>
+              <Link className="transition-colors duration-300 text-[#ad5151]" href={post.categoryHref}>{post.category}</Link>
             </div>
           </Container>
         </footer>

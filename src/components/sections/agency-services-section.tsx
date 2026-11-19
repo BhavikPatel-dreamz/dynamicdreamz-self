@@ -94,7 +94,7 @@ export function AgencyServicesSection({
           variant="services"
         />
 
-        <div className="services-provide-main mt-[50px] max-[992px]:mt-[30px]">
+        <div className="services-provide-main mt-[50px]">
           <div
             className={cn(
               "wrapper grid gap-4 max-[992px]:block",

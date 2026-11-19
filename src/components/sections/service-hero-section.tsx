@@ -144,21 +144,21 @@ export function ServiceHeroSection({
                   <div className="mobile-app-wrapper mb-[35px] flex items-center justify-center max-[768px]:mb-[25px]">
                     <Image
                       alt={content.coBranding.leftLogo.alt}
-                      className="h-[37px] w-auto max-[768px]:h-[30px]"
+                      className="h-auto max-w-full"
                       height={content.coBranding.leftLogo.height}
                       src={content.coBranding.leftLogo.src}
                       width={content.coBranding.leftLogo.width}
                     />
                     <Image
                       alt={content.coBranding.separator.alt}
-                      className="mx-5 h-[29px] w-auto max-[768px]:mx-[15px] max-[768px]:h-5"
+                      className="mx-5 h-auto max-w-full max-[768px]:mx-[15px]"
                       height={content.coBranding.separator.height}
                       src={content.coBranding.separator.src}
                       width={content.coBranding.separator.width}
                     />
                     <Image
                       alt={content.coBranding.rightLogo.alt}
-                      className="h-[39px] w-auto max-[992px]:h-auto max-[992px]:max-w-[130px] max-[768px]:max-w-[104px]"
+                      className="h-auto max-w-full"
                       height={content.coBranding.rightLogo.height}
                       src={content.coBranding.rightLogo.src}
                       width={content.coBranding.rightLogo.width}
@@ -167,7 +167,7 @@ export function ServiceHeroSection({
                 )}
                 <h1
                   className={cn(
-                    "mb-2.5 block font-montreal-medium text-[50px] font-normal leading-[60px] tracking-normal text-ink max-[1200px]:text-[40px] max-[1200px]:leading-[50px] max-[768px]:text-[30px] max-[768px]:leading-[40px] max-[379px]:text-[28px] max-[379px]:leading-[38px]",
+                    "mb-2.5 block font-montreal-medium text-[50px] font-normal leading-[60px] tracking-normal text-ink max-[1200px]:text-[40px] max-[1200px]:leading-[50px] max-[768px]:text-[30px] max-[768px]:leading-[40px]",
                     headingClass,
                   )}
                 >
