@@ -123,7 +123,15 @@ import { ShopifyMobileAppDtcSection } from "@/components/sections/shopify-mobile
 import { ShopifyMobileAppExperienceSection } from "@/components/sections/shopify-mobile-app/shopify-mobile-app-experience-section";
 import { ShopifyMobileAppWorkSection } from "@/components/sections/shopify-mobile-app/shopify-mobile-app-work-section";
 import { WhiteLabelProcessSection } from "@/components/sections/white-label/white-label-process-section";
-import { resolveMobileAppIcon } from "@/lib/theme-icon-resolver";
+import { resolveMobileAppIcon, resolveServiceIcon } from "@/lib/theme-icon-resolver";
+import { TextBoxSection } from "@/components/sections/shopify-plus-agency/text-box-section";
+import { RecentArchitecturePatternsSection } from "@/components/sections/recent-architecture-patterns-section";
+import { TechKeywordSection } from "@/components/sections/tech-keyword-section";
+import { ShopifyAppsHeroSection, ShopifyAppsGridSection } from "@/components/sections/shopify-apps-page";
+import { RisksShopifyTopics } from "@/components/sections/risks-shopify-topics";
+import { DesignReasonsSection } from "@/components/sections/white-label-website-design/design-reasons-section";
+import { WhiteLabelServicesSection } from "@/components/sections/white-label/white-label-services-section";
+import { WhiteLabelStatsSection, WhiteLabelWhySection } from "@/components/sections/white-label/white-label-proof-section";
 
 // Phase 2.5 Canonical Content Fallbacks
 import { shopifyPlusAgencyContent } from "@/content/home";
@@ -1220,6 +1228,128 @@ export interface BlockMobileAppWork {
   }[];
 }
 
+export interface BlockTextBox {
+  __component?: string;
+  blockType?: "text-box";
+  id?: string | number;
+  heading: string;
+  subheading?: string;
+  paragraphs?: readonly { text: string }[];
+  listItems?: readonly { item: string }[];
+  variant?: "green" | "cream";
+}
+
+export interface BlockArchitecturePatterns {
+  __component?: string;
+  blockType?: "architecture-patterns";
+  id?: string | number;
+  eyebrow?: string;
+  heading: string;
+  description?: string;
+  items?: readonly {
+    label: string;
+    title: string;
+    description: string;
+    stack: string;
+  }[];
+}
+
+export interface BlockTechKeywords {
+  __component?: string;
+  blockType?: "tech-keywords";
+  id?: string | number;
+  eyebrow?: string;
+  heading: string;
+  introText?: string;
+  highlightedText?: string;
+  bodyText?: string;
+}
+
+export interface BlockShopifyAppsDirectory {
+  __component?: string;
+  blockType?: "shopify-apps-directory";
+  id?: string | number;
+  title?: string;
+  apps?: readonly {
+    title: string;
+    additionalInfo?: string;
+    description?: string;
+    image?: CmsMedia;
+    imageSrc?: string;
+    alt?: string;
+    href: string;
+  }[];
+}
+
+export interface BlockRisksShopifyTopics {
+  __component?: string;
+  blockType?: "risks-shopify-topics";
+  id?: string | number;
+  items?: readonly {
+    topicId: string;
+    label: string;
+    heading: string;
+    introParagraphs?: readonly { text: string }[];
+    paragraphs?: readonly { text: string }[];
+    bullets?: readonly { label: string; text: string }[];
+    closingParagraphs?: readonly { text: string }[];
+  }[];
+}
+
+export interface BlockDesignReasons {
+  __component?: string;
+  blockType?: "design-reasons";
+  id?: string | number;
+  title: string;
+  description: string;
+  items?: readonly {
+    title: string;
+    description: string;
+  }[];
+}
+
+export interface BlockWhiteLabelServices {
+  __component?: string;
+  blockType?: "white-label-services";
+  id?: string | number;
+  eyebrow?: string;
+  title: string;
+  description?: string;
+  idPrefix?: string;
+  showCta?: boolean;
+  ctaLabel?: string;
+  services?: readonly {
+    title: string;
+    description: string;
+    icon?: CmsMedia;
+    iconSrc?: string;
+    href?: string;
+    linkLabel?: string;
+  }[];
+}
+
+export interface BlockWhiteLabelStats {
+  __component?: string;
+  blockType?: "white-label-stats";
+  id?: string | number;
+  stats?: readonly {
+    value: string;
+    label: string;
+  }[];
+}
+
+export interface BlockWhiteLabelWhy {
+  __component?: string;
+  blockType?: "white-label-why";
+  id?: string | number;
+  eyebrow?: string;
+  title: string;
+  reasons?: readonly {
+    title: string;
+    description: string;
+  }[];
+}
+
 export type CmsSectionBlock =
   | BlockServiceHero
   | BlockBrandPartners
@@ -1265,6 +1395,15 @@ export type CmsSectionBlock =
   | BlockShopifyMobileAppDtc
   | BlockShopifyMobileAppExperience
   | BlockMobileAppWork
+  | BlockTextBox
+  | BlockArchitecturePatterns
+  | BlockTechKeywords
+  | BlockShopifyAppsDirectory
+  | BlockRisksShopifyTopics
+  | BlockDesignReasons
+  | BlockWhiteLabelServices
+  | BlockWhiteLabelStats
+  | BlockWhiteLabelWhy
   | BlockContactHero
   | BlockContactForm
   | BlockForm
@@ -2079,6 +2218,7 @@ export function BlockRenderer({ sections }: BlockRendererProps) {
               return (
                 <WhiteLabelFinalCtaSection
                   key={blockKey}
+                  variant="certifiedDevelopers"
                   cta={{
                     title: cbBlock.heading,
                     description: cbBlock.description || "",
@@ -2213,13 +2353,19 @@ export function BlockRenderer({ sections }: BlockRendererProps) {
                     boxes: services.map((s) => {
                       const sAny = s as { iconName?: string };
                       const themeIcon = sAny.iconName
-                        ? resolveMobileAppIcon(sAny.iconName) ||
+                        ? resolveServiceIcon(
+                            sAny.iconName,
+                            (sgBlock as { themeSlug?: string }).themeSlug,
+                            (sgBlock as { iconKind?: "feature" | "benefit" | "service" }).iconKind ||
+                              (sgBlock.cardVariant === "yellow" ? "feature" : "benefit"),
+                          ) ||
                           resolveThemeIcon(
                             sAny.iconName,
                             (sgBlock as { themeSlug?: string }).themeSlug,
                             (sgBlock as { iconKind?: "feature" | "benefit" | "service" }).iconKind ||
                               (sgBlock.cardVariant === "yellow" ? "feature" : "benefit"),
                           ) ||
+                          resolveMobileAppIcon(sAny.iconName) ||
                           resolveMigrationIcon(
                             sAny.iconName,
                             (sgBlock as { themeSlug?: string }).themeSlug,
@@ -2259,13 +2405,19 @@ export function BlockRenderer({ sections }: BlockRendererProps) {
                   showDescription={true}
                   headerLayout={sgBlock.headerLayout === "split" ? "split" : undefined}
                   className={paddingClass}
+                  preserveBreaks={(sgBlock as { preserveBreaks?: boolean }).preserveBreaks}
                   content={{
                     eyebrow: sgBlock.eyebrow,
                     heading: sgBlock.heading,
                     description: sgBlock.description || "",
                     items: services.map((s) => {
                       const themeIcon = (s as { iconName?: string }).iconName
-                        ? resolveThemeIcon(
+                        ? resolveServiceIcon(
+                            (s as { iconName?: string }).iconName,
+                            (sgBlock as { themeSlug?: string }).themeSlug,
+                            "service",
+                          ) ||
+                          resolveThemeIcon(
                             (s as { iconName?: string }).iconName,
                             (sgBlock as { themeSlug?: string }).themeSlug,
                             "service",
@@ -2538,13 +2690,33 @@ export function BlockRenderer({ sections }: BlockRendererProps) {
               );
             }
 
-            const items = (psBlock.items ?? []).map((item) => ({
-              name: item.name,
-              href: item.href || undefined,
-              image: resolveMediaUrl(item.image) || item.imageSrc || "",
-              imageAlt: item.imageAlt || item.name,
-              category: item.category || undefined,
-            }));
+            const items = (psBlock.items ?? []).map((item) => {
+              const itemAny = item as {
+                platformMark?: {
+                  image?: CmsMedia;
+                  src?: string;
+                  width?: number;
+                  height?: number;
+                };
+              };
+              return {
+                name: item.name,
+                href: item.href || undefined,
+                image: resolveMediaUrl(item.image) || item.imageSrc || "",
+                imageAlt: item.imageAlt || item.name,
+                category: item.category || undefined,
+                platformMark: itemAny.platformMark
+                  ? {
+                      src:
+                        resolveMediaUrl(itemAny.platformMark.image) ||
+                        itemAny.platformMark.src ||
+                        "",
+                      width: itemAny.platformMark.width || 44,
+                      height: itemAny.platformMark.height || 44,
+                    }
+                  : undefined,
+              };
+            });
 
             const platformMark = psBlock.platformMark
               ? {
@@ -2913,7 +3085,7 @@ export function BlockRenderer({ sections }: BlockRendererProps) {
                   eyebrow={ptBlock.eyebrow}
                   title={parseTextOrArray(ptBlock.heading)}
                   description={parseTextOrArray(ptBlock.description)}
-                  note={(ptBlock as { note?: string }).note ?? ""}
+                  note={(ptBlock as { note?: string }).note || (typeof ptBlock.description === "string" ? ptBlock.description : "")}
                   steps={steps.map((s, idx) => ({
                     step: s.step || String(idx + 1).padStart(2, "0"),
                     title: s.title,
@@ -4007,6 +4179,161 @@ export function BlockRenderer({ sections }: BlockRendererProps) {
                     : undefined,
                   items,
                 }}
+              />
+            );
+          }
+
+          case "text-box": {
+            const tb = block as BlockTextBox;
+            const paragraphs = (tb.paragraphs ?? []).map((p) => p.text).filter(Boolean);
+            const listItems = (tb.listItems ?? []).map((i) => i.item).filter(Boolean);
+            return (
+              <TextBoxSection
+                key={blockKey}
+                heading={tb.heading}
+                subheading={tb.subheading}
+                paragraphs={paragraphs.length > 0 ? paragraphs : undefined}
+                listItems={listItems.length > 0 ? listItems : undefined}
+                variant={tb.variant || "green"}
+              />
+            );
+          }
+
+          case "architecture-patterns": {
+            const ap = block as BlockArchitecturePatterns;
+            return (
+              <RecentArchitecturePatternsSection
+                key={blockKey}
+                content={{
+                  eyebrow: ap.eyebrow,
+                  heading: ap.heading,
+                  description: ap.description,
+                  items: (ap.items ?? []).map((i) => ({
+                    label: i.label,
+                    title: i.title,
+                    description: i.description,
+                    stack: i.stack,
+                  })),
+                }}
+              />
+            );
+          }
+
+          case "tech-keywords": {
+            const tk = block as BlockTechKeywords;
+            return (
+              <TechKeywordSection
+                key={blockKey}
+                content={{
+                  eyebrow: tk.eyebrow,
+                  heading: tk.heading,
+                  introText: tk.introText,
+                  highlightedText: tk.highlightedText,
+                  bodyText: tk.bodyText,
+                }}
+              />
+            );
+          }
+
+          case "shopify-apps-directory": {
+            const sad = block as BlockShopifyAppsDirectory;
+            return (
+              <div key={blockKey} className="overflow-x-clip font-sans" data-page="shopify-apps">
+                <ShopifyAppsHeroSection title={sad.title} />
+                <ShopifyAppsGridSection
+                  apps={(sad.apps ?? []).map((app) => ({
+                    id: (app as any).id || (app.href ? app.href.replace(/[^a-zA-Z0-9]/g, "-") : app.title),
+                    title: app.title,
+                    additionalInfo: app.additionalInfo || "",
+                    description: app.description || "",
+                    image: resolveMediaUrl(app.image) || app.imageSrc || "",
+                    alt: app.alt || app.title,
+                    href: app.href,
+                  }))}
+                />
+              </div>
+            );
+          }
+
+          case "risks-shopify-topics": {
+            const rst = block as BlockRisksShopifyTopics;
+            return (
+              <RisksShopifyTopics
+                key={blockKey}
+                items={(rst.items ?? []).map((item) => ({
+                  id: item.topicId,
+                  label: item.label,
+                  heading: item.heading,
+                  introParagraphs: (item.introParagraphs ?? []).map((p) => p.text),
+                  paragraphs: (item.paragraphs ?? []).map((p) => p.text),
+                  bullets: (item.bullets ?? []).map((b) => ({ label: b.label, text: b.text })),
+                  closingParagraphs: (item.closingParagraphs ?? []).map((p) => p.text),
+                }))}
+              />
+            );
+          }
+
+          case "design-reasons": {
+            const dr = block as BlockDesignReasons;
+            return (
+              <DesignReasonsSection
+                key={blockKey}
+                title={dr.title}
+                description={dr.description}
+                items={(dr.items ?? []).map((i) => ({
+                  title: i.title,
+                  description: i.description,
+                }))}
+              />
+            );
+          }
+
+          case "white-label-services": {
+            const wls = block as BlockWhiteLabelServices;
+            return (
+              <WhiteLabelServicesSection
+                key={blockKey}
+                eyebrow={wls.eyebrow}
+                title={wls.title}
+                description={wls.description}
+                idPrefix={wls.idPrefix}
+                showCta={wls.showCta ?? true}
+                ctaLabel={wls.ctaLabel}
+                services={(wls.services ?? []).map((s) => ({
+                  title: s.title,
+                  description: s.description,
+                  icon: resolveMediaUrl(s.icon) || s.iconSrc || "/assets/icons/gradient-check.svg",
+                  href: s.href || undefined,
+                  linkLabel: s.linkLabel || undefined,
+                }))}
+              />
+            );
+          }
+
+          case "white-label-stats": {
+            const wlst = block as BlockWhiteLabelStats;
+            return (
+              <WhiteLabelStatsSection
+                key={blockKey}
+                stats={(wlst.stats ?? []).map((s) => ({
+                  value: s.value,
+                  label: s.label,
+                }))}
+              />
+            );
+          }
+
+          case "white-label-why": {
+            const wlw = block as BlockWhiteLabelWhy;
+            return (
+              <WhiteLabelWhySection
+                key={blockKey}
+                eyebrow={wlw.eyebrow}
+                title={wlw.title}
+                reasons={(wlw.reasons ?? []).map((r) => ({
+                  title: r.title,
+                  description: r.description,
+                }))}
               />
             );
           }

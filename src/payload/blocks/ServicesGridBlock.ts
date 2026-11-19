@@ -123,6 +123,12 @@ export const ServicesGridBlock: Block = {
       label: "Bottom Note / Clarification Text",
     },
     {
+      name: "preserveBreaks",
+      type: "checkbox",
+      defaultValue: false,
+      label: "Preserve line breaks in descriptions",
+    },
+    {
       name: "banner",
       type: "group",
       label: "Bottom Banner (for migration services)",

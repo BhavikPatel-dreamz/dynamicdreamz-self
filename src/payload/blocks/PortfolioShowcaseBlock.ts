@@ -178,6 +178,32 @@ export const PortfolioShowcaseBlock: Block = {
           type: "text",
           label: "Comma-separated Tags (e.g. Dawn Theme Customization, Refillable Packaging Brand)",
         },
+        {
+          name: "platformMark",
+          type: "group",
+          label: "Card Platform Mark / Badge (Optional)",
+          fields: [
+            {
+              name: "image",
+              type: "upload",
+              relationTo: "media",
+            },
+            {
+              name: "src",
+              type: "text",
+            },
+            {
+              name: "width",
+              type: "number",
+              defaultValue: 44,
+            },
+            {
+              name: "height",
+              type: "number",
+              defaultValue: 44,
+            },
+          ],
+        },
       ],
     },
   ],

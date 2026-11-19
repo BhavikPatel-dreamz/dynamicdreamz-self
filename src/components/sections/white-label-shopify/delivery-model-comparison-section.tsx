@@ -97,7 +97,7 @@ export function DeliveryModelComparisonSection({
                           isLastRow ? "border-b-0" : "border-b border-[rgba(0,0,0,0.10)]"
                         }`}
                       >
-                        <strong>{row.feature}</strong>
+                        <strong className="font-bold">{row.feature}</strong>
                       </td>
                       <td
                         className={`px-[18px] py-[17px] text-left font-sans text-sm font-medium leading-6 text-[#535353] max-[992px]:px-[14px] max-[992px]:py-2 max-[992px]:text-[12px] max-[992px]:leading-[18px] max-[992px]:whitespace-nowrap ${

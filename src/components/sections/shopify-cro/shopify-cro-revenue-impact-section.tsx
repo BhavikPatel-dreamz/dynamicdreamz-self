@@ -86,9 +86,9 @@ export function ShopifyCroRevenueImpactSection({
                         <Image
                           src={item.icon}
                           alt={item.label}
-                          width={30}
-                          height={30}
-                          className="size-[30px] object-contain max-[768px]:size-6"
+                          width={38}
+                          height={38}
+                          className="size-[38px] object-contain max-[768px]:size-6"
                         />
                       </span>
                       <div className="revenue-card-content">
@@ -139,9 +139,9 @@ export function ShopifyCroRevenueImpactSection({
                         <Image
                           src={item.icon}
                           alt=""
-                          width={30}
-                          height={30}
-                          className="size-[30px] object-contain max-[768px]:size-6"
+                          width={38}
+                          height={38}
+                          className="size-[38px] object-contain max-[768px]:size-6"
                         />
                       </span>
                       <div className="revenue-card-content">

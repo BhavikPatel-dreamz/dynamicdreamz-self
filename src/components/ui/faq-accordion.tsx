@@ -176,7 +176,7 @@ export function FaqAccordion({
             {item.answerParts
               ? item.answerParts.map((part, partIndex) =>
                   part.strong ? (
-                    <strong className="font-bold" key={`${part.text}-${partIndex}`}>
+                    <strong className="font-semibold" key={`${part.text}-${partIndex}`}>
                       {part.text}
                     </strong>
                   ) : (

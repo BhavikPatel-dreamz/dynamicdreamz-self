@@ -68,7 +68,7 @@ flowchart TD
 | **Tier 3** | **Platform Migration Pages** | 12 | **100% Ready** | `service-hero`, `proof-stats` (`why-choose-migration`), `process-timeline` (`numbered-grid`), `services-grid`, `faq-accordion` |
 | **Tier 4** | **Industry Ecommerce Pages** | 9 | **100% Ready & Seeded** | `service-hero`, `brand-partners` (`tools-grid`), `portfolio-showcase` (`case-studies-slider`), `services-grid` (`theme-boxes`), `industry-custom-dev`, `proof-stats` (`why-choose-migration`), `testimonials-carousel`, `faq-accordion` |
 | **Tier 5** | **Mobile App Pages** | 6 | **100% Ready & Seeded** | `service-hero` (`mobile-app`), `brand-partners`, `ai-empowered-delivery`, `services-grid`, `process-timeline`, `mobile-app-work`, `pricing-table`, `proof-stats`, `testimonials-carousel`, `faq-accordion`, `shopify-app-benefits`, `shopify-mobile-app-dtc`, `shopify-mobile-app-experience`, `mobile-app-comparison` |
-| **Tier 6** | **Standard Core Services** | 25 | **100% Ready** | Standard hero, brand partners, capability grids, portfolio cards, and FAQs |
+| **Tier 6** | **Standard Core Services** | 25 | **100% Ready & Seeded** | Standard hero, brand partners, capability grids, portfolio cards, and FAQs |
 | **Tier 7** | **Flagship Service Pages** | 15 | **100% Ready** | Covered by Phase 1 Master Blocks + Phase 2 Signature Blocks (`hours-comparison`, `cro-barriers`, etc.) |
 | **Tier 8** | **Company & Form Pages** | 9 | **100% Ready** | Covered by Phase 2 blocks (`about-timeline`, `about-founders`, `life-gallery`, `our-work-projects`, forms) |
 | **Tier 8** | **The Homepage (`/`)** | 1 | 5/10 Sections Ready | 5 ready (`hero`, `brands`, `integrations`, `testimonials`, `faq`); 5 bespoke blocks needed |
@@ -269,7 +269,7 @@ To populate all 142 pages in Payload CMS without manual data entry:
 [✓] Tier 3: Seed all 12 Platform Migration pages into CMS
 [✓] Tier 4: Seed all 9 Industry Ecommerce pages into CMS (8 Standard + 1 Bespoke)
 [✓] Tier 5: Seed all 6 Mobile App pages into CMS
-[ ] Tier 6: Seed all 25 Standard Core Service pages into CMS
+[✓] Tier 6: Seed all 25 Standard Core Service pages into CMS
 [ ] Tier 7: Seed all 15 Flagship Service pages into CMS
 [ ] Tier 8: Seed Homepage & Company pages (12 pages) into CMS
 [ ] Verification: Run full 142-page automated HTTP 200 crawl audit

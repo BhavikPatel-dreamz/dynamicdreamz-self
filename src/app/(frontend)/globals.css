@@ -17,10 +17,9 @@
   --font-display: var(--font-neue-montreal-medium-local), sans-serif;
   --font-montreal-medium: var(--font-neue-montreal-medium-local), sans-serif;
   --font-montreal-semibold: var(--font-neue-montreal-medium-local), sans-serif;
-  --montreal-medium: var(--font-neue-montreal-medium-local), sans-serif;
-  --montreal-bold: var(--font-neue-montreal-local), sans-serif;
-  --montreal-regular: var(--font-neue-montreal-local), sans-serif;
-  --montreal-light: var(--font-neue-montreal-local), sans-serif;
+  --font-montreal-bold: var(--font-neue-montreal-local), sans-serif;
+  --font-montreal-regular: var(--font-neue-montreal-local), sans-serif;
+  --font-montreal-light: var(--font-neue-montreal-local), sans-serif;
 }
 
 @layer base {

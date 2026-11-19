@@ -124,7 +124,7 @@ export function ShopifySupportScenariosSection({
                 <button
                   aria-controls={`scenario-panel-${tab.id}`}
                   aria-selected={isActive}
-                  className={`scenario-tab mb-3 block w-full rounded-[15px] p-[15px] text-left transition-all ${
+                  className={`scenario-tab mb-3 block w-full rounded-[15px] p-[15px] text-left hover:cursor-pointer transition-all ${
                     isActive
                       ? "border-[1.3px] border-[#AD5151] bg-[rgba(173,81,81,0.03)]"
                       : "border border-[rgba(40,40,40,0.10)] bg-white hover:border-[#AD5151] hover:bg-[rgba(173,81,81,0.03)]"

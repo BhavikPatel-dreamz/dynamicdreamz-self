@@ -50,6 +50,15 @@ import { ShopifyAppBenefitsBlock } from "@/payload/blocks/ShopifyAppBenefitsBloc
 import { ShopifyMobileAppDtcBlock } from "@/payload/blocks/ShopifyMobileAppDtcBlock";
 import { ShopifyMobileAppExperienceBlock } from "@/payload/blocks/ShopifyMobileAppExperienceBlock";
 import { MobileAppWorkBlock } from "@/payload/blocks/MobileAppWorkBlock";
+import { TextBoxBlock } from "@/payload/blocks/TextBoxBlock";
+import { ArchitecturePatternsBlock } from "@/payload/blocks/ArchitecturePatternsBlock";
+import { TechKeywordsBlock } from "@/payload/blocks/TechKeywordsBlock";
+import { ShopifyAppsDirectoryBlock } from "@/payload/blocks/ShopifyAppsDirectoryBlock";
+import { RisksShopifyTopicsBlock } from "@/payload/blocks/RisksShopifyTopicsBlock";
+import { DesignReasonsBlock } from "@/payload/blocks/DesignReasonsBlock";
+import { WhiteLabelServicesBlock } from "@/payload/blocks/WhiteLabelServicesBlock";
+import { WhiteLabelStatsBlock } from "@/payload/blocks/WhiteLabelStatsBlock";
+import { WhiteLabelWhyBlock } from "@/payload/blocks/WhiteLabelWhyBlock";
 import { previewDraftPath } from "@/lib/preview-url";
 import { safeRevalidatePath } from "@/lib/revalidate";
 
@@ -162,6 +171,15 @@ export const Pages: CollectionConfig = {
         ShopifyMobileAppDtcBlock,
         ShopifyMobileAppExperienceBlock,
         MobileAppWorkBlock,
+        TextBoxBlock,
+        ArchitecturePatternsBlock,
+        TechKeywordsBlock,
+        ShopifyAppsDirectoryBlock,
+        RisksShopifyTopicsBlock,
+        DesignReasonsBlock,
+        WhiteLabelServicesBlock,
+        WhiteLabelStatsBlock,
+        WhiteLabelWhyBlock,
       ],
     },
     {

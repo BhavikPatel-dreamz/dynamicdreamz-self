@@ -954,6 +954,7 @@ export interface Page {
             lastColFull?: boolean | null;
             isRoundedNumber?: boolean | null;
             bottomNote?: string | null;
+            preserveBreaks?: boolean | null;
             banner?: {
               badge?: string | null;
               title?: string | null;
@@ -1024,6 +1025,12 @@ export interface Page {
                   category?: string | null;
                   metrics?: string | null;
                   tags?: string | null;
+                  platformMark?: {
+                    image?: (number | null) | Media;
+                    src?: string | null;
+                    width?: number | null;
+                    height?: number | null;
+                  };
                   id?: string | null;
                 }[]
               | null;
@@ -1394,7 +1401,7 @@ export interface Page {
             items?:
               | {
                   number?: string | null;
-                  title: string;
+                  title?: string | null;
                   description: string;
                   id?: string | null;
                 }[]
@@ -1950,6 +1957,171 @@ export interface Page {
             id?: string | null;
             blockName?: string | null;
             blockType: 'mobile-app-work';
+          }
+        | {
+            heading: string;
+            subheading?: string | null;
+            paragraphs?:
+              | {
+                  text: string;
+                  id?: string | null;
+                }[]
+              | null;
+            listItems?:
+              | {
+                  item: string;
+                  id?: string | null;
+                }[]
+              | null;
+            variant?: ('green' | 'cream') | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'text-box';
+          }
+        | {
+            eyebrow?: string | null;
+            heading: string;
+            description?: string | null;
+            items?:
+              | {
+                  label: string;
+                  title: string;
+                  description: string;
+                  stack: string;
+                  id?: string | null;
+                }[]
+              | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'architecture-patterns';
+          }
+        | {
+            eyebrow?: string | null;
+            heading: string;
+            introText?: string | null;
+            highlightedText?: string | null;
+            bodyText?: string | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'tech-keywords';
+          }
+        | {
+            title: string;
+            apps?:
+              | {
+                  title: string;
+                  additionalInfo?: string | null;
+                  description?: string | null;
+                  image?: (number | null) | Media;
+                  imageSrc?: string | null;
+                  alt?: string | null;
+                  href: string;
+                  id?: string | null;
+                }[]
+              | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'shopify-apps-directory';
+          }
+        | {
+            items?:
+              | {
+                  topicId: string;
+                  label: string;
+                  heading: string;
+                  introParagraphs?:
+                    | {
+                        text: string;
+                        id?: string | null;
+                      }[]
+                    | null;
+                  paragraphs?:
+                    | {
+                        text: string;
+                        id?: string | null;
+                      }[]
+                    | null;
+                  bullets?:
+                    | {
+                        label: string;
+                        text: string;
+                        id?: string | null;
+                      }[]
+                    | null;
+                  closingParagraphs?:
+                    | {
+                        text: string;
+                        id?: string | null;
+                      }[]
+                    | null;
+                  id?: string | null;
+                }[]
+              | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'risks-shopify-topics';
+          }
+        | {
+            title: string;
+            description: string;
+            items?:
+              | {
+                  title: string;
+                  description: string;
+                  id?: string | null;
+                }[]
+              | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'design-reasons';
+          }
+        | {
+            eyebrow?: string | null;
+            title: string;
+            description?: string | null;
+            idPrefix?: string | null;
+            showCta?: boolean | null;
+            ctaLabel?: string | null;
+            services?:
+              | {
+                  title: string;
+                  description: string;
+                  icon?: (number | null) | Media;
+                  iconSrc?: string | null;
+                  href?: string | null;
+                  linkLabel?: string | null;
+                  id?: string | null;
+                }[]
+              | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'white-label-services';
+          }
+        | {
+            stats?:
+              | {
+                  value: string;
+                  label: string;
+                  id?: string | null;
+                }[]
+              | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'white-label-stats';
+          }
+        | {
+            eyebrow?: string | null;
+            title: string;
+            reasons?:
+              | {
+                  title: string;
+                  description: string;
+                  id?: string | null;
+                }[]
+              | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'white-label-why';
           }
       )[]
     | null;
@@ -3125,6 +3297,7 @@ export interface PagesSelect<T extends boolean = true> {
               lastColFull?: T;
               isRoundedNumber?: T;
               bottomNote?: T;
+              preserveBreaks?: T;
               banner?:
                 | T
                 | {
@@ -3201,6 +3374,14 @@ export interface PagesSelect<T extends boolean = true> {
                     category?: T;
                     metrics?: T;
                     tags?: T;
+                    platformMark?:
+                      | T
+                      | {
+                          image?: T;
+                          src?: T;
+                          width?: T;
+                          height?: T;
+                        };
                     id?: T;
                   };
               id?: T;
@@ -4133,6 +4314,180 @@ export interface PagesSelect<T extends boolean = true> {
                     href?: T;
                     appStoreUrl?: T;
                     playStoreUrl?: T;
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        'text-box'?:
+          | T
+          | {
+              heading?: T;
+              subheading?: T;
+              paragraphs?:
+                | T
+                | {
+                    text?: T;
+                    id?: T;
+                  };
+              listItems?:
+                | T
+                | {
+                    item?: T;
+                    id?: T;
+                  };
+              variant?: T;
+              id?: T;
+              blockName?: T;
+            };
+        'architecture-patterns'?:
+          | T
+          | {
+              eyebrow?: T;
+              heading?: T;
+              description?: T;
+              items?:
+                | T
+                | {
+                    label?: T;
+                    title?: T;
+                    description?: T;
+                    stack?: T;
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        'tech-keywords'?:
+          | T
+          | {
+              eyebrow?: T;
+              heading?: T;
+              introText?: T;
+              highlightedText?: T;
+              bodyText?: T;
+              id?: T;
+              blockName?: T;
+            };
+        'shopify-apps-directory'?:
+          | T
+          | {
+              title?: T;
+              apps?:
+                | T
+                | {
+                    title?: T;
+                    additionalInfo?: T;
+                    description?: T;
+                    image?: T;
+                    imageSrc?: T;
+                    alt?: T;
+                    href?: T;
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        'risks-shopify-topics'?:
+          | T
+          | {
+              items?:
+                | T
+                | {
+                    topicId?: T;
+                    label?: T;
+                    heading?: T;
+                    introParagraphs?:
+                      | T
+                      | {
+                          text?: T;
+                          id?: T;
+                        };
+                    paragraphs?:
+                      | T
+                      | {
+                          text?: T;
+                          id?: T;
+                        };
+                    bullets?:
+                      | T
+                      | {
+                          label?: T;
+                          text?: T;
+                          id?: T;
+                        };
+                    closingParagraphs?:
+                      | T
+                      | {
+                          text?: T;
+                          id?: T;
+                        };
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        'design-reasons'?:
+          | T
+          | {
+              title?: T;
+              description?: T;
+              items?:
+                | T
+                | {
+                    title?: T;
+                    description?: T;
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        'white-label-services'?:
+          | T
+          | {
+              eyebrow?: T;
+              title?: T;
+              description?: T;
+              idPrefix?: T;
+              showCta?: T;
+              ctaLabel?: T;
+              services?:
+                | T
+                | {
+                    title?: T;
+                    description?: T;
+                    icon?: T;
+                    iconSrc?: T;
+                    href?: T;
+                    linkLabel?: T;
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        'white-label-stats'?:
+          | T
+          | {
+              stats?:
+                | T
+                | {
+                    value?: T;
+                    label?: T;
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        'white-label-why'?:
+          | T
+          | {
+              eyebrow?: T;
+              title?: T;
+              reasons?:
+                | T
+                | {
+                    title?: T;
+                    description?: T;
                     id?: T;
                   };
               id?: T;

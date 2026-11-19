@@ -35,8 +35,6 @@ export function CertifiedServicesSection({
           eyebrow={content.eyebrow}
           heading={content.heading}
           headingId="certified-shopify-services-title"
-          textClassName="w-[43%]"
-          titleClassName="w-[52%]"
         />
         <div className="grid grid-cols-3 gap-5 max-[992px]:grid-cols-2 max-[576px]:grid-cols-1">
           {content.items.map((item, index) => (

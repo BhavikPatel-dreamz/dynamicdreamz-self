@@ -72,7 +72,7 @@ export function ShopifyCroEngagementSection({
                       {item.features.map((feature) => (
                         <li
                           key={feature}
-                          className="mb-3 border-b-[1.5px] border-[rgba(40,40,40,0.10)] bg-[url('/assets/shopify-cro-agency/engagement/checkbox-list.svg')] bg-[length:16px] bg-[left_top_2px] bg-no-repeat pb-[13px] pl-[33px] font-sans text-sm font-medium leading-5 text-muted last:mb-0 last:border-b-0 last:pb-0"
+                          className="mb-3 border-b-[1.5px] border-[rgba(40,40,40,0.10)] bg-[url('/assets/shopify-cro-agency/engagement/checkbox-list.svg')] bg-[length:16px] bg-[left_top_2px] bg-no-repeat pb-[13px] pl-[33px] font-sans text-sm font-regular leading-5 text-muted last:mb-0 last:border-b-0 last:pb-0"
                         >
                           {feature}
                         </li>

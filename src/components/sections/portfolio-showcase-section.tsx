@@ -104,7 +104,7 @@ export function PortfolioShowcaseSection({
           variant="portfolio"
         />
 
-        <div className={`mt-[42px] grid gap-x-[15px] gap-y-[60px] max-[992px]:mt-[50px] max-[992px]:gap-y-[30px] max-[768px]:mt-[30px] ${gridColsClass} ${itemsClassName ?? ""}`}>
+        <div className={`mt-[42px] grid gap-x-[15px] gap-y-[42px] max-[992px]:mt-[50px] max-[992px]:gap-y-[30px] max-[768px]:mt-[30px] ${gridColsClass} ${itemsClassName ?? ""}`}>
           {content.items.map((item) => (
             <PortfolioProjectCard
               category={item.category ?? content.category}

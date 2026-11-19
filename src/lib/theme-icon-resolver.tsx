@@ -90,6 +90,23 @@ import {
   YithWonderFeatureIcon,
 } from "@/components/sections/yith-wonder-theme-customization/yith-wonder-icons";
 import { ThemeServiceIcon } from "@/components/ui/theme-service-icons";
+import { HireShopifyIcon, type HireShopifyIconName } from "@/components/sections/hire-shopify-developers/hire-shopify-icons";
+import { WordPressCustomizationIcon } from "@/components/sections/wordpress/wordpress-customization-icons";
+import {
+  WordPressThemeCustomizationBenefitIcon,
+  WordPressThemeCustomizationServiceIcon,
+} from "@/components/sections/wordpress-theme-customization/wordpress-theme-customization-icons";
+import { WebflowGrowthIcon, type WebflowGrowthIconName } from "@/components/sections/webflow/webflow-growth-icons";
+import { WooCommerceServiceIcon, type WooCommerceServiceIconName } from "@/components/sections/woocommerce/woocommerce-service-icons";
+import { BigCommerceIcon, type BigCommerceIconName } from "@/components/sections/bigcommerce/bigcommerce-icons";
+import { MagentoServiceIcon, type MagentoServiceIconName } from "@/components/sections/magento/magento-service-icons";
+import { OnlineStore20Icon, type OnlineStore20IconName } from "@/components/sections/migrating-theme-to-online-store-2-0-icons";
+import { ShopifyPlusServiceIcon, type ShopifyPlusServiceIconName } from "@/components/sections/upgrade-to-shopify-plus/shopify-plus-services-icons";
+import {
+  WhiteLabelWebsiteDesignBenefitIcon,
+  WhiteLabelWebsiteDesignAdvantageIcon,
+} from "@/components/sections/white-label-website-design/white-label-website-design-icons";
+import { ShopifyThemeServiceIcon } from "@/components/sections/shopify-theme-customization/service-icons";
 
 export function resolveThemeIconDirect(
   slug: string,
@@ -229,7 +246,13 @@ export function resolveThemeIcon(
 
   if (themeSlug && kind) {
     const cleanSlug = themeSlug.replace(/-theme-customization$/, "");
-    return resolveThemeIconDirect(cleanSlug, kind, iconName);
+    const directIcon = resolveThemeIconDirect(cleanSlug, kind, iconName);
+    if (directIcon) return directIcon;
+  }
+
+  if (themeSlug) {
+    const sIcon = resolveServiceIcon(iconName, themeSlug, kind);
+    if (sIcon) return sIcon;
   }
 
   if (kind === "service") {
@@ -385,3 +408,76 @@ export function resolveMobileAppIcon(name?: string | null): ReactNode | null {
       return null;
   }
 }
+
+export function resolveServiceIcon(
+  name?: string | null,
+  serviceSlug?: string | null,
+  kind?: "feature" | "benefit" | "service" | null,
+): ReactNode | null {
+  if (!name) return null;
+
+  if (serviceSlug === "hire-shopify-developers") {
+    return <HireShopifyIcon name={name as HireShopifyIconName} />;
+  }
+
+  if (serviceSlug === "webflow-development") {
+    return <WebflowGrowthIcon name={name as WebflowGrowthIconName} />;
+  }
+
+  if (serviceSlug === "woocommerce-development") {
+    return <WooCommerceServiceIcon name={name as WooCommerceServiceIconName} />;
+  }
+
+  if (serviceSlug === "bigcommerce-development") {
+    return <BigCommerceIcon name={name as BigCommerceIconName} />;
+  }
+
+  if (serviceSlug === "magento-development") {
+    return <MagentoServiceIcon name={name as MagentoServiceIconName} />;
+  }
+
+  if (serviceSlug === "migrating-a-theme-to-online-store-2-0") {
+    return <OnlineStore20Icon name={name as OnlineStore20IconName} />;
+  }
+
+  if (serviceSlug === "wordpress-theme-customization-services") {
+    if (kind === "benefit") {
+      return (
+        <WordPressThemeCustomizationBenefitIcon
+          name={name}
+        />
+      );
+    }
+    return (
+      <WordPressThemeCustomizationServiceIcon
+        name={name}
+      />
+    );
+  }
+
+  if (serviceSlug === "upgrade-to-shopify-plus") {
+    return <ShopifyPlusServiceIcon name={name as ShopifyPlusServiceIconName} />;
+  }
+
+  if (serviceSlug === "white-label-website-design-services") {
+    if (name === "advantage") {
+      return <WhiteLabelWebsiteDesignAdvantageIcon />;
+    }
+    return <WhiteLabelWebsiteDesignBenefitIcon name={name} />;
+  }
+
+  if (serviceSlug === "shopify-theme-customization") {
+    return <ShopifyThemeServiceIcon name={name as any} />;
+  }
+
+  if (
+    serviceSlug === "wordpress-development" ||
+    serviceSlug === "wordpress-development-company" ||
+    serviceSlug === "hire-wordpress-developers"
+  ) {
+    return <WordPressCustomizationIcon name={name} />;
+  }
+
+  return null;
+}
+

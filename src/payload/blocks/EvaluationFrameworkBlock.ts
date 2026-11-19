@@ -58,7 +58,6 @@ export const EvaluationFrameworkBlock: Block = {
         {
           name: "title",
           type: "text",
-          required: true,
           label: "Criteria Title",
         },
         {
