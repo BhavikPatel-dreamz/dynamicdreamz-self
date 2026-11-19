@@ -102,7 +102,7 @@ export function ThemeCustomizationApproachSection({
                         </span>
                       )}
                       {item.title && (
-                        <h3 className="mb-2 font-display text-[22px] font-medium leading-tight text-ink max-[768px]:text-lg">
+                        <h3 className="mb-2 font-display text-[20px] font-medium leading-tight text-ink max-[768px]:text-lg">
                           {item.title}
                         </h3>
                       )}

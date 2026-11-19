@@ -168,7 +168,7 @@ export const shopifyDevelopmentAgencyServices = {
     },
     {
       tag: "Agency Delivery",
-      title: "Shopify Plus Mobile App Development",
+      title: "Shopify Mobile App Development",
       description:
         "Build high-performance iOS and Android shopping apps integrated with Shopify Plus, including real-time products, customer accounts, checkout, push notifications and loyalty features.",
       pills: [],
@@ -184,7 +184,7 @@ export const shopifyDevelopmentAgencyPortfolio = {
   eyebrow: "Portfolio",
   heading: "Explore Our Work",
   description:
-    "We've come across to work on quite a few challenging and critical issues in our professional journey and have come up with outstanding solutions! Whether it's a startup of a Fortune 500 company, every site we have developed has surpassed the client's expectations.",
+    "Our Shopify portfolio includes custom storefronts, migrations, integrations and complex development work for brands across different industries. Each project is tailored around the client’s requirements, customer experience and long-term growth.",
   category: "SHOPIFY",
   ctaLabel: "View our work",
   ctaHref: "/our-work",

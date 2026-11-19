@@ -44,6 +44,10 @@ export const TestimonialsCarouselBlock: Block = {
       type: "array",
       dbName: "tc_items",
       label: "Client Testimonials",
+      admin: {
+        description:
+          "Leave empty to automatically display testimonials from the global Testimonials collection (recommended).",
+      },
       fields: [
         {
           name: "name",

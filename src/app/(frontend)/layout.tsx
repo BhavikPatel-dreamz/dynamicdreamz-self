@@ -17,6 +17,7 @@ import {
 
 import "./globals.css";
 import "./aos.css";
+import SmoothScroll from "@/components/providers/SmoothScroll";
 
 const neueMontreal = localFont({
   src: [
@@ -108,6 +109,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
       <body>
         <AttributionTracker />
         <AOSProvider>
+          <SmoothScroll />
           <a
             className="fixed top-3 left-3 z-[1000] -translate-y-[170%] rounded-[30px] bg-ink px-4 py-2.5 font-bold text-white transition-transform duration-160 focus:translate-y-0"
             href="#main-content"

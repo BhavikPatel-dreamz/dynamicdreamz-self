@@ -905,6 +905,9 @@ export interface Page {
             description?: string | null;
             variant?: ('classic' | 'client-stories' | 'home') | null;
             hasTopPadding?: boolean | null;
+            /**
+             * Leave empty to automatically display testimonials from the global Testimonials collection (recommended).
+             */
             items?:
               | {
                   name: string;

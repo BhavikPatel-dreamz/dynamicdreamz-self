@@ -42,7 +42,8 @@ import { CtaBannerSection } from "@/components/sections/cta-banner-section";
 import { ImageCtaSection } from "@/components/sections/image-cta-section";
 import { WhiteLabelFinalCtaSection } from "@/components/sections/white-label/white-label-closing-sections";
 import { HappyClientSection } from "@/components/sections/happy-client-section";
-import { TestimonialsSection } from "@/components/sections/home/testimonials-section";
+import type { HappyClientTestimonialItem } from "@/components/sections/happy-client-card";
+import { getPayloadAdaptedTestimonials } from "@/lib/payload";
 import { ShopifyStageServicesSection } from "@/components/sections/shopify-stage-services-section";
 import { ThemeCustomizationServicesSection } from "@/components/sections/theme-customization-services-section";
 import { resolveThemeIcon } from "@/lib/theme-icon-resolver";
@@ -131,7 +132,7 @@ import { ShopifyAppsHeroSection, ShopifyAppsGridSection } from "@/components/sec
 import { RisksShopifyTopics } from "@/components/sections/risks-shopify-topics";
 import { DesignReasonsSection } from "@/components/sections/white-label-website-design/design-reasons-section";
 import { WhiteLabelServicesSection } from "@/components/sections/white-label/white-label-services-section";
-import { WhiteLabelStatsSection, WhiteLabelWhySection } from "@/components/sections/white-label/white-label-proof-section";
+import { WhiteLabelWhySection } from "@/components/sections/white-label/white-label-proof-section";
 
 // Phase 2.5 Canonical Content Fallbacks
 import { shopifyPlusAgencyContent } from "@/content/home";
@@ -1419,9 +1420,44 @@ export type CmsSectionBlock =
 
 export interface BlockRendererProps {
   sections?: readonly CmsSectionBlock[] | null;
+  testimonials?: readonly HappyClientTestimonialItem[];
 }
 
-export function BlockRenderer({ sections }: BlockRendererProps) {
+async function CmsTestimonialsCarousel({
+  block,
+  providedTestimonials,
+  fallbackItems,
+}: {
+  block: BlockTestimonialsCarousel;
+  providedTestimonials?: readonly HappyClientTestimonialItem[];
+  fallbackItems?: readonly HappyClientTestimonialItem[];
+}) {
+  const collectionTestimonials =
+    providedTestimonials && providedTestimonials.length > 0
+      ? providedTestimonials
+      : await getPayloadAdaptedTestimonials();
+
+  // Prefer the global testimonials collection; if empty (e.g. database down), fall back to block items or local defaults:
+  const items =
+    collectionTestimonials.length > 0
+      ? collectionTestimonials
+      : fallbackItems && fallbackItems.length > 0
+        ? fallbackItems
+        : undefined;
+
+  return (
+    <HappyClientSection
+      eyebrow={block.eyebrow}
+      heading={parseTextOrArray(block.heading)}
+      description={parseTextOrArray(block.description)}
+      variant={block.variant === "client-stories" ? "client-stories" : undefined}
+      hasTopPadding={block.hasTopPadding || block.variant === "home"}
+      items={items}
+    />
+  );
+}
+
+export function BlockRenderer({ sections, testimonials }: BlockRendererProps) {
   if (!sections || !Array.isArray(sections) || sections.length === 0) {
     return null;
   }
@@ -2296,18 +2332,7 @@ export function BlockRenderer({ sections }: BlockRendererProps) {
           // Block 5: Testimonials Carousel
           case "testimonials-carousel": {
             const tcBlock = block as BlockTestimonialsCarousel;
-            if (tcBlock.variant === "home") {
-              return (
-                <TestimonialsSection
-                  key={blockKey}
-                  eyebrow={tcBlock.eyebrow}
-                  title={tcBlock.heading}
-                  description={tcBlock.description}
-                />
-              );
-            }
-
-            const items = (tcBlock.items ?? []).map((item) => ({
+            const blockItems = (tcBlock.items ?? []).map((item) => ({
               name: item.name,
               company: item.company || "",
               quote: item.quote,
@@ -2321,14 +2346,11 @@ export function BlockRenderer({ sections }: BlockRendererProps) {
             }));
 
             return (
-              <HappyClientSection
+              <CmsTestimonialsCarousel
                 key={blockKey}
-                eyebrow={tcBlock.eyebrow}
-                heading={parseTextOrArray(tcBlock.heading)}
-                description={parseTextOrArray(tcBlock.description)}
-                variant={tcBlock.variant === "client-stories" ? "client-stories" : undefined}
-                hasTopPadding={tcBlock.hasTopPadding}
-                items={items.length > 0 ? items : undefined}
+                block={tcBlock}
+                providedTestimonials={testimonials}
+                fallbackItems={blockItems}
               />
             );
           }
@@ -4320,9 +4342,9 @@ export function BlockRenderer({ sections }: BlockRendererProps) {
           case "white-label-stats": {
             const wlst = block as BlockWhiteLabelStats;
             return (
-              <WhiteLabelStatsSection
+              <WhiteLabelCounterSection
                 key={blockKey}
-                stats={(wlst.stats ?? []).map((s) => ({
+                counters={(wlst.stats ?? []).map((s) => ({
                   value: s.value,
                   label: s.label,
                 }))}

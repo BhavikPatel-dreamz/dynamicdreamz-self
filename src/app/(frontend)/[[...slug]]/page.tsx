@@ -6,7 +6,7 @@ import { RenderBlocks, type CmsSectionBlock } from "@/components/RenderBlocks";
 import { DraftModeIndicator, RefreshRouteOnSave } from "@/components/preview";
 import { draftPreviewCopy } from "@/content/common";
 import { siteConfig } from "@/data/site";
-import { getPayloadPageBySlug } from "@/lib/payload";
+import { getPayloadPageBySlug, getPayloadAdaptedTestimonials } from "@/lib/payload";
 import { createModularPageSchema, serializeJsonLd } from "@/lib/schema";
 import { absoluteUrl } from "@/lib/seo";
 import { getAllServicePageSlugs, getServicePageEntry } from "@/lib/service-pages-registry";
@@ -123,6 +123,13 @@ export default async function DynamicPageRoute({ params }: DynamicPageRouteProps
 
   // If the page is populated in Payload CMS with modular sections, render from CMS:
   if (pageSections.length > 0) {
+    const hasTestimonials = pageSections.some(
+      (s) => s.blockType === "testimonials-carousel",
+    );
+    const testimonials = hasTestimonials
+      ? await getPayloadAdaptedTestimonials()
+      : undefined;
+
     const title = page?.seo?.metaTitle || `${page?.title || "Page"} | Dynamic Dreamz`;
     const description =
       page?.seo?.metaDescription ||
@@ -158,7 +165,7 @@ export default async function DynamicPageRoute({ params }: DynamicPageRouteProps
             />
           </>
         ) : null}
-        <RenderBlocks sections={pageSections} />
+        <RenderBlocks sections={pageSections} testimonials={testimonials} />
       </main>
     );
   }

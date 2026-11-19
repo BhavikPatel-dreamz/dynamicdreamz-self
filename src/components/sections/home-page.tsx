@@ -6,10 +6,14 @@ import { InsightsSection } from "@/components/sections/home/insights-section";
 import { IntegrationsSection } from "@/components/sections/home/integrations-section";
 import { SelectedWorkSection } from "@/components/sections/home/selected-work-section";
 import { ShopifyPlusAgencySection } from "@/components/sections/home/shopify-plus-agency-section";
-import { TestimonialsSection } from "@/components/sections/home/testimonials-section";
+import { HappyClientSection } from "@/components/sections/happy-client-section";
 import { WhiteLabelPartnerSection } from "@/components/sections/home/white-label-partner-section";
+import { homeSectionCopy } from "@/content/home";
+import { getPayloadAdaptedTestimonials } from "@/lib/payload";
 
-export function HomePage() {
+export async function HomePage() {
+  const testimonials = await getPayloadAdaptedTestimonials();
+
   return (
     <>
       <HomeHeroSection />
@@ -18,7 +22,12 @@ export function HomePage() {
       <WhiteLabelPartnerSection />
       <CommerceSolutionsSection />
       <SelectedWorkSection />
-      <TestimonialsSection />
+      <HappyClientSection
+        description={homeSectionCopy.testimonialsDescription}
+        hasTopPadding={true}
+        heading={homeSectionCopy.testimonialsTitle}
+        items={testimonials.length > 0 ? testimonials : undefined}
+      />
       <IntegrationsSection />
       <InsightsSection />
       <HomeFaqSection />

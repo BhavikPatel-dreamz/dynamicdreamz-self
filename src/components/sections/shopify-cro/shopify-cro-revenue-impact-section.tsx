@@ -118,7 +118,7 @@ export function ShopifyCroRevenueImpactSection({
           {/* After Optimization */}
           <div className="revenue-card revenue-card-optimized mb-[30px] w-1/2 px-[30px] max-[1200px]:px-2.5 max-[1200px]:mb-5 max-[768px]:w-full max-[768px]:px-0">
             <div className="revenue-card-body-box h-full">
-              <div className="revenue-card-body relative z-10 flex h-full flex-col justify-between rounded-[20px] bg-gradient-to-b from-[#18271C] to-transparent p-[70px_40px_40px] before:absolute before:-inset-[1.5px] before:-z-20 before:rounded-[20px] before:bg-gradient-to-b before:from-[#36F4A4] before:to-transparent after:absolute after:inset-0 after:-z-10 after:rounded-[20px] after:bg-[#18271C] max-[1200px]:p-[50px_30px_30px] max-[992px]:p-[50px_20px_20px] max-[768px]:p-[45px_16px_20px]">
+              <div className="revenue-card-body relative z-10 flex h-full flex-col justify-between rounded-[20px] bg-[#1E251D] p-[70px_40px_40px] before:absolute before:-inset-[1.5px] before:-z-20 before:rounded-[20px] before:bg-gradient-to-b before:from-[#36F4A4] before:to-transparent after:absolute after:inset-0 after:-z-10 after:rounded-[20px] after:bg-[#1E251D] max-[1200px]:p-[50px_30px_30px] max-[992px]:p-[50px_20px_20px] max-[768px]:p-[45px_16px_20px]">
                 <span className="badge absolute -top-[15px] left-0 right-0 mx-auto w-fit z-10 rounded-[11px] border-[2.5px] border-[#36F4A4] bg-[#171E16] py-[1px] pr-2.5 pl-[30px] font-sans text-base font-semibold uppercase leading-[190%] text-white max-[768px]:text-sm">
                   <span className="absolute left-[15px] top-1/2 size-[7px] -translate-y-1/2 rounded-full bg-[#36F4A4]" />
                   {content.after.badge}

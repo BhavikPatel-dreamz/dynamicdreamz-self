@@ -4,7 +4,6 @@ import { SplitFaqSection } from "@/components/sections/split-faq-section";
 import { WhiteLabelFinalCtaSection } from "@/components/sections/white-label/white-label-closing-sections";
 import { WhiteLabelProcessSection } from "@/components/sections/white-label/white-label-process-section";
 import {
-  WhiteLabelStatsSection,
   WhiteLabelWhySection,
 } from "@/components/sections/white-label/white-label-proof-section";
 import { WhiteLabelServicesSection } from "@/components/sections/white-label/white-label-services-section";
@@ -21,6 +20,7 @@ import {
   whiteLabelWordPressStats,
   whiteLabelWordPressToolRows,
 } from "@/content/white-label-wordpress-development";
+import { WhiteLabelCounterSection } from "./white-label-shopify/white-label-counter-section";
 
 export function WhiteLabelWordPressPage() {
   return (
@@ -28,10 +28,7 @@ export function WhiteLabelWordPressPage() {
       <CityPageHeroSection
         content={whiteLabelWordPressHero}
       />
-      <WhiteLabelStatsSection
-        stats={whiteLabelWordPressStats}
-        variant="minimal"
-      />
+      <WhiteLabelCounterSection counters={whiteLabelWordPressStats} />
       <WhiteLabelWhySection
         reasons={whiteLabelWordPressReasons}
         title={whiteLabelWordPressSectionCopy.reasonsTitle}

@@ -52,9 +52,6 @@ export type WhyChooseShopifyMigrationSectionProps = {
 };
 
 function MigrationFeatureIcon({ icon }: { icon: string }) {
-  const mobileIcon = resolveMobileAppIcon(icon);
-  if (mobileIcon) return mobileIcon;
-
   if (icon === "certified") {
     return (
       <svg
@@ -415,6 +412,9 @@ function MigrationFeatureIcon({ icon }: { icon: string }) {
     );
   }
 
+  const mobileIcon = resolveMobileAppIcon(icon);
+  if (mobileIcon) return mobileIcon;
+
   return (
     <svg
       aria-hidden="true"
@@ -458,7 +458,7 @@ export function WhyChooseShopifyMigrationSection({
           >
             {content.items.map((item, idx) => (
               <div
-                className="item-box mb-3 flex h-full items-start rounded-[20px] border border-[rgba(40,40,40,0.1)] bg-white p-5 last:mb-0 max-[768px]:rounded-[12px] max-[768px]:p-[20px_15px]"
+                className="item-box mb-3 flex h-full items-center rounded-[20px] border border-[rgba(40,40,40,0.1)] bg-white p-5 last:mb-0 max-[768px]:rounded-[12px] max-[768px]:p-[20px_15px]"
                 key={item.title || item.description || `why-choose-${idx}`}
               >
                 <div className="icon mr-5 flex size-10 shrink-0 items-center justify-center rounded-[10px] bg-[#EFF4EF] p-2.5 text-sm font-semibold leading-normal max-[768px]:mr-2.5">
@@ -524,7 +524,7 @@ export function WhyChooseShopifyMigrationSection({
                         )}
                         key={stat.label}
                       >
-                        <span className="block font-display text-[32px] font-semibold leading-tight text-ink max-[1400px]:text-[28px]">
+                        <span className="block font-montreal-bold text-[32px] font-semibold leading-tight text-ink max-[1400px]:text-[28px]">
                           {stat.value}
                         </span>
                         <p className="mt-1 font-sans text-xs font-regular uppercase leading-[150%] text-[#535353]">

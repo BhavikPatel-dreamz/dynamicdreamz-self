@@ -28,6 +28,7 @@ import type {
 } from "@/types/blog-post";
 import { resolveBlogPostNavigation } from "@/content/blog-post-navigation";
 import type { CaseStudyDetail, CaseStudyItem } from "@/types/case-study";
+import type { HappyClientTestimonialItem } from "@/components/sections/happy-client-card";
 import caseStudiesItemsJson from "@/content/case-studies-items.json";
 
 export const getPayloadNavigation = cache(async function getPayloadNavigation() {
@@ -889,19 +890,55 @@ export function adaptPayloadCaseStudyToDetail(
   };
 }
 
-export async function getPayloadTestimonials(limit = 100) {
-  try {
-    const payload = await getPayload({ config });
-    const res = await payload.find({
-      collection: "testimonials",
-      limit,
+export const getPayloadTestimonials = cache(
+  async (limit = 100): Promise<Testimonial[]> => {
+    try {
+      const payload = await getPayload({ config });
+      const res = await payload.find({
+        collection: "testimonials",
+        limit,
+        sort: "id",
+        depth: 1,
+      });
+      return res.docs;
+    } catch (err) {
+      console.warn("Payload getPayloadTestimonials warning:", err);
+      return [];
+    }
+  },
+);
+
+export const getPayloadAdaptedTestimonials = cache(
+  async (limit = 100): Promise<HappyClientTestimonialItem[]> => {
+    const docs = await getPayloadTestimonials(limit);
+    if (!docs || docs.length === 0) return [];
+
+    return docs.map((t) => {
+      const portraitUrl =
+        resolveMediaUrl(t.portrait) ||
+        resolveMediaUrl(t.avatar) ||
+        "/assets/testimonials/shari-leidich.webp";
+      const logoUrl = resolveMediaUrl(t.companyLogo) || undefined;
+      const logoMedia =
+        typeof t.companyLogo === "object" && t.companyLogo !== null
+          ? (t.companyLogo as Media)
+          : null;
+
+      return {
+        name: t.clientName,
+        company: t.company,
+        quote: t.quote,
+        videoId: t.videoId || "",
+        image: portraitUrl,
+        imageAlt: t.clientName,
+        logo: logoUrl,
+        logoAlt: t.companyLogoAlt || `${t.company} logo`,
+        logoWidth: logoMedia?.width || 120,
+        logoHeight: logoMedia?.height || 40,
+      };
     });
-    return res.docs;
-  } catch (err) {
-    console.warn("Payload getPayloadTestimonials warning:", err);
-    return [];
-  }
-}
+  },
+);
 
 export function adaptPayloadTestimonial(
   t: Testimonial,
@@ -925,7 +962,7 @@ export function adaptPayloadTestimonial(
     company: t.company,
     companyHref: t.companyHref || undefined,
     avatar: resolveMediaUrl(t.avatar) || "/assets/testimonials/shari-leidich.webp",
-    portrait: resolveMediaUrl(t.portrait) || resolveMediaUrl(t.avatar) || "/assets/testimonials/shari-leidich-full.webp",
+    portrait: resolveMediaUrl(t.portrait) || resolveMediaUrl(t.avatar) || "/assets/testimonials/shari-leidich.webp",
     logo: resolveMediaUrl(t.companyLogo) || undefined,
     logoAlt: t.companyLogoAlt || `${t.company} logo`,
     videoId: t.videoId || "",

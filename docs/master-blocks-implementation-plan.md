@@ -281,7 +281,7 @@ To populate all 142 pages in Payload CMS without manual data entry:
 [✓] Tier 3: Seed all 12 Platform Migration pages into CMS
 [✓] Tier 4: Seed all 9 Industry Ecommerce pages into CMS (8 Standard + 1 Bespoke)
 [✓] Tier 5: Seed all 6 Mobile App pages into CMS
-[✓] Tier 6: Seed all 25 Standard Core Service pages into CMS
+[ ] Tier 6: Seed all 25 Standard Core Service pages into CMS
 [ ] Tier 7: Seed all 15 Flagship Service pages into CMS
 [ ] Tier 8: Seed Homepage & Company pages (12 pages) into CMS
 [ ] Verification: Run full 142-page automated HTTP 200 crawl audit

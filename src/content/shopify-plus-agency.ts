@@ -489,10 +489,10 @@ export const shopifyPlusAgencyTestimonials = {
       quote:
         "We have been using dynamic dreams for four, maybe five years now. I can't say anything but the most positive things. They are diligent, professional, competitively priced.",
       videoId: "Vc9FH6ZeoXY",
-      image: "/assets/testimonials/shari-leidich-full.webp",
+      image: "/assets/testimonials/shari-leidich.webp",
       imageAlt: "Shari Leidich, Founder of Max Sweets",
       logo: "/assets/testimonials/max-sweets-logo.webp",
-      logoAlt: "Max Sweets Brand Logo",
+      logoAlt: "Max Sweets",
       logoWidth: 72,
       logoHeight: 53,
     },
@@ -502,10 +502,10 @@ export const shopifyPlusAgencyTestimonials = {
       quote:
         "Hi, I’m Rebecca, owner of Myla Jane. I’ve worked with Dynamic Dreams on several web development projects, and they always do an excellent job.",
       videoId: "_ay_egf5GKw",
-      image: "/assets/testimonials/rebekah-wymer-full.webp",
-      imageAlt: "Rebekah Wymer, Owner of Myla Jane",
+      image: "/assets/testimonials/rebekah-wymer.webp",
+      imageAlt: "rebekah-wymer",
       logo: "/assets/testimonials/myla-jane-logo.webp",
-      logoAlt: "Myla Jane Brand Logo",
+      logoAlt: "Myla Jane",
       logoWidth: 120,
       logoHeight: 49,
     },
@@ -515,23 +515,23 @@ export const shopifyPlusAgencyTestimonials = {
       quote:
         "Their support has allowed us to focus on growing our brand instead of worrying about technical issues and using time on this.",
       videoId: "_9uT-dRcQvo",
-      image: "/assets/testimonials/thommas-linnrose-full.webp",
-      imageAlt: "Thommas Linnrose, Founder of Art Copenhagen",
-      logo: "/assets/testimonials/art-copenhagen-logo.svg",
-      logoAlt: "Art Copenhagen Brand Logo",
+      image: "/assets/testimonials/thommas-linnrose.webp",
+      imageAlt: "Thommas_Linnrose",
+      logo: "/assets/testimonials/art-copenhagen-logo.webp",
+      logoAlt: "Art Copenhagen",
       logoWidth: 180,
       logoHeight: 52,
     },
     {
-      name: "Zoe wang",
+      name: "Zoe Wang",
       company: "Maison Zifan",
       quote:
         "Gaurav always explained to me what truly happens here and how we can improve it in the future. So we are very happy with the results, and we will continue to work with Gaurav and his team in the foreseeable future. So I highly recommend him.",
       videoId: "6Ni9tlZ7HKE",
-      image: "/assets/testimonials/zoe-wang-full.webp",
-      imageAlt: "Zoe Wang, Founder of Maison Zifan",
-      logo: "/assets/testimonials/maison-zifan-logo.svg",
-      logoAlt: "Maison Zifan Brand Logo",
+      image: "/assets/testimonials/zoe-wang.webp",
+      imageAlt: "Zoe_wang",
+      logo: "/assets/testimonials/maison-zifan-logo.webp",
+      logoAlt: "Maison Zifan",
       logoWidth: 72,
       logoHeight: 126,
     },
@@ -541,12 +541,12 @@ export const shopifyPlusAgencyTestimonials = {
       quote:
         "In 2025, I hired Gaurav and his team at Dynamic Dreams to upgrade my Shopify art shop, and the experience was seamless from start to finish. Communication was clear and prompt, Gaurav was patient with all my questions, and every issue or request was handled quickly and effectively.",
       videoId: "_rQeMWcz_gA",
-      image: "/assets/testimonials/clinton-de-vere-full.webp",
-      imageAlt: "Clinton De Vere, Owner of Clinton De Vere Art",
+      image: "/assets/testimonials/clinton-de-vere.webp",
+      imageAlt: "Clinton_De_Vere_thumbnail_img",
       logo: "/assets/testimonials/clinton-de-vere-logo.svg",
-      logoAlt: "Clinton De Vere Art Brand Logo",
-      logoWidth: 120,
-      logoHeight: 44,
+      logoAlt: "Clinton De Vere Art",
+      logoWidth: 64,
+      logoHeight: 63,
     },
     {
       name: "Fernando Arias",
@@ -555,35 +555,35 @@ export const shopifyPlusAgencyTestimonials = {
         "Dynamic Dreamz is amazing because they're able to work on Shopify and WordPress platforms, which are essential to my businesses, and being able to scale them. And if you are looking for an amazing website developer on Shopify or WordPress, I recommend Dynamic Dreamz.",
       videoId: "WQWG2niydpE",
       image: "/assets/testimonials/fernando-arias.webp",
-      imageAlt: "Fernando Arias, Founder of LGXNDS",
-      logo: "/assets/testimonials/lgxnds-logo.svg",
-      logoAlt: "LGXNDS Brand Logo",
+      imageAlt: "fernandoarias",
+      logo: "/assets/testimonials/lgxnds-logo.webp",
+      logoAlt: "LGXNDS",
       logoWidth: 160,
       logoHeight: 38,
     },
     {
       name: "Alec Torelli",
-      company: "(Conscious Poker)",
+      company: "Conscious Poker",
       quote:
         "Gaurav at Dynamic Dreamz excels in web design and development, demonstrating flawless communication, reliability, and confident autonomy, streamlining project execution.",
       videoId: "o4JnTGEH-Yk",
-      image: "/assets/testimonials/alec-torelli-full.webp",
-      imageAlt: "Alec Torelli, Founder of Conscious Poker",
+      image: "/assets/testimonials/alec-torelli.webp",
+      imageAlt: "Allec torelli image",
       logo: "/assets/testimonials/conscious-poker-logo.webp",
-      logoAlt: "Conscious Poker Brand Logo",
+      logoAlt: "Conscious Poker",
       logoWidth: 200,
       logoHeight: 40,
     },
     {
       name: "William Petz",
-      company: "(Quite Events)",
+      company: "Quite Events",
       quote:
         "Just 7 days post-launch, our sales surged by 12% owing to its advanced features; their expertise and swift updates impressed us, genuinely recommending their Services!",
       videoId: "B3KnREB4Bro",
-      image: "/assets/testimonials/william-petz-full.webp",
-      imageAlt: "William Petz, Founder of Quiet Events",
+      image: "/assets/testimonials/william-petz.webp",
+      imageAlt: "William petz image",
       logo: "/assets/testimonials/quiet-events-logo.webp",
-      logoAlt: "Quiet Events Brand Logo",
+      logoAlt: "Quite Events",
       logoWidth: 160,
       logoHeight: 42,
     },
@@ -593,23 +593,23 @@ export const shopifyPlusAgencyTestimonials = {
       quote:
         "In six months, Dynamic Dreamz revamped our website, turning it from error-ridden to seamlessly functional and visually appealing, significantly enhancing our digital presence.",
       videoId: "-IpNUAco1OA",
-      image: "/assets/testimonials/william-st-baker-full.webp",
-      imageAlt: "William ST Baker, Founder of Next Level Wardrobe",
+      image: "/assets/testimonials/william-st-baker.webp",
+      imageAlt: "William st baker image",
       logo: "/assets/testimonials/elite-element-electronics-logo.svg",
-      logoAlt: "Elite Element Electronics Brand Logo",
-      logoWidth: 160,
-      logoHeight: 42,
+      logoAlt: "Elite Element Electronics",
+      logoWidth: 41,
+      logoHeight: 44,
     },
     {
       name: "Kerri Imrie",
-      company: "(teanow.com.au)",
+      company: "teanow.com.au",
       quote:
         "Dynamic Dreamz and Gaurav's invaluable expertise and support were instrumental in our success, making them a reliable choice for any digital agency needs.",
       videoId: "oNDPBGO83G4",
-      image: "/assets/testimonials/kerri-imrie-full.webp",
-      imageAlt: "Kerri Imrie, Founder of The Pole Room",
+      image: "/assets/testimonials/kerri-imrie.webp",
+      imageAlt: "Kerri imrie",
       logo: "/assets/testimonials/tea-now-logo.webp",
-      logoAlt: "Tea Now Brand Logo",
+      logoAlt: "teanow",
       logoWidth: 160,
       logoHeight: 42,
     },
@@ -619,12 +619,8 @@ export const shopifyPlusAgencyTestimonials = {
       quote:
         "Dynamic Dreamz excels in web development with unmatched responsiveness, professionalism, and quality assurance, highly recommended for all projects.",
       videoId: "AoglCZQC0RU",
-      image: "/assets/testimonials/brandon-full.webp",
-      imageAlt: "Brandon, Client Testimonial",
-      logo: "/assets/testimonials/quiet-events-logo.webp",
-      logoAlt: "Quiet Events Brand Logo",
-      logoWidth: 100,
-      logoHeight: 40,
+      image: "/assets/testimonials/brandon.webp",
+      imageAlt: "brandon image",
     },
   ],
 } as const;
@@ -632,15 +628,6 @@ export const shopifyPlusAgencyTestimonials = {
 export const shopifyPlusAgencyPageTestimonials = {
   ...shopifyPlusAgencyTestimonials,
   items: shopifyPlusAgencyTestimonials.items.map((item) => {
-    if (item.name === "Alec Torelli") {
-      return { ...item, company: "Conscious Poker" };
-    }
-    if (item.name === "William Petz") {
-      return { ...item, company: "Quite Events" };
-    }
-    if (item.name === "Kerri Imrie") {
-      return { ...item, company: "teanow.com.au" };
-    }
     if (item.name === "Fernando Arias") {
       return {
         ...item,
