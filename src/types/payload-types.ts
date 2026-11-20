@@ -2330,6 +2330,43 @@ export interface Form {
         id?: string | null;
       }[]
     | null;
+  /**
+   * Customize form validation feedback and status messages. Leave default or customize anytime.
+   */
+  messages?: {
+    /**
+     * Displayed in the response box at the bottom when any field has an error.
+     */
+    validationError?: string | null;
+    /**
+     * Displayed directly beneath an empty required field.
+     */
+    required?: string | null;
+    /**
+     * Displayed directly beneath an invalid email field.
+     */
+    invalidEmail?: string | null;
+    /**
+     * Displayed directly beneath an invalid phone number field.
+     */
+    invalidPhone?: string | null;
+    /**
+     * Displayed when an uploaded file exceeds the 5MB size limit.
+     */
+    fileTooLarge?: string | null;
+    /**
+     * Displayed when an uploaded file has a disallowed extension.
+     */
+    invalidFileType?: string | null;
+    /**
+     * Displayed when network or email sending fails.
+     */
+    serverError?: string | null;
+    /**
+     * Displayed upon successful submission.
+     */
+    successMessage?: string | null;
+  };
   updatedAt: string;
   createdAt: string;
 }
@@ -4661,6 +4698,18 @@ export interface FormsSelect<T extends boolean = true> {
         message?: T;
         attachUploads?: T;
         id?: T;
+      };
+  messages?:
+    | T
+    | {
+        validationError?: T;
+        required?: T;
+        invalidEmail?: T;
+        invalidPhone?: T;
+        fileTooLarge?: T;
+        invalidFileType?: T;
+        serverError?: T;
+        successMessage?: T;
       };
   updatedAt?: T;
   createdAt?: T;

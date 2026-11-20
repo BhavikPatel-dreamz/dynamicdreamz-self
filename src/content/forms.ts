@@ -1,7 +1,22 @@
+export const formValidationCopy = {
+  required: "Please fill out this field.",
+  invalidEmail: "Please enter a valid email address.",
+  invalidPhone: "Please enter a valid mobile phone number.",
+  invalidFileType: "You are not allowed to upload files of this type.",
+  fileTooLarge: "The uploaded file is too large.",
+  validationError: "One or more fields have an error. Please check and try again.",
+  serverError: "There was an error trying to send your message. Please try again later.",
+  success: "Thank you for your message. It has been sent.",
+} as const;
+
 const sharedFormStatusCopy = {
-  success: "Thank you. Your inquiry has been received.",
-  missingIdentity: "Please provide your name and a valid email address.",
-  invalidEmail: "Please provide a valid email address.",
+  success: formValidationCopy.success,
+  missingIdentity: formValidationCopy.validationError,
+  invalidEmail: formValidationCopy.invalidEmail,
+  validationError: formValidationCopy.validationError,
+  required: formValidationCopy.required,
+  invalidPhone: formValidationCopy.invalidPhone,
+  serverError: formValidationCopy.serverError,
 } as const;
 
 export const contactFormCopy = {
@@ -29,8 +44,9 @@ export const contactFormCopy = {
   sending: "sending inquiry",
   status: {
     ...sharedFormStatusCopy,
-    unavailable: "We couldn't send your inquiry right now. Please use the sales email above.",
+    unavailable: formValidationCopy.serverError,
   },
+  validation: formValidationCopy,
 } as const;
 
 export const quoteFormCopy = {
@@ -61,8 +77,9 @@ export const quoteFormCopy = {
   sending: "sending inquiry",
   status: {
     ...sharedFormStatusCopy,
-    unavailable: "We couldn't send your inquiry right now. Please email info@dynamicdreamz.com.",
+    unavailable: formValidationCopy.serverError,
   },
+  validation: formValidationCopy,
 } as const;
 
 export const bookIntroCallFormCopy = {
@@ -85,8 +102,9 @@ export const bookIntroCallFormCopy = {
   sending: "sending inquiry",
   status: {
     ...sharedFormStatusCopy,
-    unavailable: "We couldn't send your inquiry right now. Please email info@dynamicdreamz.com.",
+    unavailable: formValidationCopy.serverError,
   },
+  validation: formValidationCopy,
 } as const;
 
 export const careerApplyFormCopy = {
@@ -118,21 +136,22 @@ export const careerApplyFormCopy = {
   submit: "apply now",
   submitting: "submitting...",
   status: {
-    success: "Thank you. Your job application has been submitted successfully.",
-    missingRequired: "Please provide your name and a valid email address.",
-    invalidEmail: "Please provide a valid email address.",
-    invalidFileType: "Only .pdf, .doc, .docx, and .txt files are allowed.",
-    fileTooLarge: "File size exceeds the 5MB limit.",
-    unavailable: "We couldn't submit your application right now. Please email hr@dynamicdreamz.com.",
+    success: formValidationCopy.success,
+    missingRequired: formValidationCopy.validationError,
+    invalidEmail: formValidationCopy.invalidEmail,
+    invalidFileType: formValidationCopy.invalidFileType,
+    fileTooLarge: formValidationCopy.fileTooLarge,
+    unavailable: formValidationCopy.serverError,
   },
+  validation: formValidationCopy,
 } as const;
 
 export const cmsFormCopy = {
   ariaLabel: "Website form",
   defaultSubmit: "Submit",
   submitting: "Submitting...",
-  defaultSuccess: "Thank you! Your message has been received.",
-  defaultError: "There was a problem submitting your request. Please try again.",
+  defaultSuccess: formValidationCopy.success,
+  defaultError: formValidationCopy.validationError,
   requiredMarker: "*",
   selectPlaceholder: "Select an option",
   countryPlaceholder: "Select country",
@@ -140,9 +159,10 @@ export const cmsFormCopy = {
   uploadButton: "Choose File",
   uploadNoFileChosen: "No file chosen",
   uploadHelpText: "(Only doc, docx, pdf and txt file formats allowed. Max limit: 5MB)",
-  uploadError: "Failed to upload file. Please try again.",
+  uploadError: formValidationCopy.serverError,
   maxFileSizePrefix: "Max file size: ",
   megabytesUnit: "MB",
+  validation: formValidationCopy,
   placeholders: {
     name: "Enter Your Name",
     email: "Enter Your Email",
@@ -154,5 +174,3 @@ export const cmsFormCopy = {
     message: "Share your questions or comments here",
   },
 } as const;
-
-

@@ -6,6 +6,7 @@ import { contactFormCopy } from "@/content/forms";
 export type ContactFormState = {
   status: "idle" | "success" | "error";
   message: string;
+  fieldErrors?: Record<string, string>;
 };
 
 const MAX_FIELD_LENGTH = 400;
@@ -42,17 +43,26 @@ export async function submitContactForm(
     fieldValue(formData, "project", MAX_PROJECT_LENGTH) ||
     fieldValue(formData, "Briefabouttheproject", MAX_PROJECT_LENGTH);
 
-  if (!name || !email) {
-    return {
-      status: "error",
-      message: contactFormCopy.status.missingIdentity,
-    };
+  const fieldErrors: Record<string, string> = {};
+
+  if (!name) {
+    fieldErrors.name = contactFormCopy.validation.required;
+    fieldErrors.EnterYourName = contactFormCopy.validation.required;
   }
 
-  if (!isValidEmail(email)) {
+  if (!email) {
+    fieldErrors.email = contactFormCopy.validation.required;
+    fieldErrors.Email = contactFormCopy.validation.required;
+  } else if (!isValidEmail(email)) {
+    fieldErrors.email = contactFormCopy.validation.invalidEmail;
+    fieldErrors.Email = contactFormCopy.validation.invalidEmail;
+  }
+
+  if (Object.keys(fieldErrors).length > 0) {
     return {
       status: "error",
-      message: contactFormCopy.status.invalidEmail,
+      message: contactFormCopy.validation.validationError,
+      fieldErrors,
     };
   }
 

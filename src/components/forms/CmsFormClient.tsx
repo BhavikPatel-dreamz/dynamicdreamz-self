@@ -126,6 +126,20 @@ export function CmsFormClient({
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
+  const [fieldErrors, setFieldErrors] = useState<Record<string, string>>({});
+
+  const clearFieldError = (fieldName: string) => {
+    if (fieldErrors[fieldName]) {
+      setFieldErrors((prev) => {
+        const next = { ...prev };
+        delete next[fieldName];
+        if (Object.keys(next).length === 0) {
+          setErrorMessage(null);
+        }
+        return next;
+      });
+    }
+  };
 
   const isObjectForm = typeof form === "object" && form !== null;
   const [asyncForm, setAsyncForm] = useState<PayloadForm | null>(null);
@@ -151,6 +165,18 @@ export function CmsFormClient({
   const formId = parsedForm?.id;
   const fields = parsedForm?.fields || [];
   const submitLabel = parsedForm?.submitButtonLabel || cmsFormCopy.defaultSubmit;
+
+  const formMessages = parsedForm?.messages;
+  const messages = {
+    validationError: formMessages?.validationError || cmsFormCopy.validation.validationError,
+    required: formMessages?.required || cmsFormCopy.validation.required,
+    invalidEmail: formMessages?.invalidEmail || cmsFormCopy.validation.invalidEmail,
+    invalidPhone: formMessages?.invalidPhone || cmsFormCopy.validation.invalidPhone,
+    fileTooLarge: formMessages?.fileTooLarge || cmsFormCopy.validation.fileTooLarge,
+    invalidFileType: formMessages?.invalidFileType || cmsFormCopy.validation.invalidFileType,
+    serverError: formMessages?.serverError || cmsFormCopy.validation.serverError,
+    successMessage: formMessages?.successMessage || cmsFormCopy.defaultSuccess,
+  };
 
   useEffect(() => {
     if (isSubmitted) {
@@ -203,7 +229,7 @@ export function CmsFormClient({
         {parsedForm.confirmationMessage ? (
           renderLexicalRichText(parsedForm.confirmationMessage)
         ) : (
-          <p className="text-base font-medium">{cmsFormCopy.defaultSuccess}</p>
+          <p className="text-base font-medium">{messages.successMessage}</p>
         )}
       </div>
     );
@@ -213,11 +239,51 @@ export function CmsFormClient({
     e.preventDefault();
     if (!formRef.current) return;
 
+    const formData = new FormData(formRef.current);
+    const errors: Record<string, string> = {};
+
+    for (const field of fields) {
+      if (!field || !("name" in field) || !field.name) continue;
+      const val = formData.get(field.name);
+      const isReq = Boolean((field as any).required);
+
+      if (field.blockType === "checkbox") {
+        if (isReq && !val) {
+          errors[field.name] = messages.required;
+        }
+      } else if (field.blockType === "upload") {
+        const files = formData.getAll(field.name).filter((f): f is File => f instanceof File && f.size > 0);
+        if (isReq && files.length === 0) {
+          errors[field.name] = messages.required;
+        } else {
+          for (const f of files) {
+            if (f.size > 5 * 1024 * 1024) {
+              errors[field.name] = messages.fileTooLarge;
+              break;
+            }
+          }
+        }
+      } else {
+        const strVal = typeof val === "string" ? val.trim() : "";
+        if (isReq && !strVal) {
+          errors[field.name] = messages.required;
+        } else if (strVal && field.blockType === "email" && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(strVal)) {
+          errors[field.name] = messages.invalidEmail;
+        }
+      }
+    }
+
+    if (Object.keys(errors).length > 0) {
+      setFieldErrors(errors);
+      setErrorMessage(messages.validationError);
+      return;
+    }
+
+    setFieldErrors({});
     setIsSubmitting(true);
     setErrorMessage(null);
 
     try {
-      const formData = new FormData(formRef.current);
 
       // Honeypot check: anti-bot trap
       const hpVal = formData.get("_dd_hp_website");
@@ -424,7 +490,7 @@ export function CmsFormClient({
         }
       }
     } catch (err: any) {
-      setErrorMessage(err.message || cmsFormCopy.defaultError);
+      setErrorMessage(err.message || messages.serverError);
     } finally {
       setIsSubmitting(false);
     }
@@ -434,6 +500,7 @@ export function CmsFormClient({
     <form
       ref={formRef}
       onSubmit={handleSubmit}
+      noValidate
       aria-label={parsedForm.title || cmsFormCopy.ariaLabel}
       className={className}
     >
@@ -463,8 +530,8 @@ export function CmsFormClient({
           const fieldWidth = (field as any).width || 100;
           const isHalfWidth = fieldWidth <= 50 && field.blockType !== "textarea";
           const colClass = isHalfWidth
-            ? "mb-7 w-1/2 px-[7px] max-[1200px]:mb-5 max-[992px]:mb-[15px] max-[768px]:mb-5 max-[768px]:w-full max-[768px]:px-0"
-            : "mb-7 w-full px-[7px] max-[1200px]:mb-5 max-[992px]:mb-[15px] max-[768px]:mb-5 max-[768px]:px-0";
+            ? "mb-4 w-1/2 px-[7px] max-[768px]:w-full max-[768px]:px-0"
+            : "mb-4 w-full px-[7px] max-[768px]:px-0";
 
           const fieldId = `${reactId}-${(field as any).name}-${index}`;
           const isRequired = Boolean((field as any).required);
@@ -519,6 +586,9 @@ export function CmsFormClient({
                       id={fieldId}
                       name={(field as any).name}
                       required={isRequired}
+                      aria-required={isRequired ? "true" : undefined}
+                      aria-invalid={Boolean(fieldErrors[(field as any).name])}
+                      onChange={() => clearFieldError((field as any).name)}
                       defaultValue={(field as any).defaultValue || ""}
                       placeholder={fieldPlaceholder}
                       rows={4}
@@ -530,6 +600,9 @@ export function CmsFormClient({
                         id={fieldId}
                         name={(field as any).name}
                         required={isRequired}
+                        aria-required={isRequired ? "true" : undefined}
+                        aria-invalid={Boolean(fieldErrors[(field as any).name])}
+                        onChange={() => clearFieldError((field as any).name)}
                         defaultValue={(field as any).defaultValue || ""}
                         className="h-[49px] w-full cursor-pointer appearance-none rounded-[5px] border-[1.5px] border-[#dfdfdf] bg-[rgba(254,254,254,0.93)] bg-[url('/assets/request-quote/icons/select-arrow.svg')] bg-[position:calc(100%-16px)_center] bg-no-repeat px-4 pr-9 text-base font-medium text-[#090909] focus:border-[#090909] focus:outline-none max-[1200px]:text-sm max-[992px]:h-[44px]"
                       >
@@ -550,6 +623,9 @@ export function CmsFormClient({
                         id={fieldId}
                         name={(field as any).name}
                         required={isRequired}
+                        aria-required={isRequired ? "true" : undefined}
+                        aria-invalid={Boolean(fieldErrors[(field as any).name])}
+                        onChange={() => clearFieldError((field as any).name)}
                         defaultValue={(field as any).defaultValue || ""}
                         className="h-[49px] w-full cursor-pointer appearance-none rounded-[5px] border-[1.5px] border-[#dfdfdf] bg-[rgba(254,254,254,0.93)] bg-[url('/assets/request-quote/icons/select-arrow.svg')] bg-[position:calc(100%-16px)_center] bg-no-repeat px-4 pr-9 text-base font-medium text-[#090909] focus:border-[#090909] focus:outline-none max-[1200px]:text-sm max-[992px]:h-[44px]"
                       >
@@ -569,6 +645,8 @@ export function CmsFormClient({
                           name={(field as any).name}
                           type="file"
                           required={isRequired}
+                          aria-required={isRequired ? "true" : undefined}
+                          aria-invalid={Boolean(fieldErrors[(field as any).name])}
                           multiple={Boolean((field as any).multiple)}
                           accept={
                             Array.isArray((field as any).mimeTypes)
@@ -579,6 +657,7 @@ export function CmsFormClient({
                           }
                           className="sr-only"
                           onChange={(e) => {
+                            clearFieldError((field as any).name);
                             const fileName = e.target.files?.[0]?.name;
                             const labelEl = document.getElementById(`${fieldId}-filename`);
                             if (labelEl) {
@@ -624,10 +703,18 @@ export function CmsFormClient({
                             : "text"
                       }
                       required={isRequired}
+                      aria-required={isRequired ? "true" : undefined}
+                      aria-invalid={Boolean(fieldErrors[(field as any).name])}
+                      onChange={() => clearFieldError((field as any).name)}
                       defaultValue={(field as any).defaultValue || ""}
                       placeholder={fieldPlaceholder}
                       className="h-[49px] w-full rounded-[5px] border-[1.5px] border-[#dfdfdf] px-4 text-base font-medium text-[#090909] placeholder:text-[#9a9a9a] focus:border-[#090909] focus:outline-none max-[1200px]:text-sm max-[992px]:h-[44px]"
                     />
+                  )}
+                  {fieldErrors[(field as any).name] && (
+                    <span className="wpcf7-not-valid-tip mt-[7px] block font-montserrat text-[14px] leading-[14px] font-normal text-[#dc3232]" aria-hidden="true">
+                      {fieldErrors[(field as any).name]}
+                    </span>
                   )}
                 </>
               )}
@@ -638,8 +725,8 @@ export function CmsFormClient({
 
       {errorMessage && (
         <div
-          role="alert"
-          className="mb-5 rounded-[5px] border border-[#d32f2f] bg-[#fdecea] p-4 text-sm font-medium text-[#d32f2f]"
+          className="wpcf7-response-output mt-7 mb-3.5 block border-2 border-[#dc3232] px-[14px] py-[2.8px] font-montserrat text-[14px] leading-normal font-normal text-[#535353]"
+          aria-hidden="true"
         >
           {errorMessage}
         </div>

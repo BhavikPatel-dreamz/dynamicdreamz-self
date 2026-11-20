@@ -1,6 +1,6 @@
 "use client";
 
-import { useActionState, useEffect, useRef } from "react";
+import { useActionState, useEffect, useRef, useState } from "react";
 
 import { submitCareerApplication, type CareerApplyFormState } from "@/lib/actions/career";
 import { ButtonLink } from "@/components/ui/button-link";
@@ -53,6 +53,8 @@ export function CareerApplyNowForm() {
     submitCareerApplication,
     initialFormState,
   );
+  const [clientErrors, setClientErrors] = useState<Record<string, string>>({});
+  const [clearedFields, setClearedFields] = useState<Record<string, boolean>>({});
 
   useEffect(() => {
     if (state.status === "success") {
@@ -128,19 +130,91 @@ export function CareerApplyNowForm() {
     }
   }, []);
 
+  function clearFieldError(fieldName: string) {
+    setClearedFields((prev) => ({ ...prev, [fieldName]: true }));
+    setClientErrors((prev) => {
+      if (!prev[fieldName]) return prev;
+      const next = { ...prev };
+      delete next[fieldName];
+      return next;
+    });
+  }
+
   function handleFileChange(event: React.ChangeEvent<HTMLInputElement>) {
     const file = event.target.files?.[0];
     if (fileNameRef.current) {
       fileNameRef.current.textContent =
         file?.name ?? careerApplyFormCopy.upload.noFileChosen;
     }
+    clearFieldError("File");
+    clearFieldError("resume");
   }
+
+  function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+    setClearedFields({});
+    const form = event.currentTarget;
+    const formData = new FormData(form);
+    const name = ((formData.get("EnterYourName") as string) || "").trim();
+    const email = ((formData.get("email") as string) || "").trim();
+    const file = formData.get("File") || formData.get("resume");
+
+    const errors: Record<string, string> = {};
+    if (!name) {
+      errors.EnterYourName = careerApplyFormCopy.validation.required;
+    }
+    if (!email) {
+      errors.email = careerApplyFormCopy.validation.required;
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      errors.email = careerApplyFormCopy.validation.invalidEmail;
+    }
+
+    if (file instanceof File && file.size > 0) {
+      if (file.size > 5 * 1024 * 1024) {
+        errors.File = careerApplyFormCopy.validation.fileTooLarge;
+      } else {
+        const ext = file.name.slice(file.name.lastIndexOf(".")).toLowerCase();
+        if (![".pdf", ".doc", ".docx", ".txt"].includes(ext)) {
+          errors.File = careerApplyFormCopy.validation.invalidFileType;
+        }
+      }
+    }
+
+    if (Object.keys(errors).length > 0) {
+      event.preventDefault();
+      setClientErrors(errors);
+      return;
+    }
+
+    setClientErrors({});
+  }
+
+  const activeErrors: Record<string, string> = {
+    ...(state.status === "error" ? state.fieldErrors : {}),
+    ...clientErrors,
+  };
+  Object.keys(clearedFields).forEach((key) => {
+    if (clearedFields[key]) {
+      delete activeErrors[key];
+    }
+  });
+
+  const hasClientErrors = Object.keys(clientErrors).some((k) => !clearedFields[k]);
+  const responseMessage =
+    state.status === "success"
+      ? state.message
+      : hasClientErrors
+        ? careerApplyFormCopy.validation.validationError
+        : state.status === "error" && Object.keys(activeErrors).length > 0
+          ? state.message
+          : null;
 
   return (
     <div className="right-col w-[61%] max-[1200px]:w-[55%] max-[992px]:w-full">
       <form
         ref={formRef}
         action={formAction}
+        onSubmit={handleSubmit}
+        noValidate
         aria-label={careerApplyFormCopy.ariaLabel}
         className="form-row -mx-[7px] flex flex-wrap max-[768px]:mx-0"
       >
@@ -211,10 +285,21 @@ export function CareerApplyNowForm() {
               type="text"
               autoComplete="name"
               required
+              aria-required="true"
+              aria-invalid={Boolean(activeErrors.EnterYourName || activeErrors.name)}
               maxLength={400}
               placeholder={careerApplyFormCopy.placeholders.name}
               className="h-[49px] w-full rounded-[5px] border-[1.5px] border-[#dfdfdf] bg-[rgba(254,254,254,0.93)] px-4 text-base font-medium text-[#090909] placeholder:text-[#9a9a9a] focus:border-[#090909] focus:outline-none max-[1200px]:text-sm max-[992px]:h-[44px]"
+              onChange={() => {
+                clearFieldError("EnterYourName");
+                clearFieldError("name");
+              }}
             />
+            {(activeErrors.EnterYourName || activeErrors.name) && (
+              <span className="wpcf7-not-valid-tip mt-[7px] block font-montserrat text-[14px] leading-[14px] font-normal text-[#dc3232]" aria-hidden="true">
+                {activeErrors.EnterYourName || activeErrors.name}
+              </span>
+            )}
           </div>
         </div>
 
@@ -229,10 +314,21 @@ export function CareerApplyNowForm() {
               type="email"
               autoComplete="email"
               required
+              aria-required="true"
+              aria-invalid={Boolean(activeErrors.email || activeErrors.Email)}
               maxLength={400}
               placeholder={careerApplyFormCopy.placeholders.email}
               className="h-[49px] w-full rounded-[5px] border-[1.5px] border-[#dfdfdf] bg-[rgba(254,254,254,0.93)] px-4 text-base font-medium text-[#090909] placeholder:text-[#9a9a9a] focus:border-[#090909] focus:outline-none max-[1200px]:text-sm max-[992px]:h-[44px]"
+              onChange={() => {
+                clearFieldError("email");
+                clearFieldError("Email");
+              }}
             />
+            {(activeErrors.email || activeErrors.Email) && (
+              <span className="wpcf7-not-valid-tip mt-[7px] block font-montserrat text-[14px] leading-[14px] font-normal text-[#dc3232]" aria-hidden="true">
+                {activeErrors.email || activeErrors.Email}
+              </span>
+            )}
           </div>
         </div>
 
@@ -340,25 +436,13 @@ export function CareerApplyNowForm() {
                   {careerApplyFormCopy.upload.noFileChosen}
                 </p>
               </div>
+              {(activeErrors.File || activeErrors.resume) && (
+                <span className="wpcf7-not-valid-tip mt-[7px] block font-montserrat text-[14px] leading-[14px] font-normal text-[#dc3232]" aria-hidden="true">
+                  {activeErrors.File || activeErrors.resume}
+                </span>
+              )}
             </div>
           </div>
-        </div>
-
-        <div
-          className={`col-md-12 w-full px-[7px] max-[768px]:px-0 ${
-            state.status === "idle" ? "h-0" : "mb-5 min-h-6"
-          }`}
-          aria-live="polite"
-        >
-          {state.status !== "idle" ? (
-            <p
-              className={`text-sm font-medium ${
-                state.status === "error" ? "text-[#b42318]" : "text-brand-green"
-              }`}
-            >
-              {state.message}
-            </p>
-          ) : null}
         </div>
 
         <div className="col-md-12 w-full px-[7px] max-[768px]:px-0">
@@ -375,6 +459,21 @@ export function CareerApplyNowForm() {
             </ButtonLink>
           </div>
         </div>
+
+        {responseMessage && (
+          <div className="col-md-12 w-full px-[7px] max-[768px]:px-0">
+            <div
+              className={
+                state.status === "success"
+                  ? "wpcf7-response-output mt-7 mb-3.5 block border-2 border-[#46b450] px-[14px] py-[2.8px] font-montserrat text-[14px] leading-normal font-normal text-[#535353]"
+                  : "wpcf7-response-output mt-7 mb-3.5 block border-2 border-[#dc3232] px-[14px] py-[2.8px] font-montserrat text-[14px] leading-normal font-normal text-[#535353]"
+              }
+              aria-hidden="true"
+            >
+              {responseMessage}
+            </div>
+          </div>
+        )}
       </form>
     </div>
   );

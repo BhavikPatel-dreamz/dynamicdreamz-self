@@ -1,6 +1,6 @@
 "use client";
 
-import { useActionState, useEffect, useRef } from "react";
+import { useActionState, useEffect, useRef, useState } from "react";
 
 import {
   type ContactFormState,
@@ -47,12 +47,74 @@ export function BookIntroCallForm() {
     submitContactForm,
     initialContactFormState,
   );
+  const [clientErrors, setClientErrors] = useState<Record<string, string>>({});
+  const [clearedFields, setClearedFields] = useState<Record<string, boolean>>({});
 
   useEffect(() => {
     if (state.status === "success") {
       formRef.current?.reset();
     }
   }, [state.status]);
+
+  function clearFieldError(fieldName: string) {
+    setClearedFields((prev) => ({ ...prev, [fieldName]: true }));
+    setClientErrors((prev) => {
+      if (!prev[fieldName]) return prev;
+      const next = { ...prev };
+      delete next[fieldName];
+      return next;
+    });
+  }
+
+  function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+    setClearedFields({});
+    const form = event.currentTarget;
+    const formData = new FormData(form);
+    const name = ((formData.get("name") as string) || "").trim();
+    const company = ((formData.get("company") as string) || "").trim();
+    const email = ((formData.get("email") as string) || "").trim();
+
+    const errors: Record<string, string> = {};
+    if (!name) {
+      errors.name = bookIntroCallFormCopy.validation.required;
+    }
+    if (!company) {
+      errors.company = bookIntroCallFormCopy.validation.required;
+    }
+    if (!email) {
+      errors.email = bookIntroCallFormCopy.validation.required;
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      errors.email = bookIntroCallFormCopy.validation.invalidEmail;
+    }
+
+    if (Object.keys(errors).length > 0) {
+      event.preventDefault();
+      setClientErrors(errors);
+      return;
+    }
+
+    setClientErrors({});
+  }
+
+  const activeErrors: Record<string, string> = {
+    ...(state.status === "error" ? state.fieldErrors : {}),
+    ...clientErrors,
+  };
+  Object.keys(clearedFields).forEach((key) => {
+    if (clearedFields[key]) {
+      delete activeErrors[key];
+    }
+  });
+
+  const hasClientErrors = Object.keys(clientErrors).some((k) => !clearedFields[k]);
+  const responseMessage =
+    state.status === "success"
+      ? state.message
+      : hasClientErrors
+        ? bookIntroCallFormCopy.validation.validationError
+        : state.status === "error" && Object.keys(activeErrors).length > 0
+          ? state.message
+          : null;
 
   useEffect(() => {
     const searchParams = new URLSearchParams(window.location.search);
@@ -72,6 +134,8 @@ export function BookIntroCallForm() {
       aria-label={bookIntroCallFormCopy.ariaLabel}
       className="intro-call-form space-y-5"
       ref={formRef}
+      onSubmit={handleSubmit}
+      noValidate
     >
       <input
         aria-hidden="true"
@@ -92,8 +156,16 @@ export function BookIntroCallForm() {
           name="name"
           placeholder={bookIntroCallFormCopy.placeholders.name}
           required
+          aria-required="true"
+          aria-invalid={Boolean(activeErrors.name)}
+          onChange={() => clearFieldError("name")}
           type="text"
         />
+        {activeErrors.name && (
+          <span className="wpcf7-not-valid-tip mt-[7px] block font-montserrat text-[14px] leading-[14px] font-normal text-[#dc3232]" aria-hidden="true">
+            {activeErrors.name}
+          </span>
+        )}
       </div>
 
       <div>
@@ -107,8 +179,16 @@ export function BookIntroCallForm() {
           name="company"
           placeholder={bookIntroCallFormCopy.placeholders.company}
           required
+          aria-required="true"
+          aria-invalid={Boolean(activeErrors.company)}
+          onChange={() => clearFieldError("company")}
           type="text"
         />
+        {activeErrors.company && (
+          <span className="wpcf7-not-valid-tip mt-[7px] block font-montserrat text-[14px] leading-[14px] font-normal text-[#dc3232]" aria-hidden="true">
+            {activeErrors.company}
+          </span>
+        )}
       </div>
 
       <div>
@@ -122,8 +202,16 @@ export function BookIntroCallForm() {
           name="email"
           placeholder={bookIntroCallFormCopy.placeholders.email}
           required
+          aria-required="true"
+          aria-invalid={Boolean(activeErrors.email)}
+          onChange={() => clearFieldError("email")}
           type="email"
         />
+        {activeErrors.email && (
+          <span className="wpcf7-not-valid-tip mt-[7px] block font-montserrat text-[14px] leading-[14px] font-normal text-[#dc3232]" aria-hidden="true">
+            {activeErrors.email}
+          </span>
+        )}
       </div>
 
       <div>
@@ -153,18 +241,6 @@ export function BookIntroCallForm() {
         />
       </div>
 
-      {state.status === "error" ? (
-        <p className="text-sm font-medium text-[#d92128]" role="alert">
-          {state.message}
-        </p>
-      ) : null}
-
-      {state.status === "success" ? (
-        <p className="text-sm font-medium text-[#11a355]" role="status">
-          {state.message}
-        </p>
-      ) : null}
-
       <div className="pt-2">
         <button
           className="group/contact-submit relative inline-flex min-h-[49px] cursor-pointer overflow-hidden rounded-[30px] border-2 border-brand-red px-8 py-[15px] text-center text-sm font-bold uppercase tracking-wider text-white transition-colors duration-500 hover:border-[#4f4f4f] hover:text-[#4f4f4f] disabled:cursor-wait disabled:opacity-70 max-[768px]:w-full max-[768px]:justify-center"
@@ -182,6 +258,19 @@ export function BookIntroCallForm() {
           </span>
         </button>
       </div>
+
+      {responseMessage && (
+        <div
+          className={
+            state.status === "success"
+              ? "wpcf7-response-output mt-7 mb-3.5 block border-2 border-[#46b450] px-[14px] py-[2.8px] font-montserrat text-[14px] leading-normal font-normal text-[#535353]"
+              : "wpcf7-response-output mt-7 mb-3.5 block border-2 border-[#dc3232] px-[14px] py-[2.8px] font-montserrat text-[14px] leading-normal font-normal text-[#535353]"
+          }
+          aria-hidden="true"
+        >
+          {responseMessage}
+        </div>
+      )}
 
       {attributionFields.map((field) => (
         <input key={field} name={field} type="hidden" />

@@ -252,7 +252,7 @@ export function BlogsPage({
           <div className="inner-hero-content text-center">
             <h1
               id="blogs-page-title"
-              className="font-montreal-medium text-[50px] font-normal leading-[60px] text-[#282828] max-[1200px]:text-[40px] max-[1200px]:leading-[50px] max-[768px]:text-[28px] max-[768px]:leading-[38px]"
+              className="font-montreal-medium text-[50px] max-w-[770px] mx-auto font-normal leading-[60px] text-[#282828] max-[1200px]:text-[40px] max-[1200px]:leading-[50px] max-[768px]:text-[28px] max-[768px]:leading-[38px]"
             >
               {blogsPageContent.heroTitle}
             </h1>

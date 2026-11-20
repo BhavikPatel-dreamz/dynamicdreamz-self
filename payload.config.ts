@@ -21,6 +21,7 @@ import { Navigation } from "./src/payload/globals/Navigation";
 import { SiteSettings } from "./src/payload/globals/SiteSettings";
 import { mediaServerStorage } from "./adapter/src/index";
 import { attachFormUploadsToEmail } from "./src/payload/hooks/attachFormUploadsToEmail";
+import { formValidationCopy } from "./src/content/forms";
 
 const filename = fileURLToPath(import.meta.url);
 const dirname = path.dirname(filename);
@@ -104,7 +105,7 @@ export default buildConfig({
           group: "Leads & Inquiries",
         },
         fields: ({ defaultFields }) => {
-          return defaultFields.map((field) => {
+          const mappedFields = defaultFields.map((field) => {
             if ("name" in field && field.name === "emails" && "fields" in field && Array.isArray(field.fields)) {
               return {
                 ...field,
@@ -133,6 +134,93 @@ export default buildConfig({
             }
             return field;
           });
+
+          const messagesField: Field = {
+            name: "messages",
+            type: "group",
+            label: "Validation & Error Messages",
+            admin: {
+              description:
+                "Customize form validation feedback and status messages. Leave default or customize anytime.",
+            },
+            fields: [
+              {
+                name: "validationError",
+                type: "text",
+                label: "Summary Error Box (General)",
+                defaultValue: formValidationCopy.validationError,
+                admin: {
+                  description:
+                    "Displayed in the response box at the bottom when any field has an error.",
+                },
+              },
+              {
+                name: "required",
+                type: "text",
+                label: "Required Field Error",
+                defaultValue: formValidationCopy.required,
+                admin: {
+                  description: "Displayed directly beneath an empty required field.",
+                },
+              },
+              {
+                name: "invalidEmail",
+                type: "text",
+                label: "Invalid Email Error",
+                defaultValue: formValidationCopy.invalidEmail,
+                admin: {
+                  description: "Displayed directly beneath an invalid email field.",
+                },
+              },
+              {
+                name: "invalidPhone",
+                type: "text",
+                label: "Invalid Phone Error",
+                defaultValue: formValidationCopy.invalidPhone,
+                admin: {
+                  description: "Displayed directly beneath an invalid phone number field.",
+                },
+              },
+              {
+                name: "fileTooLarge",
+                type: "text",
+                label: "File Too Large Error",
+                defaultValue: formValidationCopy.fileTooLarge,
+                admin: {
+                  description: "Displayed when an uploaded file exceeds the 5MB size limit.",
+                },
+              },
+              {
+                name: "invalidFileType",
+                type: "text",
+                label: "Disallowed File Type Error",
+                defaultValue: formValidationCopy.invalidFileType,
+                admin: {
+                  description: "Displayed when an uploaded file has a disallowed extension.",
+                },
+              },
+              {
+                name: "serverError",
+                type: "text",
+                label: "Server / Network Error",
+                defaultValue: formValidationCopy.serverError,
+                admin: {
+                  description: "Displayed when network or email sending fails.",
+                },
+              },
+              {
+                name: "successMessage",
+                type: "text",
+                label: "Success Message",
+                defaultValue: formValidationCopy.success,
+                admin: {
+                  description: "Displayed upon successful submission.",
+                },
+              },
+            ],
+          };
+
+          return [...mappedFields, messagesField];
         },
       },
       formSubmissionOverrides: {

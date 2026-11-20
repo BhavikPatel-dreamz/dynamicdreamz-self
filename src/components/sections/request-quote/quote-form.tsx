@@ -1,6 +1,6 @@
 "use client";
 
-import { useActionState, useEffect, useRef } from "react";
+import { useActionState, useEffect, useRef, useState } from "react";
 
 import { type QuoteFormState, submitQuoteForm } from "@/lib/actions/quote";
 import { quoteFormCopy } from "@/content/forms";
@@ -69,12 +69,70 @@ export function QuoteForm({
     submitQuoteForm,
     initialQuoteFormState,
   );
+  const [clientErrors, setClientErrors] = useState<Record<string, string>>({});
+  const [clearedFields, setClearedFields] = useState<Record<string, boolean>>({});
 
   useEffect(() => {
     if (state.status === "success") {
       formRef.current?.reset();
     }
   }, [state.status]);
+
+  function clearFieldError(fieldName: string) {
+    setClearedFields((prev) => ({ ...prev, [fieldName]: true }));
+    setClientErrors((prev) => {
+      if (!prev[fieldName]) return prev;
+      const next = { ...prev };
+      delete next[fieldName];
+      return next;
+    });
+  }
+
+  function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+    setClearedFields({});
+    const form = event.currentTarget;
+    const formData = new FormData(form);
+    const name = ((formData.get("name") as string) || "").trim();
+    const email = ((formData.get("email") as string) || "").trim();
+
+    const errors: Record<string, string> = {};
+    if (!name) {
+      errors.name = quoteFormCopy.validation.required;
+    }
+    if (!email) {
+      errors.email = quoteFormCopy.validation.required;
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      errors.email = quoteFormCopy.validation.invalidEmail;
+    }
+
+    if (Object.keys(errors).length > 0) {
+      event.preventDefault();
+      setClientErrors(errors);
+      return;
+    }
+
+    setClientErrors({});
+  }
+
+  const activeErrors: Record<string, string> = {
+    ...(state.status === "error" ? state.fieldErrors : {}),
+    ...clientErrors,
+  };
+  Object.keys(clearedFields).forEach((key) => {
+    if (clearedFields[key]) {
+      delete activeErrors[key];
+    }
+  });
+
+  const hasClientErrors = Object.keys(clientErrors).some((k) => !clearedFields[k]);
+  const responseMessage =
+    state.status === "success"
+      ? state.message
+      : hasClientErrors
+        ? quoteFormCopy.validation.validationError
+        : state.status === "error" && Object.keys(activeErrors).length > 0
+          ? state.message
+          : null;
 
   useEffect(() => {
     const searchParams = new URLSearchParams(window.location.search);
@@ -116,7 +174,7 @@ export function QuoteForm({
         </h2>
       )}
 
-      <form ref={formRef} action={formAction} aria-label={quoteFormCopy.ariaLabel} className="max-[768px]:relative max-[768px]:-top-0.5">
+      <form ref={formRef} action={formAction} onSubmit={handleSubmit} noValidate aria-label={quoteFormCopy.ariaLabel} className="max-[768px]:relative max-[768px]:-top-0.5">
         <input
           name="website"
           tabIndex={-1}
@@ -142,7 +200,15 @@ export function QuoteForm({
               placeholder={quoteFormCopy.placeholders.name}
               maxLength={400}
               required
+              aria-required="true"
+              aria-invalid={Boolean(activeErrors.name)}
+              onChange={() => clearFieldError("name")}
             />
+            {activeErrors.name && (
+              <span className="wpcf7-not-valid-tip mt-[7px] block font-montserrat text-[14px] leading-[14px] font-normal text-[#dc3232]" aria-hidden="true">
+                {activeErrors.name}
+              </span>
+            )}
           </div>
 
           <div className="mb-7 w-1/2 px-[7px] max-[1200px]:mb-5 max-[992px]:mb-5 max-[768px]:w-full max-[768px]:px-0">
@@ -158,7 +224,15 @@ export function QuoteForm({
               placeholder={quoteFormCopy.placeholders.email}
               maxLength={400}
               required
+              aria-required="true"
+              aria-invalid={Boolean(activeErrors.email)}
+              onChange={() => clearFieldError("email")}
             />
+            {activeErrors.email && (
+              <span className="wpcf7-not-valid-tip mt-[7px] block font-montserrat text-[14px] leading-[14px] font-normal text-[#dc3232]" aria-hidden="true">
+                {activeErrors.email}
+              </span>
+            )}
           </div>
 
           <div className="mb-7 w-1/2 px-[7px] max-[1200px]:mb-5 max-[992px]:mb-5 max-[768px]:w-full max-[768px]:px-0">
@@ -229,20 +303,6 @@ export function QuoteForm({
           </div>
         </div>
 
-        <div className={state.status === "idle" ? "h-0" : "min-h-6"} aria-live="polite">
-          {state.status !== "idle" ? (
-            <p
-              className={
-                state.status === "error"
-                  ? "text-sm font-medium text-[#b42318]"
-                  : "text-sm font-medium text-brand-green"
-              }
-            >
-              {state.message}
-            </p>
-          ) : null}
-        </div>
-
         <div>
           <button
             className={
@@ -261,6 +321,19 @@ export function QuoteForm({
             </span>
           </button>
         </div>
+
+        {responseMessage && (
+          <div
+            className={
+              state.status === "success"
+                ? "wpcf7-response-output mt-7 mb-3.5 block border-2 border-[#46b450] px-[14px] py-[2.8px] font-montserrat text-[14px] leading-normal font-normal text-[#535353]"
+                : "wpcf7-response-output mt-7 mb-3.5 block border-2 border-[#dc3232] px-[14px] py-[2.8px] font-montserrat text-[14px] leading-normal font-normal text-[#535353]"
+            }
+            aria-hidden="true"
+          >
+            {responseMessage}
+          </div>
+        )}
       </form>
     </div>
   );

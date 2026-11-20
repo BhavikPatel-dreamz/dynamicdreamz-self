@@ -6,6 +6,7 @@ import { quoteFormCopy } from "@/content/forms";
 export type QuoteFormState = {
   status: "idle" | "success" | "error";
   message: string;
+  fieldErrors?: Record<string, string>;
 };
 
 const MAX_FIELD_LENGTH = 400;
@@ -42,17 +43,26 @@ export async function submitQuoteForm(
   const budget = fieldValue(formData, "budget");
   const project = fieldValue(formData, "project", MAX_PROJECT_LENGTH);
 
-  if (!name || !email) {
-    return {
-      status: "error",
-      message: quoteFormCopy.status.missingIdentity,
-    };
+  const fieldErrors: Record<string, string> = {};
+
+  if (!name) {
+    fieldErrors.name = quoteFormCopy.validation.required;
+    fieldErrors.EnterYourName = quoteFormCopy.validation.required;
   }
 
-  if (!isValidEmail(email)) {
+  if (!email) {
+    fieldErrors.email = quoteFormCopy.validation.required;
+    fieldErrors.Email = quoteFormCopy.validation.required;
+  } else if (!isValidEmail(email)) {
+    fieldErrors.email = quoteFormCopy.validation.invalidEmail;
+    fieldErrors.Email = quoteFormCopy.validation.invalidEmail;
+  }
+
+  if (Object.keys(fieldErrors).length > 0) {
     return {
       status: "error",
-      message: quoteFormCopy.status.invalidEmail,
+      message: quoteFormCopy.validation.validationError,
+      fieldErrors,
     };
   }
 

@@ -7,6 +7,7 @@ import { careerApplyFormCopy } from "@/content/forms";
 export type CareerApplyFormState = {
   status: "idle" | "success" | "error";
   message: string;
+  fieldErrors?: Record<string, string>;
 };
 
 const MAX_FIELD_LENGTH = 400;
@@ -52,18 +53,19 @@ export async function submitCareerApplication(
     fieldValue(formData, "EnterYourMessage", MAX_MESSAGE_LENGTH) ||
     fieldValue(formData, "message", MAX_MESSAGE_LENGTH);
 
-  if (!name || !email) {
-    return {
-      status: "error",
-      message: careerApplyFormCopy.status.missingRequired,
-    };
+  const fieldErrors: Record<string, string> = {};
+
+  if (!name) {
+    fieldErrors.EnterYourName = careerApplyFormCopy.validation.required;
+    fieldErrors.name = careerApplyFormCopy.validation.required;
   }
 
-  if (!isValidEmail(email)) {
-    return {
-      status: "error",
-      message: careerApplyFormCopy.status.invalidEmail,
-    };
+  if (!email) {
+    fieldErrors.email = careerApplyFormCopy.validation.required;
+    fieldErrors.Email = careerApplyFormCopy.validation.required;
+  } else if (!isValidEmail(email)) {
+    fieldErrors.email = careerApplyFormCopy.validation.invalidEmail;
+    fieldErrors.Email = careerApplyFormCopy.validation.invalidEmail;
   }
 
   const fileEntry = formData.get("File") || formData.get("resume");
@@ -71,23 +73,25 @@ export async function submitCareerApplication(
 
   if (fileEntry instanceof File && fileEntry.size > 0) {
     if (fileEntry.size > MAX_FILE_SIZE) {
-      return {
-        status: "error",
-        message: careerApplyFormCopy.status.fileTooLarge,
+      fieldErrors.File = careerApplyFormCopy.validation.fileTooLarge;
+      fieldErrors.resume = careerApplyFormCopy.validation.fileTooLarge;
+    } else if (!hasValidExtension(fileEntry.name)) {
+      fieldErrors.File = careerApplyFormCopy.validation.invalidFileType;
+      fieldErrors.resume = careerApplyFormCopy.validation.invalidFileType;
+    } else {
+      fileMeta = {
+        name: fileEntry.name,
+        size: fileEntry.size,
+        type: fileEntry.type,
       };
     }
+  }
 
-    if (!hasValidExtension(fileEntry.name)) {
-      return {
-        status: "error",
-        message: careerApplyFormCopy.status.invalidFileType,
-      };
-    }
-
-    fileMeta = {
-      name: fileEntry.name,
-      size: fileEntry.size,
-      type: fileEntry.type,
+  if (Object.keys(fieldErrors).length > 0) {
+    return {
+      status: "error",
+      message: careerApplyFormCopy.validation.validationError,
+      fieldErrors,
     };
   }
 
