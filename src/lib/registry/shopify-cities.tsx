@@ -12,6 +12,11 @@ import { shopifyDevelopmentNewYorkContent } from "@/content/shopify-development-
 import { shopifyDevelopmentPuneContent } from "@/content/shopify-development-in-pune";
 import { shopifyDevelopmentSuratContent } from "@/content/shopify-development-in-surat";
 import { shopifyDevelopmentTexasContent } from "@/content/shopify-development-in-texas";
+import { shopifyDevelopmentMelbourneContent } from "@/content/shopify-development-in-melbourne";
+import { shopifyDevelopmentBrisbaneContent } from "@/content/shopify-development-in-brisbane";
+import { shopifyDevelopmentLondonContent } from "@/content/shopify-development-in-london";
+import { shopifyDevelopmentPerthContent } from "@/content/shopify-development-in-perth";
+import { shopifyDevelopmentSydneyContent } from "@/content/shopify-development-in-sydney";
 import { pageMetadata } from "@/data/seo";
 import {
   createShopifyDevelopmentInAhmedabadPageSchema,
@@ -27,6 +32,11 @@ import {
   createShopifyDevelopmentInPunePageSchema,
   createShopifyDevelopmentInSuratPageSchema,
   createShopifyDevelopmentInTexasPageSchema,
+  createShopifyDevelopmentInMelbournePageSchema,
+  createShopifyDevelopmentInBrisbanePageSchema,
+  createShopifyDevelopmentInLondonPageSchema,
+  createShopifyDevelopmentInPerthPageSchema,
+  createShopifyDevelopmentInSydneyPageSchema,
 } from "@/lib/schema";
 import type { ServicePageEntry } from "@/lib/registry/types";
 
@@ -184,6 +194,66 @@ export const shopifyCitiesRegistry: readonly ServicePageEntry[] = [
         content={shopifyDevelopmentTexasContent}
         faqIdPrefix="texas-faq"
         slug="shopify-development-in-texas"
+      />
+    ),
+  },
+  {
+    slug: "shopify-development-in-melbourne",
+    metadata: pageMetadata.shopifyDevelopmentInMelbourne,
+    getSchema: createShopifyDevelopmentInMelbournePageSchema,
+    render: () => (
+      <ShopifyCityLandingTemplate
+        content={shopifyDevelopmentMelbourneContent}
+        faqIdPrefix="melbourne-faq"
+        slug="shopify-development-in-melbourne"
+      />
+    ),
+  },
+  {
+    slug: "shopify-development-in-brisbane",
+    metadata: pageMetadata.shopifyDevelopmentInBrisbane,
+    getSchema: createShopifyDevelopmentInBrisbanePageSchema,
+    render: () => (
+      <ShopifyCityLandingTemplate
+        content={shopifyDevelopmentBrisbaneContent}
+        faqIdPrefix="brisbane-faq"
+        slug="shopify-development-in-brisbane"
+      />
+    ),
+  },
+  {
+    slug: "shopify-development-in-london",
+    metadata: pageMetadata.shopifyDevelopmentInLondon,
+    getSchema: createShopifyDevelopmentInLondonPageSchema,
+    render: () => (
+      <ShopifyCityLandingTemplate
+        content={shopifyDevelopmentLondonContent}
+        faqIdPrefix="london-faq"
+        slug="shopify-development-in-london"
+      />
+    ),
+  },
+  {
+    slug: "shopify-development-in-perth",
+    metadata: pageMetadata.shopifyDevelopmentInPerth,
+    getSchema: createShopifyDevelopmentInPerthPageSchema,
+    render: () => (
+      <ShopifyCityLandingTemplate
+        content={shopifyDevelopmentPerthContent}
+        faqIdPrefix="perth-faq"
+        slug="shopify-development-in-perth"
+      />
+    ),
+  },
+  {
+    slug: "shopify-development-in-sydney",
+    metadata: pageMetadata.shopifyDevelopmentInSydney,
+    getSchema: createShopifyDevelopmentInSydneyPageSchema,
+    render: () => (
+      <ShopifyCityLandingTemplate
+        content={shopifyDevelopmentSydneyContent}
+        faqIdPrefix="sydney-faq"
+        slug="shopify-development-in-sydney"
       />
     ),
   },

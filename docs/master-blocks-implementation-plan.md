@@ -1,17 +1,17 @@
-# Master Blocks Implementation Plan: Complete 142-Page CMS Architecture
+# Master Blocks Implementation Plan: Complete 147-Page CMS Architecture
 
 > [!IMPORTANT]
-> **Production Blueprint for 100% Visual Parity Across All 142 Pages**
-> This document defines the exact architecture, block specifications, database DDL guidelines, and automated seeding strategy required to serve **100% of all 142 indexable pages** from Payload CMS with **100% visual parity**, zero design drift, zero CSS hacks, and complete drag-and-drop flexibility for the Dynamic Dreamz marketing team.
+> **Production Blueprint for 100% Visual Parity Across All 147 Pages**
+> This document defines the exact architecture, block specifications, database DDL guidelines, and automated seeding strategy required to serve **100% of all 147 indexable pages** from Payload CMS with **100% visual parity**, zero design drift, zero CSS hacks, and complete drag-and-drop flexibility for the Dynamic Dreamz marketing team.
 
 ---
 
 ## 1. Architectural Strategy: Master Blocks + Dedicated Blocks
 
-The website contains **142 indexable routes**. In accordance with our core migration principle:
+The website contains **147 indexable routes** (including all 24 live City Landing pages). In accordance with our core migration principle:
 > *"100% Visual parity trumps forced reuse — Reuse common blocks ONLY when the layout and geometry match 100%. NEVER force-fit unique sections into generic common blocks with layout hacks."*
 
-An exhaustive AST and component audit of all 142 pages revealed **73 distinct section components** in use across the site. To achieve 100% visual parity without database bloat, the architecture organizes these into **35 CMS blocks**:
+An exhaustive AST and component audit of all 147 pages revealed **73 distinct section components** in use across the site. To achieve 100% visual parity without database bloat, the architecture organizes these into **35 CMS blocks**:
 
 1. **10 Universal Master Blocks (Extended with Variants)**:
    - Core blocks (`service-hero`, `brand-partners`, `faq-accordion`, `cta-banner`, `testimonials-carousel`, `services-grid`, `portfolio-showcase`, `proof-stats`, `process-timeline`, `pricing-table`).
@@ -29,9 +29,9 @@ flowchart TD
         SB2["15 New Dedicated Signature Blocks (Phase 2.5)\n(Theme Feature Banners, AI Delivery, Home Video Agency, Solution Accordion, Partner Tabs, Retainers)"]
     end
 
-    subgraph Pages["142 Production Pages"]
+    subgraph Pages["147 Production Pages"]
         P1["Tier 1: 46 Theme Customization Pages\n(Shopify 24 + WordPress 22)"]
-        P2["Tier 2: 29 City & Migration Pages\n(17 Cities + 12 Platform Migrations)"]
+        P2["Tier 2: 36 City & Migration Pages\n(24 Cities: 18 Shopify + 6 WordPress, plus 12 Platform Migrations)"]
         P3["Tier 3: 40 Services, Industries & Mobile Apps\n(25 Core Services + 9 Industries + 6 Mobile Apps)"]
         P4["Tier 4: 27 Flagship, Company & Legal Pages\n(Homepage, Plus, CRO, Hours, White-Label, About, Life, Our Work, Legal)"]
     end
@@ -57,14 +57,14 @@ flowchart TD
 
 ---
 
-## 2. Inventory of All 142 Pages & CMS Coverage Status
+## 2. Inventory of All 147 Pages & CMS Coverage Status
 
 | Tier | Category | Page Count | Current Coverage Status | Blocks Required for 100% Parity |
 | :--- | :--- | :---: | :--- | :--- |
 | **Tier 1** | **Shopify Theme Customization** | 24 | Requires 3 blocks | `service-hero` (`variant: theme`), `ThemeFeaturesBannerBlock`, `proof-stats` (`variant: why-choose-boxes`) |
 | **Tier 1** | **WordPress Theme Customization** | 22 | Requires 2 blocks | `service-hero` (`variant: theme`), `proof-stats` (`variant: why-choose-boxes`) |
-| **Tier 2** | **Shopify City Landing Pages** | 13 | **100% Ready** | `service-hero` (`city`), `proof-stats` (`city-counters`), `proof-stats` (`team-boxes`), `faq-accordion`, `cta-banner` |
-| **Tier 2** | **WordPress City Landing Pages** | 6 | **100% Ready** | `service-hero` (`city`), `proof-stats` (`city-counters`), `proof-stats` (`team-boxes`), `faq-accordion`, `cta-banner` |
+| **Tier 2** | **Shopify City Landing Pages** | 18 | **100% Ready & Seeded** | `service-hero:tablet-slider`, `brand-partners:slider`, `proof-stats:city-counters`, `proof-stats:why-choose-boxes`, `services-grid:agency-services`, `process-timeline:development-process`, `portfolio-showcase:default`, `testimonials-carousel`, `faq-accordion:split`, `cta-banner:gradient` (+ `ai-empowered-delivery` & `proof-stats:why-choose-migration` for Surat & Ahmedabad) |
+| **Tier 2** | **WordPress City Landing Pages** | 6 | **100% Ready & Seeded** | `service-hero:tablet-slider`, `brand-partners:slider`, `proof-stats:city-counters`, `process-timeline:development-process`, `proof-stats:why-choose-boxes`, `portfolio-showcase:default`, `testimonials-carousel:client-stories`, `faq-accordion:split`, `cta-banner:gradient` |
 | **Tier 3** | **Platform Migration Pages** | 12 | **100% Ready** | `service-hero`, `proof-stats` (`why-choose-migration`), `process-timeline` (`numbered-grid`), `services-grid`, `faq-accordion` |
 | **Tier 4** | **Industry Ecommerce Pages** | 9 | **100% Ready & Seeded** | `service-hero`, `brand-partners` (`tools-grid`), `portfolio-showcase` (`case-studies-slider`), `services-grid` (`theme-boxes`), `industry-custom-dev`, `proof-stats` (`why-choose-migration`), `testimonials-carousel`, `faq-accordion` |
 | **Tier 5** | **Mobile App Pages** | 6 | **100% Ready & Seeded** | `service-hero` (`centered` / `mobile-app`), `brand-partners`, `ai-empowered-delivery`, `services-grid` (`app-features`), `process-timeline` (`app-process`), `portfolio-showcase` (`case-studies-slider`), `mobile-app-work`, `pricing-table`, `proof-stats`, `testimonials-carousel`, `faq-accordion`, `shopify-app-benefits`, `shopify-mobile-app-dtc`, `shopify-mobile-app-experience`, `mobile-app-comparison` |
@@ -73,7 +73,7 @@ flowchart TD
 | **Tier 8** | **Company & Form Pages** | 9 | **100% Ready** | Covered by Phase 2 blocks (`about-timeline`, `about-founders`, `life-gallery`, `our-work-projects`, forms) |
 | **Tier 8** | **The Homepage (`/`)** | 1 | 5/10 Sections Ready | 5 ready (`hero`, `brands`, `integrations`, `testimonials`, `faq`); 5 bespoke blocks needed |
 | **Tier 8** | **Legal & Sitemap Pages** | 3 | **100% Ready** | Legal rich-text templates |
-| **TOTAL** | | **142** | | |
+| **TOTAL** | | **147** | | |
 
 ---
 
@@ -277,13 +277,13 @@ To populate all 142 pages in Payload CMS without manual data entry:
 
 === PHASE 3: AUTOMATED SEEDING & PRODUCTION LAUNCH (BY TIER) ===
 [✓] Tier 1: Seed all 49 Theme Customization pages into CMS (32 Shopify + 17 WordPress)
-[✓] Tier 2: Seed all 19 City Landing pages into CMS (13 Shopify + 6 WordPress)
+[✓] Tier 2: Seed all 24 City Landing pages into CMS (18 Shopify + 6 WordPress)
 [✓] Tier 3: Seed all 12 Platform Migration pages into CMS
 [✓] Tier 4: Seed all 9 Industry Ecommerce pages into CMS (8 Standard + 1 Bespoke)
 [✓] Tier 5: Seed all 6 Mobile App pages into CMS
 [ ] Tier 6: Seed all 25 Standard Core Service pages into CMS
 [ ] Tier 7: Seed all 15 Flagship Service pages into CMS
 [ ] Tier 8: Seed Homepage & Company pages (12 pages) into CMS
-[ ] Verification: Run full 142-page automated HTTP 200 crawl audit
+[ ] Verification: Run full 147-page automated HTTP 200 crawl audit
 [ ] Verification: Run complete lint & URL verification suite
 ```

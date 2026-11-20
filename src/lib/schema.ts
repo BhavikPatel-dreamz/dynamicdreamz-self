@@ -208,6 +208,11 @@ import { shopifyDevelopmentPuneContent } from "@/content/shopify-development-in-
 import { shopifyDevelopmentAhmedabadContent } from "@/content/shopify-development-in-ahmedabad";
 import { shopifyDevelopmentSuratContent } from "@/content/shopify-development-in-surat";
 import { shopifyDevelopmentBangaloreContent } from "@/content/shopify-development-in-bangalore";
+import { shopifyDevelopmentMelbourneContent } from "@/content/shopify-development-in-melbourne";
+import { shopifyDevelopmentBrisbaneContent } from "@/content/shopify-development-in-brisbane";
+import { shopifyDevelopmentLondonContent } from "@/content/shopify-development-in-london";
+import { shopifyDevelopmentPerthContent } from "@/content/shopify-development-in-perth";
+import { shopifyDevelopmentSydneyContent } from "@/content/shopify-development-in-sydney";
 import { shopifyDevelopmentTexasContent } from "@/content/shopify-development-in-texas";
 import { shopifyDevelopmentNewYorkContent } from "@/content/shopify-development-in-new-york";
 import { shopifyDevelopmentLosAngelesContent } from "@/content/shopify-development-in-los-angeles";
@@ -891,6 +896,36 @@ const shopifyDevelopmentBangalorePageId = `${shopifyDevelopmentBangalorePageUrl}
 const shopifyDevelopmentBangaloreServiceId = `${shopifyDevelopmentBangalorePageUrl}#service`;
 const shopifyDevelopmentBangaloreFaqId = `${shopifyDevelopmentBangalorePageUrl}#faq`;
 const shopifyDevelopmentBangaloreBreadcrumbId = `${shopifyDevelopmentBangalorePageUrl}#breadcrumb`;
+
+const shopifyDevelopmentMelbournePageUrl = absoluteUrl(pageSeo.shopifyDevelopmentInMelbourne.path);
+const shopifyDevelopmentMelbournePageId = `${shopifyDevelopmentMelbournePageUrl}#webpage`;
+const shopifyDevelopmentMelbourneServiceId = `${shopifyDevelopmentMelbournePageUrl}#service`;
+const shopifyDevelopmentMelbourneFaqId = `${shopifyDevelopmentMelbournePageUrl}#faq`;
+const shopifyDevelopmentMelbourneBreadcrumbId = `${shopifyDevelopmentMelbournePageUrl}#breadcrumb`;
+
+const shopifyDevelopmentBrisbanePageUrl = absoluteUrl(pageSeo.shopifyDevelopmentInBrisbane.path);
+const shopifyDevelopmentBrisbanePageId = `${shopifyDevelopmentBrisbanePageUrl}#webpage`;
+const shopifyDevelopmentBrisbaneServiceId = `${shopifyDevelopmentBrisbanePageUrl}#service`;
+const shopifyDevelopmentBrisbaneFaqId = `${shopifyDevelopmentBrisbanePageUrl}#faq`;
+const shopifyDevelopmentBrisbaneBreadcrumbId = `${shopifyDevelopmentBrisbanePageUrl}#breadcrumb`;
+
+const shopifyDevelopmentLondonPageUrl = absoluteUrl(pageSeo.shopifyDevelopmentInLondon.path);
+const shopifyDevelopmentLondonPageId = `${shopifyDevelopmentLondonPageUrl}#webpage`;
+const shopifyDevelopmentLondonServiceId = `${shopifyDevelopmentLondonPageUrl}#service`;
+const shopifyDevelopmentLondonFaqId = `${shopifyDevelopmentLondonPageUrl}#faq`;
+const shopifyDevelopmentLondonBreadcrumbId = `${shopifyDevelopmentLondonPageUrl}#breadcrumb`;
+
+const shopifyDevelopmentPerthPageUrl = absoluteUrl(pageSeo.shopifyDevelopmentInPerth.path);
+const shopifyDevelopmentPerthPageId = `${shopifyDevelopmentPerthPageUrl}#webpage`;
+const shopifyDevelopmentPerthServiceId = `${shopifyDevelopmentPerthPageUrl}#service`;
+const shopifyDevelopmentPerthFaqId = `${shopifyDevelopmentPerthPageUrl}#faq`;
+const shopifyDevelopmentPerthBreadcrumbId = `${shopifyDevelopmentPerthPageUrl}#breadcrumb`;
+
+const shopifyDevelopmentSydneyPageUrl = absoluteUrl(pageSeo.shopifyDevelopmentInSydney.path);
+const shopifyDevelopmentSydneyPageId = `${shopifyDevelopmentSydneyPageUrl}#webpage`;
+const shopifyDevelopmentSydneyServiceId = `${shopifyDevelopmentSydneyPageUrl}#service`;
+const shopifyDevelopmentSydneyFaqId = `${shopifyDevelopmentSydneyPageUrl}#faq`;
+const shopifyDevelopmentSydneyBreadcrumbId = `${shopifyDevelopmentSydneyPageUrl}#breadcrumb`;
 const shopifyDevelopmentAhmedabadPageUrl = absoluteUrl(pageSeo.shopifyDevelopmentInAhmedabad.path);
 const shopifyDevelopmentAhmedabadPageId = `${shopifyDevelopmentAhmedabadPageUrl}#webpage`;
 const shopifyDevelopmentAhmedabadServiceId = `${shopifyDevelopmentAhmedabadPageUrl}#service`;
@@ -5445,6 +5480,166 @@ export function createShopifyDevelopmentInBangalorePageSchema() {
       })),
     ],
     areaServed: ["Bangalore","Bengaluru","Karnataka","India"],
+  });
+}
+
+export function createShopifyDevelopmentInMelbournePageSchema() {
+  return createServicePageSchema({
+    page: pageSeo.shopifyDevelopmentInMelbourne,
+    pageUrl: shopifyDevelopmentMelbournePageUrl,
+    pageId: shopifyDevelopmentMelbournePageId,
+    serviceId: shopifyDevelopmentMelbourneServiceId,
+    faqId: shopifyDevelopmentMelbourneFaqId,
+    breadcrumbId: shopifyDevelopmentMelbourneBreadcrumbId,
+    serviceName: "Shopify Development in Melbourne",
+    serviceType:
+      "Custom Shopify development, theme customization, Shopify Plus, app integration, migration, and store maintenance for businesses in Melbourne",
+    breadcrumbName: "Shopify Development in Melbourne",
+    audienceType:
+      "Brands, retailers, manufacturers, D2C businesses and agencies in Melbourne seeking custom Shopify development services",
+    faqs: shopifyDevelopmentMelbourneContent.faqs.map((item) => ({
+      question: item.question,
+      answer: cleanFaqSchemaText(item.answer),
+    })),
+    offers: [
+      ...shopifyDevelopmentMelbourneContent.services.items.map((item) => ({
+        title: item.title,
+        description: item.description,
+      })),
+      ...shopifyDevelopmentMelbourneContent.whyDynamicDreamz.items.map((item) => ({
+        title: item.title,
+        description: item.description,
+      })),
+    ],
+    areaServed: ["Melbourne", "Victoria", "Australia"],
+  });
+}
+
+export function createShopifyDevelopmentInBrisbanePageSchema() {
+  return createServicePageSchema({
+    page: pageSeo.shopifyDevelopmentInBrisbane,
+    pageUrl: shopifyDevelopmentBrisbanePageUrl,
+    pageId: shopifyDevelopmentBrisbanePageId,
+    serviceId: shopifyDevelopmentBrisbaneServiceId,
+    faqId: shopifyDevelopmentBrisbaneFaqId,
+    breadcrumbId: shopifyDevelopmentBrisbaneBreadcrumbId,
+    serviceName: "Shopify Development in Brisbane",
+    serviceType:
+      "Custom Shopify development, theme customization, Shopify Plus, app integration, migration, and store maintenance for businesses in Brisbane",
+    breadcrumbName: "Shopify Development in Brisbane",
+    audienceType:
+      "Brands, retailers, manufacturers, D2C businesses and agencies in Brisbane seeking custom Shopify development services",
+    faqs: shopifyDevelopmentBrisbaneContent.faqs.map((item) => ({
+      question: item.question,
+      answer: cleanFaqSchemaText(item.answer),
+    })),
+    offers: [
+      ...shopifyDevelopmentBrisbaneContent.services.items.map((item) => ({
+        title: item.title,
+        description: item.description,
+      })),
+      ...shopifyDevelopmentBrisbaneContent.whyDynamicDreamz.items.map((item) => ({
+        title: item.title,
+        description: item.description,
+      })),
+    ],
+    areaServed: ["Brisbane", "Queensland", "Australia"],
+  });
+}
+
+export function createShopifyDevelopmentInLondonPageSchema() {
+  return createServicePageSchema({
+    page: pageSeo.shopifyDevelopmentInLondon,
+    pageUrl: shopifyDevelopmentLondonPageUrl,
+    pageId: shopifyDevelopmentLondonPageId,
+    serviceId: shopifyDevelopmentLondonServiceId,
+    faqId: shopifyDevelopmentLondonFaqId,
+    breadcrumbId: shopifyDevelopmentLondonBreadcrumbId,
+    serviceName: "Shopify Development in London",
+    serviceType:
+      "Custom Shopify development, theme customization, Shopify Plus, app integration, migration, and store maintenance for businesses in London",
+    breadcrumbName: "Shopify Development in London",
+    audienceType:
+      "Brands, retailers, manufacturers, D2C businesses and agencies in London seeking custom Shopify development services",
+    faqs: shopifyDevelopmentLondonContent.faqs.map((item) => ({
+      question: item.question,
+      answer: cleanFaqSchemaText(item.answer),
+    })),
+    offers: [
+      ...shopifyDevelopmentLondonContent.services.items.map((item) => ({
+        title: item.title,
+        description: item.description,
+      })),
+      ...shopifyDevelopmentLondonContent.whyDynamicDreamz.items.map((item) => ({
+        title: item.title,
+        description: item.description,
+      })),
+    ],
+    areaServed: ["London", "Greater London", "United Kingdom"],
+  });
+}
+
+export function createShopifyDevelopmentInPerthPageSchema() {
+  return createServicePageSchema({
+    page: pageSeo.shopifyDevelopmentInPerth,
+    pageUrl: shopifyDevelopmentPerthPageUrl,
+    pageId: shopifyDevelopmentPerthPageId,
+    serviceId: shopifyDevelopmentPerthServiceId,
+    faqId: shopifyDevelopmentPerthFaqId,
+    breadcrumbId: shopifyDevelopmentPerthBreadcrumbId,
+    serviceName: "Shopify Development in Perth",
+    serviceType:
+      "Custom Shopify development, theme customization, Shopify Plus, app integration, migration, and store maintenance for businesses in Perth",
+    breadcrumbName: "Shopify Development in Perth",
+    audienceType:
+      "Brands, retailers, manufacturers, D2C businesses and agencies in Perth seeking custom Shopify development services",
+    faqs: shopifyDevelopmentPerthContent.faqs.map((item) => ({
+      question: item.question,
+      answer: cleanFaqSchemaText(item.answer),
+    })),
+    offers: [
+      ...shopifyDevelopmentPerthContent.services.items.map((item) => ({
+        title: item.title,
+        description: item.description,
+      })),
+      ...shopifyDevelopmentPerthContent.whyDynamicDreamz.items.map((item) => ({
+        title: item.title,
+        description: item.description,
+      })),
+    ],
+    areaServed: ["Perth", "Western Australia", "Australia"],
+  });
+}
+
+export function createShopifyDevelopmentInSydneyPageSchema() {
+  return createServicePageSchema({
+    page: pageSeo.shopifyDevelopmentInSydney,
+    pageUrl: shopifyDevelopmentSydneyPageUrl,
+    pageId: shopifyDevelopmentSydneyPageId,
+    serviceId: shopifyDevelopmentSydneyServiceId,
+    faqId: shopifyDevelopmentSydneyFaqId,
+    breadcrumbId: shopifyDevelopmentSydneyBreadcrumbId,
+    serviceName: "Shopify Development in Sydney",
+    serviceType:
+      "Custom Shopify development, theme customization, Shopify Plus, app integration, migration, and store maintenance for businesses in Sydney",
+    breadcrumbName: "Shopify Development in Sydney",
+    audienceType:
+      "Brands, retailers, manufacturers, D2C businesses and agencies in Sydney seeking custom Shopify development services",
+    faqs: shopifyDevelopmentSydneyContent.faqs.map((item) => ({
+      question: item.question,
+      answer: cleanFaqSchemaText(item.answer),
+    })),
+    offers: [
+      ...shopifyDevelopmentSydneyContent.services.items.map((item) => ({
+        title: item.title,
+        description: item.description,
+      })),
+      ...shopifyDevelopmentSydneyContent.whyDynamicDreamz.items.map((item) => ({
+        title: item.title,
+        description: item.description,
+      })),
+    ],
+    areaServed: ["Sydney", "New South Wales", "Australia"],
   });
 }
 

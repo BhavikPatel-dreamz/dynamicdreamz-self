@@ -168,7 +168,7 @@ export function FaqAccordion({
         ) : item.answer || item.answerParts ? (
           <p
             className={cn(
-              "text-sm leading-6 text-[#535353] last:mb-0",
+              "text-sm leading-6 text-[#535353] last:mb-0 font-medium",
               item.listItems?.length && !isListBefore ? "mb-3" : "mb-0",
               answerClassName,
             )}

@@ -3620,6 +3620,141 @@ export const pageSeo = {
       priority: 0.8,
     },
   },
+  shopifyDevelopmentInMelbourne: {
+    path: "/shopify-development-in-melbourne",
+    title: "Shopify Development Company in Melbourne | Dynamic Dreamz",
+    description:
+      "Shopify development for Melbourne brands and agencies. Custom themes, Shopify Plus builds, migrations, integrations and ongoing support from Dynamic Dreamz.",
+    socialDescription:
+      "Shopify development for Melbourne brands and agencies. Custom themes, Shopify Plus builds, migrations, integrations and ongoing support from Dynamic Dreamz.",
+    keywords: [
+      "Shopify development in Melbourne",
+      "Shopify development company Melbourne",
+      "Shopify agency Melbourne",
+      "hire Shopify developers Melbourne",
+    ],
+    openGraphType: "website",
+    publishedTime: "2024-11-20T00:00:00+00:00",
+    modifiedTime: "2026-09-02T00:00:00+05:30",
+    image: {
+      path: "/assets/og/homepage.png",
+      width: 1200,
+      height: 630,
+      alt: "Shopify Development in Melbourne | Dynamic Dreamz",
+    },
+    sitemap: {
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+  },
+  shopifyDevelopmentInBrisbane: {
+    path: "/shopify-development-in-brisbane",
+    title: "Shopify Development Company in Brisbane | Dynamic Dreamz",
+    description:
+      "Shopify development for Brisbane businesses and agencies. Get custom stores, Shopify Plus builds, migrations, theme updates and white-label development support.",
+    socialDescription:
+      "Shopify development for Brisbane businesses and agencies. Get custom stores, Shopify Plus builds, migrations, theme updates and white-label development support.",
+    keywords: [
+      "Shopify development in Brisbane",
+      "Shopify development company Brisbane",
+      "Shopify agency Brisbane",
+      "hire Shopify developers Brisbane",
+    ],
+    openGraphType: "website",
+    publishedTime: "2024-11-20T00:00:00+00:00",
+    modifiedTime: "2026-09-02T00:00:00+05:30",
+    image: {
+      path: "/assets/og/homepage.png",
+      width: 1200,
+      height: 630,
+      alt: "Shopify Development in Brisbane | Dynamic Dreamz",
+    },
+    sitemap: {
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+  },
+  shopifyDevelopmentInLondon: {
+    path: "/shopify-development-in-london",
+    title: "Shopify Development Company in London | Dynamic Dreamz",
+    description:
+      "Shopify development for London brands and agencies. Get custom stores, Shopify Plus builds, migrations, integrations and ongoing support from Dynamic Dreamz.",
+    socialDescription:
+      "Shopify development for London brands and agencies. Get custom stores, Shopify Plus builds, migrations, integrations and ongoing support from Dynamic Dreamz.",
+    keywords: [
+      "Shopify development in London",
+      "Shopify development company London",
+      "Shopify agency London",
+      "hire Shopify developers London",
+    ],
+    openGraphType: "website",
+    publishedTime: "2024-11-20T00:00:00+00:00",
+    modifiedTime: "2026-09-02T00:00:00+05:30",
+    image: {
+      path: "/assets/og/homepage.png",
+      width: 1200,
+      height: 630,
+      alt: "Shopify Development in London | Dynamic Dreamz",
+    },
+    sitemap: {
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+  },
+  shopifyDevelopmentInPerth: {
+    path: "/shopify-development-in-perth",
+    title: "Shopify Development Company in Perth | Dynamic Dreamz",
+    description:
+      "Shopify development for Perth businesses. Dynamic Dreamz builds custom Shopify and Shopify Plus stores, connects inventory tools, and supports online stores.",
+    socialDescription:
+      "Shopify development for Perth businesses. Dynamic Dreamz builds custom Shopify and Shopify Plus stores, connects inventory tools, and supports online stores.",
+    keywords: [
+      "Shopify development in Perth",
+      "Shopify development company Perth",
+      "Shopify agency Perth",
+      "hire Shopify developers Perth",
+    ],
+    openGraphType: "website",
+    publishedTime: "2024-11-20T00:00:00+00:00",
+    modifiedTime: "2026-09-02T00:00:00+05:30",
+    image: {
+      path: "/assets/og/homepage.png",
+      width: 1200,
+      height: 630,
+      alt: "Shopify Development in Perth | Dynamic Dreamz",
+    },
+    sitemap: {
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+  },
+  shopifyDevelopmentInSydney: {
+    path: "/shopify-development-in-sydney",
+    title: "Shopify Development Company in Sydney | Dynamic Dreamz",
+    description:
+      "Shopify development for Sydney businesses. Dynamic Dreamz builds custom stores, Shopify Plus storefronts, integrations, migrations and ongoing support.",
+    socialDescription:
+      "Shopify development for Sydney businesses. Dynamic Dreamz builds custom stores, Shopify Plus storefronts, integrations, migrations and ongoing support.",
+    keywords: [
+      "Shopify development in Sydney",
+      "Shopify development company Sydney",
+      "Shopify agency Sydney",
+      "hire Shopify developers Sydney",
+    ],
+    openGraphType: "website",
+    publishedTime: "2024-11-20T00:00:00+00:00",
+    modifiedTime: "2026-09-02T00:00:00+05:30",
+    image: {
+      path: "/assets/og/homepage.png",
+      width: 1200,
+      height: 630,
+      alt: "Shopify Development in Sydney | Dynamic Dreamz",
+    },
+    sitemap: {
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+  },
   shopifyDevelopmentInAhmedabad: {
     path: "/shopify-development-in-ahmedabad",
     title: "Shopify Development Company in Ahmedabad | DynamicDreamz",

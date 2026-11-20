@@ -485,7 +485,7 @@ export const shopifyDevelopmentSuratContent = {
   testimonials: {
     heading: "Don't Just Take Our Word For It",
     description: [
-      "We have faith in our work, but what truly matters is the outcomes we serve our clients. Happy clients make happy stories. Check out how our services empower them to evolve and choose Dynamic Dreamz as a Shopify Development Partner in Bengaluru.",
+      "We have faith in our work, but what truly matters is the outcomes we serve our clients. Happy clients make happy stories. Check out how our services empower them to evolve and choose Dynamic Dreamz as a Shopify development partner for ongoing ecommerce requirements",
     ],
     items: shopifyPlusAgencyTestimonials.items,
   },
