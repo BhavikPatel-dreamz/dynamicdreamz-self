@@ -35,20 +35,17 @@ export function CredentialEvidenceSection({
     >
       <Container>
         <SplitSectionHeading
-          className="mb-[50px]"
           description={content.description}
           eyebrow={content.eyebrow}
           heading={content.heading}
           headingId="shopify-credential-evidence-title"
-          textClassName="w-[56%]"
-          titleClassName="w-[41%]"
         />
         <div className="grid grid-cols-4 gap-x-10 max-[1200px]:gap-x-5 max-[992px]:grid-cols-2 max-[992px]:gap-y-[30px] max-[390px]:grid-cols-1">
           {content.items.map((item) => (
             <article data-aos="fade-up" className="flex h-full flex-col text-center" key={item.title}>
               <a
                 aria-label={`View the ${item.title} credential on Credly`}
-                className="mx-auto mb-[27px] flex h-[230px] w-[246px] max-w-full items-start justify-center bg-[url('/assets/shopify-certified-developers/credential-wings.svg')] bg-top bg-contain bg-no-repeat focus-visible:rounded-lg focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand-red"
+                className="mx-auto pb-[30px] flex h-auto w-full max-w-full items-start justify-center bg-[url('/assets/shopify-certified-developers/credential-wings.svg')] bg-top bg-contain bg-no-repeat focus-visible:rounded-lg focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand-red"
                 href={item.href}
                 rel="noopener noreferrer"
                 target="_blank"

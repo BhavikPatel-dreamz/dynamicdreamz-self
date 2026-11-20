@@ -114,7 +114,7 @@ export const shopifyDevelopmentMiamiContent = {
   },
 
   brands: {
-    title: "Trusted by \nLeading Brands",
+    title: "Trusted by Leading Brands",
     items: industryBrandLogos,
   },
 

@@ -40,8 +40,8 @@ export const neveThemeCustomizationContent = {
     },
   },
   brands: {
-    title: "Trusted by \nLeading Brands",
-    heading: "Trusted by \nLeading Brands",
+    title: "Trusted by Leading Brands",
+    heading: "Trusted by Leading Brands",
     slug: "neve-theme-customization",
     items: globalBrandLogos,
   },

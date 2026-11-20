@@ -56,15 +56,15 @@ export function ShopifyTeamBehindItSection({
 
         <div
           data-aos="fade-up"
-          className="grid grid-cols-3 gap-5 max-[992px]:grid-cols-2 max-[768px]:grid-cols-1"
+          className="grid grid-cols-3 gap-4 max-[992px]:grid-cols-2 max-[768px]:grid-cols-1"
         >
           {content.cards.map((card) => (
             <div
-              className="flex h-full flex-col justify-between rounded-[20px] border border-[rgba(40,40,40,0.10)] bg-white p-[30px] max-[1200px]:p-5"
+              className="flex h-full flex-col justify-between rounded-[20px] border border-[rgba(40,40,40,0.10)] bg-white p-[25px] max-[1200px]:p-5"
               key={card.title}
             >
               <div>
-                <h3 className="mb-2.5 font-display text-lg font-small leading-[26px] text-[#282828] max-[992px]:text-[16px] max-[992px]:leading-6">
+                <h3 className="mb-2.5 font-display text-[22px] leading-auto text-[#282828] max-[992px]:text-[16px] max-[992px]:leading-6">
                   {card.title}
                 </h3>
                 <p className="font-sans text-sm font-small leading-6 text-[#535353]">

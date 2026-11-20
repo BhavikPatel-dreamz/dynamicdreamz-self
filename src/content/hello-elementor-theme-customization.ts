@@ -40,8 +40,8 @@ export const helloElementorThemeCustomizationContent = {
     },
   },
   brands: {
-    title: "Trusted by \nLeading Brands",
-    heading: "Trusted by \nLeading Brands",
+    title: "Trusted by Leading Brands",
+    heading: "Trusted by Leading Brands",
     slug: "hello-elementor-theme-customization",
     items: industryBrandLogos,
   },

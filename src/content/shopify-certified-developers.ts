@@ -446,7 +446,7 @@ export const shopifyCertifiedDevelopersFaqs = [
 
 export const shopifyCertifiedDevelopersBrands = {
   slug: "shopify-certified-developers",
-  heading: "Trusted by \nLeading Brands",
+  heading: "Trusted by Leading Brands",
   ariaLabel: "Trusted by Leading Brands",
 } as const;
 

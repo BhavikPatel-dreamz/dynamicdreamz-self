@@ -40,8 +40,8 @@ export const helloBizThemeCustomizationContent = {
     },
   },
   brands: {
-    title: "Trusted by \nLeading Brands",
-    heading: "Trusted by \nLeading Brands",
+    title: "Trusted by Leading Brands",
+    heading: "Trusted by Leading Brands",
     slug: "hello-biz-theme-customization",
     items: industryBrandLogos,
   },

@@ -53,8 +53,8 @@ export const yithWonderThemeCustomizationContent = {
     },
   },
   brands: {
-    title: "Trusted by \nLeading Brands",
-    heading: "Trusted by \nLeading Brands",
+    title: "Trusted by Leading Brands",
+    heading: "Trusted by Leading Brands",
     slug: "yith-wonder-theme-customization",
     items: globalBrandLogos,
   },

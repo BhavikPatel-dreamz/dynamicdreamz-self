@@ -52,8 +52,8 @@ export const popularfxThemeCustomizationContent = {
     }
   },
   "brands": {
-    "title": "Trusted by \nLeading Brands",
-    "heading": "Trusted by \nLeading Brands",
+    "title": "Trusted by Leading Brands",
+    "heading": "Trusted by Leading Brands",
     "slug": "popularfx-theme-customization",
     "items": industryBrandLogos
   },

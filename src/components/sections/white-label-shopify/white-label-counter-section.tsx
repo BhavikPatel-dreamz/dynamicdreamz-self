@@ -15,9 +15,8 @@ export function WhiteLabelCounterSection({
 }: WhiteLabelCounterSectionProps) {
   return (
     <section className="white_label_counter_section relative overflow-hidden border-y border-[rgba(0,0,0,0.10)] bg-white py-0">
-      <Container variant="fullBleedTablet">
+      <Container>
         <div
-          data-aos="fade-up"
           className="stats_container flex flex-wrap items-center justify-between max-[992px]:relative max-[992px]:after:absolute max-[992px]:after:top-1/2 max-[992px]:after:left-0 max-[992px]:after:h-[1px] max-[992px]:after:w-full max-[992px]:after:-translate-y-1/2 max-[992px]:after:bg-[rgba(40,40,40,0.10)] max-[992px]:after:content-['']"
         >
           {counters.map((item, index) => (

@@ -43,12 +43,12 @@ export function HowAgenciesUseSection({
               className="col mb-5 flex w-1/3 px-2.5 max-[992px]:w-1/2 max-[768px]:w-full"
               key={card.tag}
             >
-              <div className="item flex w-full flex-col justify-between rounded-[20px] border border-[rgba(23,30,22,0.10)] bg-white p-[30px_20px] max-[1200px]:px-4 max-[1200px]:py-5">
+              <div className="item flex w-full flex-col justify-between rounded-[20px] border border-[rgba(23,30,22,0.10)] bg-white p-[30px_18px] max-[1200px]:px-4 max-[1200px]:py-5">
                 <div>
-                  <span className="mb-5 block font-montserrat text-xs font-bold uppercase leading-[13px] text-[#AD5151] max-[1200px]:text-[10px] max-[1200px]:leading-[16px]">
+                  <span className="mb-5 block font-montserrat font-bold uppercase leading-[13px] text-[#AD5151] max-[1200px]:text-[10px] max-[1200px]:leading-[16px]">
                     {card.tag}
                   </span>
-                  <h3 className="mb-2.5 font-display text-[20px] font-small leading-7 text-[#282828] max-[1200px]:text-[16px] max-[1200px]:leading-[26px]">
+                  <h3 className="mb-2.5 font-display text-[22px] font-small leading-auto text-[#282828] max-[1200px]:text-[16px] max-[1200px]:leading-[26px]">
                     {card.heading}
                   </h3>
                   <p className="font-sans text-sm font-small leading-6 text-[#535353]">
@@ -57,7 +57,7 @@ export function HowAgenciesUseSection({
                 </div>
 
                 <div className="cta-link mt-[25px] border-t border-[rgba(0,0,0,0.10)] pt-[25px]">
-                  <span className="mb-5 inline-block rounded-[10px] border border-[#D0D0CE] bg-[#FAFAF7] px-2.5 py-1.5 text-xs font-bold leading-normal text-[#282828] max-[1200px]:text-[10px] max-[1200px]:leading-[18px]">
+                  <span className="mb-[25px] inline-block rounded-[10px] border border-[#D0D0CE] bg-[#FAFAF7] px-2 py-1.5 font-bold leading-normal text-[#282828] max-[1200px]:text-[10px] max-[1200px]:leading-[18px]">
                     {card.pill}
                   </span>
                   <div>

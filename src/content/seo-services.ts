@@ -14,7 +14,7 @@ export const seoServicesSectionCopy = {
 } as const;
 
 export const seoServicesBrands = {
-  heading: "Trusted by \nLeading Brands",
+  heading: "Trusted by Leading Brands",
   slug: "seo-services",
   items: industryBrandLogos,
 } as const;

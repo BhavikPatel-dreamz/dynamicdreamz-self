@@ -225,18 +225,18 @@ export const projects: Project[] = [
 
 
 export const integrationLogos: ImageItem[] = [
-  { src: "/assets/integrations/recharge.svg", alt: "Recharge logo", width: 180, height: 36 },
-  { src: "/assets/integrations/klaviyo.svg", alt: "Klaviyo logo", width: 137, height: 40 },
-  { src: "/assets/integrations/shop-circle.svg", alt: "Shop Circle logo", width: 190, height: 43 },
-  { src: "/assets/integrations/judge-me.svg", alt: "Judge.me logo", width: 194, height: 48 },
-  { src: "/assets/integrations/gorgias.svg", alt: "Gorgias logo", width: 155, height: 41 },
-  { src: "/assets/integrations/boost-commerce.svg", alt: "Boost logo", width: 162, height: 54 },
-  { src: "/assets/integrations/razorpay.svg", alt: "Razorpay logo", width: 203, height: 43 },
-  { src: "/assets/integrations/stamped.svg", alt: "Stamped logo", width: 193, height: 51 },
-  { src: "/assets/integrations/yotpo.svg", alt: "Yotpo logo", width: 151, height: 43 },
-  { src: "/assets/integrations/logbase.svg", alt: "Logbase logo", width: 187, height: 43 },
-  { src: "/assets/integrations/recurpay.svg", alt: "Recurpay logo", width: 180, height: 55 },
-  { src: "/assets/integrations/bss-commerce.svg", alt: "BSS Commerce logo", width: 124, height: 71 },
+  { src: "/assets/home/partners/recharge.svg", alt: "Recharge logo", width: 180, height: 36 },
+  { src: "/assets/home/partners/klaviyo.svg", alt: "Klaviyo logo", width: 137, height: 40 },
+  { src: "/assets/home/partners/shop-circle.svg", alt: "Shop Circle logo", width: 190, height: 43 },
+  { src: "/assets/home/partners/judge-me.svg", alt: "Judge.me logo", width: 194, height: 48 },
+  { src: "/assets/home/partners/gorgias.svg", alt: "Gorgias logo", width: 155, height: 41 },
+  { src: "/assets/home/partners/boost-commerce.svg", alt: "Boost logo", width: 162, height: 54 },
+  { src: "/assets/home/partners/razorpay.svg", alt: "Razorpay logo", width: 203, height: 43 },
+  { src: "/assets/home/partners/stamped.svg", alt: "Stamped logo", width: 193, height: 51 },
+  { src: "/assets/home/partners/yotpo.svg", alt: "Yotpo logo", width: 151, height: 43 },
+  { src: "/assets/home/partners/logbase.svg", alt: "Logbase logo", width: 187, height: 43 },
+  { src: "/assets/home/partners/recurpay.svg", alt: "Recurpay logo", width: 180, height: 55 },
+  { src: "/assets/home/partners/bss-commerce.svg", alt: "BSS Commerce logo", width: 124, height: 71 },
 ];
 
 export const integrationLogoRows = [integrationLogos.slice(0, 6), integrationLogos.slice(6)];

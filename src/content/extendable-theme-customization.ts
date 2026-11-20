@@ -40,8 +40,8 @@ export const extendableThemeCustomizationContent = {
     },
   },
   brands: {
-    title: "Trusted by \nLeading Brands",
-    heading: "Trusted by \nLeading Brands",
+    title: "Trusted by Leading Brands",
+    heading: "Trusted by Leading Brands",
     slug: "extendable-theme-customization",
     items: globalBrandLogos,
   },

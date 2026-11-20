@@ -40,8 +40,8 @@ export const kubioThemeCustomizationContent = {
     },
   },
   brands: {
-    title: "Trusted by \nLeading Brands",
-    heading: "Trusted by \nLeading Brands",
+    title: "Trusted by Leading Brands",
+    heading: "Trusted by Leading Brands",
     slug: "kubio-theme-customization",
     items: globalBrandLogos,
   },

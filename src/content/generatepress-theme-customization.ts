@@ -40,8 +40,8 @@ export const generatepressThemeCustomizationContent = {
     },
   },
   brands: {
-    title: "Trusted by \nLeading Brands",
-    heading: "Trusted by \nLeading Brands",
+    title: "Trusted by Leading Brands",
+    heading: "Trusted by Leading Brands",
     slug: "generatepress-theme-customization",
     items: industryBrandLogos,
   },

@@ -47,14 +47,11 @@ export function CertifiedAgencySupportSection({
     >
       <Container>
         <SplitSectionHeading
-          className="mb-[50px] items-start"
           dark
           eyebrow={content.eyebrow}
           heading={content.heading}
           headingId="certified-agency-support-title"
           paragraphs={content.paragraphs}
-          textClassName="w-[50%]"
-          titleClassName="w-[46%]"
         />
         <div className="grid grid-cols-2 gap-3 max-[389px]:grid-cols-1">
           {content.items.map((item) => (

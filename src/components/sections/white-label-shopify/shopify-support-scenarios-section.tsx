@@ -99,12 +99,9 @@ export function ShopifySupportScenariosSection({
     <section className="scenario-tab-sec overflow-hidden bg-white py-20 max-[992px]:py-15 max-[768px]:py-10">
       <Container>
         <SplitSectionHeading
-          className="mb-10 max-[992px]:mb-[30px]"
           description={content.description}
           eyebrow={content.eyebrow}
           heading={content.heading}
-          textColumnClassName="w-full max-w-[540px]"
-          titleColumnClassName="w-full max-w-[580px]"
           variant="left"
         />
 
@@ -174,7 +171,7 @@ export function ShopifySupportScenariosSection({
                       </div>
                     ))}
                   </div>
-                  <div className="scenario-meta my-5 font-sans text-xs font-medium text-[#535353] leading-[22px]">
+                  <div className="scenario-meta my-5 font-sans font-medium text-[#535353] leading-[22px]">
                     {activePanel.meta}
                   </div>
                 </div>

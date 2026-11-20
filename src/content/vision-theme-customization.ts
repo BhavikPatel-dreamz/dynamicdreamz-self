@@ -25,7 +25,7 @@ export const visionThemeCustomizationContent = {
     }
   },
   "brands": {
-    "title": "Trusted by \nLeading Brands",
+    "title": "Trusted by Leading Brands",
     "items": [
       {
         "name": "Ranavat Logo",

@@ -53,8 +53,8 @@ export const newsbloggerThemeCustomizationContent = {
     },
   },
   brands: {
-    title: "Trusted by \nLeading Brands",
-    heading: "Trusted by \nLeading Brands",
+    title: "Trusted by Leading Brands",
+    heading: "Trusted by Leading Brands",
     slug: "newsblogger-theme-customization",
     items: globalBrandLogos,
   },

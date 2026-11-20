@@ -40,8 +40,8 @@ export const astraThemeCustomizationContent = {
     },
   },
   brands: {
-    title: "Trusted by \nLeading Brands",
-    heading: "Trusted by \nLeading Brands",
+    title: "Trusted by Leading Brands",
+    heading: "Trusted by Leading Brands",
     slug: "astra-theme-customization",
     items: industryBrandLogos,
   },

@@ -126,7 +126,7 @@ export function ThemeCustomizationApproachSection({
                       return (
                         <li
                           className={cn(
-                            "relative border-t border-[rgba(40,40,40,0.11)] py-3 pl-[22px] font-sans text-sm font-normal leading-6 text-[#535353]",
+                            "relative border-t border-[rgba(40,40,40,0.11)] py-3 pl-[22px] font-sans text-sm font-normal text-[#535353]",
                             hasRating && "flex items-center gap-[5px]",
                           )}
                           key={`${pointKey}-${pointIdx}`}

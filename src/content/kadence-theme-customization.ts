@@ -40,8 +40,8 @@ export const kadenceThemeCustomizationContent = {
     },
   },
   brands: {
-    title: "Trusted by \nLeading Brands",
-    heading: "Trusted by \nLeading Brands",
+    title: "Trusted by Leading Brands",
+    heading: "Trusted by Leading Brands",
     slug: "kadence-theme-customization",
     items: industryBrandLogos,
   },

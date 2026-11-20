@@ -36,7 +36,7 @@ function ToolGroup({
             "our_partners_logo_item relative shrink-0",
             isSeoTools
               ? "mx-10 h-[60px] w-[130px] max-[992px]:mx-5 max-[992px]:w-[100px]"
-              : "mx-1.5 h-[94px] w-[202px] max-[1200px]:w-[200px] max-[992px]:w-[180px] max-[768px]:w-[170px]",
+              : "mx-1.5 h-[94px] w-[202px] rounded-[10px] bg-white max-[1200px]:w-[200px] max-[992px]:w-[180px] max-[768px]:w-[170px]",
             itemClassName,
           )}
           key={item.name}
