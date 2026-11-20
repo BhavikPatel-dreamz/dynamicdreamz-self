@@ -297,9 +297,3 @@ export const magentoDevelopmentFaqs: readonly FaqAccordionItem[] = [
       "Yes. We can provide ongoing support for troubleshooting, updates, compatibility checks, performance work, new features, integrations and continuous Magento development based on the agreed engagement model.",
   },
 ];
-
-export const magentoDevelopmentCtaBanner = {
-  heading: "Want us to help you with your online store?",
-  ctaLabel: "request a quote",
-  ctaHref: "/request-quote",
-} as const;

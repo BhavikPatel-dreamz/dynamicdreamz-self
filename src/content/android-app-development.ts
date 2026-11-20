@@ -86,7 +86,7 @@ import { globalBrandLogos } from "@/content/brands";
 export const androidAppDevelopmentBrands: readonly ClientLogoSliderItem[] = globalBrandLogos;
 
 export const androidAppDevelopmentBrandsCopy = {
-  heading: "Trusted by\nLeading Brands",
+  heading: "Trusted by Leading Brands",
   ariaLabel: "Trusted Brands",
 };
 

@@ -57,7 +57,7 @@ export const plusAgencyHeroContent: ServiceHeroVideoContent = {
 import { globalBrandLogos } from "@/content/brands";
 
 export const plusAgencyBrands = {
-  heading: "Trusted by\nLeading Brands",
+  heading: "Trusted by Leading Brands",
   items: globalBrandLogos,
 };
 

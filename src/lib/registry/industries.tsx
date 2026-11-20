@@ -147,7 +147,7 @@ import {
 
 export const industriesRegistry: readonly ServicePageEntry[] = [
   {
-    slug: "beauty-cosmetics",
+    slug: "industries/beauty-cosmetics",
     metadata: pageMetadata.beautyCosmetics,
     getSchema: createBeautyCosmeticsPageSchema,
     render: () => (
@@ -176,7 +176,7 @@ export const industriesRegistry: readonly ServicePageEntry[] = [
     ),
   },
   {
-    slug: "fashion",
+    slug: "industries/fashion",
     metadata: pageMetadata.fashion,
     getSchema: createFashionPageSchema,
     render: () => (
@@ -205,7 +205,7 @@ export const industriesRegistry: readonly ServicePageEntry[] = [
     ),
   },
   {
-    slug: "food-beverages",
+    slug: "industries/food-beverages",
     metadata: pageMetadata.foodBeverages,
     getSchema: createFoodBeveragesPageSchema,
     render: () => (
@@ -234,7 +234,7 @@ export const industriesRegistry: readonly ServicePageEntry[] = [
     ),
   },
   {
-    slug: "health-nutrition",
+    slug: "industries/health-nutrition",
     metadata: pageMetadata.healthNutrition,
     getSchema: createHealthNutritionPageSchema,
     render: () => (
@@ -262,7 +262,7 @@ export const industriesRegistry: readonly ServicePageEntry[] = [
     ),
   },
   {
-    slug: "home-living",
+    slug: "industries/home-living",
     metadata: pageMetadata.homeLiving,
     getSchema: createHomeLivingPageSchema,
     render: () => (
@@ -291,7 +291,7 @@ export const industriesRegistry: readonly ServicePageEntry[] = [
     ),
   },
   {
-    slug: "jewellery-accessories",
+    slug: "industries/jewellery-accessories",
     metadata: pageMetadata.jewelleryAccessories,
     getSchema: createJewelleryAccessoriesPageSchema,
     render: () => (
@@ -320,7 +320,7 @@ export const industriesRegistry: readonly ServicePageEntry[] = [
     ),
   },
   {
-    slug: "pet-industry",
+    slug: "industries/pet-industry",
     metadata: pageMetadata.petIndustry,
     getSchema: createPetIndustryPageSchema,
     render: () => (
@@ -348,7 +348,7 @@ export const industriesRegistry: readonly ServicePageEntry[] = [
     ),
   },
   {
-    slug: "sports-outdoors",
+    slug: "industries/sports-outdoors",
     metadata: pageMetadata.sportsOutdoors,
     getSchema: createSportsOutdoorsPageSchema,
     render: () => (

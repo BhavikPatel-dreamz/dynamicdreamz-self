@@ -84,7 +84,7 @@ export const fullStackDevelopmentHeroContent: CityPageHeroContent = {
 
 export const fullStackDevelopmentBrandsContent = {
   slug: "full-stack-development",
-  heading: "Trusted by\nLeading Brands",
+  heading: "Trusted by Leading Brands",
   ariaLabel: "Trusted by leading brands",
 };
 

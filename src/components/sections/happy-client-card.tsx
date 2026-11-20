@@ -40,7 +40,7 @@ export function HappyClientCard({
           className="pointer-events-none absolute inset-0 z-0 bg-black/30"
         />
         {testimonial.logo ? (
-          <span className="pointer-events-none absolute top-5 right-5 z-20 flex h-[70px] w-[140px] items-center justify-end max-[1200px]:top-4 max-[1200px]:right-4 max-[1200px]:h-[50px] max-[1200px]:w-[120px] max-[768px]:top-3 max-[768px]:right-3 max-[768px]:h-[45px] max-[768px]:w-[90px]">
+          <span className="pointer-events-none absolute top-5 right-5 z-20 flex h-[70px] w-[140px] items-start justify-end max-[1200px]:top-4 max-[1200px]:right-4 max-[1200px]:h-[50px] max-[1200px]:w-[120px] max-[768px]:top-3 max-[768px]:right-3 max-[768px]:h-[45px] max-[768px]:w-[90px]">
             <Image
               alt={testimonial.logoAlt ?? `${testimonial.company} logo`}
               className="h-auto max-h-full w-auto max-w-full object-contain"

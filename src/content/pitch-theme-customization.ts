@@ -21,7 +21,7 @@ export const pitchThemeCustomizationContent = {
     },
   },
   brands: {
-    title: "Trusted by\nLeading Brands",
+    title: "Trusted by Leading Brands",
     items: globalBrandLogos,
   },
   features: {

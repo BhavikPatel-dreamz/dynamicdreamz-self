@@ -109,7 +109,7 @@ export const testimonials: Testimonial[] = [
   },
   {
     title: "Fast. Reliable. Exactly What You Asked For.",
-    quote: "Hi, I'm Rebecca, owner of Myla Jane. I've worked with Dynamic Dreamz on several web development projects, and they always do an excellent job. They deliver quickly, follow the brief exactly. We highly recommend Dynamic Dreamz and will continue using them for future projects.",
+    quote: "Hi, I’m Rebecca, owner of Myla Jane. I’ve worked with Dynamic Dreams on several web development projects, and they always do an excellent job.",
     name: "Rebekah Wymer",
     company: "Myla Jane",
     companyHref: "https://www.mylajane.com/",

@@ -77,7 +77,7 @@ export const iosAppDevelopmentHero: MobileAppHeroContent = {
 
 // 2. Client Brands Strip
 export const iosAppDevelopmentBrandsCopy = {
-  heading: "Trusted by\nLeading Brands",
+  heading: "Trusted by Leading Brands",
   ariaLabel: "Trusted by Leading Brands",
 };
 

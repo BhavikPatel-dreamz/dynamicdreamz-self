@@ -129,11 +129,14 @@ Services:
 
 Industries:
 
-- `/beauty-and-cosmetics`
-- `/fashion-and-apparel`
-- `/health-and-nutrition`
-- `/food-and-beverages`
-- `/pet-industry`
+- `/industries/beauty-cosmetics`
+- `/industries/fashion`
+- `/industries/health-nutrition`
+- `/industries/food-beverages`
+- `/industries/pet-industry`
+- `/industries/sports-outdoors`
+- `/industries/home-living`
+- `/industries/jewellery-accessories`
 
 Work:
 

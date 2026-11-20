@@ -1,6 +1,5 @@
 import { AgencyServicesSection } from "@/components/sections/agency-services-section";
 import { CityPageHeroSection } from "@/components/sections/city-page-hero-section";
-import { CtaBannerSection } from "@/components/sections/cta-banner-section";
 import { IndustryBrandsSection } from "@/components/sections/industry/industry-brands-section";
 import { MagentoServiceIcon } from "@/components/sections/magento/magento-service-icons";
 import { PortfolioShowcaseSection } from "@/components/sections/portfolio-showcase-section";
@@ -11,7 +10,6 @@ import { SplitFaqSection } from "@/components/sections/split-faq-section";
 import {
   magentoDevelopmentBrands,
   magentoDevelopmentCapabilities,
-  magentoDevelopmentCtaBanner,
   magentoDevelopmentEngagements,
   magentoDevelopmentFaqs,
   magentoDevelopmentHero,
@@ -70,11 +68,6 @@ export function MagentoDevelopmentPage() {
       <SplitFaqSection
         idPrefix="magento-dev-faq"
         items={magentoDevelopmentFaqs}
-      />
-      <CtaBannerSection
-        ctaHref={magentoDevelopmentCtaBanner.ctaHref}
-        ctaLabel={magentoDevelopmentCtaBanner.ctaLabel}
-        heading={magentoDevelopmentCtaBanner.heading}
       />
     </div>
   );

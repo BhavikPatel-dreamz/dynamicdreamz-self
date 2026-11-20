@@ -54,7 +54,7 @@ import { globalBrandLogos } from "@/content/brands";
 
 export const shopifyMigrationBrands = {
   slug: "shopify-migration",
-  heading: "Trusted by\nLeading Brands",
+  heading: "Trusted by Leading Brands",
   items: globalBrandLogos,
 };
 

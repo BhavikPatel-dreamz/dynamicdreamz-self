@@ -175,31 +175,35 @@ export const siteMapLinks: readonly SiteMapLinkItem[] = [
     "children": [
       {
         "label": "Beauty & Cosmetics",
-        "href": "/beauty-cosmetics"
+        "href": "/industries/beauty-cosmetics"
       },
       {
         "label": "Fashion & Apparel",
-        "href": "/fashion"
+        "href": "/industries/fashion"
       },
       {
         "label": "Food & Beverages",
-        "href": "/food-beverages"
+        "href": "/industries/food-beverages"
       },
       {
         "label": "Health & Nutrition",
-        "href": "/health-nutrition"
+        "href": "/industries/health-nutrition"
       },
       {
         "label": "Home & Living",
-        "href": "/home-living"
+        "href": "/industries/home-living"
       },
       {
         "label": "Jewellery & Accessories",
-        "href": "/jewellery-accessories"
+        "href": "/industries/jewellery-accessories"
       },
       {
         "label": "Pet Industry",
-        "href": "/pet-industry"
+        "href": "/industries/pet-industry"
+      },
+      {
+        "label": "Sports & Outdoors",
+        "href": "/industries/sports-outdoors"
       }
     ]
   },

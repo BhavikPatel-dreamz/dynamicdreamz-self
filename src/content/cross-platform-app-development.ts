@@ -81,7 +81,7 @@ import { globalBrandLogos } from "@/content/brands";
 export const crossPlatformAppDevelopmentBrands: readonly ClientLogoSliderItem[] = globalBrandLogos;
 
 export const crossPlatformAppDevelopmentBrandsCopy = {
-  heading: "Trusted by\nLeading Brands",
+  heading: "Trusted by Leading Brands",
   ariaLabel:
     "Brands that trust Dynamic Dreamz for cross-platform app development",
 };

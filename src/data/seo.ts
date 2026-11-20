@@ -328,7 +328,7 @@ export const pageSeo = {
     },
   },
   beautyCosmetics: {
-    path: "/beauty-cosmetics",
+    path: "/industries/beauty-cosmetics",
     title: "Shopify Agency for Beauty & Cosmetics | Dynamic Dreamz",
     description:
       "Shopify Platinum Partner for beauty and cosmetics brands. Storefronts, product finders, subscriptions, mobile apps, CRO and custom e-commerce development.",
@@ -357,7 +357,7 @@ export const pageSeo = {
     },
   },
   healthNutrition: {
-    path: "/health-nutrition",
+    path: "/industries/health-nutrition",
     title: "Shopify Agency for Health & Nutrition | Dynamic Dreamz",
     description:
       "Shopify Platinum Partner for health, nutrition and supplement brands. Subscriptions, product discovery, mobile apps, integrations, and custom development.",
@@ -385,7 +385,7 @@ export const pageSeo = {
     },
   },
   sportsOutdoors: {
-    path: "/sports-outdoors",
+    path: "/industries/sports-outdoors",
     title: "Shopify Agency for Sports & Outdoor Brands | Dynamic Dreamz",
     description:
       "Shopify and e-commerce development for sports, fitness and outdoor brands. Product discovery, fit tools, configurators, mobile apps, and custom integrations.",
@@ -413,7 +413,7 @@ export const pageSeo = {
     },
   },
   homeLiving: {
-    path: "/home-living",
+    path: "/industries/home-living",
     title: "Shopify Agency for Home & Furniture Brands | Dynamic Dreamz",
     description:
       "E-commerce and Shopify development for home, furniture and decor brands. Configurators, large catalogs, delivery logic, integrations and custom development.",
@@ -441,7 +441,7 @@ export const pageSeo = {
     },
   },
   jewelleryAccessories: {
-    path: "/jewellery-accessories",
+    path: "/industries/jewellery-accessories",
     title: "Shopify Agency for Jewellery Brands | Dynamic Dreamz",
     description:
       "Shopify and custom e-commerce development for jewellery and accessories brands. Ring builders, live inventory, personalization, search and headless solutions.",
@@ -470,7 +470,7 @@ export const pageSeo = {
     },
   },
   fashion: {
-    path: "/fashion",
+    path: "/industries/fashion",
     title: "Shopify Plus Agency for Fashion Brands | Dynamic Dreamz",
     description:
       "Shopify Platinum Partner for fashion & apparel brands. Sizing, product customizers, merchandising, mobile apps, integrations, and custom ecommerce development.",
@@ -499,7 +499,7 @@ export const pageSeo = {
     },
   },
   foodBeverages: {
-    path: "/food-beverages",
+    path: "/industries/food-beverages",
     title: "Shopify Agency for Food & Beverage Brands | Dynamic Dreamz",
     description:
       "Shopify and e-commerce development for food, beverage and FMCG brands. Pickup, delivery, subscriptions, bundles, multi-location operations and integrations.",
@@ -555,7 +555,7 @@ export const pageSeo = {
     },
   },
   petIndustry: {
-    path: "/pet-industry",
+    path: "/industries/pet-industry",
     title: "Shopify Agency for Pet Brands | Dynamic Dreamz",
     description:
       "Shopify and e-commerce development for pet brands. Pet profiles, autoship, subscriptions, mobile apps, product discovery, and custom integrations.",

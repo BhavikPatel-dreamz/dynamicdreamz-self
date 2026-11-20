@@ -320,7 +320,7 @@ export const shopifyB2bIndustries: IndustriesServedContent = {
       eyebrow: "Shopify Plus Industry",
       description:
         "Shopify Plus experiences for supplement and wellness brands with trust-led UX, subscriptions, education and repeat-purchase journeys.",
-      href: "/health-nutrition",
+      href: "/industries/health-nutrition",
     },
     {
       image: "/assets/shopify-plus-agency/industries/fashion-apparel.webp",
@@ -329,7 +329,7 @@ export const shopifyB2bIndustries: IndustriesServedContent = {
       eyebrow: "Shopify Plus Industry",
       description:
         "Premium commerce experiences with merchandising depth, variant complexity, product discovery and mobile-first shopping journeys.",
-      href: "/fashion",
+      href: "/industries/fashion",
     },
     {
       image: "/assets/shopify-plus-agency/industries/beauty-cosmetics.webp",
@@ -338,7 +338,7 @@ export const shopifyB2bIndustries: IndustriesServedContent = {
       eyebrow: "Shopify Plus Industry",
       description:
         "High-converting storefronts for beauty brands that need visual storytelling, product education, subscriptions and stronger merchandising.",
-      href: "/beauty-cosmetics",
+      href: "/industries/beauty-cosmetics",
     },
     {
       image: "/assets/shopify-plus-agency/industries/food-beverages.webp",
@@ -347,7 +347,7 @@ export const shopifyB2bIndustries: IndustriesServedContent = {
       eyebrow: "Shopify Plus Industry",
       description:
         "Commerce experiences supporting repeat purchase, subscriptions, bundles, promotions and streamlined ordering workflows.",
-      href: "/food-beverages",
+      href: "/industries/food-beverages",
     },
     {
       image: "/assets/shopify-plus-agency/industries/sports-outdoors.png",
@@ -356,7 +356,7 @@ export const shopifyB2bIndustries: IndustriesServedContent = {
       eyebrow: "Shopify Plus Industry",
       description:
         "Fast, mobile-led ecommerce experiences for active and outdoor brands with rich product discovery and global commerce requirements.",
-      href: "/sports-outdoors",
+      href: "/industries/sports-outdoors",
     },
     {
       image: "/assets/shopify-plus-agency/industries/home-living.png",
@@ -365,7 +365,7 @@ export const shopifyB2bIndustries: IndustriesServedContent = {
       eyebrow: "Shopify Plus Industry",
       description:
         "Shopify Plus solutions for home brands with large catalogs, configurable products, visual merchandising and complex product journeys.",
-      href: "/home-living",
+      href: "/industries/home-living",
     },
     {
       image: "/assets/shopify-plus-agency/industries/jewellery-accessories.png",
@@ -374,7 +374,7 @@ export const shopifyB2bIndustries: IndustriesServedContent = {
       eyebrow: "Shopify Plus Industry",
       description:
         "Premium product experiences for jewellery and accessory brands, including rich presentation and sophisticated customization requirements.",
-      href: "/jewellery-accessories",
+      href: "/industries/jewellery-accessories",
     },
     {
       image: "/assets/shopify-plus-agency/industries/pet-industry.webp",
@@ -383,7 +383,7 @@ export const shopifyB2bIndustries: IndustriesServedContent = {
       eyebrow: "Shopify Plus Industry",
       description:
         "Conversion-focused Shopify stores with clearer category navigation, trust-building product content and strong repeat-purchase journeys.",
-      href: "/pet-industry",
+      href: "/industries/pet-industry",
     },
   ],
 };

@@ -21,7 +21,7 @@ export const spotlightThemeCustomizationContent = {
     },
   },
   brands: {
-    title: "Trusted by\nLeading Brands",
+    title: "Trusted by Leading Brands",
     items: globalBrandLogos,
   },
   features: {

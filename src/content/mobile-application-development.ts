@@ -89,7 +89,7 @@ import { globalBrandLogos } from "@/content/brands";
 export const mobileAppBrands: readonly ClientLogoSliderItem[] = globalBrandLogos;
 
 export const mobileAppBrandsCopy = {
-  heading: "Trusted by\nLeading Brands",
+  heading: "Trusted by Leading Brands",
   ariaLabel: "Brands that trust Dynamic Dreamz for mobile application development",
 };
 
