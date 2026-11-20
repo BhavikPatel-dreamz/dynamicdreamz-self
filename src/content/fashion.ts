@@ -314,7 +314,7 @@ export const fashionPortfolio = {
       name: "Bombay Shirt Company",
       category: "Shopify / Shopify Plus",
       href: "https://www.bombayshirts.com/",
-      image: "/assets/our-work/projects/bombay-shirt-company-model.webp",
+      image: "/assets/fashion/portfolio/bombay-shirt-company-fashion.webp",
       imageAlt: "Bombay Shirt Company Custom Shopify Storefront by Dynamic Dreamz",
     },
     {
@@ -323,6 +323,18 @@ export const fashionPortfolio = {
       href: "",
       image: "/assets/our-work/projects/kalki-india.webp",
       imageAlt: "KALKI Fashion Ethnic Wear Shopify Storefront by Dynamic Dreamz",
+      appLinks: [
+        {
+          "label": "Android App",
+          "href": "https://play.google.com/store/apps/details?id=com.shopgate.android.kalkifash",
+          "icon": "/assets/our-work/platforms/android-icon.svg"
+        },
+        {
+          "label": "IOS App",
+          "href": "https://apps.apple.com/in/app/kalki-fashion-online-shopping/id950206786",
+          "icon": "/assets/our-work/platforms/app-store-ios.svg"
+        }
+      ]
     },
     {
       name: "Rare Rabbit",

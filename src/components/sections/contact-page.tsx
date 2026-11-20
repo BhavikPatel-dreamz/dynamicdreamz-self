@@ -72,7 +72,7 @@ export function ContactHeroSection({
 }: ContactHeroSectionProps = {}) {
   return (
     <section
-      className="overflow-hidden bg-[#fbeed5] pt-[160px] pb-10 text-center max-[1200px]:pt-[120px] max-[992px]:pt-[110px] max-[992px]:pb-8"
+      className="overflow-hidden bg-[#fbeed5] pt-[160px] pb-20 text-center max-[1200px]:pt-[120px] max-[992px]:pt-[110px] max-[992px]:pb-8"
       aria-labelledby="contact-page-title"
     >
       <Container>
@@ -86,15 +86,15 @@ export function ContactHeroSection({
           >
             {title}
           </h1>
-          <p className="mx-auto mt-4 max-w-[810px] text-base leading-7 font-medium text-muted max-[768px]:text-sm max-[768px]:leading-6">
+          <p className="mx-auto mt-[22px] max-w-[810px] text-base leading-7 font-medium text-muted max-[768px]:text-sm max-[768px]:leading-6">
             {description}
           </p>
-          <div className="mt-6 flex flex-wrap items-center justify-center gap-5 text-xs font-semibold uppercase max-[768px]:flex-nowrap max-[768px]:justify-start max-[768px]:overflow-x-auto max-[768px]:whitespace-nowrap max-[768px]:pb-2">
+          <div className="mt-5 flex flex-wrap items-center justify-center gap-5 text-xs font-semibold uppercase max-[768px]:flex-nowrap max-[768px]:justify-start max-[768px]:overflow-x-auto max-[768px]:whitespace-nowrap max-[768px]:pb-2">
             {quickLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
-                className="border-b border-[#252c15] pb-[3px] text-[#252c15] transition-colors duration-300 hover:border-brand-red hover:text-brand-red"
+                className="border-b border-[#252c15] pb-[3px] leading-6 text-[#252c15] transition-colors duration-300 hover:border-brand-red hover:text-brand-red"
               >
                 {link.label}
               </a>
@@ -136,7 +136,7 @@ export function ContactFormSection({
             </Eyebrow>
             <h2
               id="inquiry-title"
-              className="mt-0 mb-2.5 font-montreal-medium text-[32px] leading-[42px] font-normal text-ink max-[992px]:text-[26px] max-[992px]:leading-[34px] max-[768px]:text-[22px] max-[768px]:leading-[30px]"
+              className="mt-0 mb-2.5 font-montreal-medium text-[35px] font-normal text-ink max-[992px]:text-[26px] max-[992px]:leading-[34px] max-[768px]:text-[22px] max-[768px]:leading-[30px]"
             >
               {title}
             </h2>

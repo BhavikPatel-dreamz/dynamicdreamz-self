@@ -50,7 +50,7 @@ export function AboutFoundersSection({
               </div>
               <div className="pt-6 pr-[29px] pl-6 max-[1200px]:px-0 max-[1200px]:pt-5 max-[992px]:pt-[15px]">
                 <h3 className="mb-[5px] text-xl leading-[27px] font-normal text-ink max-[1200px]:text-[18px]">{founder.name}</h3>
-                <p className="mb-4 text-[15px] leading-[22px] font-medium text-muted italic">{founder.role}</p>
+                <p className="mb-4 text-[15px] leading-[22px] font-montreal-medium text-muted italic">{founder.role}</p>
                 <p className="mb-4 text-base leading-6 font-medium text-muted max-[1200px]:text-[14px]">{founder.biography}</p>
                 <a
                   className="mx-auto flex h-[39px] w-[34px] items-start rounded-full max-[1200px]:h-[38px] [&_circle]:transition-colors [&_circle]:duration-300 hover:[&_circle]:fill-brand-red"

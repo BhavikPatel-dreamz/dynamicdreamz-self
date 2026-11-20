@@ -106,7 +106,7 @@ export function PortfolioProjectCard({
   appLinks,
   imageAspectClassName,
   eagerImage = false,
-  showArrow = false,
+  showArrow = true,
 }: PortfolioProjectCardProps) {
   const isAppProject = !href && appLinks?.length;
 

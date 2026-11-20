@@ -7,11 +7,11 @@ import { cn } from "@/lib/class-names";
 export type HorizontalDragScrollVariant = "default" | "timeline" | "fullBleedAligned";
 
 const variantViewportStyles: Record<HorizontalDragScrollVariant, string> = {
-  default: "",
+  default: "overflow-x-auto",
   timeline:
     "h-[535px] w-full max-w-full overflow-x-auto snap-x snap-mandatory [scrollbar-width:none] [&::-webkit-scrollbar]:hidden",
   fullBleedAligned:
-    "relative left-1/2 w-screen -translate-x-1/2 snap-x snap-mandatory [scroll-padding-inline-start:16px] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden min-[576px]:[scroll-padding-inline-start:calc((100vw-500px)/2)] min-[768px]:[scroll-padding-inline-start:calc((100vw-680px)/2)] min-[992px]:[scroll-padding-inline-start:calc((100vw-920px)/2)] min-[1200px]:[scroll-padding-inline-start:calc((100vw-1140px)/2)] min-[1400px]:[scroll-padding-inline-start:calc((100vw-1320px)/2)]",
+    "relative left-1/2 w-screen max-w-[100vw] -translate-x-1/2 overflow-x-auto snap-x snap-mandatory [scroll-padding-inline-start:16px] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden min-[576px]:[scroll-padding-inline-start:calc((100vw-500px)/2)] min-[768px]:[scroll-padding-inline-start:calc((100vw-680px)/2)] min-[992px]:[scroll-padding-inline-start:calc((100vw-920px)/2)] min-[1200px]:[scroll-padding-inline-start:calc((100vw-1140px)/2)] min-[1400px]:[scroll-padding-inline-start:calc((100vw-1320px)/2)]",
 };
 
 const variantTrackStyles: Record<HorizontalDragScrollVariant, string> = {

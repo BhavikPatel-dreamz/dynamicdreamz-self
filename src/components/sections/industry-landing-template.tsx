@@ -98,7 +98,9 @@ export function IndustryLandingTemplate({
   return (
     <>
       <ServiceHeroVideoSection content={hero} />
+
       <IndustryBrandsSection
+      density="compact"
         content={brands.config}
         heading={brands.heading}
         items={brands.items}

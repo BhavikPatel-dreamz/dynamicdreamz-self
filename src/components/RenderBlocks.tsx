@@ -1,5 +1,7 @@
 import React from "react";
 import dynamic from "next/dynamic";
+import { cn } from "@/lib/class-names";
+import { getBlockBackgroundCategory } from "@/lib/section-spacing";
 import { appmakerHeroCoBranding } from "@/content/appmaker-shopify-mobile-app-development";
 import { mobileAppSharedCopy } from "@/content/common";
 import { shopifyPlusAgencyWhyChoose } from "@/content/shopify-plus-agency";
@@ -1475,7 +1477,19 @@ export function BlockRenderer({ sections, testimonials }: BlockRendererProps) {
         const normalizedType = rawType.replace(/^sections\./, "");
         const blockKey = `${rawType || "block"}-${(block as { id?: string | number }).id || index}`;
 
-        switch (normalizedType) {
+        const prevBlock = index > 0 ? sections[index - 1] : undefined;
+        const prevBg = prevBlock ? getBlockBackgroundCategory(prevBlock) : "none";
+        const currentBg = getBlockBackgroundCategory(block);
+
+        // When two consecutive sections share a white/transparent background,
+        // drop redundant top padding to prevent double spacing (160px -> 80px).
+        const shouldRemoveTopPadding =
+          index > 0 &&
+          (prevBg === "white" || prevBg === "transparent") &&
+          (currentBg === "white" || currentBg === "transparent");
+
+        const renderedBlock = (() => {
+          switch (normalizedType) {
           // Master Service Hero (and legacy video alias)
           case "service-hero":
           case "service-hero-video": {
@@ -3039,6 +3053,7 @@ export function BlockRenderer({ sections, testimonials }: BlockRendererProps) {
                   eyebrow={ptBlock.eyebrow}
                   heading={ptBlock.heading}
                   description={ptBlock.description}
+                  className={shouldRemoveTopPadding ? "pt-0" : undefined}
                   items={steps.map((s, idx) => ({
                     number: s.step || String(idx + 1).padStart(2, "0"),
                     title: s.title,
@@ -4212,6 +4227,7 @@ export function BlockRenderer({ sections, testimonials }: BlockRendererProps) {
             return (
               <ShopifyMobileAppWorkSection
                 key={blockKey}
+                className={shouldRemoveTopPadding ? "pt-0" : undefined}
                 content={{
                   eyebrow: mawBlock.eyebrow,
                   heading: toText(mawBlock.heading),
@@ -4390,7 +4406,24 @@ export function BlockRenderer({ sections, testimonials }: BlockRendererProps) {
           default:
             return null;
         }
-      })}
+      })();
+
+      if (!renderedBlock) return null;
+
+      return (
+        <div
+          key={blockKey}
+          data-block-type={normalizedType}
+          data-block-bg={currentBg}
+          className={cn(
+            shouldRemoveTopPadding &&
+              "[&>section]:!pt-0 [&>div>section]:!pt-0 [&>section]:max-[992px]:!pt-0 [&>section]:max-[768px]:!pt-0",
+          )}
+        >
+          {renderedBlock}
+        </div>
+      );
+    })}
     </>
   );
 }

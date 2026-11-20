@@ -8,11 +8,12 @@ export function ResourcesTrustSection() {
     <section className="trusted-web-sec py-20 max-[992px]:py-15 max-[768px]:py-10" aria-labelledby="resources-trust-title">
       <Container>
         <SplitSectionHeading
-          className="mx-auto mb-[70px] max-[992px]:mb-[70px] max-w-[650px]"
+          className="mb-[70px] max-[992px]:mb-[70px] !max-w-[650px]"
           description={resourcesSectionCopy.trustDescription}
           heading={resourcesSectionCopy.trustTitle}
           headingId="resources-trust-title"
           variant="centered"
+          pClassName="!font-normal text-[14px]"
         />
         <ResourcesCounterGrid />
       </Container>

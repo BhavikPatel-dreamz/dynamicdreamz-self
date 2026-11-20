@@ -403,10 +403,10 @@ export const healthNutritionWhyChoose: WhyChooseMigrationContent = {
   partnerDescription:
     "We have been building, scaling and maintaining ecommerce platforms since 2006, supporting brands as their requirements grow.",
   stats: [
-    { value: "20+", label: "Years of Industry Experience" },
-    { value: "150+", label: "In-House Developers & Designers" },
-    { value: "5k+", label: "Successful Projects Delivered" },
-    { value: "2.5k+", label: "Positive Client Reviews" },
+    { value: "20+", label: "Years of Experience" },
+    { value: "150+", label: "Experts" },
+    { value: "5k+", label: "projects delivered" },
+    { value: "2.5k+", label: "Verified 5 star Reviews" },
   ],
   partnerLink: {
     label: "About Dynamic Dreamz",

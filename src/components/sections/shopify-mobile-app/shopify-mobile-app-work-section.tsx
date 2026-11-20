@@ -2,6 +2,7 @@ import { ButtonLink } from "@/components/ui/button-link";
 import { Container } from "@/components/ui/container";
 import { PortfolioProjectCard } from "@/components/ui/portfolio-project-card";
 import { SplitSectionHeading } from "@/components/ui/split-section-heading";
+import { cn } from "@/lib/class-names";
 
 import type { PortfolioAppLink } from "@/components/ui/portfolio-project-card";
 
@@ -35,16 +36,23 @@ export type MobileAppWorkContent = {
 export type ShopifyMobileAppWorkSectionProps = {
   content: MobileAppWorkContent;
   id?: string;
+  className?: string;
 };
 
 export function ShopifyMobileAppWorkSection({
   content,
   id = "our_work",
+  className,
 }: ShopifyMobileAppWorkSectionProps) {
+  const isPt0 = className?.includes("pt-0");
+  const paddingClass = isPt0
+    ? "pt-0 pb-20 max-[992px]:pt-0 max-[992px]:pb-15 max-[768px]:pt-0 max-[768px]:pb-10"
+    : "py-20 max-[992px]:py-15 max-[768px]:py-10";
+
   return (
     <section
       id={id}
-      className="our-work-sec scroll-mt-20 bg-white py-20 max-[992px]:py-15 max-[768px]:py-10"
+      className={cn("our-work-sec scroll-mt-20 bg-white", paddingClass, className)}
     >
       <Container>
         <SplitSectionHeading

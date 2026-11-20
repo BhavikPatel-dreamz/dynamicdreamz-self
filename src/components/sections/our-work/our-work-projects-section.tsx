@@ -36,14 +36,10 @@ export function OurWorkProjectsSection({
     >
       <Container>
         <SplitSectionHeading
-          className="gap-12 max-[992px]:items-start max-[768px]:flex-col max-[768px]:gap-4"
           description={description}
           eyebrow={eyebrow}
           heading={title}
           headingId="our-work-projects-title"
-          textColumnClassName="max-w-[690px]"
-          titleColumnClassName="shrink-0"
-          pClassName="!leading-6 !font-normal !text-sm"
           variant="left"
         />
         <OurWorkFilterController filters={ourWorkPage.filters} counts={projectCounts} />

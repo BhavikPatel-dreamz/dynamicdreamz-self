@@ -1,4 +1,3 @@
-import { CtaBannerSection } from "@/components/sections/cta-banner-section";
 import { ResourcesBlogSection } from "@/components/sections/resources/resources-blog-section";
 import { ResourcesBrandStrip } from "@/components/sections/resources/resources-brand-strip";
 import { ResourcesHeroSection } from "@/components/sections/resources/resources-hero-section";
@@ -15,7 +14,6 @@ export function ResourcesPage() {
       <ResourcesStorySection />
       <ResourcesBrandStrip />
       <ResourcesTrustSection />
-      <CtaBannerSection />
     </div>
   );
 }

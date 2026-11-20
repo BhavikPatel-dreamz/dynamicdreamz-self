@@ -134,10 +134,11 @@ export function MobileAppLandingTemplate({
         heading={process.heading}
         items={process.items}
         variant={process.variant}
+        className={process.variant === "white" ? "pt-0" : undefined}
       />
 
       {/* 8. Portfolio */}
-      <ShopifyMobileAppWorkSection content={portfolio} />
+      <ShopifyMobileAppWorkSection content={portfolio} className="pt-0" />
 
       {/* 9. Engagement & Pricing */}
       <PricingTableSection content={pricing} />

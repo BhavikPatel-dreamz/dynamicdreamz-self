@@ -135,7 +135,6 @@ export function OurWorkHeroSection({
     <section className="hero-new-section overflow-hidden bg-cream pt-[91px] max-[992px]:pt-16">
       <Container
         className="relative min-[992px]:max-[1199.98px]:!max-w-[960px] min-[992px]:max-[1199.98px]:!px-5"
-        variant="fullBleedTablet"
       >
         <div className="wrapper flex flex-wrap justify-between max-[991.98px]:flex-col">
           <div className="left-col z-1 flex flex-col justify-center w-[44.697%] py-[60px] max-[1400px]:w-1/2 max-[1200px]:w-[57%] max-[991.98px]:w-full max-[991.98px]:px-[calc((100%-680px)/2)] max-[991.98px]:pt-[30px] max-[991.98px]:pb-10 max-[767.98px]:px-[calc((100%-500px)/2)] max-[576px]:px-5 max-[991.98px]:items-center max-[991.98px]:text-center">

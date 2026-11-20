@@ -33,7 +33,7 @@ export function IndustryCustomDevelopmentSection({
                 {content.eyebrow}
               </Eyebrow>
             ) : null}
-            <h2 className="mb-4 font-montreal-medium font-normal text-[35px] leading-[1.4] tracking-normal text-white max-[992px]:text-[30px] max-[992px]:leading-[1.4] max-[768px]:text-2xl max-[768px]:leading-[1.4]">
+            <h2 className="mb-3 font-montreal-medium font-normal text-[35px] leading-[1.4] tracking-normal text-white max-[992px]:text-[30px] max-[992px]:leading-[1.4] max-[768px]:text-2xl max-[768px]:leading-[1.4]">
               {content.heading}
             </h2>
             <p className="font-sans text-sm leading-6 text-white max-[768px]:text-sm max-[768px]:leading-6">
@@ -44,7 +44,7 @@ export function IndustryCustomDevelopmentSection({
             <ul className="industry-list" role="list">
               {content.items.map((item, index) => (
                 <li
-                  className="industry-list__item flex border-t border-white/16 py-4 font-sans text-sm leading-6 text-white last:border-b last:border-white/16"
+                  className="industry-list__item flex border-t border-white/16 py-4 font-sans text-sm leading-[18px] text-white last:border-b last:border-white/16"
                   data-aos="fade-up"
                   key={index}
                 >
