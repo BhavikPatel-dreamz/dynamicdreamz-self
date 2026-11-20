@@ -136,7 +136,7 @@ export function ShopifyThemeCustomizationTemplate({
           content={portfolioContent}
           eyebrow={content.portfolio?.eyebrow}
           headerLayout="split"
-          hideCta={false}
+          hideCta={!portfolioContent.ctaLabel}
           sectionId="our_work"
         />
       ) : null}

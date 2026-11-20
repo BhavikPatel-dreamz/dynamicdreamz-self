@@ -48,6 +48,7 @@ type SplitImageHeroTextProps = Pick<
   descriptionClassName?: string;
   secondaryDescriptionClassName?: string;
   breakClassName?: string;
+  btnGroupClassName?: string;
 };
 
 function SplitImageHeroText({
@@ -67,6 +68,7 @@ function SplitImageHeroText({
   descriptionClassName,
   secondaryDescriptionClassName,
   breakClassName,
+  btnGroupClassName,
 }: SplitImageHeroTextProps) {
   return (
     <div className={className}>
@@ -91,7 +93,12 @@ function SplitImageHeroText({
         </p>
       )}
       {secondaryCtaLabel && secondaryCtaHref ? (
-        <div className="btn-group flex flex-wrap items-center gap-2.5 pt-2.5 max-[1200px]:justify-center max-[768px]:flex-col max-[768px]:items-center max-[768px]:gap-3.5 [&_a]:w-fit [&_a]:max-[768px]:mx-auto">
+        <div
+          className={cn(
+            "btn-group flex flex-wrap items-center gap-2.5 pt-2.5 max-[1200px]:justify-center max-[768px]:flex-col max-[768px]:items-center max-[768px]:gap-3.5 [&_a]:w-fit [&_a]:max-[768px]:mx-auto",
+            btnGroupClassName,
+          )}
+        >
           {ctaLabel && (
             <ButtonLink
               aria-label={ctaAriaLabel ?? ctaLabel}
@@ -111,7 +118,12 @@ function SplitImageHeroText({
           </ButtonLink>
         </div>
       ) : ctaLabel ? (
-        <div className="btn-group flex items-center pt-2.5 max-[1200px]:justify-center max-[768px]:flex-col max-[768px]:items-center max-[768px]:gap-3.5 [&_a]:w-fit [&_a]:max-[768px]:mx-auto">
+        <div
+          className={cn(
+            "btn-group flex items-center pt-2.5 max-[1200px]:justify-center max-[768px]:flex-col max-[768px]:items-center max-[768px]:gap-3.5 [&_a]:w-fit [&_a]:max-[768px]:mx-auto",
+            btnGroupClassName,
+          )}
+        >
           <ButtonLink
             aria-label={ctaAriaLabel ?? ctaLabel}
             href={ctaHref}
@@ -166,6 +178,7 @@ export type SplitImageHeroSectionProps = {
   mediaClassName?: string;
   imageClassName?: string;
   breakClassName?: string;
+  btnGroupClassName?: string;
   imagePriority?: boolean;
 };
 
@@ -183,6 +196,7 @@ export function SplitImageHeroSection({
   mediaClassName,
   imageClassName,
   breakClassName,
+  btnGroupClassName,
   imagePriority,
 }: SplitImageHeroSectionProps) {
   return (
@@ -192,6 +206,7 @@ export function SplitImageHeroSection({
           <div className={textColumnClassName} data-aos="fade-up">
             <SplitImageHeroText
               breakClassName={breakClassName}
+              btnGroupClassName={btnGroupClassName}
               className={textClassName}
               ctaAriaLabel={content.ctaAriaLabel}
               ctaHref={content.ctaHref}
