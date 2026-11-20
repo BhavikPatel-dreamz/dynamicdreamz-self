@@ -33,6 +33,7 @@ export type ServiceHeroContent = {
     label: string;
     href: string;
     ariaLabel?: string;
+    target?: string;
   };
   image?: {
     src: string;
@@ -245,9 +246,9 @@ export function ServiceHeroSection({
                       </ButtonLink>
                     )}
                     <ButtonLink
-                      
                       aria-label={content.secondaryCta.ariaLabel ?? `Dynamic Dreamz - ${content.secondaryCta.label}`}
                       href={content.secondaryCta.href}
+                      target={content.secondaryCta.target ?? (content.secondaryCta.href?.startsWith("http") ? "_blank" : undefined)}
                       variant="outline"
                     >
                       {content.secondaryCta.label}
@@ -407,9 +408,9 @@ export function ServiceHeroSection({
                     </ButtonLink>
                   )}
                   <ButtonLink
-                    
                     aria-label={content.secondaryCta.ariaLabel ?? `Dynamic Dreamz - ${content.secondaryCta.label}`}
                     href={content.secondaryCta.href}
+                    target={content.secondaryCta.target ?? (content.secondaryCta.href?.startsWith("http") ? "_blank" : undefined)}
                     variant="outline"
                   >
                     {content.secondaryCta.label}

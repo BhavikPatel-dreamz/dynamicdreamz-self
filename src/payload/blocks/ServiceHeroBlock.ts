@@ -159,6 +159,15 @@ export const ServiceHeroBlock: Block = {
               fields: [
                 { name: "label", type: "text" },
                 { name: "href", type: "text" },
+                {
+                  name: "target",
+                  type: "select",
+                  defaultValue: "_self",
+                  options: [
+                    { label: "Same Tab (_self)", value: "_self" },
+                    { label: "New Tab (_blank)", value: "_blank" },
+                  ],
+                },
               ],
             },
           ],

@@ -257,6 +257,7 @@ export interface BlockServiceHero {
   secondaryCta?: {
     label?: string;
     href?: string;
+    target?: string;
   };
   // Media - Video
   video?: string;
@@ -478,6 +479,7 @@ export interface BlockCtaBanner {
   secondaryCta?: {
     label?: string;
     href?: string;
+    target?: string;
   };
   backgroundImage?: CmsMedia;
   backgroundImageSrc?: string;
@@ -802,6 +804,7 @@ export interface BlockWhiteLabelDelivery {
   secondaryCta?: {
     label?: string;
     href?: string;
+    target?: string;
   };
 }
 
@@ -1530,10 +1533,15 @@ export function BlockRenderer({ sections, testimonials }: BlockRendererProps) {
                 }
               : undefined;
 
+            const secondaryCtaTarget =
+              shBlock.secondaryCta?.target ??
+              (shBlock.secondaryCta?.href?.startsWith("http") ? "_blank" : undefined);
+
             const secondaryCta = shBlock.secondaryCta?.label
               ? {
                   label: shBlock.secondaryCta.label,
                   href: shBlock.secondaryCta.href || "",
+                  target: secondaryCtaTarget,
                 }
               : undefined;
 
@@ -1590,6 +1598,7 @@ export function BlockRenderer({ sections, testimonials }: BlockRendererProps) {
                     ctaHref: primaryCta?.href,
                     secondaryCtaText: secondaryCta?.label,
                     secondaryCtaHref: secondaryCta?.href,
+                    secondaryCtaTarget: secondaryCta?.target ?? secondaryCtaTarget,
                     image: {
                       src:
                         imageUrl ||
@@ -1943,6 +1952,7 @@ export function BlockRenderer({ sections, testimonials }: BlockRendererProps) {
                         : primaryCta?.href,
                     secondaryCtaLabel: secondaryCta?.label,
                     secondaryCtaHref: secondaryCta?.href,
+                    secondaryCtaTarget: secondaryCta?.target ?? secondaryCtaTarget,
                     image: {
                       src: imageUrl,
                       alt:
@@ -2151,16 +2161,24 @@ export function BlockRenderer({ sections, testimonials }: BlockRendererProps) {
               );
             }
 
+            const cleanHeading = bpBlock.heading
+              ? bpBlock.heading
+                  .replace(/<br\s*\/?>/gi, " ")
+                  .replace(/[\r\n]+/g, " ")
+                  .replace(/\s+/g, " ")
+                  .trim()
+              : undefined;
+
             return (
               <IndustryBrandsSection
                 key={blockKey}
-                heading={bpBlock.heading}
+                heading={cleanHeading}
                 density={bpBlock.density || "standard"}
                 mobileSpacing={bpBlock.mobileSpacing || "standard"}
                 showHeading={bpBlock.showHeading ?? true}
                 content={{
                   slug: (bpBlock as { slug?: string }).slug || "brand-partners",
-                  ariaLabel: bpBlock.heading || "Brand Partners",
+                  ariaLabel: cleanHeading || "Brand Partners",
                 }}
                 items={brands}
               />
@@ -3453,7 +3471,8 @@ export function BlockRenderer({ sections, testimonials }: BlockRendererProps) {
           case "evaluation-framework": {
             const efBlock = block as BlockEvaluationFramework;
             const items = efBlock.items?.map((item) => ({
-              title: item.number ? `${item.number} ${item.title}` : item.title,
+              number: item.number || undefined,
+              title: item.title,
               description: item.description,
             }));
 

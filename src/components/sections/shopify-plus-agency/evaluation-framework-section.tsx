@@ -5,6 +5,7 @@ import { formatBrText } from "@/lib/text-formatting";
 import { cn } from "@/lib/class-names";
 
 export type EvaluationFrameworkItem = {
+  number?: string;
   title: string | readonly string[];
   description: string | readonly string[];
 };
@@ -75,7 +76,7 @@ export function EvaluationFrameworkSection({
                       isCyan ? "bg-white" : "bg-[#fbefd7]"
                     )}
                   >
-                    {String(index + 1).padStart(2, "0")}
+                    {item.number || String(index + 1).padStart(2, "0")}
                   </span>
                   {item.title ? (
                     <h3 className="m-0 mb-2.5 font-display text-base font-medium leading-6 text-ink">

@@ -42,7 +42,9 @@ export function ThemeHeroSection({
             : undefined),
         secondaryCtaHref: content.secondaryCtaHref,
         secondaryCtaLabel: content.secondaryCtaText,
-        secondaryCtaTarget: content.secondaryCtaTarget,
+        secondaryCtaTarget:
+          content.secondaryCtaTarget ??
+          (content.secondaryCtaHref?.startsWith("http") ? "_blank" : undefined),
       }}
       className="theme-customize-hero relative overflow-hidden bg-[#f7f4e9] pt-[91px] pb-0 max-[992px]:pt-16 max-[768px]:pt-16"
       wrapperClassName="wrapper flex flex-wrap items-end justify-between max-[1200px]:flex-col max-[1200px]:items-center max-[992px]:flex-col"

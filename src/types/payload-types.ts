@@ -735,6 +735,7 @@ export interface Page {
             secondaryCta?: {
               label?: string | null;
               href?: string | null;
+              target?: ('_self' | '_blank') | null;
             };
             /**
              * e.g. /assets/home/why-dynamic-dreamz.mp4 or CDN URL
@@ -3077,6 +3078,7 @@ export interface PagesSelect<T extends boolean = true> {
                 | {
                     label?: T;
                     href?: T;
+                    target?: T;
                   };
               videoSrc?: T;
               videoPoster?: T;
