@@ -58,8 +58,8 @@ export function ShopifyPlusAgencySection({ content }: ShopifyPlusAgencySectionPr
         />
 
         <div className="flex flex-wrap justify-between rounded-[30px] bg-[#fafaf7] p-8 max-[1200px]:rounded-[20px] max-[1200px]:p-6 max-[768px]:p-5">
-          <div data-aos="fade-up" className="w-[46.816%] max-[768px]:w-full">
-            <div className="mb-5 max-w-[575px]">
+          <div data-aos="fade-up" className="w-[46.816%] max-[992px]:w-full">
+            <div className="mb-5 max-w-[575px] max-[992px]:max-w-full">
               {paragraphs.map((paragraph, index) => (
                 <p className={index === 0 ? "mb-3.75 text-sm leading-6 font-normal text-muted" : "text-sm leading-[1.8] font-normal text-muted"} key={paragraph}>
                   {paragraph}
@@ -87,7 +87,7 @@ export function ShopifyPlusAgencySection({ content }: ShopifyPlusAgencySectionPr
           </div>
           <div
             data-aos="fade-up"
-            className="relative w-1/2 min-h-[380px] max-[1200px]:min-h-0 overflow-hidden rounded-[20px] max-[768px]:mt-5 max-[768px]:w-full max-[768px]:aspect-[1.37] max-[768px]:rounded-xl"
+            className="relative w-1/2 min-h-[380px] max-[1200px]:min-h-0 overflow-hidden rounded-[20px] max-[992px]:mt-5 max-[992px]:w-full max-[992px]:min-h-0 max-[992px]:aspect-[100/73] max-[768px]:rounded-xl"
           >
             <DeferredAutoplayVideo
               className="absolute inset-0 h-full w-full object-cover"

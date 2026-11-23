@@ -34,7 +34,7 @@ export type ShopifySupportScenariosContent = {
 
 function ShopifySupportScenarioCard({ panel }: { panel: ShopifySupportScenario }) {
   return (
-    <div className="scenario-panel flex min-h-[460px] flex-col justify-between rounded-[20px] bg-[#EFF4EF] p-[25px_20px]">
+    <div className="scenario-panel flex h-full min-h-[460px] flex-col justify-between rounded-[20px] bg-[#EFF4EF] p-[25px_20px]">
       <div>
         <span className="section-kicker mb-2.5 block text-xs font-bold uppercase text-[#AD5151]">
           {panel.kicker}
@@ -60,10 +60,10 @@ function ShopifySupportScenarioCard({ panel }: { panel: ShopifySupportScenario }
         </div>
       </div>
       <div className="btns_group mt-4 flex flex-col gap-2.5 max-[576px]:w-full [&_a]:w-full [&_a]:text-center">
-        <ButtonLink href={panel.primaryCta.href} variant="primary">
+        <ButtonLink className="!text-xs max-[768px]:!text-xs" href={panel.primaryCta.href} variant="primary">
           {panel.primaryCta.label}
         </ButtonLink>
-        <ButtonLink href={panel.secondaryCta.href} variant="outline">
+        <ButtonLink className="!text-xs max-[768px]:!text-xs" href={panel.secondaryCta.href} variant="outline">
           {panel.secondaryCta.label}
         </ButtonLink>
       </div>
@@ -171,7 +171,7 @@ export function ShopifySupportScenariosSection({
                       </div>
                     ))}
                   </div>
-                  <div className="scenario-meta my-5 font-sans font-medium text-[#535353] leading-[22px]">
+                  <div className="scenario-meta my-5 text-sm font-sans font-medium text-[#535353] leading-6 max-[992px]:text-xs max-[992px]:leading-[22px]">
                     {activePanel.meta}
                   </div>
                 </div>
@@ -194,11 +194,11 @@ export function ShopifySupportScenariosSection({
         {/* Mobile Slider (< 768px) matching live Slick slider */}
         <div
           data-aos="fade-up"
-          className="scenario-mobile block md:hidden max-[768px]:mr-[calc(-100vw/2+508px/2)] max-[576px]:-mr-4 [&_.slick-list]:pr-[40px] [&_.slick-track]:flex"
+          className="scenario-mobile block md:hidden max-[768px]:mr-[calc(-100vw/2+508px/2)] max-[576px]:-mr-5 [&_.slick-list]:!w-[calc(100%_-_52px)] [&_.slick-list]:!overflow-visible [&_.slick-list]:[clip-path:inset(0_-100vw_0_0)] [&_.slick-track]:!flex [&_.slick-track]:!items-stretch [&_.slick-slide]:!flex [&_.slick-slide]:!h-auto [&_.slick-slide>div]:!flex [&_.slick-slide>div]:!h-full [&_.slick-slide>div]:w-full [&_.slick-slide>div]:flex-col [&_.slick-slide>div>div]:!flex [&_.slick-slide>div>div]:!h-full [&_.slick-slide>div>div]:w-full [&_.slick-slide>div>div]:flex-col"
         >
           <LazyMount
             fallback={content.items[0] ? (
-              <div className="pr-3 outline-none">
+              <div className="w-[calc(100%-52px)] pr-3 outline-none">
                 <ShopifySupportScenarioCard panel={content.items[0]} />
               </div>
             ) : null}
@@ -206,7 +206,7 @@ export function ShopifySupportScenariosSection({
           >
             <Slider {...mobileSliderSettings}>
               {content.items.map((panel) => (
-                <div key={panel.id} className="pr-3 outline-none">
+                <div key={panel.id} className="flex h-full flex-col pr-3 outline-none">
                   <ShopifySupportScenarioCard panel={panel} />
                 </div>
               ))}

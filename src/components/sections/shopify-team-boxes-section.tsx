@@ -70,7 +70,7 @@ export function ShopifyTeamBoxesSection({
                   </p>
                 ))
               ) : (
-                <p className="font-sans text-base font-medium leading-7 text-white max-[768px]:text-sm max-[768px]:leading-6">
+                <p className="font-sans text-base font-medium leading-7 text-white max-[1200px]:text-sm max-[1200px]:leading-6">
                   {content.description}
                 </p>
               )}

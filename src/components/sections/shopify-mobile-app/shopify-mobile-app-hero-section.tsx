@@ -62,7 +62,10 @@ export type ShopifyMobileAppHeroSectionProps = {
 export function ShopifyMobileAppHeroSection({
   content,
 }: ShopifyMobileAppHeroSectionProps) {
-  const mobileBadgeLayout = content.mobileBadgeLayout ?? "divided";
+  const mobileBadgeLayout =
+    content.badges && content.badges.length === 3
+      ? "row"
+      : (content.mobileBadgeLayout ?? "divided");
   const badgeRowLayout = mobileBadgeLayout === "row";
   const frameImage = content.frameImage ?? {
     src: "/assets/services/shopify-mobile-app-development/hero/phone-frame.png",
@@ -120,9 +123,10 @@ export function ShopifyMobileAppHeroSection({
               {content.badges && content.badges.length > 0 && (
                 <div
                   className={cn(
-                    "global_brands_grid_wrap relative mt-[30px] flex items-center -mx-[15px] max-[1200px]:justify-center max-[768px]:-mx-[15px] max-[768px]:w-[calc(100%+30px)] max-[768px]:flex-wrap max-[768px]:overflow-hidden",
-                    !badgeRowLayout &&
-                      "max-[768px]:before:absolute max-[768px]:before:top-0 max-[768px]:before:left-1/2 max-[768px]:before:block max-[768px]:before:h-full max-[768px]:before:w-px max-[768px]:before:-translate-x-1/2 max-[768px]:before:bg-[#d9d9d9] max-[768px]:before:content-[''] max-[768px]:after:absolute max-[768px]:after:top-1/2 max-[768px]:after:left-5 max-[768px]:after:block max-[768px]:after:h-px max-[768px]:after:w-[calc(100%-40px)] max-[768px]:after:bg-[#d9d9d9] max-[768px]:after:content-['']",
+                    "global_brands_grid_wrap relative mt-[30px] flex items-center -mx-[15px] max-[1200px]:justify-center max-[768px]:-mx-[15px] max-[768px]:w-[calc(100%+30px)] max-[768px]:overflow-hidden",
+                    badgeRowLayout
+                      ? "max-[768px]:flex-nowrap"
+                      : "max-[768px]:flex-wrap max-[768px]:before:absolute max-[768px]:before:top-0 max-[768px]:before:left-1/2 max-[768px]:before:block max-[768px]:before:h-full max-[768px]:before:w-px max-[768px]:before:-translate-x-1/2 max-[768px]:before:bg-[#d9d9d9] max-[768px]:before:content-[''] max-[768px]:after:absolute max-[768px]:after:top-1/2 max-[768px]:after:left-5 max-[768px]:after:block max-[768px]:after:h-px max-[768px]:after:w-[calc(100%-40px)] max-[768px]:after:bg-[#d9d9d9] max-[768px]:after:content-['']",
                   )}
                   aria-label="Shopify partnership credentials and client rating badges"
                 >

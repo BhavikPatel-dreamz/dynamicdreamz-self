@@ -73,8 +73,8 @@ export function ShopifyThemesGridSection({
                         src={theme.image}
                       />
                     </div>
-                    <div className="text flex items-center justify-between max-[992px]:flex-col max-[992px]:items-start max-[992px]:gap-2.5">
-                      <h3 className="mb-0 font-display text-[20px] max-[1200px]:text-[16px] font-small text-ink">
+                    <div className="text flex items-center justify-between max-[1200px]:flex-col max-[1200px]:items-start max-[1200px]:gap-2.5">
+                      <h3 className="mb-0 font-display leading-[28.8px] text-[20px] max-[1200px]:text-[16px] max-[1200px]:leading-none font-small text-ink">
                         {title}
                       </h3>
                       <span className="learn_more flex items-center text-xs font-medium max-[992px]:font-semibold uppercase leading-none text-[#ad5151] transition-colors duration-300 group-hover:text-ink">

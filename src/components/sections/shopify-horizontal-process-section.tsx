@@ -49,7 +49,7 @@ export function ShopifyHorizontalProcessSection({
             return (
               <div
                 data-aos="fade-up"
-                className="item relative w-[20%] max-[1200px]:w-1/3 max-[768px]:flex max-[768px]:w-full max-[768px]:items-start max-[768px]:pb-6"
+                className="item relative w-[20%] max-[1200px]:w-1/3 max-[768px]:flex max-[768px]:w-full max-[768px]:items-start"
                 key={step.title}
               >
                 {/* Horizontal connecting line on desktop, vertical on mobile */}

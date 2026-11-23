@@ -72,7 +72,14 @@ export function BrandPartnersSection({
       </Container>
       <div data-aos="fade-up" className="hidden flex-col max-[768px]:flex" aria-hidden="true">
         {mobileRows.map((row, index) => (
-          <div className={cn("flex w-max items-center", index > 0 && "mt-2.5", index === 0 && "mb-5", index === 2 && "ml-[-25%]")} key={index}>
+          <div
+            className={cn(
+              "flex w-max items-center",
+              index < mobileRows.length - 1 && "mb-5",
+              index === 2 && "ml-[-25%]",
+            )}
+            key={index}
+          >
             <LoopingLogoTrack
               className={cn("flex shrink-0 items-center", index === 1 ? styles.moveRight : styles.moveLeft)}
               decorative

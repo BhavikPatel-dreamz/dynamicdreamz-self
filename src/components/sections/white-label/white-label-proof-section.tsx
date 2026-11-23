@@ -128,10 +128,10 @@ export function WhiteLabelWhySection({
               >
                 {reason ? (
                   <>
-                    <h3 className="mb-3.5 text-lg leading-[1.28] font-montserrat font-bold text-[#ad5151] max-[992px]:mb-2.5">
+                    <h3 className="mb-3.5 text-lg leading-[23.04px] font-montserrat font-bold text-[#ad5151] max-[992px]:text-[16px] max-[992px]:leading-none max-[992px]:mb-2.5">
                       {reason.title}
                     </h3>
-                    <p className="font-sans text-sm leading-[24px] font-medium text-muted max-[1200px]:leading-[26px] max-[992px]:text-[15px] max-[992px]:leading-[22px]">
+                    <p className="font-sans text-sm leading-[24px] font-medium text-muted">
                       {reason.description}
                     </p>
                   </>

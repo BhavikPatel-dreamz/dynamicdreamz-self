@@ -1749,7 +1749,10 @@ export function BlockRenderer({ sections, testimonials }: BlockRendererProps) {
                     },
                     secondaryCta,
                     badges: heroBadges.length > 0 ? heroBadges : undefined,
-                    mobileBadgeLayout: (shBlock as { mobileBadgeLayout?: "divided" | "row" }).mobileBadgeLayout || "divided",
+                    mobileBadgeLayout:
+                      heroBadges.length === 3
+                        ? "row"
+                        : (shBlock as { mobileBadgeLayout?: "divided" | "row" }).mobileBadgeLayout || "divided",
                     slides: slides.length > 0 ? slides : [],
                   }}
                 />

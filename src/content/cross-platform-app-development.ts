@@ -24,6 +24,7 @@ export const crossPlatformAppDevelopmentHero: MobileAppHeroContent = {
     href: "#our_work",
     ariaLabel: "See Mobile App Work",
   },
+  mobileBadgeLayout: "row",
   badges: [
     {
       src: "/assets/proof/clutch-rating.svg",
