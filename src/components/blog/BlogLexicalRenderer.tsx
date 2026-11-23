@@ -98,7 +98,7 @@ function ListItems({ items, ordered }: { items: readonly BlogListItem[]; ordered
         if (ordered) {
           return (
             <li
-              className="mb-[18px] text-[16px] leading-[27px] tracking-[0.32px]"
+              className="mb-[15px] text-[14px] font-normal leading-[24px] text-[#535353]"
               key={index}
             >
               <InlineNodes nodes={item.content} />
@@ -113,7 +113,7 @@ function ListItems({ items, ordered }: { items: readonly BlogListItem[]; ordered
 
         return (
           <li
-            className="relative mb-[18px] pl-[34px] text-[16px] font-medium leading-[27px] tracking-[0.32px] before:absolute before:top-[3px] before:left-0 before:size-[22px] before:bg-[url('/assets/icons/gradient-check.svg')] before:bg-contain before:bg-no-repeat before:content-['']"
+            className="relative mb-[15px] pl-[34px] text-[14px] font-normal leading-[24px] text-[#535353] before:absolute before:top-[1px] before:left-0 before:size-[22px] before:bg-[url('/assets/icons/gradient-check.svg')] before:bg-contain before:bg-no-repeat before:content-['']"
             key={index}
           >
             <InlineNodes nodes={item.content} />
@@ -172,7 +172,7 @@ export function BlogContentRenderer({ blocks, className }: BlogContentRendererPr
             }
             return (
               <h5
-                className="mb-2.5 text-[16px] leading-6 font-normal text-[#282828]"
+                className="mb-2.5 text-[14px] leading-6 font-normal text-[#282828]"
                 id={block.id}
                 key={index}
               >
@@ -184,7 +184,7 @@ export function BlogContentRenderer({ blocks, className }: BlogContentRendererPr
           case "paragraph":
             return (
               <p
-                className="mb-[15px] text-[16px] font-medium leading-[30.4px] text-[#535353] last:mb-0"
+                className="mb-[15px] text-[14px] font-normal leading-[24px] text-[#535353]"
                 key={index}
               >
                 <InlineNodes nodes={block.children} />
@@ -234,7 +234,7 @@ export function BlogContentRenderer({ blocks, className }: BlogContentRendererPr
                 className="tbl-reponsive my-6 w-full overflow-x-auto whitespace-nowrap"
                 key={index}
               >
-                <table className="w-full border-collapse text-left text-[16px] font-medium">
+                <table className="w-full border-collapse text-left text-[14px] font-normal leading-[24px]">
                   {block.headers && block.headers.length > 0 ? (
                     <thead>
                       <tr>

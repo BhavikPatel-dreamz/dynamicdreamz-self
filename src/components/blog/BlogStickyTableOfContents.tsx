@@ -1,3 +1,6 @@
+"use client";
+
+import { useState } from "react";
 import type { BlogTocItem } from "@/types/blog-post";
 
 type BlogTableOfContentsProps = {
@@ -19,36 +22,70 @@ function ListIcon() {
   );
 }
 
+function computeTocNumbers(items: readonly BlogTocItem[]): string[] {
+  if (!items || items.length === 0) return [];
+  const minLevel = items.reduce((min, item) => Math.min(min, item.level), 2);
+  const counters: number[] = [];
+
+  return items.map((item) => {
+    const depth = Math.max(0, item.level - minLevel);
+    while (counters.length <= depth) {
+      counters.push(0);
+    }
+    counters[depth] = (counters[depth] ?? 0) + 1;
+    counters.length = depth + 1;
+    return counters.join(".") + ". ";
+  });
+}
+
 export function BlogTableOfContents({ items, title, toggleLabel }: BlogTableOfContentsProps) {
+  const [isOpen, setIsOpen] = useState(false);
+
   if (!items.length) return null;
 
+  const numbers = computeTocNumbers(items);
+
   return (
-    <section className="mt-0 mb-4 w-full border border-[#ddd] bg-[#f7f5ef] pt-5 pr-[26px] pb-1 pl-5" aria-label={title}>
-      <details>
-        <summary
-          className="flex w-full cursor-pointer list-none items-center justify-between gap-4 border-0 bg-transparent p-0 text-left font-montreal-medium text-[24px] font-normal leading-[31px] tracking-0 text-[#282828] [&::-webkit-details-marker]:hidden"
-          aria-controls="blog-table-of-contents-list"
-          aria-label={toggleLabel}
-        >
-          <span>{title}</span>
-          <ListIcon />
-        </summary>
-        <nav id="blog-table-of-contents-list" className="mt-[15px]" aria-label={title}>
-          <ul className="m-0 list-none p-0">
-            {items.map((item) => (
-              <li className="m-0 overflow-hidden leading-[1.6]" key={`${item.href}-${item.label}`}>
-                <a
-                  className="inline-flex text-[14px] font-medium leading-[30.4px] text-[#535353] no-underline transition-colors duration-300 hover:text-brand-red hover:underline focus-visible:text-brand-red"
-                  style={{ marginLeft: `${Math.max(0, item.level - 2) * 21}px` }}
-                  href={item.href}
-                >
-                  {item.label}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </nav>
-      </details>
+    <section className="mt-0 mb-4 w-full border border-[#ddd] bg-[#f7f5ef] py-5 pr-[26px] pl-5 max-[768px]:px-4 max-[768px]:py-4" aria-label={title}>
+      <button
+        type="button"
+        onClick={() => setIsOpen((prev) => !prev)}
+        aria-expanded={isOpen}
+        aria-controls="blog-table-of-contents-list"
+        aria-label={toggleLabel}
+        className="flex w-full cursor-pointer list-none items-center justify-between gap-4 border-0 bg-transparent p-0 text-left font-montreal-medium text-[24px] font-normal leading-[31px] tracking-0 text-[#282828] max-[768px]:text-[20px] max-[768px]:leading-[26px]"
+      >
+        <span>{title}</span>
+        <ListIcon />
+      </button>
+
+      <div
+        id="blog-table-of-contents-list"
+        className={`grid transition-[grid-template-rows,opacity] duration-300 ease-in-out motion-reduce:duration-0 ${
+          isOpen ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
+        }`}
+        aria-hidden={!isOpen}
+        inert={!isOpen ? true : undefined}
+      >
+        <div className="overflow-hidden">
+          <nav className="mt-[15px]" aria-label={title}>
+            <ul className="m-0 list-none p-0">
+              {items.map((item, idx) => (
+                <li className="m-0 overflow-hidden leading-[1.6]" key={`${item.href}-${item.label}`}>
+                  <a
+                    className="inline-flex text-[14px] font-medium leading-[30.4px] text-[#535353] no-underline transition-colors duration-300 hover:text-brand-red hover:underline focus-visible:text-brand-red max-[768px]:leading-[26px]"
+                    style={{ marginLeft: `${Math.max(0, item.level - 2) * 21}px` }}
+                    href={item.href}
+                  >
+                    <span className="mr-1.5 shrink-0">{numbers[idx]}</span>
+                    <span>{item.label}</span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </nav>
+        </div>
+      </div>
     </section>
   );
 }

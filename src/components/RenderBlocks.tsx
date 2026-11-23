@@ -2263,8 +2263,14 @@ export function BlockRenderer({ sections, testimonials }: BlockRendererProps) {
           // Block 4: CTA Banner
           case "cta-banner": {
             const cbBlock = block as BlockCtaBanner;
-            const ctaHref = cbBlock.ctaHref || "/request-a-quote";
-            const ctaLabel = cbBlock.ctaLabel || "Let's Talk";
+            const ctaLabel =
+              cbBlock.ctaLabel === null || cbBlock.ctaLabel === ""
+                ? ""
+                : (cbBlock.ctaLabel?.trim() ?? "Let's Talk");
+            const ctaHref =
+              cbBlock.ctaHref === null || cbBlock.ctaHref === ""
+                ? ""
+                : (cbBlock.ctaHref?.trim() ?? "/request-a-quote");
 
             if (cbBlock.variant === "image") {
               const bgImage =

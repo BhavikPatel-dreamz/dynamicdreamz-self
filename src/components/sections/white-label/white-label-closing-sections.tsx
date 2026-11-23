@@ -29,11 +29,13 @@ export function WhiteLabelFinalCtaSection({
               {formatBrText(cta.description)}
             </p>
           </div>
-          <div className="cta_action shrink-0 max-[992px]:w-full max-[992px]:text-left">
-            <ButtonLink href={ctaHref} variant="primary">
-              {cta.label}
-            </ButtonLink>
-          </div>
+          {cta.label && ctaHref ? (
+            <div className="cta_action shrink-0 max-[992px]:w-full max-[992px]:text-left">
+              <ButtonLink href={ctaHref} variant="primary">
+                {cta.label}
+              </ButtonLink>
+            </div>
+          ) : null}
         </div>
       </Container>
     </section>

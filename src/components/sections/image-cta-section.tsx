@@ -38,9 +38,11 @@ export function ImageCtaSection({
           >
             {description}
           </p>
-          <ButtonLink className="text-white" href={ctaHref} variant="outline">
-            {ctaLabel}
-          </ButtonLink>
+          {ctaLabel && ctaHref ? (
+            <ButtonLink className="text-white" href={ctaHref} variant="outline">
+              {ctaLabel}
+            </ButtonLink>
+          ) : null}
         </div>
       </Container>
     </section>

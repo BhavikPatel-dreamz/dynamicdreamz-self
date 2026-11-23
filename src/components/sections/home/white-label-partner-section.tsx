@@ -46,9 +46,11 @@ export function WhiteLabelPartnerSection({ content }: WhiteLabelPartnerSectionPr
               ))}
             </div>
           </div>
-          <ButtonLink className="btn-explore shrink-0 max-[1200px]:shrink-0 max-[1200px]:inline-flex max-[379px]:py-3 max-[379px]:px-5" variant="primary" href={ctaHref}>
-            {ctaLabel}
-          </ButtonLink>
+          {ctaLabel && ctaHref ? (
+            <ButtonLink className="btn-explore shrink-0 max-[1200px]:shrink-0 max-[1200px]:inline-flex max-[379px]:py-3 max-[379px]:px-5" variant="primary" href={ctaHref}>
+              {ctaLabel}
+            </ButtonLink>
+          ) : null}
         </div>
       </Container>
     </section>
