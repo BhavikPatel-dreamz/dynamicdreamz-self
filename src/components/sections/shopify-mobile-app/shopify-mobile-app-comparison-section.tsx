@@ -27,11 +27,9 @@ export function ShopifyMobileAppComparisonSection({
     <section className="why_build_a_custom_shopify_mobile_app bg-[#F7F4E9] py-20 max-[992px]:py-15 max-[768px]:py-10">
       <Container variant="wide">
         <SplitSectionHeading
-          variant="services"
           eyebrow={content.eyebrow}
           heading={content.heading}
           description={content.description}
-          className="mb-[50px]"
         />
 
         <div data-aos="fade-up" className="table-main overflow-hidden rounded-[20px] border border-[rgba(0,0,0,0.10)] bg-white">
@@ -63,13 +61,13 @@ export function ShopifyMobileAppComparisonSection({
                       <td
                         className={`p-[16px_20px] align-middle bg-white ${borderBottom} text-[#282828] text-sm leading-[22px] max-[768px]:p-[12px_16px] max-[768px]:text-xs`}
                       >
-                        <strong>{row.title}</strong>
-                        <span className="table-sub block text-xs font-medium leading-5 text-[#535353] mt-2.5 max-[768px]:mt-1">
+                        <strong className="font-black">{row.title}</strong>
+                        <span className="table-sub block text-xs font-medium leading-5 mt-2.5 max-[768px]:mt-1">
                           {row.subtitle}
                         </span>
                       </td>
                       <td
-                        className={`p-[16px_20px] align-middle bg-white ${borderBottom} text-sm font-medium leading-[22px] text-[#535353] max-[768px]:p-[12px_16px] max-[768px]:text-xs`}
+                        className={`p-[16px_20px] align-middle bg-white ${borderBottom} text-sm font-medium leading-[22px] text-[#282828] max-[768px]:p-[12px_16px] max-[768px]:text-xs`}
                       >
                         {row.appBuilder}
                       </td>

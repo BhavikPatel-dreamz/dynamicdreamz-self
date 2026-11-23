@@ -111,7 +111,7 @@ export function StaticFaqAccordion({
         const secondaryAnswerContent = item.secondaryAnswer ? (
           <p
             className={cn(
-              "mt-4 text-sm leading-6 text-[#535353] last:mb-0 font-medium",
+              "mt-4 text-sm leading-6 text-[#535353] last:mb-0",
               answerClassName,
             )}
           >

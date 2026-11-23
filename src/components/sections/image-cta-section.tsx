@@ -24,7 +24,7 @@ export function ImageCtaSection({
           className="rounded-[14px] bg-cover bg-center bg-no-repeat px-5 py-[31px] text-center"
           style={{ backgroundImage: `url(${backgroundImage})` }}
         >
-          <h2 className="font-display text-[28px] font-medium leading-[137%] tracking-[-0.32px] text-white max-[768px]:text-[22px]">
+          <h2 className="font-display mb-3 text-[28px] font-medium leading-[137%] tracking-[-0.32px] text-white max-[768px]:text-[22px]">
             {heading}
           </h2>
           <p className="mb-[34px] text-base font-small leading-[190%] text-white max-[768px]:text-sm max-[768px]:leading-[26px]">

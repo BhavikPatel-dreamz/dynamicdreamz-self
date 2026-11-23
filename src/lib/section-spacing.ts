@@ -158,7 +158,175 @@ const INHERENT_SECTION_BACKGROUND_CLASSES: Record<string, string> = {
   "shopify-hours-tasks": "bg-[#EFF4EF]",
   "hours-tasks": "bg-[#EFF4EF]",
   "cta-banner": "bg-[#192019]",
+  "b2b-architecture": "bg-[#eff4ef]",
+  "mobile-app-comparison": "bg-[#f7f4e9]",
+  "shopify-mobile-app-dtc": "bg-[#fafaf7]",
+  "shopify-app-benefits": "bg-[#eff4ef]",
+  "support-scenarios": "bg-[#eff4ef]",
+  "white-label-delivery": "bg-[#eff4ef]",
+  "credential-tabs": "bg-[#eff4ef]",
+  "partner-directory-proof": "bg-[#eff4ef]",
+  "theme-customization-approach": "bg-[#eff4ef]",
+  "theme-features-banner": "bg-[#fbefd7]",
 };
+
+/**
+ * Checks whether a block or blockType represents a page hero section.
+ */
+export function isHeroBlock(blockOrType?: unknown): boolean {
+  if (!blockOrType) return false;
+  const typeStr =
+    typeof blockOrType === "string"
+      ? blockOrType
+      : typeof blockOrType === "object" && blockOrType !== null
+      ? (blockOrType as { blockType?: string; __component?: string }).blockType ||
+        (blockOrType as { blockType?: string; __component?: string }).__component ||
+        ""
+      : "";
+  const norm = typeStr.toLowerCase().replace(/^sections\./, "");
+  return (
+    norm.includes("hero") ||
+    norm === "banner" ||
+    norm === "service-hero" ||
+    norm === "service-hero-video" ||
+    norm === "split-image-hero" ||
+    norm === "home-hero" ||
+    norm === "city-hero" ||
+    norm === "theme-hero" ||
+    norm === "about-hero" ||
+    norm === "career-hero" ||
+    norm === "life-hero" ||
+    norm === "our-work-hero" ||
+    norm === "resources-hero" ||
+    norm === "shopify-hours-hero" ||
+    norm === "industry-hero" ||
+    norm === "contact-hero" ||
+    norm === "request-quote-hero" ||
+    norm === "mobile-app-hero"
+  );
+}
+
+/**
+ * Determines whether a section block should drop its top padding (pt-0).
+ * Prevents unnecessary removal of top padding across pages:
+ * - NEVER remove top padding for the first block (index === 0).
+ * - NEVER remove top padding after ANY hero block (service-hero, hero, city-hero, etc.).
+ * - NEVER remove top padding if the preceding block or current block is colored.
+ * - NEVER remove top padding if the preceding block has no bottom padding (pb-0).
+ * - NEVER remove top padding if the current block has a top border or explicit custom padding.
+ * - NEVER remove top padding for standalone / banner / table / card sections.
+ */
+export function shouldCollapseTopPadding(
+  currentBlock: unknown,
+  prevBlock: unknown,
+  index = 0,
+): boolean {
+  if (index === 0 || !currentBlock || !prevBlock) return false;
+
+  // 1. NEVER collapse top padding after ANY hero section
+  if (isHeroBlock(prevBlock)) return false;
+
+  // 2. NEVER collapse if current block is a hero section
+  if (isHeroBlock(currentBlock)) return false;
+
+  // 3. If either block has a colored background, NEVER collapse
+  const prevBg = getBlockBackgroundCategory(prevBlock);
+  const currentBg = getBlockBackgroundCategory(currentBlock);
+  if (prevBg === "colored" || currentBg === "colored") return false;
+
+  const currentObj =
+    typeof currentBlock === "object" && currentBlock !== null
+      ? (currentBlock as Record<string, unknown>)
+      : null;
+  const prevObj =
+    typeof prevBlock === "object" && prevBlock !== null
+      ? (prevBlock as Record<string, unknown>)
+      : null;
+
+  const rawCurrentType = (
+    currentObj?.blockType ||
+    currentObj?.__component ||
+    (typeof currentBlock === "string" ? currentBlock : "") ||
+    ""
+  )
+    .toString()
+    .replace(/^sections\./, "");
+  const rawPrevType = (
+    prevObj?.blockType ||
+    prevObj?.__component ||
+    (typeof prevBlock === "string" ? prevBlock : "") ||
+    ""
+  )
+    .toString()
+    .replace(/^sections\./, "");
+
+  // 4. Explicit overrides on current block
+  if (currentObj) {
+    if (currentObj.hasTopPadding === true || currentObj.keepTopPadding === true) {
+      return false;
+    }
+    if (currentObj.removeTopPadding === true || currentObj.pt0 === true) {
+      return true;
+    }
+    const currentClass = (currentObj.className || currentObj.classes || "").toString();
+    if (currentClass.includes("pt-0")) {
+      return true;
+    }
+    if (currentClass.includes("pt-") || currentClass.includes("py-")) {
+      return false;
+    }
+  }
+
+  // 5. If previous block has pb-0, NEVER collapse (otherwise gap is 0px)
+  if (prevObj) {
+    if (prevObj.hasBottomPadding === false || prevObj.pb0 === true) {
+      return false;
+    }
+    const prevClass = (prevObj.className || prevObj.classes || "").toString();
+    if (prevClass.includes("pb-0") || prevClass.includes("py-0")) {
+      return false;
+    }
+  }
+
+  // 6. Special sections that have their own borders, banners, or bespoke layouts
+  const NEVER_COLLAPSE_BLOCKS = new Set([
+    "risks-shopify-topics",
+    "cta-banner",
+    "image-cta",
+    "evaluation-framework",
+    "white-label-stats",
+    "white-label-counter",
+    "city-page-counter",
+    "proof-counters",
+    "proof-stats",
+    "brand-partners",
+    "integrations",
+    "contact-form",
+    "contact-details",
+    "career-apply",
+    "form",
+    "form-block",
+    "theme-features-banner",
+  ]);
+
+  if (NEVER_COLLAPSE_BLOCKS.has(rawCurrentType) || NEVER_COLLAPSE_BLOCKS.has(rawPrevType)) {
+    return false;
+  }
+
+  // 7. Only collapse for specific paired sub-sections known on the live site to share a gap
+  const KNOWN_COLLAPSIBLE_SUBSECTIONS = new Set([
+    "industries-served",
+    "industries-grid",
+    "our-work-projects",
+    "how-to-choose-spa",
+  ]);
+
+  if (KNOWN_COLLAPSIBLE_SUBSECTIONS.has(rawCurrentType)) {
+    return true;
+  }
+
+  return false;
+}
 
 /**
  * Maps a CMS block object, blockType, className, or section component identifier to its background category.

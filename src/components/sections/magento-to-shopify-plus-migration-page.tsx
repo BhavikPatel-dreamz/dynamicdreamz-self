@@ -80,7 +80,6 @@ export function MagentoToShopifyPlusMigrationPage() {
 
       {/* 5. How do We Migrate from Magento to Shopify plus​? */}
       <ThemeCustomizationServicesSection
-        className="pb-0"
         content={{
           eyebrow: magentoPlusProcessContent.eyebrow,
           heading: magentoPlusProcessContent.heading,

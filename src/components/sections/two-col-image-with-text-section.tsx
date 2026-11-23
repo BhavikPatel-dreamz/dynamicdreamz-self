@@ -105,13 +105,13 @@ export function TwoColImageWithTextSection({
                   ))}
                 </ul>
               )}
-              {cta && cta.label && cta.href && (
+              {cta && cta.label && cta.href ? (
                 <div className="mt-8">
                   <ButtonLink href={cta.href} variant="primary">
                     {cta.label}
                   </ButtonLink>
                 </div>
-              )}
+              ) : null}
             </div>
           </div>
         </div>

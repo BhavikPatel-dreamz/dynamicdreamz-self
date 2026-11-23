@@ -1,7 +1,7 @@
 import React from "react";
 import dynamic from "next/dynamic";
 import { cn } from "@/lib/class-names";
-import { getBlockBackgroundCategory } from "@/lib/section-spacing";
+import { getBlockBackgroundCategory, shouldCollapseTopPadding } from "@/lib/section-spacing";
 import { appmakerHeroCoBranding } from "@/content/appmaker-shopify-mobile-app-development";
 import { mobileAppSharedCopy } from "@/content/common";
 import { shopifyPlusAgencyWhyChoose } from "@/content/shopify-plus-agency";
@@ -1478,15 +1478,10 @@ export function BlockRenderer({ sections, testimonials }: BlockRendererProps) {
         const blockKey = `${rawType || "block"}-${(block as { id?: string | number }).id || index}`;
 
         const prevBlock = index > 0 ? sections[index - 1] : undefined;
-        const prevBg = prevBlock ? getBlockBackgroundCategory(prevBlock) : "none";
         const currentBg = getBlockBackgroundCategory(block);
 
-        // When two consecutive sections share a white/transparent background,
-        // drop redundant top padding to prevent double spacing (160px -> 80px).
-        const shouldRemoveTopPadding =
-          index > 0 &&
-          (prevBg === "white" || prevBg === "transparent") &&
-          (currentBg === "white" || currentBg === "transparent");
+        // Intelligently drop redundant top padding only when appropriate (never after heroes or for standalone sections)
+        const shouldRemoveTopPadding = shouldCollapseTopPadding(block, prevBlock, index);
 
         const renderedBlock = (() => {
           switch (normalizedType) {

@@ -8,11 +8,22 @@ export default function SmoothScroll() {
     const SCROLL_DURATION = 1500; // milliseconds
 
     const handleClick = (e: MouseEvent) => {
+      if (e.defaultPrevented) return;
+
       const target = e.target as HTMLElement;
 
       const link = target.closest<HTMLAnchorElement>('a[href^="#"]');
 
       if (!link) return;
+
+      if (
+        link.closest("[data-no-smooth-scroll]") ||
+        link.closest("[data-risks-topics]") ||
+        link.closest(".new-web-tab") ||
+        link.classList.contains("tab-link")
+      ) {
+        return;
+      }
 
       const href = link.getAttribute("href");
 
@@ -21,6 +32,21 @@ export default function SmoothScroll() {
       const section = document.getElementById(href.slice(1));
 
       if (!section) return;
+
+      // Never window-scroll if the target section is inside an internal overflow/scroll container
+      let parent = section.parentElement;
+      while (parent && parent !== document.body && parent !== document.documentElement) {
+        const style = window.getComputedStyle(parent);
+        if (
+          style.overflowY === "auto" ||
+          style.overflowY === "scroll" ||
+          style.overflow === "auto" ||
+          style.overflow === "scroll"
+        ) {
+          return;
+        }
+        parent = parent.parentElement;
+      }
 
       e.preventDefault();
 
