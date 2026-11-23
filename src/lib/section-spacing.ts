@@ -53,7 +53,116 @@ export function getSectionSpacingClasses({
 }
 
 /**
- * Maps a CMS block object, blockType, or section component identifier to its background category.
+ * Detects whether a CSS class string, style value, or color represents a colored background
+ * vs a white/transparent background.
+ */
+export function detectBackgroundFromClass(classOrColor?: string | null): SectionBackground {
+  if (!classOrColor) return "white";
+
+  const str = classOrColor.toLowerCase().trim();
+
+  // Explicit white / transparent checks
+  if (
+    str === "white" ||
+    str === "transparent" ||
+    str === "#fff" ||
+    str === "#ffffff" ||
+    str.includes("bg-white") ||
+    str.includes("bg-transparent")
+  ) {
+    return "white";
+  }
+
+  // Matches colored hex codes in Tailwind classes like bg-[#fafaf7], bg-[#eff4ef], bg-[#192019]
+  // (excluding white #fff / #ffffff)
+  if (/bg-\[#(?!fff\b|ffffff\b)[0-9a-fA-F]+\]/.test(str)) {
+    return "colored";
+  }
+
+  // Matches colored linear/radial gradients or rgba overlays
+  if (
+    str.includes("bg-[linear-gradient") ||
+    str.includes("bg-[radial-gradient") ||
+    str.includes("bg-linear-to") ||
+    str.includes("bg-gradient") ||
+    str.includes("bg-[rgba")
+  ) {
+    return "colored";
+  }
+
+  // Matches named colored utility classes
+  if (
+    str.includes("bg-brand-red") ||
+    str.includes("bg-dark-green") ||
+    str.includes("bg-black") ||
+    str.includes("bg-green")
+  ) {
+    return "colored";
+  }
+
+  // Matches semantic color variant / theme keywords
+  if (
+    str.includes("colored") ||
+    str.includes("dark") ||
+    str.includes("cream") ||
+    str.includes("pista") ||
+    str.includes("green") ||
+    str.includes("yellow") ||
+    str.includes("warm") ||
+    str.includes("sky-blue") ||
+    str.includes("tiers") ||
+    str.includes("hours") ||
+    str.includes("client-stories")
+  ) {
+    return "colored";
+  }
+
+  return "white";
+}
+
+/**
+ * Inherent CSS background classes for known sections when no explicit className / props are provided.
+ * This anchors detection in actual CSS classes rather than arbitrary string switches.
+ */
+const INHERENT_SECTION_BACKGROUND_CLASSES: Record<string, string> = {
+  // Sections whose default visual container has a colored background:
+  "split-faq": "bg-[#fafaf7]",
+  "faq-accordion": "bg-[#fafaf7]",
+  "home-faq": "bg-[#fafaf7]",
+  "pricing-table": "bg-[#edf2ee]",
+  "pricing-models": "bg-[#edf2ee]",
+  "shopify-dev-team": "bg-[#eff4ef]",
+  "shopify-team-boxes": "bg-[#eff4ef]",
+  "testimonials-carousel": "bg-[#eff4ef]",
+  "shopify-plus-agency-overview": "bg-[#eff4ef]",
+  "why-choose-shopify-migration": "bg-[#eff4ef]",
+  "services-case-studies": "bg-[#eff4ef]",
+  "case-study-cards": "bg-[#eff4ef]",
+  "case-studies-block": "bg-[#eff4ef]",
+  "shopify-stage-services": "bg-[#eff4ef]",
+  "shopify-themes-grid": "bg-[#eff4ef]",
+  "integrations-partners": "bg-[#fafaf7]",
+  "recent-architecture-patterns": "bg-[#fafaf7]",
+  "architecture-patterns": "bg-[#fafaf7]",
+  "tech-keywords": "bg-[#fafaf7]",
+  "design-reasons": "bg-[#fafaf7]",
+  "text-box": "bg-[#eff4ef]",
+  "selected-work-marquee": "bg-dark-green",
+  "white-label-services": "bg-[#192019]",
+  "industry-custom-dev": "bg-[#192019]",
+  "contact-offices": "bg-[#fafaf7]",
+  "about-timeline": "bg-[#fbf7ed]",
+  "cro-barriers": "bg-[rgba(40,40,40,0.03)]",
+  "shopify-hours-comparison": "bg-[#EFF4EF]",
+  "hours-comparison": "bg-[#EFF4EF]",
+  "shopify-hours-tasks": "bg-[#EFF4EF]",
+  "hours-tasks": "bg-[#EFF4EF]",
+  "cta-banner": "bg-[#192019]",
+};
+
+/**
+ * Maps a CMS block object, blockType, className, or section component identifier to its background category.
+ * Dynamically detects background from applied styles, classes, and properties before falling back.
  */
 export function getBlockBackgroundCategory(
   blockOrType: unknown,
@@ -61,184 +170,100 @@ export function getBlockBackgroundCategory(
 ): SectionBackground {
   if (!blockOrType) return "white";
 
-  let normType = "";
-  let normVariant = (variantOrTheme || "").toLowerCase();
-
+  // 1. Direct class name string or color string
   if (typeof blockOrType === "string") {
-    normType = blockOrType.toLowerCase().replace(/^sections\./, "");
-  } else if (typeof blockOrType === "object" && blockOrType !== null) {
+    // If it looks like a class string containing "bg-" or hex
+    if (blockOrType.includes("bg-") || blockOrType.startsWith("#")) {
+      return detectBackgroundFromClass(blockOrType);
+    }
+
+    const norm = blockOrType.toLowerCase().replace(/^sections\./, "");
+
+    // If variantOrTheme passed
+    if (variantOrTheme) {
+      const fromVariant = detectBackgroundFromClass(variantOrTheme);
+      if (fromVariant === "colored") return "colored";
+      if (variantOrTheme.toLowerCase() === "white" || variantOrTheme.toLowerCase() === "transparent") {
+        return "white";
+      }
+    }
+
+    // Check inherent background class for the block type
+    if (INHERENT_SECTION_BACKGROUND_CLASSES[norm]) {
+      return detectBackgroundFromClass(INHERENT_SECTION_BACKGROUND_CLASSES[norm]);
+    }
+
+    return "white";
+  }
+
+  // 2. Block object inspection
+  if (typeof blockOrType === "object" && blockOrType !== null) {
     const obj = blockOrType as {
       blockType?: string;
       __component?: string;
+      className?: string;
+      classes?: string;
+      backgroundColor?: string;
+      bg?: string;
       variant?: string;
       cardVariant?: string;
       theme?: string;
+      isBgTransparent?: boolean;
+      style?: { backgroundColor?: string; background?: string };
     };
-    normType = (obj.blockType || obj.__component || "").toLowerCase().replace(/^sections\./, "");
-    if (!normVariant) {
-      normVariant = (obj.variant || obj.cardVariant || obj.theme || "").toLowerCase();
-    }
-  }
 
-  // Specific block types with specialized variant checking:
-  if (normType === "process-timeline") {
-    if (normVariant === "white" || normVariant === "development-process") return "white";
-    if (normVariant === "migration-grid") {
-      const cardVar =
-        typeof blockOrType === "object" && blockOrType !== null
-          ? (blockOrType as { cardVariant?: string }).cardVariant
-          : "";
-      if (cardVar === "white") return "white";
-      return "colored"; // default migration-grid cardVariant is pista (colored)
-    }
-    return "colored";
-  }
-
-  if (normType === "services-grid") {
-    if (normVariant === "migration-services") return "white";
-    if (normVariant === "theme-boxes") {
-      const cardVar =
-        typeof blockOrType === "object" && blockOrType !== null
-          ? (blockOrType as { cardVariant?: string }).cardVariant
-          : "";
-      if (cardVar === "white" || cardVar === "transparent") return "white";
-      return "colored";
-    }
-    if (
-      normVariant === "stage-services" ||
-      normVariant === "ai-services" ||
-      normVariant === "industries-grid"
-    ) {
-      return "colored";
-    }
-    return "white";
-  }
-
-  if (normType === "proof-stats") {
-    if (
-      normVariant === "counters-bar" ||
-      normVariant === "city-counters" ||
-      normVariant === "white-label-counters"
-    ) {
+    // Explicit transparent / white toggle flag
+    if (obj.isBgTransparent === true) {
       return "white";
     }
-    return "colored";
-  }
 
-  if (normType === "portfolio-showcase") {
-    if (normVariant === "case-studies-slider" || normVariant === "case-studies-cards") {
-      return "colored";
+    // Explicit background color property
+    if (obj.backgroundColor) {
+      const fromBgColor = detectBackgroundFromClass(obj.backgroundColor);
+      if (fromBgColor === "colored") return "colored";
+      if (obj.backgroundColor.toLowerCase() === "white" || obj.backgroundColor.toLowerCase() === "transparent") {
+        return "white";
+      }
     }
-    return "white";
+
+    // Explicit className or classes property
+    const classProp = obj.className || obj.classes;
+    if (classProp) {
+      const fromClass = detectBackgroundFromClass(classProp);
+      if (fromClass === "colored") return "colored";
+      if (classProp.includes("bg-white") || classProp.includes("bg-transparent")) {
+        return "white";
+      }
+    }
+
+    // Explicit bg prop
+    if (obj.bg) {
+      const fromBg = detectBackgroundFromClass(obj.bg);
+      if (fromBg === "colored") return "colored";
+    }
+
+    // Inline style backgroundColor
+    if (obj.style?.backgroundColor || obj.style?.background) {
+      const fromStyle = detectBackgroundFromClass(obj.style.backgroundColor || obj.style.background);
+      if (fromStyle === "colored") return "colored";
+    }
+
+    // Variant or theme
+    const variantProp = variantOrTheme || obj.variant || obj.cardVariant || obj.theme;
+    if (variantProp) {
+      const fromVariant = detectBackgroundFromClass(variantProp);
+      if (fromVariant === "colored") return "colored";
+      if (variantProp.toLowerCase() === "white" || variantProp.toLowerCase() === "transparent") {
+        return "white";
+      }
+    }
+
+    // Fall back to inherent component class
+    const normType = (obj.blockType || obj.__component || "").toLowerCase().replace(/^sections\./, "");
+    if (INHERENT_SECTION_BACKGROUND_CLASSES[normType]) {
+      return detectBackgroundFromClass(INHERENT_SECTION_BACKGROUND_CLASSES[normType]);
+    }
   }
 
-  if (normType === "brand-partners" || normType === "industry-brands") {
-    if (normVariant === "integrations") return "colored";
-    if (normVariant === "slider") return "colored"; // IndustryBrandsSection has bg-[#FBEED5]
-    return "white";
-  }
-
-  if (normType === "ai-empowered-delivery" || normType === "seo-safe-migration") {
-    // Outer section wrapper has no background color (transparent/white container),
-    // inner card has the rounded dark/green box.
-    return "white";
-  }
-
-  // Explicit colored variants / themes
-  if (
-    normVariant === "green" ||
-    normVariant === "pista" ||
-    normVariant === "yellow" ||
-    normVariant === "warm" ||
-    normVariant === "dark" ||
-    normVariant === "sky-blue" ||
-    normVariant === "tiers" ||
-    normVariant === "hours" ||
-    normVariant === "client-stories"
-  ) {
-    return "colored";
-  }
-
-  if (normVariant === "white" || normVariant === "transparent") {
-    return "white";
-  }
-
-  // Known colored blocks by blockType
-  switch (normType) {
-    case "shopify-plus-agency-overview":
-    case "selected-work-marquee":
-    case "testimonials-carousel":
-    case "integrations-partners":
-    case "shopify-team-boxes":
-    case "shopify-dev-team":
-    case "why-choose-shopify-migration":
-    case "pricing-models":
-    case "pricing-table":
-    case "shopify-themes-grid":
-    case "shopify-stage-services":
-    case "case-study-cards":
-    case "case-studies-block":
-    case "services-case-studies":
-    case "how-agencies-use":
-    case "technologies-work-with":
-    case "technologies-grid":
-    case "recent-architecture-patterns":
-    case "architecture-patterns":
-    case "faq-accordion":
-    case "split-faq":
-    case "home-faq":
-    case "shopify-hours-comparison":
-    case "hours-comparison":
-    case "shopify-hours-tasks":
-    case "hours-tasks":
-    case "cta-banner":
-    case "about-timeline":
-    case "cro-barriers":
-    case "tech-keywords":
-    case "design-reasons":
-    case "white-label-services":
-    case "white-label-why":
-    case "contact-offices":
-    case "home-selected-work":
-    case "industry-custom-dev":
-      return "colored";
-
-    // Known white / transparent blocks
-    case "hero":
-    case "agency-hero":
-    case "service-hero":
-    case "city-hero":
-    case "service-hero-video":
-    case "city-page-counter":
-    case "white-label-counter":
-    case "white-label-stats":
-    case "evaluation-framework":
-    case "industries-grid":
-    case "industries-served":
-    case "portfolio-showcase":
-    case "mobile-app-work":
-    case "our-work-projects":
-    case "happy-clients":
-    case "latest-insights":
-    case "home-insights":
-    case "features-grid":
-    case "our-development-process":
-    case "about-story":
-    case "about-founders":
-    case "life-gallery":
-    case "life-culture-hiring":
-    case "career-opportunities":
-    case "career-apply":
-    case "cro-assessment":
-    case "text-box":
-    case "contact-hero":
-    case "contact-form":
-    case "contact-details":
-    case "form":
-    case "form-block":
-    case "home-commerce-solutions":
-    case "home-shopify-plus-agency":
-    default:
-      return "white";
-  }
+  return "white";
 }

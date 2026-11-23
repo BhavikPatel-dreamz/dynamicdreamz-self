@@ -127,6 +127,26 @@
     outline: 3px solid #2f72d2;
     outline-offset: 4px;
   }
+
+  /* ==========================================================================
+     Background-Aware Section Spacing Transitions
+     When consecutive sections share a white/transparent background, drop redundant
+     top padding to maintain a consistent visual gap (80px desktop / 50px mobile).
+     ========================================================================== */
+  section.bg-white:not([class*="pb-0"]) + section.bg-white,
+  section.bg-transparent:not([class*="pb-0"]) + section.bg-transparent,
+  section:not([class*="bg-"]):not([class*="pb-0"]) + section:not([class*="bg-"]),
+  section.bg-white:not([class*="pb-0"]) + section:not([class*="bg-"]),
+  section:not([class*="bg-"]):not([class*="pb-0"]) + section.bg-white,
+  section.bg-transparent:not([class*="pb-0"]) + section:not([class*="bg-"]),
+  section:not([class*="bg-"]):not([class*="pb-0"]) + section.bg-transparent,
+  [data-block-bg="white"] + [data-block-bg="white"] > section,
+  [data-block-bg="white"] + [data-block-bg="white"] > div > section,
+  [data-block-bg="transparent"] + [data-block-bg="white"] > section,
+  [data-block-bg="white"] + [data-block-bg="transparent"] > section,
+  [data-block-bg="transparent"] + [data-block-bg="transparent"] > section {
+    padding-top: 0 !important;
+  }
 }
 
 html {
