@@ -3,6 +3,7 @@ import { FaqCircleCrossIcon } from "@/components/ui/faq-circle-cross-icon";
 import type { FaqAccordionItem } from "@/components/ui/faq-accordion";
 import { cn } from "@/lib/class-names";
 import { formatBrText } from "@/lib/text-formatting";
+import { normalizeFaqItem } from "@/lib/faq-content";
 
 type StaticFaqAccordionProps = {
   items: readonly FaqAccordionItem[];
@@ -28,7 +29,8 @@ export function StaticFaqAccordion({
 }: StaticFaqAccordionProps) {
   return (
     <div data-aos="fade-up" data-faq-list>
-      {items.map((item, index) => {
+      {items.map((rawItem, index) => {
+        const item = normalizeFaqItem(rawItem);
         const isOpen = index === 0;
         const triggerId = `${idPrefix}-trigger-${index}`;
         const panelId = `${idPrefix}-panel-${index}`;
@@ -49,7 +51,7 @@ export function StaticFaqAccordion({
                 <Image
                   aria-hidden="true"
                   alt=""
-                  className="absolute top-[4px] left-0 size-[18px] max-[1200px]:top-[3px] max-[1200px]:size-[16px]"
+                  className="absolute top-[5px] left-0 size-[18px] max-[1200px]:top-[4px] max-[1200px]:size-[16px]"
                   height={18}
                   src="/assets/icons/gradient-check.svg"
                   width={18}
@@ -57,7 +59,7 @@ export function StaticFaqAccordion({
                 {listItem.label ? (
                   <strong className="font-bold text-[#535353]">{listItem.label} </strong>
                 ) : null}
-                {listItem.text}
+                {formatBrText(listItem.text)}
               </li>
             ))}
           </ul>
@@ -77,7 +79,7 @@ export function StaticFaqAccordion({
                 ansIndex < answerParagraphs.length - 1
                   ? "mb-[15px]"
                   : item.listItems?.length && !isListBefore
-                    ? "mb-3"
+                    ? "mb-[15px]"
                     : "mb-0",
                 answerClassName,
               )}
@@ -90,7 +92,7 @@ export function StaticFaqAccordion({
           <p
             className={cn(
               "text-sm leading-6 text-[#535353] last:mb-0",
-              item.listItems?.length && !isListBefore ? "mb-3" : "mb-0",
+              item.listItems?.length && !isListBefore ? "mb-[15px]" : "mb-0",
               answerClassName,
             )}
           >

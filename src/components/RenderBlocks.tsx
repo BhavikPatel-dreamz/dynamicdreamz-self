@@ -39,6 +39,7 @@ import { IndustryBrandsSection } from "@/components/sections/industry/industry-b
 import { BrandPartnersSection } from "@/components/sections/home/brand-partners-section";
 import { IntegrationsSection } from "@/components/sections/home/integrations-section";
 import { SplitFaqSection } from "@/components/sections/split-faq-section";
+import { normalizeFaqItem } from "@/lib/faq-content";
 import { HomeFaqSection } from "@/components/sections/home/home-faq-section";
 import { CtaBannerSection } from "@/components/sections/cta-banner-section";
 import { ImageCtaSection } from "@/components/sections/image-cta-section";
@@ -465,6 +466,12 @@ export interface BlockFaqAccordion {
   faqs?: readonly {
     question: string;
     answer: string;
+    listPosition?: "before" | "after";
+    listItems?: readonly {
+      label?: string;
+      text: string;
+    }[];
+    secondaryAnswer?: string;
   }[];
 }
 
@@ -2204,45 +2211,7 @@ export function BlockRenderer({ sections, testimonials }: BlockRendererProps) {
               return <HomeFaqSection key={blockKey} />;
             }
 
-            const faqs = (faBlock.faqs ?? []).map((f) => {
-              let answer: string | readonly string[] = f.answer;
-              let listItems = (f as any).listItems;
-              let listPosition = (f as any).listPosition;
-
-              if (typeof f.answer === "string") {
-                const trimmed = f.answer.trim();
-                if (trimmed.startsWith("{") || trimmed.startsWith("[")) {
-                  try {
-                    const parsed = JSON.parse(trimmed);
-                    if (parsed && typeof parsed === "object") {
-                      if (Array.isArray(parsed)) {
-                        answer = parsed;
-                      } else {
-                        if (parsed.answer) answer = parsed.answer;
-                        if (parsed.listItems) listItems = parsed.listItems;
-                        if (parsed.listPosition) listPosition = parsed.listPosition;
-                      }
-                    }
-                  } catch {
-                    // Not valid JSON, check for PostgreSQL text array format {"item1", "item2"}
-                    if (trimmed.startsWith("{\"") && trimmed.endsWith("\"}")) {
-                      const inner = trimmed.slice(1, -1);
-                      const parts = inner
-                        .split(/","/)
-                        .map((p) => p.replace(/^"|"$/g, "").replace(/\\"/g, '"'));
-                      answer = parts;
-                    }
-                  }
-                }
-              }
-
-              return {
-                question: f.question,
-                answer,
-                listItems,
-                listPosition,
-              };
-            });
+            const faqs = (faBlock.faqs ?? []).map((f) => normalizeFaqItem(f));
 
             const faqDesc = parseTextOrArray(faBlock.description);
             return (
