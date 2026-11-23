@@ -122,7 +122,7 @@ export function ServiceHeroSection({
       (isRisks ? "!font-montreal-medium !font-normal !tracking-normal" : undefined);
     const bodyClass =
       bodyClassName ??
-      (isRisks ? "!mt-2 !mb-0 !text-base !font-normal !leading-[30.4px] !text-[#535353]" : undefined);
+      (isRisks ? "!mt-2 !mb-0 !text-[14px] !font-normal !leading-[26px] !text-[#535353]" : undefined);
 
     const shouldShowReviews = showReviews && !isRisks;
 
@@ -225,7 +225,7 @@ export function ServiceHeroSection({
                       <p
                         className={cn(
                           "mt-4 mb-6 font-sans text-base font-normal leading-[30.4px] text-[#535353]",
-                          bodyClassName,
+                          bodyClass,
                         )}
                       >
                         {formatBrText(content.secondaryDescription)}

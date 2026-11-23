@@ -13,6 +13,7 @@ export function RisksOfShopifyOutsourcingPage() {
   return (
     <div>
       <ServiceHeroSection
+        bodyClassName="!mt-2 !mb-0 !text-[14px] !font-normal !leading-[26px] !text-[#535353]"
         content={{
           ...risksShopifyOutsourcingHero,
           maxWidthClassName: "max-w-[830px]",
@@ -30,6 +31,7 @@ export function RisksOfShopifyOutsourcingPage() {
         ctaHref={risksShopifyOutsourcingCtas.migration.ctaHref}
         ctaLabel={risksShopifyOutsourcingCtas.migration.ctaLabel}
         description={risksShopifyOutsourcingCtas.migration.description}
+        descriptionClassName="!text-[14px] !leading-[26px]"
         heading={risksShopifyOutsourcingCtas.migration.heading}
       />
     </div>

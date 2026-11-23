@@ -1,5 +1,6 @@
 import { ButtonLink } from "@/components/ui/button-link";
 import { Container } from "@/components/ui/container";
+import { cn } from "@/lib/class-names";
 
 export type ImageCtaSectionProps = {
   heading: string;
@@ -7,6 +8,7 @@ export type ImageCtaSectionProps = {
   ctaLabel: string;
   ctaHref: string;
   backgroundImage: string;
+  descriptionClassName?: string;
 };
 
 export function ImageCtaSection({
@@ -15,6 +17,7 @@ export function ImageCtaSection({
   ctaLabel,
   ctaHref,
   backgroundImage,
+  descriptionClassName,
 }: ImageCtaSectionProps) {
   return (
     <section className="thinking-migration-box pb-20">
@@ -27,7 +30,12 @@ export function ImageCtaSection({
           <h2 className="font-display mb-3 text-[28px] font-medium leading-[137%] tracking-[-0.32px] text-white max-[768px]:text-[22px]">
             {heading}
           </h2>
-          <p className="mb-[34px] text-base font-small leading-[190%] text-white max-[768px]:text-sm max-[768px]:leading-[26px]">
+          <p
+            className={cn(
+              "mb-[34px] text-base font-small leading-[190%] text-white max-[768px]:text-sm max-[768px]:leading-[26px]",
+              descriptionClassName,
+            )}
+          >
             {description}
           </p>
           <ButtonLink className="text-white" href={ctaHref} variant="outline">

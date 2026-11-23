@@ -31,7 +31,7 @@
 
   body {
     min-width: 320px;
-    overflow-x: hidden;
+    overflow-x: clip;
     background: #fff;
     color: var(--color-muted);
     font-family: var(--font-sans);

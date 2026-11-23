@@ -49,7 +49,7 @@ export function CityWhyChooseBoxesSection({
   const isDark = theme === "dark";
   const defaultBg = BG_THEME_MAP[theme] ?? BG_THEME_MAP.light;
   const isDynamic = columns === 3;
-  const isPb0 = noPaddingBottom || (isDynamic && theme === "white");
+  const isPb0 = noPaddingBottom;
 
   return (
     <section

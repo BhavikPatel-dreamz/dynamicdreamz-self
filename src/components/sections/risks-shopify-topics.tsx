@@ -185,7 +185,7 @@ export function RisksShopifyTopics({ items }: RisksShopifyTopicsProps) {
                 <article className="new-web-title-block mb-[60px] last:mb-0" id={item.id} key={item.id}>
                   {item.introParagraphs?.map((paragraph) => (
                     <p
-                      className="mb-[15px] font-sans text-[16px] font-normal leading-[30.4px] text-[#535353] last:mb-0"
+                      className="mb-[15px] font-sans text-[14px] font-normal leading-[26px] text-[#535353] last:mb-0"
                       key={paragraph}
                     >
                       {paragraph}
@@ -196,7 +196,7 @@ export function RisksShopifyTopics({ items }: RisksShopifyTopicsProps) {
                   </h2>
                   {item.paragraphs.map((paragraph) => (
                     <p
-                      className="mb-[15px] font-sans text-[16px] font-normal leading-[30.4px] text-[#535353] last:mb-0"
+                      className="mb-[15px] font-sans text-[14px] font-normal leading-[26px] text-[#535353] last:mb-0"
                       key={paragraph}
                     >
                       {paragraph}
@@ -206,7 +206,7 @@ export function RisksShopifyTopics({ items }: RisksShopifyTopicsProps) {
                     <ul className="mb-[25px] list-none p-0">
                       {item.bullets.map((bullet) => (
                         <li
-                          className="relative mb-2.5 list-none pl-[35px] font-sans text-[16px] font-medium leading-[190%] text-[#535353] last:mb-0 before:absolute before:top-0.5 before:left-0 before:size-[22px] before:bg-[url('/assets/icons/gradient-check.svg')] before:bg-contain before:bg-no-repeat"
+                          className="relative mb-2.5 list-none pl-[35px] font-sans text-[14px] font-medium leading-[190%] text-[#535353] last:mb-0 before:absolute before:top-0.5 before:left-0 before:size-[22px] before:bg-[url('/assets/icons/gradient-check.svg')] before:bg-contain before:bg-no-repeat"
                           key={bullet.label}
                         >
                           <strong className="font-bold text-black">{bullet.label}</strong> {bullet.text}
@@ -216,7 +216,7 @@ export function RisksShopifyTopics({ items }: RisksShopifyTopicsProps) {
                   ) : null}
                   {item.closingParagraphs?.map((paragraph) => (
                     <p
-                      className="mb-[15px] font-sans text-[16px] font-normal leading-[30.4px] text-[#535353] last:mb-0"
+                      className="mb-[15px] font-sans text-[14px] font-normal leading-[26px] text-[#535353] last:mb-0"
                       key={paragraph}
                     >
                       {paragraph}
