@@ -171,7 +171,6 @@ export function BlogRelatedSection({ posts }: BlogRelatedSectionProps) {
           heading={blogDetailUiCopy.relatedHeading}
           headingId="related-blogs-title"
           variant="left"
-          pClassName="!text-[14px] !leading-6 max-[1200px]:!leading-6 max-[768px]:!leading-6"
         />
         <div className="-mx-3.5 flex flex-wrap gap-y-7">
           {posts.map((post) => (

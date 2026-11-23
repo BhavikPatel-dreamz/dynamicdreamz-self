@@ -184,7 +184,7 @@ export function BlogContentRenderer({ blocks, className }: BlogContentRendererPr
           case "paragraph":
             return (
               <p
-                className="mb-[15px] text-[14px] font-normal leading-[24px] text-[#535353]"
+                className="mb-[15px] text-sm font-normal leading-6 text-[#535353] last:mb-0"
                 key={index}
               >
                 <InlineNodes nodes={block.children} />
@@ -234,7 +234,7 @@ export function BlogContentRenderer({ blocks, className }: BlogContentRendererPr
                 className="tbl-reponsive my-6 w-full overflow-x-auto whitespace-nowrap"
                 key={index}
               >
-                <table className="w-full border-collapse text-left text-[14px] font-normal leading-[24px]">
+                <table className="w-full border-collapse text-left text-sm leading-6">
                   {block.headers && block.headers.length > 0 ? (
                     <thead>
                       <tr>
@@ -255,7 +255,7 @@ export function BlogContentRenderer({ blocks, className }: BlogContentRendererPr
                         {row.map((cell, cIdx) => (
                           <td
                             className={cn(
-                              "border border-[#000] px-5 py-3 text-left text-[#535353]",
+                              "border border-[#000] px-5 py-3 text-left font-small text-[#535353]",
                               rIdx === 0 && "font-bold text-[#282828]",
                               cIdx === 0 && "font-bold text-[#282828]"
                             )}

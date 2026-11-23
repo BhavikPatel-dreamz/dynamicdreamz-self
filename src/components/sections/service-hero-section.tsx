@@ -142,7 +142,7 @@ export function ServiceHeroSection({
                   />
                 )}
                 {content.coBranding && (
-                  <div className="mobile-app-wrapper mb-[35px] flex items-center justify-center max-[768px]:mb-[25px]">
+                  <div className="mobile-app-wrapper mb-[35px] flex items-center justify-center max-[992px]:mb-[25px]">
                     <Image
                       alt={content.coBranding.leftLogo.alt}
                       className="h-auto max-w-full"
@@ -159,7 +159,7 @@ export function ServiceHeroSection({
                     />
                     <Image
                       alt={content.coBranding.rightLogo.alt}
-                      className="h-auto max-w-full"
+                      className="h-auto max-w-full max-[768px]:max-w-[130px]"
                       height={content.coBranding.rightLogo.height}
                       src={content.coBranding.rightLogo.src}
                       width={content.coBranding.rightLogo.width}

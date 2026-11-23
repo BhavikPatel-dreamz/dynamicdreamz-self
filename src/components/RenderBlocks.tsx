@@ -2063,7 +2063,7 @@ export function BlockRenderer({ sections, testimonials }: BlockRendererProps) {
 
             return (
               <ServiceHeroVideoSection
-                rightColClassName="max-[992px]:inline-block max-[768px]:hidden"
+                rightColClassName="max-[992px]:inline-block max-[992px]:w-[70%] max-[768px]:hidden"
                 key={blockKey}
                 className={isWhiteBg ? "bg-white" : undefined}
                 titleAccentTag={shBlock.titleAccentTag}

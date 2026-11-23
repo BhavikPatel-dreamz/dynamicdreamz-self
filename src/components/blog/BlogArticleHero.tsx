@@ -251,7 +251,7 @@ export function BlogDetailPage({ post, relatedPosts }: BlogDetailPageProps) {
   const activeRelatedPosts = relatedPosts ?? getRelatedBlogPosts(post);
 
   return (
-    <div className="single-blog overflow-x-clip pt-[140px] max-[768px]:pt-[100px]">
+    <div className="single-blog overflow-x-clip pt-[100px] max-[992px]:pt-[140px]">
       <BlogArticleHero post={post} />
 
       <div className="entry-content">

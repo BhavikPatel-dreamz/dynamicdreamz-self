@@ -59,6 +59,7 @@ export function ShopifyPlusMigrationAgencyPage() {
         id="what-we-migrate"
         items={plusAgencyScopeContent.items}
         variant={plusAgencyScopeContent.variant}
+        className="pb-0"
       />
 
       {/* 5. SEO-Safe Migration */}
@@ -70,6 +71,7 @@ export function ShopifyPlusMigrationAgencyPage() {
       <EvaluationFrameworkSection
         content={plusAgencyProcessContent}
         id="our-migration-process"
+        className="pt-0"
       />
 
       {/* 7. Why Choose Dynamic Dreamz */}

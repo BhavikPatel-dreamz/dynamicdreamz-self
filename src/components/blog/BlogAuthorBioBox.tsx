@@ -62,7 +62,7 @@ export function BlogAuthorBioBox({ post }: { post: BlogPostDetail }) {
             <p className="mb-[9px] text-[14px] font-medium leading-6 text-[#535353]">
               {post.author.role}
             </p>
-            <p className="m-0 text-[14px] font-normal leading-6 text-[#535353]">
+            <p className="m-0 text-sm font-small leading-6 text-[#535353]">
               {post.author.bio}
             </p>
           </div>
