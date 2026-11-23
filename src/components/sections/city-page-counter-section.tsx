@@ -65,7 +65,7 @@ export function CityPageCounterSection({
                   </p>
                 </>
               ) : (
-                <p className="text-sm font-medium text-[#535353]">
+                <p className="text-sm text-[#535353]">
                   {item.label}
                 </p>
               )}

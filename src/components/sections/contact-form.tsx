@@ -180,7 +180,7 @@ export function ContactForm() {
             onChange={() => clearFieldError("name")}
           />
           {activeErrors.name && (
-            <span className="wpcf7-not-valid-tip mt-[7px] block font-montserrat text-[14px] leading-[14px] font-normal text-[#dc3232]" aria-hidden="true">
+            <span className="wpcf7-not-valid-tip mt-[7px] block font-montserrat text-[14px] leading-[14px] font-medium text-[#dc3232]" aria-hidden="true">
               {activeErrors.name}
             </span>
           )}
@@ -203,7 +203,7 @@ export function ContactForm() {
             onChange={() => clearFieldError("email")}
           />
           {activeErrors.email && (
-            <span className="wpcf7-not-valid-tip mt-[7px] block font-montserrat text-[14px] leading-[14px] font-normal text-[#dc3232]" aria-hidden="true">
+            <span className="wpcf7-not-valid-tip mt-[7px] block font-montserrat text-[14px] leading-[14px] font-medium text-[#dc3232]" aria-hidden="true">
               {activeErrors.email}
             </span>
           )}
@@ -275,7 +275,7 @@ export function ContactForm() {
           className={
             state.status === "success"
               ? "wpcf7-response-output mt-7 mb-3.5 block border-2 border-[#46b450] px-[14px] py-[2.8px] font-montserrat text-[14px] leading-normal font-normal text-[#535353]"
-              : "wpcf7-response-output mt-7 mb-3.5 block border-2 border-[#dc3232] px-[14px] py-[2.8px] font-montserrat text-[14px] leading-normal font-normal text-[#535353]"
+              : "wpcf7-response-output mt-7 mb-3.5 block border-2 border-[#dc3232] px-[14px] py-[2.8px] font-montserrat text-[14px] leading-normal font-medium text-[#535353] text-center"
           }
           aria-hidden="true"
         >

@@ -52,6 +52,7 @@ export function HireShopifyDevelopersPage() {
       />
       <OurDevelopmentProcessSection
         content={hireShopifyContent.process}
+        isBgTransparent
       />
       <WhyChooseShopifyMigrationSection
         content={hireShopifyContent.whyHireExperts}

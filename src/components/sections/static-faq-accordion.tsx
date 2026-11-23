@@ -63,7 +63,30 @@ export function StaticFaqAccordion({
           </ul>
         ) : null;
 
-        const mainAnswerContent = item.answer || item.answerParts ? (
+        const answerParagraphs = Array.isArray(item.answer)
+          ? item.answer
+          : typeof item.answer === "string" && item.answer.includes("\n\n")
+            ? item.answer.split(/\n\s*\n/)
+            : null;
+
+        const mainAnswerContent = answerParagraphs ? (
+          answerParagraphs.map((ans, ansIndex) => (
+            <p
+              className={cn(
+                "text-sm leading-6 text-[#535353] last:mb-0",
+                ansIndex < answerParagraphs.length - 1
+                  ? "mb-[15px]"
+                  : item.listItems?.length && !isListBefore
+                    ? "mb-3"
+                    : "mb-0",
+                answerClassName,
+              )}
+              key={ansIndex}
+            >
+              {formatBrText(ans)}
+            </p>
+          ))
+        ) : item.answer || item.answerParts ? (
           <p
             className={cn(
               "text-sm leading-6 text-[#535353] last:mb-0",
