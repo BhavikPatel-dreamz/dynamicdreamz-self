@@ -6,7 +6,7 @@
   "modified": "2026-09-14T09:26:15+00:00",
   "category": "eCommerce",
   "categoryValue": "ecommerce",
-  "categoryHref": "/blogs?category=ecommerce",
+  "categoryHref": "/blogs/?category=ecommerce",
   "featuredImage": {
     "src": "/assets/blog/ai-recommendation-system.webp",
     "width": 1504,

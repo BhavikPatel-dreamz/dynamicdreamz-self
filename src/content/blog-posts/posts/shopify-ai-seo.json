@@ -6,7 +6,7 @@
   "modified": "2026-10-01T14:22:46+00:00",
   "category": "Faqs",
   "categoryValue": "faqs",
-  "categoryHref": "/blogs?category=faqs",
+  "categoryHref": "/blogs/?category=faqs",
   "featuredImage": null,
   "excerpt": "Shopify's own data can show you all the orders that are coming from AI search, and it has grown roughly 11x — and that too only between January 2025 and January 2026. And at the same time, we already have 7x more AI-driven traffic, so this Shopify AI SEO is not a future trend anymore; [...]",
   "author": {
@@ -202,7 +202,7 @@
         "Our ",
         {
           "type": "link",
-          "href": "/shopify-development-agency",
+          "href": "/shopify-development-agency/",
           "text": "Shopify expert team"
         },
         " can identify exactly where you’re invisible to AI engines and fix it."

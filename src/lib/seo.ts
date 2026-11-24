@@ -1,35 +1,48 @@
 import { siteConfig } from "@/data/site";
 
+const FILE_EXTENSION_PATTERN = /\.[a-zA-Z0-9]+$/;
+
 /**
  * Single source of truth for every absolute public URL on the site: canonical
  * tags, og:url, the sitemap, and all JSON-LD `url`/`@id`/image values flow
- * through here. It is deliberately aligned with `trailingSlash: false` in
- * `next.config.ts`: the homepage is serialized as the bare origin, while every
- * non-root route is normalized to the no-trailing-slash form. File paths,
- * queries, and fragments are preserved. Keeping URL form in one function
- * prevents canonical/Open Graph, schema, and sitemap URLs from drifting to
- * different policies.
+ * through here. It is aligned with `trailingSlash: true` in `next.config.ts`:
+ * the homepage is serialized with a trailing slash (`https://.../`), and every
+ * non-file page route is normalized to end in a trailing slash to preserve
+ * legacy WordPress SEO equity and prevent redirect hops. File paths, queries,
+ * and fragments are preserved. Keeping URL form in one function prevents
+ * canonical/Open Graph, schema, and sitemap URLs from drifting to different
+ * policies.
  */
 export function absoluteUrl(path = "") {
-  if (!path || path === "/") return siteConfig.url;
+  if (!path || path === "/") return `${siteConfig.url}/`;
 
   if (path.startsWith("http://") || path.startsWith("https://")) {
     try {
       const url = new URL(path);
-      const pathname = url.pathname === "/" ? "" : url.pathname.replace(/\/+$/, "");
+      const isFile = FILE_EXTENSION_PATTERN.test(url.pathname);
+      const pathname = isFile
+        ? url.pathname
+        : url.pathname.endsWith("/")
+          ? url.pathname
+          : `${url.pathname}/`;
       return `${siteConfig.url}${pathname}${url.search}${url.hash}`;
     } catch {
       // ignore invalid URLs and fall through
     }
   }
 
-  const normalizedPath = path.startsWith("/") ? path : `/${path}`;
+  const normalizedPath = path.startsWith("/") ? path : `/${path}/`;
   const suffixIndex = normalizedPath.search(/[?#]/);
   const pathname = suffixIndex === -1 ? normalizedPath : normalizedPath.slice(0, suffixIndex);
   const suffix = suffixIndex === -1 ? "" : normalizedPath.slice(suffixIndex);
-  const slashlessPathname = pathname === "/" ? pathname : pathname.replace(/\/+$/, "");
+  const isFile = FILE_EXTENSION_PATTERN.test(pathname);
+  const slashedPathname = isFile
+    ? pathname
+    : pathname.endsWith("/")
+      ? pathname
+      : `${pathname}/`;
 
-  return `${siteConfig.url}${slashlessPathname}${suffix}`;
+  return `${siteConfig.url}${slashedPathname}${suffix}`;
 }
 
 export function getBuildDate() {

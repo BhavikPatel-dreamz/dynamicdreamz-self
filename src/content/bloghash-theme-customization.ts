@@ -43,7 +43,7 @@ export const bloghashThemeCustomizationContent = {
     description:
       "The BlogHash theme is a modern and minimal WordPress theme specially created for bloggers, writers, and content creators. With its clean design and customizable layout, it allows users to showcase their content engagingly. Our BlogHash Theme Customization Services ensure that your blog is fully optimized for performance, matches your brand identity, and provides an excellent user experience.",
     ctaText: "Request a Quote",
-    ctaHref: "/request-quote",
+    ctaHref: "/request-quote/",
     ctaAriaLabel: "Request a Quote",
     image: {
       src: "/assets/bloghash-theme-customization/hero/bloghash-theme-customization-service-img.webp",
@@ -236,7 +236,7 @@ export const bloghashThemeCustomizationContent = {
     description:
       "Explore our portfolio, which showcases successful WordPress theme customization projects and highlights how we customize, secure, and enhance stores for peak performance.",
     ctaLabel: "View our work",
-    ctaHref: "/our-work",
+    ctaHref: "/our-work/",
     items: [
       {
         name: "Quite Events",

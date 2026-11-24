@@ -19,7 +19,7 @@ export const foodBeveragesHero: ServiceHeroVideoContent = {
     "We build digital commerce for food and beverage brands that need subscriptions, bundles, repeat ordering, multi-location pickup, local fulfillment and connected operational systems.",
   ],
   cta: "Discuss Your Project",
-  ctaHref: "/request-quote",
+  ctaHref: "/request-quote/",
   secondaryCta: {
     label: "See Relevant Work",
     href: "#our_work",
@@ -83,7 +83,7 @@ export const foodBeveragesCaseStudies: {
   items: [
     {
       title: "Atlantic Naturals: Organic Supplement Shopify Store with Wellness Quiz & Trust-First Design",
-      href: "/case-studies/atlantic-naturals",
+      href: "/case-studies/atlantic-naturals/",
       image: "/assets/case-studies/atlantic-naturals.webp",
       imageAlt: "Atlantic Naturals: Organic Supplement Shopify Store with Wellness Quiz & Trust-First Design",
       technology: "Shopify / Shopify Plus",
@@ -93,7 +93,7 @@ export const foodBeveragesCaseStudies: {
     },
     {
       title: "Holy Plantz: Figma-to-Shopify Redesign with Custom Sections for a Plant-Based Food Brand",
-      href: "/case-studies/holy-plantz",
+      href: "/case-studies/holy-plantz/",
       image: "/assets/case-studies/holy-plantz.webp",
       imageAlt: "Holy Plantz: Figma-to-Shopify Redesign with Custom Sections for a Plant-Based Food Brand",
       technology: "Shopify / Shopify Plus",
@@ -103,7 +103,7 @@ export const foodBeveragesCaseStudies: {
     },
     {
       title: "Nekter Juice Bar: Shopify Redesign with Streamlined Ordering & Multi-Location Store Pickup",
-      href: "/case-studies/nekter-juice-bar",
+      href: "/case-studies/nekter-juice-bar/",
       image: "/assets/case-studies/nekter-juice-bar.webp",
       imageAlt: "Nekter Juice Bar: Shopify Redesign with Streamlined Ordering & Multi-Location Store Pickup",
       technology: "Shopify / Shopify Plus",
@@ -415,7 +415,7 @@ export const foodBeveragesWhyChoose: WhyChooseMigrationContent = {
   ],
   partnerLink: {
     label: "About Dynamic Dreamz",
-    href: "/about-us",
+    href: "/about-us/",
   },
 };
 

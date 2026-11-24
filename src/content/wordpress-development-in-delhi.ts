@@ -61,7 +61,7 @@ export const wordpressDevelopmentDelhiContent = {
       "Dynamic Dreamz is one of the best WordPress development companies in Delhi, specializing in designing custom WordPress websites that exactly match your business goals. Our team of experienced WordPress developers is excellent at custom WordPress solutions, like making WordPress themes and plugins that make your website stand out in today’s digital world.",
     primaryCta: {
       label: "Get in Touch",
-      href: "/request-quote",
+      href: "/request-quote/",
     },
     badges: [
       {
@@ -363,6 +363,6 @@ export const wordpressDevelopmentDelhiContent = {
   ctaBanner: {
     heading: "Want us to help you with your online store?",
     ctaLabel: "request a quote",
-    ctaHref: "/request-quote",
+    ctaHref: "/request-quote/",
   },
 } as const;

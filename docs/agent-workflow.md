@@ -135,12 +135,11 @@ project uses Next.js 16.3.0 and may differ from older App Router examples.
 - Keep static page SEO metadata in `src/data/seo.ts`. Page files should import
   from this shared source instead of defining full metadata objects inline,
   unless the route needs dynamic `generateMetadata`.
-- Keep all non-root internal route strings slashless. The enforced policy is
-  `trailingSlash: false`; `/about-us/` is invalid source data even though
-  Next.js redirects it. Use `/about-us` so navigation does not incur a redirect.
-- Keep `/` as the structural homepage route, but serialize its absolute
-  canonical, sitemap, and schema URL as the bare origin without a terminal
-  slash through `absoluteUrl`.
+- Keep all non-root internal route strings with trailing slashes. The enforced policy is
+  `trailingSlash: true`; `/about-us` is invalid source data because Next.js redirects it.
+  Use `/about-us/` so navigation does not incur a redirect and matches live WordPress URLs.
+- Keep `/` as the structural homepage route, and serialize its absolute
+  canonical, sitemap, and schema URL with a trailing slash (`https://.../`) through `absoluteUrl`.
 - Style with clean Tailwind utilities and reusable components. Do not add custom
   page, section, component, animation, or one-off layout CSS to
   `src/app/globals.css`.
@@ -323,11 +322,11 @@ Every indexable page must include:
 Do not ship generic metadata copied from another page. Keep titles concise and
 commercially useful. Keep descriptions human-readable and specific.
 
-All page URLs use one slashless policy. `/` remains the homepage, while every
-other route ends in its final segment. Build absolute public URLs with
+All page URLs use the trailing-slash policy to match the live site. `/` remains the homepage,
+while every other route ends in a trailing slash. Build absolute public URLs with
 `absoluteUrl`; never hand-format canonical, Open Graph, sitemap, or schema URLs.
-The `check:urls` script rejects trailing-slash route literals and a config that
-does not explicitly set `trailingSlash: false`.
+The `check:urls` script rejects no-trailing-slash route literals and a config that
+does not explicitly set `trailingSlash: true`.
 
 ## Universal SEO, AEO & GEO Engineering Workflow
 

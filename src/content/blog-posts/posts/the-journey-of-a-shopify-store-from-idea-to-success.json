@@ -6,7 +6,7 @@
   "modified": "2025-01-10T09:15:14+00:00",
   "category": "Shopify",
   "categoryValue": "shopify",
-  "categoryHref": "/blogs?category=shopify",
+  "categoryHref": "/blogs/?category=shopify",
   "featuredImage": {
     "src": "/assets/blog/the-journey-of-a-shopify-store-from-idea-to-success.webp",
     "width": 1316,
@@ -65,7 +65,7 @@
         " ",
         {
           "type": "link",
-          "href": "/blogs/key-benefits-of-choosing-shopify",
+          "href": "/blogs/key-benefits-of-choosing-shopify/",
           "text": "10 Key Benefits Of Choosing Shopify – Unleashing The Power Of eCommerce"
         },
         "."
@@ -903,13 +903,13 @@
         " can help if you need a dedicated team of Shopify developers and designers to streamline your ",
         {
           "type": "link",
-          "href": "/shopify-development-agency",
+          "href": "/shopify-development-agency/",
           "text": "Shopify development"
         },
         " process. We have expert and talented employees! Who make us proud in the Shopify development industry by achieving excellent results in past projects. You can review ",
         {
           "type": "link",
-          "href": "/our-work",
+          "href": "/our-work/",
           "text": "our work"
         },
         " on our website."
@@ -921,13 +921,13 @@
         "You can also hire Dynamic Dreamz for ",
         {
           "type": "link",
-          "href": "/wordpress-development",
+          "href": "/wordpress-development/",
           "text": "WordPress"
         },
         ", Magento, BigCommerce, Mobile Application, PHP, and White label development works. We also have UI/UX designer teams to upgrade your eCommerce website design. You can start an easy hiring process by ",
         {
           "type": "link",
-          "href": "/contact-us",
+          "href": "/contact-us/",
           "text": "contacting us"
         },
         "."
@@ -944,7 +944,7 @@
         " ",
         {
           "type": "link",
-          "href": "/blogs/guide-to-hiring-shopify-expert",
+          "href": "/blogs/guide-to-hiring-shopify-expert/",
           "text": "Ultimate Guide To Hiring Shopify Expert"
         },
         "."
@@ -1038,7 +1038,7 @@
         "The final cost depends on your exact needs and transaction volume. There are extra costs, such as a paid theme and apps you use in your store. If you need a guide on choosing the perfect Shopify app, read this blog post: ",
         {
           "type": "link",
-          "href": "/blogs/how-to-choose-the-right-shopify-app",
+          "href": "/blogs/how-to-choose-the-right-shopify-app/",
           "text": "How To Choose The Right Shopify App: A Comprehensive Selection Guide"
         },
         "."

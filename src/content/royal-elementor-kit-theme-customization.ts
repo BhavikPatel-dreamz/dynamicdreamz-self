@@ -42,7 +42,7 @@ export const royalElementorKitThemeCustomizationContent = {
     "title": "Royal Elementor Kit Theme Customization Service",
     "description": "The Royal Elementor Kit theme is a feature-rich, Elementor-compatible WordPress theme made for businesses, agencies, and creatives. It provides attractive pre-built design templates, advanced customization options, and smooth WooCommerce integration. Our Royal Elementor Kit Theme Customization Services help you customize your website to meet your brand’s unique style, ensuring a professional and engaging user experience.",
     "ctaText": "Request a Quote",
-    "ctaHref": "/request-quote",
+    "ctaHref": "/request-quote/",
     "ctaAriaLabel": "Request a Quote",
     "image": {
       "src": "/assets/royal-elementor-kit-theme-customization/hero/royal-elementor-theme-customization-service-img.webp",
@@ -211,7 +211,7 @@ export const royalElementorKitThemeCustomizationContent = {
     "heading": "Snippets of WordPress Theme Customization Portfolio",
     "description": "Explore our portfolio, which showcases successful WordPress theme customization projects and highlights how we customize, secure, and enhance stores for peak performance.",
     "ctaLabel": "View our work",
-    "ctaHref": "/our-work",
+    "ctaHref": "/our-work/",
     "items": [
       {
         "name": "Quite Events",

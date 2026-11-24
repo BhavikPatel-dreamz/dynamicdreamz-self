@@ -16,7 +16,7 @@ export const plusAgencyHeroContent: ServiceHeroVideoContent = {
     "Migrate to Shopify Plus with a Shopify Platinum Partner. We handle your data, storefront, apps, custom functionality, enterprise integrations, SEO redirects, QA and launch—while keeping the migration aligned with the workflows your business already depends on.",
   ],
   cta: "Plan Your Migration",
-  ctaHref: "/contact-us",
+  ctaHref: "/contact-us/",
   secondaryCta: {
     label: "See What We Migrate",
     href: "#what-we-migrate",
@@ -74,7 +74,7 @@ export const plusAgencyServicesContent = {
       image:
         "/assets/shopify-migration/services/magento-to-shopify-plus-migration.svg",
       imageAlt: "Magento to Shopify Plus Storefront Migration",
-      href: "/magento-to-shopify-plus-migration",
+      href: "/magento-to-shopify-plus-migration/",
       ctaLabel: "Magento Plus migration",
     },
     {
@@ -84,7 +84,7 @@ export const plusAgencyServicesContent = {
       image:
         "/assets/shopify-migration/services/woocommerce-to-shopify-migration.svg",
       imageAlt: "WooCommerce to Shopify Storefront Migration",
-      href: "/woocommerce-to-shopify-migration",
+      href: "/woocommerce-to-shopify-migration/",
       ctaLabel: "WooCommerce migration",
     },
     {
@@ -94,7 +94,7 @@ export const plusAgencyServicesContent = {
       image:
         "/assets/shopify-migration/services/bigcommerce-to-shopify-migration.svg",
       imageAlt: "BigCommerce to Shopify Storefront Migration",
-      href: "/bigcommerce-to-shopify-migration",
+      href: "/bigcommerce-to-shopify-migration/",
       ctaLabel: "BigCommerce migration",
     },
     {
@@ -104,7 +104,7 @@ export const plusAgencyServicesContent = {
       image:
         "/assets/shopify-migration/services/salesforce-to-shopify-migration.svg",
       imageAlt: "Salesforce Commerce Cloud to Shopify Migration",
-      href: "/salesforce-to-shopify-migration",
+      href: "/salesforce-to-shopify-migration/",
       ctaLabel: "Salesforce migration",
     },
     {
@@ -114,7 +114,7 @@ export const plusAgencyServicesContent = {
       image:
         "/assets/shopify-migration/services/prestashop-to-shopify-migration.svg",
       imageAlt: "PrestaShop to Shopify Storefront Migration",
-      href: "/prestashop-to-shopify-migration",
+      href: "/prestashop-to-shopify-migration/",
       ctaLabel: "PrestaShop migration",
     },
     {
@@ -124,7 +124,7 @@ export const plusAgencyServicesContent = {
       image:
         "/assets/shopify-migration/services/custom-to-shopify-migration.svg",
       imageAlt: "Custom to Shopify Migration",
-      href: "/contact-us",
+      href: "/contact-us/",
       ctaLabel: "Custom Migration",
     },
   ] satisfies readonly MigrationServiceCard[],
@@ -205,19 +205,19 @@ export const plusAgencySeoSafeContent: SeoSafeMigrationContent = {
   ],
   urlMappings: [
     {
-      source: "/category/product-a",
+      source: "/category/product-a/",
       statusCode: "301",
-      target: "/products/product-a",
+      target: "/products/product-a/",
     },
     {
-      source: "/shop/collection-b",
+      source: "/shop/collection-b/",
       statusCode: "301",
-      target: "/collections/collection-b",
+      target: "/collections/collection-b/",
     },
     {
-      source: "/blog/post-c",
+      source: "/blog/post-c/",
       statusCode: "301",
-      target: "/blogs/news/post-c",
+      target: "/blogs/news/post-c/",
     },
   ],
   checks: [
@@ -325,7 +325,7 @@ export const plusAgencyWhyChooseContent: WhyChooseMigrationContent = {
   ],
   partnerLink: {
     label: "About Dynamic Dreamz",
-    href: "/about-us",
+    href: "/about-us/",
   },
 };
 
@@ -343,7 +343,7 @@ export const plusAgencyPricingContent: PricingEngagementContent = {
       description:
         "For complete Shopify Plus builds, migrations, redesigns, B2B requirements, custom apps, integrations and technically complex ecommerce projects.",
       ctaLabel: "Send Brief — Get a Quote in 24 Hours",
-      ctaHref: "/request-quote",
+      ctaHref: "/request-quote/",
     },
     {
       label: "Flexible Hourly Support",
@@ -352,7 +352,7 @@ export const plusAgencyPricingContent: PricingEngagementContent = {
       description:
         "For ongoing maintenance, enhancements, troubleshooting, performance improvements and changing Shopify Plus development requirements.",
       ctaLabel: "Buy Shopify Development Hours",
-      ctaHref: "/buy-shopify-development-hours",
+      ctaHref: "/buy-shopify-development-hours/",
     },
     {
       label: "Dedicated Developer / Team",
@@ -361,7 +361,7 @@ export const plusAgencyPricingContent: PricingEngagementContent = {
       description:
         "For brands with a steady Shopify roadmap, multiple storefronts or a need for a dedicated developer or wider delivery team.",
       ctaLabel: "Discuss a Dedicated Team",
-      ctaHref: "/book-a-discovery-call",
+      ctaHref: "/book-a-discovery-call/",
     },
   ],
 };
@@ -384,7 +384,7 @@ export const plusAgencyCaseStudies = {
     {
       title:
         "Adobe Commerce to Shopify Migration: Zero Data-Loss Replatform for First Aid Distributions",
-      href: "/case-studies/first-aid-distributions-migration",
+      href: "/case-studies/first-aid-distributions-migration/",
       image:
         "/assets/case-studies/first-aid-distributions-migration.webp",
       imageAlt:
@@ -396,7 +396,7 @@ export const plusAgencyCaseStudies = {
     {
       title:
         "Daniel Walters Eyewear: BigCommerce to Shopify Migration & Custom Dawn Theme Redesign",
-      href: "/case-studies/daniel-walters",
+      href: "/case-studies/daniel-walters/",
       image: "/assets/case-studies/daniel-walters.webp",
       imageAlt:
         "Daniel Walters Eyewear: BigCommerce to Shopify Migration & Custom Dawn Theme Redesign",
@@ -407,7 +407,7 @@ export const plusAgencyCaseStudies = {
     {
       title:
         "Sleepycat: WooCommerce to Shopify Plus Migration with Custom Bundle Builder, SKU-Splitting & WhatsApp Automation",
-      href: "/case-studies/sleepycat",
+      href: "/case-studies/sleepycat/",
       image: "/assets/case-studies/sleepycat.webp",
       imageAlt:
         "Sleepycat: WooCommerce to Shopify Plus Migration with Custom Bundle Builder, SKU-Splitting & WhatsApp Automation",

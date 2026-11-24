@@ -7,7 +7,7 @@ export const stilettoThemeCustomizationContent = {
     description:
       "The Stiletto theme is a premium Shopify theme made for luxury, style, and beauty brands. It offers the perfect balance of performance and style with its advanced functionality and smooth design. With the help of our Stiletto theme customization service, you can create a unique and excellent buying experience for your customers by customizing your theme to match your brand's identity. From custom layouts to advanced features, we make sure your Shopify store stands out in this competitive eCommerce market.",
     ctaText: "Request a Quote",
-    ctaHref: "/request-quote",
+    ctaHref: "/request-quote/",
     ctaAriaLabel: "Request a Quote",
     secondaryCtaText: "View Stiletto on Shopify",
     secondaryCtaHref: "https://themes.shopify.com/themes/stiletto/presets/stiletto",
@@ -153,7 +153,7 @@ export const stilettoThemeCustomizationContent = {
     description:
       "Explore our portfolio showcasing successful Shopify customization projects, highlighting how we customize, secure, and enhance stores for peak performance.",
     ctaLabel: "View our work",
-    ctaHref: "/our-work",
+    ctaHref: "/our-work/",
     items: [
       {
             "name": "Nufyx",

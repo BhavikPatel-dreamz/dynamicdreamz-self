@@ -6,7 +6,7 @@
   "modified": "2026-09-14T11:09:51+00:00",
   "category": "WordPress",
   "categoryValue": "wordpress",
-  "categoryHref": "/blogs?category=wordpress",
+  "categoryHref": "/blogs/?category=wordpress",
   "featuredImage": {
     "src": "/assets/blog/white-label-website-design-outsourcing.webp",
     "width": 1308,
@@ -122,7 +122,7 @@
         "Shopify projects move fast, and clients expect pixel-perfect storefronts, custom features, and clean performance right out of the gate. That’s why agencies lean on ",
         {
           "type": "link",
-          "href": "/white-label-shopify-development-services",
+          "href": "/white-label-shopify-development-services/",
           "text": "white label Shopify development services"
         },
         ". You get a team that works on Shopify every single day and already knows the platform’s quirks, limits, and best practices."

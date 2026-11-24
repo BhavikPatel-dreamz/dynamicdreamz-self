@@ -6,7 +6,7 @@
   "modified": "2026-08-05T13:29:45+00:00",
   "category": "Shopify",
   "categoryValue": "shopify",
-  "categoryHref": "/blogs?category=shopify",
+  "categoryHref": "/blogs/?category=shopify",
   "featuredImage": {
     "src": "/assets/blog/shopify-plus-in-action-success-stories-and-case-studies.webp",
     "width": 1316,
@@ -308,7 +308,7 @@
         " ",
         {
           "type": "link",
-          "href": "/blogs/how-to-choose-the-right-shopify-app",
+          "href": "/blogs/how-to-choose-the-right-shopify-app/",
           "text": "How To Choose The Right Shopify App: A Comprehensive Selection Guide"
         },
         "."
@@ -558,7 +558,7 @@
         " ",
         {
           "type": "link",
-          "href": "/blogs/key-benefits-of-choosing-shopify",
+          "href": "/blogs/key-benefits-of-choosing-shopify/",
           "text": "10 Key Benefits Of Choosing Shopify – Unleashing The Power Of eCommerce"
         },
         "."
@@ -979,7 +979,7 @@
         "Shopify Plus benefits your businesses to grow higher. Implement it and sit back and watch your store reach the heights of success. Do you want to move on to Shopify Plus from your current eCommerce platforms or basic Shopify? ",
         {
           "type": "link",
-          "href": "/contact-us",
+          "href": "/contact-us/",
           "text": "Contact us"
         },
         " – ",
@@ -991,13 +991,13 @@
         " has Shopify experts who are professionals in ",
         {
           "type": "link",
-          "href": "/shopify-plus-agency",
+          "href": "/shopify-plus-agency/",
           "text": "Shopify Plus development"
         },
         ". We also provide other development and designing services. Visit the ",
         {
           "type": "link",
-          "href": "/shopify-development-agency",
+          "href": "/shopify-development-agency/",
           "text": "Dynamic Dreamz services"
         },
         " page to check our area of work."

@@ -36,7 +36,7 @@ export async function generateMetadata({ params }: BlogRouteProps): Promise<Meta
   if (!post) return {};
 
   const page: PageSeoConfig = {
-    path: `/blogs/${post.slug}`,
+    path: `/blogs/${post.slug}/`,
     title: post.seo.title,
     description: post.seo.description,
     keywords: [

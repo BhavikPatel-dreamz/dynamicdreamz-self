@@ -24,7 +24,7 @@ export const caseStudiesContent = {
     },
     secondaryCta: {
       label: "view our work",
-      href: "/our-work",
+      href: "/our-work/",
     },
   },
   sectionTitle: {

@@ -10,7 +10,7 @@ export const magentoDevelopmentHero = {
   description:
     "Dynamic Dreamz provides Magento development services for businesses and digital agencies that need flexible, scalable ecommerce solutions. Our team supports custom Magento stores, themes, modules, migrations, performance improvements and ongoing technical work across Magento Open Source and Adobe Commerce.",
   ctaLabel: "REQUEST A QUOTE",
-  ctaHref: "/request-quote",
+  ctaHref: "/request-quote/",
   badges: [
     {
       src: "/assets/proof/clutch-rating.svg",
@@ -176,7 +176,7 @@ export const magentoDevelopmentEngagements = {
       description:
         "For complete Magento builds, migrations, redesigns, B2B requirements, custom development, integrations, and technically complex ecommerce projects.",
       ctaLabel: "Send Brief — Get a Quote in 24 Hours",
-      ctaHref: "/request-quote",
+      ctaHref: "/request-quote/",
     },
     {
       label: "Flexible Hourly Support",
@@ -185,7 +185,7 @@ export const magentoDevelopmentEngagements = {
       description:
         "For ongoing maintenance, enhancements, troubleshooting, performance improvements and changing Magento development requirements.",
       ctaLabel: "Buy Magento Development Hours",
-      ctaHref: "/request-quote",
+      ctaHref: "/request-quote/",
     },
     {
       label: "Dedicated Developer / Team",
@@ -194,7 +194,7 @@ export const magentoDevelopmentEngagements = {
       description:
         "For brands with a steady Magento roadmap, multiple storefronts, or a need for a dedicated developer or wider delivery team.",
       ctaLabel: "Discuss a Dedicated Team",
-      ctaHref: "/book-a-discovery-call",
+      ctaHref: "/book-a-discovery-call/",
     },
   ] satisfies readonly PricingEngagementItem[],
 } as const;
@@ -206,7 +206,7 @@ export const magentoDevelopmentPortfolio = {
     "Explore selected Magento projects delivered by our team across ecommerce development, theme work, custom functionality and ongoing improvements.",
   cta: {
     label: "View our work",
-    href: "/our-work",
+    href: "/our-work/",
     ariaLabel: "View our work",
   },
   items: [

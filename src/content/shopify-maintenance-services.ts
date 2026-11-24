@@ -12,7 +12,7 @@ export const shopifyMaintenancePricing = {
       description:
         "For complete Shopify Plus builds, migrations, redesigns, B2B requirements, custom apps, integrations and technically complex ecommerce projects.",
       ctaLabel: "Send Brief — Get a Quote in 24 Hours",
-      ctaHref: "/request-quote",
+      ctaHref: "/request-quote/",
     },
     {
       label: "Flexible Hourly Support",
@@ -21,7 +21,7 @@ export const shopifyMaintenancePricing = {
       description:
         "For ongoing maintenance, enhancements, troubleshooting, performance improvements and changing Shopify Plus development requirements.",
       ctaLabel: "Buy Shopify Development Hours",
-      ctaHref: "/buy-shopify-development-hours",
+      ctaHref: "/buy-shopify-development-hours/",
     },
     {
       label: "Dedicated Developer / Team",
@@ -30,7 +30,7 @@ export const shopifyMaintenancePricing = {
       description:
         "For brands with a steady Shopify roadmap, multiple storefronts or a need for a dedicated developer or wider delivery team.",
       ctaLabel: "Discuss a Dedicated Team",
-      ctaHref: "/book-a-discovery-call",
+      ctaHref: "/book-a-discovery-call/",
     },
   ],
 } as const;
@@ -50,7 +50,7 @@ export const shopifyMaintenanceServicesContent = {
       "Keep your Shopify store stable, fast and up to date with ongoing technical support from Dynamic Dreamz. Our Shopify maintenance services cover bug fixes, theme and app changes, performance improvements, custom development, integrations and day-to-day store updates for both ongoing and ad hoc requirements.",
     ],
     cta: "request a quote",
-    ctaHref: "/request-quote",
+    ctaHref: "/request-quote/",
     secondaryCta: {
       label: "See Our Work",
       href: "#our_work",
@@ -181,7 +181,7 @@ export const shopifyMaintenanceServicesContent = {
     description:
       "Explore selected Shopify stores our team has worked on across development, customization, fixes, performance improvements and ongoing support.",
     ctaLabel: "View our work",
-    ctaHref: "/our-work",
+    ctaHref: "/our-work/",
     secondaryCtaLabel: "View Pricing",
     secondaryCtaHref: "#our_white_label_pricing",
     items: [

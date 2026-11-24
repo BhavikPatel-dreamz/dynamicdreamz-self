@@ -61,7 +61,7 @@ export const wordpressDevelopmentAhmedabadContent = {
       "Dynamic Dreamz stands out as an upmarket WordPress development company in Ahmedabad, acknowledged for developing custom WordPress websites that perfectly match your business purposes. Our professional team of WordPress developers focuses on creating personalized WordPress solutions, such as customized themes and plugins, to confirm that your business stands out in the market.",
     primaryCta: {
       label: "Get in Touch",
-      href: "/request-quote",
+      href: "/request-quote/",
     },
     badges: [
       {
@@ -359,6 +359,6 @@ export const wordpressDevelopmentAhmedabadContent = {
   ctaBanner: {
     heading: "Want us to help you with your online store?",
     ctaLabel: "request a quote",
-    ctaHref: "/request-quote",
+    ctaHref: "/request-quote/",
   },
 } as const;

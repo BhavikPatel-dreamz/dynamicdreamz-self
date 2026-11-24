@@ -6,7 +6,7 @@
   "modified": "2026-09-12T13:30:00+00:00",
   "category": "Faqs",
   "categoryValue": "faqs",
-  "categoryHref": "/blogs?category=faqs",
+  "categoryHref": "/blogs/?category=faqs",
   "featuredImage": null,
   "excerpt": "A great Figma file is just a starting point. Turning it into a real, functioning Shopify store, one that loads fast, works on every device, and actually converts, takes a specific workflow. Here's how design becomes a live store, step...",
   "author": {

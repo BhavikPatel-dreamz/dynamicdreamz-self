@@ -15,7 +15,7 @@ export const etsyHeroContent: ServiceHeroVideoContent = {
   title: "Etsy to Shopify Migration Services",
   paragraphs: ["Are you considering migrating from your Etsy store to Shopify but want to know about the process? Dynamic Dreamz offers seamless Etsy to Shopify migration services that can help you enhance your business growth and use Shopify's powerful platform to its full potential. Our team will guide you through every step, making the transition smooth and stress free."],
   cta: "REQUEST A QUOTE",
-  ctaHref: "/request-quote",
+  ctaHref: "/request-quote/",
   image: {
     src: "/assets/etsy-to-shopify-migration/etsy-to-shopify-migration-hero.svg",
     alt: "Etsy to Shopify Storefront Migration",

@@ -6,7 +6,7 @@
   "modified": "2026-02-20T12:27:02+00:00",
   "category": "Shopify",
   "categoryValue": "shopify",
-  "categoryHref": "/blogs?category=shopify",
+  "categoryHref": "/blogs/?category=shopify",
   "featuredImage": {
     "src": "/assets/blog/top-payment-methods-for-shopify-store.webp",
     "width": 329,
@@ -82,7 +82,7 @@
         ". Apart from that you can read about ",
         {
           "type": "link",
-          "href": "/blogs/shopify-seo-apps",
+          "href": "/blogs/shopify-seo-apps/",
           "text": "Shopify SEO Apps to Drive More Sales"
         },
         "."
@@ -264,7 +264,7 @@
         " that businesses worldwide use for their online stores. If you want to run a Jewelry Brand, read the ",
         {
           "type": "link",
-          "href": "/blogs/shopify-themes-for-jewelry",
+          "href": "/blogs/shopify-themes-for-jewelry/",
           "text": "Best 5 Shopify themes for jewelry brands"
         },
         "."
@@ -887,7 +887,7 @@
         " ",
         {
           "type": "link",
-          "href": "/blogs/ecommerce-call-to-action-examples",
+          "href": "/blogs/ecommerce-call-to-action-examples/",
           "text": "10 eCommerce Call to Action Examples to Boost Your Sales"
         }
       ]
@@ -1357,19 +1357,19 @@
         " can help you. We have a good and big team of Shopify experts. They have expertise in ",
         {
           "type": "link",
-          "href": "/shopify-development-agency",
+          "href": "/shopify-development-agency/",
           "text": "Shopify store development and design"
         },
         ", ",
         {
           "type": "link",
-          "href": "/shopify-mobile-app-development",
+          "href": "/shopify-mobile-app-development/",
           "text": "Shopify App development"
         },
         ", ",
         {
           "type": "link",
-          "href": "/shopify-theme-customization",
+          "href": "/shopify-theme-customization/",
           "text": "Theme development and customization"
         },
         ", and more. ",

@@ -6,7 +6,7 @@
   "modified": "2026-09-14T10:07:34+00:00",
   "category": "Shopify",
   "categoryValue": "shopify",
-  "categoryHref": "/blogs?category=shopify",
+  "categoryHref": "/blogs/?category=shopify",
   "featuredImage": {
     "src": "/assets/blog/shopify-agentic-commerce.webp",
     "width": 1504,
@@ -212,7 +212,7 @@
         "Rather than simply making a website, you can connect with a ",
         {
           "type": "link",
-          "href": "/shopify-plus-agency",
+          "href": "/shopify-plus-agency/",
           "text": "Shopify Plus agency"
         },
         " and get the needed assistance for AI agents, because they can analyze large product catalogs and match them with specific customer needs. This helps shoppers discover relevant products more quickly, which can increase visibility for brands selling on Shopify."

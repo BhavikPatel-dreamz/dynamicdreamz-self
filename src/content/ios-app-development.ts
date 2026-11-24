@@ -16,7 +16,7 @@ export const iosAppDevelopmentHero: MobileAppHeroContent = {
     "Dynamic Dreamz develops custom iOS applications for businesses, startups and digital products. We build utility apps, customer-facing products, booking and service applications, marketplaces and ecommerce experiences, with UI/UX, backend integrations, QA, App Store release and ongoing development supported by one team.",
   primaryCta: {
     label: "Discuss Your App",
-    href: "/request-quote",
+    href: "/request-quote/",
     ariaLabel: "Discuss Your App",
   },
   secondaryCta: {
@@ -94,7 +94,7 @@ export const iosAppDevelopmentWorkflowDelivery: AiEmpoweredDeliveryContent = {
     "Our iOS work is not limited to shopping applications. We can design and develop standalone utility apps, business tools, customer portals, service experiences and commerce apps, using native Apple technologies or an appropriate cross-platform architecture when the wider roadmap also includes Android.",
   cta: {
     label: "Discuss Your App Requirement",
-    href: "/request-quote",
+    href: "/request-quote/",
   },
   tools: [
     {
@@ -302,7 +302,7 @@ export const iosAppDevelopmentPortfolio: MobileAppWorkContent = {
   description:
     "Selected mobile applications delivered by our team across consumer, service and ecommerce experiences. Explore our portfolio for more project examples and platform details.",
   ctaLabel: "VIEW OUR WORK",
-  ctaHref: "/our-work",
+  ctaHref: "/our-work/",
   ctaAriaLabel: "VIEW OUR WORK",
   secondaryCta: {
     label: "View Pricing",
@@ -361,7 +361,7 @@ export const iosAppDevelopmentPricing: PricingEngagementContent = {
         "QA & release support",
       ],
       ctaLabel: "Request a Quote",
-      ctaHref: "/request-quote",
+      ctaHref: "/request-quote/",
     },
     {
       label: "Dedicated Developer / Team",
@@ -376,7 +376,7 @@ export const iosAppDevelopmentPricing: PricingEngagementContent = {
         "Full-stack support when needed",
       ],
       ctaLabel: "Discuss Dedicated Capacity",
-      ctaHref: "/request-quote",
+      ctaHref: "/request-quote/",
     },
     {
       label: "Post-Launch",
@@ -391,7 +391,7 @@ export const iosAppDevelopmentPricing: PricingEngagementContent = {
         "Release support",
       ],
       ctaLabel: "Discuss Support",
-      ctaHref: "/request-quote",
+      ctaHref: "/request-quote/",
     },
   ],
 };
@@ -431,7 +431,7 @@ export const iosAppDevelopmentWhyChooseCopy = {
   partnerLogoAlt: "Dynamic Dreamz - Shopify Platinum Partner",
   partnerLink: {
     label: "About Dynamic Dreamz",
-    href: "/about-us",
+    href: "/about-us/",
   },
   stats: [
     { value: "20+", label: "Years of Experience" },

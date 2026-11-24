@@ -6,7 +6,7 @@
   "modified": "2026-10-03T13:30:15+00:00",
   "category": "Faqs",
   "categoryValue": "faqs",
-  "categoryHref": "/blogs?category=faqs",
+  "categoryHref": "/blogs/?category=faqs",
   "featuredImage": null,
   "excerpt": "Did you know that almost 70% of shoppers who add something to their cart on Shopify never complete the purchase? And this kind of Shopify cart abandonment is not just a rounding error, but the largest source of lost revenue most stores have.",
   "author": {
@@ -212,7 +212,7 @@
         "Our ",
         {
           "type": "link",
-          "href": "/shopify-cro-agency",
+          "href": "/shopify-cro-agency/",
           "text": "Shopify CRO"
         },
         " expertise can help you out with that."

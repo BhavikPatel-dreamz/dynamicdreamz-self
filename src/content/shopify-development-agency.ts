@@ -11,7 +11,7 @@ export const shopifyDevelopmentAgencyHero = {
     "Dynamic Dreamz designs, develops, migrates and continuously improves Shopify stores for DTC brands, ecommerce businesses and digital agencies. Our Shopify development services cover custom storefronts, Figma implementation, theme customization, integrations, migration, CRO, performance and ongoing technical support.",
   ],
   cta: "Discuss Shopify Project",
-  ctaHref: "/book-a-discovery-call",
+  ctaHref: "/book-a-discovery-call/",
   secondaryCta: {
     label: "Explore Shopify Services",
     href: "#shopify-services",
@@ -86,7 +86,7 @@ export const shopifyDevelopmentAgencyServices = {
       ],
       cta: {
         label: "Discuss a custom build",
-        href: "/request-quote",
+        href: "/request-quote/",
       },
     },
     {
@@ -97,7 +97,7 @@ export const shopifyDevelopmentAgencyServices = {
       pills: [],
       cta: {
         label: "Send your design brief",
-        href: "/request-quote",
+        href: "/request-quote/",
       },
     },
     {
@@ -108,7 +108,7 @@ export const shopifyDevelopmentAgencyServices = {
       pills: [],
       cta: {
         label: "Explore theme customization",
-        href: "/shopify-theme-customization",
+        href: "/shopify-theme-customization/",
       },
     },
     {
@@ -133,7 +133,7 @@ export const shopifyDevelopmentAgencyServices = {
       pills: [],
       cta: {
         label: "Explore migration",
-        href: "/shopify-migration",
+        href: "/shopify-migration/",
       },
     },
     {
@@ -144,7 +144,7 @@ export const shopifyDevelopmentAgencyServices = {
       pills: [],
       cta: {
         label: "View flexible Shopify hours",
-        href: "/buy-shopify-development-hours",
+        href: "/buy-shopify-development-hours/",
       },
     },
     {
@@ -163,7 +163,7 @@ export const shopifyDevelopmentAgencyServices = {
       pills: [],
       cta: {
         label: "Explore white-label Shopify",
-        href: "/white-label-shopify-development-services",
+        href: "/white-label-shopify-development-services/",
       },
     },
     {
@@ -174,7 +174,7 @@ export const shopifyDevelopmentAgencyServices = {
       pills: [],
       cta: {
         label: "Explore Shopify Mobile Apps",
-        href: "/shopify-mobile-app-development",
+        href: "/shopify-mobile-app-development/",
       },
     },
   ],
@@ -187,7 +187,7 @@ export const shopifyDevelopmentAgencyPortfolio = {
     "Our Shopify portfolio includes custom storefronts, migrations, integrations and complex development work for brands across different industries. Each project is tailored around the client’s requirements, customer experience and long-term growth.",
   category: "SHOPIFY",
   ctaLabel: "View our work",
-  ctaHref: "/our-work",
+  ctaHref: "/our-work/",
   platformMark: {
     src: "/assets/platforms/shopify-white.svg",
     width: 89,
@@ -295,7 +295,7 @@ export const shopifyDevelopmentAgencyPricing = {
       description:
         "For complete Shopify Plus builds, migrations, redesigns, B2B requirements, custom apps, integrations and technically complex ecommerce projects.",
       ctaLabel: "Send Brief — Get a Quote in 24 Hours",
-      ctaHref: "/request-quote",
+      ctaHref: "/request-quote/",
     },
     {
       label: "Flexible Hourly Support",
@@ -304,7 +304,7 @@ export const shopifyDevelopmentAgencyPricing = {
       description:
         "For ongoing maintenance, enhancements, troubleshooting, performance improvements and changing Shopify Plus development requirements.",
       ctaLabel: "Buy Shopify Development Hours",
-      ctaHref: "/buy-shopify-development-hours",
+      ctaHref: "/buy-shopify-development-hours/",
     },
     {
       label: "Dedicated Developer / Team",
@@ -313,7 +313,7 @@ export const shopifyDevelopmentAgencyPricing = {
       description:
         "For brands with a steady Shopify roadmap, multiple storefronts or a need for a dedicated developer or wider delivery team.",
       ctaLabel: "Discuss a Dedicated Team",
-      ctaHref: "/book-a-discovery-call",
+      ctaHref: "/book-a-discovery-call/",
     },
   ],
 } as const;
@@ -423,6 +423,6 @@ export const shopifyDevelopmentAgencyFaqs: readonly FaqAccordionItem[] = [
 export const shopifyDevelopmentAgencyCtaBanner = {
   heading: "Want us to help you with your online store?",
   ctaLabel: "REQUEST A QUOTE",
-  ctaHref: "/request-quote",
+  ctaHref: "/request-quote/",
 } as const;
 

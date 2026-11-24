@@ -17,7 +17,7 @@ export const fullStackDevelopmentHeroContent: CityPageHeroContent = {
     "Dynamic Dreamz builds complete web applications for businesses, ecommerce brands and digital agencies. Our team works across frontend, backend, APIs, databases, ecommerce platforms, headless CMS and cloud deployment — so you can build a new product, extend an existing system or connect multiple platforms without managing separate development teams.",
   primaryCta: {
     label: "Discuss Your Project",
-    href: "/request-quote",
+    href: "/request-quote/",
   },
   secondaryCta: {
     label: "Explore Services",
@@ -301,7 +301,7 @@ export const fullStackDevelopmentCaseStudiesContent = {
     {
       title:
         "S&F Product Group: Full-Stack SaaS Inventory Management Platform with Real-Time Stock Control",
-      href: "/case-studies/sandf-product-group",
+      href: "/case-studies/sandf-product-group/",
       image: "/assets/case-studies/sandf-product-group.webp",
       imageAlt:
         "S&F Product Group: Full Stack SaaS Inventory Management Platform with Real-Time Stock Control",
@@ -313,7 +313,7 @@ export const fullStackDevelopmentCaseStudiesContent = {
     {
       title:
         "Beauty Software: Cloud-Based Salon, Spa & Beauty Clinic Management Platform",
-      href: "/case-studies/beauty-software",
+      href: "/case-studies/beauty-software/",
       image: "/assets/case-studies/beauty-software.webp",
       imageAlt:
         "Beauty Software: Cloud-Based Salon, Spa & Beauty Clinic Management Platform",
@@ -325,7 +325,7 @@ export const fullStackDevelopmentCaseStudiesContent = {
     {
       title:
         "BluBox Medical: Custom ERP Platform Unifying Customer, Vendor, Pricing & Order Management",
-      href: "/case-studies/blubox",
+      href: "/case-studies/blubox/",
       image: "/assets/case-studies/blubox.webp",
       imageAlt:
         "BluBox Medical: Custom ERP Platform Unifying Customer, Vendor, Pricing & Order Management",

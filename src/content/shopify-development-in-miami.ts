@@ -15,7 +15,7 @@ export const shopifyDevelopmentMiamiContent = {
       "Dynamic Dreamz provides Shopify development services for businesses in Miami, including Shopify Plus, custom storefronts, theme customization, migrations, integrations, CRO and ongoing support. Our India-based team works with businesses and agencies in Miami and internationally.",
     primaryCta: {
       label: "Get In Touch",
-      href: "/request-quote",
+      href: "/request-quote/",
     },
     secondaryCta: {
       label: "Explore Shopify Services",
@@ -211,7 +211,7 @@ export const shopifyDevelopmentMiamiContent = {
           "Miami has its own energy, and your store should too. Our designers craft visually stunning, high-converting Shopify themes that capture your brand's identity and speak directly to your audience. Whether we're customizing an existing theme or building a completely bespoke design from scratch, every detail is purposeful, and every pixel is built to convert.",
         icon: "/assets/services/shopify-development-in-delhi/services/shopify-theme-customization.svg",
         iconAlt: "Shopify Theme Customization Icon",
-        href: "/shopify-theme-customization",
+        href: "/shopify-theme-customization/",
       },
       {
         title: "Figma / XD to Shopify Conversion",
@@ -233,7 +233,7 @@ export const shopifyDevelopmentMiamiContent = {
           "Moving to Shopify from WooCommerce, Magento, BigCommerce, or another platform? Our Shopify migration service in Miami handles everything: products, customer data, order history, and content, with zero data loss and no disruption to your SEO rankings or store performance. Clean, careful, and completely seamless.",
         icon: "/assets/services/shopify-development-in-delhi/services/shopify-migration-services.svg",
         iconAlt: "Shopify Migration Icon",
-        href: "/shopify-migration",
+        href: "/shopify-migration/",
       },
       {
         title: "Shopify Maintenance & Support",
@@ -241,7 +241,7 @@ export const shopifyDevelopmentMiamiContent = {
           "We don't disappear after launch. Dynamic Dreamz provides dedicated post-launch support, performance monitoring, security updates, and ongoing feature improvements, keeping your Shopify store running at its best, long after go-live.",
         icon: "/assets/services/shopify-development-in-delhi/services/shopify-maintenance-support.svg",
         iconAlt: "Shopify Maintenance & Support Icon",
-        href: "/buy-shopify-hours",
+        href: "/buy-shopify-hours/",
       },
       {
         title: "Shopify 2.0 Migration",
@@ -249,7 +249,7 @@ export const shopifyDevelopmentMiamiContent = {
           "Still on an older Shopify theme? Upgrade to Shopify 2.0 and unlock a new level of design flexibility, performance, and customization. Our team handles the full migration seamlessly, so your Miami store gets all the benefits of the latest Shopify framework without any disruption to your business.",
         icon: "/assets/services/shopify-development-in-delhi/services/shopify-2-0-upgrades.svg",
         iconAlt: "Shopify 2.0 Migration Icon",
-        href: "/migrating-a-theme-to-online-store-2-0",
+        href: "/migrating-a-theme-to-online-store-2-0/",
       },
       {
         title: "White Label Shopify Development",
@@ -257,7 +257,7 @@ export const shopifyDevelopmentMiamiContent = {
           "Boutique agencies across Miami trust Dynamic Dreamz as their behind-the-scenes Shopify partner. When you hire Shopify developers through our white-label program, you get top-tier development delivered under your brand name, with full confidentiality, zero compromise on quality, and complete discretion. Your clients see your brand; we handle the build.",
         icon: "/assets/services/shopify-development-in-bangalore/services/white-label-shopify-development.svg",
         iconAlt: "White Label Shopify Development Icon",
-        href: "/white-label-shopify-development-services",
+        href: "/white-label-shopify-development-services/",
       },
     ],
   },
@@ -352,7 +352,7 @@ export const shopifyDevelopmentMiamiContent = {
     description:
       "Thousands of Shopify stores crafted with precision, each one built to perform, convert, and grow.",
     ctaLabel: "View our work",
-    ctaHref: "/our-work",
+    ctaHref: "/our-work/",
     items: [
       {
         name: "Ranavat",
@@ -480,7 +480,7 @@ export const shopifyDevelopmentMiamiContent = {
   ctaBanner: {
     heading: "Want us to help you with your online store?",
     ctaLabel: "request a quote",
-    ctaHref: "/request-quote",
+    ctaHref: "/request-quote/",
   },
 
   bookIntroCall: {
@@ -490,7 +490,7 @@ export const shopifyDevelopmentMiamiContent = {
     callDescription:
       "Let’s have a friendly conversation about the Shopify Store. Whether you’re ready to kick off your Shopify store or still figuring out where to start, we’re happy to jump on a quick call and help you think it through.",
     callCtaLabel: "Book A Call",
-    callCtaHref: "/book-a-discovery-call",
+    callCtaHref: "/book-a-discovery-call/",
     callIconSrc: "/assets/services/shopify-development-in-texas/call-icon.svg",
     callIconAlt: "Book an Intro Call Icon",
   },

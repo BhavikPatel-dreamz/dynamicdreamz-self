@@ -6,7 +6,7 @@
   "modified": "2026-09-15T09:45:34+00:00",
   "category": "Faqs",
   "categoryValue": "faqs",
-  "categoryHref": "/blogs?category=faqs",
+  "categoryHref": "/blogs/?category=faqs",
   "featuredImage": null,
   "excerpt": "The question of Shopify Metafields vs Metaobjects is quite persistent because people most often get confused about which one they should use. So let us provide you with more detailed info on that. Both metafields and metaobjects let you add...",
   "author": {
@@ -226,7 +226,7 @@
         "If you’re also running into other platform constraints while planning this out, our breakdown of ",
         {
           "type": "link",
-          "href": "/blogs/shopify-limits",
+          "href": "/blogs/shopify-limits/",
           "text": "Shopify limits",
           "rel": "dofollow"
         },

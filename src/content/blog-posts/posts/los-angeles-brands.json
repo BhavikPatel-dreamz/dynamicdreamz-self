@@ -6,7 +6,7 @@
   "modified": "2026-08-05T11:24:51+00:00",
   "category": "Shopify",
   "categoryValue": "shopify",
-  "categoryHref": "/blogs?category=shopify",
+  "categoryHref": "/blogs/?category=shopify",
   "featuredImage": {
     "src": "/assets/blog/los-angeles-brands.webp",
     "width": 2560,
@@ -258,7 +258,7 @@
         "This is also where choosing the ",
         {
           "type": "link",
-          "href": "/shopify-development-in-los-angeles",
+          "href": "/shopify-development-in-los-angeles/",
           "text": "right Shopify Plus partner in Los Angeles"
         },
         " matters more than brands often expect going in. A generalist agency can launch a store; scaling one through traffic spikes, omnichannel expansion, and subscription complexity takes a team that’s done it before."

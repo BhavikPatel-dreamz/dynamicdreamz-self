@@ -6,7 +6,7 @@
   "modified": "2025-07-18T04:26:27+00:00",
   "category": "eCommerce",
   "categoryValue": "ecommerce",
-  "categoryHref": "/blogs?category=ecommerce",
+  "categoryHref": "/blogs/?category=ecommerce",
   "featuredImage": {
     "src": "/assets/blog/proven-ways-to-speed-up-your-ecommerce-site.webp",
     "width": 1316,
@@ -122,7 +122,7 @@
         " ",
         {
           "type": "link",
-          "href": "/blogs/shopify-seo-apps",
+          "href": "/blogs/shopify-seo-apps/",
           "text": "5 Game-Changing Shopify SEO Apps to Drive More Sales"
         }
       ]
@@ -378,7 +378,7 @@
         " ",
         {
           "type": "link",
-          "href": "/blogs/shopify-website-development-cost-breakdown-a-complete-guide",
+          "href": "/blogs/shopify-website-development-cost-breakdown-a-complete-guide/",
           "text": "Shopify Website Development Cost Breakdown: A Complete Guide"
         }
       ]
@@ -746,7 +746,7 @@
         ". If you are interested in our expertise, please fill out our ",
         {
           "type": "link",
-          "href": "/contact-us",
+          "href": "/contact-us/",
           "text": "Contact Us"
         },
         " form."

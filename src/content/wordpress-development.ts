@@ -9,7 +9,7 @@ export const wordpressDevelopmentHero = {
     "Need WordPress support for your agency? Our white label WordPress team can work behind your brand for development, customization and ongoing project support.",
   primaryCta: {
     label: "REQUEST A QUOTE",
-    href: "/request-quote",
+    href: "/request-quote/",
   },
   secondaryCta: {
     label: "See Our Work",
@@ -126,7 +126,7 @@ export const wordpressDevelopmentServices = {
       iconAlt: "WordPress Icon",
       iconKey: "wordpress-theme-customization",
       title: "WordPress Theme Customization Service",
-      href: "/wordpress-theme-customization-services",
+      href: "/wordpress-theme-customization-services/",
       description:
         "Customize Gutenberg, Elementor, Divi Builder, Flatsome UX Builder and other WordPress themes or page builders to match your design, content and functionality requirements.",
     },
@@ -159,7 +159,7 @@ export const wordpressDevelopmentServices = {
       iconAlt: "WooCommerce Icon",
       iconKey: "woocommerce-development",
       title: "WooCommerce Development Service",
-      href: "/woocommerce-development",
+      href: "/woocommerce-development/",
       description:
         "Build or improve WooCommerce stores with product and checkout customization, payment and shipping integrations, custom functionality, plugin work and ongoing ecommerce support.",
     },
@@ -168,7 +168,7 @@ export const wordpressDevelopmentServices = {
       iconAlt: "White Label icon",
       iconKey: "wordpress-white-label-development",
       title: "WordPress White Label Development Service",
-      href: "/white-label-wordpress-development-services",
+      href: "/white-label-wordpress-development-services/",
       description:
         "Digital and creative agencies can use our WordPress team behind their own brand for design implementation, development, QA and ongoing technical support.",
     },
@@ -211,7 +211,7 @@ export const wordpressDevelopmentEngagement = {
       description:
         "For complete WordPress website builds, custom theme development, website redesigns, plugin development, third-party integrations, WooCommerce solutions and technically complex WordPress projects.",
       ctaLabel: "Send Brief — Get a Quote in 24 Hours",
-      ctaHref: "/request-quote",
+      ctaHref: "/request-quote/",
     },
     {
       label: "Flexible Hourly Support",
@@ -220,7 +220,7 @@ export const wordpressDevelopmentEngagement = {
       description:
         "For ongoing WordPress maintenance, enhancements, troubleshooting, performance improvements, security updates and evolving website development requirements.",
       ctaLabel: "Buy Wordpress Development Hours",
-      ctaHref: "/request-quote",
+      ctaHref: "/request-quote/",
     },
     {
       label: "Dedicated Developer / Team",
@@ -229,7 +229,7 @@ export const wordpressDevelopmentEngagement = {
       description:
         "For brands with an evolving WordPress roadmap, multiple websites or a need for a dedicated developer or wider development team.",
       ctaLabel: "Discuss a Dedicated Team",
-      ctaHref: "/book-a-discovery-call",
+      ctaHref: "/book-a-discovery-call/",
     },
   ],
 } as const;
@@ -243,7 +243,7 @@ export const wordpressDevelopmentPortfolio = {
     ],
   category: "WORDPRESS",
   ctaLabel: "VIEW OUR WORK",
-  ctaHref: "/our-work",
+  ctaHref: "/our-work/",
   secondaryCtaLabel: "View Pricing",
   secondaryCtaHref: "#our_white_label_pricing",
   secondaryCtaAriaLabel: "Dynamic Dreamz - View Pricing",
@@ -360,5 +360,5 @@ export const wordpressDevelopmentFaqs: readonly FaqAccordionItem[] = [
 export const wordpressDevelopmentCta = {
   heading: "Want us to help you with your online store?",
   ctaLabel: "REQUEST A QUOTE",
-  ctaHref: "/request-quote",
+  ctaHref: "/request-quote/",
 } as const;

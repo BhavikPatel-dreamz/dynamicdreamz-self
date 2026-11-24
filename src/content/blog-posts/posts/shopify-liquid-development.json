@@ -6,7 +6,7 @@
   "modified": "2026-09-11T13:30:08+00:00",
   "category": "Faqs",
   "categoryValue": "faqs",
-  "categoryHref": "/blogs?category=faqs",
+  "categoryHref": "/blogs/?category=faqs",
   "featuredImage": null,
   "excerpt": "Liquid is what makes a Shopify store more than a static template. It's the templating language that connects your store's data, products, prices, inventory, and customer info to what actually displays on the page. Understanding what Liquid can do helps...",
   "author": {
@@ -125,7 +125,7 @@
         "Our ",
         {
           "type": "link",
-          "href": "/shopify-development-agency",
+          "href": "/shopify-development-agency/",
           "text": "Shopify development",
           "rel": "dofollow"
         },

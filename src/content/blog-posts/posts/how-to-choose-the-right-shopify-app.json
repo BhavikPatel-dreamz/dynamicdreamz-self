@@ -6,7 +6,7 @@
   "modified": "2025-09-22T12:24:32+00:00",
   "category": "Shopify",
   "categoryValue": "shopify",
-  "categoryHref": "/blogs?category=shopify",
+  "categoryHref": "/blogs/?category=shopify",
   "featuredImage": {
     "src": "/assets/blog/how-to-choose-the-right-shopify-app.webp",
     "width": 1316,
@@ -197,7 +197,7 @@
         },
         {
           "type": "link",
-          "href": "/shopify-development-agency",
+          "href": "/shopify-development-agency/",
           "text": "hire expert developers for your Shopify website",
           "italic": true
         },
@@ -329,7 +329,7 @@
         },
         {
           "type": "link",
-          "href": "/blogs/types-of-shopify-experts-services",
+          "href": "/blogs/types-of-shopify-experts-services/",
           "text": "Types Of Shopify Experts Services",
           "italic": true
         },
@@ -412,7 +412,7 @@
         },
         {
           "type": "link",
-          "href": "/wordpress-development",
+          "href": "/wordpress-development/",
           "text": "website development services",
           "italic": true
         },
@@ -715,7 +715,7 @@
         },
         {
           "type": "link",
-          "href": "/blogs/how-to-hire-shopify-development-agency",
+          "href": "/blogs/how-to-hire-shopify-development-agency/",
           "text": "Hiring Shopify Development Agency",
           "italic": true
         },
@@ -824,31 +824,31 @@
         " is the leading company that helps entrepreneurs and business owners create their Shopify stores and improve their online presence to boost sales and revenue. We also work on technologies like ",
         {
           "type": "link",
-          "href": "/wordpress-development",
+          "href": "/wordpress-development/",
           "text": "WordPress"
         },
         ", ",
         {
           "type": "link",
-          "href": "/magento-development",
+          "href": "/magento-development/",
           "text": "Magento"
         },
         ", ",
         {
           "type": "link",
-          "href": "/bigcommerce-development",
+          "href": "/bigcommerce-development/",
           "text": "BigCommerce"
         },
         ", ",
         {
           "type": "link",
-          "href": "/php-development",
+          "href": "/php-development/",
           "text": "PHP"
         },
         ", ",
         {
           "type": "link",
-          "href": "/web-design",
+          "href": "/web-design/",
           "text": "UI/UX design"
         },
         ", Laravel, Flutter, Android, IOS, React, etc. Contact us for more details or to discuss your dream project."

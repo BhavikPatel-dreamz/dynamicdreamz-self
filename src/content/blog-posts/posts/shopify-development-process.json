@@ -6,7 +6,7 @@
   "modified": "2026-09-07T05:38:31+00:00",
   "category": "Faqs",
   "categoryValue": "faqs",
-  "categoryHref": "/blogs?category=faqs",
+  "categoryHref": "/blogs/?category=faqs",
   "featuredImage": null,
   "excerpt": "\"Shopify development\" sounds like one thing, but it's actually a series of various stages, each with its own goals and deliverables. Knowing what should happen at each stage, as in the Shopify development process, can help you evaluate a proposal,...",
   "author": {
@@ -145,7 +145,7 @@
         "Looking for ",
         {
           "type": "link",
-          "href": "/shopify-development-agency",
+          "href": "/shopify-development-agency/",
           "text": "Shopify development services",
           "rel": "dofollow"
         },

@@ -18,7 +18,7 @@ export const sportsOutdoorsHero: ServiceHeroVideoContent = {
     "We build fast, mobile-first commerce for sports and outdoor brands—from technical product discovery and equipment bundles to international ecommerce, mobile apps and custom integrations.",
   ],
   cta: "Discuss Your Project",
-  ctaHref: "/request-quote",
+  ctaHref: "/request-quote/",
   secondaryCta: {
     label: "See Relevant Work",
     href: "#our_work",
@@ -369,7 +369,7 @@ export const sportsOutdoorsWhyChoose: WhyChooseMigrationContent = {
   ],
   partnerLink: {
     label: "About Dynamic Dreamz",
-    href: "/about-us",
+    href: "/about-us/",
   },
 };
 

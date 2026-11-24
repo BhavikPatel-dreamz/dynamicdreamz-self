@@ -86,7 +86,7 @@ export const hiringCallout = {
   description:
     "Your future is full of possibilities, and at Dynamic Dreramz, we provide the tools and opportunities to explore them. Build your future with us, where professional growth is interwoven with personal development.",
   cta: "current openings",
-  href: "/career",
+  href: "/career/",
   image: {
     src: "/assets/life-dynamicdreamz/we-are-hiring-illustration.webp",
     alt: "Dynamic Dreamz hiring conversation illustration",

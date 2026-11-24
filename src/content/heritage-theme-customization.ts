@@ -7,7 +7,7 @@ export const heritageThemeCustomizationContent = {
     description:
       "Want a clean, traditional store design that represents your brand story beautifully? You can build a quick, useful, and mobile-friendly Shopify store that catches the essence of your business with our **Heritage theme customization service.** Whether you're launching or scaling, we'll customize the Heritage theme to suit your product type and audience perfectly—without compromising performance or usability.",
     ctaText: "Request a Quote",
-    ctaHref: "/request-quote",
+    ctaHref: "/request-quote/",
     ctaAriaLabel: "Request a Quote",
     secondaryCtaText: "View Heritage on Shopify",
     secondaryCtaHref: "https://themes.shopify.com/themes/heritage/presets/heritage",
@@ -178,7 +178,7 @@ export const heritageThemeCustomizationContent = {
       "Explore our portfolio showcasing successful Shopify customization projects, highlighting how we customize, secure, and enhance stores for peak performance.",
     ],
     ctaLabel: "View our work",
-    ctaHref: "/our-work",
+    ctaHref: "/our-work/",
     items: [
       {
             name: "Atolea Jewelry",

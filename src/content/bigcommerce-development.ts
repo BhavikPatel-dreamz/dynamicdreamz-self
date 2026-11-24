@@ -9,7 +9,7 @@ export const bigCommerceDevelopmentHero = {
   description:
     "Dynamic Dreamz provides BigCommerce development for brands and businesses that need custom storefronts, theme customization, integrations, private apps and ongoing support. Our team builds responsive, maintainable BigCommerce stores around approved design and business requirements.",
   ctaLabel: "REQUEST A QUOTE",
-  ctaHref: "/request-quote",
+  ctaHref: "/request-quote/",
   badges: [
     {
       src: "/assets/proof/clutch-rating.svg",
@@ -276,7 +276,7 @@ export const bigCommerceDevelopmentPortfolio = {
     height: 26,
   },
   ctaLabel: "View our work",
-  ctaHref: "/our-work",
+  ctaHref: "/our-work/",
   items: [
     {
       name: "Kayfi",

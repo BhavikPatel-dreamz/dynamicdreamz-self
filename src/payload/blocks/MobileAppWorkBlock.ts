@@ -33,7 +33,7 @@ export const MobileAppWorkBlock: Block = {
     {
       name: "ctaHref",
       type: "text",
-      defaultValue: "/our-work",
+      defaultValue: "/our-work/",
       label: "Primary CTA Button URL",
     },
     {

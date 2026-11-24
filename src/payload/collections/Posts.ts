@@ -12,14 +12,14 @@ export const Posts: CollectionConfig = {
       url: ({ data }) => {
         const rawSlug = typeof data?.slug === "string" ? data.slug.trim() : "";
         const slug = rawSlug.replace(/^\/+|\/+$/g, "");
-        const path = slug ? `/blogs/${slug}` : "/blogs";
+        const path = slug ? `/blogs/${slug}/` : "/blogs/";
         return previewDraftPath(path, slug);
       },
     },
     preview: (doc) => {
       const rawSlug = typeof doc?.slug === "string" ? doc.slug.trim() : "";
       const slug = rawSlug.replace(/^\/+|\/+$/g, "");
-      const path = slug ? `/blogs/${slug}` : "/blogs";
+      const path = slug ? `/blogs/${slug}/` : "/blogs/";
       return previewDraftPath(path, slug);
     },
   },
@@ -30,21 +30,21 @@ export const Posts: CollectionConfig = {
     afterChange: [
       ({ doc, previousDoc }) => {
         if (doc?.slug) {
-          safeRevalidatePath(`/blogs/${doc.slug}`);
+          safeRevalidatePath(`/blogs/${doc.slug}/`);
         }
         if (previousDoc?.slug && previousDoc.slug !== doc?.slug) {
-          safeRevalidatePath(`/blogs/${previousDoc.slug}`);
+          safeRevalidatePath(`/blogs/${previousDoc.slug}/`);
         }
-        safeRevalidatePath("/blogs");
+        safeRevalidatePath("/blogs/");
         safeRevalidatePath("/");
       },
     ],
     afterDelete: [
       ({ doc }) => {
         if (doc?.slug) {
-          safeRevalidatePath(`/blogs/${doc.slug}`);
+          safeRevalidatePath(`/blogs/${doc.slug}/`);
         }
-        safeRevalidatePath("/blogs");
+        safeRevalidatePath("/blogs/");
         safeRevalidatePath("/");
       },
     ],
@@ -113,26 +113,26 @@ export const Posts: CollectionConfig = {
           label: "Canonical Path / Slug (e.g. /blogs/my-post)",
           admin: {
             description: "Stores only the relative path (e.g. /blogs/my-post). Domains are automatically stripped.",
-            placeholder: "/blogs/post-slug",
+            placeholder: "/blogs/post-slug/",
           },
           hooks: {
             beforeChange: [
               ({ value, data }) => {
                 if (!value) {
                   const slug = typeof data?.slug === "string" ? data.slug.trim().replace(/^\/+|\/+$/g, "") : "";
-                  return slug ? `/blogs/${slug}` : "/blogs";
+                  return slug ? `/blogs/${slug}/` : "/blogs/";
                 }
                 let cleaned = String(value).trim();
                 if (cleaned.startsWith("http://") || cleaned.startsWith("https://")) {
                   try {
                     const u = new URL(cleaned);
-                    cleaned = u.pathname || "/blogs";
+                    cleaned = u.pathname || "/blogs/";
                   } catch {
-                    cleaned = cleaned.replace(/^https?:\/\/[^/]+/i, "") || "/blogs";
+                    cleaned = cleaned.replace(/^https?:\/\/[^/]+/i, "") || "/blogs/";
                   }
                 }
-                const normalized = cleaned.startsWith("/") ? cleaned : `/${cleaned}`;
-                return normalized === "/" ? "/" : normalized.replace(/\/+$/, "");
+                const normalized = cleaned.startsWith("/") ? cleaned : `/${cleaned}/`;
+                return normalized === "/" ? "/" : normalized.endsWith("/") ? normalized : `${normalized}/`;
               },
             ],
           },

@@ -15,7 +15,7 @@ export const shopifyDevelopmentBangaloreContent = {
       "Dynamic Dreamz provides Shopify development services for businesses in Bangalore, including Shopify Plus, custom storefronts, theme customization, migrations, integrations, CRO and ongoing support. Our India-based team works with businesses and agencies in Bangalore and internationally.",
     primaryCta: {
       label: "Get In Touch",
-      href: "/request-quote",
+      href: "/request-quote/",
     },
     secondaryCta: {
       label: "Explore Shopify Services",
@@ -199,7 +199,7 @@ export const shopifyDevelopmentBangaloreContent = {
       "From Shopify Plus and custom theme development to migration, integrations and ongoing support, our Shopify developers help businesses build and improve stores around their specific requirements.",
     cta: {
       label: "",
-      href: "/request-quote",
+      href: "/request-quote/",
     },
     items: [
       {
@@ -215,7 +215,7 @@ export const shopifyDevelopmentBangaloreContent = {
           "We help you build a unique brand identity by designing custom themes that reflect your business’s essence. Whether it’s redesigning an existing theme or creating one from scratch, our team ensures your store is visually appealing, responsive, and optimized for better user engagement and conversions.",
         icon: "/assets/services/shopify-development-in-delhi/services/shopify-theme-customization.svg",
         iconAlt: "Custom Shopify Theme Design Icon",
-        href: "/shopify-theme-customization",
+        href: "/shopify-theme-customization/",
       },
       {
         title: "Figma/XD to Shopify Conversion",
@@ -237,7 +237,7 @@ export const shopifyDevelopmentBangaloreContent = {
           "Ready to move your store to Shopify? As one of the best Shopify experts in Bangalore, our Shopify migration services provide a smooth transition, transferring all your important data, such as products, customer information, and order history, to Shopify.",
         icon: "/assets/services/shopify-development-in-delhi/services/shopify-migration-services.svg",
         iconAlt: "Seamless Shopify Migration Icon",
-        href: "/shopify-migration",
+        href: "/shopify-migration/",
       },
       {
         title: "Shopify Store Maintenance & Support",
@@ -245,7 +245,7 @@ export const shopifyDevelopmentBangaloreContent = {
           "Our team provides continuous maintenance and support services to keep your Shopify store running smoothly. From regular updates and security patches to troubleshooting and performance optimization, we offer the support required to ensure your store stays secure, up to date, and prepared to satisfy your business demands.",
         icon: "/assets/services/shopify-development-in-delhi/services/shopify-maintenance-support.svg",
         iconAlt: "Shopify Store Maintenance Icon",
-        href: "/buy-shopify-development-hours",
+        href: "/buy-shopify-development-hours/",
       },
       {
         title: "Shopify 2.0 Upgrade & Migration",
@@ -253,7 +253,7 @@ export const shopifyDevelopmentBangaloreContent = {
           "Upgrade to Shopify 2.0 for enhanced performance, better store management, and a more flexible and feature rich platform. Our Shopify 2.0 migration services help you unlock new features, access better apps, and provide an even better shopping experience for your customers.",
         icon: "/assets/services/shopify-development-in-delhi/services/shopify-2-0-upgrades.svg",
         iconAlt: "Shopify 2.0 Upgrade Icon",
-        href: "/migrating-a-theme-to-online-store-2-0",
+        href: "/migrating-a-theme-to-online-store-2-0/",
       },
       {
         title: "White Label Shopify Development",
@@ -261,7 +261,7 @@ export const shopifyDevelopmentBangaloreContent = {
           "For agencies and businesses looking for a team without hiring, our white label Shopify development services ensure that your clients receive high quality work while maintaining your brand’s identity.",
         icon: "/assets/services/shopify-development-in-bangalore/services/white-label-shopify-development.svg",
         iconAlt: "White Label Shopify Development Icon",
-        href: "/white-label-shopify-development-services",
+        href: "/white-label-shopify-development-services/",
       },
     ],
   },
@@ -355,7 +355,7 @@ export const shopifyDevelopmentBangaloreContent = {
     description: [
       "Lots of Shopify stores are precisely crafted and counting. Our expertise accelerates evolution and redefines shopping experiences for customers.",
     ],
-    ctaHref: "/our-work",
+    ctaHref: "/our-work/",
     ctaLabel: "view our work",
     items: [
       {
@@ -456,6 +456,6 @@ export const shopifyDevelopmentBangaloreContent = {
   ctaBanner: {
     heading: "Want us to help you with your online store?",
     ctaLabel: "REQUEST A QUOTE",
-    ctaHref: "/request-quote",
+    ctaHref: "/request-quote/",
   },
 } as const;

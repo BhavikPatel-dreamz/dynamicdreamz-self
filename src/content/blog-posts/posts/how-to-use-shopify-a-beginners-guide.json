@@ -6,7 +6,7 @@
   "modified": "2025-02-05T05:02:52+00:00",
   "category": "Shopify",
   "categoryValue": "shopify",
-  "categoryHref": "/blogs?category=shopify",
+  "categoryHref": "/blogs/?category=shopify",
   "featuredImage": {
     "src": "/assets/blog/how-to-use-shopify-a-beginners-guide.webp",
     "width": 1316,
@@ -293,7 +293,7 @@
       "children": [
         {
           "type": "link",
-          "href": "/shopify-theme-customization",
+          "href": "/shopify-theme-customization/",
           "text": "Shopify Theme Customization"
         },
         " allow to you keep it simple and user friendly? Ensure that your store is easy to navigate and with clear product categories. A clean, visually appealing store encourages customers to browse and buy."
@@ -820,7 +820,7 @@
         "So, finally, you have an idea about how to use Shopify! Now, if you want expert help building your online Shopify store or want to modify the existing one. You can ",
         {
           "type": "link",
-          "href": "/hire-shopify-developers",
+          "href": "/hire-shopify-developers/",
           "text": "hire Shopify developers and designers"
         },
         " from ",
@@ -844,21 +844,21 @@
         " development, ",
         {
           "type": "link",
-          "href": "/magento-development",
+          "href": "/magento-development/",
           "text": "Magento development",
           "bold": true
         },
         ", and ",
         {
           "type": "link",
-          "href": "/bigcommerce-development",
+          "href": "/bigcommerce-development/",
           "text": "BigCommerce development",
           "bold": true
         },
         ". Visit our ",
         {
           "type": "link",
-          "href": "/contact-us",
+          "href": "/contact-us/",
           "text": "contact page"
         },
         " and send us a quote with your requirements, and we will help you build your website and eCommerce store with your preferences."
@@ -971,7 +971,7 @@
         },
         {
           "type": "link",
-          "href": "/shopify-migration",
+          "href": "/shopify-migration/",
           "text": "Shopify migration",
           "bold": true
         },

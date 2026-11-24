@@ -61,7 +61,7 @@ export const wordpressDevelopmentNoidaContent = {
       "Dynamic Dreamz is a leading WordPress development company in Noida dedicated to building custom WordPress websites that match your business goals. Our team of talented developers is an expert in delivering customized solutions, including WordPress theme and plugin development, to ensure your website stands out.",
     primaryCta: {
       label: "Get in Touch",
-      href: "/request-quote",
+      href: "/request-quote/",
     },
     badges: [
       {
@@ -363,6 +363,6 @@ export const wordpressDevelopmentNoidaContent = {
   ctaBanner: {
     heading: "Want us to help you with your online store?",
     ctaLabel: "request a quote",
-    ctaHref: "/request-quote",
+    ctaHref: "/request-quote/",
   },
 } as const;

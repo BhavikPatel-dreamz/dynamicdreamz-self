@@ -6,7 +6,7 @@
   "modified": "2026-09-03T14:43:19+00:00",
   "category": "Faqs",
   "categoryValue": "faqs",
-  "categoryHref": "/blogs?category=faqs",
+  "categoryHref": "/blogs/?category=faqs",
   "featuredImage": null,
   "excerpt": "With your growing store, there’s always a possibility that your store could break. Hence, one should smartly choose between a Shopify agency and a freelancer for their store building. A store’s performance and security depend on its build, and for...",
   "author": {
@@ -165,7 +165,7 @@
         "Looking for a ",
         {
           "type": "link",
-          "href": "/shopify-development-agency",
+          "href": "/shopify-development-agency/",
           "text": "Shopify development company",
           "rel": "dofollow"
         },

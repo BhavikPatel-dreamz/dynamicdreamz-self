@@ -6,7 +6,7 @@
   "modified": "2026-09-23T14:20:21+00:00",
   "category": "Faqs",
   "categoryValue": "faqs",
-  "categoryHref": "/blogs?category=faqs",
+  "categoryHref": "/blogs/?category=faqs",
   "featuredImage": null,
   "excerpt": "Every store owner is assuming that after April 2026, they just have to get their hands on Shopify Plus for B2B, but it’s not true, because core B2B features now work on every paid Shopify plan.",
   "author": {
@@ -182,7 +182,7 @@
         "Not sure which tier your wholesale operation actually needs? Our ",
         {
           "type": "link",
-          "href": "/shopify-development-agency",
+          "href": "/shopify-development-agency/",
           "text": "Shopify B2B"
         },
         " & Wholesale team can map your catalog and account requirements against both options before you commit to either."

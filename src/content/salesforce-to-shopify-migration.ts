@@ -15,7 +15,7 @@ export const salesforceHeroContent: ServiceHeroVideoContent = {
   title: "Salesforce to Shopify Migration Services",
   paragraphs: ["Want a Shopify migration expert? Try Dynamic Dreamz's Salesforce to Shopify migration service to witness the best migration service in India. Our Shopify migration experts will handle the entire process smoothly, ensuring your business continues to run without interruptions."],
   cta: "REQUEST A QUOTE",
-  ctaHref: "/request-quote",
+  ctaHref: "/request-quote/",
   image: {
     src: "/assets/salesforce-to-shopify-migration/salesforce-shopify-migration-hero.svg",
     alt: "Salesforce Commerce Cloud to Shopify Migration",

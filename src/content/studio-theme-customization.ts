@@ -7,7 +7,7 @@ export const studioThemeCustomizationContent = {
     description:
       "The Shopify Studio Theme is ideal for innovative brands and stores that want to be visually attractive. Our Studio Theme customization service helps you unlock your Shopify store's full potential by customizing the design, integrating new features, and improving user experience to match your brand's vision. From custom theme layouts to advanced app integrations, we ensure a professional and functional eCommerce store that delivers results.",
     ctaText: "Request a Quote",
-    ctaHref: "/request-quote",
+    ctaHref: "/request-quote/",
     ctaAriaLabel: "Request a Quote",
     secondaryCtaText: "View Studio on Shopify",
     secondaryCtaHref: "https://themes.shopify.com/themes/studio/presets/studio",
@@ -178,7 +178,7 @@ export const studioThemeCustomizationContent = {
       "Explore our portfolio showcasing successful Shopify customization projects, highlighting how we customize, secure, and enhance stores for peak performance.",
     ],
     ctaLabel: "View our work",
-    ctaHref: "/our-work",
+    ctaHref: "/our-work/",
     items: [
       {
         name: "Nufyx",

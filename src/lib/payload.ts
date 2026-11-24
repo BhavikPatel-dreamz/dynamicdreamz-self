@@ -237,7 +237,7 @@ export const getPayloadPageBySlug = cache(async function getPayloadPageBySlug(
       where: {
         or: [
           { slug: { equals: normalizedSlug } },
-          { slug: { equals: `/${normalizedSlug}` } },
+          { slug: { equals: `/${normalizedSlug}/` } },
         ],
       },
       draft: options?.preview,
@@ -473,7 +473,7 @@ export function adaptPayloadPostToArchive(
   const featured = post.featuredImage;
 
   let categoryLabel: BlogArchiveArticle["category"] = "Shopify";
-  let categoryHref = "/blogs?category=shopify";
+  let categoryHref = "/blogs/?category=shopify";
 
   if (post.categories && post.categories.length > 0) {
     const firstCat = post.categories[0];
@@ -481,19 +481,19 @@ export function adaptPayloadPostToArchive(
       const name = firstCat.name.toLowerCase();
       if (name.includes("wordpress")) {
         categoryLabel = "WordPress";
-        categoryHref = "/blogs?category=wordpress";
+        categoryHref = "/blogs/?category=wordpress";
       } else if (name.includes("ecommerce")) {
         categoryLabel = "eCommerce";
-        categoryHref = "/blogs?category=ecommerce";
+        categoryHref = "/blogs/?category=ecommerce";
       } else if (name.includes("big") || name.includes("commerce")) {
         categoryLabel = "Big-Commerce";
-        categoryHref = "/blogs?category=big-commerce";
+        categoryHref = "/blogs/?category=big-commerce";
       } else if (name.includes("faq")) {
         categoryLabel = "Faqs";
-        categoryHref = "/blogs?category=faqs";
+        categoryHref = "/blogs/?category=faqs";
       } else {
         categoryLabel = "Shopify";
-        categoryHref = "/blogs?category=shopify";
+        categoryHref = "/blogs/?category=shopify";
       }
     }
   }
@@ -510,7 +510,7 @@ export function adaptPayloadPostToArchive(
 
   return {
     title: post.title,
-    href: `/blogs/${post.slug}`,
+    href: `/blogs/${post.slug}/`,
     image: resolveMediaUrl(featured) || null,
     width: resolveMediaWidth(featured) || null,
     height: resolveMediaHeight(featured) || null,
@@ -549,14 +549,14 @@ export function adaptPayloadPostToBlogPostDetail(
 
   let categoryName = fallbackDetail?.category || "Shopify";
   let categoryValue = fallbackDetail?.categoryValue || "shopify";
-  let categoryHref = fallbackDetail?.categoryHref || "/blogs?category=shopify";
+  let categoryHref = fallbackDetail?.categoryHref || "/blogs/?category=shopify";
 
   if (post.categories && post.categories.length > 0) {
     const firstCat = post.categories[0];
     if (typeof firstCat === "object" && firstCat !== null) {
       categoryName = firstCat.name;
       categoryValue = firstCat.slug;
-      categoryHref = `/blogs?category=${firstCat.slug}`;
+      categoryHref = `/blogs/?category=${firstCat.slug}`;
     }
   }
 
@@ -716,7 +716,7 @@ export function adaptPayloadCaseStudiesToItems(
       excerpt: cs.archive?.excerpt || cs.summary || fallbackItem?.excerpt || "",
       image: heroSrc,
       alt: heroAlt,
-      href: `/case-studies/${cs.slug}`,
+      href: `/case-studies/${cs.slug}/`,
       tags: tags.length > 0 ? tags : (fallbackItem?.tags || ["Shopify Plus"]),
     };
   });

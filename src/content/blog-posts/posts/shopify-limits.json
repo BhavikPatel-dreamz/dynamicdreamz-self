@@ -6,7 +6,7 @@
   "modified": "2026-09-14T11:29:07+00:00",
   "category": "Shopify",
   "categoryValue": "shopify",
-  "categoryHref": "/blogs?category=shopify",
+  "categoryHref": "/blogs/?category=shopify",
   "featuredImage": {
     "src": "/assets/blog/shopify-limits.webp",
     "width": 1308,
@@ -77,7 +77,7 @@
         "This is where expertise matters. As a ",
         {
           "type": "link",
-          "href": "/shopify-plus-agency",
+          "href": "/shopify-plus-agency/",
           "text": "Shopify Plus agency"
         },
         ", we’ve spent decades navigating such boundaries for not only national, but global brands, designing solutions, creating custom apps, restructuring catalogues & using Shopify’s ecosystem to push stores far beyond their default thresholds. The right structure (and the right team) can turn these limits into strategic advantages."

@@ -21,7 +21,7 @@ export const woocommerceHeroContent: ServiceHeroVideoContent = {
     "Do you need a migration expert for migrating your WooCommerce store to Shopify? Experience the advantages of Shopify’s robust platform to enhance your business growth with Dynamic Dreamz migration services.",
   ],
   cta: "REQUEST A QUOTE",
-  ctaHref: "/request-quote",
+  ctaHref: "/request-quote/",
   image: {
     src: "/assets/woocommerce-to-shopify-migration/woocommerce-shopify-migration-hero.svg",
     alt: "WooCommerce to Shopify Storefront Migration",

@@ -1540,12 +1540,12 @@ export function BlockRenderer({ sections, testimonials }: BlockRendererProps) {
             const primaryCta = shBlock.primaryCta?.label
               ? {
                   label: shBlock.primaryCta.label,
-                  href: shBlock.primaryCta.href || "/request-a-quote",
+                  href: shBlock.primaryCta.href || "/request-a-quote/",
                 }
               : shBlock.cta
               ? {
                   label: shBlock.cta,
-                  href: shBlock.ctaHref || "/request-a-quote",
+                  href: shBlock.ctaHref || "/request-a-quote/",
                 }
               : undefined;
 
@@ -1752,7 +1752,7 @@ export function BlockRenderer({ sections, testimonials }: BlockRendererProps) {
                     description: shBlock.description || "",
                     primaryCta: primaryCta || {
                       label: mobileAppSharedCopy.discussApp,
-                      href: "/request-quote",
+                      href: "/request-quote/",
                     },
                     secondaryCta,
                     badges: heroBadges.length > 0 ? heroBadges : undefined,
@@ -1797,8 +1797,8 @@ export function BlockRenderer({ sections, testimonials }: BlockRendererProps) {
                         ? "start your free trial today!"
                         : primaryCta?.label,
                     ctaHref:
-                      isAppmaker && (!primaryCta?.href || primaryCta.href === "/request-a-quote")
-                        ? "/request-quote"
+                      isAppmaker && (!primaryCta?.href || primaryCta.href === "/request-a-quote/")
+                        ? "/request-quote/"
                         : primaryCta?.href,
                     primaryCta,
                     secondaryCta,
@@ -1891,8 +1891,8 @@ export function BlockRenderer({ sections, testimonials }: BlockRendererProps) {
                         ? "start your free trial today!"
                         : primaryCta?.label,
                     ctaHref:
-                      isAppmaker && (!primaryCta?.href || primaryCta.href === "/request-a-quote")
-                        ? "/request-quote"
+                      isAppmaker && (!primaryCta?.href || primaryCta.href === "/request-a-quote/")
+                        ? "/request-quote/"
                         : primaryCta?.href,
                     secondaryCta,
                     eyebrows: eyebrows.length > 0 ? eyebrows : undefined,
@@ -1926,8 +1926,8 @@ export function BlockRenderer({ sections, testimonials }: BlockRendererProps) {
                         ? "start your free trial today!"
                         : primaryCta?.label,
                     ctaHref:
-                      isAppmaker && (!primaryCta?.href || primaryCta.href === "/request-a-quote")
-                        ? "/request-quote"
+                      isAppmaker && (!primaryCta?.href || primaryCta.href === "/request-a-quote/")
+                        ? "/request-quote/"
                         : primaryCta?.href,
                     secondaryCta,
                     eyebrows: eyebrows.length > 0 ? eyebrows : undefined,
@@ -1966,8 +1966,8 @@ export function BlockRenderer({ sections, testimonials }: BlockRendererProps) {
                         ? "start your free trial today!"
                         : primaryCta?.label,
                     ctaHref:
-                      isAppmaker && (!primaryCta?.href || primaryCta.href === "/request-a-quote")
-                        ? "/request-quote"
+                      isAppmaker && (!primaryCta?.href || primaryCta.href === "/request-a-quote/")
+                        ? "/request-quote/"
                         : primaryCta?.href,
                     secondaryCtaLabel: secondaryCta?.label,
                     secondaryCtaHref: secondaryCta?.href,
@@ -2002,8 +2002,8 @@ export function BlockRenderer({ sections, testimonials }: BlockRendererProps) {
                         ? "start your free trial today!"
                         : primaryCta?.label,
                     ctaHref:
-                      isAppmaker && (!primaryCta?.href || primaryCta.href === "/request-a-quote")
-                        ? "/request-quote"
+                      isAppmaker && (!primaryCta?.href || primaryCta.href === "/request-a-quote/")
+                        ? "/request-quote/"
                         : primaryCta?.href,
                     primaryCta,
                     secondaryCta,
@@ -2037,8 +2037,8 @@ export function BlockRenderer({ sections, testimonials }: BlockRendererProps) {
                         ? "start your free trial today!"
                         : primaryCta?.label,
                     ctaHref:
-                      isAppmaker && (!primaryCta?.href || primaryCta.href === "/request-a-quote")
-                        ? "/request-quote"
+                      isAppmaker && (!primaryCta?.href || primaryCta.href === "/request-a-quote/")
+                        ? "/request-quote/"
                         : primaryCta?.href,
                     secondaryCta,
                     eyebrows: eyebrows.length > 0 ? eyebrows : undefined,
@@ -2239,7 +2239,7 @@ export function BlockRenderer({ sections, testimonials }: BlockRendererProps) {
             const ctaHref =
               cbBlock.ctaHref === null || cbBlock.ctaHref === ""
                 ? ""
-                : (cbBlock.ctaHref?.trim() ?? "/request-a-quote");
+                : (cbBlock.ctaHref?.trim() ?? "/request-a-quote/");
 
             if (cbBlock.variant === "image") {
               const bgImage =
@@ -3167,7 +3167,7 @@ export function BlockRenderer({ sections, testimonials }: BlockRendererProps) {
                 .map((b) => (typeof b === "string" ? b : b.text || ""))
                 .filter(Boolean),
               ctaLabel: p.ctaLabel || "Get Started",
-              ctaHref: p.ctaHref || "/request-a-quote",
+              ctaHref: p.ctaHref || "/request-a-quote/",
             }));
 
             return (
@@ -3576,7 +3576,7 @@ export function BlockRenderer({ sections, testimonials }: BlockRendererProps) {
                   address: aedBlock.address.address || "",
                   link: {
                     label: aedBlock.address.link?.label || "View contact details",
-                    href: aedBlock.address.link?.href || "/contact-us",
+                    href: aedBlock.address.link?.href || "/contact-us/",
                   },
                 }
               : undefined;
@@ -3782,11 +3782,11 @@ export function BlockRenderer({ sections, testimonials }: BlockRendererProps) {
                 .filter(Boolean),
               primaryCta: {
                 label: item.primaryCtaLabel || "Discuss Scenario",
-                href: item.primaryCtaHref || "/request-a-quote",
+                href: item.primaryCtaHref || "/request-a-quote/",
               },
               secondaryCta: {
                 label: item.secondaryCtaLabel || "View Details",
-                href: item.secondaryCtaHref || "/contact-us",
+                href: item.secondaryCtaHref || "/contact-us/",
               },
             }));
 
@@ -4206,7 +4206,7 @@ export function BlockRenderer({ sections, testimonials }: BlockRendererProps) {
                   heading: toText(mawBlock.heading),
                   description: toText(mawBlock.description) || undefined,
                   ctaLabel: mawBlock.ctaLabel || "View our work",
-                  ctaHref: mawBlock.ctaHref || "/our-work",
+                  ctaHref: mawBlock.ctaHref || "/our-work/",
                   ctaAriaLabel: mawBlock.ctaAriaLabel,
                   secondaryCta: mawBlock.secondaryCta?.label
                     ? {

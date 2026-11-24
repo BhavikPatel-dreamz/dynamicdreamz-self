@@ -52,7 +52,7 @@ export async function generateMetadata({ searchParams }: BlogsRouteProps): Promi
     queryParams.set("page", String(validPage));
   }
   const queryString = queryParams.toString();
-  const canonicalPath = queryString ? `/blogs?${queryString}` : "/blogs";
+  const canonicalPath = queryString ? `/blogs/?${queryString}` : "/blogs/";
 
   return {
     ...base,

@@ -15,7 +15,7 @@ export const shopifyDevelopmentDelhiContent = {
       "Dynamic Dreamz provides Shopify development services for businesses in Delhi, including Shopify Plus, custom storefronts, theme customization, migrations, integrations, CRO and ongoing support. Our India-based team works with businesses and agencies in Delhi and internationally.",
     primaryCta: {
       label: "get in touch",
-      href: "/request-quote",
+      href: "/request-quote/",
     },
     secondaryCta: {
       label: "Explore Shopify Services",
@@ -199,7 +199,7 @@ export const shopifyDevelopmentDelhiContent = {
       "From Shopify Plus and custom theme development to migration, integrations and ongoing support, our Shopify developers help businesses build and improve stores around their specific requirements.",
     cta: {
       label: "",
-      href: "/request-quote",
+      href: "/request-quote/",
     },
     items: [
       {
@@ -215,7 +215,7 @@ export const shopifyDevelopmentDelhiContent = {
           "Our team specializes in customizing Shopify themes to match your brand identity and satisfy your unique business needs. From design changes to advanced features, we make sure your Shopify store satisfies and converts visitors.",
         icon: "/assets/services/shopify-development-in-delhi/services/shopify-theme-customization.svg",
         iconAlt: "Shopify Theme Customization Icon",
-        href: "/shopify-theme-customization",
+        href: "/shopify-theme-customization/",
       },
       {
         title: "Design to Shopify Conversion",
@@ -237,7 +237,7 @@ export const shopifyDevelopmentDelhiContent = {
           "Switch to Shopify effortlessly with our secure migration services. We manage everything from data transfer to SEO preservation, ensuring a smooth migration.",
         icon: "/assets/services/shopify-development-in-delhi/services/shopify-migration-services.svg",
         iconAlt: "Shopify Migration Services Icon",
-        href: "/shopify-migration",
+        href: "/shopify-migration/",
       },
       {
         title: "Shopify Maintenance & Support",
@@ -245,7 +245,7 @@ export const shopifyDevelopmentDelhiContent = {
           "Keep your Shopify store running smoothly with our wide Shopify maintenance and support services. From updates to performance optimization, we've got you covered.",
         icon: "/assets/services/shopify-development-in-delhi/services/shopify-maintenance-support.svg",
         iconAlt: "Shopify Maintenance & Support Icon",
-        href: "/buy-shopify-development-hours",
+        href: "/buy-shopify-development-hours/",
       },
       {
         title: "Shopify 2.0 Upgrades",
@@ -253,7 +253,7 @@ export const shopifyDevelopmentDelhiContent = {
           "Upgrade to Shopify 2.0 and unlock new features and enhanced performance. We ensure a smooth migration to keep your store ahead of the competition.",
         icon: "/assets/services/shopify-development-in-delhi/services/shopify-2-0-upgrades.svg",
         iconAlt: "Shopify 2.0 Upgrades Icon",
-        href: "/migrating-a-theme-to-online-store-2-0",
+        href: "/migrating-a-theme-to-online-store-2-0/",
       },
       {
         title: "White Label Shopify Development",
@@ -261,7 +261,7 @@ export const shopifyDevelopmentDelhiContent = {
           "Are you looking for Shopify solutions under your brand? Our white label services ensure your clients receive top level solutions under your brand.",
         icon: "/assets/services/shopify-development-in-bangalore/services/white-label-shopify-development.svg",
         iconAlt: "White Label Shopify Development Icon",
-        href: "/white-label-shopify-development-services",
+        href: "/white-label-shopify-development-services/",
       },
     ],
   },
@@ -349,7 +349,7 @@ export const shopifyDevelopmentDelhiContent = {
       [
         "Lots of Shopify stores are precisely crafted and counting.  Our expertise accelerates evolution and redefines shopping experiences for customers.",
       ],
-    ctaHref: "/our-work",
+    ctaHref: "/our-work/",
     ctaLabel: "view our work",
     items: [
       {
@@ -451,6 +451,6 @@ export const shopifyDevelopmentDelhiContent = {
   ctaBanner: {
     heading: "Want us to help you with your online store?",
     ctaLabel: "request a quote",
-    ctaHref: "/request-quote",
+    ctaHref: "/request-quote/",
   },
 } as const;

@@ -6,7 +6,7 @@
   "modified": "2025-05-23T10:21:31+00:00",
   "category": "Shopify",
   "categoryValue": "shopify",
-  "categoryHref": "/blogs?category=shopify",
+  "categoryHref": "/blogs/?category=shopify",
   "featuredImage": {
     "src": "/assets/blog/what-is-a-white-label-agency.webp",
     "width": 329,
@@ -46,7 +46,7 @@
         ", ",
         {
           "type": "link",
-          "href": "/white-label-website-design-services",
+          "href": "/white-label-website-design-services/",
           "text": "White Label Website Design Services"
         },
         ", ",
@@ -260,7 +260,7 @@
         "Many eCommerce-focused agencies want to help customers sell online. But they don’t have developers in their in-house team. With a ",
         {
           "type": "link",
-          "href": "/white-label-shopify-development-services",
+          "href": "/white-label-shopify-development-services/",
           "text": "white label Shopify development agency"
         },
         ", they can provide fully functional Shopify stores without hiring a full-time developer."
@@ -340,7 +340,7 @@
         "The ",
         {
           "type": "link",
-          "href": "/white-label-wordpress-development-services",
+          "href": "/white-label-wordpress-development-services/",
           "text": "white label WordPress development agency"
         },
         " lets your agency grow fast without hiring an in-house team."

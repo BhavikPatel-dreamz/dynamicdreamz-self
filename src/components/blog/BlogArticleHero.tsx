@@ -166,7 +166,7 @@ function XIcon() {
 }
 
 function ShareLinks({ post }: { post: BlogPostDetail }) {
-  const pageUrl = absoluteUrl(`/blogs/${post.slug}`);
+  const pageUrl = absoluteUrl(`/blogs/${post.slug}/`);
   const encodedUrl = encodeURIComponent(pageUrl);
   const encodedTitle = encodeURIComponent(post.title);
   const links = [
@@ -217,7 +217,7 @@ function PostNavigationLink({ item, direction }: { item: BlogPostNavigationItem;
   const label = direction === "previous" ? blogDetailUiCopy.previousLabel : blogDetailUiCopy.nextLabel;
   return (
     <Link
-      href={`/blogs/${item.slug}`}
+      href={`/blogs/${item.slug}/`}
       className={`group flex flex-col px-[15px] text-[#282828] transition-colors duration-300 hover:text-brand-red focus-visible:text-brand-red ${direction === "next" ? "items-end text-right" : "items-start text-left"}`}
     >
       <span className="block font-montserrat text-[16px] font-semibold leading-[30px] max-[768px]:hidden">{item.title}</span>

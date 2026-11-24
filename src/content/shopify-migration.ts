@@ -79,7 +79,7 @@ export const shopifyMigrationServicesContent = {
         "Upgrade an older Shopify theme to Online Store 2.0 with better section flexibility, app compatibility and maintainable theme architecture.",
       image: "/assets/shopify-migration/services/shopify-theme-migration.svg",
       imageAlt: "Shopify Online Store 2.0 Theme Migration",
-      href: "/migrating-a-theme-to-online-store-2-0",
+      href: "/migrating-a-theme-to-online-store-2-0/",
       ctaLabel: "Explore theme migration",
     },
     {
@@ -88,7 +88,7 @@ export const shopifyMigrationServicesContent = {
         "Replatform complex Magento stores to Shopify Plus with data, custom functionality, integrations, SEO and launch planning.",
       image: "/assets/shopify-migration/services/magento-to-shopify-plus-migration.svg",
       imageAlt: "Magento to Shopify Plus Storefront Migration",
-      href: "/magento-to-shopify-plus-migration",
+      href: "/magento-to-shopify-plus-migration/",
       ctaLabel: "Magento Plus migration",
     },
     {
@@ -97,7 +97,7 @@ export const shopifyMigrationServicesContent = {
         "Move Magento products, customers, orders and storefront functionality to Shopify with SEO and integration planning.",
       image: "/assets/shopify-migration/services/magento-to-shopify-migration.svg",
       imageAlt: "Magento to Shopify Storefront Migration",
-      href: "/magento-to-shopify-migration",
+      href: "/magento-to-shopify-migration/",
       ctaLabel: "Magento migration",
     },
     {
@@ -106,7 +106,7 @@ export const shopifyMigrationServicesContent = {
         "Migrate WooCommerce data, content and functionality to Shopify while planning redirects and SEO continuity.",
       image: "/assets/shopify-migration/services/woocommerce-to-shopify-migration.svg",
       imageAlt: "WooCommerce to Shopify Storefront Migration",
-      href: "/woocommerce-to-shopify-migration",
+      href: "/woocommerce-to-shopify-migration/",
       ctaLabel: "WooCommerce migration",
     },
     {
@@ -115,7 +115,7 @@ export const shopifyMigrationServicesContent = {
         "Replatform BigCommerce stores to Shopify with data migration, storefront rebuilding, integrations and launch support.",
       image: "/assets/shopify-migration/services/bigcommerce-to-shopify-migration.svg",
       imageAlt: "BigCommerce to Shopify Storefront Migration",
-      href: "/bigcommerce-to-shopify-migration",
+      href: "/bigcommerce-to-shopify-migration/",
       ctaLabel: "BigCommerce migration",
     },
     {
@@ -124,7 +124,7 @@ export const shopifyMigrationServicesContent = {
         "Plan an enterprise migration from Salesforce Commerce Cloud with careful architecture, integration and data mapping.",
       image: "/assets/shopify-migration/services/salesforce-to-shopify-migration.svg",
       imageAlt: "Salesforce Commerce Cloud to Shopify Migration",
-      href: "/salesforce-to-shopify-migration",
+      href: "/salesforce-to-shopify-migration/",
       ctaLabel: "Salesforce migration",
     },
     {
@@ -133,7 +133,7 @@ export const shopifyMigrationServicesContent = {
         "Move catalog and customer data, replace modules and rebuild the storefront around Shopify's platform structure.",
       image: "/assets/shopify-migration/services/prestashop-to-shopify-migration.svg",
       imageAlt: "PrestaShop to Shopify Storefront Migration",
-      href: "/prestashop-to-shopify-migration",
+      href: "/prestashop-to-shopify-migration/",
       ctaLabel: "PrestaShop migration",
     },
     {
@@ -142,7 +142,7 @@ export const shopifyMigrationServicesContent = {
         "Move products and content to Shopify while rebuilding the storefront around stronger ecommerce operations and merchandising.",
       image: "/assets/shopify-migration/services/squarespace-to-shopify-migration.svg",
       imageAlt: "Squarespace to Shopify Storefront Migration",
-      href: "/squarespace-to-shopify-migration",
+      href: "/squarespace-to-shopify-migration/",
       ctaLabel: "Squarespace migration",
     },
     {
@@ -151,7 +151,7 @@ export const shopifyMigrationServicesContent = {
         "Move your Wix ecommerce store to Shopify with catalog migration, storefront setup, redirects and launch validation.",
       image: "/assets/shopify-migration/services/wix-to-shopify-migration.svg",
       imageAlt: "Wix to Shopify Storefront Migration",
-      href: "/wix-to-shopify-migration",
+      href: "/wix-to-shopify-migration/",
       ctaLabel: "Wix Migration",
     },
     {
@@ -160,7 +160,7 @@ export const shopifyMigrationServicesContent = {
         "Replatform an Ecwid catalog to Shopify with data transfer, storefront rebuilding and post-migration checks.",
       image: "/assets/shopify-migration/services/ecwid-to-shopify-migration.svg",
       imageAlt: "Ecwid to Shopify Storefront Migration",
-      href: "/ecwid-to-shopify-migration",
+      href: "/ecwid-to-shopify-migration/",
       ctaLabel: "Ecwid Migration",
     },
     {
@@ -169,7 +169,7 @@ export const shopifyMigrationServicesContent = {
         "Move from Square Online to Shopify with catalog migration, payment and operational planning, storefront setup and QA.",
       image: "/assets/shopify-migration/services/square-to-shopify-migration.svg",
       imageAlt: "Squarespace to Shopify Storefront Migration",
-      href: "/square-to-shopify-migration",
+      href: "/square-to-shopify-migration/",
       ctaLabel: "Square Migration",
     },
     {
@@ -178,7 +178,7 @@ export const shopifyMigrationServicesContent = {
         "Build an independent Shopify storefront around your Etsy catalog, products and brand with a practical migration plan.",
       image: "/assets/shopify-migration/services/etsy-to-shopify-migration.svg",
       imageAlt: "Etsy to Shopify Storefront Migration",
-      href: "/etsy-to-shopify-migration",
+      href: "/etsy-to-shopify-migration/",
       ctaLabel: "Etsy Migration",
     },
   ] satisfies readonly MigrationServiceCard[],
@@ -188,7 +188,7 @@ export const shopifyMigrationServicesContent = {
     description:
       "For complex catalogs, B2B, international stores, custom integrations or heavier replatforming requirements, plan the migration around Shopify Plus architecture from the beginning.",
     ctaLabel: "Shopify Plus Migration",
-    ctaHref: "/shopify-plus-migration-agency",
+    ctaHref: "/shopify-plus-migration-agency/",
   },
 };
 
@@ -309,19 +309,19 @@ export const shopifyMigrationSeoSafe = {
   ] as const,
   urlMappings: [
     {
-      source: "/category/product-a",
+      source: "/category/product-a/",
       statusCode: "301",
-      target: "/products/product-a",
+      target: "/products/product-a/",
     },
     {
-      source: "/shop/collection-b",
+      source: "/shop/collection-b/",
       statusCode: "301",
-      target: "/collections/collection-b",
+      target: "/collections/collection-b/",
     },
     {
-      source: "/blog/post-c",
+      source: "/blog/post-c/",
       statusCode: "301",
-      target: "/blogs/news/post-c",
+      target: "/blogs/news/post-c/",
     },
   ] as const,
   checks: [
@@ -377,7 +377,7 @@ export const shopifyMigrationWhyChoose: WhyChooseMigrationContent = {
   ],
   partnerLink: {
     label: "About Dynamic Dreamz",
-    href: "/about-us",
+    href: "/about-us/",
   },
 };
 
@@ -387,7 +387,7 @@ export const shopifyMigrationPortfolio = {
   description:
     "Explore selected projects across Shopify, WordPress, mobile apps and custom development. See how we help brands and agencies build high-performing digital experiences.",
   ctaLabel: "View our work",
-  ctaHref: "/our-work",
+  ctaHref: "/our-work/",
   category: "shopify",
   items: [
     {
@@ -466,7 +466,7 @@ export const shopifyMigrationCaseStudies = {
     {
       title:
         "Adobe Commerce to Shopify Migration: Zero Data-Loss Replatform for First Aid Distributions",
-      href: "/case-studies/first-aid-distributions-migration",
+      href: "/case-studies/first-aid-distributions-migration/",
       image: "/assets/case-studies/first-aid-distributions-migration.webp",
       imageAlt: "First Aid Distributions Shopify Storefront Migration",
       technology: "Shopify Migration",
@@ -476,7 +476,7 @@ export const shopifyMigrationCaseStudies = {
     {
       title:
         "Daniel Walters Eyewear: BigCommerce to Shopify Migration & Custom Dawn Theme Redesign",
-      href: "/case-studies/daniel-walters",
+      href: "/case-studies/daniel-walters/",
       image: "/assets/case-studies/daniel-walters.webp",
       imageAlt:
         "Daniel Walters Eyewear BigCommerce to Shopify Migration with Dawn Theme Redesign",
@@ -487,7 +487,7 @@ export const shopifyMigrationCaseStudies = {
     {
       title:
         "Sleepycat: WooCommerce to Shopify Plus Migration with Custom Bundle Builder, SKU-Splitting & WhatsApp Automation",
-      href: "/case-studies/sleepycat",
+      href: "/case-studies/sleepycat/",
       image: "/assets/case-studies/sleepycat.webp",
       imageAlt:
         "SleepyCat WooCommerce to Shopify Plus Migration with Custom Bundle Builder",

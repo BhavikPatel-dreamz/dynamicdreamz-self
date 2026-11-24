@@ -6,7 +6,7 @@
   "modified": "2025-07-28T09:14:55+00:00",
   "category": "Shopify",
   "categoryValue": "shopify",
-  "categoryHref": "/blogs?category=shopify",
+  "categoryHref": "/blogs/?category=shopify",
   "featuredImage": {
     "src": "/assets/blog/shopify-themes-for-jewelry.webp",
     "width": 329,
@@ -819,7 +819,7 @@
         },
         {
           "type": "link",
-          "href": "/hire-shopify-developers",
+          "href": "/hire-shopify-developers/",
           "text": "Shopify developers",
           "bold": true
         },
@@ -856,7 +856,7 @@
         "The Shopify theme store offers thousands of ready-made themes. These themes are easy to install, thoroughly tested, and fully supported by Shopify. If you’re new to Shopify, it’s the most effective technique to launch your jewelry store. If you want to customize your ready-made theme use our ",
         {
           "type": "link",
-          "href": "/shopify-theme-customization",
+          "href": "/shopify-theme-customization/",
           "text": "Shopify theme customization services"
         },
         "."

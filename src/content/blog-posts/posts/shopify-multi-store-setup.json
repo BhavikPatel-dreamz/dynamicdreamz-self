@@ -6,7 +6,7 @@
   "modified": "2026-09-29T06:00:48+00:00",
   "category": "Faqs",
   "categoryValue": "faqs",
-  "categoryHref": "/blogs?category=faqs",
+  "categoryHref": "/blogs/?category=faqs",
   "featuredImage": null,
   "excerpt": "One store with Shopify Markets can easily handle most international and multi-brand needs quite well. But that doesn’t happen all the time. Because there can be some situations that genuinely call for separate stores, and choosing wrong in either direction would make you end up w",
   "author": {
@@ -92,7 +92,7 @@
             "Not just a translated version of your main store by a ",
             {
               "type": "link",
-              "href": "/shopify-development-agency",
+              "href": "/shopify-development-agency/",
               "text": "Shopify Development agency"
             },
             " or by yourself, but a market where branding, product mix, or positioning needs to diverge meaningfully from your primary storefront."
@@ -248,7 +248,7 @@
         "Our guide to ",
         {
           "type": "link",
-          "href": "/blogs/shopify-international-selling",
+          "href": "/blogs/shopify-international-selling/",
           "text": "Shopify international selling"
         },
         " covers how far Markets can take you before Shopify multiple stores becomes necessary."

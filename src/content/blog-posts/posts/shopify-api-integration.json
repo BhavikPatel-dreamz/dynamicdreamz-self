@@ -6,7 +6,7 @@
   "modified": "2026-09-18T13:36:20+00:00",
   "category": "Faqs",
   "categoryValue": "faqs",
-  "categoryHref": "/blogs?category=faqs",
+  "categoryHref": "/blogs/?category=faqs",
   "featuredImage": null,
   "excerpt": "Your Shopify store doesn’t have to work on its own, because through APIs, your business can seamlessly connect to nearly any business system you are already using. It can be accounting software, ERP, CRM, marketplaces, and more. With seamless Shopify...",
   "author": {
@@ -192,7 +192,7 @@
         "Not sure whether your business needs a direct connector, an iPaaS, or a custom build? Our ",
         {
           "type": "link",
-          "href": "/shopify-development-agency",
+          "href": "/shopify-development-agency/",
           "text": "Shopify Development",
           "rel": "dofollow"
         },

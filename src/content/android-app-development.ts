@@ -16,7 +16,7 @@ export const androidAppDevelopmentHero: MobileAppHeroContent = {
     "Dynamic Dreamz develops custom Android applications for businesses, startups and digital products. We build utility apps, internal tools, consumer products, booking and service applications, marketplaces and ecommerce experiences—with UI/UX, backend integrations, QA, Google Play release and ongoing development supported by one team.",
   primaryCta: {
     label: "Discuss Your App",
-    href: "/request-quote",
+    href: "/request-quote/",
     ariaLabel: "Discuss Your App",
   },
   secondaryCta: {
@@ -99,7 +99,7 @@ export const androidAppDevelopmentWorkflowDelivery: AiEmpoweredDeliveryContent =
       "Our Android capability extends well beyond shopping apps. We can develop custom utility software, business applications, customer products, connected service experiences and ecommerce apps, using native Kotlin development or a suitable cross-platform architecture when the roadmap includes iOS as well.",
     cta: {
       label: "Discuss Your App Requirement",
-      href: "/request-quote",
+      href: "/request-quote/",
     },
     tools: [
       {
@@ -339,7 +339,7 @@ export const androidAppDevelopmentPortfolio: MobileAppWorkContent = {
     },
   ],
   ctaLabel: "VIEW OUR WORK",
-  ctaHref: "/our-work",
+  ctaHref: "/our-work/",
   ctaAriaLabel: "Dynamic Dreamz - VIEW OUR WORK",
   secondaryCta: {
     label: "View Pricing",
@@ -368,7 +368,7 @@ export const androidAppDevelopmentPricing: PricingEngagementContent = {
         "QA & release support",
       ],
       ctaLabel: "Request a Quote",
-      ctaHref: "/request-quote",
+      ctaHref: "/request-quote/",
     },
     {
       label: "Dedicated Developer / Team",
@@ -383,7 +383,7 @@ export const androidAppDevelopmentPricing: PricingEngagementContent = {
         "Full-stack support when needed",
       ],
       ctaLabel: "Discuss Dedicated Capacity",
-      ctaHref: "/request-quote",
+      ctaHref: "/request-quote/",
     },
     {
       label: "Post-Launch",
@@ -398,7 +398,7 @@ export const androidAppDevelopmentPricing: PricingEngagementContent = {
         "Release support",
       ],
       ctaLabel: "Discuss Support",
-      ctaHref: "/request-quote",
+      ctaHref: "/request-quote/",
     },
   ],
 };
@@ -438,7 +438,7 @@ export const androidAppDevelopmentWhyChooseCopy = {
   partnerLogoAlt: "Dynamic Dreamz - Shopify Platinum Partner",
   partnerLink: {
     label: "About Dynamic Dreamz",
-    href: "/about-us",
+    href: "/about-us/",
   },
   stats: [
     { value: "20+", label: "Years of Experience" },

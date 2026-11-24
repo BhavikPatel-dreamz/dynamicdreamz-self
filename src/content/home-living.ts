@@ -19,7 +19,7 @@ export const homeLivingHero: ServiceHeroVideoContent = {
     "We help home and living brands simplify large catalogues, configurable products, delivery logic and complex operational workflows through ecommerce, mobile and custom development.",
   ],
   cta: "Discuss Your Project",
-  ctaHref: "/request-quote",
+  ctaHref: "/request-quote/",
   secondaryCta: {
     label: "See Relevant Work",
     href: "#our_work",
@@ -84,7 +84,7 @@ export const homeLivingCaseStudies: {
     {
       title:
         "Custom Neon: Interactive Shopify Neon Sign Designer with Live Pricing",
-      href: "/case-studies/custom-neon",
+      href: "/case-studies/custom-neon/",
       image: "/assets/case-studies/custom-neon.webp",
       imageAlt:
         "Custom Neon: Interactive Shopify Neon Sign Designer with Live Pricing",
@@ -96,7 +96,7 @@ export const homeLivingCaseStudies: {
     {
       title:
         "RefaceKit: Custom Shopify Kitchen Cabinet Refacing Configurator with Dynamic Pricing Logic",
-      href: "/case-studies/refacekit",
+      href: "/case-studies/refacekit/",
       image: "/assets/case-studies/refacekit.webp",
       imageAlt:
         "RefaceKit: Custom Shopify Kitchen Cabinet Refacing Configurator with Dynamic Pricing Logic",
@@ -108,7 +108,7 @@ export const homeLivingCaseStudies: {
     {
       title:
         "Furnified: Shopify Plus B2B Commerce System with Custom ERP Middleware Integration",
-      href: "/case-studies/furnified",
+      href: "/case-studies/furnified/",
       image: "/assets/case-studies/furnified.webp",
       imageAlt:
         "Furnified: Shopify Plus B2B Commerce System with Custom ERP Middleware Integration",
@@ -393,7 +393,7 @@ export const homeLivingWhyChoose: WhyChooseMigrationContent = {
   ],
   partnerLink: {
     label: "About Dynamic Dreamz",
-    href: "/about-us",
+    href: "/about-us/",
   },
 };
 

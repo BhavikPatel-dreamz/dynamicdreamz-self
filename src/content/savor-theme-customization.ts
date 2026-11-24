@@ -6,7 +6,7 @@ export const savorThemeCustomizationContent = {
     description:
       "The Savor theme is specially created for food and beverage brands that want to make a beautiful and engaging online store. Take Savor Theme Customization Service at **Dynamic Dreamz**, that helps you open the full power of the Savor theme through expert theme customization services. Whether you’re launching a new Shopify store or recharging an existing one, we’ll make your website look attractive and work smoothly on all devices.",
     ctaText: "Request a Quote",
-    ctaHref: "/request-quote",
+    ctaHref: "/request-quote/",
     ctaAriaLabel: "Request a Quote",
     secondaryCtaText: "View Savor on Shopify",
     secondaryCtaHref: "https://themes.shopify.com/themes/savor/presets/savor",
@@ -200,7 +200,7 @@ export const savorThemeCustomizationContent = {
       "Explore our portfolio showcasing successful Shopify customization projects, highlighting how we customize, secure, and enhance stores for peak performance.",
     ],
     ctaLabel: "View our work",
-    ctaHref: "/our-work",
+    ctaHref: "/our-work/",
     items: [
       {
         name: "Atolea Jewelry",

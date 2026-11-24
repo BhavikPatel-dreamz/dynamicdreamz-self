@@ -11,7 +11,7 @@ export const wordpressDevelopmentCompanyHero = {
     "Need WordPress delivery behind your agency brand? Our white label WordPress team can support design implementation, development, QA and ongoing technical work while your agency keeps the client relationship.",
   primaryCta: {
     label: "Get in Touch",
-    href: "/request-quote",
+    href: "/request-quote/",
   },
   badges: [
     {
@@ -342,7 +342,7 @@ export const wordpressDevelopmentCompanyPricing = {
       description:
         "For complete WordPress website builds, custom theme development, website redesigns, plugin development, third-party integrations, WooCommerce solutions and technically complex WordPress projects.",
       ctaLabel: "Send Brief — Get a Quote in 24 Hours",
-      ctaHref: "/request-quote",
+      ctaHref: "/request-quote/",
     },
     {
       label: "Flexible Hourly Support",
@@ -351,7 +351,7 @@ export const wordpressDevelopmentCompanyPricing = {
       description:
         "For ongoing WordPress maintenance, enhancements, troubleshooting, performance improvements, security updates and evolving website development requirements.",
       ctaLabel: "Buy Wordpress Development Hours",
-      ctaHref: "/request-quote",
+      ctaHref: "/request-quote/",
     },
     {
       label: "Dedicated Developer / Team",
@@ -360,7 +360,7 @@ export const wordpressDevelopmentCompanyPricing = {
       description:
         "For brands with an evolving WordPress roadmap, multiple websites or a need for a dedicated developer or wider development team.",
       ctaLabel: "Discuss a Dedicated Team",
-      ctaHref: "/book-a-discovery-call",
+      ctaHref: "/book-a-discovery-call/",
     },
   ],
 } as const;
@@ -374,7 +374,7 @@ export const wordpressDevelopmentCompanyPortfolio = {
     ],
   category: "WORDPRESS",
   ctaLabel: "View our work",
-  ctaHref: "/our-work",
+  ctaHref: "/our-work/",
   platformMark: {
     src: "/assets/platforms/wordpress-woocommerce-white.svg",
     width: 89,

@@ -6,7 +6,7 @@
   "modified": "2026-09-14T09:33:09+00:00",
   "category": "WordPress",
   "categoryValue": "wordpress",
-  "categoryHref": "/blogs?category=wordpress",
+  "categoryHref": "/blogs/?category=wordpress",
   "featuredImage": {
     "src": "/assets/blog/common-wordpress-mistakes.webp",
     "width": 1504,

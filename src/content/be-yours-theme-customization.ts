@@ -7,7 +7,7 @@ export const beYoursThemeCustomizationContent = {
     description:
       "The Be Yours theme Customization Service offers an elegant, user friendly online store. At Dynamic Dreamz, we customize the Be Yours theme per your requirements to reflect your unique brand identity. From design to functionality, our experts ensure your Shopify store looks great, performs smoothly, and drives more sales.",
     ctaText: "Request a Quote",
-    ctaHref: "/request-quote",
+    ctaHref: "/request-quote/",
     secondaryCtaText: "View Be Yours on Shopify",
     secondaryCtaHref: "https://themes.shopify.com/themes/be-yours/presets/be-yours",
     secondaryCtaTarget: "_blank",
@@ -199,7 +199,7 @@ export const beYoursThemeCustomizationContent = {
       "Explore our portfolio showcasing successful Shopify customization projects, highlighting how we customize, secure, and enhance stores for peak performance.",
     ],
     ctaLabel: "View our work",
-    ctaHref: "/our-work",
+    ctaHref: "/our-work/",
     items: [
       {
         name: "Nufyx",

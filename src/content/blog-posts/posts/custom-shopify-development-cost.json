@@ -6,7 +6,7 @@
   "modified": "2026-09-04T11:33:04+00:00",
   "category": "Faqs",
   "categoryValue": "faqs",
-  "categoryHref": "/blogs?category=faqs",
+  "categoryHref": "/blogs/?category=faqs",
   "featuredImage": null,
   "excerpt": "Shopify development costs depend on what kind of store you're building, and the range for that is genuinely wide; it may cost you a few hundred dollars to well over $100,000. For a detailed understanding, let’s have a realistic breakdown...",
   "author": {
@@ -202,7 +202,7 @@
         "The build fee is only part of the picture. Once your store is live, expect recurring ",
         {
           "type": "link",
-          "href": "/blogs/shopify-expert-costs",
+          "href": "/blogs/shopify-expert-costs/",
           "text": "Shopify expert costs",
           "rel": "dofollow"
         },

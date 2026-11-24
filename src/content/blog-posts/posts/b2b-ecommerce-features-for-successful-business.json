@@ -6,7 +6,7 @@
   "modified": "2025-12-26T10:41:12+00:00",
   "category": "eCommerce",
   "categoryValue": "ecommerce",
-  "categoryHref": "/blogs?category=ecommerce",
+  "categoryHref": "/blogs/?category=ecommerce",
   "featuredImage": {
     "src": "/assets/blog/b2b-ecommerce-features-for-successful-business.webp",
     "width": 329,
@@ -293,7 +293,7 @@
             " Most online buyers use their mobile devices to do research and place orders. With a responsive design, your website will look outstanding and work effectively on all screens, from computers to smartphones. Customers who find your website hard to use might not come back if you don’t use a responsive website design. Read more about ",
             {
               "type": "link",
-              "href": "/blogs/responsive-design-for-ecommerce",
+              "href": "/blogs/responsive-design-for-ecommerce/",
               "text": "why Responsive Design is important for eCommerce"
             },
             "."
@@ -532,7 +532,7 @@
             " Offering various",
             {
               "type": "link",
-              "href": "/blogs/top-payment-methods-for-shopify-store",
+              "href": "/blogs/top-payment-methods-for-shopify-store/",
               "text": " payment options "
             },
             "builds trust. Customers may prefer bank transfers, wallets, or cards depending on their company policy."
@@ -690,7 +690,7 @@
             " Invoice notifications, shipment updates, and automatic order confirmations keep buyers informed. Check out our Top 5",
             {
               "type": "link",
-              "href": "/blogs/shopify-apps-for-email-marketing",
+              "href": "/blogs/shopify-apps-for-email-marketing/",
               "text": " Shopify Apps for Email Marketing"
             },
             " to automate your business."
@@ -1002,7 +1002,7 @@
         " as a reference if you plan to create or upgrade your B2B eCommerce store in 2025. Get ahead of the competition by putting these features into action right now. Apart from that, you can also check out some",
         {
           "type": "link",
-          "href": "/blogs/shopify-seo-apps",
+          "href": "/blogs/shopify-seo-apps/",
           "text": " Shopify SEO Apps to Drive More Sales"
         },
         "."

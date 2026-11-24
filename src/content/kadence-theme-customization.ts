@@ -30,7 +30,7 @@ export const kadenceThemeCustomizationContent = {
     description:
       "Want to customize your Kadence theme for a unique and high-performing WordPress website? Our Kadence Theme Customization Service helps you create a professional, fast, and user-friendly WordPress website that fulfills your brand's requirements. From layout changes to advanced feature integrations, we guarantee a fully optimized, SEO-friendly WordPress website that enhances your online presence.",
     ctaText: "request a quote",
-    ctaHref: "/request-quote",
+    ctaHref: "/request-quote/",
     ctaAriaLabel: "request a quote",
     image: {
       src: "/assets/kadence-theme-customization/hero/kadence-theme-customization-service-img.webp",
@@ -227,7 +227,7 @@ export const kadenceThemeCustomizationContent = {
     description:
       "Explore our portfolio, which showcases successful WordPress theme customization projects and highlights how we customize, secure, and enhance stores for peak performance.",
     ctaLabel: "View our work",
-    ctaHref: "/our-work",
+    ctaHref: "/our-work/",
     items: [
       {
         name: "Quite Events",

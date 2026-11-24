@@ -6,7 +6,7 @@
   "modified": "2025-01-17T08:43:21+00:00",
   "category": "Shopify",
   "categoryValue": "shopify",
-  "categoryHref": "/blogs?category=shopify",
+  "categoryHref": "/blogs/?category=shopify",
   "featuredImage": {
     "src": "/assets/blog/how-to-hire-shopify-development-agency.webp",
     "width": 1024,
@@ -28,7 +28,7 @@
         "Wondering about hiring a Shopify agency? Many resources online exist for hiring a Shopify agency. After reading this article, you’ll gain new insights and tips for hiring a great ",
         {
           "type": "link",
-          "href": "/shopify-development-agency",
+          "href": "/shopify-development-agency/",
           "text": " Shopify development agency."
         }
       ]
@@ -66,7 +66,7 @@
         "To create a great online store, hiring the right ",
         {
           "type": "link",
-          "href": "/shopify-development-agency",
+          "href": "/shopify-development-agency/",
           "text": "Shopify website development company"
         },
         " is crucial for your business’s success. But before that do your homework precisely. Carefully note each requirement that you would like to have in your eCommerce store. Here is a partial list of requirements"
@@ -454,7 +454,7 @@
         "When it comes to mobile friendly websites, Shopify’s Theme  guarantee an exceptional user experience on any device. No matter if they’re browsing on a smartphone, tablet, or desktop, your customers can easily navigate and view with optimal performance. Apart from that we are providing the ",
         {
           "type": "link",
-          "href": "/shopify-mobile-app-development",
+          "href": "/shopify-mobile-app-development/",
           "text": "Shopify Mobile App development service"
         },
         " by Dynamic Dreamz."
@@ -472,7 +472,7 @@
         "A Shopify development agency or Shopify developer is a web development business that specializes in developing online stores using Shopify or Shopify Plus platforms. Such agencies offer a range of services such as web design, marketing, content creation, SEO, and more. ",
         {
           "type": "link",
-          "href": "/shopify-plus-agency",
+          "href": "/shopify-plus-agency/",
           "text": "Shopify Plus Agency"
         },
         " also provide tech support and post installation services to their clients."

@@ -6,7 +6,7 @@
   "modified": "2025-07-10T05:41:40+00:00",
   "category": "Shopify",
   "categoryValue": "shopify",
-  "categoryHref": "/blogs?category=shopify",
+  "categoryHref": "/blogs/?category=shopify",
   "featuredImage": {
     "src": "/assets/blog/building-a-profitable-white-label-agency-steps-for-success.webp",
     "width": 658,
@@ -77,7 +77,7 @@
       "children": [
         {
           "type": "link",
-          "href": "/white-label-website-design-services",
+          "href": "/white-label-website-design-services/",
           "text": "White label web design Services"
         },
         " is creating aesthetically attractive, responsive websites that your clients will resell using their brand name. While your client’s brand appears in the work, you stay unnoticed. You can offer templates, custom designs, or even UX-focused solutions."
@@ -95,7 +95,7 @@
         "A ",
         {
           "type": "link",
-          "href": "/white-label-wordpress-development-services",
+          "href": "/white-label-wordpress-development-services/",
           "text": "white label WordPress agency"
         },
         " allows other companies to offer full WordPress websites."
@@ -159,7 +159,7 @@
         "As a ",
         {
           "type": "link",
-          "href": "/white-label-shopify-development-services",
+          "href": "/white-label-shopify-development-services/",
           "text": "Shopify white label agency"
         },
         ", you can provide services like:"

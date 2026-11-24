@@ -15,7 +15,7 @@ export const shopifyDevelopmentLosAngelesContent = {
       "Dynamic Dreamz provides Shopify development services for businesses in Los Angeles, including Shopify Plus, custom storefronts, theme customization, migrations, integrations, CRO and ongoing support. Our India-based team works with businesses and agencies in Los Angeles and internationally.",
     primaryCta: {
       label: "Get In Touch",
-      href: "/request-quote",
+      href: "/request-quote/",
     },
     secondaryCta: {
       label: "Explore Shopify Services",
@@ -199,7 +199,7 @@ export const shopifyDevelopmentLosAngelesContent = {
       "Whether you're building from scratch or scaling what you have, we bring the right expertise to every stage of your Shopify journey.",
     cta: {
       label: "",
-      href: "/request-quote",
+      href: "/request-quote/",
     },
     items: [
       {
@@ -215,7 +215,7 @@ export const shopifyDevelopmentLosAngelesContent = {
           "Our team works with themes like Dawn, Impulse, Expanse, Refresh, and Prestige, customizing every element to align with your brand identity. Whether it’s design tweaks, feature additions, or full layout overhauls, we make your storefront stand out in a crowded market.",
         icon: "/assets/services/shopify-development-in-delhi/services/shopify-theme-customization.svg",
         iconAlt: "Shopify Theme Customization Icon",
-        href: "/shopify-theme-customization",
+        href: "/shopify-theme-customization/",
       },
       {
         title: "Figma / XD to Shopify Conversion",
@@ -237,7 +237,7 @@ export const shopifyDevelopmentLosAngelesContent = {
           "Moving to Shopify from another platform? We make it seamless. Our migration process transfers your products, customer data, and content to Shopify with zero disruption, keeping your SEO intact and your store fully functional from day one.",
         icon: "/assets/services/shopify-development-in-delhi/services/shopify-migration-services.svg",
         iconAlt: "Shopify Migration Icon",
-        href: "/shopify-migration",
+        href: "/shopify-migration/",
       },
       {
         title: "Shopify Maintenance & Support",
@@ -245,7 +245,7 @@ export const shopifyDevelopmentLosAngelesContent = {
           "Your store needs consistent care to stay at its best. Dynamic Dreamz provides ongoing maintenance, from security updates and performance tuning to bug fixes and feature enhancements, so your Shopify store keeps running smoothly long after launch.",
         icon: "/assets/services/shopify-development-in-delhi/services/shopify-maintenance-support.svg",
         iconAlt: "Shopify Maintenance & Support Icon",
-        href: "/buy-shopify-development-hours",
+        href: "/buy-shopify-development-hours/",
       },
       {
         title: "Shopify 2.0 Migration",
@@ -253,7 +253,7 @@ export const shopifyDevelopmentLosAngelesContent = {
           "Still on an older Shopify theme? Upgrading to Shopify 2.0 unlocks a more flexible editing experience, better app compatibility, and improved performance. Our team handles the entire migration, cleanly, efficiently, and without disrupting your live store.",
         icon: "/assets/services/shopify-development-in-delhi/services/shopify-2-0-upgrades.svg",
         iconAlt: "Shopify 2.0 Migration Icon",
-        href: "/migrating-a-theme-to-online-store-2-0",
+        href: "/migrating-a-theme-to-online-store-2-0/",
       },
       {
         title: "White Label Shopify Development",
@@ -261,7 +261,7 @@ export const shopifyDevelopmentLosAngelesContent = {
           "Agencies and freelancers looking for a reliable development partner, we work behind the scenes so you don’t have to. Our white-label Shopify development service delivers high-quality work under your brand name, with full confidentiality and no compromise on quality.",
         icon: "/assets/services/shopify-development-in-bangalore/services/white-label-shopify-development.svg",
         iconAlt: "White Label Shopify Development Icon",
-        href: "/white-label-shopify-development-services",
+        href: "/white-label-shopify-development-services/",
       },
     ],
   },
@@ -356,7 +356,7 @@ export const shopifyDevelopmentLosAngelesContent = {
     description:
       "Thousands of Shopify stores crafted with precision, each one built to perform, convert, and grow.",
     ctaLabel: "View our work",
-    ctaHref: "/our-work",
+    ctaHref: "/our-work/",
     items: [
       {
         name: "Ranavat",
@@ -463,6 +463,6 @@ export const shopifyDevelopmentLosAngelesContent = {
   ctaBanner: {
     heading: "Want us to help you with your online store?",
     ctaLabel: "request a quote",
-    ctaHref: "/request-quote",
+    ctaHref: "/request-quote/",
   },
 };

@@ -43,7 +43,7 @@ export const inspiroThemeCustomizationContent = {
     description:
       "The Inspiro theme is a professional, lightweight, stylish WordPress theme created for photographers, videographers, and creative professionals. Its full-screen video backgrounds, gallery options, and stunning designs help users showcase their work effectively. Our Inspiro Theme Customization Services ensure that your WordPress website stands out with a unique design, smooth performance, and optimized user experience tailored to your business or personal brand.",
     ctaText: "request a quote",
-    ctaHref: "/request-quote",
+    ctaHref: "/request-quote/",
     ctaAriaLabel: "request a quote",
     image: {
       src: "/assets/inspiro-theme-customization/hero/inspiro-theme-customization-service-img.webp",
@@ -238,7 +238,7 @@ export const inspiroThemeCustomizationContent = {
     description:
       "Explore our portfolio, which showcases successful WordPress theme customization projects and highlights how we customize, secure, and enhance stores for peak performance.",
     ctaLabel: "View our work",
-    ctaHref: "/our-work",
+    ctaHref: "/our-work/",
     items: [
       {
         name: "Quite Events",

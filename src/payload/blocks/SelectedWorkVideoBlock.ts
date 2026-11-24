@@ -28,7 +28,7 @@ export const SelectedWorkVideoBlock: Block = {
     {
       name: "ctaHref",
       type: "text",
-      defaultValue: "/our-work",
+      defaultValue: "/our-work/",
       label: "CTA Link",
     },
   ],

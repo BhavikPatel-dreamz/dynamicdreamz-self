@@ -20,7 +20,7 @@ export const magentoPlusHeroContent = {
     "Hire our Magento to Shopify Plus Migration expert by Dynamic Dreamz. It offers a smooth, scalable, and user-friendly eCommerce solution. Simplify operations, boost performance, and unlock advanced tools for growth.",
   ],
   cta: "Request a Quote",
-  ctaHref: "/request-quote",
+  ctaHref: "/request-quote/",
   image: {
     src: "/assets/magento-to-shopify-plus-migration/magento-to-shopify-plus-migration-hero.svg",
     alt: "Magento to Shopify Plus Storefront Migration",

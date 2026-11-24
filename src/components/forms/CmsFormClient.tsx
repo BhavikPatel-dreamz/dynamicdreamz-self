@@ -485,7 +485,7 @@ export function CmsFormClient({
         } else if (redirect.type === "reference" && redirect.reference?.value) {
           const ref = redirect.reference.value;
           const targetSlug = typeof ref === "object" && "slug" in ref ? String(ref.slug) : "";
-          const targetPath = targetSlug && targetSlug !== "home" ? `/${targetSlug}` : "/";
+          const targetPath = targetSlug && targetSlug !== "home" ? `/${targetSlug}/` : "/";
           router.push(targetPath);
         }
       }

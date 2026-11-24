@@ -30,7 +30,7 @@ export const blocksyThemeCustomizationContent = {
     description:
       "The Blocksy theme is a stylish, lightweight, and highly customizable WordPress theme developed for speed and flexibility. Whether you want a blogging website, an eCommerce store, or a business website, you can customize a Blocksy theme that helps you achieve a unique and professional look. At Dynamic Dreamz, we offer Blocksy theme customization services to tailor your website to your exact business requirements, ensuring an optimized, responsive, and feature-rich online presence.",
     ctaText: "Request a Quote",
-    ctaHref: "/request-quote",
+    ctaHref: "/request-quote/",
     ctaAriaLabel: "Request a Quote",
     image: {
       src: "/assets/blocksy-theme-customization/hero/blocksy-theme-customization-service-img.webp",
@@ -214,7 +214,7 @@ export const blocksyThemeCustomizationContent = {
     description:
       "Explore our portfolio, which showcases successful WordPress theme customization projects and highlights how we customize, secure, and enhance stores for peak performance.",
     ctaLabel: "View our work",
-    ctaHref: "/our-work",
+    ctaHref: "/our-work/",
     items: [
       {
         name: "Quite Events",

@@ -28,7 +28,7 @@ export const appmakerHeroCoBranding = {
 export const appmakerHero = {
   title: "Transform Your Shopify Store into a Mobile App in Minutes!",
   ctaLabel: "start your free trial today!",
-  ctaHref: "/request-quote",
+  ctaHref: "/request-quote/",
   coBranding: appmakerHeroCoBranding,
 } as const;
 
@@ -229,7 +229,7 @@ export const appmakerFaqCopy = {
 export const appmakerCtaBanner = {
   heading: "Want us to help you with your online store?",
   ctaLabel: "request a quote",
-  ctaHref: "/request-quote",
+  ctaHref: "/request-quote/",
 } as const;
 
 export const appmakerShopifyMobileAppDevelopmentContent = {

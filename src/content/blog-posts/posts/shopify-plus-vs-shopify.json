@@ -6,7 +6,7 @@
   "modified": "2026-09-04T12:15:00+00:00",
   "category": "Faqs",
   "categoryValue": "faqs",
-  "categoryHref": "/blogs?category=faqs",
+  "categoryHref": "/blogs/?category=faqs",
   "featuredImage": null,
   "excerpt": "Choosing between Shopify and Shopify Plus may not seem as easy as it can be, because even some experts get confused when it comes to Shopify Plus vs Shopify. But to be honest, it all comes down to one question:...",
   "author": {
@@ -321,7 +321,7 @@
         "Not sure which side of that line your business falls on? Talk to a ",
         {
           "type": "link",
-          "href": "/shopify-plus-agency",
+          "href": "/shopify-plus-agency/",
           "text": "Shopify Plus development partner",
           "rel": "dofollow"
         },

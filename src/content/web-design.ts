@@ -14,7 +14,7 @@ export const webDesignHero: CityPageHeroContent = {
     "Dynamic Dreamz provides UI/UX and web design services for websites, ecommerce experiences and mobile apps. Our designers work across user journeys, wireframes, prototypes and polished interfaces to create clear, usable digital experiences aligned with your brand and business goals.",
   primaryCta: {
     label: "Request a Quote",
-    href: "/request-quote",
+    href: "/request-quote/",
   },
   badges: [
     {
@@ -171,7 +171,7 @@ export const webDesignPricing: PricingEngagementContent = {
       description:
         "For complete UI/UX design projects, website and app interfaces, user research, wireframing, prototyping, design systems and user-focused digital experiences.",
       ctaLabel: "Send Brief — Get a Quote in 24 Hours",
-      ctaHref: "/request-quote",
+      ctaHref: "/request-quote/",
     },
     {
       label: "Flexible Hourly Support",
@@ -180,7 +180,7 @@ export const webDesignPricing: PricingEngagementContent = {
       description:
         "For ongoing UI/UX support, design enhancements, interface improvements, usability refinements, design system updates and evolving digital product requirements.",
       ctaLabel: "Buy Web Design Hours",
-      ctaHref: "/request-quote",
+      ctaHref: "/request-quote/",
     },
     {
       label: "Dedicated Designer / Team",
@@ -189,7 +189,7 @@ export const webDesignPricing: PricingEngagementContent = {
       description:
         "For brands with an evolving design roadmap, multiple digital products or a need for dedicated UI/UX designers or a wider design team.",
       ctaLabel: "Discuss a Dedicated Team",
-      ctaHref: "/request-quote",
+      ctaHref: "/request-quote/",
     },
   ],
 };
@@ -206,7 +206,7 @@ export const webDesignPortfolio = {
     height: 44,
   },
   ctaLabel: "View our work",
-  ctaHref: "/portfolio",
+  ctaHref: "/portfolio/",
   items: [
     {
       name: "Brilliant Pet",

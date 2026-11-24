@@ -6,7 +6,7 @@
   "modified": "2026-09-14T07:56:44+00:00",
   "category": "Shopify",
   "categoryValue": "shopify",
-  "categoryHref": "/blogs?category=shopify",
+  "categoryHref": "/blogs/?category=shopify",
   "featuredImage": {
     "src": "/assets/blog/shopify-cro-checklist.webp",
     "width": 2560,
@@ -688,7 +688,7 @@
         "If your store needs a full speed audit and technical optimization, the ",
         {
           "type": "link",
-          "href": "/shopify-development-agency",
+          "href": "/shopify-development-agency/",
           "text": "Shopify development"
         },
         " team at Dynamic Dreamz has optimized stores across 20+ countries for performance that directly impacts conversion rates."
@@ -1057,7 +1057,7 @@
         "Shopify ",
         {
           "type": "link",
-          "href": "/blogs/how-to-do-ab-testing",
+          "href": "/blogs/how-to-do-ab-testing/",
           "text": "A/B Testing"
         },
         " is the 10th step and the reason this checklist never truly ends. CRO is not a one-time project. It is an ongoing process of testing, learning, and compounding improvements over time."

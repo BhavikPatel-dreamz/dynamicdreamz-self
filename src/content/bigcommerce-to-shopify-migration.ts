@@ -14,7 +14,7 @@ export const bigcommerceHeroContent: ServiceHeroVideoContent = {
   title: "BigCommerce to Shopify Migration Services",
   paragraphs: ["Are you thinking about migrating your eCommerce store from BigCommerce to Shopify? Get ready to use the full potential of Shopify's powerful platform to improve your business development with our BigCommerce to Shopify migration services."],
   cta: "REQUEST A QUOTE",
-  ctaHref: "/request-quote",
+  ctaHref: "/request-quote/",
   image: {
     src: "/assets/bigcommerce-to-shopify-migration/bigcommerce-shopify-migration-hero.svg",
     alt: "BigCommerce to Shopify Migration icon",

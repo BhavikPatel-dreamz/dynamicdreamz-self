@@ -7,7 +7,7 @@ export const dwellThemeCustomizationContent = {
     description:
       "Choose Dwell Theme Customization Service to enhance your Shopify store. The Dwell theme is clean, smart, and created for brands that want to stand out with minimal design. At Dynamic Dreamz, we help you modify the Dwell theme to reflect your brand’s style and improve your store’s performance. Whether you want a new design or added features, our experts can convert your store into a smooth, mobile-friendly, and high-converting experience.",
     ctaText: "Request a Quote",
-    ctaHref: "/request-quote",
+    ctaHref: "/request-quote/",
     ctaAriaLabel: "Request a Quote",
     secondaryCtaText: "View Dwell on Shopify",
     secondaryCtaHref: "https://themes.shopify.com/themes/dwell/presets/dwell",
@@ -185,7 +185,7 @@ export const dwellThemeCustomizationContent = {
       "Explore our portfolio showcasing successful Shopify customization projects, highlighting how we customize, secure, and enhance stores for peak performance.",
     ],
     ctaLabel: "View our work",
-    ctaHref: "/our-work",
+    ctaHref: "/our-work/",
     items: [
       {
         name: "Atolea Jewelry",

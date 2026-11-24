@@ -2133,7 +2133,7 @@ export interface Page {
     metaTitle?: string | null;
     metaDescription?: string | null;
     /**
-     * Stores only the relative page path (e.g. /beauty-cosmetics). Domains like https://www.dynamicdreamz.com or localhost are automatically stripped.
+     * Stores only the relative page path (e.g. /beauty-cosmetics/). Domains like https://www.dynamicdreamz.com or localhost are automatically stripped.
      */
     canonicalUrl?: string | null;
     metaImage?: (number | null) | Media;

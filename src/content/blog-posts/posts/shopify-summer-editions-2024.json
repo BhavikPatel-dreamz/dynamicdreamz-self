@@ -6,7 +6,7 @@
   "modified": "2025-01-14T12:09:21+00:00",
   "category": "Shopify",
   "categoryValue": "shopify",
-  "categoryHref": "/blogs?category=shopify",
+  "categoryHref": "/blogs/?category=shopify",
   "featuredImage": {
     "src": "/assets/blog/shopify-summer-editions-2024.webp",
     "width": 1316,
@@ -236,7 +236,7 @@
         "Optimizing your Shopify store is necessary to boost conversion and enhance the overall customer experience. The new tools and features in Shopify Summer Editions 2024 equip you with the required resources to accomplish these goals. ",
         {
           "type": "link",
-          "href": "/shopify-experts",
+          "href": "/shopify-experts/",
           "text": "Hire Shopify Experts"
         },
         " who has customized your store according to your needs."
@@ -296,7 +296,7 @@
         "Are you looking for Shopify or Shopify Plus developers? In that case, Dynamic Dreamz can help you to get skilled and experienced Shopify developers to create your Shopify store. You can checkout our ",
         {
           "type": "link",
-          "href": "/shopify-development-agency",
+          "href": "/shopify-development-agency/",
           "text": "Shopify development"
         },
         " page or contact us to hire a Shopify developer or a team of Shopify experts!"
@@ -315,7 +315,7 @@
           "content": [
             {
               "type": "link",
-              "href": "/blogs/guide-to-hiring-shopify-expert",
+              "href": "/blogs/guide-to-hiring-shopify-expert/",
               "text": "Ultimate Guide To Hiring Shopify Expert"
             }
           ]
@@ -324,7 +324,7 @@
           "content": [
             {
               "type": "link",
-              "href": "/blogs/how-to-hire-shopify-development-agency",
+              "href": "/blogs/how-to-hire-shopify-development-agency/",
               "text": "Ultimate guide to hiring Shopify Development Agency"
             }
           ]
@@ -333,7 +333,7 @@
           "content": [
             {
               "type": "link",
-              "href": "/blogs/key-benefits-of-choosing-shopify",
+              "href": "/blogs/key-benefits-of-choosing-shopify/",
               "text": "10 Key Benefits of Choosing Shopify – Unleashing the Power of eCommerce"
             }
           ]
@@ -342,7 +342,7 @@
           "content": [
             {
               "type": "link",
-              "href": "/blogs/shopify-plus-in-action-success-stories-and-case-studies",
+              "href": "/blogs/shopify-plus-in-action-success-stories-and-case-studies/",
               "text": "Shopify Plus in Action: Success Stories and Case Studies"
             }
           ]

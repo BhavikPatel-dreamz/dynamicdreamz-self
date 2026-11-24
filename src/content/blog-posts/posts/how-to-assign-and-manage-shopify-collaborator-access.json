@@ -6,7 +6,7 @@
   "modified": "2025-03-20T06:28:23+00:00",
   "category": "Shopify",
   "categoryValue": "shopify",
-  "categoryHref": "/blogs?category=shopify",
+  "categoryHref": "/blogs/?category=shopify",
   "featuredImage": {
     "src": "/assets/blog/how-to-assign-and-manage-shopify-collaborator-access.webp",
     "width": 329,

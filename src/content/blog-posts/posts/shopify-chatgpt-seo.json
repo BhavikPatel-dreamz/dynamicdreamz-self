@@ -6,7 +6,7 @@
   "modified": "2026-10-08T19:48:18+00:00",
   "category": "Faqs",
   "categoryValue": "faqs",
-  "categoryHref": "/blogs?category=faqs",
+  "categoryHref": "/blogs/?category=faqs",
   "featuredImage": null,
   "excerpt": "These days, people are asking ChatGPT or Gemini for product recommendations, and they don’t browse your store the way an actual person does. Rather, it’s pulling structured facts from your catalog, your schema, and increasingly, direct data feeds such as Shopify's Agentic Catalog. And for that reason, today we are in dire need of Shopify [...]",
   "author": {
@@ -181,7 +181,7 @@
         "Our ",
         {
           "type": "link",
-          "href": "/shopify-development-agency",
+          "href": "/shopify-development-agency/",
           "text": "Shopify experts team"
         },
         " specializes in exactly this kind of AI-readiness work."

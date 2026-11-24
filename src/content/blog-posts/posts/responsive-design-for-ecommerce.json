@@ -6,7 +6,7 @@
   "modified": "2025-12-26T10:38:45+00:00",
   "category": "eCommerce",
   "categoryValue": "ecommerce",
-  "categoryHref": "/blogs?category=ecommerce",
+  "categoryHref": "/blogs/?category=ecommerce",
   "featuredImage": {
     "src": "/assets/blog/responsive-design-for-ecommerce.webp",
     "width": 329,
@@ -203,7 +203,7 @@
         " All devices can access the same webpage. Time, money, and effort are all saved. It facilitates updates as well. Want to make a responsive website for your jewelry Brand, find out ",
         {
           "type": "link",
-          "href": "/blogs/shopify-themes-for-jewelry",
+          "href": "/blogs/shopify-themes-for-jewelry/",
           "text": "Shopify themes for jewelry Brand"
         },
         "."
@@ -250,7 +250,7 @@
         " ",
         {
           "type": "link",
-          "href": "/blogs/shopify-seo-apps",
+          "href": "/blogs/shopify-seo-apps/",
           "text": "Shopify SEO Apps to Drive More Sales"
         }
       ]
@@ -633,7 +633,7 @@
         },
         {
           "type": "link",
-          "href": "/case-studies/calmenta",
+          "href": "/case-studies/calmenta/",
           "text": "Read More:",
           "bold": true
         }
@@ -668,7 +668,7 @@
       "children": [
         {
           "type": "link",
-          "href": "/case-studies/holy-plantz",
+          "href": "/case-studies/holy-plantz/",
           "text": "Read More:"
         }
       ]
@@ -697,7 +697,7 @@
       "children": [
         {
           "type": "link",
-          "href": "/case-studies/trendia",
+          "href": "/case-studies/trendia/",
           "text": "Read More:"
         }
       ]
@@ -726,7 +726,7 @@
       "children": [
         {
           "type": "link",
-          "href": "/case-studies/nekter-juice-bar",
+          "href": "/case-studies/nekter-juice-bar/",
           "text": "Read More:"
         }
       ]
@@ -755,7 +755,7 @@
         },
         {
           "type": "link",
-          "href": "/case-studies/consciouspoker",
+          "href": "/case-studies/consciouspoker/",
           "text": "Read More:",
           "bold": true
         }
@@ -785,7 +785,7 @@
       "children": [
         {
           "type": "link",
-          "href": "/case-studies",
+          "href": "/case-studies/",
           "text": "Read More:"
         }
       ]
@@ -814,7 +814,7 @@
       "children": [
         {
           "type": "link",
-          "href": "/case-studies/quite-events",
+          "href": "/case-studies/quite-events/",
           "text": "Read More:"
         }
       ]

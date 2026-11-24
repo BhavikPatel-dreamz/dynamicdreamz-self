@@ -7,7 +7,7 @@ export const impulseThemeCustomizationContent = {
     description:
       "The Impulse Theme is developed for trendy, fast paced Shopify stores that require the showcase of a wide range of products with high quality visuals. With its elegant design and smooth functionality, our Impulse Theme Customization Service is designed to assist you in creating a store that shines out. We customize the theme to match your brand identity, optimize it for all devices, and add advanced features for a more promising buying experience.",
     ctaText: "Request a Quote",
-    ctaHref: "/request-quote",
+    ctaHref: "/request-quote/",
     secondaryCtaText: "View Impulse on Shopify",
     secondaryCtaHref: "https://themes.shopify.com/themes/impulse/presets/impulse",
     secondaryCtaTarget: "_blank",
@@ -199,7 +199,7 @@ export const impulseThemeCustomizationContent = {
       "Explore our portfolio showcasing successful Shopify customization projects, highlighting how we customize, secure, and enhance stores for peak performance.",
     ],
     ctaLabel: "View our work",
-    ctaHref: "/our-work",
+    ctaHref: "/our-work/",
     items: [
       {
         name: "AdHOC Atelier",

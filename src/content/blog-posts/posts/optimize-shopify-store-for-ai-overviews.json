@@ -6,7 +6,7 @@
   "modified": "2026-10-01T15:47:12+00:00",
   "category": "Faqs",
   "categoryValue": "faqs",
-  "categoryHref": "/blogs?category=faqs",
+  "categoryHref": "/blogs/?category=faqs",
   "featuredImage": null,
   "excerpt": "People on the web are talking about things such as Shopify AI search and e-commerce AI SEO, just because they want to optimize their Shopify store for AI overviews. Because, you know, these days, even your #1 organic ranking can’t automatically place you into Google's AI Overviews. And, as per research from Authoritas, only 16.7% [...]",
   "author": {
@@ -157,7 +157,7 @@
         "For the fuller structured-data and entity framework behind all of this, see our guide to Shopify AI SEO. And if you’d rather have this implemented properly than DIY it across your catalog, our ",
         {
           "type": "link",
-          "href": "/shopify-development-agency",
+          "href": "/shopify-development-agency/",
           "text": "Shopify expert team"
         },
         " handles exactly this kind of AI-visibility work."

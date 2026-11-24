@@ -7,7 +7,7 @@ export const originThemeCustomizationContent = {
     description:
       "Are you looking to customize your Shopify store with the adaptable Origin theme? Our Origin Theme Customization Service helps you design a remarkable and user-friendly Shopify store that flawlessly represents your brand. From design changes to advanced feature implementation, we offer complete customization options to improve the functionality of your Shopify store and boost conversions. Allow us to guide you in maximizing the Origin theme for your Shopify store.",
     ctaText: "Request a Quote",
-    ctaHref: "/request-quote",
+    ctaHref: "/request-quote/",
     ctaAriaLabel: "Request a Quote",
     secondaryCtaText: "View Origin on Shopify",
     secondaryCtaHref: "https://themes.shopify.com/themes/origin/presets/origin",
@@ -178,7 +178,7 @@ export const originThemeCustomizationContent = {
       "Explore our portfolio showcasing successful Shopify customization projects, highlighting how we customize, secure, and enhance stores for peak performance.",
     ],
     ctaLabel: "View our work",
-    ctaHref: "/our-work",
+    ctaHref: "/our-work/",
     items: [
       {
         name: "Nufyx",

@@ -42,7 +42,7 @@ export function OurWorkCaseStudiesSection({
                 <div className="cs-col-left">
                   <Link
                     className="cs_list_img relative block overflow-hidden pb-[50%] focus-visible:outline-2 focus-visible:outline-offset-[-2px] focus-visible:outline-[#ad5151]"
-                    href={`/case-studies/${item.slug}`}
+                    href={`/case-studies/${item.slug}/`}
                     aria-label={`View ${item.title} case study`}
                   >
                     <Image
@@ -59,7 +59,7 @@ export function OurWorkCaseStudiesSection({
                     <div className="cs-title">
                       <Link
                         className="group/title block focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#ad5151]"
-                        href={`/case-studies/${item.slug}`}
+                        href={`/case-studies/${item.slug}/`}
                       >
                         <div className="cs-cate-wrapp mb-2.5">
                           <span className="font-montserrat text-[10px] font-bold uppercase tracking-[0.8px] text-[#ad5151] line-clamp-1">
@@ -84,7 +84,7 @@ export function OurWorkCaseStudiesSection({
                     <div className="cs-visit mt-5 border-t border-[rgba(40,40,40,0.08)] pt-5">
                       <TextArrowLink
                         className="focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#ad5151]"
-                        href={`/case-studies/${item.slug}`}
+                        href={`/case-studies/${item.slug}/`}
                       >
                         {ourWorkPage.ui.viewCaseStudy}
                       </TextArrowLink>

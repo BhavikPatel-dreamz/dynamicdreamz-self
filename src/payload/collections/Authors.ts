@@ -12,12 +12,12 @@ export const Authors: CollectionConfig = {
   hooks: {
     afterChange: [
       () => {
-        safeRevalidatePath("/blogs");
+        safeRevalidatePath("/blogs/");
       },
     ],
     afterDelete: [
       () => {
-        safeRevalidatePath("/blogs");
+        safeRevalidatePath("/blogs/");
       },
     ],
   },

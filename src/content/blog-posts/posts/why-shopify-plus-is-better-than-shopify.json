@@ -6,7 +6,7 @@
   "modified": "2026-08-11T09:13:52+00:00",
   "category": "Shopify",
   "categoryValue": "shopify",
-  "categoryHref": "/blogs?category=shopify",
+  "categoryHref": "/blogs/?category=shopify",
   "featuredImage": {
     "src": "/assets/blog/why-shopify-plus-is-better-than-shopify.webp",
     "width": 329,
@@ -248,7 +248,7 @@
         "However, Shopify Plus provides even more customization options. You can cooperate with a ",
         {
           "type": "link",
-          "href": "/shopify-plus-agency",
+          "href": "/shopify-plus-agency/",
           "text": "Shopify Plus agency"
         },
         ", ",
@@ -363,7 +363,7 @@
         " or ",
         {
           "type": "link",
-          "href": "/shopify-plus-agency",
+          "href": "/shopify-plus-agency/",
           "text": "Shopify Plus development agency"
         },
         " makes everything easier."
@@ -634,7 +634,7 @@
       "children": [
         {
           "type": "link",
-          "href": "/case-studies/nekter-juice-bar",
+          "href": "/case-studies/nekter-juice-bar/",
           "text": "Read more"
         }
       ]
@@ -661,7 +661,7 @@
       "children": [
         {
           "type": "link",
-          "href": "/case-studies/trendia",
+          "href": "/case-studies/trendia/",
           "text": "Read more"
         }
       ]
@@ -688,7 +688,7 @@
       "children": [
         {
           "type": "link",
-          "href": "/case-studies/calmenta",
+          "href": "/case-studies/calmenta/",
           "text": "Read more"
         }
       ]
@@ -715,7 +715,7 @@
       "children": [
         {
           "type": "link",
-          "href": "/case-studies/holy-plantz",
+          "href": "/case-studies/holy-plantz/",
           "text": "Read more"
         }
       ]
@@ -991,7 +991,7 @@
         "If you are a startup, we can help you create a regular Shopify store. It’s a good start for new businesses and beginners. If you are an established business with a Shopify account and are experiencing high orders and traffic, we can help you build a Shopify Plus store with advanced features. And if you want to ",
         {
           "type": "link",
-          "href": "/shopify-migration",
+          "href": "/shopify-migration/",
           "text": "migrate to Shopify Plus"
         },
         " from another eCommerce platform, we can also help you."
@@ -1003,7 +1003,7 @@
         "We have the best team of ",
         {
           "type": "link",
-          "href": "/hire-shopify-developers",
+          "href": "/hire-shopify-developers/",
           "text": "Shopify Plus developers and designers"
         },
         ", with good expertise. We want to take a moment to mention that we are one of the ",
@@ -1087,7 +1087,7 @@
         "Yes, you can migrate your standard Shopify store to a Shopify Plus store, and upgrading is smooth. You can take help from Shopify Plus support, or you can ",
         {
           "type": "link",
-          "href": "/shopify-experts",
+          "href": "/shopify-experts/",
           "text": "hire a Shopify expert"
         },
         " or a Shopify Plus agency to help you migrate your store."

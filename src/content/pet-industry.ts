@@ -17,7 +17,7 @@ export const petIndustryHero: ServiceHeroVideoContent = {
     "We help pet food, wellness, accessories and lifestyle brands create easier product discovery, repeat-purchase journeys, mobile apps and custom digital experiences for pet owners.",
   ],
   cta: "Discuss Your Project",
-  ctaHref: "/request-quote",
+  ctaHref: "/request-quote/",
   secondaryCta: {
     label: "See Relevant Work",
     href: "#our_work",
@@ -376,7 +376,7 @@ export const petIndustryWhyChoose: WhyChooseMigrationContent = {
   ],
   partnerLink: {
     label: "About Dynamic Dreamz",
-    href: "/about-us",
+    href: "/about-us/",
   },
 };
 

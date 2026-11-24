@@ -42,7 +42,7 @@ export const popularfxThemeCustomizationContent = {
     "title": "PopularFX Theme Customization Service",
     "description": "The PopularFX theme is a lightweight and highly customizable WordPress theme designed for businesses, blogs, and eCommerce stores. With its simple and easy drag-and-drop page builder and pre-built templates, it allows users to create attractive websites without coding knowledge. Our PopularFX theme customization services help you customize the design, optimize performance, and improve functionality to create a WordPress website that truly defines your brand and boosts user engagement.",
     "ctaText": "Request a Quote",
-    "ctaHref": "/request-quote",
+    "ctaHref": "/request-quote/",
     "ctaAriaLabel": "Request a Quote",
     "image": {
       "src": "/assets/popularfx-theme-customization/hero/popularfx-theme-customization-service-img.webp",
@@ -216,7 +216,7 @@ export const popularfxThemeCustomizationContent = {
     "heading": "Snippets of WordPress Theme Customization Portfolio",
     "description": "Explore our portfolio, which showcases successful WordPress theme customization projects and highlights how we customize, secure, and enhance stores for peak performance.",
     "ctaLabel": "View our work",
-    "ctaHref": "/our-work",
+    "ctaHref": "/our-work/",
     "items": [
       {
         "name": "Quite Events",

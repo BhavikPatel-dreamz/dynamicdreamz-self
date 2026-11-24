@@ -30,7 +30,7 @@ export const oceanwpThemeCustomizationContent = {
     description:
       "Do you want to create a high-performing website with the OceanWP theme? Our OceanWP Theme Customization Service ensures that your website is tailored to your brand, fully responsive, and optimized for speed and SEO ranking. Whether you need design changes, feature improvements, or performance optimizations, we help you unlock the full potential of OceanWP, providing a unique and engaging WordPress website that sweetens user experience and increases conversions.",
     ctaText: "request a quote",
-    ctaHref: "/request-quote",
+    ctaHref: "/request-quote/",
     ctaAriaLabel: "request a quote",
     image: {
       src: "/assets/oceanwp-theme-customization/hero/oceanwp-theme-customization-service-img.webp",
@@ -202,7 +202,7 @@ export const oceanwpThemeCustomizationContent = {
     description:
       "Explore our portfolio, which showcases successful WordPress theme customization projects and highlights how we customize, secure, and enhance stores for peak performance.",
     ctaLabel: "View our work",
-    ctaHref: "/our-work",
+    ctaHref: "/our-work/",
     items: [
       {
         name: "Quite Events",

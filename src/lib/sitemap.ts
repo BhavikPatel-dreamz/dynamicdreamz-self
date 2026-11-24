@@ -88,7 +88,7 @@ export function getCaseStudySitemapXml(): string {
 
   const urlsXml = caseStudyDetails
     .map((item) => {
-      const loc = escapeXml(absoluteUrl(`/case-studies/${item.slug}`));
+      const loc = escapeXml(absoluteUrl(`/case-studies/${item.slug}/`));
       const lastmod = formatDate(item.seo.lastModified);
       const imageXml = item.hero?.image?.src
         ? `\n    <image:image>\n      <image:loc>${escapeXml(absoluteUrl(item.hero.image.src))}</image:loc>\n    </image:image>`

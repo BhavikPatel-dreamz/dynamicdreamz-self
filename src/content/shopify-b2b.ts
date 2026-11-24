@@ -15,7 +15,7 @@ export const shopifyB2bHero = {
     "Dynamic Dreamz helps manufacturers, wholesalers, distributors and established brands plan, build and improve B2B commerce on Shopify. We work across native Shopify B2B, Shopify Plus, custom storefronts, our SmartB2B public app, custom Shopify apps and ERP/CRM/PIM integrations.",
   ],
   cta: "Discuss Your B2B Project",
-  ctaHref: "/request-quote",
+  ctaHref: "/request-quote/",
   secondaryCta: {
     label: "Explore B2B Services",
     href: "#shopping_eperience",
@@ -320,7 +320,7 @@ export const shopifyB2bIndustries: IndustriesServedContent = {
       eyebrow: "Shopify Plus Industry",
       description:
         "Shopify Plus experiences for supplement and wellness brands with trust-led UX, subscriptions, education and repeat-purchase journeys.",
-      href: "/industries/health-nutrition",
+      href: "/industries/health-nutrition/",
     },
     {
       image: "/assets/shopify-plus-agency/industries/fashion-apparel.webp",
@@ -329,7 +329,7 @@ export const shopifyB2bIndustries: IndustriesServedContent = {
       eyebrow: "Shopify Plus Industry",
       description:
         "Premium commerce experiences with merchandising depth, variant complexity, product discovery and mobile-first shopping journeys.",
-      href: "/industries/fashion",
+      href: "/industries/fashion/",
     },
     {
       image: "/assets/shopify-plus-agency/industries/beauty-cosmetics.webp",
@@ -338,7 +338,7 @@ export const shopifyB2bIndustries: IndustriesServedContent = {
       eyebrow: "Shopify Plus Industry",
       description:
         "High-converting storefronts for beauty brands that need visual storytelling, product education, subscriptions and stronger merchandising.",
-      href: "/industries/beauty-cosmetics",
+      href: "/industries/beauty-cosmetics/",
     },
     {
       image: "/assets/shopify-plus-agency/industries/food-beverages.webp",
@@ -347,7 +347,7 @@ export const shopifyB2bIndustries: IndustriesServedContent = {
       eyebrow: "Shopify Plus Industry",
       description:
         "Commerce experiences supporting repeat purchase, subscriptions, bundles, promotions and streamlined ordering workflows.",
-      href: "/industries/food-beverages",
+      href: "/industries/food-beverages/",
     },
     {
       image: "/assets/shopify-plus-agency/industries/sports-outdoors.png",
@@ -356,7 +356,7 @@ export const shopifyB2bIndustries: IndustriesServedContent = {
       eyebrow: "Shopify Plus Industry",
       description:
         "Fast, mobile-led ecommerce experiences for active and outdoor brands with rich product discovery and global commerce requirements.",
-      href: "/industries/sports-outdoors",
+      href: "/industries/sports-outdoors/",
     },
     {
       image: "/assets/shopify-plus-agency/industries/home-living.png",
@@ -365,7 +365,7 @@ export const shopifyB2bIndustries: IndustriesServedContent = {
       eyebrow: "Shopify Plus Industry",
       description:
         "Shopify Plus solutions for home brands with large catalogs, configurable products, visual merchandising and complex product journeys.",
-      href: "/industries/home-living",
+      href: "/industries/home-living/",
     },
     {
       image: "/assets/shopify-plus-agency/industries/jewellery-accessories.png",
@@ -374,7 +374,7 @@ export const shopifyB2bIndustries: IndustriesServedContent = {
       eyebrow: "Shopify Plus Industry",
       description:
         "Premium product experiences for jewellery and accessory brands, including rich presentation and sophisticated customization requirements.",
-      href: "/industries/jewellery-accessories",
+      href: "/industries/jewellery-accessories/",
     },
     {
       image: "/assets/shopify-plus-agency/industries/pet-industry.webp",
@@ -383,7 +383,7 @@ export const shopifyB2bIndustries: IndustriesServedContent = {
       eyebrow: "Shopify Plus Industry",
       description:
         "Conversion-focused Shopify stores with clearer category navigation, trust-building product content and strong repeat-purchase journeys.",
-      href: "/industries/pet-industry",
+      href: "/industries/pet-industry/",
     },
   ],
 };
@@ -440,7 +440,7 @@ export const shopifyB2bCaseStudies = {
       description:
         "See how Dynamic Dreamz created a B2B Shopify storefront for E2IP Technologies with a customized Trade theme and streamlined product purchasing.",
       tags: ["B2B Ecommerce", "Trade Theme Customization"],
-      href: "/case-studies/e2ip-technologies",
+      href: "/case-studies/e2ip-technologies/",
       image: "/assets/case-studies/e2ip-technologies.webp",
       imageAlt: "E2IP Technologies: B2B Shopify Trade Theme Store with Persistent ‘Buy Product’ Header",
       ctaLabel: "View Case study",
@@ -452,7 +452,7 @@ export const shopifyB2bCaseStudies = {
       description:
         "See how Dynamic Dreamz developed Essential Whitening's Shopify 2.0 store with B2B pricing tiers for dental professionals and DTC customers.",
       tags: ["B2B Pricing Tiers", "Dental Industry"],
-      href: "/case-studies/essential-whitening",
+      href: "/case-studies/essential-whitening/",
       image: "/assets/case-studies/essential-whitening.webp",
       imageAlt: "Essential Whitening: Custom Shopify 2.0 Store with B2B Pricing Tiers for Dental Professionals",
       ctaLabel: "View Case study",
@@ -464,7 +464,7 @@ export const shopifyB2bCaseStudies = {
       description:
         "See how Dynamic Dreamz developed a Shopify Plus B2B solution for Furnified with custom ERP middleware and connected commerce workflows.",
       tags: ["B2B Ecommerce", "Furniture"],
-      href: "/case-studies/furnified",
+      href: "/case-studies/furnified/",
       image: "/assets/case-studies/furnified.webp",
       imageAlt: "Furnified: Shopify Plus B2B Commerce System with Custom ERP Middleware Integration",
       ctaLabel: "View Case study",

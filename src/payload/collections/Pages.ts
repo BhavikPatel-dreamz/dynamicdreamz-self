@@ -71,14 +71,14 @@ export const Pages: CollectionConfig = {
       url: ({ data }) => {
         const rawSlug = typeof data?.slug === "string" ? data.slug.trim() : "";
         const slug = rawSlug.replace(/^\/+|\/+$/g, "");
-        const path = !slug || slug === "home" || slug === "index" ? "/" : `/${slug}`;
+        const path = !slug || slug === "home" || slug === "index" ? "/" : `/${slug}/`;
         return previewDraftPath(path, slug || "home");
       },
     },
     preview: (doc) => {
       const rawSlug = typeof doc?.slug === "string" ? doc.slug.trim() : "";
       const slug = rawSlug.replace(/^\/+|\/+$/g, "");
-      const path = !slug || slug === "home" || slug === "index" ? "/" : `/${slug}`;
+      const path = !slug || slug === "home" || slug === "index" ? "/" : `/${slug}/`;
       return previewDraftPath(path, slug || "home");
     },
   },
@@ -90,14 +90,14 @@ export const Pages: CollectionConfig = {
       ({ doc, previousDoc }) => {
         if (doc?.slug) {
           const routePath =
-            doc.slug === "home" || doc.slug === "index" ? "/" : `/${doc.slug}`;
+            doc.slug === "home" || doc.slug === "index" ? "/" : `/${doc.slug}/`;
           safeRevalidatePath(routePath);
         }
         if (previousDoc?.slug && previousDoc.slug !== doc?.slug) {
           const prevRoutePath =
             previousDoc.slug === "home" || previousDoc.slug === "index"
               ? "/"
-              : `/${previousDoc.slug}`;
+              : `/${previousDoc.slug}/`;
           safeRevalidatePath(prevRoutePath);
         }
       },
@@ -106,7 +106,7 @@ export const Pages: CollectionConfig = {
       ({ doc }) => {
         if (doc?.slug) {
           const routePath =
-            doc.slug === "home" || doc.slug === "index" ? "/" : `/${doc.slug}`;
+            doc.slug === "home" || doc.slug === "index" ? "/" : `/${doc.slug}/`;
           safeRevalidatePath(routePath);
         }
       },
@@ -193,15 +193,15 @@ export const Pages: CollectionConfig = {
           type: "text",
           label: "Canonical Path / Slug (e.g. /beauty-cosmetics)",
           admin: {
-            description: "Stores only the relative page path (e.g. /beauty-cosmetics). Domains like https://www.dynamicdreamz.com or localhost are automatically stripped.",
-            placeholder: "/page-slug",
+            description: "Stores only the relative page path (e.g. /beauty-cosmetics/). Domains like https://www.dynamicdreamz.com or localhost are automatically stripped.",
+            placeholder: "/page-slug/",
           },
           hooks: {
             beforeChange: [
               ({ value, data }) => {
                 if (!value) {
                   const slug = typeof data?.slug === "string" ? data.slug.trim().replace(/^\/+|\/+$/g, "") : "";
-                  return slug ? (slug === "home" || slug === "index" ? "/" : `/${slug}`) : "/";
+                  return slug ? (slug === "home" || slug === "index" ? "/" : `/${slug}/`) : "/";
                 }
                 let cleaned = String(value).trim();
                 if (cleaned.startsWith("http://") || cleaned.startsWith("https://")) {
@@ -212,8 +212,8 @@ export const Pages: CollectionConfig = {
                     cleaned = cleaned.replace(/^https?:\/\/[^/]+/i, "") || "/";
                   }
                 }
-                const normalized = cleaned.startsWith("/") ? cleaned : `/${cleaned}`;
-                return normalized === "/" ? "/" : normalized.replace(/\/+$/, "");
+                const normalized = cleaned.startsWith("/") ? cleaned : `/${cleaned}/`;
+                return normalized === "/" ? "/" : normalized.endsWith("/") ? normalized : `${normalized}/`;
               },
             ],
           },

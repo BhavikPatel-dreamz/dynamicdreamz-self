@@ -73,7 +73,7 @@ export const ShopifySupportScenariosBlock: Block = {
         {
           name: "primaryCtaHref",
           type: "text",
-          defaultValue: "/request-a-quote",
+          defaultValue: "/request-a-quote/",
           label: "Primary CTA Link",
         },
         {

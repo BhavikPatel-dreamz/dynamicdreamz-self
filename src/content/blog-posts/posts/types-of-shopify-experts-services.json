@@ -6,7 +6,7 @@
   "modified": "2025-01-24T06:18:47+00:00",
   "category": "Shopify",
   "categoryValue": "shopify",
-  "categoryHref": "/blogs?category=shopify",
+  "categoryHref": "/blogs/?category=shopify",
   "featuredImage": {
     "src": "/assets/blog/types-of-shopify-experts-services.webp",
     "width": 1316,
@@ -73,7 +73,7 @@
         "You may go through Dynamic Dreamz ",
         {
           "type": "link",
-          "href": "/shopify-development-agency",
+          "href": "/shopify-development-agency/",
           "text": "Shopify development service"
         },
         " to scale new heights for your online store. Our Shopify expert developers will lift your website to next level and introduce latest features of Shopify. Our team will enhance the functionalities store and provide customers with a hassle free shopping experience."
@@ -155,7 +155,7 @@
         "A spectacular Shopify theme is the key to create a lasting impression on customers’ mind and a strong online presence. With our ",
         {
           "type": "link",
-          "href": "/shopify-theme-customization",
+          "href": "/shopify-theme-customization/",
           "text": "Shopify Theme Customization"
         },
         " services, you will get responsive, feature rich theme optimized for mobile devices and designed to increase conversion rates and sales. Our Shopify developers are experienced in creating attractive UI/UX."
@@ -227,13 +227,13 @@
         "If you are an online store owner and looking for ways to customize your store in long run, you don’t need to be a tech expert or a development team. You can ",
         {
           "type": "link",
-          "href": "/shopify-experts",
+          "href": "/shopify-experts/",
           "text": "Hire Shopify Experts"
         },
         "  and ",
         {
           "type": "link",
-          "href": "/shopify-plus-agency",
+          "href": "/shopify-plus-agency/",
           "text": "Shopify Plus Agency"
         },
         " who provide store setup and customization services who make your task easier for you."
@@ -322,7 +322,7 @@
         "Setting up a Shopify store may require enormous efforts and time but relax, you can rely on team of our ",
         {
           "type": "link",
-          "href": "/hire-shopify-developers",
+          "href": "/hire-shopify-developers/",
           "text": "Shopify Developers"
         },
         " who will leave no stone unturned to meet your expectations."
@@ -347,7 +347,7 @@
         "Dynamic Dreamz specializes in custom ",
         {
           "type": "link",
-          "href": "/shopify-mobile-app-development",
+          "href": "/shopify-mobile-app-development/",
           "text": "Shopify app development"
         },
         ". Our team of Shopify development experts create mobile friendly responsive app to enhance customers’ shopping experience."
@@ -414,7 +414,7 @@
         "Are you looking to move from your existing store to Shopify Store without losing a single byte of your data? Dynamic Dreamz’ hassle free professional ",
         {
           "type": "link",
-          "href": "/shopify-migration",
+          "href": "/shopify-migration/",
           "text": "Shopify migration"
         },
         " service will help you in doing so. Our Shopify developers will take due care of your data and make sure that your business does not get interrupted during the migration. Our Shopify migration expert will enable for you the comprehensive eCommerce features of Shopify."

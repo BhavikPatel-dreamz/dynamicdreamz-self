@@ -6,7 +6,7 @@
   "modified": "2025-07-14T03:21:40+00:00",
   "category": "Shopify",
   "categoryValue": "shopify",
-  "categoryHref": "/blogs?category=shopify",
+  "categoryHref": "/blogs/?category=shopify",
   "featuredImage": {
     "src": "/assets/blog/benefits-of-white-label-web-design-services.webp",
     "width": 658,
@@ -137,7 +137,7 @@
         " ",
         {
           "type": "link",
-          "href": "/blogs/signs-to-start-using-white-label-services",
+          "href": "/blogs/signs-to-start-using-white-label-services/",
           "text": "5 Signs It’s Time to Start Using White Label Services in Your Business"
         }
       ]
@@ -308,7 +308,7 @@
         " ",
         {
           "type": "link",
-          "href": "/blogs/benefits-of-white-labeling-agency",
+          "href": "/blogs/benefits-of-white-labeling-agency/",
           "text": "The Benefits of White Labeling: How Agencies Can Scale Faster"
         }
       ]
@@ -446,7 +446,7 @@
         " ",
         {
           "type": "link",
-          "href": "/blogs/what-is-a-white-label-agency",
+          "href": "/blogs/what-is-a-white-label-agency/",
           "text": "What Is a White Label Agency & How Can It Help You Grow Your Business?"
         }
       ]

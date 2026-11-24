@@ -6,7 +6,7 @@
   "modified": "2025-01-24T11:33:29+00:00",
   "category": "Shopify",
   "categoryValue": "shopify",
-  "categoryHref": "/blogs?category=shopify",
+  "categoryHref": "/blogs/?category=shopify",
   "featuredImage": {
     "src": "/assets/blog/product-bundling-in-shopify.webp",
     "width": 1800,
@@ -172,7 +172,7 @@
         " lip kits who has implemented ",
         {
           "type": "link",
-          "href": "/blogs/types-of-shopify-experts-services",
+          "href": "/blogs/types-of-shopify-experts-services/",
           "text": "Shopify expert services"
         },
         " of Dynamic Dreamz. These kits are made up of a lip liner crayon and lip gloss, each of which can be purchased separately, but are bundled together for convenience (and because they’re complementary products)."
@@ -529,7 +529,7 @@
         "Our ",
         {
           "type": "link",
-          "href": "/shopify-experts",
+          "href": "/shopify-experts/",
           "text": "Shopify expert"
         },
         " developers have extensive experience in creating customized bundling. Our proven bundling strategy leveraged with ",
@@ -744,7 +744,7 @@
         "Product bundles are a great way to increase the perceived value of your products and improve the customer experience in your store. Use them for gift giving occasions, dead stock, product awareness, and other creative ways to drive more in-store sales and improve your marketing strategy. ",
         {
           "type": "link",
-          "href": "/blogs/how-to-hire-shopify-development-agency",
+          "href": "/blogs/how-to-hire-shopify-development-agency/",
           "text": "Shopify developers"
         },
         " of Dynamic Dreamz have created and implemented customer centric and sales driven product bundling in Shopify stores. Our strategic product bundling have increased conversion ratio and revenue."

@@ -6,7 +6,7 @@
   "modified": "2026-09-11T09:32:56+00:00",
   "category": "Faqs",
   "categoryValue": "faqs",
-  "categoryHref": "/blogs?category=faqs",
+  "categoryHref": "/blogs/?category=faqs",
   "featuredImage": null,
   "excerpt": "Not every glitch means your theme is the problem. But some patterns are worth paying attention to; they show up again and again, and they get worse as your store grows. Here's how to tell if your current theme is...",
   "author": {
@@ -127,7 +127,7 @@
         "Not sure which situation you’re in? Our ",
         {
           "type": "link",
-          "href": "/shopify-theme-customization",
+          "href": "/shopify-theme-customization/",
           "text": "Shopify theme customization",
           "rel": "dofollow"
         },

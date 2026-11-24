@@ -6,7 +6,7 @@
   "modified": "2026-09-14T08:57:51+00:00",
   "category": "Shopify",
   "categoryValue": "shopify",
-  "categoryHref": "/blogs?category=shopify",
+  "categoryHref": "/blogs/?category=shopify",
   "featuredImage": {
     "src": "/assets/blog/shopify-core-web-vitals.webp",
     "width": 1504,
@@ -888,7 +888,7 @@
         "If your current theme is the bottleneck or you are starting a new Shopify store from scratch, working with a professional ",
         {
           "type": "link",
-          "href": "/shopify-development-agency",
+          "href": "/shopify-development-agency/",
           "text": "Shopify development"
         },
         " team ensures your theme is configured correctly for performance from day one, with the right structure, optimized assets, and a clean app ecosystem that protects your Core Web Vitals scores over time."

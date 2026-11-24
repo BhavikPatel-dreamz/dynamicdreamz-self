@@ -6,7 +6,7 @@
   "modified": "2025-01-15T10:19:29+00:00",
   "category": "WordPress",
   "categoryValue": "wordpress",
-  "categoryHref": "/blogs?category=wordpress",
+  "categoryHref": "/blogs/?category=wordpress",
   "featuredImage": {
     "src": "/assets/blog/wordpress-feature-development-for-culinary-shows-websites.webp",
     "width": 1316,
@@ -73,7 +73,7 @@
         " Our ",
         {
           "type": "link",
-          "href": "/wordpress-development",
+          "href": "/wordpress-development/",
           "text": "WordPress web development"
         },
         " team had a brainstorming meeting and several solutions were suggested. WordPress is a robust and flexible eCommerce platform that allows developers to develop tailored features based on client’s requirements."
@@ -97,7 +97,7 @@
         "Our ",
         {
           "type": "link",
-          "href": "/hire-wordpress-developers",
+          "href": "/hire-wordpress-developers/",
           "text": "expert WordPress developers"
         },
         " developed a tailored feature using WordPress unmatched functionalities. Our agile quality assurers did a rigorous testing of the tool with no. of photos/ images and a thorough quality check, the tool was implemented on the website."
@@ -121,7 +121,7 @@
         "Located in India, Dynamic Dreamz is a prominent ecommerce development agency using the WordPress platform with 18+ years of rich experience in WordPress development. Apart from that we provide the ",
         {
           "type": "link",
-          "href": "/white-label-wordpress-development-services",
+          "href": "/white-label-wordpress-development-services/",
           "text": "White Label WordPress Development"
         },
         " services."

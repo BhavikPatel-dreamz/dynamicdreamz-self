@@ -6,7 +6,7 @@
   "modified": "2025-01-14T11:25:19+00:00",
   "category": "Shopify",
   "categoryValue": "shopify",
-  "categoryHref": "/blogs?category=shopify",
+  "categoryHref": "/blogs/?category=shopify",
   "featuredImage": {
     "src": "/assets/blog/shopify-email-popups-alternatives.webp",
     "width": 1316,
@@ -458,7 +458,7 @@
           "content": [
             {
               "type": "link",
-              "href": "/shopify-development-agency",
+              "href": "/shopify-development-agency/",
               "text": "Shopify"
             }
           ]
@@ -467,7 +467,7 @@
           "content": [
             {
               "type": "link",
-              "href": "/woocommerce-development",
+              "href": "/woocommerce-development/",
               "text": "WooCommerce"
             }
           ]
@@ -476,7 +476,7 @@
           "content": [
             {
               "type": "link",
-              "href": "/magento-development",
+              "href": "/magento-development/",
               "text": "Magento"
             }
           ]
@@ -485,7 +485,7 @@
           "content": [
             {
               "type": "link",
-              "href": "/bigcommerce-development",
+              "href": "/bigcommerce-development/",
               "text": "BigCommerce"
             }
           ]
@@ -494,7 +494,7 @@
           "content": [
             {
               "type": "link",
-              "href": "/wordpress-development",
+              "href": "/wordpress-development/",
               "text": "WordPress"
             }
           ]
@@ -512,37 +512,37 @@
         "We offer other development and designing services, such as ",
         {
           "type": "link",
-          "href": "/android-app-development",
+          "href": "/android-app-development/",
           "text": "Android development"
         },
         ", ",
         {
           "type": "link",
-          "href": "/ios-app-development",
+          "href": "/ios-app-development/",
           "text": "iOS app development"
         },
         ", ",
         {
           "type": "link",
-          "href": "/shopify-theme-customization",
+          "href": "/shopify-theme-customization/",
           "text": "Shopify Theme Customization"
         },
         " and redesign, ",
         {
           "type": "link",
-          "href": "/cross-platform-app-development",
+          "href": "/cross-platform-app-development/",
           "text": "Cross platform app development"
         },
         ", Store or Website migration, ",
         {
           "type": "link",
-          "href": "/shopify-mobile-app-development",
+          "href": "/shopify-mobile-app-development/",
           "text": "Shopify mobile app development"
         },
         ", ",
         {
           "type": "link",
-          "href": "/shopify-apps",
+          "href": "/shopify-apps/",
           "text": "Shopify public app development"
         },
         ", and White label development services."
@@ -554,7 +554,7 @@
         "You can choose any platform or technology for your eCommerce store and website. If you want any other platform, you can ",
         {
           "type": "link",
-          "href": "/contact-us",
+          "href": "/contact-us/",
           "text": "contact us"
         },
         " with a detailed quote, and we can also help you create a store and website of your choice."

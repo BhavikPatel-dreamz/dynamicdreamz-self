@@ -7,7 +7,7 @@ export const startupThemeCustomizationContent = {
     description:
       "Direct-to-consumer brands, tiny catalogs, and single-product stores are the target audience for the Startup Shopify theme. It has a simple, modern layout highlighting storytelling, excellent graphics, and easy navigation. With our startup theme customization service, you can ensure that your Shopify store attracts customers, maximizes conversions, and matches your brand identity. Let us help you create an attractive, high-performing online store customized to your business requirements.",
     ctaText: "Request a Quote",
-    ctaHref: "/request-quote",
+    ctaHref: "/request-quote/",
     ctaAriaLabel: "Request a Quote",
     secondaryCtaText: "View Startup on Shopify",
     secondaryCtaHref: "https://themes.shopify.com/themes/startup/presets/startup",
@@ -165,7 +165,7 @@ export const startupThemeCustomizationContent = {
     description:
       "Explore our portfolio showcasing successful Shopify customization projects, highlighting how we customize, secure, and enhance stores for peak performance.",
     ctaLabel: "View our work",
-    ctaHref: "/our-work",
+    ctaHref: "/our-work/",
     items: [
       {
             "name": "Nufyx",

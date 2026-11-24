@@ -43,7 +43,7 @@ export const yithWonderThemeCustomizationContent = {
     description:
       "The YITH Wonder theme is a stylish and modern WordPress theme created for online stores, blogging websites, and business websites. It offers smooth WooCommerce integration, a user-friendly design, and extensive customization options. Our YITH Wonder Theme Customization Services help you improve the look, functionality, and performance of your WordPress website, ensuring a unique and professional online presence that drives engagement and sales.",
     ctaText: "Request a quote",
-    ctaHref: "/request-quote",
+    ctaHref: "/request-quote/",
     ctaAriaLabel: "Request a quote",
     image: {
       src: "/assets/yith-wonder-theme-customization/hero/yith-wonder-theme-customization-service-img.webp",
@@ -246,7 +246,7 @@ export const yithWonderThemeCustomizationContent = {
     description:
       "Explore our portfolio, which showcases successful WordPress theme customization projects and highlights how we customize, secure, and enhance stores for peak performance.",
     ctaLabel: "View our work",
-    ctaHref: "/our-work",
+    ctaHref: "/our-work/",
     items: [
       {
         name: "Quite Events",

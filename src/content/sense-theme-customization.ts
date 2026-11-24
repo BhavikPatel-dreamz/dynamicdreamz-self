@@ -7,7 +7,7 @@ export const senseThemeCustomizationContent = {
     description:
       "Create a unique and beneficial Shopify store that matches your brand with our Sense theme customization service. With a clean, modern design and simple user interface, Sense theme is the best for businesses that want a professional online presence. We provide complete customization services to ensure your Shopify store stands out and delivers an outstanding customer experience.",
     ctaText: "Request a Quote",
-    ctaHref: "/request-quote",
+    ctaHref: "/request-quote/",
     secondaryCtaText: "View Sense on Shopify",
     secondaryCtaHref: "https://themes.shopify.com/themes/sense/presets/sense",
     secondaryCtaTarget: "_blank",

@@ -11,7 +11,7 @@ export const craftThemeCustomizationContent = {
     "title": "Craft Theme Customization Service",
     "description": "The Craft Shopify theme is a simple and smart theme made for businesses that want to show their products uniquely and attractively. With its minimalist design, large imagery, and storytelling-focused sections, the Craft theme is perfect for brands looking to create a visually appealing Shopify store. Our Craft theme customization service ensures that your Shopify store is customized to match your brand identity, improving conversions and the shopping experience.",
     "ctaText": "Request a Quote",
-    "ctaHref": "/request-quote",
+    "ctaHref": "/request-quote/",
     "ctaAriaLabel": "Request a Quote",
     "secondaryCtaText": "View Craft on Shopify",
     "secondaryCtaHref": "https://themes.shopify.com/themes/craft/presets/craft",
@@ -251,7 +251,7 @@ export const craftThemeCustomizationContent = {
     "heading": "Snippets of Shopify Theme Customization Portfolio",
     "description": "Explore our portfolio showcasing successful Shopify customization projects, highlighting how we customize, secure, and enhance stores for peak performance.",
     "ctaLabel": "View our work",
-    "ctaHref": "/our-work",
+    "ctaHref": "/our-work/",
     "items": [
       {
         "name": "Nufyx",

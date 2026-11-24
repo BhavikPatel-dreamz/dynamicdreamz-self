@@ -37,7 +37,7 @@ export const whiteLabelWordPressHero = {
     "Dynamic Dreamz provides white label WordPress development for digital and web agencies that need reliable development capacity behind their brand. Our team handles custom WordPress websites, WooCommerce, themes, plugins, Figma-to-WordPress, performance optimization and ongoing support while working within your agency's process and confidentiality requirements.",
   primaryCta: {
     label: "get in touch",
-    href: "/request-quote",
+    href: "/request-quote/",
   },
   secondaryCta: {
     label: "See Pricing",
@@ -252,7 +252,7 @@ export const whiteLabelWordPressPricing: PricingEngagementContent = {
       description:
         "For complete WordPress website builds, custom theme development, website redesigns, plugin development, third-party integrations, WooCommerce solutions and technically complex WordPress projects.",
       ctaLabel: "Send Brief — Get a Quote in 24 Hours",
-      ctaHref: "/request-quote",
+      ctaHref: "/request-quote/",
     },
     {
       label: "Flexible Hourly Support",
@@ -261,7 +261,7 @@ export const whiteLabelWordPressPricing: PricingEngagementContent = {
       description:
         "For ongoing WordPress maintenance, enhancements, troubleshooting, performance improvements, security updates and evolving website development requirements.",
       ctaLabel: "Buy Wordpress Development Hours",
-      ctaHref: "/request-quote",
+      ctaHref: "/request-quote/",
     },
     {
       label: "Dedicated Developer / Team",
@@ -270,7 +270,7 @@ export const whiteLabelWordPressPricing: PricingEngagementContent = {
       description:
         "For brands with an evolving WordPress roadmap, multiple websites or a need for a dedicated developer or wider development team.",
       ctaLabel: "Discuss a Dedicated Team",
-      ctaHref: "/book-a-discovery-call",
+      ctaHref: "/book-a-discovery-call/",
     },
   ],
 };

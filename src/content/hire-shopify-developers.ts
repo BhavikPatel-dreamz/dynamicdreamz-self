@@ -70,7 +70,7 @@ export const hireShopifyHero = {
     "Are you looking to expand your brand fast? Hire Shopify developers from Dynamic Dreamz to create, customize, and optimize your online Shopify store. Our experienced Shopify developers can help you achieve high quality, scalable solutions based on your business requirements. Let us handle the technicalities while you concentrate on developing your brand.",
   ],
   cta: "Hire Shopify Developers",
-  ctaHref: "/request-quote",
+  ctaHref: "/request-quote/",
   secondaryCta: {
     label: "View Pricing",
     href: "#our_white_label_pricing",
@@ -393,7 +393,7 @@ export const hireShopifyWhyHireExperts = {
   ],
   partnerLink: {
     label: "About Dynamic Dreamz",
-    href: "/about-us",
+    href: "/about-us/",
   },
 } satisfies WhyChooseMigrationContent;
 
@@ -484,7 +484,7 @@ export const hireShopifyPricing = {
       description:
         "For Shopify builds, redesigns, migrations, custom functionality, integrations and other clearly defined requirements.",
       ctaLabel: "Send Brief — Get a Quote",
-      ctaHref: "/request-quote",
+      ctaHref: "/request-quote/",
     },
     {
       label: "Flexible Hourly Support",
@@ -493,7 +493,7 @@ export const hireShopifyPricing = {
       description:
         "For maintenance, enhancements, troubleshooting, CRO implementation and changing Shopify development priorities.",
       ctaLabel: "Buy Shopify Development Hours",
-      ctaHref: "/buy-shopify-development-hours",
+      ctaHref: "/buy-shopify-development-hours/",
     },
     {
       label: "Dedicated Developer / Team",
@@ -502,7 +502,7 @@ export const hireShopifyPricing = {
       description:
         "For brands or agencies with a steady Shopify roadmap, recurring releases or a need for consistent development continuity.",
       ctaLabel: "Discuss Dedicated Capacity",
-      ctaHref: "/book-a-discovery-call",
+      ctaHref: "/book-a-discovery-call/",
     },
   ],
 } satisfies PricingEngagementContent;
@@ -513,7 +513,7 @@ export const hireShopifyWork = {
   description:
     "We are sure you would like to hear to what our clients says about our Shopify development.",
   ctaLabel: "View our work",
-  ctaHref: "/our-work",
+  ctaHref: "/our-work/",
   items: hireShopifyPortfolio,
 } as const;
 

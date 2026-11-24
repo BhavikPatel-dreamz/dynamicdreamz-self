@@ -7,7 +7,7 @@ export const atelierThemeCustomizationContent = {
     description:
       "Choose Atelier Theme Customization Service to enhance your Shopify store. The Atelier theme is a clean, refined, and flexible Shopify theme perfect for modern brands. Our Shopify experts at Dynamic Dreamz help you customize this theme to match your business goals. We create a quick, responsive, and consistent store with your brand, boosting sales and customer interaction. It includes layout changes, performance improvements, redesign, and many more.",
     ctaText: "Request a Quote",
-    ctaHref: "/request-quote",
+    ctaHref: "/request-quote/",
     ctaAriaLabel: "Request a Quote",
     secondaryCtaText: "View Atelier on Shopify",
     secondaryCtaHref: "https://themes.shopify.com/themes/atelier/presets/atelier",
@@ -178,7 +178,7 @@ export const atelierThemeCustomizationContent = {
       "Explore our portfolio showcasing successful Shopify customization projects, highlighting how we customize, secure, and enhance stores for peak performance.",
     ],
     ctaLabel: "View our work",
-    ctaHref: "/our-work",
+    ctaHref: "/our-work/",
     items: [
       {
             name: "Atolea Jewelry",

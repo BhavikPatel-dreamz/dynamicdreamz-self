@@ -88,7 +88,7 @@ export function BlogsArchiveSection({
                   aria-label={categoriesLabel}
                 >
                   <Link
-                    href={query ? `/blogs?s=${encodeURIComponent(query)}` : "/blogs"}
+                    href={query ? `/blogs/?s=${encodeURIComponent(query)}` : "/blogs/"}
                     className={cn(
                       "cat-link inline-block rounded-[30px] border border-[#dadada] px-[18px] py-2 text-center font-sans text-sm font-medium text-[#090909] transition-all duration-300 hover:border-brand-red hover:bg-brand-red hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-red max-[992px]:min-w-[60px] max-[992px]:px-[9px] max-[992px]:py-[7px] max-[992px]:text-sm max-[768px]:shrink-0",
                       !activeCategory && "border-brand-red bg-brand-red text-white",

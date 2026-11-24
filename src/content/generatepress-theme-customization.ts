@@ -30,7 +30,7 @@ export const generatepressThemeCustomizationContent = {
     description:
       "Do you want a highly optimized and fully customized website using the GeneratePress theme? Our GeneratePress Theme Customization Service helps you customize your WordPress website to your brand’s requirements with a lightweight, responsive, and SEO-friendly design. Whether you want layout changes, feature enhancements, or performance optimizations, we ensure a fully functional and fast-loading WordPress website that improves user engagement and conversions.",
     ctaText: "request a quote",
-    ctaHref: "/request-quote",
+    ctaHref: "/request-quote/",
     ctaAriaLabel: "request a quote",
     image: {
       src: "/assets/generatepress-theme-customization/hero/generatepress-theme-customization-service-img.webp",
@@ -219,7 +219,7 @@ export const generatepressThemeCustomizationContent = {
     description:
       "Explore our portfolio, which showcases successful WordPress theme customization projects and highlights how we customize, secure, and enhance stores for peak performance.",
     ctaLabel: "View our work",
-    ctaHref: "/our-work",
+    ctaHref: "/our-work/",
     items: [
       {
         name: "Quite Events",

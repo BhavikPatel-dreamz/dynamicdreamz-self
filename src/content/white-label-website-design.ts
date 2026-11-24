@@ -19,7 +19,7 @@ export const whiteLabelWebsiteDesignHero: CityPageHeroContent = {
     "Our designers and developers work behind the scenes on website design, ecommerce, development and ongoing project support while your agency keeps the client relationship.",
   primaryCta: {
     label: "request a Quote",
-    href: "/request-quote",
+    href: "/request-quote/",
   },
   badges: [
     {
@@ -223,11 +223,11 @@ export const whiteLabelWebsiteDesignAiDiscoveryContent: ShopifyTeamBoxesContent 
   ],
   cta: {
     label: "Learn how we do it",
-    href: "/request-quote",
+    href: "/request-quote/",
   },
   secondaryCta: {
     label: "Talk to an expert",
-    href: "/book-a-discovery-call",
+    href: "/book-a-discovery-call/",
   },
   items: [
     {
@@ -366,7 +366,7 @@ export const whiteLabelWebsiteDesignServices: readonly WhiteLabelService[] = [
     description:
       "We design and develop scalable BigCommerce websites tailored to your client’s business needs. From custom storefronts to seamless integrations, our BigCommerce solutions are built for performance & long-term growth.",
     icon: serviceAsset("bigcommerce-website-development"),
-    href: "/bigcommerce-development",
+    href: "/bigcommerce-development/",
     linkLabel: "Read More",
   },
 ];

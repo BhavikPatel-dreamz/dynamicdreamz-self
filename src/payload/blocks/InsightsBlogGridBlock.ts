@@ -23,7 +23,7 @@ export const InsightsBlogGridBlock: Block = {
     {
       name: "ctaHref",
       type: "text",
-      defaultValue: "/blogs",
+      defaultValue: "/blogs/",
       label: "CTA Button Link",
     },
   ],

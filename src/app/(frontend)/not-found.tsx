@@ -20,7 +20,7 @@ export default function NotFound() {
           <ButtonLink variant="dark" href="/">
             {notFoundCopy.homeCta}
           </ButtonLink>
-          <ButtonLink variant="outline" href="/contact-us">
+          <ButtonLink variant="outline" href="/contact-us/">
             {notFoundCopy.contactCta}
           </ButtonLink>
         </div>

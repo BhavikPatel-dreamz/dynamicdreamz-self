@@ -63,7 +63,7 @@ export const wordpressDevelopmentBangaloreContent = {
       "Dynamic Dreamz is a reputable WordPress Development company in Bangalore. Our expertise is in developing unique WordPress websites that accomplish your business goals. Our team’s mastery in creating custom themes, plugins, and simple websites ensures that your online presence has an ongoing impact on your intended audience.",
     primaryCta: {
       label: "Get in Touch",
-      href: "/request-quote",
+      href: "/request-quote/",
     },
     badges: [
       {
@@ -351,7 +351,7 @@ export const wordpressDevelopmentBangaloreContent = {
   ctaBanner: {
     heading: "Want us to help you with your online store?",
     ctaLabel: "Request a Quote",
-    ctaHref: "/request-quote",
+    ctaHref: "/request-quote/",
   },
 
   // Backward-compatibility aliases

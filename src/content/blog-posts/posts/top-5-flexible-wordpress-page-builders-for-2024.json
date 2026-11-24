@@ -6,7 +6,7 @@
   "modified": "2025-01-17T08:04:51+00:00",
   "category": "WordPress",
   "categoryValue": "wordpress",
-  "categoryHref": "/blogs?category=wordpress",
+  "categoryHref": "/blogs/?category=wordpress",
   "featuredImage": {
     "src": "/assets/blog/top-5-flexible-wordpress-page-builders-for-2024.webp",
     "width": 1316,
@@ -28,7 +28,7 @@
         "Are you looking for the perfect WordPress page builder plugin for your WordPress website, getting confused between available page builder plugins, and unable to choose the best landing page builder for your ",
         {
           "type": "link",
-          "href": "/wordpress-development",
+          "href": "/wordpress-development/",
           "text": "WordPress website"
         },
         "? Don’t worry! We offer the best guide to help you select the best landing page builder."
@@ -1998,7 +1998,7 @@
         "Are you looking for a WordPress developer or designer for your project to help you integrate your WordPress website with one of these page builders? Don’t worry! We at Dynamic Dreamz have the best WordPress experts team with several years of experience and the best for your ",
         {
           "type": "link",
-          "href": "/wordpress-development",
+          "href": "/wordpress-development/",
           "text": "WordPress development"
         },
         " and designing work."
@@ -2010,43 +2010,43 @@
         "At Dynamic Dreamz, we also work with ",
         {
           "type": "link",
-          "href": "/shopify-development-agency",
+          "href": "/shopify-development-agency/",
           "text": "Shopify"
         },
         ", ",
         {
           "type": "link",
-          "href": "/bigcommerce-development",
+          "href": "/bigcommerce-development/",
           "text": "BigCommerce"
         },
         ", ",
         {
           "type": "link",
-          "href": "/magento-development",
+          "href": "/magento-development/",
           "text": "Magento"
         },
         ", WooCommerce, ",
         {
           "type": "link",
-          "href": "/php-development",
+          "href": "/php-development/",
           "text": "PHP/MySQL"
         },
         ", Laravel, Cross platform App development using React JS and Flutter, iOS, Android, ",
         {
           "type": "link",
-          "href": "/web-design",
+          "href": "/web-design/",
           "text": "UI/UX designing"
         },
         ", and ",
         {
           "type": "link",
-          "href": "/white-label-wordpress-development-services",
+          "href": "/white-label-wordpress-development-services/",
           "text": "White Label services"
         },
         ". You can ",
         {
           "type": "link",
-          "href": "/contact-us",
+          "href": "/contact-us/",
           "text": "contact us"
         },
         " for any of these services regarding work. We are happy to collaborate with you on your upcoming project."

@@ -6,7 +6,7 @@
   "modified": "2026-09-14T06:30:21+00:00",
   "category": "WordPress",
   "categoryValue": "wordpress",
-  "categoryHref": "/blogs?category=wordpress",
+  "categoryHref": "/blogs/?category=wordpress",
   "featuredImage": {
     "src": "/assets/blog/woocommerce-seo-guide.webp",
     "width": 2560,
@@ -229,7 +229,7 @@
         "For stores with large catalogs that need SEO architecture built correctly at scale, professional ",
         {
           "type": "link",
-          "href": "/woocommerce-development",
+          "href": "/woocommerce-development/",
           "text": "WooCommerce development",
           "bold": true
         },
@@ -356,7 +356,7 @@
         "If your store needs a full technical SEO audit, the ",
         {
           "type": "link",
-          "href": "/wordpress-development",
+          "href": "/wordpress-development/",
           "text": "WordPress web development",
           "bold": true
         },

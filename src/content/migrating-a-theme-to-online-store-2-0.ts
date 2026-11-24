@@ -17,7 +17,7 @@ export const migratingThemeToOnlineStore20Content = {
       "Shopify has come up with an improvised Online Store 2.0, which has quite a few easy to implement tools, is easy to maintain, and is scalable. You can migrate your theme to add support for these features by converting a Liquid template into a JSON template.",
     ],
     cta: "Request a Quote",
-    ctaHref: "/request-quote",
+    ctaHref: "/request-quote/",
     image: {
       src: "/assets/migrating-a-theme-to-online-store-2-0/hero/migrate-store-img.svg",
       alt: "Online Store 2.0 Theme Migration Workflow",

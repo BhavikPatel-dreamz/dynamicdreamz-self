@@ -26,7 +26,7 @@ export const shopifyHoursSectionCopy = {
     rate: "Rate",
     cost: "Cost",
     durationMinutes: ":00",
-    perHour: "/hour",
+    perHour: "/hour/",
     packageLabel: "Select a Shopify development hours package",
     hoursSuffix: "HRS",
     purchasePrefix: "BUY SHOPIFY HOURS - $",
@@ -87,7 +87,7 @@ export const shopifyHoursHero = {
     suffix: "with bulk package",
   },
   quoteLabel: "Request a Custom Quote",
-  quoteHref: "/request-quote",
+  quoteHref: "/request-quote/",
 } as const;
 
 export const shopifyHoursCommitments: ThemeCustomizationServicesContent = {
@@ -174,7 +174,7 @@ export const shopifyHoursComparison = {
       ],
       note: "Bulk hours are ideal for flexibility.",
       cta: "get started",
-      href: "/request-quote",
+      href: "/request-quote/",
     },
     {
       title: "Full-Time Shopify Resource",
@@ -185,7 +185,7 @@ export const shopifyHoursComparison = {
       ],
       note: "Full-time resources are better for constant, ongoing development.",
       cta: "get started",
-      href: "/request-quote",
+      href: "/request-quote/",
     },
   ],
 } as const;

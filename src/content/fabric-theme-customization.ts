@@ -7,7 +7,7 @@ export const fabricThemeCustomizationContent = {
     description:
       "The Fabric Shopify theme offers a clean and modern design, ideal for showcasing your products in style. Whether you’re in fashion, accessories, or any other business, our **Fabric Theme Customization Service** customizes this theme to match your brand’s unique identity. We improve user experience, ensure mobile responsiveness, and integrate features that drive conversions, helping your online store stand out.",
     ctaText: "Request a Quote",
-    ctaHref: "/request-quote",
+    ctaHref: "/request-quote/",
     secondaryCtaText: "View Fabric on Shopify",
     secondaryCtaHref: "https://themes.shopify.com/themes/fabric/presets/fabric",
     secondaryCtaTarget: "_blank",
@@ -199,7 +199,7 @@ export const fabricThemeCustomizationContent = {
       "Explore our portfolio showcasing successful Shopify customization projects, highlighting how we customize, secure, and enhance stores for peak performance.",
     ],
     ctaLabel: "View our work",
-    ctaHref: "/our-work",
+    ctaHref: "/our-work/",
     items: [
       {
         name: "Atolea Jewelry",

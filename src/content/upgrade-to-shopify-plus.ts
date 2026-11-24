@@ -11,7 +11,7 @@ export const upgradeShopifyPlusHero = {
     "Already running on Shopify and considering Plus? Dynamic Dreamz helps you assess whether the upgrade makes sense, then implements the Plus capabilities your business actually needs—from checkout and B2B to integrations, expansion stores and ongoing development.",
   ],
   cta: "EXPLORE SHOPIFY PLUS",
-  ctaHref: "/request-quote",
+  ctaHref: "/request-quote/",
   secondaryCta: {
     label: "IS PLUS RIGHT FOR YOU?",
     href: "#plus-fit",
@@ -43,7 +43,7 @@ export const upgradeShopifyPlusKeepWhatWorks: AiEmpoweredDeliveryContent = {
     "Your existing Shopify storefront does not need to be rebuilt just because you move to Plus. We review what is already working, identify where Plus creates real customer or operational value, and implement the capabilities your business actually needs.",
   cta: {
     label: "Discuss Your Plus Upgrade",
-    href: "/request-quote",
+    href: "/request-quote/",
   },
   tools: [
     {
@@ -273,7 +273,7 @@ export const upgradeShopifyPlusWhyWorkWithUs: WhyChooseMigrationContent = {
   ],
   partnerLink: {
     label: "About Dynamic Dreamz",
-    href: "/about-us",
+    href: "/about-us/",
   },
 };
 
@@ -286,7 +286,7 @@ export const upgradeShopifyPlusCaseStudies = {
     {
       title:
         "RENÉE Cosmetics: End-to-End Figma-to-Shopify Dawn Theme Store for a Bold Beauty Brand",
-      href: "/case-studies/renee-cosmetics",
+      href: "/case-studies/renee-cosmetics/",
       image: "/assets/our-work/projects/renee.webp",
       imageAlt: "RENÉE Cosmetics Case Study",
       technology: "Shopify / Shopify Plus",
@@ -295,7 +295,7 @@ export const upgradeShopifyPlusCaseStudies = {
     {
       title:
         "Ranavat: 6+ Year Shopify Partnership for a Luxury Ayurvedic Skincare & Haircare Brand",
-      href: "/case-studies/ranavat",
+      href: "/case-studies/ranavat/",
       image: "/assets/beauty-cosmetics/portfolio/ranavat-skincare.webp",
       imageAlt: "Ranavat Case Study",
       technology: "Shopify / Shopify Plus",
@@ -304,7 +304,7 @@ export const upgradeShopifyPlusCaseStudies = {
     {
       title:
         "Sleepycat: WooCommerce to Shopify Plus Migration with Custom Bundle Builder, SKU-Splitting & WhatsApp Automation",
-      href: "/case-studies/sleepycat",
+      href: "/case-studies/sleepycat/",
       image: "/assets/case-studies/sleepycat/hero.webp",
       imageAlt: "Sleepycat Case Study",
       technology: "Shopify Migration",
@@ -319,7 +319,7 @@ export const upgradeShopifyPlusPortfolio = {
   description:
     "Explore selected projects across Shopify, WordPress, mobile apps and custom development. See how we help brands and agencies build high-performing digital experiences.",
   ctaLabel: "Explore Our Portfolio",
-  ctaHref: "/our-work",
+  ctaHref: "/our-work/",
   items: [
     {
       name: "Ranavat",
@@ -393,7 +393,7 @@ export const upgradeShopifyPlusPricing = {
       description:
         "For a defined scope covering readiness assessment, checkout, B2B, integrations, expansion stores, custom development, QA or rollout.",
       ctaLabel: "Send Brief — Get a Quote in 24 Hours",
-      ctaHref: "/request-quote",
+      ctaHref: "/request-quote/",
     },
     {
       label: "Flexible Shopify Support",
@@ -402,7 +402,7 @@ export const upgradeShopifyPlusPricing = {
       description:
         "For checkout changes, B2B, integrations, app work, troubleshooting, CRO and ongoing Shopify Plus improvements.",
       ctaLabel: "Buy Shopify Development Hours",
-      ctaHref: "/buy-shopify-development-hours",
+      ctaHref: "/buy-shopify-development-hours/",
     },
     {
       label: "Dedicated Capacity",
@@ -411,7 +411,7 @@ export const upgradeShopifyPlusPricing = {
       description:
         "For brands or agencies that need consistent Shopify Plus development capacity and long-term team continuity.",
       ctaLabel: "Discuss a Dedicated Team",
-      ctaHref: "/book-a-discovery-call",
+      ctaHref: "/book-a-discovery-call/",
     },
   ],
 };

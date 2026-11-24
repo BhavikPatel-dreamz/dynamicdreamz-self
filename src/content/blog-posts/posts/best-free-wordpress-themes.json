@@ -6,7 +6,7 @@
   "modified": "2026-09-14T09:49:50+00:00",
   "category": "WordPress",
   "categoryValue": "wordpress",
-  "categoryHref": "/blogs?category=wordpress",
+  "categoryHref": "/blogs/?category=wordpress",
   "featuredImage": {
     "src": "/assets/blog/best-free-wordpress-themes.webp",
     "width": 1504,

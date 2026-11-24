@@ -6,7 +6,7 @@
   "modified": "2026-09-14T09:45:34+00:00",
   "category": "Big-Commerce",
   "categoryValue": "big-commerce",
-  "categoryHref": "/blogs?category=big-commerce",
+  "categoryHref": "/blogs/?category=big-commerce",
   "featuredImage": {
     "src": "/assets/blog/bigcommerce-to-woocommerce-migration.webp",
     "width": 1504,

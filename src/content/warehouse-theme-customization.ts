@@ -11,7 +11,7 @@ export const warehouseThemeCustomizationContent = {
     "title": "Warehouse Theme Customization Service",
     "description": "The Warehouse Shopify theme is designed for large catalogs and is perfect for high-volume Shopify stores. It provides advanced features like powerful filtering, advanced search functionality, and a clean, organized layout for easy navigation. Our Warehouse theme customization service ensures that your store becomes visually attractive and optimized for conversions and user experience. With our Shopify theme customization, you can develop a store that reflects your brand, boosts sales, and helps you grow faster.",
     "ctaText": "Request a Quote",
-    "ctaHref": "/request-quote",
+    "ctaHref": "/request-quote/",
     "ctaAriaLabel": "Request a Quote",
     "secondaryCtaText": "View Warehouse on Shopify",
     "secondaryCtaHref": "https://themes.shopify.com/themes/warehouse/presets/warehouse",
@@ -251,7 +251,7 @@ export const warehouseThemeCustomizationContent = {
     "heading": "Snippets of Shopify Theme Customization Portfolio",
     "description": "Explore our portfolio showcasing successful Shopify customization projects, highlighting how we customize, secure, and enhance stores for peak performance.",
     "ctaLabel": "View our work",
-    "ctaHref": "/our-work",
+    "ctaHref": "/our-work/",
     "items": [
       {
         "name": "Nufyx",

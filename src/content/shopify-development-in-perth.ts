@@ -15,7 +15,7 @@ export const shopifyDevelopmentPerthContent = {
       "Dynamic Dreamz provides Shopify development for Perth retailers, wholesalers and agencies. Our India-based team builds custom Shopify stores, develops Shopify Plus solutions, migrates catalogues, connects business systems and supports stores after launch.",
     primaryCta: {
       label: "Get In Touch",
-      href: "/request-quote",
+      href: "/request-quote/",
     },
     secondaryCta: {
       label: "Explore Shopify Services",
@@ -194,7 +194,7 @@ export const shopifyDevelopmentPerthContent = {
       "From a theme refresh to a Shopify Plus build, we scope the work around the customer journey and your operations. We can also work alongside a Perth design agency or maintain a store built by another team.",
     cta: {
       label: "",
-      href: "/request-quote",
+      href: "/request-quote/",
     },
     items: [
       {
@@ -208,7 +208,7 @@ export const shopifyDevelopmentPerthContent = {
         description: "We customise product pages, collection layouts, navigation and reusable sections within your existing theme. Your team can review updates in a preview theme before release.",
         icon: "/assets/services/shopify-development-in-delhi/services/shopify-theme-customization.svg",
         iconAlt: "Custom Shopify Theme Design Icon",
-        href: "/shopify-theme-customization",
+        href: "/shopify-theme-customization/",
         },
       {
         title: "Figma / XD to Shopify Conversion",
@@ -227,28 +227,28 @@ export const shopifyDevelopmentPerthContent = {
         description: "We migrate stores from platforms such as WooCommerce and Magento. The scope can include products, customers, order history, URL mapping, redirects and launch checks.",
         icon: "/assets/services/shopify-development-in-delhi/services/shopify-migration-services.svg",
         iconAlt: "Seamless Shopify Migration Icon",
-        href: "/shopify-migration",
+        href: "/shopify-migration/",
         },
       {
         title: "Shopify Maintenance & Support",
         description: "We provide ongoing development for fixes, performance improvements, app changes and new features. We agree priorities and scope larger improvements separately.",
         icon: "/assets/services/shopify-development-in-delhi/services/shopify-maintenance-support.svg",
         iconAlt: "Shopify Store Maintenance Icon",
-        href: "/buy-shopify-development-hours",
+        href: "/buy-shopify-development-hours/",
         },
       {
         title: "Shopify 2.0 Migration",
         description: "We review older themes, identify custom features that need to carry over and rebuild them using Online Store 2.0 templates and sections where appropriate.",
         icon: "/assets/services/shopify-development-in-delhi/services/shopify-2-0-upgrades.svg",
         iconAlt: "Shopify 2.0 Upgrade Icon",
-        href: "/migrating-a-theme-to-online-store-2-0",
+        href: "/migrating-a-theme-to-online-store-2-0/",
         },
       {
         title: "White Label Shopify Development",
         description: "Our developers can work behind your agency on theme builds, integrations, migrations and QA. You choose who manages client contact, feedback and sign-off.",
         icon: "/assets/services/shopify-development-in-bangalore/services/white-label-shopify-development.svg",
         iconAlt: "White Label Shopify Development Icon",
-        href: "/white-label-shopify-development-services",
+        href: "/white-label-shopify-development-services/",
         }
     ],
   },
@@ -332,7 +332,7 @@ export const shopifyDevelopmentPerthContent = {
     description: [
       "Kentaur Australia, based in Upper Swan, Western Australia, sells equipment for horses and riders. Explore its store alongside our work with Australian retailers including First Aid Distributions and Mr Supplement.",
     ],
-    ctaHref: "/our-work",
+    ctaHref: "/our-work/",
     ctaLabel: "view our work",
     items: [
       {
@@ -432,6 +432,6 @@ export const shopifyDevelopmentPerthContent = {
   ctaBanner: {
     heading: "Let's Build Your Dream Store Together",
     ctaLabel: "Get In Touch",
-    ctaHref: "/request-quote",
+    ctaHref: "/request-quote/",
   },
 };

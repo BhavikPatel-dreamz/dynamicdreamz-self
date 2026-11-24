@@ -6,7 +6,7 @@
   "modified": "2026-09-14T10:00:08+00:00",
   "category": "Shopify",
   "categoryValue": "shopify",
-  "categoryHref": "/blogs?category=shopify",
+  "categoryHref": "/blogs/?category=shopify",
   "featuredImage": {
     "src": "/assets/blog/migrate-bigcommerce-to-shopify.webp",
     "width": 1504,
@@ -74,7 +74,7 @@
             "When is it worth bringing in a ",
             {
               "type": "link",
-              "href": "/shopify-plus-agency",
+              "href": "/shopify-plus-agency/",
               "text": "Shopify Plus Agency"
             },
             " to get it right?"

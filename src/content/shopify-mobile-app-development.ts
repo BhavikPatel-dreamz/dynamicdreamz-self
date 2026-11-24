@@ -32,7 +32,7 @@ export const shopifyMobileAppHero = {
     "Dynamic Dreamz helps Shopify brands build custom iOS and Android mobile apps from their existing Shopify store. We handle design, Shopify integration, third-party connections, launch and ongoing development.",
   primaryCta: {
     label: "Discuss your mobile app",
-    href: "/book-a-discovery-call",
+    href: "/book-a-discovery-call/",
     ariaLabel: "Discuss your mobile app",
   },
   secondaryCta: {
@@ -180,7 +180,7 @@ export const shopifyMobileAppExploreWork = {
   description:
     "For 20 years, we’ve worked on challenging and impactful projects for startups and leading global brands. Every mobile-app we create is designed around our clients’ goals.",
   ctaLabel: "View our work",
-  ctaHref: "/our-work",
+  ctaHref: "/our-work/",
   ctaAriaLabel: "Dynamic Dreamz - View our work",
   secondaryCta: {
     label: "View Pricing",
@@ -357,7 +357,7 @@ export const shopifyMobileAppPricing = {
       description:
         "For complete Shopify Plus builds, migrations, redesigns, B2B requirements, custom apps, integrations and technically complex ecommerce projects.",
       ctaLabel: "Send Brief — Get a Quote in 24 Hours",
-      ctaHref: "/request-quote",
+      ctaHref: "/request-quote/",
     },
     {
       label: "Flexible Hourly Support",
@@ -366,7 +366,7 @@ export const shopifyMobileAppPricing = {
       description:
         "For ongoing maintenance, enhancements, troubleshooting, performance improvements and changing Shopify Plus development requirements.",
       ctaLabel: "Buy Shopify Development Hours",
-      ctaHref: "/buy-shopify-development-hours",
+      ctaHref: "/buy-shopify-development-hours/",
     },
     {
       label: "Dedicated Developer / Team",
@@ -375,7 +375,7 @@ export const shopifyMobileAppPricing = {
       description:
         "For brands with a steady Shopify roadmap, multiple storefronts or a need for a dedicated developer or wider delivery team.",
       ctaLabel: "Discuss a Dedicated Team",
-      ctaHref: "/book-a-discovery-call",
+      ctaHref: "/book-a-discovery-call/",
     },
   ],
 } as const;
@@ -499,7 +499,7 @@ export const shopifyMobileAppCaseStudies = {
         "RENÉE Cosmetics: Shopify-Integrated Beauty & Cosmetics Shopping App",
       description:
         "See how Dynamic Dreamz developed a Shopify-connected mobile shopping app for RENÉE Cosmetics across iOS and Android.",
-      href: "/case-studies/renee-cosmetics-mobile-app",
+      href: "/case-studies/renee-cosmetics-mobile-app/",
       image: "/assets/case-studies/renee-cosmetics-mobile-app.webp",
       imageAlt:
         "RENÉE Cosmetics: Shopify-Integrated Beauty & Cosmetics Shopping App",
@@ -513,7 +513,7 @@ export const shopifyMobileAppCaseStudies = {
         "KALKI Fashion: Shopify-Integrated Luxury Ethnic Wear Shopping App",
       description:
         "See how Dynamic Dreamz built a Shopify-connected mobile app for KALKI Fashion with React Native, dynamic pricing, cart sync and localization.",
-      href: "/case-studies/kalki-fashion-mobile-app",
+      href: "/case-studies/kalki-fashion-mobile-app/",
       image: "/assets/case-studies/kalki-fashion-mobile-app.webp",
       imageAlt:
         "KALKI Fashion: Shopify-Integrated Luxury Ethnic Wear Shopping App",
@@ -527,7 +527,7 @@ export const shopifyMobileAppCaseStudies = {
         "House of Good Vibes: React Native Shopify App with Drag-and-Drop CMS Page Builder & Daily Meditation Scheduler",
       description:
         "See how Dynamic Dreamz built a Shopify-connected React Native app with CMS page building, meditation scheduling and customer engagement features.",
-      href: "/case-studies/house-of-good-vibes",
+      href: "/case-studies/house-of-good-vibes/",
       image: "/assets/case-studies/house-of-good-vibes.webp",
       imageAlt:
         "House of Good Vibes: React Native Shopify App with Drag-and-Drop CMS Page Builder & Daily Meditation Scheduler",
@@ -616,7 +616,7 @@ export const shopifyMobileAppDevelopmentFaqs: readonly FaqAccordionItem[] = [
 export const shopifyMobileAppDevelopmentCtaBanner = {
   heading: "Want us to help you with your online store?",
   ctaLabel: "request a quote",
-  ctaHref: "/request-quote",
+  ctaHref: "/request-quote/",
 } as const;
 
 export const shopifyMobileAppEngagement = {
@@ -631,7 +631,7 @@ export const shopifyMobileAppEngagement = {
       description:
         "For complete Shopify Plus builds, migrations, redesigns, B2B requirements, custom apps, integrations and technically complex ecommerce projects.",
       ctaLabel: "Send Brief — Get a Quote in 24 Hours",
-      ctaHref: "/request-quote",
+      ctaHref: "/request-quote/",
     },
     {
       label: "Flexible Hourly Support",
@@ -640,7 +640,7 @@ export const shopifyMobileAppEngagement = {
       description:
         "For ongoing maintenance, enhancements, troubleshooting, performance improvements and changing Shopify Plus development requirements.",
       ctaLabel: "Buy Shopify Development Hours",
-      ctaHref: "/buy-shopify-development-hours",
+      ctaHref: "/buy-shopify-development-hours/",
     },
     {
       label: "Dedicated Developer / Team",
@@ -649,7 +649,7 @@ export const shopifyMobileAppEngagement = {
       description:
         "For brands with a steady Shopify roadmap, multiple storefronts or a need for a dedicated developer or wider delivery team.",
       ctaLabel: "Discuss a Dedicated Team",
-      ctaHref: "/book-a-discovery-call",
+      ctaHref: "/book-a-discovery-call/",
     },
   ],
 } as const;

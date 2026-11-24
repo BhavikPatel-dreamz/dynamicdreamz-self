@@ -68,7 +68,7 @@ export function CaseStudyRelated({
 
         <div className="flex flex-wrap justify-start gap-5">
           {relatedItems.map((item) => {
-            const href = `/case-studies/${item.slug}`;
+            const href = `/case-studies/${item.slug}/`;
             return (
               <article
                 key={item.slug}

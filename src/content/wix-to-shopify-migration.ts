@@ -15,7 +15,7 @@ export const wixHeroContent: ServiceHeroVideoContent = {
   title: "Wix to Shopify Migration Services",
   paragraphs: ["Are you thinking about migrating your online store from Wix to Shopify? Unlock the full advantage of Shopify's robust platform to boost your business growth."],
   cta: "REQUEST A QUOTE",
-  ctaHref: "/request-quote",
+  ctaHref: "/request-quote/",
   image: {
     src: "/assets/wix-to-shopify-migration/wix-to-shopify-migration-img.svg",
     alt: "Wix to Shopify Storefront Migration",

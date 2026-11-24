@@ -6,7 +6,7 @@
   "modified": "2025-07-10T04:23:27+00:00",
   "category": "Shopify",
   "categoryValue": "shopify",
-  "categoryHref": "/blogs?category=shopify",
+  "categoryHref": "/blogs/?category=shopify",
   "featuredImage": {
     "src": "/assets/blog/how-to-choose-the-right-white-label-partner.webp",
     "width": 658,
@@ -51,7 +51,7 @@
         "But getting confused and don’t know how to choose the right one? That’s what we’ll help you to understand. If you’re starting your agency or want to offer more services like ",
         {
           "type": "link",
-          "href": "/white-label-shopify-development-services",
+          "href": "/white-label-shopify-development-services/",
           "text": "white label Shopify development Services"
         },
         " or ",
@@ -110,7 +110,7 @@
         " or a ",
         {
           "type": "link",
-          "href": "/white-label-wordpress-development-services",
+          "href": "/white-label-wordpress-development-services/",
           "text": "WordPress white label company"
         },
         ". They do all the work in the backend, and the client thinks you are working on their project."
@@ -329,7 +329,7 @@
         " ",
         {
           "type": "link",
-          "href": "/white-label-website-design-services",
+          "href": "/white-label-website-design-services/",
           "text": "web design"
         },
         ". Experience matters a lot when you are looking for professional work. Don’t work with beginners because they have lack of experience and expertise."

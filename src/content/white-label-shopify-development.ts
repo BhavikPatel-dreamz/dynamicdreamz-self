@@ -45,7 +45,7 @@ export const whiteLabelShopifyHero = {
     "Dynamic Dreamz provides **white label Shopify development services for agencies** that need additional capacity or specialist Shopify expertise. From Shopify and Shopify Plus to B2B, migrations, custom apps, iOS & Android mobile apps, integrations, CRO, automation and ongoing development, our team works behind your agency while you stay in control of the client relationship.",
   ],
   cta: "book an agency intro",
-  ctaHref: "/book-a-discovery-call",
+  ctaHref: "/book-a-discovery-call/",
   secondaryCta: {
     label: "see pricing",
     href: "#our_white_label_pricing",
@@ -187,7 +187,7 @@ export const whiteLabelShopifyScenarios = {
       meta: "Best fit: hourly support, project delivery or a dedicated developer / team.",
       primaryCta: {
         label: "Talk About Capacity",
-        href: "/contact-us",
+        href: "/contact-us/",
       },
       secondaryCta: {
         label: "View Pricing & Engagement",
@@ -213,7 +213,7 @@ export const whiteLabelShopifyScenarios = {
       meta: "Includes white label Shopify design and white label Shopify web development support for agency-led creative projects.",
       primaryCta: {
         label: "Send Your Figma Brief",
-        href: "/contact-us",
+        href: "/contact-us/",
       },
       secondaryCta: {
         label: "View Engagement Options",
@@ -239,7 +239,7 @@ export const whiteLabelShopifyScenarios = {
       meta: "Best fit: scoped Shopify Plus delivery or recurring specialist support.",
       primaryCta: {
         label: "Discuss a Shopify Plus Project",
-        href: "/contact-us",
+        href: "/contact-us/",
       },
       secondaryCta: {
         label: "View Pricing & Engagement",
@@ -265,7 +265,7 @@ export const whiteLabelShopifyScenarios = {
       meta: "Magento is referenced here only as a source platform for Shopify migration — not as a separate white-label service.",
       primaryCta: {
         label: "Review a Migration Brief",
-        href: "/contact-us",
+        href: "/contact-us/",
       },
       secondaryCta: {
         label: "View Engagement Options",
@@ -291,7 +291,7 @@ export const whiteLabelShopifyScenarios = {
       meta: "Supports integration-heavy projects and white-label Shopify automation requirements without making AI the main page story.",
       primaryCta: {
         label: "Discuss the Integration",
-        href: "/contact-us",
+        href: "/contact-us/",
       },
       secondaryCta: {
         label: "View Pricing & Engagement",
@@ -317,7 +317,7 @@ export const whiteLabelShopifyScenarios = {
       meta: "Best fit when your client's roadmap extends beyond the storefront and your agency wants mobile delivery under the same relationship.",
       primaryCta: {
         label: "Discuss a Mobile App",
-        href: "/contact-us",
+        href: "/contact-us/",
       },
       secondaryCta: {
         label: "View Engagement Options",
@@ -333,7 +333,7 @@ export const whiteLabelShopifyPortfolio: PortfolioShowcaseSectionProps["content"
   description:
     "For 20 years, we’ve worked on challenging and impactful projects for startups and leading global brands. Every website we create is designed around our clients’ goals.",
   ctaLabel: "View our work",
-  ctaHref: "/our-work",
+  ctaHref: "/our-work/",
   secondaryCtaLabel: "View Pricing",
   secondaryCtaHref: "#our_white_label_pricing",
   items: [
@@ -408,7 +408,7 @@ export const whiteLabelShopifyPricing: PricingEngagementContent = {
       description:
         "For complete Shopify Plus builds, migrations, redesigns, B2B requirements, custom apps, integrations and technically complex ecommerce projects.",
       ctaLabel: "Send Brief — Get a Quote in 24 Hours",
-      ctaHref: "/request-quote",
+      ctaHref: "/request-quote/",
     },
     {
       label: "Flexible Hourly Support",
@@ -417,7 +417,7 @@ export const whiteLabelShopifyPricing: PricingEngagementContent = {
       description:
         "For ongoing maintenance, enhancements, troubleshooting, performance improvements and changing Shopify Plus development requirements.",
       ctaLabel: "Buy Shopify Development Hours",
-      ctaHref: "/buy-shopify-development-hours",
+      ctaHref: "/buy-shopify-development-hours/",
     },
     {
       label: "Dedicated Developer / Team",
@@ -426,7 +426,7 @@ export const whiteLabelShopifyPricing: PricingEngagementContent = {
       description:
         "For brands with a steady Shopify roadmap, multiple storefronts or a need for a dedicated developer or wider delivery team.",
       ctaLabel: "Discuss a Dedicated Team",
-      ctaHref: "/book-a-discovery-call",
+      ctaHref: "/book-a-discovery-call/",
     },
   ],
 };
@@ -494,7 +494,7 @@ export const whiteLabelShopifyDeliveryComparison = {
   ctas: {
     primary: {
       label: "Book An Agency Intro Call",
-      href: "/book-a-discovery-call",
+      href: "/book-a-discovery-call/",
     },
     secondary: {
       label: "See Pricing And engagement options",
@@ -537,11 +537,11 @@ export const whiteLabelShopifyBrandProtection = {
   ctas: {
     primary: {
       label: "Book An Agency Intro Call",
-      href: "/book-a-discovery-call",
+      href: "/book-a-discovery-call/",
     },
     secondary: {
       label: "About Dynamic Dreamz",
-      href: "/about-us",
+      href: "/about-us/",
       variant: "arrowLink",
     },
   },
@@ -560,7 +560,7 @@ export const whiteLabelShopifyAgencyUseCases = {
         "Your team wins the strategy and CRO work. We give you the development capacity to ship it.",
       pill: "Overflow Development · CRO · Maintenance",
       ctaLabel: "About Dynamic Dreamz",
-      ctaHref: "/contact-us",
+      ctaHref: "/contact-us/",
     },
     {
       tag: "UK / Europe · Branding Agency",
@@ -569,7 +569,7 @@ export const whiteLabelShopifyAgencyUseCases = {
         "You own brand, UX and Figma. We deliver the storefront behind your agency.",
       pill: "Figma-to-Shopify · Shopify Plus · QA",
       ctaLabel: "Send a figma brief",
-      ctaHref: "/contact-us",
+      ctaHref: "/contact-us/",
     },
     {
       tag: "Australia / Canada · Ecommerce Agency",
@@ -578,7 +578,7 @@ export const whiteLabelShopifyAgencyUseCases = {
         "Bring us in for requirements your internal team does not need to carry permanently.",
       pill: "B2B · Integrations · Apps · iOS / Android",
       ctaLabel: "Discuss a complex projects",
-      ctaHref: "/contact-us",
+      ctaHref: "/contact-us/",
     },
   ],
 } as const;

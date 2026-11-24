@@ -7,7 +7,7 @@ export const prestigeThemeCustomizationContent = {
     description:
       "The Prestige Shopify Theme is the best choice for luxury brands that display luxury products with clean, grand designs. Our Prestige theme customization services help you to match your brand’s identity and extraordinary requirements. We concentrate on improving the user experience, adding advanced features, and optimizing for all devices, confirming that your Shopify store stands out in the competitive eCommerce market.",
     ctaText: "Request a Quote",
-    ctaHref: "/request-quote",
+    ctaHref: "/request-quote/",
     secondaryCtaText: "View Prestige on Shopify",
     secondaryCtaHref: "https://themes.shopify.com/themes/prestige/presets/prestige",
     secondaryCtaTarget: "_blank",
@@ -201,7 +201,7 @@ export const prestigeThemeCustomizationContent = {
       "Explore our portfolio showcasing successful Shopify customization projects, highlighting how we customize, secure, and enhance stores for peak performance.",
     ],
     ctaLabel: "View our work",
-    ctaHref: "/our-work",
+    ctaHref: "/our-work/",
     items: [
       {
         name: "Atolea Jewelry",

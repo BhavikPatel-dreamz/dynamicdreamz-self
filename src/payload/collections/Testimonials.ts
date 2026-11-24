@@ -15,14 +15,14 @@ export const Testimonials: CollectionConfig = {
       () => {
         safeRevalidatePath("/", "layout");
         safeRevalidatePath("/");
-        safeRevalidatePath("/case-studies");
+        safeRevalidatePath("/case-studies/");
       },
     ],
     afterDelete: [
       () => {
         safeRevalidatePath("/", "layout");
         safeRevalidatePath("/");
-        safeRevalidatePath("/case-studies");
+        safeRevalidatePath("/case-studies/");
       },
     ],
   },

@@ -11,14 +11,14 @@ export const CaseStudies: CollectionConfig = {
       url: ({ data }) => {
         const rawSlug = typeof data?.slug === "string" ? data.slug.trim() : "";
         const slug = rawSlug.replace(/^\/+|\/+$/g, "");
-        const path = slug ? `/case-studies/${slug}` : "/case-studies";
+        const path = slug ? `/case-studies/${slug}/` : "/case-studies/";
         return previewDraftPath(path, slug);
       },
     },
     preview: (doc) => {
       const rawSlug = typeof doc?.slug === "string" ? doc.slug.trim() : "";
       const slug = rawSlug.replace(/^\/+|\/+$/g, "");
-      const path = slug ? `/case-studies/${slug}` : "/case-studies";
+      const path = slug ? `/case-studies/${slug}/` : "/case-studies/";
       return previewDraftPath(path, slug);
     },
   },
@@ -29,23 +29,23 @@ export const CaseStudies: CollectionConfig = {
     afterChange: [
       ({ doc, previousDoc }) => {
         if (doc?.slug) {
-          safeRevalidatePath(`/case-studies/${doc.slug}`);
+          safeRevalidatePath(`/case-studies/${doc.slug}/`);
         }
         if (previousDoc?.slug && previousDoc.slug !== doc?.slug) {
-          safeRevalidatePath(`/case-studies/${previousDoc.slug}`);
+          safeRevalidatePath(`/case-studies/${previousDoc.slug}/`);
         }
-        safeRevalidatePath("/case-studies");
-        safeRevalidatePath("/our-work");
+        safeRevalidatePath("/case-studies/");
+        safeRevalidatePath("/our-work/");
         safeRevalidatePath("/");
       },
     ],
     afterDelete: [
       ({ doc }) => {
         if (doc?.slug) {
-          safeRevalidatePath(`/case-studies/${doc.slug}`);
+          safeRevalidatePath(`/case-studies/${doc.slug}/`);
         }
-        safeRevalidatePath("/case-studies");
-        safeRevalidatePath("/our-work");
+        safeRevalidatePath("/case-studies/");
+        safeRevalidatePath("/our-work/");
         safeRevalidatePath("/");
       },
     ],
@@ -223,26 +223,26 @@ export const CaseStudies: CollectionConfig = {
           label: "Canonical Path / Slug (e.g. /case-studies/my-study)",
           admin: {
             description: "Stores only the relative path (e.g. /case-studies/my-study). Domains are automatically stripped.",
-            placeholder: "/case-studies/study-slug",
+            placeholder: "/case-studies/study-slug/",
           },
           hooks: {
             beforeChange: [
               ({ value, data }) => {
                 if (!value) {
                   const slug = typeof data?.slug === "string" ? data.slug.trim().replace(/^\/+|\/+$/g, "") : "";
-                  return slug ? `/case-studies/${slug}` : "/case-studies";
+                  return slug ? `/case-studies/${slug}/` : "/case-studies/";
                 }
                 let cleaned = String(value).trim();
                 if (cleaned.startsWith("http://") || cleaned.startsWith("https://")) {
                   try {
                     const u = new URL(cleaned);
-                    cleaned = u.pathname || "/case-studies";
+                    cleaned = u.pathname || "/case-studies/";
                   } catch {
-                    cleaned = cleaned.replace(/^https?:\/\/[^/]+/i, "") || "/case-studies";
+                    cleaned = cleaned.replace(/^https?:\/\/[^/]+/i, "") || "/case-studies/";
                   }
                 }
-                const normalized = cleaned.startsWith("/") ? cleaned : `/${cleaned}`;
-                return normalized === "/" ? "/" : normalized.replace(/\/+$/, "");
+                const normalized = cleaned.startsWith("/") ? cleaned : `/${cleaned}/`;
+                return normalized === "/" ? "/" : normalized.endsWith("/") ? normalized : `${normalized}/`;
               },
             ],
           },

@@ -11,7 +11,7 @@ export const pipelineThemeCustomizationContent = {
     "title": "Pipeline Theme Customization Service",
     "description": "The Pipeline theme is a sleek and modern Shopify theme. The Pipeline theme is perfect for businesses that highlight storytelling and expansive visuals. For high-end brands, it offers a simple, minimalist design and layouts with a smooth parallax scrolling effect. Our Pipeline theme customization service improves your Shopify store's graphical attraction, optimizes its functionality, and ensures a smooth shopping experience for your customers.",
     "ctaText": "Request a Quote",
-    "ctaHref": "/request-quote",
+    "ctaHref": "/request-quote/",
     "ctaAriaLabel": "Request a Quote",
     "secondaryCtaText": "View Pipeline on Shopify",
     "secondaryCtaHref": "https://themes.shopify.com/themes/pipeline/presets/pipeline",
@@ -239,7 +239,7 @@ export const pipelineThemeCustomizationContent = {
     "heading": "Snippets of Shopify Theme Customization Portfolio",
     "description": "Explore our portfolio showcasing successful Shopify customization projects, highlighting how we customize, secure, and enhance stores for peak performance.",
     "ctaLabel": "View our work",
-    "ctaHref": "/our-work",
+    "ctaHref": "/our-work/",
     "items": [
       {
         "name": "Nufyx",

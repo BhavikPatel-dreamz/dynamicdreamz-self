@@ -6,7 +6,7 @@
   "modified": "2025-02-05T04:59:45+00:00",
   "category": "Shopify",
   "categoryValue": "shopify",
-  "categoryHref": "/blogs?category=shopify",
+  "categoryHref": "/blogs/?category=shopify",
   "featuredImage": {
     "src": "/assets/blog/is-shopify-plus-worth-investing.webp",
     "width": 1316,
@@ -578,7 +578,7 @@
         ", a dedicated ",
         {
           "type": "link",
-          "href": "/shopify-experts",
+          "href": "/shopify-experts/",
           "text": "Shopify expert"
         },
         " who helps you optimize your store during setup and growth. This personalized support includes:"
@@ -883,7 +883,7 @@
             "Hiring a ",
             {
               "type": "link",
-              "href": "/shopify-development-agency",
+              "href": "/shopify-development-agency/",
               "text": "Shopify Plus development company"
             },
             " or Shopify Plus designers to customize your store adds to the overall investment."
@@ -1331,7 +1331,7 @@
         "If you’ve outgrown the limitations of basic Shopify themes or apps, Shopify Plus provides the flexibility your business needs. Let’s Explore ",
         {
           "type": "link",
-          "href": "/shopify-theme-customization",
+          "href": "/shopify-theme-customization/",
           "text": "Shopify Customization Services"
         },
         " by Dynamic Dreamz."
@@ -1491,7 +1491,7 @@
             "You need assistance from a ",
             {
               "type": "link",
-              "href": "/shopify-plus-agency",
+              "href": "/shopify-plus-agency/",
               "text": "Shopify Plus development agency"
             },
             " to customize and optimize your store."
@@ -1758,7 +1758,7 @@
           "content": [
             {
               "type": "link",
-              "href": "/shopify-maintenance-services",
+              "href": "/shopify-maintenance-services/",
               "text": "Shopify Maintenance Service"
             }
           ]
@@ -2249,7 +2249,7 @@
         "These experts can also help you leverage advanced tools, build custom integrations, and ensure your store performs at its best, maximizing your investment. If you are an agency, you can choose our ",
         {
           "type": "link",
-          "href": "/white-label-shopify-development-services",
+          "href": "/white-label-shopify-development-services/",
           "text": "White Label Shopify Development"
         },
         " service to ensure quality work by the expert."
@@ -2297,7 +2297,7 @@
         ", a trusted Shopify expert agency, to get started. We have a professional team of Shopify Plus experts with 20+ years of experience. ",
         {
           "type": "link",
-          "href": "/contact-us",
+          "href": "/contact-us/",
           "text": "Contact us"
         },
         " now with your detailed project requirements, and we will help you find the best eCommerce solution with Shopify Plus."

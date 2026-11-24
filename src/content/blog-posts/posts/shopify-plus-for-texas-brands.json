@@ -6,7 +6,7 @@
   "modified": "2026-08-05T11:50:07+00:00",
   "category": "Shopify",
   "categoryValue": "shopify",
-  "categoryHref": "/blogs?category=shopify",
+  "categoryHref": "/blogs/?category=shopify",
   "featuredImage": {
     "src": "/assets/blog/shopify-plus-for-texas-brands.webp",
     "width": 2560,
@@ -286,7 +286,7 @@
         "If your business is evaluating this for a ",
         {
           "type": "link",
-          "href": "/shopify-development-in-texas",
+          "href": "/shopify-development-in-texas/",
           "text": "Texas-based Shopify project"
         },
         ", it’s worth mapping your actual catalog and account requirements before deciding which plan tier fits."

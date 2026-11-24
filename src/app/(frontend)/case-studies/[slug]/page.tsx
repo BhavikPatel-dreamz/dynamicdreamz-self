@@ -36,7 +36,7 @@ export async function generateMetadata({ params }: CaseStudyRouteProps): Promise
   if (!caseStudy) return {};
 
   const page: PageSeoConfig = {
-    path: `/case-studies/${caseStudy.slug}`,
+    path: `/case-studies/${caseStudy.slug}/`,
     title: caseStudy.seo.title,
     description: caseStudy.seo.description,
     keywords: [

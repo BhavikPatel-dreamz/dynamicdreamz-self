@@ -32,7 +32,7 @@ export type BlogArchivePaginationItem = {
 export const blogsPageContent = {
   heroTitle: "Ecommerce News, Trends & Professional Resources",
   search: {
-    action: "/blogs",
+    action: "/blogs/",
     label: "Search blogs",
     placeholder: "Search blog...",
     submitLabel: "Search",
@@ -41,10 +41,10 @@ export const blogsPageContent = {
   allCategoryLabel: "All",
   categoriesLabel: "Filter blogs by category",
   categories: [
-    { label: "Shopify", value: "shopify", href: "/blogs?category=shopify" },
-    { label: "WordPress", value: "wordpress", href: "/blogs?category=wordpress" },
-    { label: "eCommerce", value: "ecommerce", href: "/blogs?category=ecommerce" },
-    { label: "Faqs", value: "faqs", href: "/blogs?category=faqs" },
+    { label: "Shopify", value: "shopify", href: "/blogs/?category=shopify" },
+    { label: "WordPress", value: "wordpress", href: "/blogs/?category=wordpress" },
+    { label: "eCommerce", value: "ecommerce", href: "/blogs/?category=ecommerce" },
+    { label: "Faqs", value: "faqs", href: "/blogs/?category=faqs" },
   ] satisfies readonly BlogArchiveCategory[],
   paginationLabel: "Blog archive pagination",
 } as const;
@@ -133,7 +133,7 @@ export function getBlogArchivePagination(
     if (options?.category) params.set("category", options.category);
     if (page > 1) params.set("page", String(page));
     const qs = params.toString();
-    return qs ? `/blogs?${qs}` : "/blogs";
+    return qs ? `/blogs/?${qs}` : "/blogs/";
   };
 
   if (safePage > 1) {

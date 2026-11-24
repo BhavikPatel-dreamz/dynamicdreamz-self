@@ -6,7 +6,7 @@
   "modified": "2026-09-14T08:52:41+00:00",
   "category": "Shopify",
   "categoryValue": "shopify",
-  "categoryHref": "/blogs?category=shopify",
+  "categoryHref": "/blogs/?category=shopify",
   "featuredImage": {
     "src": "/assets/blog/shopify-development-cost.webp",
     "width": 2560,
@@ -647,7 +647,7 @@
         },
         {
           "type": "link",
-          "href": "/shopify-development-in-los-angeles",
+          "href": "/shopify-development-in-los-angeles/",
           "text": "Dynamic Dreamz works with LA brands",
           "bold": true
         },

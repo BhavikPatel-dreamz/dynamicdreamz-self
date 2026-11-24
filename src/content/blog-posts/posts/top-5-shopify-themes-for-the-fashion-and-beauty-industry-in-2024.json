@@ -6,7 +6,7 @@
   "modified": "2025-01-16T09:42:04+00:00",
   "category": "Shopify",
   "categoryValue": "shopify",
-  "categoryHref": "/blogs?category=shopify",
+  "categoryHref": "/blogs/?category=shopify",
   "featuredImage": {
     "src": "/assets/blog/top-5-shopify-themes-for-the-fashion-and-beauty-industry-in-2024.webp",
     "width": 329,
@@ -156,7 +156,7 @@
         "Customizable themes are the most valuable element to make your brand unforgettable. ",
         {
           "type": "link",
-          "href": "/shopify-theme-customization",
+          "href": "/shopify-theme-customization/",
           "text": "Shopify Theme Customization"
         },
         " allows you to redesign your elements to match your brand’s identity. That lets you develop a memorable appearance that resonates with your audience."
@@ -220,7 +220,7 @@
         },
         {
           "type": "link",
-          "href": "/be-yours-theme-customization",
+          "href": "/be-yours-theme-customization/",
           "text": "Be yours Theme Customization Service",
           "bold": true
         },
@@ -317,7 +317,7 @@
         ". A ",
         {
           "type": "link",
-          "href": "/prestige-theme-customization",
+          "href": "/prestige-theme-customization/",
           "text": "Prestige Theme Customization Service"
         },
         " can help brands create a visually stunning online presence that appeals to customers looking for quality and style."
@@ -400,7 +400,7 @@
         "Impulse theme is best for fashion brands that prioritize flexibility and customization. ",
         {
           "type": "link",
-          "href": "/impulse-theme-customization",
+          "href": "/impulse-theme-customization/",
           "text": "Impulse Theme Customization Service"
         },
         " is known for its clean, modern design and its ability to ",
@@ -500,7 +500,7 @@
         ". Customers can easily navigate through product collections because of its modern design, which focuses on usability and navigation. ",
         {
           "type": "link",
-          "href": "/expanse-theme-customization",
+          "href": "/expanse-theme-customization/",
           "text": "Expanse Theme Customization Service"
         },
         " is ideal for stores that manage a wide range of products efficiently while ",
@@ -583,7 +583,7 @@
         " that focuses on visual storytelling to assist you in building a stunning and captivating online business. It’s a fantastic option for companies looking for a theme that is easy to install and manage. That lets them present their products in an eye catching manner. ",
         {
           "type": "link",
-          "href": "/sense-theme-customization",
+          "href": "/sense-theme-customization/",
           "text": "Sense Theme Customization Service"
         },
         " is known for a feature that will assist you in using social proof and customer reviews to establish credibility and trust with potential customers."
@@ -971,7 +971,7 @@
         "So, finally, you selected your preferred theme for your Shopify store! Are you looking for a Shopify developer and designer to customize the Shopify theme according to your requirements? In this case, Dynamic Dreamz can help you with your ",
         {
           "type": "link",
-          "href": "/shopify-development-agency",
+          "href": "/shopify-development-agency/",
           "text": "Shopify theme customization"
         },
         " work. We can customize your chosen theme to better fit your brand and provide a seamless shopping experience. Let’s explore how Dynamic Dreamz can help you:"
@@ -1109,19 +1109,19 @@
         " for top eCommerce platforms like Shopify, ",
         {
           "type": "link",
-          "href": "/wordpress-development",
+          "href": "/wordpress-development/",
           "text": "WordPress"
         },
         ", ",
         {
           "type": "link",
-          "href": "/magento-development",
+          "href": "/magento-development/",
           "text": "Magento"
         },
         ", and ",
         {
           "type": "link",
-          "href": "/bigcommerce-development",
+          "href": "/bigcommerce-development/",
           "text": "BigCommerce"
         },
         ". We’ve been awarded the ",
@@ -1133,25 +1133,25 @@
         ". We also work with ",
         {
           "type": "link",
-          "href": "/php-development",
+          "href": "/php-development/",
           "text": "PHP"
         },
         ", Laravel, Cross platform app development(React Native and Flutter), and ",
         {
           "type": "link",
-          "href": "/web-design",
+          "href": "/web-design/",
           "text": "UI/UX design"
         },
         ". Plus, we offer ",
         {
           "type": "link",
-          "href": "/white-label-shopify-development-services",
+          "href": "/white-label-shopify-development-services/",
           "text": "white label services"
         },
         ". ",
         {
           "type": "link",
-          "href": "/contact-us",
+          "href": "/contact-us/",
           "text": "Contact us"
         },
         " ",
@@ -1235,7 +1235,7 @@
       "children": [
         {
           "type": "link",
-          "href": "/shopify-development-agency",
+          "href": "/shopify-development-agency/",
           "text": "Custom Shopify theme development",
           "bold": true
         },
@@ -1266,7 +1266,7 @@
         "Yes, of course! Look for themes with drag and drop builders, detailed documentation, and robust customer support to help you navigate any issues. But you must ",
         {
           "type": "link",
-          "href": "/hire-shopify-developers",
+          "href": "/hire-shopify-developers/",
           "text": "hire dedicated Shopify developers"
         },
         " if you need more complex modifications."

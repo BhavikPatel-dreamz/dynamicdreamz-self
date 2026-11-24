@@ -39,7 +39,7 @@ export const WhiteLabelDeliveryBlock: Block = {
         {
           name: "href",
           type: "text",
-          defaultValue: "/request-a-quote",
+          defaultValue: "/request-a-quote/",
           label: "CTA Link",
         },
       ],
@@ -58,7 +58,7 @@ export const WhiteLabelDeliveryBlock: Block = {
         {
           name: "href",
           type: "text",
-          defaultValue: "/buy-shopify-development-hours",
+          defaultValue: "/buy-shopify-development-hours/",
           label: "CTA Link",
         },
       ],

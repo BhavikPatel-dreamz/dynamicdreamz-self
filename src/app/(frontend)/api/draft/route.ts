@@ -23,11 +23,11 @@ export async function GET(req: NextRequest) {
     redirectUrl = path;
   } else if (slug) {
     const cleanSlug = slug.replace(/^\/+|\/+$/g, "");
-    redirectUrl = cleanSlug === "home" ? "/" : `/${cleanSlug}`;
+    redirectUrl = cleanSlug === "home" ? "/" : `/${cleanSlug}/`;
   }
 
-  if (redirectUrl !== "/" && redirectUrl.endsWith("/")) {
-    redirectUrl = redirectUrl.replace(/\/+$/, "") || "/";
+  if (redirectUrl !== "/" && !redirectUrl.endsWith("/")) {
+    redirectUrl = `${redirectUrl}/`;
   }
 
   redirect(redirectUrl);

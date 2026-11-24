@@ -7,7 +7,7 @@ export const tradeThemeCustomizationContent = {
     description:
       "Want to improve your Shopify store with an adaptable Trade theme? Our Trade theme customization service provides designed solutions to create a robust online store. From customized design to advanced feature integration, we ensure your store has a unique brand identity. With our professional customization services, you can improve user engagement and boost conversion rates.",
     ctaText: "Request a Quote",
-    ctaHref: "/request-quote",
+    ctaHref: "/request-quote/",
     ctaAriaLabel: "Request a Quote",
     secondaryCtaText: "View Trade on Shopify",
     secondaryCtaHref: "https://themes.shopify.com/themes/trade/presets/trade",
@@ -178,7 +178,7 @@ export const tradeThemeCustomizationContent = {
       "Explore our portfolio showcasing successful Shopify customization projects, highlighting how we customize, secure, and enhance stores for peak performance.",
     ],
     ctaLabel: "View our work",
-    ctaHref: "/our-work",
+    ctaHref: "/our-work/",
     items: [
       {
         name: "Nufyx",

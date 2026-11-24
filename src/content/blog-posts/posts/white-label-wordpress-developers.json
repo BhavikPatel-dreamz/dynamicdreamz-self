@@ -6,7 +6,7 @@
   "modified": "2026-09-14T11:02:13+00:00",
   "category": "WordPress",
   "categoryValue": "wordpress",
-  "categoryHref": "/blogs?category=wordpress",
+  "categoryHref": "/blogs/?category=wordpress",
   "featuredImage": {
     "src": "/assets/blog/white-label-wordpress-developers.webp",
     "width": 1504,

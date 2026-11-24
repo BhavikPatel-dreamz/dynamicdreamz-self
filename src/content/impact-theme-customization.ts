@@ -7,7 +7,7 @@ export const impactThemeCustomizationContent = {
     description:
       "The Impact theme is the best choice for a proactive, trendy, conversion-driven Shopify store. It has features like a unique design, advanced visual storytelling components, and straightforward navigation. Our Impact theme customization service helps you customize your Shopify store to match your brand identity, optimize user experience, and boost sales. Whether you need minor changes or a complete redesign, we ensure your Shopify store works properly and stands out in this competitive marketplace.",
     ctaText: "Request a Quote",
-    ctaHref: "/request-quote",
+    ctaHref: "/request-quote/",
     ctaAriaLabel: "Request a Quote",
     secondaryCtaText: "View Impact on Shopify",
     secondaryCtaHref: "https://themes.shopify.com/themes/impact/presets/impact",
@@ -171,7 +171,7 @@ export const impactThemeCustomizationContent = {
     description:
       "Explore our portfolio showcasing successful Shopify customization projects, highlighting how we customize, secure, and enhance stores for peak performance.",
     ctaLabel: "View our work",
-    ctaHref: "/our-work",
+    ctaHref: "/our-work/",
     items: [
       {
             "name": "Nufyx",

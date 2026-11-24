@@ -7,7 +7,7 @@ export const woodstockThemeCustomizationContent = {
     description:
       "For fashion, electronics, and lifestyle stores, the Woodstock theme is a modern, high-performing Shopify theme. We ensure that your Shopify store is customized to your brand and offers a captivating shopping experience with our Woodstock theme customization service. Our skilled staff will convert the Woodstock theme into a custom storefront that attracts clients and boosts sales, regardless of whether you require custom layouts, improved functionality, or smooth connections.",
     ctaText: "Request a Quote",
-    ctaHref: "/request-quote",
+    ctaHref: "/request-quote/",
     ctaAriaLabel: "Request a Quote",
     secondaryCtaText: "View Woodstock on Shopify",
     secondaryCtaHref: "https://themes.shopify.com/themes/woodstock/presets/woodstock",
@@ -159,7 +159,7 @@ export const woodstockThemeCustomizationContent = {
     description:
       "Explore our portfolio showcasing successful Shopify customization projects, highlighting how we customize, secure, and enhance stores for peak performance.",
     ctaLabel: "View our work",
-    ctaHref: "/our-work",
+    ctaHref: "/our-work/",
     items: [
       {
             "name": "Nufyx",

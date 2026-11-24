@@ -8,7 +8,7 @@ export const phpDevelopmentContent = {
       "Dynamic Dreamz provides PHP and MySQL development for custom web applications, APIs, ecommerce solutions and ongoing backend development. Our PHP developers work with Laravel, Symfony, CodeIgniter and custom PHP to build solutions around your business requirements.",
     ] as const,
     cta: "request a quote",
-    ctaHref: "/request-quote",
+    ctaHref: "/request-quote/",
     video: "/assets/home/why-dynamic-dreamz.mp4",
     badges: [
       {
@@ -219,7 +219,7 @@ export const phpDevelopmentContent = {
     "Dynamic Dreamz isn't just about talk; we're about results. Explore a carefully curated selection of our successful PHP/MySQL Development projects.",
   ],
     ctaLabel: "View our work",
-    ctaHref: "/our-work",
+    ctaHref: "/our-work/",
     items: [
       {
         name: "Kask",

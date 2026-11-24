@@ -8,7 +8,7 @@ export const shopifyCertifiedDevelopersHero = {
     "Build, customize or improve your Shopify store with developers who hold official Shopify credentials—and work within Dynamic Dreamz, a Shopify Platinum Partner agency with deep ecommerce experience.",
   ],
   cta: "Discuss your Shopify project",
-  ctaHref: "/book-a-discovery-call",
+  ctaHref: "/book-a-discovery-call/",
   secondaryCta: {
     label: "see our certifications",
     href: "#see_our_certifications",

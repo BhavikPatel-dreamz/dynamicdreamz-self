@@ -6,7 +6,7 @@
   "modified": "2026-09-21T05:42:00+00:00",
   "category": "Faqs",
   "categoryValue": "faqs",
-  "categoryHref": "/blogs?category=faqs",
+  "categoryHref": "/blogs/?category=faqs",
   "featuredImage": null,
   "excerpt": "Shopify doesn't include a real PIM. Rather, it offers product fields, metafields, and media management, which work quite fine for smaller catalogs. But it simply won’t be able to validate data or handle bulk editing quite well, or simply push...",
   "author": {
@@ -174,7 +174,7 @@
         "Managing more systems than just your catalog? Our overview of ",
         {
           "type": "link",
-          "href": "/blogs/shopify-api-integration",
+          "href": "/blogs/shopify-api-integration/",
           "text": "Shopify API integration",
           "rel": "dofollow"
         },

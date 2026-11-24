@@ -149,7 +149,7 @@ export const ServiceHeroBlock: Block = {
               label: "Primary CTA (Solid Button)",
               fields: [
                 { name: "label", type: "text", defaultValue: "Let's Talk" },
-                { name: "href", type: "text", defaultValue: "/request-a-quote" },
+                { name: "href", type: "text", defaultValue: "/request-a-quote/" },
               ],
             },
             {

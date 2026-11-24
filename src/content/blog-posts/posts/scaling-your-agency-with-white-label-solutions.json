@@ -6,7 +6,7 @@
   "modified": "2025-07-21T03:35:43+00:00",
   "category": "Shopify",
   "categoryValue": "shopify",
-  "categoryHref": "/blogs?category=shopify",
+  "categoryHref": "/blogs/?category=shopify",
   "featuredImage": {
     "src": "/assets/blog/scaling-your-agency-with-white-label-solutions.webp",
     "width": 329,
@@ -92,7 +92,7 @@
           "content": [
             {
               "type": "link",
-              "href": "/white-label-wordpress-development-services",
+              "href": "/white-label-wordpress-development-services/",
               "text": "White-label WordPress development"
             }
           ]
@@ -170,7 +170,7 @@
           "content": [
             {
               "type": "link",
-              "href": "/white-label-shopify-development-services",
+              "href": "/white-label-shopify-development-services/",
               "text": "White label Shopify development:"
             },
             " Create Shopify stores under your brand."
@@ -293,7 +293,7 @@
         " No, they won’t. In the White label services, the service or product is delivered to the client under your brand name. A good ",
         {
           "type": "link",
-          "href": "/white-label-website-design-services",
+          "href": "/white-label-website-design-services/",
           "text": "white-label web design agency"
         },
         " will ensure everything looks and feels like it came from your team."
@@ -668,7 +668,7 @@
         " experts. Who are ready to enhance your services offering and help you grow your company. ",
         {
           "type": "link",
-          "href": "/contact-us",
+          "href": "/contact-us/",
           "text": "Contact us"
         },
         " for more details!"

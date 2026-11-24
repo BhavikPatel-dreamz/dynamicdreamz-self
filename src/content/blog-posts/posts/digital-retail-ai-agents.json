@@ -6,7 +6,7 @@
   "modified": "2026-09-14T09:55:20+00:00",
   "category": "Shopify",
   "categoryValue": "shopify",
-  "categoryHref": "/blogs?category=shopify",
+  "categoryHref": "/blogs/?category=shopify",
   "featuredImage": {
     "src": "/assets/blog/digital-retail-ai-agents.webp",
     "width": 1504,

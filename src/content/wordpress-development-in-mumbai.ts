@@ -61,7 +61,7 @@ export const wordpressDevelopmentMumbaiContent = {
       "Dynamic Dreamz is a reliable WordPress development company in Mumbai and other cities in India, known for building fast, secure, and scalable websites tailored to business growth. You can expect custom solutions designed for performance and flexibility from a professional WordPress web development company.",
     primaryCta: {
       label: "Get in Touch",
-      href: "/request-quote",
+      href: "/request-quote/",
     },
     badges: [
       {
@@ -364,6 +364,6 @@ export const wordpressDevelopmentMumbaiContent = {
   ctaBanner: {
     heading: "Want us to help you with your online store?",
     ctaLabel: "request a quote",
-    ctaHref: "/request-quote",
+    ctaHref: "/request-quote/",
   },
 } as const;

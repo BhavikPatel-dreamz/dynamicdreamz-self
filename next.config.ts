@@ -48,11 +48,11 @@ const staticAssetCacheControl = {
 };
 
 const nextConfig: NextConfig = {
-  // Public page URLs never end in a slash (the homepage `/` is the only
-  // structural exception). Next.js redirects `/about-us/` to `/about-us`, and
-  // `absoluteUrl` applies the same policy to canonical, Open Graph, sitemap,
+  // Public page URLs end in a trailing slash to match the live site and preserve
+  // legacy WordPress SEO equity. Next.js redirects `/about-us` to `/about-us/`,
+  // and `absoluteUrl` applies the same policy to canonical, Open Graph, sitemap,
   // robots, and JSON-LD output. `npm run check:urls` prevents policy drift.
-  trailingSlash: false,
+  trailingSlash: true,
   experimental: {
     agentUpgrade: "security",
     useTypeScriptCli: false,
@@ -116,177 +116,177 @@ const nextConfig: NextConfig = {
     return [
       {
         source: "/healthcare",
-        destination: "/industries/health-nutrition",
+        destination: "/industries/health-nutrition/",
         permanent: true,
       },
       {
         source: "/industries/healthcare",
-        destination: "/industries/health-nutrition",
+        destination: "/industries/health-nutrition/",
         permanent: true,
       },
       {
         source: "/health-nutrition",
-        destination: "/industries/health-nutrition",
+        destination: "/industries/health-nutrition/",
         permanent: true,
       },
       {
         source: "/sports-outdoors",
-        destination: "/industries/sports-outdoors",
+        destination: "/industries/sports-outdoors/",
         permanent: true,
       },
       {
         source: "/fashion",
-        destination: "/industries/fashion",
+        destination: "/industries/fashion/",
         permanent: true,
       },
       {
         source: "/beauty-cosmetics",
-        destination: "/industries/beauty-cosmetics",
+        destination: "/industries/beauty-cosmetics/",
         permanent: true,
       },
       {
         source: "/food-beverages",
-        destination: "/industries/food-beverages",
+        destination: "/industries/food-beverages/",
         permanent: true,
       },
       {
         source: "/home-living",
-        destination: "/industries/home-living",
+        destination: "/industries/home-living/",
         permanent: true,
       },
       {
         source: "/jewellery-accessories",
-        destination: "/industries/jewellery-accessories",
+        destination: "/industries/jewellery-accessories/",
         permanent: true,
       },
       {
         source: "/pet-industry",
-        destination: "/industries/pet-industry",
+        destination: "/industries/pet-industry/",
         permanent: true,
       },
       {
         source: "/magento-web-development",
-        destination: "/magento-development",
+        destination: "/magento-development/",
         permanent: true,
       },
       {
         source: "/upgrade-to-shopify-plus-2",
-        destination: "/upgrade-to-shopify-plus",
+        destination: "/upgrade-to-shopify-plus/",
         permanent: true,
       },
       {
         source: "/case-study/rootedhuman",
-        destination: "/case-studies/rooted-human",
+        destination: "/case-studies/rooted-human/",
         permanent: true,
       },
       {
         source: "/case-study/factsandsupps",
-        destination: "/case-studies/facts-and-supps",
+        destination: "/case-studies/facts-and-supps/",
         permanent: true,
       },
       {
         source: "/case-study/candy-prom",
-        destination: "/case-studies/candy-prom-and-evening",
+        destination: "/case-studies/candy-prom-and-evening/",
         permanent: true,
       },
       {
         source: "/case-study/beauti-software",
-        destination: "/case-studies/beauty-software",
+        destination: "/case-studies/beauty-software/",
         permanent: true,
       },
       {
         source: "/case-studies/rootedhuman",
-        destination: "/case-studies/rooted-human",
+        destination: "/case-studies/rooted-human/",
         permanent: true,
       },
       {
         source: "/case-studies/factsandsupps",
-        destination: "/case-studies/facts-and-supps",
+        destination: "/case-studies/facts-and-supps/",
         permanent: true,
       },
       {
         source: "/case-studies/candy-prom",
-        destination: "/case-studies/candy-prom-and-evening",
+        destination: "/case-studies/candy-prom-and-evening/",
         permanent: true,
       },
       {
         source: "/case-studies/beauti-software",
-        destination: "/case-studies/beauty-software",
+        destination: "/case-studies/beauty-software/",
         permanent: true,
       },
       {
         source: "/case-study",
-        destination: "/case-studies",
+        destination: "/case-studies/",
         permanent: true,
       },
       {
         source: "/case-study/:slug*",
-        destination: "/case-studies/:slug*",
+        destination: "/case-studies/:slug*/",
         permanent: true,
       },
       {
         source: "/blogs/page/:page",
-        destination: "/blogs?page=:page",
+        destination: "/blogs/?page=:page",
         permanent: true,
       },
       {
         source: "/blogs/category/shopify",
-        destination: "/blogs?category=shopify",
+        destination: "/blogs/?category=shopify",
         permanent: true,
       },
       {
         source: "/blogs/category/wordpress",
-        destination: "/blogs?category=wordpress",
+        destination: "/blogs/?category=wordpress",
         permanent: true,
       },
       {
         source: "/blogs/category/ecommerce",
-        destination: "/blogs?category=ecommerce",
+        destination: "/blogs/?category=ecommerce",
         permanent: true,
       },
       {
         source: "/blogs/category/big-commerce",
-        destination: "/blogs?category=big-commerce",
+        destination: "/blogs/?category=big-commerce",
         permanent: true,
       },
       {
         source: "/blog/what-are-the-risks-of-shopify-outsourcing-get-details-now",
-        destination: "/blogs/risks-of-shopify-outsourcing",
+        destination: "/blogs/risks-of-shopify-outsourcing/",
         permanent: true,
       },
       {
         source: "/blog/transform-your-store-with-a-complete-magento-web-development-guide",
-        destination: "/blogs/magento-web-development",
+        destination: "/blogs/magento-web-development/",
         permanent: true,
       },
       {
         source: "/blogs/what-are-the-risks-of-shopify-outsourcing-get-details-now",
-        destination: "/blogs/risks-of-shopify-outsourcing",
+        destination: "/blogs/risks-of-shopify-outsourcing/",
         permanent: true,
       },
       {
         source: "/blogs/transform-your-store-with-a-complete-magento-web-development-guide",
-        destination: "/blogs/magento-web-development",
+        destination: "/blogs/magento-web-development/",
         permanent: true,
       },
       {
         source: "/blog/:slug",
-        destination: "/blogs/:slug",
+        destination: "/blogs/:slug/",
         permanent: true,
       },
       {
         source: "/what-are-the-risks-of-shopify-outsourcing-get-details-now",
-        destination: "/blogs/risks-of-shopify-outsourcing",
+        destination: "/blogs/risks-of-shopify-outsourcing/",
         permanent: true,
       },
       {
         source: "/transform-your-store-with-a-complete-magento-web-development-guide",
-        destination: "/blogs/magento-web-development",
+        destination: "/blogs/magento-web-development/",
         permanent: true,
       },
       ...legacyBlogSlugs.map((slug) => ({
         source: `/${slug}`,
-        destination: `/blogs/${slug}`,
+        destination: `/blogs/${slug}/`,
         permanent: true,
       })),
     ];

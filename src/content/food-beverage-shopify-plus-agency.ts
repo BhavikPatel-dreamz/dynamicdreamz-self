@@ -90,7 +90,7 @@ export const foodBeverageServices: AgencyServicesContent = {
   ],
   cta: {
     label: "get a quote",
-    href: "/request-quote",
+    href: "/request-quote/",
     ariaLabel: "Get a quote for Food and Beverage Shopify Plus services",
   },
 };
@@ -131,7 +131,7 @@ export const foodBeverageCaseStudies = {
   items: [
     {
       title: "Nekter Juice Bar: Shopify Redesign with Streamlined Ordering & Multi-Location Store Pickup",
-      href: "/case-studies/nekter-juice-bar",
+      href: "/case-studies/nekter-juice-bar/",
       image: "/assets/food-beverage-shopify-plus-agency/case-studies/nekter-juice-bar.webp",
       imageAlt: "Nekter Juice Bar: Shopify Redesign with Streamlined Ordering & Multi-Location Store Pickup",
       technology: "Shopify / Shopify Plus",

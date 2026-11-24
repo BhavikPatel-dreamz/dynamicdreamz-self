@@ -30,7 +30,7 @@ export const kubioThemeCustomizationContent = {
     description:
       "The Kubio theme is a powerful, block-based WordPress theme designed for trendy websites. It offers in-depth theme customization options, a user-friendly drag-and-drop page builder, and smooth compatibility with various WordPress plugins. Whether you're running a business, blog, or eCommerce store, our Kubio Theme Customization Services help you personalize your WordPress website to match your brand and business goals.",
     ctaText: "Request a Quote",
-    ctaHref: "/request-quote",
+    ctaHref: "/request-quote/",
     ctaAriaLabel: "Request a Quote",
     image: {
       src: "/assets/kubio-theme-customization/hero/kubio-theme-customization-service-img.webp",
@@ -219,7 +219,7 @@ export const kubioThemeCustomizationContent = {
     description:
       "Explore our portfolio, which showcases successful WordPress theme customization projects and highlights how we customize, secure, and enhance stores for peak performance.",
     ctaLabel: "View our work",
-    ctaHref: "/our-work",
+    ctaHref: "/our-work/",
     items: [
       {
         name: "Quite Events",

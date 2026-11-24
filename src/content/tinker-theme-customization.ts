@@ -7,7 +7,7 @@ export const tinkerThemeCustomizationContent = {
     description:
       "Brands that are creative and playful can be easily displayed with the Tinker theme. Choose Tinker Theme Customization Service by Dynamic Dreamz, their Shopify experts help you customize the Tinker theme to fit your business requirements. From advanced feature integration to layout modification, we create a quick and responsive Shopify store that is designed to transform visitors into loyal customers.",
     ctaText: "Request a Quote",
-    ctaHref: "/request-quote",
+    ctaHref: "/request-quote/",
     ctaAriaLabel: "Request a Quote",
     secondaryCtaText: "View Tinker on Shopify",
     secondaryCtaHref: "https://themes.shopify.com/themes/tinker/presets/tinker",
@@ -178,7 +178,7 @@ export const tinkerThemeCustomizationContent = {
       "Explore our portfolio showcasing successful Shopify customization projects, highlighting how we customize, secure, and enhance stores for peak performance.",
     ],
     ctaLabel: "View our work",
-    ctaHref: "/our-work",
+    ctaHref: "/our-work/",
     items: [
       {
             name: "Atolea Jewelry",

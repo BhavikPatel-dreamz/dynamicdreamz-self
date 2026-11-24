@@ -17,7 +17,7 @@ export const healthNutritionHero: ServiceHeroVideoContent = {
     "We help supplement, wellness and nutrition brands build trusted ecommerce experiences—from Shopify storefronts to subscriptions, goal-based discovery, mobile apps and custom integrations.",
   ],
   cta: "Discuss Your Project",
-  ctaHref: "/request-quote",
+  ctaHref: "/request-quote/",
   secondaryCta: {
     label: "See Relevant Work",
     href: "#our_work",
@@ -77,7 +77,7 @@ export const healthNutritionCaseStudies = {
     {
       title:
         "GNC India: Conversion-Focused Shopify Redesign with Goal-Based Navigation & Trust Signals",
-      href: "/case-studies/gnc-india",
+      href: "/case-studies/gnc-india/",
       image: "/assets/case-studies/gnc-india.webp",
       tags:["Shopify Store Development","Shopify Theme Customization"],
       imageAlt:
@@ -88,7 +88,7 @@ export const healthNutritionCaseStudies = {
     {
       title:
         "Rooted Human: Custom Shopify Dawn Theme Store for Women’s Wellness Supplements",
-      href: "/case-studies/rooted-human",
+      href: "/case-studies/rooted-human/",
       image: "/assets/case-studies/rooted-human.webp",
       tags:["Subscription & Bundles","Women's Wellness"],
       imageAlt:
@@ -99,7 +99,7 @@ export const healthNutritionCaseStudies = {
     {
       title:
         "Essential Whitening: Custom Shopify 2.0 Store with B2B Pricing Tiers for Dental Professionals",
-      href: "/case-studies/essential-whitening",
+      href: "/case-studies/essential-whitening/",
       image: "/assets/case-studies/essential-whitening.webp",
       tags:["B2B Pricing Tiers","Dental Industry"],
       imageAlt:
@@ -410,7 +410,7 @@ export const healthNutritionWhyChoose: WhyChooseMigrationContent = {
   ],
   partnerLink: {
     label: "About Dynamic Dreamz",
-    href: "/about-us",
+    href: "/about-us/",
   },
 };
 

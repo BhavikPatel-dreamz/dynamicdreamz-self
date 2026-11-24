@@ -6,7 +6,7 @@
   "modified": "2025-10-29T07:11:30+00:00",
   "category": "Shopify",
   "categoryValue": "shopify",
-  "categoryHref": "/blogs?category=shopify",
+  "categoryHref": "/blogs/?category=shopify",
   "featuredImage": {
     "src": "/assets/blog/shopify-apps-for-email-marketing.webp",
     "width": 1504,
@@ -215,7 +215,7 @@
         " ",
         {
           "type": "link",
-          "href": "/blogs/shopify-email-popups-alternatives",
+          "href": "/blogs/shopify-email-popups-alternatives/",
           "text": "Shopify Email Popups"
         },
         ": 3 Effective Alternatives"
@@ -1328,7 +1328,7 @@
         " ",
         {
           "type": "link",
-          "href": "/blogs/top-5-shopify-themes-for-the-fashion-and-beauty-industry-in-2024",
+          "href": "/blogs/top-5-shopify-themes-for-the-fashion-and-beauty-industry-in-2024/",
           "text": "Shopify Themes For The Fashion And Beauty Industry"
         }
       ]
@@ -1430,7 +1430,7 @@
         " you want to use? But still, you need the help of a ",
         {
           "type": "link",
-          "href": "/shopify-experts",
+          "href": "/shopify-experts/",
           "text": "Shopify expert"
         },
         ". Who installs and sets up the app for you? Besides the installation, you also want some design or development work, then ",

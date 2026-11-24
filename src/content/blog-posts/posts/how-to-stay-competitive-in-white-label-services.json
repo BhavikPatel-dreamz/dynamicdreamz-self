@@ -6,7 +6,7 @@
   "modified": "2025-07-25T02:51:22+00:00",
   "category": "Shopify",
   "categoryValue": "shopify",
-  "categoryHref": "/blogs?category=shopify",
+  "categoryHref": "/blogs/?category=shopify",
   "featuredImage": {
     "src": "/assets/blog/how-to-stay-competitive-in-white-label-services.webp",
     "width": 658,
@@ -40,7 +40,7 @@
         ", and ",
         {
           "type": "link",
-          "href": "/white-label-shopify-development-services",
+          "href": "/white-label-shopify-development-services/",
           "text": "white label Shopify development Services"
         },
         "."
@@ -150,7 +150,7 @@
       "children": [
         {
           "type": "link",
-          "href": "/white-label-wordpress-development-services",
+          "href": "/white-label-wordpress-development-services/",
           "text": "WordPress white label services"
         },
         " and ",
@@ -597,7 +597,7 @@
         "If you deliver ",
         {
           "type": "link",
-          "href": "/white-label-website-design-services",
+          "href": "/white-label-website-design-services/",
           "text": "white label web design services"
         },
         ", use SEO to rank higher in search results and get more clients. Add keywords like “white label website design” and “white label web design agency” into your service pages and blog content. Post useful content like trends, tips, and frequently asked questions to demonstrate your expertise, solve agency issues, and increase your online presence."

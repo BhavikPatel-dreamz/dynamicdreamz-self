@@ -111,10 +111,10 @@ export function AttributionTracker() {
 
     // 5. Capture the content page that refers/redirects the user to the conversion page
     const isConversionPage =
-      pathname === "/request-quote" ||
-      pathname === "/request-a-quote" ||
-      pathname === "/contact-us" ||
-      pathname === "/career-apply-now";
+      pathname === "/request-quote/" ||
+      pathname === "/request-a-quote/" ||
+      pathname === "/contact-us/" ||
+      pathname === "/career-apply-now/";
 
     if (!isConversionPage) {
       sessionStorage.setItem("dd_referring_page", fullUrl);

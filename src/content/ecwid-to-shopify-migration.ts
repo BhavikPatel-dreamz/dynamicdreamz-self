@@ -14,7 +14,7 @@ export const ecwidHeroContent: ServiceHeroVideoContent = {
   title: "Ecwid to Shopify Migration Services",
   paragraphs: ["Take sales booster advantages of the eCommerce platform by migrating Ecwid to Shopify. Dynamic Dreamz provides the best Ecwid to Shopify migration service in the industry. Hire a Shopify migration expert from Dynamic Dreamz today for smooth store migration with a continuously running business."],
   cta: "REQUEST A QUOTE",
-  ctaHref: "/request-quote",
+  ctaHref: "/request-quote/",
   image: {
     src: "/assets/ecwid-to-shopify-migration/ecwid-to-shopify-migration-hero.svg",
     alt: "Ecwid to Shopify Storefront Migration",

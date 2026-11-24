@@ -6,7 +6,7 @@
   "modified": "2026-09-09T09:22:10+00:00",
   "category": "Faqs",
   "categoryValue": "faqs",
-  "categoryHref": "/blogs?category=faqs",
+  "categoryHref": "/blogs/?category=faqs",
   "featuredImage": null,
   "excerpt": "Before you start spending money on a redesign, you should spend an hour doing a Shopify store audit, so you can find out what's actually broken. Because even a new theme can make a page look cleaner while leaving the...",
   "author": {
@@ -166,7 +166,7 @@
         "Once your audit is done and you know what needs fixing, our ",
         {
           "type": "link",
-          "href": "/shopify-development-agency",
+          "href": "/shopify-development-agency/",
           "text": "Shopify development services",
           "rel": "dofollow"
         },

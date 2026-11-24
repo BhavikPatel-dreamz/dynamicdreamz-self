@@ -15,7 +15,7 @@ export const shopifyDevelopmentNewYorkContent = {
       "Dynamic Dreamz provides Shopify development services for businesses in New York, including Shopify Plus, custom storefronts, theme customization, migrations, integrations, CRO and ongoing support. Our India-based team works with businesses and agencies in New York and internationally.",
     primaryCta: {
       label: "Get In Touch",
-      href: "/request-quote",
+      href: "/request-quote/",
     },
     secondaryCta: {
       label: "Explore Shopify Services",
@@ -199,7 +199,7 @@ export const shopifyDevelopmentNewYorkContent = {
       "From Shopify Plus and custom theme development to migration, integrations and ongoing support, our Shopify developers help businesses build and improve stores around their specific requirements.",
     cta: {
       label: "",
-      href: "/request-quote",
+      href: "/request-quote/",
     },
     items: [
       {
@@ -215,7 +215,7 @@ export const shopifyDevelopmentNewYorkContent = {
           "Your store should feel yours, right? Henceforth, Shopify experts in New York work with various themes for customizing every detail to reflect your brand's identity, improve user experience, and set you apart from the competition.",
         icon: "/assets/services/shopify-development-in-delhi/services/shopify-theme-customization.svg",
         iconAlt: "Shopify Theme Customization Icon",
-        href: "/shopify-theme-customization",
+        href: "/shopify-theme-customization/",
       },
       {
         title: "Figma / XD to Shopify Conversion",
@@ -237,7 +237,7 @@ export const shopifyDevelopmentNewYorkContent = {
           "Switching to Shopify from another platform? We handle the entire migration process, transferring your products, customer data, and content cleanly and carefully, with zero disruption to your SEO rankings or store functionality.",
         icon: "/assets/services/shopify-development-in-delhi/services/shopify-migration-services.svg",
         iconAlt: "Shopify Migration Icon",
-        href: "/shopify-migration",
+        href: "/shopify-migration/",
       },
       {
         title: "Shopify Maintenance & Support",
@@ -245,7 +245,7 @@ export const shopifyDevelopmentNewYorkContent = {
           "A great store would always require consistent care. Henceforth, we provide ongoing Shopify maintenance including security updates, performance tuning, bug fixes & feature enhancements- just so your store stays at its best long after launch.",
         icon: "/assets/services/shopify-development-in-delhi/services/shopify-maintenance-support.svg",
         iconAlt: "Shopify Maintenance & Support Icon",
-        href: "/buy-shopify-hours",
+        href: "/buy-shopify-hours/",
       },
       {
         title: "Shopify 2.0 Migration",
@@ -253,7 +253,7 @@ export const shopifyDevelopmentNewYorkContent = {
           "Still using the Shopify theme? Upgrading to Shopify 2.0 can ensure a flexible editing experience, better app compatibility & improved performance across the board. Our team handles the full migration, cleanly, efficiently & without touching your live store.",
         icon: "/assets/services/shopify-development-in-delhi/services/shopify-2-0-upgrades.svg",
         iconAlt: "Shopify 2.0 Migration Icon",
-        href: "/migrating-a-theme-to-online-store-2-0",
+        href: "/migrating-a-theme-to-online-store-2-0/",
       },
       {
         title: "White Label Shopify Development",
@@ -261,7 +261,7 @@ export const shopifyDevelopmentNewYorkContent = {
           "Agencies and freelancers- we can be your behind-the-scenes development partner, as our white-label Shopify development service will continue to deliver high-quality work fully under your brand name, with zero compromise on quality.",
         icon: "/assets/services/shopify-development-in-bangalore/services/white-label-shopify-development.svg",
         iconAlt: "White Label Shopify Development Icon",
-        href: "/white-label-shopify-development-services",
+        href: "/white-label-shopify-development-services/",
       },
     ],
   },
@@ -356,7 +356,7 @@ export const shopifyDevelopmentNewYorkContent = {
     description:
       "Thousands of Shopify stores crafted with precision, each one built to perform, convert, and grow.",
     ctaLabel: "View our work",
-    ctaHref: "/our-work",
+    ctaHref: "/our-work/",
     items: [
       {
         name: "Ranavat",
@@ -462,6 +462,6 @@ export const shopifyDevelopmentNewYorkContent = {
   ctaBanner: {
     heading: "Want us to help you with your online store?",
     ctaLabel: "request a quote",
-    ctaHref: "/request-quote",
+    ctaHref: "/request-quote/",
   },
 };

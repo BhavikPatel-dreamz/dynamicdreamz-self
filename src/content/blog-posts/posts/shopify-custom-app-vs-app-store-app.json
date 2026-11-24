@@ -6,7 +6,7 @@
   "modified": "2026-09-18T09:16:50+00:00",
   "category": "Faqs",
   "categoryValue": "faqs",
-  "categoryHref": "/blogs?category=faqs",
+  "categoryHref": "/blogs/?category=faqs",
   "featuredImage": null,
   "excerpt": "Shopify Custom App vs Shopify App Store App: Many get confused when choosing between them. But not every store problem requires custom coding; there will be a point where you have to genuinely think about that. Because it could save...",
   "author": {
@@ -221,7 +221,7 @@
         "Our team builds ",
         {
           "type": "link",
-          "href": "/shopify-apps",
+          "href": "/shopify-apps/",
           "text": "Shopify custom apps",
           "rel": "dofollow"
         },

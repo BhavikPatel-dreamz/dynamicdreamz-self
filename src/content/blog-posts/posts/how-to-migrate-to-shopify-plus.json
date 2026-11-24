@@ -6,7 +6,7 @@
   "modified": "2026-09-14T10:04:38+00:00",
   "category": "Shopify",
   "categoryValue": "shopify",
-  "categoryHref": "/blogs?category=shopify",
+  "categoryHref": "/blogs/?category=shopify",
   "featuredImage": {
     "src": "/assets/blog/how-to-migrate-to-shopify-plus.webp",
     "width": 1504,
@@ -51,7 +51,7 @@
         "Henceforth, through the medium of this guide, we’re gonna walk you through the process of “how to migrate to Shopify Plus with the help of ",
         {
           "type": "link",
-          "href": "/shopify-plus-agency",
+          "href": "/shopify-plus-agency/",
           "text": "Shopify Plus Agency"
         },
         " ” and that too step by step."

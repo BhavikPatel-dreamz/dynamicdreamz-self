@@ -17,7 +17,7 @@ export const shopifyCroHero = {
     "https://docs.google.com/forms/d/e/1FAIpQLSfOpCSEpli0RqjqrJWRLlNB9AYHH4d8lLAWTRVo1bcCkIyzDg/viewform?pli=1",
   secondaryCta: {
     label: "Request a Quote",
-    href: "/request-quote",
+    href: "/request-quote/",
   },
   video: "/assets/home/why-dynamic-dreamz.mp4",
   badges: migrationHeroBadges,
@@ -274,7 +274,7 @@ export const shopifyCroEngagements = {
       ],
       cta: {
         label: "REQUEST AUDIT DETAILS",
-        href: "/request-quote",
+        href: "/request-quote/",
       },
     },
     {
@@ -293,7 +293,7 @@ export const shopifyCroEngagements = {
       ],
       cta: {
         label: "REQUEST CUSTOM PROPOSAL",
-        href: "/request-quote",
+        href: "/request-quote/",
       },
     },
   ],

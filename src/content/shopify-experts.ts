@@ -17,7 +17,7 @@ export const shopifyExpertsContent = {
       "Hire experienced Shopify experts for store setup, theme customization, custom development, Shopify apps, migrations, CRO and ongoing support. Dynamic Dreamz combines certified Shopify expertise with an in-house ecommerce team, structured QA and modern AI-assisted development workflows.",
     ],
     cta: "Hire Shopify Experts",
-    ctaHref: "/request-quote",
+    ctaHref: "/request-quote/",
     secondaryCta: {
       label: "View Pricing",
       href: "#our_white_label_pricing",
@@ -138,7 +138,7 @@ export const shopifyExpertsContent = {
     ],
     partnerLink: {
       label: "About Dynamic Dreamz",
-      href: "/about-us",
+      href: "/about-us/",
     },
   } satisfies WhyChooseMigrationContent,
 
@@ -187,7 +187,7 @@ export const shopifyExpertsContent = {
           "Build high-performance iOS and Android shopping apps integrated with Shopify Plus, including real-time products, customer accounts, checkout, push notifications and loyalty features.",
         cta: {
           label: "Explore Shopify Mobile Apps",
-          href: "/shopify-mobile-app-development",
+          href: "/shopify-mobile-app-development/",
         },
       },
     ],
@@ -274,7 +274,7 @@ export const shopifyExpertsContent = {
     description:
       "See real Shopify storefronts across different industries, customer journeys and levels of customization.",
     ctaLabel: "Explore More Shopify Work",
-    ctaHref: "/our-work",
+    ctaHref: "/our-work/",
     secondaryCtaLabel: "View Pricing",
     secondaryCtaHref: "#our_white_label_pricing",
     items: [
@@ -350,7 +350,7 @@ export const shopifyExpertsContent = {
         description:
           "For Shopify builds, redesigns, migrations, custom functionality, integrations and other clearly defined requirements.",
         ctaLabel: "Send Brief — Get a Quote",
-        ctaHref: "/request-quote",
+        ctaHref: "/request-quote/",
       },
       {
         label: "Flexible Hourly Support",
@@ -359,7 +359,7 @@ export const shopifyExpertsContent = {
         description:
           "For maintenance, enhancements, troubleshooting, CRO implementation and changing Shopify development priorities.",
         ctaLabel: "Buy Shopify Development Hours",
-        ctaHref: "/buy-shopify-development-hours",
+        ctaHref: "/buy-shopify-development-hours/",
       },
       {
         label: "Dedicated Developer / Team",
@@ -368,7 +368,7 @@ export const shopifyExpertsContent = {
         description:
           "For brands or agencies with a steady Shopify roadmap, recurring releases or a need for consistent development continuity.",
         ctaLabel: "Discuss Dedicated Capacity",
-        ctaHref: "/hire-shopify-developers",
+        ctaHref: "/hire-shopify-developers/",
       },
     ],
   } satisfies PricingEngagementContent,

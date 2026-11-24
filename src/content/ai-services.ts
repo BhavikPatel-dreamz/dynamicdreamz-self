@@ -21,7 +21,7 @@ export const aiServicesHero = {
     "Dynamic Dreamz helps businesses, ecommerce brands and digital agencies add AI to the systems they already use. We can build customer assistants, internal knowledge tools, workflow automation, content tools and intelligent search, then connect them with your website, mobile app, ecommerce store or internal software.",
   ] as const,
   cta: "Discuss Your AI Use Case",
-  ctaHref: "/book-a-discovery-call",
+  ctaHref: "/book-a-discovery-call/",
   secondaryCta: {
     label: "Explore AI Services",
     href: "#our_ai_services",

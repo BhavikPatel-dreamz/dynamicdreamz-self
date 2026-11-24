@@ -6,7 +6,7 @@
   "modified": "2026-09-14T10:02:02+00:00",
   "category": "Shopify",
   "categoryValue": "shopify",
-  "categoryHref": "/blogs?category=shopify",
+  "categoryHref": "/blogs/?category=shopify",
   "featuredImage": {
     "src": "/assets/blog/shopify-plus-for-global-brands.webp",
     "width": 1504,
@@ -399,7 +399,7 @@
         "The right ",
         {
           "type": "link",
-          "href": "/shopify-plus-agency",
+          "href": "/shopify-plus-agency/",
           "text": "Shopify Plus Agency"
         },
         " doesn’t just build your store; they help you design the international commerce operation behind it."

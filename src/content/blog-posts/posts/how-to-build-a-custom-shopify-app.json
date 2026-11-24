@@ -6,7 +6,7 @@
   "modified": "2026-09-18T09:18:33+00:00",
   "category": "Faqs",
   "categoryValue": "faqs",
-  "categoryHref": "/blogs?category=faqs",
+  "categoryHref": "/blogs/?category=faqs",
   "featuredImage": null,
   "excerpt": "Building a custom Shopify app isn't just about writing code that talks to an API. Rather, it's a well-structured process, and skipping stages is usually why custom apps end up over budget, insecure, or abandoned a year after launch. But...",
   "author": {
@@ -78,7 +78,7 @@
       "children": [
         {
           "type": "link",
-          "href": "/cross-platform-app-development",
+          "href": "/cross-platform-app-development/",
           "text": "Custom apps",
           "rel": "dofollow"
         },
@@ -181,7 +181,7 @@
         "Already decided custom is the right call, or still weighing it against an App Store solution? Our breakdown of ",
         {
           "type": "link",
-          "href": "/blogs/shopify-custom-app-vs-app-store-app",
+          "href": "/blogs/shopify-custom-app-vs-app-store-app/",
           "text": "Shopify custom app vs app store app",
           "rel": "dofollow"
         },

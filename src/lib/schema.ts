@@ -260,17 +260,15 @@ import { absoluteUrl } from "@/lib/seo";
 import type { CaseStudyDetail, CaseStudyItem } from "@/types/case-study";
 import type { BlogPostDetail } from "@/types/blog-post";
 
-const organizationId = `${siteConfig.url}#organization`;
-const websiteId = `${siteConfig.url}#website`;
-const webPageId = `${siteConfig.url}#home-page`;
-const breadcrumbId = `${siteConfig.url}#breadcrumb`;
-const homeFaqId = `${siteConfig.url}#faq`;
-// The homepage is emitted as the bare origin; every non-root page URL is
-// slashless. `absoluteUrl` keeps all schema identifiers on that same policy.
-// Every emitted `url`/breadcrumb item resolves through the shared helper so
-// schema never disagrees with the page's canonical URL form.
-// (The `#`-suffixed @id values above stay bare — they are opaque identifiers,
-// not page URLs, and must remain byte-stable across pages.)
+const organizationId = `${siteConfig.url}/#organization`;
+const websiteId = `${siteConfig.url}/#website`;
+const webPageId = `${siteConfig.url}/#home-page`;
+const breadcrumbId = `${siteConfig.url}/#breadcrumb`;
+const homeFaqId = `${siteConfig.url}/#faq`;
+// The homepage and all page URLs use a trailing slash matching the live site.
+// `absoluteUrl` keeps all schema identifiers on that same policy. Every
+// emitted `url`/breadcrumb item resolves through the shared helper so schema
+// never disagrees with the page's canonical URL form.
 const homeUrl = absoluteUrl("/");
 const aboutPageUrl = absoluteUrl(pageSeo.about.path);
 const aboutPageId = `${aboutPageUrl}#webpage`;
@@ -1155,14 +1153,14 @@ export function createHomePageSchema() {
           "@type": "OfferCatalog",
           name: "Dynamic Dreamz Services",
           itemListElement: [
-            { name: "Shopify Plus Development", path: "/shopify-plus-agency" },
-            { name: "Shopify Plus Migration", path: "/shopify-plus-migration-agency" },
-            { name: "Shopify Development", path: "/shopify-development-agency" },
-            { name: "Shopify Migration", path: "/shopify-migration" },
-            { name: "Shopify CRO and Performance", path: "/shopify-cro-agency" },
-            { name: "Shopify Mobile App Development", path: "/shopify-mobile-app-development" },
-            { name: "White-Label Shopify Development", path: "/white-label-shopify-development-services" },
-            { name: "Shopify Maintenance", path: "/shopify-maintenance-services" },
+            { name: "Shopify Plus Development", path: "/shopify-plus-agency/" },
+            { name: "Shopify Plus Migration", path: "/shopify-plus-migration-agency/" },
+            { name: "Shopify Development", path: "/shopify-development-agency/" },
+            { name: "Shopify Migration", path: "/shopify-migration/" },
+            { name: "Shopify CRO and Performance", path: "/shopify-cro-agency/" },
+            { name: "Shopify Mobile App Development", path: "/shopify-mobile-app-development/" },
+            { name: "White-Label Shopify Development", path: "/white-label-shopify-development-services/" },
+            { name: "Shopify Maintenance", path: "/shopify-maintenance-services/" },
           ].map(({ name, path }) => ({
             "@type": "Offer",
             itemOffered: { "@type": "Service", name, url: absoluteUrl(path) },
@@ -1966,8 +1964,8 @@ export function createOurWorkPageSchema() {
     position: ourWorkProjects.length + index + 1,
     item: {
       "@type": "Article",
-      "@id": absoluteUrl(`/case-studies/${caseStudy.slug}`),
-      url: absoluteUrl(`/case-studies/${caseStudy.slug}`),
+      "@id": absoluteUrl(`/case-studies/${caseStudy.slug}/`),
+      url: absoluteUrl(`/case-studies/${caseStudy.slug}/`),
       headline: caseStudy.title,
       description: caseStudy.excerpt,
       image: absoluteUrl(caseStudy.image),
@@ -2984,7 +2982,7 @@ export function createCaseStudiesPageSchema(
 }
 
 export function createCaseStudyDetailPageSchema(caseStudy: CaseStudyDetail) {
-  const pageUrl = absoluteUrl(`/case-studies/${caseStudy.slug}`);
+  const pageUrl = absoluteUrl(`/case-studies/${caseStudy.slug}/`);
   const pageId = `${pageUrl}#webpage`;
   const creativeWorkId = `${pageUrl}#case-study`;
   const detailBreadcrumbId = `${pageUrl}#breadcrumb`;
@@ -3066,7 +3064,7 @@ export function createCaseStudyDetailPageSchema(caseStudy: CaseStudyDetail) {
 }
 
 export function createBlogPostDetailPageSchema(post: BlogPostDetail) {
-  const pageUrl = absoluteUrl(`/blogs/${post.slug}`);
+  const pageUrl = absoluteUrl(`/blogs/${post.slug}/`);
   const pageId = `${pageUrl}#webpage`;
   const articleId = `${pageUrl}#article`;
   const imageId = `${pageUrl}#primaryimage`;
@@ -3147,7 +3145,7 @@ export function createBlogPostDetailPageSchema(post: BlogPostDetail) {
       "@id": breadcrumbId,
       itemListElement: [
         { "@type": "ListItem", position: 1, name: "Home", item: homeUrl },
-        { "@type": "ListItem", position: 2, name: "Blogs", item: absoluteUrl("/blogs") },
+        { "@type": "ListItem", position: 2, name: "Blogs", item: absoluteUrl("/blogs/") },
         { "@type": "ListItem", position: 3, name: post.title, item: pageUrl },
       ],
     },

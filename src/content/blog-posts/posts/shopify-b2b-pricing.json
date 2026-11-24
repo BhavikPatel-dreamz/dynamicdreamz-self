@@ -6,7 +6,7 @@
   "modified": "2026-09-25T13:30:27+00:00",
   "category": "Faqs",
   "categoryValue": "faqs",
-  "categoryHref": "/blogs?category=faqs",
+  "categoryHref": "/blogs/?category=faqs",
   "featuredImage": null,
   "excerpt": "Most people think that Shopify B2B pricing is one setting, but it’s not; it’s a structure. Different buyers require different rates, different minimums, and sometimes fully negotiated terms. Hence, it’s quite important to get the structure right, and pricing runs itself. Get it w",
   "author": {
@@ -111,7 +111,7 @@
         "start with one catalog and a simple structure, then split into more catalogs as distinct buyer segments emerge, rather than over-engineering the structure before you have real order data. If you want, you can get help from an experienced ",
         {
           "type": "link",
-          "href": "/shopify-development-agency",
+          "href": "/shopify-development-agency/",
           "text": "Shopify development agency"
         },
         "."
@@ -268,7 +268,7 @@
         "Setting up more than just pricing? Our guide on ",
         {
           "type": "link",
-          "href": "/blogs/shopify-wholesale-store",
+          "href": "/blogs/shopify-wholesale-store/",
           "text": "Shopify wholesale store"
         },
         " setup covers the full picture, from company accounts to bulk ordering, that pricing fits into."

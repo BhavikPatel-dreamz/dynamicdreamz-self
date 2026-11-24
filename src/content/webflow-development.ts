@@ -17,7 +17,7 @@ export const webflowDevelopmentHero: CityPageHeroContent = {
     "We design, develop, and scale Webflow sites that grow with your business.",
   primaryCta: {
     label: "Request a Quote",
-    href: "/request-quote",
+    href: "/request-quote/",
   },
   secondaryCta: {
     label: "View Our Work",
@@ -118,7 +118,7 @@ export const webflowDevelopmentServices: ShopifyStageServicesContent = {
         "We build fully custom Webflow websites tailored to your brand, goals, and users. No bloated templates — just clean structure, responsive layouts, and scalable components.",
       cta: {
         label: "DISCUSS A CUSTOM BUILD",
-        href: "/request-quote",
+        href: "/request-quote/",
       },
     },
     {
@@ -128,7 +128,7 @@ export const webflowDevelopmentServices: ShopifyStageServicesContent = {
         "Already have designs? Our Webflow developers convert Figma files into pixel-perfect, production-ready Webflow sites with smooth interactions and optimized performance.",
       cta: {
         label: "BOOK A CONSULTATION",
-        href: "/book-a-discovery-call",
+        href: "/book-a-discovery-call/",
       },
     },
     {
@@ -138,7 +138,7 @@ export const webflowDevelopmentServices: ShopifyStageServicesContent = {
         "From blogs to complex content systems, we create flexible Webflow CMS setups that are easy to manage, update, and scale as your content grows.",
       cta: {
         label: "EXPLORE CMS DEVELOPMENT",
-        href: "/request-quote",
+        href: "/request-quote/",
       },
     },
     {
@@ -148,7 +148,7 @@ export const webflowDevelopmentServices: ShopifyStageServicesContent = {
         "We migrate websites from WordPress or other platforms to Webflow without losing content, SEO, or performance.",
       cta: {
         label: "EXPLORE MIGRATION & REBUILDS",
-        href: "/request-quote",
+        href: "/request-quote/",
       },
     },
     {
@@ -158,7 +158,7 @@ export const webflowDevelopmentServices: ShopifyStageServicesContent = {
         "We integrate Webflow with CRMs, marketing tools, analytics, and third-party services to streamline workflows and improve conversions.",
       cta: {
         label: "EXPLORE INTEGRATIONS",
-        href: "/request-quote",
+        href: "/request-quote/",
       },
     },
     {
@@ -168,7 +168,7 @@ export const webflowDevelopmentServices: ShopifyStageServicesContent = {
         "Need a reliable Webflow partner? We provide continuous support, updates, optimizations, and improvements post-launch.",
       cta: {
         label: "GET SUPPORT",
-        href: "/request-quote",
+        href: "/request-quote/",
       },
     },
     {
@@ -178,7 +178,7 @@ export const webflowDevelopmentServices: ShopifyStageServicesContent = {
         "Optimize your Webflow website for better search visibility, faster load times, and a smoother user experience. We improve technical SEO, site structure, Core Web Vitals, and on-page performance.",
       cta: {
         label: "OPTIMIZE YOUR WEBFLOW SITE",
-        href: "/request-quote",
+        href: "/request-quote/",
       },
     },
   ],
@@ -226,7 +226,7 @@ export const webflowDevelopmentPortfolio = {
   eyebrow: "Portfolio",
   heading: "Recent Projects",
   ctaLabel: "View our work",
-  ctaHref: "/our-work",
+  ctaHref: "/our-work/",
   items: [
     {
       name: "My Rezults",

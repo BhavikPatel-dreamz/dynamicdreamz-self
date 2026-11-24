@@ -6,7 +6,7 @@ export const shopifyPlusAgencyHero = {
   description:
     "Dynamic Dreamz is a Shopify Platinum Partner helping DTC brands, B2B businesses and enterprise ecommerce teams build, migrate and scale on Shopify Plus. Our team supports custom storefront development, B2B solutions, integrations, checkout extensibility, CRO, performance optimization and ongoing technical delivery.",
   ctaLabel: "Book a Discovery Call",
-  ctaHref: "/book-a-discovery-call",
+  ctaHref: "/book-a-discovery-call/",
   secondaryCta: {
     label: "View Shopify Plus Work",
     href: "#our_work",
@@ -148,7 +148,7 @@ export const shopifyPlusAgencyServices = {
       ],
       cta: {
         label: "Discuss a custom build",
-        href: "/request-quote",
+        href: "/request-quote/",
       },
     },
     {
@@ -158,7 +158,7 @@ export const shopifyPlusAgencyServices = {
         "Get expert Shopify Plus consulting for platform architecture, B2B, Markets, Shopify Functions, integrations, migrations and optimization before committing to development.",
       cta: {
         label: "Book a Consultation",
-        href: "/book-a-discovery-call",
+        href: "/book-a-discovery-call/",
       },
     },
     {
@@ -168,7 +168,7 @@ export const shopifyPlusAgencyServices = {
         "Migrate to Shopify Plus from Magento, WooCommerce, BigCommerce or custom platforms with secure data migration, 301 redirects, SEO preservation and integration planning.",
       cta: {
         label: "Explore migration",
-        href: "/shopify-migration",
+        href: "/shopify-migration/",
       },
     },
     {
@@ -192,7 +192,7 @@ export const shopifyPlusAgencyServices = {
         "Build high-performance iOS and Android shopping apps integrated with Shopify Plus, including real-time products, customer accounts, checkout, push notifications and loyalty features.",
       cta: {
         label: "Explore Shopify Mobile Apps",
-        href: "/shopify-mobile-app-development",
+        href: "/shopify-mobile-app-development/",
       },
     },
     {
@@ -202,7 +202,7 @@ export const shopifyPlusAgencyServices = {
         "Build Shopify Plus B2B and wholesale experiences with company accounts, custom catalogs, price lists, payment terms, buyer permissions and ERP or CRM integrations.",
       cta: {
         label: "Explore B2B Solutions",
-        href: "/request-quote",
+        href: "/request-quote/",
       },
     },
     {
@@ -212,7 +212,7 @@ export const shopifyPlusAgencyServices = {
         "Develop a custom Shopify Plus theme from Figma with flexible sections, tailored PDP and PLP experiences, responsive interactions and performance-focused development.",
       cta: {
         label: "Explore Custom Themes",
-        href: "/request-quote",
+        href: "/request-quote/",
       },
     },
     {
@@ -222,7 +222,7 @@ export const shopifyPlusAgencyServices = {
         "Partner with Dynamic Dreamz for white-label Shopify Plus development, migrations, custom integrations, B2B solutions, QA and ongoing technical support for your agency clients.",
       cta: {
         label: "Explore white-label Shopify",
-        href: "/white-label-shopify-development-services",
+        href: "/white-label-shopify-development-services/",
       },
     },
     {
@@ -232,7 +232,7 @@ export const shopifyPlusAgencyServices = {
         "Keep your Shopify Plus store evolving with ongoing development, bug fixes, CRO implementation, performance improvements, app changes, integrations and dedicated technical support.",
       cta: {
         label: "View flexible Shopify hours",
-        href: "/buy-shopify-development-hours",
+        href: "/buy-shopify-development-hours/",
       },
     },
   ],
@@ -263,7 +263,7 @@ export const shopifyPlusAgencyCaseStudies = {
       name: "Calmenta: Custom Shopify Impact Theme Redesign for a Luxury Wellness Brand",
       image: "/assets/shopify-plus-agency/case-studies/calmenta.jpg",
       imageAlt: "Calmenta Shopify Impact theme redesign for a luxury wellness brand",
-      href: "/case-studies/calmenta",
+      href: "/case-studies/calmenta/",
       platform: "Shopify / Shopify Plus",
       industry: "Healthcare & Medical",
       description: "See how Dynamic Dreamz redesigned Calmenta's Shopify storefront using the Impact theme for a more premium wellness shopping experience.",
@@ -273,7 +273,7 @@ export const shopifyPlusAgencyCaseStudies = {
       name: "Trendia: Shopify + Unicommerce Integration for 300+ Vendor Inventory & Local-First Fulfillment",
       image: "/assets/shopify-plus-agency/case-studies/trendia.jpg",
       imageAlt: "Trendia Shopify and Unicommerce inventory integration",
-      href: "/case-studies/trendia",
+      href: "/case-studies/trendia/",
       platform: "Shopify / Shopify Plus",
       industry: "Fashion & Apparel",
       description: "See how Dynamic Dreamz connected Shopify and Unicommerce for Trendia to support inventory and fulfillment workflows across 300+ vendors.",
@@ -283,7 +283,7 @@ export const shopifyPlusAgencyCaseStudies = {
       name: "Nekter Juice Bar: Shopify Redesign with Streamlined Ordering & Multi-Location Store Pickup",
       image: "/assets/shopify-plus-agency/case-studies/nekter-juice-bar.jpg",
       imageAlt: "Nekter Juice Bar Shopify redesign with multi-location store pickup",
-      href: "/case-studies/nekter-juice-bar",
+      href: "/case-studies/nekter-juice-bar/",
       platform: "Shopify / Shopify Plus",
       industry: "Food & Beverages",
       description: "See how Dynamic Dreamz improved Nekter Juice Bar's Shopify experience with streamlined ordering and multi-location store pickup functionality.",
@@ -321,7 +321,7 @@ export const shopifyPlusAgencyPricing = {
       price: "Custom Quote",
       description: "For complete Shopify Plus builds, migrations, redesigns, B2B requirements, custom apps, integrations and technically complex ecommerce projects.",
       ctaLabel: "Send Brief — Get a Quote in 24 Hours",
-      ctaHref: "/request-quote",
+      ctaHref: "/request-quote/",
     },
     {
       label: "Flexible Hourly Support",
@@ -329,7 +329,7 @@ export const shopifyPlusAgencyPricing = {
       price: "$25/hour",
       description: "For ongoing maintenance, enhancements, troubleshooting, performance improvements and changing Shopify Plus development requirements.",
       ctaLabel: "Buy Shopify Development Hours",
-      ctaHref: "/buy-shopify-development-hours",
+      ctaHref: "/buy-shopify-development-hours/",
     },
     {
       label: "Dedicated Developer / Team",
@@ -337,7 +337,7 @@ export const shopifyPlusAgencyPricing = {
       price: "From $2,000/month",
       description: "For brands with a steady Shopify roadmap, multiple storefronts or a need for a dedicated developer or wider delivery team.",
       ctaLabel: "Discuss a Dedicated Team",
-      ctaHref: "/book-a-discovery-call",
+      ctaHref: "/book-a-discovery-call/",
     },
   ],
 } as const;
@@ -354,7 +354,7 @@ export const shopifyPlusAgencyIndustries = {
       title: "Health & Nutrition",
       eyebrow: "Shopify Plus Industry",
       description: "Shopify Plus experiences for supplement and wellness brands with trust-led UX, subscriptions, education and repeat-purchase journeys.",
-      href: "/industries/health-nutrition",
+      href: "/industries/health-nutrition/",
     },
     {
       image: "/assets/shopify-plus-agency/industries/fashion-apparel.webp",
@@ -362,7 +362,7 @@ export const shopifyPlusAgencyIndustries = {
       title: "Fashion & Apparel",
       eyebrow: "Shopify Plus Industry",
       description: "Premium commerce experiences with merchandising depth, variant complexity, product discovery and mobile-first shopping journeys.",
-      href: "/industries/fashion",
+      href: "/industries/fashion/",
     },
     {
       image: "/assets/shopify-plus-agency/industries/beauty-cosmetics.webp",
@@ -370,7 +370,7 @@ export const shopifyPlusAgencyIndustries = {
       title: "Beauty & Cosmetics",
       eyebrow: "Shopify Plus Industry",
       description: "High-converting storefronts for beauty brands that need visual storytelling, product education, subscriptions and stronger merchandising.",
-      href: "/industries/beauty-cosmetics",
+      href: "/industries/beauty-cosmetics/",
     },
     {
       image: "/assets/shopify-plus-agency/industries/food-beverages.webp",
@@ -378,7 +378,7 @@ export const shopifyPlusAgencyIndustries = {
       title: "Food & Beverage",
       eyebrow: "Shopify Plus Industry",
       description: "Commerce experiences supporting repeat purchase, subscriptions, bundles, promotions and streamlined ordering workflows.",
-      href: "/industries/food-beverages",
+      href: "/industries/food-beverages/",
     },
     {
       image: "/assets/shopify-plus-agency/industries/sports-outdoors.png",
@@ -386,7 +386,7 @@ export const shopifyPlusAgencyIndustries = {
       title: "Sports & Outdoors",
       eyebrow: "Shopify Plus Industry",
       description: "Fast, mobile-led ecommerce experiences for active and outdoor brands with rich product discovery and global commerce requirements.",
-      href: "/industries/sports-outdoors",
+      href: "/industries/sports-outdoors/",
     },
     {
       image: "/assets/shopify-plus-agency/industries/home-living.png",
@@ -394,7 +394,7 @@ export const shopifyPlusAgencyIndustries = {
       title: "Home & Living",
       eyebrow: "Shopify Plus Industry",
       description: "Shopify Plus solutions for home brands with large catalogs, configurable products, visual merchandising and complex product journeys.",
-      href: "/industries/home-living",
+      href: "/industries/home-living/",
     },
     {
       image: "/assets/shopify-plus-agency/industries/jewellery-accessories.png",
@@ -402,7 +402,7 @@ export const shopifyPlusAgencyIndustries = {
       title: "Jewellery & Accessories",
       eyebrow: "Shopify Plus Industry",
       description: "Premium product experiences for jewellery and accessory brands, including rich presentation and sophisticated customization requirements.",
-      href: "/industries/jewellery-accessories",
+      href: "/industries/jewellery-accessories/",
     },
     {
       image: "/assets/shopify-plus-agency/industries/pet-industry.webp",
@@ -410,7 +410,7 @@ export const shopifyPlusAgencyIndustries = {
       title: "Pet Industry",
       eyebrow: "Shopify Plus Industry",
       description: "Conversion-focused Shopify stores with clearer category navigation, trust-building product content and strong repeat-purchase journeys.",
-      href: "/industries/pet-industry",
+      href: "/industries/pet-industry/",
     },
   ],
 } as const;
@@ -423,7 +423,7 @@ export const shopifyPlusAgencyPortfolio = {
   category: "SHOPIFY PLUS",
   platformMark: "/assets/platforms/shopify-plus-white.svg",
   ctaLabel: "View our work",
-  ctaHref: "/our-work",
+  ctaHref: "/our-work/",
   secondaryCtaLabel: "View Pricing",
   secondaryCtaHref: "#our_white_label_pricing",
   items: [

@@ -61,17 +61,16 @@ from the live URL before changing them. Preserve the current SEO intent unless
 there is a clear reason to improve it.
 
 Canonical, `og:url`, sitemap URLs, robots allow paths, schema, and internal
-links must use the no-trailing-slash policy. The homepage `/` is the only
-structural route exception; absolute homepage URLs use the bare origin without
-a terminal slash. `next.config.ts` explicitly sets `trailingSlash: false`, so
-`/about-us/` redirects to `/about-us`; source code must link directly to
-`/about-us` to avoid that redirect. The policy has two safeguards:
+links must use the trailing-slash policy to match the live site and protect legacy
+SEO equity. Absolute homepage URLs serialize with a trailing slash (`https://.../`).
+`next.config.ts` explicitly sets `trailingSlash: true`, so `/about-us` redirects to
+`/about-us/`; source code must link directly to `/about-us/` to avoid that redirect.
+The policy has two safeguards:
 
-- `absoluteUrl` in `src/lib/seo.ts` emits the homepage as the bare origin and
-  normalizes non-root public page URLs before canonical, Open Graph, sitemap,
-  and JSON-LD output is created.
-- `npm run check:urls` rejects trailing-slash internal route literals and any
-  change away from `trailingSlash: false`. It runs within lint and build.
+- `absoluteUrl` in `src/lib/seo.ts` emits the homepage and all page URLs with a
+  trailing slash before canonical, Open Graph, sitemap, and JSON-LD output is created.
+- `npm run check:urls` rejects no-trailing-slash internal route literals and any
+  change away from `trailingSlash: true`. It runs within lint and build.
 
 Never copy trailing slashes from the legacy live site and never hand-format a
 canonical or `og:url`.

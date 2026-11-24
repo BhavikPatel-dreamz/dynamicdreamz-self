@@ -7,7 +7,7 @@ export const horizonThemeCustomizationContent = {
     description:
       "Like Shopify’s Horizon theme but want it to look and work more like your brand? Dynamic Dreamz customizes Horizon around your colors, typography, products, content, customer journey and required functionality—without rebuilding everything from scratch.",
     ctaText: "Customize My Horizon Theme",
-    ctaHref: "/request-quote",
+    ctaHref: "/request-quote/",
     secondaryCtaText: "View Horizon on Shopify",
     secondaryCtaHref: "https://themes.shopify.com/themes/horizon/presets/horizon",
     secondaryCtaTarget: "_blank",

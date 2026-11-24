@@ -6,7 +6,7 @@
   "modified": "2025-05-07T03:46:02+00:00",
   "category": "Shopify",
   "categoryValue": "shopify",
-  "categoryHref": "/blogs?category=shopify",
+  "categoryHref": "/blogs/?category=shopify",
   "featuredImage": {
     "src": "/assets/blog/shopify-seo-apps.webp",
     "width": 329,
@@ -1046,7 +1046,7 @@
         " ",
         {
           "type": "link",
-          "href": "/blogs/how-to-choose-the-right-shopify-app",
+          "href": "/blogs/how-to-choose-the-right-shopify-app/",
           "text": "How to Choose the Right Shopify App: A Comprehensive Selection Guide"
         }
       ]
@@ -1127,13 +1127,13 @@
         " And looking for a ",
         {
           "type": "link",
-          "href": "/shopify-experts",
+          "href": "/shopify-experts/",
           "text": "Shopify expert"
         },
         " who can help you incorporate apps into your Shopify store. In that case, Dynamic Dreamz can help you with this. Contact us today and ",
         {
           "type": "link",
-          "href": "/hire-shopify-developers",
+          "href": "/hire-shopify-developers/",
           "text": "hire a Shopify developer"
         },
         " for your Shopify project."

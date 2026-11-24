@@ -6,7 +6,7 @@
   "modified": "2025-02-10T05:19:17+00:00",
   "category": "Shopify",
   "categoryValue": "shopify",
-  "categoryHref": "/blogs?category=shopify",
+  "categoryHref": "/blogs/?category=shopify",
   "featuredImage": {
     "src": "/assets/blog/shopify-expert-costs.webp",
     "width": 1316,
@@ -28,7 +28,7 @@
         "Are you considering hiring a ",
         {
           "type": "link",
-          "href": "/shopify-experts",
+          "href": "/shopify-experts/",
           "text": "Shopify expert"
         },
         " but unsure how much it will cost? Hiring the right professional can significantly impact your eCommerce business. A Shopify expert can help you build a professional store, improve functionality, and save valuable time."
@@ -253,7 +253,7 @@
             " These Shopify experts are relatively new to ",
             {
               "type": "link",
-              "href": "/shopify-development-agency",
+              "href": "/shopify-development-agency/",
               "text": "Shopify development"
             },
             ". They generally charge less but may lack advanced skills or the ability to handle complex projects."
@@ -1036,7 +1036,7 @@
       "children": [
         {
           "type": "link",
-          "href": "/hire-shopify-developers",
+          "href": "/hire-shopify-developers/",
           "text": "Hiring a Shopify developer"
         },
         " can be a game-changing investment for your eCommerce business. Whether you need a basic store setup, custom theme development, or advanced app integrations, understanding the costs involved is crucial to making an informed decision."
@@ -1091,7 +1091,7 @@
         "So, here now, we have one more bonus point for you. Can you guess what the bonus is for you? We found the ",
         {
           "type": "link",
-          "href": "/shopify-development-agency",
+          "href": "/shopify-development-agency/",
           "text": "best Shopify development agency"
         },
         ", ",

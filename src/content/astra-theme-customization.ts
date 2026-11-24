@@ -30,7 +30,7 @@ export const astraThemeCustomizationContent = {
     description:
       "Are you looking for a customized Astra theme for your WordPress website that perfectly represents your brand? Our Astra Theme Customization Service helps you transform your website with a custom and unique design, enhanced functionality, and a smooth user experience. Whether you need advanced integrations, layout modifications, or speed optimization, our team of WordPress experts ensures your website stands out while maintaining top performance and SEO-friendly features.",
     ctaText: "request a quote",
-    ctaHref: "/request-quote",
+    ctaHref: "/request-quote/",
     ctaAriaLabel: "request a quote",
     image: {
       src: "/assets/astra-theme-customization/hero/astra-theme-customization-service-img.webp",
@@ -222,7 +222,7 @@ export const astraThemeCustomizationContent = {
     description:
       "Explore our portfolio, which showcases successful WordPress theme customization projects and highlights how we customize, secure, and enhance stores for peak performance.",
     ctaLabel: "View our work",
-    ctaHref: "/our-work",
+    ctaHref: "/our-work/",
     items: [
       {
         name: "Quite Events",

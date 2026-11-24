@@ -19,7 +19,7 @@ export const jewelleryAccessoriesHero: ServiceHeroVideoContent = {
     "From premium Shopify storefronts to headless jewellery platforms, ring builders, live diamond inventory and personalization, we build technology around how jewellery is discovered, customized and purchased.",
   ],
   cta: "Discuss Your Project",
-  ctaHref: "/request-quote",
+  ctaHref: "/request-quote/",
   secondaryCta: {
     label: "See Relevant Work",
     href: "#our_work",
@@ -84,7 +84,7 @@ export const jewelleryAccessoriesCaseStudies: {
     {
       title:
         "Daniel Walters Eyewear: BigCommerce to Shopify Migration & Custom Dawn Theme Redesign",
-      href: "/case-studies/daniel-walters",
+      href: "/case-studies/daniel-walters/",
       image: "/assets/case-studies/daniel-walters.webp",
       imageAlt:
         "Daniel Walters Eyewear: BigCommerce to Shopify Migration & Custom Dawn Theme Redesign",
@@ -96,7 +96,7 @@ export const jewelleryAccessoriesCaseStudies: {
     {
       title:
         "Santosh Jewellers: Custom Shopify Dawn Theme Store for a Five-Decade Luxury Jewellery Legacy",
-      href: "/case-studies/santosh-jewellers",
+      href: "/case-studies/santosh-jewellers/",
       image: "/assets/case-studies/santosh-jewellers.webp",
       imageAlt:
         "Santosh Jewellers: Custom Shopify Dawn Theme Store for a Five-Decade Luxury Jewellery Legacy",
@@ -108,7 +108,7 @@ export const jewelleryAccessoriesCaseStudies: {
     {
       title:
         "DONJ Jewellery: Medusa + Next.js Headless Rebuild with a 100K+ Diamond Marketplace & Custom Ring Builder",
-      href: "/case-studies/don-j",
+      href: "/case-studies/don-j/",
       image: "/assets/case-studies/don-j.webp",
       imageAlt:
         "DONJ Jewellery: Medusa + Next.js Headless Rebuild with a 100K+ Diamond Marketplace & Custom Ring Builder",
@@ -421,7 +421,7 @@ export const jewelleryAccessoriesWhyChoose: WhyChooseMigrationContent = {
   ],
   partnerLink: {
     label: "About Dynamic Dreamz",
-    href: "/about-us",
+    href: "/about-us/",
   },
 };
 

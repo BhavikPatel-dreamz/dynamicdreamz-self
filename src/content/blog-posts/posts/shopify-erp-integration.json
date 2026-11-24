@@ -6,7 +6,7 @@
   "modified": "2026-09-21T14:18:42+00:00",
   "category": "Faqs",
   "categoryValue": "faqs",
-  "categoryHref": "/blogs?category=faqs",
+  "categoryHref": "/blogs/?category=faqs",
   "featuredImage": null,
   "excerpt": "At a certain size, spreadsheets and manual updates can simply pose a major risk, because there can be the trouble of an oversold product, a missed reorder, or a customer whose order status is wrong. And when that happens, what will you do? And how far would you be able to hold th",
   "author": {
@@ -229,7 +229,7 @@
         "If you want the wider picture beyond ERP, our overview of ",
         {
           "type": "link",
-          "href": "/blogs/shopify-api-integration",
+          "href": "/blogs/shopify-api-integration/",
           "text": "Shopify API integration"
         },
         " covers how Shopify connects to CRM, PIM, marketplaces & more, with useful context if ERP is just one piece of a bigger integration plan."

@@ -19,7 +19,7 @@ export const beautyCosmeticsHero: ServiceHeroVideoContent = {
     "We build beauty ecommerce around discovery, trust and repeat purchase—from Shopify and Shopify Plus storefronts to product finders, subscriptions, mobile apps and custom integrations.",
   ],
   cta: "Discuss Your Project",
-  ctaHref: "/request-quote",
+  ctaHref: "/request-quote/",
   secondaryCta: {
     label: "See Relevant Work",
     href: "#our_work",
@@ -83,7 +83,7 @@ export const beautyCosmeticsCaseStudies: {
   items: [
     {
       title: "EDDUS & Co: Custom Shopify Dawn Theme Store for Clean, Refillable Skincare",
-      href: "/case-studies/eddus-and-co",
+      href: "/case-studies/eddus-and-co/",
       image: "/assets/case-studies/eddus-and-co.webp",
       imageAlt: "EDDUS & Co: Custom Shopify Dawn Theme Store for Clean, Refillable Skincare",
       technology: "Shopify / Shopify Plus",
@@ -93,7 +93,7 @@ export const beautyCosmeticsCaseStudies: {
     },
     {
       title: "RENÉE Cosmetics: End-to-End Figma-to-Shopify Dawn Theme Store for a Bold Beauty Brand",
-      href: "/case-studies/renee-cosmetics",
+      href: "/case-studies/renee-cosmetics/",
       image: "/assets/case-studies/renee-cosmetics.webp",
       imageAlt: "RENÉE Cosmetics: End-to-End Figma-to-Shopify Dawn Theme Store for a Bold Beauty Brand",
       technology: "Shopify / Shopify Plus",
@@ -103,7 +103,7 @@ export const beautyCosmeticsCaseStudies: {
     },
     {
       title: "Ranavat: 6+ Year Shopify Partnership for a Luxury Ayurvedic Skincare & Haircare Brand",
-      href: "/case-studies/ranavat",
+      href: "/case-studies/ranavat/",
       image: "/assets/case-studies/ranavat.webp",
       imageAlt: "Ranavat: 6+ Year Shopify Partnership for a Luxury Ayurvedic Skincare & Haircare Brand",
       technology: "Shopify / Shopify Plus",
@@ -415,7 +415,7 @@ export const beautyCosmeticsWhyChoose: WhyChooseMigrationContent = {
   ],
   partnerLink: {
     label: "About Dynamic Dreamz",
-    href: "/about-us",
+    href: "/about-us/",
   },
 };
 

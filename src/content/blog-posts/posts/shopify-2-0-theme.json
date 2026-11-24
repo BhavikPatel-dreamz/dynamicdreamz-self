@@ -6,7 +6,7 @@
   "modified": "2026-09-16T09:46:38+00:00",
   "category": "Faqs",
   "categoryValue": "faqs",
-  "categoryHref": "/blogs?category=faqs",
+  "categoryHref": "/blogs/?category=faqs",
   "featuredImage": null,
   "excerpt": "If your Shopify store still runs on an older theme, you're likely missing out on architecture changes that affect everything from page speed to how easily your team can make updates. Here's what Shopify 2.0 actually changed, and why it...",
   "author": {
@@ -182,7 +182,7 @@
         "Our ",
         {
           "type": "link",
-          "href": "/migrating-a-theme-to-online-store-2-0",
+          "href": "/migrating-a-theme-to-online-store-2-0/",
           "text": "Shopify 2.0 migration service",
           "rel": "dofollow"
         },

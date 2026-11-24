@@ -19,7 +19,7 @@ export function isNavigationLinkActive(href: string, pathname: string): boolean 
   }
 
   if (
-    (cleanHref === "/blogs" || cleanHref === "/case-studies") &&
+    (cleanHref === "/blogs/" || cleanHref === "/case-studies/") &&
     cleanPath.startsWith(`${cleanHref}/`)
   ) {
     return true;

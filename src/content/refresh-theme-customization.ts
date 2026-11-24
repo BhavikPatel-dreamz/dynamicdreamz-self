@@ -7,7 +7,7 @@ export const refreshThemeCustomizationContent = {
     description:
       "Want to give your Shopify store a modern and refreshing look with our Refresh Theme Customization Service? Then, you are at the best place for your customization work. Our expert Shopify developers and designers customize the theme to fit your brand's identity, ensuring a smooth shopping experience for your customers. From custom design to performance optimization, we offer everything you require to make your Shopify store visually engaging, user-friendly, and highly functional.",
     ctaText: "Request a Quote",
-    ctaHref: "/request-quote",
+    ctaHref: "/request-quote/",
     ctaAriaLabel: "Request a Quote",
     secondaryCtaText: "View Refresh on Shopify",
     secondaryCtaHref: "https://themes.shopify.com/themes/refresh/presets/refresh",
@@ -165,7 +165,7 @@ export const refreshThemeCustomizationContent = {
     description:
       "Explore our portfolio showcasing successful Shopify customization projects, highlighting how we customize, secure, and enhance stores for peak performance.",
     ctaLabel: "View our work",
-    ctaHref: "/our-work",
+    ctaHref: "/our-work/",
     items: [
       {
             "name": "Nufyx",

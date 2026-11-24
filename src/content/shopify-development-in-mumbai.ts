@@ -15,7 +15,7 @@ export const shopifyDevelopmentMumbaiContent = {
       "Dynamic Dreamz provides Shopify development services for businesses in Mumbai, including Shopify Plus, custom storefronts, theme customization, migrations, integrations, CRO and ongoing support. Our India-based team works with businesses and agencies in Mumbai and internationally.",
     primaryCta: {
       label: "Get In Touch",
-      href: "/request-quote",
+      href: "/request-quote/",
     },
     secondaryCta: {
       label: "Explore Shopify Services",
@@ -198,7 +198,7 @@ export const shopifyDevelopmentMumbaiContent = {
       "From Shopify Plus and custom theme development to migration, integrations and ongoing support, our Shopify developers help businesses build and improve stores around their specific requirements.",
     cta: {
       label: "",
-      href: "/request-quote",
+      href: "/request-quote/",
     },
     items: [
       {
@@ -214,7 +214,7 @@ export const shopifyDevelopmentMumbaiContent = {
           "We create customized Shopify experiences aligned with your brand goals instead of relying on one-size-fits-all templates.",
         icon: "/assets/services/shopify-development-in-delhi/services/shopify-theme-customization.svg",
         iconAlt: "Custom Solutions Icon",
-        href: "/shopify-theme-customization",
+        href: "/shopify-theme-customization/",
       },
       {
         title: "User-Focused Design",
@@ -236,7 +236,7 @@ export const shopifyDevelopmentMumbaiContent = {
           "From store setup and development to integrations and ongoing support, we provide complete Shopify web development solutions under one roof.",
         icon: "/assets/services/shopify-development-in-delhi/services/shopify-migration-services.svg",
         iconAlt: "Comprehensive Services Icon",
-        href: "/shopify-migration",
+        href: "/shopify-migration/",
       },
       {
         title: "Proven Results",
@@ -244,7 +244,7 @@ export const shopifyDevelopmentMumbaiContent = {
           "experience working with diverse ecommerce businesses helps deliver measurable outcomes and scalable digital growth.",
         icon: "/assets/services/shopify-development-in-delhi/services/shopify-maintenance-support.svg",
         iconAlt: "Proven Results Icon",
-        href: "/shopify-maintenance-services",
+        href: "/shopify-maintenance-services/",
       },
     ],
   },
@@ -340,7 +340,7 @@ export const shopifyDevelopmentMumbaiContent = {
     description:
       "See how we turn ecommerce ideas into powerful Shopify experiences.",
     ctaLabel: "View our work",
-    ctaHref: "/our-work",
+    ctaHref: "/our-work/",
     items: [
       {
         name: "Renee",
@@ -449,6 +449,6 @@ export const shopifyDevelopmentMumbaiContent = {
   ctaBanner: {
     heading: "Want us to help you with your online store?",
     ctaLabel: "request a quote",
-    ctaHref: "/request-quote",
+    ctaHref: "/request-quote/",
   },
 };

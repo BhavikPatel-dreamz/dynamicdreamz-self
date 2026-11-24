@@ -6,7 +6,7 @@
   "modified": "2026-09-29T13:30:12+00:00",
   "category": "Faqs",
   "categoryValue": "faqs",
-  "categoryHref": "/blogs?category=faqs",
+  "categoryHref": "/blogs/?category=faqs",
   "featuredImage": null,
   "excerpt": "Today, we just can’t tag either Shopify Hydrogen or traditional Liquid themes as “better.” They simply are built for entirely different situations, and if you end up picking the wrong one for your store, you are more likely to waste months of development time and budget.",
   "author": {
@@ -190,7 +190,7 @@
         "Our guide to ",
         {
           "type": "link",
-          "href": "/blogs/shopify-plus-headless-commerce",
+          "href": "/blogs/shopify-plus-headless-commerce/",
           "text": "Shopify Plus headless commerce"
         },
         " covers the broader case for going headless, useful context before deciding between Hydrogen and a traditional theme."

@@ -7,7 +7,7 @@ export const ritualThemeCustomizationContent = {
     description:
       "Build a modern and immersive Shopify store using the Ritual theme. Our Ritual Theme Customization Service allows you to shape a clean, story-driven storefront that connects with your audience. Whether you're launching a wellness brand, skincare store, or lifestyle shop, we customize the theme to match your vision and business goals while ensuring your store is fast, mobile-friendly, and easy to use.",
     ctaText: "Request a Quote",
-    ctaHref: "/request-quote",
+    ctaHref: "/request-quote/",
     ctaAriaLabel: "Request a Quote",
     secondaryCtaText: "View Ritual on Shopify",
     secondaryCtaHref: "https://themes.shopify.com/themes/ritual/presets/ritual",
@@ -178,7 +178,7 @@ export const ritualThemeCustomizationContent = {
       "Explore our portfolio showcasing successful Shopify customization projects, highlighting how we customize, secure, and enhance stores for peak performance.",
     ],
     ctaLabel: "View our work",
-    ctaHref: "/our-work",
+    ctaHref: "/our-work/",
     items: [
       {
             name: "Atolea Jewelry",

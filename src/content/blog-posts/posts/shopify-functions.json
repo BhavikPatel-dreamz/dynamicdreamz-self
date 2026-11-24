@@ -6,7 +6,7 @@
   "modified": "2026-10-01T13:30:55+00:00",
   "category": "Faqs",
   "categoryValue": "faqs",
-  "categoryHref": "/blogs?category=faqs",
+  "categoryHref": "/blogs/?category=faqs",
   "featuredImage": null,
   "excerpt": "With Shopify Functions, you can easily customize backend business logic, discounts, shipping, payments, and validation without touching Shopify’s core code or waiting on custom Shopify development for every small rule change.",
   "author": {
@@ -23,7 +23,7 @@
         "With Shopify Functions, you can easily customize backend business logic, discounts, shipping, payments, and validation without touching Shopify’s core code or waiting on custom ",
         {
           "type": "link",
-          "href": "/shopify-development-agency",
+          "href": "/shopify-development-agency/",
           "text": "Shopify development"
         },
         " for every small rule change."
@@ -169,7 +169,7 @@
         "Functions are still a maturing part of the platform, and like any Shopify feature, they come with real technical constraints, execution limits, complexity ceilings, and specific rules around how they interact with other checkout customizations. If you’re planning something complex, it’s worth understanding those boundaries before you build. Our breakdown of ",
         {
           "type": "link",
-          "href": "/blogs/shopify-limits",
+          "href": "/blogs/shopify-limits/",
           "text": "Shopify limits"
         },
         " covers exactly where Functions and other newer features hit real constraints."

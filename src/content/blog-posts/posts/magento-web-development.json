@@ -6,7 +6,7 @@
   "modified": "2026-09-14T10:44:47+00:00",
   "category": "Shopify",
   "categoryValue": "shopify",
-  "categoryHref": "/blogs?category=shopify",
+  "categoryHref": "/blogs/?category=shopify",
   "featuredImage": {
     "src": "/assets/blog/transform-your-store-with-a-complete-magento-web-development-guide.webp",
     "width": 329,

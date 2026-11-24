@@ -6,7 +6,7 @@
   "modified": "2026-09-04T12:21:51+00:00",
   "category": "Faqs",
   "categoryValue": "faqs",
-  "categoryHref": "/blogs?category=faqs",
+  "categoryHref": "/blogs/?category=faqs",
   "featuredImage": null,
   "excerpt": "Picking the wrong Shopify agency can cost you so much, not just in terms of money, but also in time, where you’ll miss launches, and you will be stuck with a store that doesn't scale when you need it to....",
   "author": {
@@ -302,7 +302,7 @@
         "A quick conversation with a ",
         {
           "type": "link",
-          "href": "/shopify-development-agency",
+          "href": "/shopify-development-agency/",
           "text": "Shopify development agency",
           "rel": "dofollow"
         },

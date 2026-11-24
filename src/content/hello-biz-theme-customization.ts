@@ -30,7 +30,7 @@ export const helloBizThemeCustomizationContent = {
     description:
       "Get Started with Hello Biz Theme Customization Service to enhance your website. Are you looking for a clean, business-focused website design? The Hello Biz WordPress theme provides a perfect base for professional websites. At Dynamic Dreamz, we help you fully customize the Hello Biz theme to match your brand. Whether you’re a startup, small business, or agency, our customization service will give your website a modern look, faster speed, and better user experience.",
     ctaText: "request a quote",
-    ctaHref: "/request-quote",
+    ctaHref: "/request-quote/",
     ctaAriaLabel: "request a quote",
     image: {
       src: "/assets/hello-biz-theme-customization/hero/hello-biz-theme-customization-service-img.webp",
@@ -220,7 +220,7 @@ export const helloBizThemeCustomizationContent = {
     description:
       "Explore our portfolio, which showcases successful WordPress theme customization projects and highlights how we customize, secure, and enhance stores for peak performance.",
     ctaLabel: "View our work",
-    ctaHref: "/our-work",
+    ctaHref: "/our-work/",
     items: [
       {
         name: "Quite Events",

@@ -7,7 +7,7 @@ export const publisherThemeCustomizationContent = {
     description:
       "Want to upgrade your Shopify store with the powerful Publisher theme? We provide customized solutions through our Publisher Theme Customization Service to build an attractive and valuable Shopify store. From advanced feature integration to custom design modifications, we make sure your Shopify store has a unique identity that makes it stand out. With our professional customization services, you can improve user experience and increase conversion rates.",
     ctaText: "Request a Quote",
-    ctaHref: "/request-quote",
+    ctaHref: "/request-quote/",
     ctaAriaLabel: "Request a Quote",
     secondaryCtaText: "View Publisher on Shopify",
     secondaryCtaHref: "https://themes.shopify.com/themes/publisher/presets/publisher",
@@ -178,7 +178,7 @@ export const publisherThemeCustomizationContent = {
       "Explore our portfolio showcasing successful Shopify customization projects, highlighting how we customize, secure, and enhance stores for peak performance.",
     ],
     ctaLabel: "View our work",
-    ctaHref: "/our-work",
+    ctaHref: "/our-work/",
     items: [
       {
         name: "Tap Fit",

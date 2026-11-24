@@ -7,7 +7,7 @@ export const colorblockThemeCustomizationContent = {
     description:
       "The Colorblock theme is a bold and modern Shopify theme made for businesses looking to stand out. It’s ideal for fashion, beauty, and lifestyle stores because of its sections with glowing colors, trendy layouts, and advanced customization options. Our Colorblock theme customization service helps you personalize your store, sweeten user experience, and boost conversions with improvements in functionality and customized design.",
     ctaText: "Request a Quote",
-    ctaHref: "/request-quote",
+    ctaHref: "/request-quote/",
     secondaryCtaText: "View Colorblock on Shopify",
     secondaryCtaHref: "https://themes.shopify.com/themes/colorblock/presets/colorblock",
     secondaryCtaTarget: "_blank",
@@ -172,7 +172,7 @@ export const colorblockThemeCustomizationContent = {
     description:
       "Explore our portfolio showcasing successful Shopify customization projects, highlighting how we customize, secure, and enhance stores for peak performance.",
     ctaLabel: "View our work",
-    ctaHref: "/our-work",
+    ctaHref: "/our-work/",
     items: [
       {
         name: "Nufyx",

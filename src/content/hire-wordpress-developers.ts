@@ -8,7 +8,7 @@ export const hireWordPressHero = {
     "Hire experienced WordPress developers from Dynamic Dreamz for custom WordPress development, WooCommerce, theme and plugin customization, API integrations, performance optimization and ongoing support. Work with a dedicated developer or a complete WordPress team including design, development, QA and project coordination, based on your project requirements.",
   primaryCta: {
     label: "hire WordPress developers",
-    href: "/request-quote",
+    href: "/request-quote/",
   },
   secondaryCta: {
     label: "See Pricing",
@@ -224,7 +224,7 @@ export const hireWordPressPricing = {
       description:
         "For complete WordPress website builds, custom theme development, website redesigns, plugin development, third-party integrations, WooCommerce solutions and technically complex WordPress projects.",
       ctaLabel: "Send Brief — Get a Quote in 24 Hours",
-      ctaHref: "/request-quote",
+      ctaHref: "/request-quote/",
     },
     {
       label: "Flexible Hourly Support",
@@ -233,7 +233,7 @@ export const hireWordPressPricing = {
       description:
         "For ongoing WordPress maintenance, enhancements, troubleshooting, performance improvements, security updates and evolving website development requirements.",
       ctaLabel: "Buy Wordpress Development Hours",
-      ctaHref: "/request-quote",
+      ctaHref: "/request-quote/",
     },
     {
       label: "Dedicated Developer / Team",
@@ -242,7 +242,7 @@ export const hireWordPressPricing = {
       description:
         "For brands with an evolving WordPress roadmap, multiple websites or a need for a dedicated developer or wider development team.",
       ctaLabel: "Discuss a Dedicated Team",
-      ctaHref: "/book-a-discovery-call",
+      ctaHref: "/book-a-discovery-call/",
     },
   ],
 } as const;

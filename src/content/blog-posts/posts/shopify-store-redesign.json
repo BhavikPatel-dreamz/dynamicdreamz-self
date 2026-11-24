@@ -6,7 +6,7 @@
   "modified": "2026-09-08T05:28:55+00:00",
   "category": "Faqs",
   "categoryValue": "faqs",
-  "categoryHref": "/blogs?category=faqs",
+  "categoryHref": "/blogs/?category=faqs",
   "featuredImage": null,
   "excerpt": "\"Our store feels outdated.\" So should we go for a complete Shopify store redesign, or just rebuild entirely? This is the confusion many store owners have these days. But honestly, there can be four completely different problems, and each one...",
   "author": {
@@ -274,7 +274,7 @@
         "Not sure which category your store falls into? A quick Shopify store redesign audit with a ",
         {
           "type": "link",
-          "href": "/shopify-development-agency",
+          "href": "/shopify-development-agency/",
           "text": "Shopify development agency",
           "rel": "dofollow"
         },

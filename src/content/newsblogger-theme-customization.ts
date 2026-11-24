@@ -43,7 +43,7 @@ export const newsbloggerThemeCustomizationContent = {
     description:
       "The NewsBlogger theme is ideal for online magazines, bloggers, and news websites. It offers an easy navigation menu, a clean layout, and support for multiple post formats. At Dynamic Dreamz, we provide NewsBlogger theme customization services to help you design a WordPress website that matches your brand, keeps readers engaged, and works perfectly across all devices.",
     ctaText: "request a quote",
-    ctaHref: "/request-quote",
+    ctaHref: "/request-quote/",
     ctaAriaLabel: "request a quote",
     image: {
       src: "/assets/newsblogger-theme-customization/hero/newsblogger-theme-customization-service-img.webp",
@@ -237,7 +237,7 @@ export const newsbloggerThemeCustomizationContent = {
     description:
       "Explore our portfolio, which showcases successful WordPress theme customization projects and highlights how we customize, secure, and enhance stores for peak performance.",
     ctaLabel: "View our work",
-    ctaHref: "/our-work",
+    ctaHref: "/our-work/",
     items: [
       {
         name: "Quite Events",

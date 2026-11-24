@@ -6,7 +6,7 @@
   "modified": "2026-08-05T13:29:44+00:00",
   "category": "Shopify",
   "categoryValue": "shopify",
-  "categoryHref": "/blogs?category=shopify",
+  "categoryHref": "/blogs/?category=shopify",
   "featuredImage": {
     "src": "/assets/blog/add-a-dmarc-record-to-sending-emails.webp",
     "width": 876,
@@ -230,7 +230,7 @@
         },
         {
           "type": "link",
-          "href": "/request-quote",
+          "href": "/request-quote/",
           "text": "contact our Shopify expert team",
           "italic": true
         },

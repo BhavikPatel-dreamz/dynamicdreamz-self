@@ -7,7 +7,7 @@ export const spotlightThemeCustomizationContent = {
     description:
       "Do you want to use the customized Spotlight theme to establish an eye-catching Shopify store? Our Spotlight theme customization service helps you personalize your Shopify store, ensuring a unique design, smooth navigation, and improved user experience. We customize every element of the Spotlight theme to match your brand identity and business objectives, whether you're looking to update the appearance, add new features, or optimize performance.",
     ctaText: "Request a Quote",
-    ctaHref: "/request-quote",
+    ctaHref: "/request-quote/",
     ctaAriaLabel: "Request a Quote",
     secondaryCtaText: "View Spotlight on Shopify",
     secondaryCtaHref: "https://themes.shopify.com/themes/spotlight/presets/spotlight",
@@ -166,7 +166,7 @@ export const spotlightThemeCustomizationContent = {
       "Explore our portfolio showcasing successful Shopify customization projects, highlighting how we customize, secure, and enhance stores for peak performance.",
     ],
     ctaLabel: "View our work",
-    ctaHref: "/our-work",
+    ctaHref: "/our-work/",
     items: [
       {
         name: "Nufyx",

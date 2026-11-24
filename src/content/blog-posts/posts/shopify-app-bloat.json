@@ -6,7 +6,7 @@
   "modified": "2026-10-05T13:30:57+00:00",
   "category": "Faqs",
   "categoryValue": "faqs",
-  "categoryHref": "/blogs?category=faqs",
+  "categoryHref": "/blogs/?category=faqs",
   "featuredImage": null,
   "excerpt": "Every app in the Shopify App Store is there to solve a real problem. And when we install them together, in large numbers, they tend to create a bloating issue. The condition is called Shopify App bloat, and it isn’t about hitting some magic number; it’s about what happens when yo",
   "author": {
@@ -175,7 +175,7 @@
         "Not sure whether it’s about Shopify app optimization or to start trimming, or wanting a professional audit of what’s actually slowing your store down? Our ",
         {
           "type": "link",
-          "href": "/shopify-maintenance-services",
+          "href": "/shopify-maintenance-services/",
           "text": "Shopify maintenance services"
         },
         " cover exactly this: identifying what’s helping, what’s hurting, and cleaning up what’s left behind."

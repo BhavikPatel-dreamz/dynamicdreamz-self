@@ -16,7 +16,7 @@ export const shopifyDevelopmentTexasContent = {
       "Dynamic Dreamz provides Shopify development services for businesses in Texas, including Shopify Plus, custom storefronts, theme customization, migrations, integrations, CRO and ongoing support. Our India-based team works with businesses and agencies in Texas and internationally.",
     primaryCta: {
       label: "Get In Touch",
-      href: "/request-quote",
+      href: "/request-quote/",
     },
     secondaryCta: {
       label: "Explore Shopify Services",
@@ -212,7 +212,7 @@ export const shopifyDevelopmentTexasContent = {
           "Your store should feel like yours. And with Shopify theme customization in Texas, you can. We craft visually stunning, high-converting themes that align with your brand identity, improve user experience, and are built to drive sales.",
         icon: "/assets/services/shopify-development-in-delhi/services/shopify-theme-customization.svg",
         iconAlt: "Shopify Theme Customization Icon",
-        href: "/shopify-theme-customization",
+        href: "/shopify-theme-customization/",
       },
       {
         title: "Figma / XD to Shopify Conversion",
@@ -234,7 +234,7 @@ export const shopifyDevelopmentTexasContent = {
           "Moving to Shopify from WooCommerce, Magento, BigCommerce, or another platform? We handle the entire migration, products, customer data, and content, with zero disruption to your SEO rankings or store functionality. Clean, careful, and complete.",
         icon: "/assets/services/shopify-development-in-delhi/services/shopify-migration-services.svg",
         iconAlt: "Shopify Migration Icon",
-        href: "/shopify-migration",
+        href: "/shopify-migration/",
       },
       {
         title: "Shopify Maintenance & Support",
@@ -242,7 +242,7 @@ export const shopifyDevelopmentTexasContent = {
           "We don’t disappear after launch. Dynamic Dreamz provides dedicated post-launch support, performance monitoring, security updates, and ongoing feature improvements, keeping your Shopify store running at its best, long after go-live.",
         icon: "/assets/services/shopify-development-in-delhi/services/shopify-maintenance-support.svg",
         iconAlt: "Shopify Maintenance & Support Icon",
-        href: "/buy-shopify-hours",
+        href: "/buy-shopify-hours/",
       },
       {
         title: "Shopify 2.0 Migration",
@@ -250,7 +250,7 @@ export const shopifyDevelopmentTexasContent = {
           "Still on an older Shopify theme? Upgrade to Shopify 2.0 and unlock a new level of flexibility, performance, and customization. Our team handles the full migration seamlessly, ensuring your store gets all the benefits of the latest Shopify framework without any disruption to your business.",
         icon: "/assets/services/shopify-development-in-delhi/services/shopify-2-0-upgrades.svg",
         iconAlt: "Shopify 2.0 Migration Icon",
-        href: "/migrating-a-theme-to-online-store-2-0",
+        href: "/migrating-a-theme-to-online-store-2-0/",
       },
       {
         title: "White Label Shopify Development",
@@ -258,7 +258,7 @@ export const shopifyDevelopmentTexasContent = {
           "Agencies across Texas trust Dynamic Dreamz as their behind-the-scenes Shopify partner. Our white-label Shopify development in Texas delivers top-tier work under your brand name, with full confidentiality, zero compromise on quality, and complete discretion. Your clients see your brand; we handle the build.",
         icon: "/assets/services/shopify-development-in-bangalore/services/white-label-shopify-development.svg",
         iconAlt: "White Label Shopify Development Icon",
-        href: "/white-label-shopify-development-services",
+        href: "/white-label-shopify-development-services/",
       },
     ],
   },
@@ -353,7 +353,7 @@ export const shopifyDevelopmentTexasContent = {
     description:
       "Thousands of Shopify stores crafted with precision, each one built to perform, convert, and grow.",
     ctaLabel: "View our work",
-    ctaHref: "/our-work",
+    ctaHref: "/our-work/",
     items: [
       {
         name: "Ranavat",
@@ -481,6 +481,6 @@ export const shopifyDevelopmentTexasContent = {
   ctaBanner: {
     heading: "Want us to help you with your online store?",
     ctaLabel: "request a quote",
-    ctaHref: "/request-quote",
+    ctaHref: "/request-quote/",
   },
 } as const;

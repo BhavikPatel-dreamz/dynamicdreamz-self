@@ -9,7 +9,7 @@ export const woocommerceDevelopmentHero = {
     "Dynamic Dreamz is India’s top most WooCommerce development company. No matter if you’re a web design company looking for a perfect partner or a WooCommerce store owner who wants to enhance their brand identity, our skilled WooCommerce developers and designers are always ready to help you.",
   primaryCta: {
     label: "REQUEST A QUOTE",
-    href: "/request-quote",
+    href: "/request-quote/",
   },
   badges: [
     {
@@ -177,7 +177,7 @@ export const woocommerceDevelopmentPortfolio = {
     height: 26,
   },
   ctaLabel: "View our work",
-  ctaHref: "/our-work",
+  ctaHref: "/our-work/",
   items: [
     {
       name: "Temple Day Spa",

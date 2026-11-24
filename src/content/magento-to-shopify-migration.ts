@@ -22,7 +22,7 @@ export const magentoHeroContent: ServiceHeroVideoContent = {
     "Transform your eCommerce experience with our seamless Magento to Shopify migration services and unlock the full potential of your online store with Shopify.",
   ],
   cta: "REQUEST A QUOTE",
-  ctaHref: "/request-quote",
+  ctaHref: "/request-quote/",
   image: {
     src: "/assets/magento-to-shopify-migration/magento-to-shopify-migration-hero.svg",
     alt: "Magento to Shopify Storefront Migration",

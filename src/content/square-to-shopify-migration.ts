@@ -14,7 +14,7 @@ export const squareHeroContent: ServiceHeroVideoContent = {
   title: "Square to Shopify Migration Services",
   paragraphs: ["Do you need a migration expert to migrate your store from Square to Shopify? Dynamic Dreamz offers the best Square to Shopify migration service in India. Our Shopify migration experts can smoothly migrate your Square store to Shopify without interrupting your business."],
   cta: "REQUEST A QUOTE",
-  ctaHref: "/request-quote",
+  ctaHref: "/request-quote/",
   image: {
     src: "/assets/square-to-shopify-migration/square-to-shopify-migration-hero.svg",
     alt: "Square to Shopify Storefront Migration",

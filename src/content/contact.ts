@@ -57,12 +57,12 @@ export const contactPageContent = {
       phone: "+91 63520 11266",
       phoneHref: "tel:+916352011266",
       actionLabel: "View Open Positions",
-      actionHref: "/career",
+      actionHref: "/career/",
     },
     discoveryCall: {
       label: "Book a Discovery Call",
       actionLabel: "Schedule a Call",
-      actionHref: "/book-a-discovery-call",
+      actionHref: "/book-a-discovery-call/",
       description: "Choose a convenient time to speak with our team.",
     },
     social: {

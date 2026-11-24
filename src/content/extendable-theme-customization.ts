@@ -30,7 +30,7 @@ export const extendableThemeCustomizationContent = {
     description:
       "The Extendable theme is a highly flexible and trendy WordPress theme, perfect for business websites, blogging websites, and eCommerce stores. With its light design and advanced customization options, you can build a unique WordPress website that aligns with your brand identity. Our Extendable theme customization services help you customize the theme to meet your specific business requirements, ensuring a professional and smooth user experience.",
     ctaText: "Request a Quote",
-    ctaHref: "/request-quote",
+    ctaHref: "/request-quote/",
     ctaAriaLabel: "Request a Quote",
     image: {
       src: "/assets/extendable-theme-customization/hero/extendable-theme-customization-service-img.webp",
@@ -237,7 +237,7 @@ export const extendableThemeCustomizationContent = {
     description:
       "Explore our portfolio, which showcases successful WordPress theme customization projects and highlights how we customize, secure, and enhance stores for peak performance.",
     ctaLabel: "View our work",
-    ctaHref: "/our-work",
+    ctaHref: "/our-work/",
     items: [
       {
         name: "Quite Events",

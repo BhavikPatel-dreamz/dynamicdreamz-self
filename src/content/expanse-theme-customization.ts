@@ -7,7 +7,7 @@ export const expanseThemeCustomizationContent = {
     description:
       "The Expanse theme is perfect for Shopify stores with large catalogs and product collections. Our Expanse theme customization service guarantees your store thrives by customizing the layout, design, and features to fit your unique business requirements. Whether you want a personalized design or enhanced features, we offer customization solutions that sweeten the user experience and increase conversions.",
     ctaText: "Request a Quote",
-    ctaHref: "/request-quote",
+    ctaHref: "/request-quote/",
     secondaryCtaText: "View Expanse on Shopify",
     secondaryCtaHref: "https://themes.shopify.com/themes/expanse/presets/expanse",
     secondaryCtaTarget: "_blank",
@@ -195,7 +195,7 @@ export const expanseThemeCustomizationContent = {
       "Explore our portfolio showcasing successful Shopify customization projects, highlighting how we customize, secure, and enhance stores for peak performance.  ",
     ],
     ctaLabel: "View our work",
-    ctaHref: "/our-work",
+    ctaHref: "/our-work/",
     items: [
       {
         name: "The Whisky Stock",

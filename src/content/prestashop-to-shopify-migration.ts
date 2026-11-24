@@ -15,7 +15,7 @@ export const prestashopHeroContent: ServiceHeroVideoContent = {
   title: "PrestaShop to Shopify Migration Services",
   paragraphs: ["Are you looking for the best eCommerce platform that is better than PrestaShop? Shopify is perfect for your business, and our PrestaShop to Shopify migration service is your best choice. Our team can smoothly migrate your existing PrestaShop store to the Shopify store with minimal downtime."],
   cta: "REQUEST A QUOTE",
-  ctaHref: "/request-quote",
+  ctaHref: "/request-quote/",
   image: {
     src: "/assets/prestashop-to-shopify-migration/prestashop-to-shopify-migration-hero.svg",
     alt: "PrestaShop to Shopify Storefront Migration",

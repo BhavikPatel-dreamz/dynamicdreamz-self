@@ -15,7 +15,7 @@ export const squarespaceHeroContent: ServiceHeroVideoContent = {
   title: "Squarespace to Shopify Migration Services",
   paragraphs: ["Want more growth and sales for your business? Squarespace to Shopify Migration can achieve the new height of a successful business. Hire a migration expert from Dynamic Dreamz. Our expert can effortlessly migrate your Squarespace store into the Shopify store."],
   cta: "REQUEST A QUOTE",
-  ctaHref: "/request-quote",
+  ctaHref: "/request-quote/",
   image: {
     src: "/assets/squarespace-to-shopify-migration/squarespace-shopify-migration-hero.svg",
     alt: "Squarespace to Shopify Storefront Migration",

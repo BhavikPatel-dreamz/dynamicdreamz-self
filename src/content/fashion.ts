@@ -19,7 +19,7 @@ export const fashionHero: ServiceHeroVideoContent = {
     "We build fashion ecommerce around merchandising, size and fit, custom product logic, mobile shopping, international growth and connected backend systems.",
   ],
   cta: "Discuss Your Project",
-  ctaHref: "/request-quote",
+  ctaHref: "/request-quote/",
   secondaryCta: {
     label: "See Relevant Work",
     href: "#our_work",
@@ -83,7 +83,7 @@ export const fashionCaseStudies: {
   items: [
     {
       title: "KALKI Fashion: Shopify-Integrated Luxury Ethnic Wear Shopping App",
-      href: "/case-studies/kalki-fashion-mobile-app",
+      href: "/case-studies/kalki-fashion-mobile-app/",
       image: "/assets/case-studies/kalki-fashion-mobile-app.webp",
       imageAlt: "KALKI Fashion: Shopify-Integrated Luxury Ethnic Wear Shopping App",
       technology: "Shopify Mobile App Development",
@@ -93,7 +93,7 @@ export const fashionCaseStudies: {
     },
     {
       title: "Bombay Shirt Company: 5-Year Shopify Partnership with Fit Smart Body-Type Sizing & Shirt Customizer",
-      href: "/case-studies/bombay-shirt-company",
+      href: "/case-studies/bombay-shirt-company/",
       image: "/assets/case-studies/bombay-shirt-company.webp",
       imageAlt: "Bombay Shirt Company: 5-Year Shopify Partnership with Fit Smart Body-Type Sizing & Shirt Customizer",
       technology: "Shopify Custom Apps & Integrations",
@@ -103,7 +103,7 @@ export const fashionCaseStudies: {
     },
     {
       title: "Trendia: Shopify + Unicommerce Integration for 300+ Vendor Inventory & Local-First Fulfillment",
-      href: "/case-studies/trendia",
+      href: "/case-studies/trendia/",
       image: "/assets/case-studies/trendia.webp",
       imageAlt: "Trendia: Shopify + Unicommerce Integration for 300+ Vendor Inventory & Local-First Fulfillment",
       technology: "Shopify / Shopify Plus",
@@ -439,7 +439,7 @@ export const fashionWhyChoose: WhyChooseMigrationContent = {
   ],
   partnerLink: {
     label: "About Dynamic Dreamz",
-    href: "/about-us",
+    href: "/about-us/",
   },
 };
 

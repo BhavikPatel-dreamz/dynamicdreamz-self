@@ -6,7 +6,7 @@
   "modified": "2025-01-10T09:00:16+00:00",
   "category": "WordPress",
   "categoryValue": "wordpress",
-  "categoryHref": "/blogs?category=wordpress",
+  "categoryHref": "/blogs/?category=wordpress",
   "featuredImage": {
     "src": "/assets/blog/wordpress-web-design-company-building-a-website-that-converts.webp",
     "width": 1316,
@@ -28,7 +28,7 @@
         "Are you looking for top ",
         {
           "type": "link",
-          "href": "/wordpress-development",
+          "href": "/wordpress-development/",
           "text": "WordPress development"
         },
         " companies for your website but getting confused between web development agencies? Then you are at the right place! Here we are with a guide that will help you from “What is WordPress” to “How to choose website design companies.” So, get ready to dive deep into this tutorial."
@@ -597,13 +597,13 @@
         "Want to upgrade your business? Contact Dynamic Dreamz today to discuss how we can help you create a conversion focused website that delivers results. At Dynamic Dreamz, we also work on ",
         {
           "type": "link",
-          "href": "/shopify-development-agency",
+          "href": "/shopify-development-agency/",
           "text": "Shopify"
         },
         ", Mobile apps, ",
         {
           "type": "link",
-          "href": "/bigcommerce-development",
+          "href": "/bigcommerce-development/",
           "text": "BigCommerce"
         },
         ", PHP, Magento, White label development, and UI/UX designing. Hire us for any development work for your business."

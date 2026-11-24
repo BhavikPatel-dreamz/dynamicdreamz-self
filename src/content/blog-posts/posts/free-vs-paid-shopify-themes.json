@@ -6,7 +6,7 @@
   "modified": "2026-09-14T06:26:05+00:00",
   "category": "Shopify",
   "categoryValue": "shopify",
-  "categoryHref": "/blogs?category=shopify",
+  "categoryHref": "/blogs/?category=shopify",
   "featuredImage": {
     "src": "/assets/blog/free-vs-paid-shopify-themes.webp",
     "width": 2560,
@@ -465,7 +465,7 @@
         "you’ve outgrown both when your brand needs a truly unique experience, and off-the-shelf themes hit their limits. That’s the point where partnering with an experienced ",
         {
           "type": "link",
-          "href": "/shopify-development-agency",
+          "href": "/shopify-development-agency/",
           "text": "Shopifyweb development"
         },
         " team pays for itself, turning a template into a store built around your exact conversion goals."

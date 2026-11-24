@@ -6,7 +6,7 @@
   "modified": "2026-09-07T05:42:02+00:00",
   "category": "Faqs",
   "categoryValue": "faqs",
-  "categoryHref": "/blogs?category=faqs",
+  "categoryHref": "/blogs/?category=faqs",
   "featuredImage": null,
   "excerpt": "A polished homepage means very little if checkout is broken, taxes are wrong, or tracking isn't firing. Most launch problems aren't dramatic; they're small, missed settings that quietly cost sales, but the question is: how are you gonna find those?...",
   "author": {
@@ -299,7 +299,7 @@
         "Looking for a full walkthrough of the entire process, from planning through post-launch? Check out our complete ",
         {
           "type": "link",
-          "href": "/blogs/shopify-launch-checklist",
+          "href": "/blogs/shopify-launch-checklist/",
           "text": "Shopify launch checklist guide",
           "rel": "dofollow"
         },

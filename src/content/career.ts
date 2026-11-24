@@ -224,5 +224,5 @@ export const workplaceBenefits = {
 } as const;
 
 export function careerApplicationPath(job: CareerJob, location: CareerLocation) {
-  return `/career-apply-now?PositionAppliedFor=${encodeURIComponent(job.applicationTitle)}&Location=${encodeURIComponent(location.label)}`;
+  return `/career-apply-now/?PositionAppliedFor=${encodeURIComponent(job.applicationTitle)}&Location=${encodeURIComponent(location.label)}`;
 }

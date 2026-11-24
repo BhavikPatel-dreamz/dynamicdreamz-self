@@ -30,7 +30,7 @@ export const neveThemeCustomizationContent = {
     description:
       "Are you looking for a theme customization services provider that can fully customize a Neve theme that can match your brand’s identity? Our Neve theme customization service ensures you get a visually attractive, high-performance, and fully responsive WordPress website customized for your business requirements. With our WordPress expert developers, you get a lightweight, fast, and SEO-friendly WordPress theme that sweetens user experience and drives conversions.",
     ctaText: "Request a Quote",
-    ctaHref: "/request-quote",
+    ctaHref: "/request-quote/",
     ctaAriaLabel: "Request a Quote",
     image: {
       src: "/assets/neve-theme-customization/hero/neve-theme-customization-service-img.webp",
@@ -200,7 +200,7 @@ export const neveThemeCustomizationContent = {
     description:
       "Explore our portfolio, which showcases successful WordPress theme customization projects and highlights how we customize, secure, and enhance stores for peak performance.",
     ctaLabel: "View our work",
-    ctaHref: "/our-work",
+    ctaHref: "/our-work/",
     items: [
       {
         name: "Quite Events",

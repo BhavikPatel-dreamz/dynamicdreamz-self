@@ -6,7 +6,7 @@
   "modified": "2026-09-14T07:54:14+00:00",
   "category": "Shopify",
   "categoryValue": "shopify",
-  "categoryHref": "/blogs?category=shopify",
+  "categoryHref": "/blogs/?category=shopify",
   "featuredImage": {
     "src": "/assets/blog/shopify-development-tools.webp",
     "width": 2560,
@@ -60,7 +60,7 @@
         "For agencies, CLI is what makes safe, version-controlled deployments possible no more editing live theme files directly in the Shopify admin. Pair it with GitHub Actions, and you’ve got a CI/CD pipeline that pushes tested code straight to staging or production. It’s the backbone of solid ",
         {
           "type": "link",
-          "href": "/shopify-development-agency",
+          "href": "/shopify-development-agency/",
           "text": "Shopify development"
         },
         " work, agency or freelance."
@@ -169,7 +169,7 @@
         "For agencies doing ",
         {
           "type": "link",
-          "href": "/white-label-shopify-development-services",
+          "href": "/white-label-shopify-development-services/",
           "text": "White label Shopify development"
         },
         ", the Partners Dashboard is what makes managing multiple client relationships from one central account actually manageable."

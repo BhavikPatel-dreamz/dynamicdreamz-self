@@ -121,11 +121,11 @@ export const risksShopifyOutsourcingCtas = {
     description:
       "At DynamicDreamz, we make outsourcing simple, transparent & results-driven.",
     ctaLabel: "Let's build together",
-    ctaHref: "/request-quote",
+    ctaHref: "/request-quote/",
   },
   quote: {
     heading: "Want us to help you with your online store?",
     ctaLabel: "request a quote",
-    ctaHref: "/request-quote",
+    ctaHref: "/request-quote/",
   },
 } as const;

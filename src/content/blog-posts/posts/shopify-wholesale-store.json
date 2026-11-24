@@ -6,7 +6,7 @@
   "modified": "2026-09-24T13:30:27+00:00",
   "category": "Faqs",
   "categoryValue": "faqs",
-  "categoryHref": "/blogs?category=faqs",
+  "categoryHref": "/blogs/?category=faqs",
   "featuredImage": null,
   "excerpt": "A wholesale store isn’t just your retail site with different prices. Buyers expect fast bulk ordering, clear account access, and pricing built around their specific relationship with you, not a generic storefront. Here’s how to actually build that experience.",
   "author": {
@@ -190,7 +190,7 @@
         "Not sure whether your Shopify wholesale development needs fit a standard plan or require Plus? Our comparison of ",
         {
           "type": "link",
-          "href": "/blogs/shopify-plus-b2b",
+          "href": "/blogs/shopify-plus-b2b/",
           "text": "Shopify B2B vs Shopify Plus B2B"
         },
         " breaks down exactly where the two diverge — worth checking before you start building."

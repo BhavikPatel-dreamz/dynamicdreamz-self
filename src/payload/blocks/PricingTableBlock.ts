@@ -88,7 +88,7 @@ export const PricingTableBlock: Block = {
         {
           name: "ctaHref",
           type: "text",
-          defaultValue: "/request-a-quote",
+          defaultValue: "/request-a-quote/",
           label: "CTA Button Link",
         },
       ],

@@ -6,7 +6,7 @@
   "modified": "2025-05-29T04:39:04+00:00",
   "category": "Shopify",
   "categoryValue": "shopify",
-  "categoryHref": "/blogs?category=shopify",
+  "categoryHref": "/blogs/?category=shopify",
   "featuredImage": {
     "src": "/assets/blog/how-white-label-services-reduce-overhead-increase-revenue.webp",
     "width": 1316,
@@ -102,7 +102,7 @@
         ". Looking for white label for shopify, check out our ",
         {
           "type": "link",
-          "href": "/white-label-shopify-development-services",
+          "href": "/white-label-shopify-development-services/",
           "text": "white label Shopify services"
         },
         "."
@@ -174,7 +174,7 @@
         "This on-demand model helps you avoid overspending. You can choose which services you want, like ",
         {
           "type": "link",
-          "href": "/white-label-website-design-services",
+          "href": "/white-label-website-design-services/",
           "text": "white label website design services"
         },
         ", ",
@@ -337,7 +337,7 @@
         ", ",
         {
           "type": "link",
-          "href": "/white-label-wordpress-development-services",
+          "href": "/white-label-wordpress-development-services/",
           "text": "white label WordPress development Services"
         },
         ", or ",

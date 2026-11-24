@@ -57,10 +57,10 @@ export async function generateMetadata({
       page.seo?.metaDescription ||
       `${page.title || "Page"} - Professional web and ecommerce solutions by Dynamic Dreamz.`;
     const canonicalPath = page.seo?.canonicalUrl
-      ? page.seo.canonicalUrl.replace(/\/+$/, "") || "/"
+      ? page.seo.canonicalUrl
       : pageSlug === "home"
         ? "/"
-        : `/${pageSlug.replace(/^\/+|\/+$/g, "")}`;
+        : `/${pageSlug.replace(/^\/+|\/+$/g, "")}/`;
     const canonical = absoluteUrl(canonicalPath);
     const metaImageUrl =
       typeof page.seo?.metaImage === "string"
@@ -135,10 +135,10 @@ export default async function DynamicPageRoute({ params }: DynamicPageRouteProps
       page?.seo?.metaDescription ||
       `${page?.title || "Page"} - Professional web and ecommerce solutions by Dynamic Dreamz.`;
     const canonicalPath = page?.seo?.canonicalUrl
-      ? page?.seo.canonicalUrl.replace(/\/+$/, "") || "/"
+      ? page.seo.canonicalUrl
       : pageSlug === "home"
         ? "/"
-        : `/${pageSlug.replace(/^\/+|\/+$/g, "")}`;
+        : `/${pageSlug.replace(/^\/+|\/+$/g, "")}/`;
 
     return (
       <main id="main-content" data-page={pageSlug}>

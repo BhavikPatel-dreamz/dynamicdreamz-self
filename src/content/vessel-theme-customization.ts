@@ -6,7 +6,7 @@ export const vesselThemeCustomizationContent = {
     description:
       "Get Vessel Theme Customization Service by Dynamic Dreamz. It provides a smart, modern layout that is perfect for attractively displaying products. At **Dynamic Dreamz**, we are experts in customizing the Vessel theme to align with your unique brand identity. Our team of experts makes sure your Shopify store offers an outstanding user experience in addition to a beautiful appearance, increasing engagement and conversions.",
     ctaText: "Request a Quote",
-    ctaHref: "/request-quote",
+    ctaHref: "/request-quote/",
     ctaAriaLabel: "Request a Quote",
     secondaryCtaText: "View Vessel on Shopify",
     secondaryCtaHref: "https://themes.shopify.com/themes/vessel/presets/vessel",
@@ -200,7 +200,7 @@ export const vesselThemeCustomizationContent = {
       "Explore our portfolio showcasing successful Shopify customization projects, highlighting how we customize, secure, and enhance stores for peak performance.",
     ],
     ctaLabel: "View our work",
-    ctaHref: "/our-work",
+    ctaHref: "/our-work/",
     items: [
       {
         name: "Atolea Jewelry",

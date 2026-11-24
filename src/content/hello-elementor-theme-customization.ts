@@ -30,7 +30,7 @@ export const helloElementorThemeCustomizationContent = {
     description:
       "Are you looking to customize your Hello Elementor theme for a unique and engaging website? Our professional Hello Elementor Theme Customization Service helps you customize your WordPress theme to match your brand identity while ensuring a smooth user experience. Whether you need design modifications, performance enhancements, or advanced integrations, we deliver a fully optimized website that stands out.",
     ctaText: "request a quote",
-    ctaHref: "/request-quote",
+    ctaHref: "/request-quote/",
     ctaAriaLabel: "request a quote",
     image: {
       src: "/assets/hello-elementor-theme-customization/hero/hello-elementor-theme-customization-service-img.webp",
@@ -228,7 +228,7 @@ export const helloElementorThemeCustomizationContent = {
     description:
       "Explore our portfolio, which showcases successful WordPress theme customization projects and highlights how we customize, secure, and enhance stores for peak performance.",
     ctaLabel: "View our work",
-    ctaHref: "/our-work",
+    ctaHref: "/our-work/",
     items: [
       {
         name: "Quite Events",

@@ -6,7 +6,7 @@
   "modified": "2025-02-05T05:01:31+00:00",
   "category": "Shopify",
   "categoryValue": "shopify",
-  "categoryHref": "/blogs?category=shopify",
+  "categoryHref": "/blogs/?category=shopify",
   "featuredImage": {
     "src": "/assets/blog/shopify-website-development-cost-breakdown-a-complete-guide.webp",
     "width": 1316,
@@ -261,7 +261,7 @@
         "Although Shopify provides lots of free and premium themes, frequent customization raises the total cost of the website. The cost of premium themes can range from $100 to $300, depending on their features and level of complexity. Apart from that you can also take ",
         {
           "type": "link",
-          "href": "/shopify-theme-customization",
+          "href": "/shopify-theme-customization/",
           "text": "Shopify Theme Customization"
         },
         " Services by Dynamic Dreamz."
@@ -279,7 +279,7 @@
         "Depending on the size of the project, hiring a Shopify developer for customization might cost from $500 to $10000 or more. Whether you need a fully custom design or minor customization, ",
         {
           "type": "link",
-          "href": "/hire-shopify-developers",
+          "href": "/hire-shopify-developers/",
           "text": "hiring a Shopify developer"
         },
         " ensures your website looks and functions as you expect."
@@ -798,7 +798,7 @@
           "content": [
             {
               "type": "link",
-              "href": "/shopify-migration",
+              "href": "/shopify-migration/",
               "text": "Shopify Migration Service",
               "bold": true
             },
@@ -814,7 +814,7 @@
           "content": [
             {
               "type": "link",
-              "href": "/shopify-maintenance-services",
+              "href": "/shopify-maintenance-services/",
               "text": "Shopify Maintenance Service",
               "bold": true
             },
@@ -840,7 +840,7 @@
           "content": [
             {
               "type": "link",
-              "href": "/white-label-shopify-development-services",
+              "href": "/white-label-shopify-development-services/",
               "text": "Shopify White Label Development Service",
               "bold": true
             },
@@ -884,13 +884,13 @@
         " for your eCommerce store or need expert assistance with ",
         {
           "type": "link",
-          "href": "/shopify-development-agency",
+          "href": "/shopify-development-agency/",
           "text": "Shopify store development"
         },
         ", ",
         {
           "type": "link",
-          "href": "/contact-us",
+          "href": "/contact-us/",
           "text": "contact us"
         },
         " today!"
@@ -902,61 +902,61 @@
         "We are also experts in developing an eCommerce store using other platforms such as ",
         {
           "type": "link",
-          "href": "/woocommerce-development",
+          "href": "/woocommerce-development/",
           "text": "WooCommerce"
         },
         ", ",
         {
           "type": "link",
-          "href": "/magento-development",
+          "href": "/magento-development/",
           "text": "Magento"
         },
         ", and ",
         {
           "type": "link",
-          "href": "/bigcommerce-development",
+          "href": "/bigcommerce-development/",
           "text": "BigCommerce"
         },
         ". We offer mobile app development services like ",
         {
           "type": "link",
-          "href": "/android-app-development",
+          "href": "/android-app-development/",
           "text": "Android App Development"
         },
         ", ",
         {
           "type": "link",
-          "href": "/ios-app-development",
+          "href": "/ios-app-development/",
           "text": "iOS App Development"
         },
         ", ",
         {
           "type": "link",
-          "href": "/cross-platform-app-development",
+          "href": "/cross-platform-app-development/",
           "text": "Cross Platform App Development"
         },
         ", ",
         {
           "type": "link",
-          "href": "/shopify-mobile-app-development",
+          "href": "/shopify-mobile-app-development/",
           "text": "Shopify Mobile App Development"
         },
         ", and ",
         {
           "type": "link",
-          "href": "/web-design",
+          "href": "/web-design/",
           "text": "UI/UX Design"
         },
         ". We can also help you build custom solutions using ",
         {
           "type": "link",
-          "href": "/wordpress-development",
+          "href": "/wordpress-development/",
           "text": "WordPress"
         },
         ", ",
         {
           "type": "link",
-          "href": "/php-development",
+          "href": "/php-development/",
           "text": "PHP/MySQL"
         },
         ", Laravel, and React Native. For a more informed quote, contact us."

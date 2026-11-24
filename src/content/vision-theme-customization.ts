@@ -11,7 +11,7 @@ export const visionThemeCustomizationContent = {
     "title": "Vision Theme Customization Service",
     "description": "The Vision Shopify theme is a stylish and dynamic theme designed for businesses that want to create an attractive and high-converting Shopify store. It is perfect for businesses that wish to show their products in an eye-catching way because of its unique design, flexible layout, and straightforward navigation. Our Vision theme customization service helps you customize the design of your Shopify store, improve functionality, and give your customers the best buying experience.",
     "ctaText": "Request a Quote",
-    "ctaHref": "/request-quote",
+    "ctaHref": "/request-quote/",
     "ctaAriaLabel": "Request a Quote",
     "secondaryCtaText": "View Vision on Shopify",
     "secondaryCtaHref": "https://themes.shopify.com/themes/vision/presets/vision",
@@ -239,7 +239,7 @@ export const visionThemeCustomizationContent = {
     "heading": "Snippets of Shopify Theme Customization Portfolio",
     "description": "Explore our portfolio showcasing successful Shopify customization projects, highlighting how we customize, secure, and enhance stores for peak performance.",
     "ctaLabel": "View our work",
-    "ctaHref": "/our-work",
+    "ctaHref": "/our-work/",
     "items": [
       {
         "name": "Nufyx",

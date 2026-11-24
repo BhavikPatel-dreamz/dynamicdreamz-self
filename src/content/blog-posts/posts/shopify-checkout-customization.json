@@ -6,7 +6,7 @@
   "modified": "2026-10-01T05:24:34+00:00",
   "category": "Faqs",
   "categoryValue": "faqs",
-  "categoryHref": "/blogs?category=faqs",
+  "categoryHref": "/blogs/?category=faqs",
   "featuredImage": null,
   "excerpt": "Checkout.liquid is not new, and not as famous as it once was. Henceforth, Shopify has replaced custom checkout code with Checkout Extensibility, a structured, supported framework built around specific tools rather than open template editing.",
   "author": {
@@ -219,7 +219,7 @@
         "Our breakdown of ",
         {
           "type": "link",
-          "href": "/blogs/shopify-plus-benefits",
+          "href": "/blogs/shopify-plus-benefits/",
           "text": "Shopify Plus benefits"
         },
         " covers where checkout control fits into the bigger Plus upgrade picture."

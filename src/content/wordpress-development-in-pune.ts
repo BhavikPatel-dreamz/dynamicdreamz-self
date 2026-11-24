@@ -63,7 +63,7 @@ export const wordpressDevelopmentPuneContent = {
       "Dynamic Dreamz is an exclusive WordPress development company in Pune that provides diverse WordPress solutions tailored to your business requirements. We are experts in creating custom WordPress websites that satisfy your business objectives and provide a strong online presence. Our experienced team ensures your WordPress website stays unique and operational, offering custom themes and specialized plugins.",
     primaryCta: {
       label: "Get in Touch",
-      href: "/request-quote",
+      href: "/request-quote/",
     },
     badges: [
       {
@@ -352,7 +352,7 @@ export const wordpressDevelopmentPuneContent = {
   ctaBanner: {
     heading: "Want us to help you with your online store?",
     ctaLabel: "request a quote",
-    ctaHref: "/request-quote",
+    ctaHref: "/request-quote/",
   },
 
   // Backward-compatibility aliases

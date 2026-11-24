@@ -6,7 +6,7 @@
   "modified": "2025-01-15T10:23:43+00:00",
   "category": "Shopify",
   "categoryValue": "shopify",
-  "categoryHref": "/blogs?category=shopify",
+  "categoryHref": "/blogs/?category=shopify",
   "featuredImage": {
     "src": "/assets/blog/shopify-launch-checklist.webp",
     "width": 1316,
@@ -252,7 +252,7 @@
         " nowadays. Ensure your theme is mobile responsive, and test your store on different sizes of devices to ensure it looks and functions well. Utilize tools like Google’s Mobile Friendly Test to review your store’s mobile compatibility and make required adjustments. Want to Take your Website to the next level that enhances user experience, let’s explore our ",
         {
           "type": "link",
-          "href": "/web-design",
+          "href": "/web-design/",
           "text": "UI/UX design service"
         },
         "."
@@ -827,13 +827,13 @@
         "If you are looking for ",
         {
           "type": "link",
-          "href": "/shopify-experts",
+          "href": "/shopify-experts/",
           "text": "Shopify Experts"
         },
         " for your store development, ",
         {
           "type": "link",
-          "href": "/contact-us",
+          "href": "/contact-us/",
           "text": "contact Dynamic Dreamz",
           "bold": true
         },
@@ -845,7 +845,7 @@
         },
         {
           "type": "link",
-          "href": "/shopify-development-agency",
+          "href": "/shopify-development-agency/",
           "text": "Shopify development"
         },
         {
@@ -856,7 +856,7 @@
         " Our industry’s best Shopify developers and designers are here to help you. We have expertise in every factor of Shopify, from store development to ",
         {
           "type": "link",
-          "href": "/shopify-theme-customization",
+          "href": "/shopify-theme-customization/",
           "text": "Shopify Theme Customization"
         },
         ". We can do these all for your Shopify store’s success."
@@ -873,19 +873,19 @@
         " also works on other eCommerce platforms like ",
         {
           "type": "link",
-          "href": "/woocommerce-development",
+          "href": "/woocommerce-development/",
           "text": "WooCommerce"
         },
         ", ",
         {
           "type": "link",
-          "href": "/magento-development",
+          "href": "/magento-development/",
           "text": "Magento"
         },
         ", and ",
         {
           "type": "link",
-          "href": "/bigcommerce-development",
+          "href": "/bigcommerce-development/",
           "text": "BigCommerce"
         },
         ". You want to create a store using the above eCommerce platforms. Contact us and get your expert team for your dream store."

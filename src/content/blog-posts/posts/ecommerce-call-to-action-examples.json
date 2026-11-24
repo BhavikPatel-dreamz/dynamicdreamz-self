@@ -6,7 +6,7 @@
   "modified": "2026-07-15T10:42:07+00:00",
   "category": "eCommerce",
   "categoryValue": "ecommerce",
-  "categoryHref": "/blogs?category=ecommerce",
+  "categoryHref": "/blogs/?category=ecommerce",
   "featuredImage": {
     "src": "/assets/blog/ecommerce-call-to-action-examples.webp",
     "width": 1316,
@@ -1044,31 +1044,31 @@
         ". We will use ",
         {
           "type": "link",
-          "href": "/shopify-development-agency",
+          "href": "/shopify-development-agency/",
           "text": "Shopify"
         },
         ", ",
         {
           "type": "link",
-          "href": "/woocommerce-development",
+          "href": "/woocommerce-development/",
           "text": "WooCommerce"
         },
         ", ",
         {
           "type": "link",
-          "href": "/magento-development",
+          "href": "/magento-development/",
           "text": "Magento"
         },
         ", ",
         {
           "type": "link",
-          "href": "/bigcommerce-development",
+          "href": "/bigcommerce-development/",
           "text": "BigCommerce"
         },
         ", ",
         {
           "type": "link",
-          "href": "/wordpress-development",
+          "href": "/wordpress-development/",
           "text": "WordPress"
         },
         ", and ",
@@ -1086,7 +1086,7 @@
         "You can ",
         {
           "type": "link",
-          "href": "/contact-us",
+          "href": "/contact-us/",
           "text": "contact us"
         },
         " with your detailed project requirements so we can analyze them and get back to you with a detailed outline."

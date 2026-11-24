@@ -6,7 +6,7 @@
   "modified": "2025-05-30T05:27:30+00:00",
   "category": "Shopify",
   "categoryValue": "shopify",
-  "categoryHref": "/blogs?category=shopify",
+  "categoryHref": "/blogs/?category=shopify",
   "featuredImage": {
     "src": "/assets/blog/measuring-effectiveness-of-white-label-services.webp",
     "width": 1504,
@@ -60,7 +60,7 @@
         " creates websites for you. However, your end client believes your developers and designers built them—the exact process for ",
         {
           "type": "link",
-          "href": "/white-label-wordpress-development-services",
+          "href": "/white-label-wordpress-development-services/",
           "text": "white label WordPress development"
         },
         ", ",
@@ -171,7 +171,7 @@
         ". If you work with online stores, use a reliable ",
         {
           "type": "link",
-          "href": "/white-label-shopify-development-services",
+          "href": "/white-label-shopify-development-services/",
           "text": "white label Shopify agency"
         },
         ", and if your end client wants a website redesign, then go for ",
@@ -333,7 +333,7 @@
         },
         {
           "type": "link",
-          "href": "/white-label-website-design-services",
+          "href": "/white-label-website-design-services/",
           "text": "white label web design agency",
           "bold": true
         },

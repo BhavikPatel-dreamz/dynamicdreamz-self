@@ -7,7 +7,7 @@ export const pitchThemeCustomizationContent = {
     description:
       "The Pitch theme customization service makes your Pitch theme an attractive and modern Shopify theme for brands that are on trend. At Dynamic Dreamz, we help you customize this theme to suit your business needs perfectly. From layout modifications to color schemes, we create your Shopify store that looks professional, functions smoothly, and provides a high-end shopping experience across all devices.",
     ctaText: "Request a Quote",
-    ctaHref: "/request-quote",
+    ctaHref: "/request-quote/",
     ctaAriaLabel: "Request a Quote",
     secondaryCtaText: "View Pitch on Shopify",
     secondaryCtaHref: "https://themes.shopify.com/themes/pitch/presets/pitch",
@@ -178,7 +178,7 @@ export const pitchThemeCustomizationContent = {
       "Explore our portfolio showcasing successful Shopify customization projects, highlighting how we customize, secure, and enhance stores for peak performance.",
     ],
     ctaLabel: "View our work",
-    ctaHref: "/our-work",
+    ctaHref: "/our-work/",
     items: [
       {
             name: "Atolea Jewelry",

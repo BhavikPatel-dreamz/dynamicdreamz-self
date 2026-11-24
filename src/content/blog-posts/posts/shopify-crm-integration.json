@@ -6,7 +6,7 @@
   "modified": "2026-09-23T06:17:20+00:00",
   "category": "Faqs",
   "categoryValue": "faqs",
-  "categoryHref": "/blogs?category=faqs",
+  "categoryHref": "/blogs/?category=faqs",
   "featuredImage": null,
   "excerpt": "Shopify stores customer profiles, order history, and basic segmentation. What it doesn’t do is manage relationships past the order confirmation: no sales pipeline, no lead scoring, no lifecycle automation beyond basic email flows. That’s what a CRM integration adds. Here’s how it",
   "author": {
@@ -178,7 +178,7 @@
         "Building out your integration stack? Our overview of ",
         {
           "type": "link",
-          "href": "/blogs/shopify-api-integration",
+          "href": "/blogs/shopify-api-integration/",
           "text": "Shopify API integration"
         },
         " covers how CRM fits alongside ERP, PIM, and the other systems a growing store typically needs."

@@ -43,7 +43,7 @@ export const goThemeCustomizationContent = {
     description:
       "Choose Go Theme Customization Service to enhance your website.The Go theme is a simple, lightweight, modern WordPress theme designed to work smoothly with the block editor. Go theme is an excellent option for a website that loads fast and looks clean. At Dynamic Dreamz, we customize the Go theme to match your brand, enhance performance, and make your website stand out with a professional touch.",
     ctaText: "request a quote",
-    ctaHref: "/request-quote",
+    ctaHref: "/request-quote/",
     ctaAriaLabel: "request a quote",
     image: {
       src: "/assets/go-theme-customization/hero/go-theme-customization-service-img.webp",
@@ -248,7 +248,7 @@ export const goThemeCustomizationContent = {
     description:
       "Explore our portfolio, which showcases successful WordPress theme customization projects and highlights how we customize, secure, and enhance stores for peak performance.",
     ctaLabel: "View our work",
-    ctaHref: "/our-work",
+    ctaHref: "/our-work/",
     items: [
       {
         name: "Quite Events",

@@ -15,7 +15,7 @@ const heroContent: ServiceHeroVideoContent = {
     "At Dynamic Dreamz, We are the best Dental Clinic Website Development Company and helps dentists and web development companies create websites for the dental industry. Whether you’re a dentist who wants to create a new website or customize an existing one or a web development company looking for white-label development services for websites for dentists, we’ve helped you with everything. We create simple, professional, modern, effective WordPress websites that attract more patients and simplify your services.",
   ],
   cta: "request a quote",
-  ctaHref: "/request-quote",
+  ctaHref: "/request-quote/",
   video: "/assets/home/why-dynamic-dreamz.mp4",
   badges: [
     {
@@ -219,7 +219,7 @@ const portfolioContent = {
     "Explore our portfolio of WordPress solutions created especially for the dental industry. Our work shows creative designs, smooth processes, and personalized features that take dental practices to new heights online, from attractive websites to optimized WooCommerce stores.",
   ],
   ctaLabel: "View our work",
-  ctaHref: "/our-work",
+  ctaHref: "/our-work/",
   category: "WORDPRESS",
   items: portfolioItems,
 };

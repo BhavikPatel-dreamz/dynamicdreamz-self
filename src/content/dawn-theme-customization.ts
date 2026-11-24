@@ -6,7 +6,7 @@ export const dawnThemeCustomizationContent = {
     description:
       "With our Dawn Theme Customization Service, turn your Shopify store into a visually attractive and highly functional eCommerce store. One of the most flexible themes available on Shopify, the Dawn theme provides a simple yet robust design to display your products effectively. Our customization services ensure your Shopify store is unique while delivering a smooth user experience matching your brand’s identity.",
     ctaText: "Request a Quote",
-    ctaHref: "/request-quote",
+    ctaHref: "/request-quote/",
     ctaAriaLabel: "Request a Quote",
     secondaryCtaText: "View Dawn on Shopify",
     secondaryCtaHref: "https://themes.shopify.com/themes/dawn/presets/dawn",
@@ -194,7 +194,7 @@ export const dawnThemeCustomizationContent = {
     description:
       "Explore our portfolio showcasing successful Shopify customization projects, highlighting how we customize, secure, and enhance stores for peak performance.",
     ctaLabel: "View our work",
-    ctaHref: "/our-work",
+    ctaHref: "/our-work/",
     items: [
       {
         name: "Nufyx",

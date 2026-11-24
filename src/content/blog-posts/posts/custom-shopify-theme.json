@@ -6,7 +6,7 @@
   "modified": "2026-09-10T08:37:23+00:00",
   "category": "Faqs",
   "categoryValue": "faqs",
-  "categoryHref": "/blogs?category=faqs",
+  "categoryHref": "/blogs/?category=faqs",
   "featuredImage": null,
   "excerpt": "Every Shopify store starts with the same choice: use a pre-built theme, customize one, or build fully custom. Each path makes sense for a different stage of business. Here's how they actually compare across the factors that matter. Off-the-Shelf Themes...",
   "author": {
@@ -268,7 +268,7 @@
         "Not sure which stage you’re at? Our Shopify ",
         {
           "type": "link",
-          "href": "/shopify-theme-customization",
+          "href": "/shopify-theme-customization/",
           "text": "theme customization services",
           "rel": "dofollow"
         },

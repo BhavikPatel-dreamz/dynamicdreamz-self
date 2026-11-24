@@ -93,7 +93,7 @@ export const pageSeo = {
     },
   },
   about: {
-    path: "/about-us",
+    path: "/about-us/",
     title: "About Dynamic Dreamz | Web,Ecommerce & App Development",
     description:
       "Learn about Dynamic Dreamz, a web,ecommerce and app developmentcompany established in 2006 with 150+experts and 5,000+ projects deliveredworldwide.",
@@ -119,7 +119,7 @@ export const pageSeo = {
     },
   },
   career: {
-    path: "/career",
+    path: "/career/",
     title: "Join Our Team for Exciting Opportunities | Dynamic Dreamz",
     description:
       "Explore best career opportunities at Dynamic Dreamz! Join a our team offering roles in web development, design, and more. Apply now!",
@@ -145,7 +145,7 @@ export const pageSeo = {
     },
   },
   careerApplyNow: {
-    path: "/career-apply-now",
+    path: "/career-apply-now/",
     title: "Job Apply Now - Dynamic Dreamz, Surat, Gujarat, India",
     description:
       "Apply for career opportunities and web developer jobs at Dynamic Dreamz, Surat and Ahmedabad, Gujarat, India. Submit your resume today.",
@@ -172,7 +172,7 @@ export const pageSeo = {
     },
   },
   life: {
-    path: "/life-dynamicdreamz",
+    path: "/life-dynamicdreamz/",
     title: "Life at Dynamic Dreamz | Culture & Work-Life Balance",
     description:
       "Discover life at Dynamic Dreamz, where collaboration, inclusion, professional growth and work-life balance shape an equal-opportunity workplace.",
@@ -198,7 +198,7 @@ export const pageSeo = {
     },
   },
   resources: {
-    path: "/resources",
+    path: "/resources/",
     title: "Shopify & eCommerce Resources Hub | Dynamic Dreamz",
     description:
       "Browse Dynamic Dreamz's Shopify resource hub for migration guides, SEO tips, white label insights, and growth strategies to scale your online store.",
@@ -224,7 +224,7 @@ export const pageSeo = {
     },
   },
   blogs: {
-    path: "/blogs",
+    path: "/blogs/",
     title: "IT Services Blogs, Insights & Tips | Dynamic Dreamz Blog",
     description:
       "Explore the Dynamic Dreamz Blog for the latest IT trends, expert tips, and industry insights to help grow your online business effectively.",
@@ -250,7 +250,7 @@ export const pageSeo = {
     },
   },
   contact: {
-    path: "/contact-us",
+    path: "/contact-us/",
     title: "Contact Dynamic Dreamz | Business & Project Inquiries",
     description:
       "Contact Dynamic Dreamz for business, project and agency partnership inquiries. Find our Surat and Ahmedabad office details or book a discovery call.",
@@ -276,7 +276,7 @@ export const pageSeo = {
     },
   },
   privacyPolicy: {
-    path: "/privacy-policy",
+    path: "/privacy-policy/",
     title: "Privacy Policy | Dynamic Dreamz",
     description:
       "Read Dynamic Dreamz's privacy and cookies policy to learn how we collect, use, share, retain, and protect personal information and explain your data rights.",
@@ -302,7 +302,7 @@ export const pageSeo = {
     },
   },
   ourWork: {
-    path: "/our-work",
+    path: "/our-work/",
     title: "Shopify, Web & Mobile App Portfolio | Dynamic Dreamz",
     description:
       "Explore Shopify, ecommerce, web and mobile app projects by Dynamic Dreamz across Shopify Plus, WordPress, BigCommerce, Magento, React Native and Flutter.",
@@ -328,7 +328,7 @@ export const pageSeo = {
     },
   },
   beautyCosmetics: {
-    path: "/industries/beauty-cosmetics",
+    path: "/industries/beauty-cosmetics/",
     title: "Shopify Agency for Beauty & Cosmetics | Dynamic Dreamz",
     description:
       "Shopify Platinum Partner for beauty and cosmetics brands. Storefronts, product finders, subscriptions, mobile apps, CRO and custom e-commerce development.",
@@ -357,7 +357,7 @@ export const pageSeo = {
     },
   },
   healthNutrition: {
-    path: "/industries/health-nutrition",
+    path: "/industries/health-nutrition/",
     title: "Shopify Agency for Health & Nutrition | Dynamic Dreamz",
     description:
       "Shopify Platinum Partner for health, nutrition and supplement brands. Subscriptions, product discovery, mobile apps, integrations, and custom development.",
@@ -385,7 +385,7 @@ export const pageSeo = {
     },
   },
   sportsOutdoors: {
-    path: "/industries/sports-outdoors",
+    path: "/industries/sports-outdoors/",
     title: "Shopify Agency for Sports & Outdoor Brands | Dynamic Dreamz",
     description:
       "Shopify and e-commerce development for sports, fitness and outdoor brands. Product discovery, fit tools, configurators, mobile apps, and custom integrations.",
@@ -413,7 +413,7 @@ export const pageSeo = {
     },
   },
   homeLiving: {
-    path: "/industries/home-living",
+    path: "/industries/home-living/",
     title: "Shopify Agency for Home & Furniture Brands | Dynamic Dreamz",
     description:
       "E-commerce and Shopify development for home, furniture and decor brands. Configurators, large catalogs, delivery logic, integrations and custom development.",
@@ -441,7 +441,7 @@ export const pageSeo = {
     },
   },
   jewelleryAccessories: {
-    path: "/industries/jewellery-accessories",
+    path: "/industries/jewellery-accessories/",
     title: "Shopify Agency for Jewellery Brands | Dynamic Dreamz",
     description:
       "Shopify and custom e-commerce development for jewellery and accessories brands. Ring builders, live inventory, personalization, search and headless solutions.",
@@ -470,7 +470,7 @@ export const pageSeo = {
     },
   },
   fashion: {
-    path: "/industries/fashion",
+    path: "/industries/fashion/",
     title: "Shopify Plus Agency for Fashion Brands | Dynamic Dreamz",
     description:
       "Shopify Platinum Partner for fashion & apparel brands. Sizing, product customizers, merchandising, mobile apps, integrations, and custom ecommerce development.",
@@ -499,7 +499,7 @@ export const pageSeo = {
     },
   },
   foodBeverages: {
-    path: "/industries/food-beverages",
+    path: "/industries/food-beverages/",
     title: "Shopify Agency for Food & Beverage Brands | Dynamic Dreamz",
     description:
       "Shopify and e-commerce development for food, beverage and FMCG brands. Pickup, delivery, subscriptions, bundles, multi-location operations and integrations.",
@@ -527,7 +527,7 @@ export const pageSeo = {
     },
   },
   foodBeverageShopifyPlusAgency: {
-    path: "/food-beverage-shopify-plus-agency",
+    path: "/food-beverage-shopify-plus-agency/",
     title: "Food & Beverage Shopify Plus Agency | Dynamic Dreamz",
     description:
       "Hire a Food & Beverage Shopify Plus Agency to Grow your food & beverage business with Dynamic Dreamz. 18+ Years of agency experience. Contact Us Today!",
@@ -555,7 +555,7 @@ export const pageSeo = {
     },
   },
   petIndustry: {
-    path: "/industries/pet-industry",
+    path: "/industries/pet-industry/",
     title: "Shopify Agency for Pet Brands | Dynamic Dreamz",
     description:
       "Shopify and e-commerce development for pet brands. Pet profiles, autoship, subscriptions, mobile apps, product discovery, and custom integrations.",
@@ -583,7 +583,7 @@ export const pageSeo = {
     },
   },
   wordpressDevelopment: {
-    path: "/wordpress-development",
+    path: "/wordpress-development/",
     title: "WordPress Development Company India | Dynamic Dreamz",
     description:
       "Dynamic Dreamz is a Custom WordPress Development Company that helped 100+ client with WordPress Development Services. Get a Quote Now!",
@@ -609,7 +609,7 @@ export const pageSeo = {
     },
   },
   wordpressDevelopmentCompany: {
-    path: "/wordpress-development-company",
+    path: "/wordpress-development-company/",
     title: "WordPress Development Company in India | Dynamic Dreamz",
     description:
       "Work with an India-based WordPress development company for custom websites, themes, plugins, WooCommerce, integrations, performance, and ongoing support.",
@@ -635,7 +635,7 @@ export const pageSeo = {
     },
   },
   hireWordPressDevelopers: {
-    path: "/hire-wordpress-developers",
+    path: "/hire-wordpress-developers/",
     title: "Hire WordPress Developers | Dynamic Dreamz",
     description:
       "Hire WordPress developers for custom themes, plugins, WooCommerce, performance, integrations, ongoing support. Flexible hourly, project or dedicated engagement.",
@@ -660,7 +660,7 @@ export const pageSeo = {
     },
   },
   hireShopifyDevelopers: {
-    path: "/hire-shopify-developers",
+    path: "/hire-shopify-developers/",
     title: "Hire Shopify Developers | Custom Shopify Store Development",
     description:
       "Hire expert Shopify developers with 20+ years of experience and 1,100+ happy clients. Build a high-performing, scalable Shopify store with Dynamic Dreamz.",
@@ -686,7 +686,7 @@ export const pageSeo = {
     },
   },
   shopifyCertifiedDevelopers: {
-    path: "/shopify-certified-developers",
+    path: "/shopify-certified-developers/",
     title: "Shopify Certified Developers | Shopify Platinum Partner",
     description:
       "Hire Shopify Certified Developers at Dynamic Dreamz, a Shopify Platinum Partner, for scalable Shopify and Shopify Plus development solutions worldwide.",
@@ -713,7 +713,7 @@ export const pageSeo = {
     },
   },
   buyShopifyDevelopmentHours: {
-    path: "/buy-shopify-development-hours",
+    path: "/buy-shopify-development-hours/",
     title: "Buy Shopify Development Hours | Dynamic Dreamz",
     description:
       "Buy flexible Shopify development hours from Dynamic Dreamz. Use prepaid Shopify hours for Shopify design, development, and ongoing store improvements.",
@@ -739,7 +739,7 @@ export const pageSeo = {
     },
   },
   shopifyExperts: {
-    path: "/shopify-experts",
+    path: "/shopify-experts/",
     title: "Hire Shopify Experts | Shopify Platinum Partner",
     description:
       "Hire Shopify experts from a Shopify Platinum Partner for storesetup, themes, custom apps, migrations, CRO, integrations andongoing Shopify support.",
@@ -768,7 +768,7 @@ export const pageSeo = {
     },
   },
   shopifyPlus: {
-    path: "/shopify-plus-agency",
+    path: "/shopify-plus-agency/",
     title: "Shopify Plus Agency & Shopify Plus Development Services",
     description:
       "Need a Shopify Plus agency? Dynamic Dreamz is a Shopify Platinum Partner for builds, migrations, B2B, integrations and ongoing support. Book a discovery call.",
@@ -797,7 +797,7 @@ export const pageSeo = {
     },
   },
   aiServices: {
-    path: "/ai-services",
+    path: "/ai-services/",
     title: "AI Development Services & Business Automation",
     description:
       "AI development services for business assistants, knowledge search, workflow automation, chatbots, content tools and AI integrations for websites and apps.",
@@ -827,7 +827,7 @@ export const pageSeo = {
     },
   },
   fullStackDevelopment: {
-    path: "/full-stack-development",
+    path: "/full-stack-development/",
     title: "Full Stack Development Services | Dynamic Dreamz",
     description:
       "Full stack development services for custom web apps, Shopify custom apps, headless ecommerce, APIs, CMS platforms, integrations and cloud deployment.",
@@ -857,7 +857,7 @@ export const pageSeo = {
     },
   },
   shopifyMigration: {
-    path: "/shopify-migration",
+    path: "/shopify-migration/",
     title: "Shopify Migration Services | Dynamic Dreamz",
     description:
       "Migrate Magento, WooCommerce, BigCommerce, Salesforce and other stores to Shopify or Shopify Plus. Dynamic Dreamz handles data, SEO redirects, QA and launch.",
@@ -887,7 +887,7 @@ export const pageSeo = {
     },
   },
   prestashopToShopifyMigration: {
-    path: "/prestashop-to-shopify-migration",
+    path: "/prestashop-to-shopify-migration/",
     title: "PrestaShop to Shopify Migration Services",
     description:
       "Migrate PrestaShop to Shopify with Dynamic Dreamz. We transfer store data, rebuild required features, configure apps, protect SEO, and support QA and launch.",
@@ -916,7 +916,7 @@ export const pageSeo = {
     },
   },
   squareToShopifyMigration: {
-    path: "/square-to-shopify-migration",
+    path: "/square-to-shopify-migration/",
     title: "Square to Shopify Migration Services | Dynamic Dreamz",
     description:
       "Migrate Square to Shopify with Dynamic Dreamz. We transfer store data, rebuild required functionality, configure payments and apps, and protect SEO.",
@@ -943,7 +943,7 @@ export const pageSeo = {
     },
   },
   shopifyPlusMigrationAgency: {
-    path: "/shopify-plus-migration-agency",
+    path: "/shopify-plus-migration-agency/",
     title: "Shopify Plus Migration Agency | Dynamic Dreamz",
     description:
       "Migrate to Shopify Plus with a Shopify Platinum Partner. We handle data, design, apps, integrations, SEO redirects, QA, launch and ongoing support.",
@@ -967,7 +967,7 @@ export const pageSeo = {
     },
   },
   upgradeToShopifyPlus: {
-    path: "/upgrade-to-shopify-plus",
+    path: "/upgrade-to-shopify-plus/",
     title: "Upgrade to Shopify Plus - Shopify Plus Agency",
     description:
       "Upgrade to Shopify Plus with Dynamic Dreamz. Scale your ecommerce store with exclusive enterprise tools, lower transaction fees, and B2B capabilities.",
@@ -994,7 +994,7 @@ export const pageSeo = {
     },
   },
   magentoToShopifyPlusMigration: {
-    path: "/magento-to-shopify-plus-migration",
+    path: "/magento-to-shopify-plus-migration/",
     title: "Magento to Shopify Plus Migration Services | Dynamic Dreamz",
     description:
       "Move from Magento to Shopify Plus with Dynamic Dreamz. We migrate store data, design, custom features, integrations and SEO with QA and post-launch support.",
@@ -1017,7 +1017,7 @@ export const pageSeo = {
     },
   },
   magentoToShopifyMigration: {
-    path: "/magento-to-shopify-migration",
+    path: "/magento-to-shopify-migration/",
     title: "Magento to Shopify Migration Services | Dynamic Dreamz",
     description:
       "Migrate Magento to Shopify with Dynamic Dreamz. We handle products, customers, orders, design, custom functionality, integrations, SEO redirects, QA and launch.",
@@ -1040,7 +1040,7 @@ export const pageSeo = {
     },
   },
   bigcommerceToShopifyMigration: {
-    path: "/bigcommerce-to-shopify-migration",
+    path: "/bigcommerce-to-shopify-migration/",
     title: "BigCommerce to Shopify Migration Services",
     description:
       "Migrate BigCommerce to Shopify with Dynamic Dreamz. We handle store data, design, custom features, apps, integrations, SEO redirects, QA, and launch support.",
@@ -1063,7 +1063,7 @@ export const pageSeo = {
     },
   },
   woocommerceToShopifyMigration: {
-    path: "/woocommerce-to-shopify-migration",
+    path: "/woocommerce-to-shopify-migration/",
     title: "WooCommerce to Shopify Migration Services | Dynamic Dreamz",
     description:
       "Migrate WooCommerce to Shopify with Dynamic Dreamz. We move store data and content, rebuild functionality, protect SEO, test thoroughly and support launch.",
@@ -1086,7 +1086,7 @@ export const pageSeo = {
     },
   },
   squarespaceToShopifyMigration: {
-    path: "/squarespace-to-shopify-migration",
+    path: "/squarespace-to-shopify-migration/",
     title: "Squarespace to Shopify Migration Services",
     description:
       "Migrate Squarespace to Shopify with Dynamic Dreamz. Move store data, rebuild key features, preserve SEO, and launch your new Shopify store with confidence.",
@@ -1109,7 +1109,7 @@ export const pageSeo = {
     },
   },
   ecwidToShopifyMigration: {
-    path: "/ecwid-to-shopify-migration",
+    path: "/ecwid-to-shopify-migration/",
     title: "Ecwid to Shopify Migration Services",
     description:
       "Migrate Ecwid to Shopify with Dynamic Dreamz. We move store data, recreate required functionality, configure apps, protect SEO, complete QA and support launch.",
@@ -1132,7 +1132,7 @@ export const pageSeo = {
     },
   },
   migratingThemeToOnlineStore20: {
-    path: "/migrating-a-theme-to-online-store-2-0",
+    path: "/migrating-a-theme-to-online-store-2-0/",
     title: "Shopify Online Store 2.0 Theme Migration",
     description:
       "Migrate your Shopify theme to Online Store 2.0 with Dynamic Dreamz. Retain custom functionality, update integrations, complete QA, and launch with support.",
@@ -1160,7 +1160,7 @@ export const pageSeo = {
     },
   },
   salesforceToShopifyMigration: {
-    path: "/salesforce-to-shopify-migration",
+    path: "/salesforce-to-shopify-migration/",
     title: "Salesforce to Shopify Migration Services",
     description:
       "Migrate Salesforce to Shopify with Dynamic Dreamz. We plan data transfer, design, custom functionality, integrations, SEO redirects, testing and launch support.",
@@ -1183,7 +1183,7 @@ export const pageSeo = {
     },
   },
   etsyToShopifyMigration: {
-    path: "/etsy-to-shopify-migration",
+    path: "/etsy-to-shopify-migration/",
     title: "Etsy to Shopify Migration Services",
     description:
       "Migrate from Etsy to Shopify with Dynamic Dreamz. We transfer product catalogs, content, configure Shopify storefronts, protect SEO, and support launch.",
@@ -1206,7 +1206,7 @@ export const pageSeo = {
     },
   },
   wixToShopifyMigration: {
-    path: "/wix-to-shopify-migration",
+    path: "/wix-to-shopify-migration/",
     title: "Wix to Shopify Migration Services",
     description:
       "Migrate Wix to Shopify with Dynamic Dreamz. We handle store data, design, apps, custom functionality, SEO redirects, QA and post-launch Shopify support.",
@@ -1229,7 +1229,7 @@ export const pageSeo = {
     },
   },
   seoServices: {
-    path: "/seo-services",
+    path: "/seo-services/",
     title: "SEO Services for Ecommerce & Businesses | Dynamic Dreamz",
     description:
       "Customized SEO services that deliver real results. Trusted SEO services from India’s top SEO company. Increase your rankings, traffic, and conversions.",
@@ -1255,7 +1255,7 @@ export const pageSeo = {
     },
   },
   shopifyCro: {
-    path: "/shopify-cro-agency",
+    path: "/shopify-cro-agency/",
     title: "Shopify CRO: Increase Revenue Without Increasing Traffic",
     description:
       "Improve your Shopify conversion rate with CRO audits, funnel analysis, A/B testing, user behavior insights, and ongoing optimization from Dynamic Dreamz.",
@@ -1285,7 +1285,7 @@ export const pageSeo = {
     },
   },
   requestQuote: {
-    path: "/request-quote",
+    path: "/request-quote/",
     title: "Request a Project Quote | Dynamic Dreamz",
     description:
       "Looking for custom web solutions? Request a quote from Dynamic Dreamz! offer custom websites development. Contact us now! or Call Now!",
@@ -1314,7 +1314,7 @@ export const pageSeo = {
     },
   },
   bookDiscoveryCall: {
-    path: "/book-a-discovery-call",
+    path: "/book-a-discovery-call/",
     title: "Book a Discovery Call | Dynamic Dreamz",
     description:
       "Book a 30-minute discovery call with Dynamic Dreamz to discuss your project requirements, challenges and the best way forward.",
@@ -1342,7 +1342,7 @@ export const pageSeo = {
     },
   },
   whiteLabelShopify: {
-    path: "/white-label-shopify-development-services",
+    path: "/white-label-shopify-development-services/",
     title: "White Label Shopify Development Partner for Digital Agencies",
     description:
       "NDA-backed white label Shopify development for agencies. Shopify Platinum Partner delivering Shopify Plus, migration, B2B and apps under your brand.",
@@ -1368,7 +1368,7 @@ export const pageSeo = {
     },
   },
   whiteLabelWordPress: {
-    path: "/white-label-wordpress-development-services",
+    path: "/white-label-wordpress-development-services/",
     title: "White Label WordPress Development Company | Dynamic Dreamz",
     description:
       "NDA-backed white label WordPress development for agencies, covering custom sites, WooCommerce, themes, plugins, performance and support under your brand.",
@@ -1394,7 +1394,7 @@ export const pageSeo = {
     },
   },
   whiteLabelWebsiteDesign: {
-    path: "/white-label-website-design-services",
+    path: "/white-label-website-design-services/",
     title: "White Label Website Design Services | Dynamic Dreamz",
     description:
       "White-label website design services for digital and creative agencies. Deliver custom websites, ecommerce development, and ongoing support under your brand.",
@@ -1420,7 +1420,7 @@ export const pageSeo = {
     },
   },
   caseStudies: {
-    path: "/case-studies",
+    path: "/case-studies/",
     title: "Case Studies & Client Success Stories | Dynamic Dreamz",
     description:
       "Explore every Shopify mobile app development case study from Dynamic Dreamz, and see how custom apps have helped boost engagement, retention, and growth.",
@@ -1447,7 +1447,7 @@ export const pageSeo = {
     },
   },
   shopifyApps: {
-    path: "/shopify-apps",
+    path: "/shopify-apps/",
     title: "Shopify App Archive | Dynamic Dreamz",
     description:
       "Explore top Shopify apps for conversion growth, checkout upgrades, shipping, quotes, and more- all built to scale your store’s performance.",
@@ -1475,7 +1475,7 @@ export const pageSeo = {
     },
   },
   shopifyThemeCustomization: {
-    path: "/shopify-theme-customization",
+    path: "/shopify-theme-customization/",
     title: "Shopify Theme Customization Services | Dynamic Dreamz",
     description:
       "Shopify theme customization services from a Platinum Partner. Customize purchased themes for branding, UX, sections, functionality, performance and launch.",
@@ -1502,7 +1502,7 @@ export const pageSeo = {
     },
   },
   prestigeThemeCustomization: {
-    path: "/prestige-theme-customization",
+    path: "/prestige-theme-customization/",
     title: "Prestige Theme Customization Service | Dynamic Dreamz",
     description:
       "Looking for a Prestige Theme Customization service. Choose Dynamic Dreamz, they offer everything that you need. Get an Expert Team and Ongoing Support.",
@@ -1528,7 +1528,7 @@ export const pageSeo = {
     },
   },
   astraThemeCustomization: {
-    path: "/astra-theme-customization",
+    path: "/astra-theme-customization/",
     title: "Astra Theme Customization Services | Dynamic Dreamz",
     description:
       "Get professional Astra Theme Customization Services. Expert WordPress developer with 18+ years of experience. Choose Dynamic Dreamz today!",
@@ -1554,7 +1554,7 @@ export const pageSeo = {
     },
   },
   kadenceThemeCustomization: {
-    path: "/kadence-theme-customization",
+    path: "/kadence-theme-customization/",
     title: "Kadence Theme Customization Services | Dynamic Dreamz",
     description:
       "Get professional Kadence Theme Customization Service. Expert WordPress developer with 18+ years of experience. Choose Dynamic Dreamz today!",
@@ -1580,7 +1580,7 @@ export const pageSeo = {
     },
   },
   helloElementorThemeCustomization: {
-    path: "/hello-elementor-theme-customization",
+    path: "/hello-elementor-theme-customization/",
     title: "Hello Elementor Theme Customization | Dynamic Dreamz",
     description:
       "Get professional Hello Elementor theme customization services. Expert WordPress developer with 18+ years of experience. Choose Dynamic Dreamz today!",
@@ -1606,7 +1606,7 @@ export const pageSeo = {
     },
   },
   royalElementorKitThemeCustomization: {
-    path: "/royal-elementor-kit-theme-customization",
+    path: "/royal-elementor-kit-theme-customization/",
     title: "Royal Elementor Kit Theme Customization | Dynamic Dreamz",
     description:
       "Get professional Royal Elementor Kit Theme Customization services. Expert WordPress developer with 18+ years of experience. Choose Dynamic Dreamz today!",
@@ -1632,7 +1632,7 @@ export const pageSeo = {
     },
   },
   popularfxThemeCustomization: {
-    path: "/popularfx-theme-customization",
+    path: "/popularfx-theme-customization/",
     title: "PopularFX Theme Customization Services | Dynamic Dreamz",
     description:
       "Get professional PopularFX theme customization services. Expert WordPress developer with 18+ years of experience. Choose Dynamic Dreamz today!",
@@ -1658,7 +1658,7 @@ export const pageSeo = {
     },
   },
   bloghashThemeCustomization: {
-    path: "/bloghash-theme-customization",
+    path: "/bloghash-theme-customization/",
     title: "BlogHash Theme Customization Service | Dynamic Dreamz",
     description:
       "Are you looking for a WordPress expert for BlogHash theme customization? Dynamic Dreamz can optimize your website for performance, SEO, and user engagement.",
@@ -1684,7 +1684,7 @@ export const pageSeo = {
     },
   },
   goThemeCustomization: {
-    path: "/go-theme-customization",
+    path: "/go-theme-customization/",
     title: "Go Theme Customization Service | Dynamic Dreamz",
     description:
       "Get professional Go Theme Customization Service. Expert WordPress developer with 18+ years of experience. Choose Dynamic Dreamz today!",
@@ -1710,7 +1710,7 @@ export const pageSeo = {
     },
   },
   newsbloggerThemeCustomization: {
-    path: "/newsblogger-theme-customization",
+    path: "/newsblogger-theme-customization/",
     title: "NewsBlogger Theme Customization Service | Dynamic Dreamz",
     description:
       "Get professional NewsBlogger Theme Customization Service. Expert WordPress developer with 18+ years of experience. Choose Dynamic Dreamz today!",
@@ -1736,7 +1736,7 @@ export const pageSeo = {
     },
   },
   helloBizThemeCustomization: {
-    path: "/hello-biz-theme-customization",
+    path: "/hello-biz-theme-customization/",
     title: "Hello Biz Theme Customization Services | Dynamic Dreamz",
     description:
       "Get professional Hello Biz Theme Customization Services. Expert WordPress developer with 18+ years of experience. Choose Dynamic Dreamz today!",
@@ -1762,7 +1762,7 @@ export const pageSeo = {
     },
   },
   generatepressThemeCustomization: {
-    path: "/generatepress-theme-customization",
+    path: "/generatepress-theme-customization/",
     title: "GeneratePress Theme Customization Services | Dynamic Dreamz",
     description:
       "Get professional GeneratePress Theme Customization Services. Expert WordPress developer with 18+ years of experience. Choose Dynamic Dreamz today!",
@@ -1788,7 +1788,7 @@ export const pageSeo = {
     },
   },
   oceanwpThemeCustomization: {
-    path: "/oceanwp-theme-customization",
+    path: "/oceanwp-theme-customization/",
     title: "OceanWP Theme Customization Services | Dynamic Dreamz",
     description:
       "Get professional OceanWP Theme Customization Services. Expert WordPress developer with 18+ years of experience. Choose Dynamic Dreamz today!",
@@ -1814,7 +1814,7 @@ export const pageSeo = {
     },
   },
   neveThemeCustomization: {
-    path: "/neve-theme-customization",
+    path: "/neve-theme-customization/",
     title: "Neve Theme Customization Services | Dynamic Dreamz",
     description:
       "Get professional Neve Theme Customization Services. Expert WordPress developer with 18+ years of experience. Choose Dynamic Dreamz today!",
@@ -1840,7 +1840,7 @@ export const pageSeo = {
     },
   },
   blocksyThemeCustomization: {
-    path: "/blocksy-theme-customization",
+    path: "/blocksy-theme-customization/",
     title: "Blocksy Theme Customization Services | Dynamic Dreamz",
     description:
       "Get professional Blocksy Theme Customization Services. Expert WordPress developer with 18+ years of experience. Choose Dynamic Dreamz today!",
@@ -1866,7 +1866,7 @@ export const pageSeo = {
     },
   },
   extendableThemeCustomization: {
-    path: "/extendable-theme-customization",
+    path: "/extendable-theme-customization/",
     title: "Extendable Theme Customization Service | Dynamic Dreamz",
     description:
       "Looking to customize your Extendable theme? Dynamic Dreamz offers expert Extendable theme customization services to build a fast, responsive WordPress website.",
@@ -1892,7 +1892,7 @@ export const pageSeo = {
     },
   },
   kubioThemeCustomization: {
-    path: "/kubio-theme-customization",
+    path: "/kubio-theme-customization/",
     title: "Kubio Theme Customization Service | Dynamic Dreamz",
     description:
       "Get professional Kubio Theme Customization Service. Expert WordPress developer with 18+ years of experience. Choose Dynamic Dreamz today!",
@@ -1918,7 +1918,7 @@ export const pageSeo = {
     },
   },
   impulseThemeCustomization: {
-    path: "/impulse-theme-customization",
+    path: "/impulse-theme-customization/",
     title: "Impulse Theme Customization Service | Dynamic Dreamz",
     description:
       "Looking for an Impulse Theme Customization service. Choose Dynamic Dreamz, they offer everything that you need. Get an Expert Team and Ongoing Support.",
@@ -1944,7 +1944,7 @@ export const pageSeo = {
     },
   },
   senseThemeCustomization: {
-    path: "/sense-theme-customization",
+    path: "/sense-theme-customization/",
     title: "Sense Theme Customization Service | Dynamic Dreamz",
     description:
       "Looking for a Sense Theme Customization service. Choose Dynamic Dreamz, they offer everything that you need. Get an Expert Team and Ongoing Support.",
@@ -1970,7 +1970,7 @@ export const pageSeo = {
     },
   },
   beYoursThemeCustomization: {
-    path: "/be-yours-theme-customization",
+    path: "/be-yours-theme-customization/",
     title: "Be Yours Theme Customization Service | Dynamic Dreamz",
     description:
       "Choose Be Yours Theme Customization Service by Dynamic Dreamz to create an elegant, user friendly online store.",
@@ -1996,7 +1996,7 @@ export const pageSeo = {
     },
   },
   fabricThemeCustomization: {
-    path: "/fabric-theme-customization",
+    path: "/fabric-theme-customization/",
     title: "Fabric Theme Customization Services | Dynamic Dreamz",
     description:
       "Get a Fabric Theme Customization Service for your Shopify store. Improve design, functionality, and conversions. Contact Dynamic Dreamz today!",
@@ -2022,7 +2022,7 @@ export const pageSeo = {
     },
   },
   savorThemeCustomization: {
-    path: "/savor-theme-customization",
+    path: "/savor-theme-customization/",
     title: "Savor Theme Customization Service | Dynamic Dreamz",
     description:
       "Shopify Savor Theme Customization Service to create a responsive, user-friendly store. Hire Dynamic Dreamz with 18 years of experience. Contact Us Today!",
@@ -2048,7 +2048,7 @@ export const pageSeo = {
     },
   },
   dawnThemeCustomization: {
-    path: "/dawn-theme-customization",
+    path: "/dawn-theme-customization/",
     title: "Dawn Theme Customization Service | Dynamic Dreamz",
     description:
       "Shopify Dawn theme customization services to create a responsive, user-friendly store. Hire Dynamic Dreamz with 18 years of experience. Contact Us Today!",
@@ -2074,7 +2074,7 @@ export const pageSeo = {
     },
   },
   studioThemeCustomization: {
-    path: "/studio-theme-customization",
+    path: "/studio-theme-customization/",
     title: "Studio Theme Customization Service | Dynamic Dreamz",
     description:
       "Want Studio theme customization Service for your Shopify store? Hire Dynamic Dreamz with 18 years of experience to optimize your store.",
@@ -2100,7 +2100,7 @@ export const pageSeo = {
     },
   },
   dwellThemeCustomization: {
-    path: "/dwell-theme-customization",
+    path: "/dwell-theme-customization/",
     title: "Dwell Theme Customization Service | Dynamic Dreamz",
     description:
       "Get the best Shopify Dwell theme customization service. Build a fast, responsive, and branded store that improves UX and increases sales with Dynamic Dreamz.",
@@ -2126,7 +2126,7 @@ export const pageSeo = {
     },
   },
   tinkerThemeCustomization: {
-    path: "/tinker-theme-customization",
+    path: "/tinker-theme-customization/",
     title: "Tinker Theme Customization Service | Dynamic Dreamz",
     description:
       "Tinker theme customization services to create fast, mobile-friendly stores with smooth UX, unique design, and higher conversions by Dynamic Dreamz experts.",
@@ -2152,7 +2152,7 @@ export const pageSeo = {
     },
   },
   pitchThemeCustomization: {
-    path: "/pitch-theme-customization",
+    path: "/pitch-theme-customization/",
     title: "Pitch Theme Customization Services | Dynamic Dreamz",
     description:
       "Pitch Theme Customization Service with responsive design, branding, app integration & fast support. Hire Dynamic Dreamz with 18 years of experience.",
@@ -2178,7 +2178,7 @@ export const pageSeo = {
     },
   },
   atelierThemeCustomization: {
-    path: "/atelier-theme-customization",
+    path: "/atelier-theme-customization/",
     title: "Atelier Theme Customization Service | Dynamic Dreamz",
     description:
       "Get an Atelier theme customization service for your Shopify store? Hire Dynamic Dreamz with 18 years of experience. Contact Us Today!",
@@ -2204,7 +2204,7 @@ export const pageSeo = {
     },
   },
   heritageThemeCustomization: {
-    path: "/heritage-theme-customization",
+    path: "/heritage-theme-customization/",
     title: "Heritage Theme Customization Services | Dynamic Dreamz",
     description:
       "Get a Heritage Theme Customization Service for your Shopify store? Hire Dynamic Dreamz with 18 years of experience. Contact Us Today!",
@@ -2230,7 +2230,7 @@ export const pageSeo = {
     },
   },
   ritualThemeCustomization: {
-    path: "/ritual-theme-customization",
+    path: "/ritual-theme-customization/",
     title: "Ritual Theme Customization Services | Dynamic Dreamz",
     description:
       "Get a Ritual Theme Customization Service for your Shopify store? Hire Dynamic Dreamz with 18 years of experience. Contact Us Today!",
@@ -2256,7 +2256,7 @@ export const pageSeo = {
     },
   },
   publisherThemeCustomization: {
-    path: "/publisher-theme-customization",
+    path: "/publisher-theme-customization/",
     title: "Publisher Theme Customization Services | Dynamic Dreamz",
     description:
       "Get a Publisher theme Customization service for your Shopify store. Improve design, functionality, and conversions. Contact Dynamic Dreamz today!",
@@ -2282,7 +2282,7 @@ export const pageSeo = {
     },
   },
   tradeThemeCustomization: {
-    path: "/trade-theme-customization",
+    path: "/trade-theme-customization/",
     title: "Trade Theme Customization Service | Dynamic Dreamz",
     description:
       "Get a customized Trade theme for your Shopify store. Boost design, functionality, and conversions. Contact us to hire an expert for theme customization today!",
@@ -2308,7 +2308,7 @@ export const pageSeo = {
     },
   },
   horizonThemeCustomization: {
-    path: "/horizon-theme-customization",
+    path: "/horizon-theme-customization/",
     title: "Horizon Theme Customization Service | Dynamic Dreamz",
     description:
       "Expert Shopify Horizon theme customization by Dynamic Dreamz. Optimize design, templates, blocks, speed, and conversions. Get a custom quote today!",
@@ -2334,7 +2334,7 @@ export const pageSeo = {
     },
   },
   spotlightThemeCustomization: {
-    path: "/spotlight-theme-customization",
+    path: "/spotlight-theme-customization/",
     title: "Spotlight Theme Customization Services | Dynamic Dreamz",
     description:
       "Spotlight Theme Customization Services to create a responsive, user-friendly store. Hire Dynamic Dreamz with 18 years of experience. Contact Us Today!",
@@ -2360,7 +2360,7 @@ export const pageSeo = {
     },
   },
   refreshThemeCustomization: {
-    path: "/refresh-theme-customization",
+    path: "/refresh-theme-customization/",
     title: "Refresh Theme Customization Services | Dynamic Dreamz",
     description:
       "Get a Shopify Refresh Theme Customization Service for your Shopify store. Improve design, functionality, and conversions. Contact Dynamic Dreamz today!",
@@ -2386,7 +2386,7 @@ export const pageSeo = {
     },
   },
   woodstockThemeCustomization: {
-    path: "/woodstock-theme-customization",
+    path: "/woodstock-theme-customization/",
     title: "Woodstock Theme Customization Service | Dynamic Dreamz",
     description:
       "Get Woodstock Theme Customization Service to customize the Woodstock Shopify theme in a high-converting store. Contact Dynamic Dreamz today!",
@@ -2412,7 +2412,7 @@ export const pageSeo = {
     },
   },
   originThemeCustomization: {
-    path: "/origin-theme-customization",
+    path: "/origin-theme-customization/",
     title: "Origin Theme Customization Service | Dynamic Dreamz",
     description:
       "Need Origin theme customization service? Boost your Shopify store's design, functionality, and conversions with custom solutions. Contact Dynamic Dreamz today!",
@@ -2438,7 +2438,7 @@ export const pageSeo = {
     },
   },
   stilettoThemeCustomization: {
-    path: "/stiletto-theme-customization",
+    path: "/stiletto-theme-customization/",
     title: "Stiletto Theme Customization Services | Dynamic Dreamz",
     description:
       "Get Stiletto Theme Customization Services to customize the Stiletto Shopify theme for an elegant, advanced Shopify store. Contact Dynamic Dreamz today!",
@@ -2464,7 +2464,7 @@ export const pageSeo = {
     },
   },
   colorblockThemeCustomization: {
-    path: "/colorblock-theme-customization",
+    path: "/colorblock-theme-customization/",
     title: "Colorblock Theme Customization Services | Dynamic Dreamz",
     description:
       "Get Colorblock Shopify theme Customization for a bold, high-converting store. Choose Dynamic Dreamz today!",
@@ -2490,7 +2490,7 @@ export const pageSeo = {
     },
   },
   pipelineThemeCustomization: {
-    path: "/pipeline-theme-customization",
+    path: "/pipeline-theme-customization/",
     title: "Pipeline Theme Customization Services | Dynamic Dreamz",
     description:
       "Get a Pipeline Theme Customization Service for your Shopify store. Improve design, functionality, and conversions. Contact Dynamic Dreamz today!",
@@ -2516,7 +2516,7 @@ export const pageSeo = {
     },
   },
   visionThemeCustomization: {
-    path: "/vision-theme-customization",
+    path: "/vision-theme-customization/",
     title: "Vision Theme Customization Services | Dynamic Dreamz",
     description:
       "Get a Vision Theme Customization Service for your Shopify store. Improve design, functionality, and conversions. Contact Dynamic Dreamz today!",
@@ -2542,7 +2542,7 @@ export const pageSeo = {
     },
   },
   craftThemeCustomization: {
-    path: "/craft-theme-customization",
+    path: "/craft-theme-customization/",
     title: "Craft Theme Customization Services | Dynamic Dreamz",
     description:
       "Want Craft Theme Customization Service for your Shopify store? Hire Dynamic Dreamz with 18 years of experience to optimize your store.",
@@ -2568,7 +2568,7 @@ export const pageSeo = {
     },
   },
   broadcastThemeCustomization: {
-    path: "/broadcast-theme-customization",
+    path: "/broadcast-theme-customization/",
     title: "Broadcast Theme Customization Services | Dynamic Dreamz",
     description:
       "Want Broadcast Theme Customization Service for your Shopify store? Hire Dynamic Dreamz with 18 years of experience to optimize your store.",
@@ -2594,7 +2594,7 @@ export const pageSeo = {
     },
   },
   warehouseThemeCustomization: {
-    path: "/warehouse-theme-customization",
+    path: "/warehouse-theme-customization/",
     title: "Warehouse Theme Customization Services | Dynamic Dreamz",
     description:
       "Get professional Warehouse theme customization service for your Shopify store. Hire Dynamic Dreamz with 18 years of experience to optimize your store.",
@@ -2620,7 +2620,7 @@ export const pageSeo = {
     },
   },
   startupThemeCustomization: {
-    path: "/startup-theme-customization",
+    path: "/startup-theme-customization/",
     title: "Startup Theme Customization Services | Dynamic Dreamz",
     description:
       "Get professional Startup Theme Customization Services for your Shopify store. Hire Dynamic Dreamz with 18 years of experience to optimize your store.",
@@ -2646,7 +2646,7 @@ export const pageSeo = {
     },
   },
   impactThemeCustomization: {
-    path: "/impact-theme-customization",
+    path: "/impact-theme-customization/",
     title: "Impact Theme Customization Services | Dynamic Dreamz",
     description:
       "Want Impact Theme Customization Service for your Shopify store? Hire Dynamic Dreamz with 18 years of experience to optimize your store.",
@@ -2672,7 +2672,7 @@ export const pageSeo = {
     },
   },
   shopifyDevelopmentAgency: {
-    path: "/shopify-development-agency",
+    path: "/shopify-development-agency/",
     title: "Shopify Development Agency & Services | Dynamic Dreamz",
     description:
       "Looking for a Shopify development agency? Work with a Shopify Platinum Partner for custom builds, migrations, integrations, CRO and ongoing support.",
@@ -2700,7 +2700,7 @@ export const pageSeo = {
     },
   },
   shopifyB2b: {
-    path: "/shopify-b2b",
+    path: "/shopify-b2b/",
     title: "Shopify B2B & Wholesale Development | Dynamic Dreamz",
     description:
       "Shopify B2B and wholesale development for company accounts, catalogs, pricing, payment terms, buyer portals, integrations, custom apps and Shopify Plus.",
@@ -2729,7 +2729,7 @@ export const pageSeo = {
     },
   },
   risksOfShopifyOutsourcing: {
-    path: "/risks-of-shopify-outsourcing",
+    path: "/risks-of-shopify-outsourcing/",
     title: "Risks of Shopify Outsourcing: Expert Breakdown",
     description:
       "Learn the real Risks of Shopify Outsourcing and protect your store from security threats, hidden costs, and miscommunication challenges- DynamicDreamz",
@@ -2755,7 +2755,7 @@ export const pageSeo = {
     },
   },
   woocommerceDevelopment: {
-    path: "/woocommerce-development",
+    path: "/woocommerce-development/",
     title: "Woocommerce Development Company | Dynamic Dreamz",
     description:
       "Grow your online store with professional WooCommerce development services from Dynamic Dreamz, integrations, and seamless shopping experiences.",
@@ -2783,7 +2783,7 @@ export const pageSeo = {
     },
   },
   magentoDevelopment: {
-    path: "/magento-development",
+    path: "/magento-development/",
     title: "Magento Development Services | Magento Development Company",
     description:
       "Custom Magento development for stores, themes, modules, migrations, performance, integrations and ongoing support across Magento Open Source and Adobe Commerce.",
@@ -2812,7 +2812,7 @@ export const pageSeo = {
     },
   },
   wordPressThemeCustomization: {
-    path: "/wordpress-theme-customization-services",
+    path: "/wordpress-theme-customization-services/",
     title: "WordPress Theme Customization Services | Dynamic Dreamz",
     description:
       "Choose WordPress Theme Customization Services . Expert WordPress Developers with 18+ Years of Experience. Hire DynamicDreamz today!",
@@ -2842,7 +2842,7 @@ export const pageSeo = {
     },
   },
   bigCommerceDevelopment: {
-    path: "/bigcommerce-development",
+    path: "/bigcommerce-development/",
     title: "BigCommerce Development Company India | Dynamic Dreamz",
     description:
       "Hire BigCommerce Developer for top notch eCommerce solutions. Get customisations, integrations, and support for your business. Call Now!",
@@ -2867,7 +2867,7 @@ export const pageSeo = {
     sitemap: { changeFrequency: "weekly", priority: 0.8 },
   },
   siteMap: {
-    path: "/site-map",
+    path: "/site-map/",
     title: "Site Map | Dynamic Dreamz Ecommerce Agency",
     description:
       "HTML site map for Dynamic Dreamz. Explore all pages for Shopify, Shopify Plus, WordPress, WooCommerce, and ecommerce development services.",
@@ -2890,7 +2890,7 @@ export const pageSeo = {
     sitemap: { changeFrequency: "monthly", priority: 0.5 },
   },
   mobileApplicationDevelopment: {
-    path: "/mobile-application-development",
+    path: "/mobile-application-development/",
     title: "Mobile App Development Company | Dynamic Dreamz",
     description:
       "Custom mobile app development for iOS, Android and cross-platform apps, including utility apps, business apps,ecommerce, APIs and ongoing support.",
@@ -2917,7 +2917,7 @@ export const pageSeo = {
     },
   },
   androidAppDevelopment: {
-    path: "/android-app-development",
+    path: "/android-app-development/",
     title: "Android App Development Company | Dynamic Dreamz",
     description:
       "Custom Android app development with Kotlin and Jetpack Compose for utility, business, consumer and ecommerce apps, APIs, Google Play launch and support.",
@@ -2947,7 +2947,7 @@ export const pageSeo = {
     },
   },
   iosAppDevelopment: {
-    path: "/ios-app-development",
+    path: "/ios-app-development/",
     title: "iOS App Development Company | Dynamic Dreamz",
     description:
       "Custom iOS app development with Swift and SwiftUI for utility, business, consumer and ecommerce apps, including APIs, QA, App Store launch and support.",
@@ -2977,7 +2977,7 @@ export const pageSeo = {
     },
   },
   crossPlatformAppDevelopment: {
-    path: "/cross-platform-app-development",
+    path: "/cross-platform-app-development/",
     title: "Cross-Platform App Development Company | Dynamic Dreamz",
     description:
       "Cross-platform app development with React Native and Flutter for custom business, utility, consumer and ecommerce apps across iOS and Android.",
@@ -3004,7 +3004,7 @@ export const pageSeo = {
     },
   },
   shopifyMobileAppDevelopment: {
-    path: "/shopify-mobile-app-development",
+    path: "/shopify-mobile-app-development/",
     title: "Shopify Mobile App Development Company | Dynamic Dreamz",
     description:
       "Dynamic Dreamz builds custom Shopify mobile apps for iOS and Android with custom UX, Shopify integrations, third-party APIs and ongoing development.",
@@ -3031,7 +3031,7 @@ export const pageSeo = {
     },
   },
   appmakerShopifyMobileAppDevelopment: {
-    path: "/appmaker-shopify-mobile-app-development",
+    path: "/appmaker-shopify-mobile-app-development/",
     title: "Appmaker Shopify Mobile App Development | Dynamic Dreamz",
     description:
       "Launch a branded iOS and Android app for your Shopify store with Appmaker and Dynamic Dreamz, with customization, integrations and app launch support.",
@@ -3057,7 +3057,7 @@ export const pageSeo = {
     },
   },
   thankYouForApplying: {
-    path: "/thank-you-for-applying",
+    path: "/thank-you-for-applying/",
     title: "Thank You For Applying | Dynamic Dreamz",
     description:
       "Thank you for applying to Dynamic Dreamz. We have received your application and will get back to you as soon as possible.",
@@ -3085,7 +3085,7 @@ export const pageSeo = {
     },
   },
   thankYouForEnquiry: {
-    path: "/thank-you-for-enquiry",
+    path: "/thank-you-for-enquiry/",
     title: "Thank You For Enquiry | Dynamic Dreamz",
     description:
       "Thank you for your enquiry. We appreciate your interest and our team will get back to you shortly.",
@@ -3113,7 +3113,7 @@ export const pageSeo = {
     },
   },
   thankYouForShopifyPlusEnquiry: {
-    path: "/thank-you-for-shopify-plus-enquiry",
+    path: "/thank-you-for-shopify-plus-enquiry/",
     title: "Thank You For Enquiry | Dynamic Dreamz",
     description:
       "Thank you for your enquiry. We appreciate your interest and our team will get back to you shortly.",
@@ -3141,7 +3141,7 @@ export const pageSeo = {
     },
   },
   webDesign: {
-    path: "/web-design",
+    path: "/web-design/",
     title: "UI/UX & Web Design Services | DynamicDreamz",
     description:
       "UI/UX and web design services forwebsites, ecommerce and mobile apps,including wireframes, prototypes,interface design, UX strategy and designhandoff.",
@@ -3171,7 +3171,7 @@ export const pageSeo = {
     },
   },
   webflowDevelopment: {
-    path: "/webflow-development",
+    path: "/webflow-development/",
     title: "Webflow Development Company | Dynamic Dreamz",
     description:
       "Webflow development company for custom websites, Figma to Webflow, CMS, migrations, integrations and ongoing support. Build a fast, scalable Webflow site.",
@@ -3199,7 +3199,7 @@ export const pageSeo = {
     },
   },
   termsOfService: {
-    path: "/terms-of-service",
+    path: "/terms-of-service/",
     title: "Terms of Service | Dynamic Dreamz",
     description:
       "Read the Dynamic Dreamz terms of service outlining user rights, responsibilities, and website usage policies for all visitors and customers.",
@@ -3225,7 +3225,7 @@ export const pageSeo = {
     },
   },
   shopifyDevelopmentBarcelona: {
-    path: "/shopify-development-in-barcelona-spain",
+    path: "/shopify-development-in-barcelona-spain/",
     title: "Shopify Development in Barcelona, Spain | Dynamic Dreamz",
     description:
       "Shopify development company in Barcelona, Spain offering custom Shopify stores, theme development, migrations, app integrations and ongoing support.",
@@ -3255,7 +3255,7 @@ export const pageSeo = {
     },
   },
   shopifyDevelopmentCompanyInChennai: {
-    path: "/shopify-development-company-in-chennai",
+    path: "/shopify-development-company-in-chennai/",
     title: "Shopify Development Company in Chennai | Dynamic Dreamz",
     description:
       "Shopify development company in Chennai offering custom Shopify stores, theme development, migrations, app integrations and ongoing support.",
@@ -3282,7 +3282,7 @@ export const pageSeo = {
     },
   },
   shopifyMaintenanceServices: {
-    path: "/shopify-maintenance-services",
+    path: "/shopify-maintenance-services/",
     title: "Shopify Maintenance Services & Support | Dynamic Dreamz",
     description:
       "Shopify maintenance services for bug fixes, theme and app updates, performance, custom development and technical support. Flexible support for growing stores.",
@@ -3311,7 +3311,7 @@ export const pageSeo = {
     },
   },
   dentalClinicWebsiteDevelopmentCompany: {
-    path: "/dental-clinic-website-development-company",
+    path: "/dental-clinic-website-development-company/",
     title: "Dental Clinic Website Development Company | Dynamic Dreamz",
     description:
       "Build your brand with a top Dental Clinic Website Development Company. We offer custom website development, design, optimization, and ongoing maintenance.",
@@ -3339,7 +3339,7 @@ export const pageSeo = {
     },
   },
   shopifyDevelopmentInDelhi: {
-    path: "/shopify-development-in-delhi",
+    path: "/shopify-development-in-delhi/",
     title: "Shopify Development Company in Delhi | Dynamic Dreamz",
     description:
       "Shopify development company in Delhi offering custom Shopify stores, theme development, migrations, app integrations and ongoing support.",
@@ -3367,7 +3367,7 @@ export const pageSeo = {
     },
   },
   shopifyDevelopmentInHyderabad: {
-    path: "/shopify-development-in-hyderabad",
+    path: "/shopify-development-in-hyderabad/",
     title: "Shopify Development Company in Hyderabad | Dynamic Dreamz",
     description:
       "Shopify development company in Hyderabad offering custom Shopify stores, theme development, migrations, app integrations and ongoing support.",
@@ -3395,7 +3395,7 @@ export const pageSeo = {
     },
   },
   wordpressDevelopmentInDelhi: {
-    path: "/wordpress-development-in-delhi",
+    path: "/wordpress-development-in-delhi/",
     title: "Wordpress Development Company in Delhi | Dynamic Dreamz",
     description:
       "Wordpress development company in Delhi offering Custom Wordpress Development, WooCommerce Development, Custom Plugin & Theme Development and ongoing support.",
@@ -3423,7 +3423,7 @@ export const pageSeo = {
     },
   },
   wordpressDevelopmentInNoida: {
-    path: "/wordpress-development-in-noida",
+    path: "/wordpress-development-in-noida/",
     title: "Wordpress Development Company in Noida | Dynamic Dreamz",
     description:
       "Wordpress development company in Noida offering Custom Wordpress Development, WooCommerce Development, Custom Plugin & Theme Development and ongoing support.",
@@ -3451,7 +3451,7 @@ export const pageSeo = {
     },
   },
   wordpressDevelopmentInPune: {
-    path: "/wordpress-development-in-pune",
+    path: "/wordpress-development-in-pune/",
     title: "Wordpress Development Company in Pune | Dynamic Dreamz",
     description:
       "Wordpress development company in Pune offering Custom Wordpress Development, WooCommerce Development, Custom Plugin & Theme Development and ongoing support.",
@@ -3479,7 +3479,7 @@ export const pageSeo = {
     },
   },
   wordpressDevelopmentInAhmedabad: {
-    path: "/wordpress-development-in-ahmedabad",
+    path: "/wordpress-development-in-ahmedabad/",
     title: "Wordpress Development Company in Ahmedabad | Dynamic Dreamz",
     description:
       "Wordpress development company in Ahmedabad offering Custom Wordpress Development, WooCommerce Development, Plugin & Theme Development and ongoing support.",
@@ -3507,7 +3507,7 @@ export const pageSeo = {
     },
   },
   wordpressDevelopmentInBangalore: {
-    path: "/wordpress-development-in-bangalore",
+    path: "/wordpress-development-in-bangalore/",
     title:
       "Wordpress Development Company in Bangalore | Dynamic Dreamz",
     description:
@@ -3537,7 +3537,7 @@ export const pageSeo = {
     },
   },
   wordpressDevelopmentInMumbai: {
-    path: "/wordpress-development-in-mumbai",
+    path: "/wordpress-development-in-mumbai/",
     title: "Wordpress Development Company in Mumbai | Dynamic Dreamz",
     description:
       "Wordpress development company in Mumbai offering Custom Wordpress Development, WooCommerce Development, Custom Plugin & Theme Development and ongoing support.",
@@ -3565,7 +3565,7 @@ export const pageSeo = {
     },
   },
   shopifyDevelopmentInPune: {
-    path: "/shopify-development-in-pune",
+    path: "/shopify-development-in-pune/",
     title: "Shopify Development Company in Pune | Dynamic Dreamz",
     description:
       "Shopify development company in Pune offering custom Shopify stores, theme development, migrations, app integrations and ongoing support.",
@@ -3593,7 +3593,7 @@ export const pageSeo = {
     },
   },
   shopifyDevelopmentInBangalore: {
-    path: "/shopify-development-in-bangalore",
+    path: "/shopify-development-in-bangalore/",
     title: "Shopify Development Company in Bangalore | Dynamic Dreamz",
     description:
       "Shopify development company in Bangalore offering custom Shopify stores, theme development, migrations, app integrations and ongoing support.",
@@ -3621,7 +3621,7 @@ export const pageSeo = {
     },
   },
   shopifyDevelopmentInMelbourne: {
-    path: "/shopify-development-in-melbourne",
+    path: "/shopify-development-in-melbourne/",
     title: "Shopify Development Company in Melbourne | Dynamic Dreamz",
     description:
       "Shopify development for Melbourne brands and agencies. Custom themes, Shopify Plus builds, migrations, integrations and ongoing support from Dynamic Dreamz.",
@@ -3648,7 +3648,7 @@ export const pageSeo = {
     },
   },
   shopifyDevelopmentInBrisbane: {
-    path: "/shopify-development-in-brisbane",
+    path: "/shopify-development-in-brisbane/",
     title: "Shopify Development Company in Brisbane | Dynamic Dreamz",
     description:
       "Shopify development for Brisbane businesses and agencies. Get custom stores, Shopify Plus builds, migrations, theme updates and white-label development support.",
@@ -3675,7 +3675,7 @@ export const pageSeo = {
     },
   },
   shopifyDevelopmentInLondon: {
-    path: "/shopify-development-in-london",
+    path: "/shopify-development-in-london/",
     title: "Shopify Development Company in London | Dynamic Dreamz",
     description:
       "Shopify development for London brands and agencies. Get custom stores, Shopify Plus builds, migrations, integrations and ongoing support from Dynamic Dreamz.",
@@ -3702,7 +3702,7 @@ export const pageSeo = {
     },
   },
   shopifyDevelopmentInPerth: {
-    path: "/shopify-development-in-perth",
+    path: "/shopify-development-in-perth/",
     title: "Shopify Development Company in Perth | Dynamic Dreamz",
     description:
       "Shopify development for Perth businesses. Dynamic Dreamz builds custom Shopify and Shopify Plus stores, connects inventory tools, and supports online stores.",
@@ -3729,7 +3729,7 @@ export const pageSeo = {
     },
   },
   shopifyDevelopmentInSydney: {
-    path: "/shopify-development-in-sydney",
+    path: "/shopify-development-in-sydney/",
     title: "Shopify Development Company in Sydney | Dynamic Dreamz",
     description:
       "Shopify development for Sydney businesses. Dynamic Dreamz builds custom stores, Shopify Plus storefronts, integrations, migrations and ongoing support.",
@@ -3756,7 +3756,7 @@ export const pageSeo = {
     },
   },
   shopifyDevelopmentInAhmedabad: {
-    path: "/shopify-development-in-ahmedabad",
+    path: "/shopify-development-in-ahmedabad/",
     title: "Shopify Development Company in Ahmedabad | DynamicDreamz",
     description:
       "Shopify development company in Ahmedabad for custom stores, Shopify Plus, theme customization, migration, integrations, CRO, and ongoing support.",
@@ -3784,7 +3784,7 @@ export const pageSeo = {
     },
   },
   shopifyDevelopmentInSurat: {
-    path: "/shopify-development-in-surat",
+    path: "/shopify-development-in-surat/",
     title: "Shopify Development Company in Surat | DynamicDreamz",
     description:
       "Shopify development company in Surat for custom stores, Shopify Plus, theme customization, migration, integrations, CRO and ongoing support.",
@@ -3812,7 +3812,7 @@ export const pageSeo = {
     },
   },
   shopifyDevelopmentInTexas: {
-    path: "/shopify-development-in-texas",
+    path: "/shopify-development-in-texas/",
     title: "Shopify Development Company in Texas | Dynamic Dreamz",
     description:
       "Shopify development company in Texas offering custom Shopify stores, theme development, migrations, app integrations and ongoing support.",
@@ -3840,7 +3840,7 @@ export const pageSeo = {
     },
   },
   shopifyDevelopmentInNewYork: {
-    path: "/shopify-development-in-new-york",
+    path: "/shopify-development-in-new-york/",
     title: "Shopify Development Company in New York | Dynamic Dreamz",
     description:
       "Shopify development company in New York offering custom Shopify stores, theme development, migrations, app integrations and ongoing support.",
@@ -3868,7 +3868,7 @@ export const pageSeo = {
     },
   },
   shopifyDevelopmentInMumbai: {
-    path: "/shopify-development-in-mumbai",
+    path: "/shopify-development-in-mumbai/",
     title: "Shopify Development Company in Mumbai | Dynamic Dreamz",
     description:
       "Shopify development company in Mumbai offering custom Shopify stores, theme development, migrations, app integrations and ongoing support.",
@@ -3896,7 +3896,7 @@ export const pageSeo = {
     },
   },
   inspiroThemeCustomization: {
-    path: "/inspiro-theme-customization",
+    path: "/inspiro-theme-customization/",
     title: "Inspiro Theme Customization Service | Dynamic Dreamz",
     description:
       "Get professional Inspiro Theme Customization Service. Expert WordPress developer with 18+ years of experience. Choose Dynamic Dreamz today!",
@@ -3922,7 +3922,7 @@ export const pageSeo = {
     },
   },
   expanseThemeCustomization: {
-    path: "/expanse-theme-customization",
+    path: "/expanse-theme-customization/",
     title: "Expanse Theme Customization Service | Dynamic Dreamz",
     description:
       "Looking for an Expanse Theme Customization service. Choose Dynamic Dreamz, they offer everything that you need. Get an Expert Team and Ongoing Support.",
@@ -3948,7 +3948,7 @@ export const pageSeo = {
     },
   },
   shopifyDevelopmentInLosAngeles: {
-    path: "/shopify-development-in-los-angeles",
+    path: "/shopify-development-in-los-angeles/",
     title: "Shopify Development Company in Los Angeles | Dynamic Dreamz",
     description:
       "Shopify development company in Los Angeles offering custom Shopify stores, theme development, migrations, app integrations and ongoing support.",
@@ -3977,7 +3977,7 @@ export const pageSeo = {
     },
   },
   shopifyDevelopmentInMiami: {
-    path: "/shopify-development-in-miami",
+    path: "/shopify-development-in-miami/",
     title: "Shopify Development Company in Miami | Dynamic Dreamz",
     description:
       "Shopify development company in Miami offering custom Shopify stores, theme development, migrations, app integrations and ongoing support.",
@@ -4006,7 +4006,7 @@ export const pageSeo = {
     },
   },
   yithWonderThemeCustomization: {
-    path: "/yith-wonder-theme-customization",
+    path: "/yith-wonder-theme-customization/",
     title: "YITH Wonder Theme Customization Service | Dynamic Dreamz",
     description:
       "Get professional YITH Wonder Theme Customization Service. Expert WordPress developer with 18+ years of experience. Choose Dynamic Dreamz today!",
@@ -4034,7 +4034,7 @@ export const pageSeo = {
     },
   },
   vesselThemeCustomization: {
-    path: "/vessel-theme-customization",
+    path: "/vessel-theme-customization/",
     title: "Vessel Theme Customization Service | Dynamic Dreamz",
     description:
       "Get Vessel Theme Customization Service to Enhance your Shopify store. Improve user experience and boost sales with expert solutions. Contact Dynamic Dreamz.",
@@ -4062,7 +4062,7 @@ export const pageSeo = {
     },
   },
   phpDevelopment: {
-    path: "/php-development",
+    path: "/php-development/",
     title: "PHP Web Development Company in India | Dynamic Dreamz",
     description:
       "Top PHP Web Development Company. Our experts craft scalable, efficient solutions for your online presence. Contact us today! or Call Now!",

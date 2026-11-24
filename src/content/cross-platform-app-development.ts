@@ -16,7 +16,7 @@ export const crossPlatformAppDevelopmentHero: MobileAppHeroContent = {
     "Dynamic Dreamz builds custom cross-platform applications for iOS and Android using React Native and Flutter when a shared application foundation is the right fit. We develop business utilities, consumer products, service apps, marketplaces and ecommerce experiences, adding platform-specific code or native modules where deeper iOS or Android functionality is required.",
   primaryCta: {
     label: "Discuss Your App",
-    href: "/request-quote",
+    href: "/request-quote/",
     ariaLabel: "Discuss Your App",
   },
   secondaryCta: {
@@ -97,7 +97,7 @@ export const crossPlatformAppDevelopmentWorkflowDelivery: AiEmpoweredDeliveryCon
       "Cross-platform development can reduce duplicated work across iOS and Android, but strong implementation still respects each platform. We reuse common application logic where it makes sense and introduce platform-specific components, permissions or native modules when the product requires them.",
     cta: {
       label: "Discuss Your App Requirement",
-      href: "/request-quote",
+      href: "/request-quote/",
     },
     tools: [
       {
@@ -322,7 +322,7 @@ export const crossPlatformAppDevelopmentPortfolio: MobileAppWorkContent = {
     },
   ],
   ctaLabel: "View our work",
-  ctaHref: "/our-work",
+  ctaHref: "/our-work/",
   ctaAriaLabel: "Dynamic Dreamz - View our work",
   secondaryCta: {
     label: "View Pricing",
@@ -351,7 +351,7 @@ export const crossPlatformAppDevelopmentPricing: PricingEngagementContent = {
         "QA & release support",
       ],
       ctaLabel: "Request a Quote",
-      ctaHref: "/request-quote",
+      ctaHref: "/request-quote/",
     },
     {
       label: "Dedicated Developer / Team",
@@ -366,7 +366,7 @@ export const crossPlatformAppDevelopmentPricing: PricingEngagementContent = {
         "Full-stack support when needed",
       ],
       ctaLabel: "Discuss Dedicated Capacity",
-      ctaHref: "/request-quote",
+      ctaHref: "/request-quote/",
     },
     {
       label: "Post-Launch",
@@ -381,7 +381,7 @@ export const crossPlatformAppDevelopmentPricing: PricingEngagementContent = {
         "Release support",
       ],
       ctaLabel: "Discuss Support",
-      ctaHref: "/request-quote",
+      ctaHref: "/request-quote/",
     },
   ],
 };
@@ -421,7 +421,7 @@ export const crossPlatformAppDevelopmentWhyChooseCopy = {
   partnerLogoAlt: "Dynamic Dreamz - Shopify Platinum Partner",
   partnerLink: {
     label: "About Dynamic Dreamz",
-    href: "/about-us",
+    href: "/about-us/",
   },
   stats: [
     { value: "20+", label: "Years of Experience" },
