@@ -101,7 +101,7 @@ export function PortfolioShowcaseSection({
           eyebrow={resolvedEyebrow}
           eyebrowClassName={eyebrowClassName}
           heading={content.heading}
-          variant="portfolio"
+          variant="left"
         />
 
         <div className={`mt-[42px] grid gap-x-[15px] gap-y-[42px] max-[992px]:mt-[50px] max-[992px]:gap-y-[30px] max-[768px]:mt-[30px] ${gridColsClass} ${itemsClassName ?? ""}`}>
