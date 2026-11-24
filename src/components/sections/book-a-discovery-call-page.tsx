@@ -32,7 +32,7 @@ export function BookDiscoveryCallPage({
             >
               {content.title}
             </h1>
-            <p className="text-base font-medium leading-[190%] text-muted max-[768px]:text-sm max-[768px]:leading-[26px]">
+            <p className="text-base font-medium leading-[190%] text-muted max-[1200px]:text-sm max-[1200px]:leading-[26px]">
               {content.description}
             </p>
 

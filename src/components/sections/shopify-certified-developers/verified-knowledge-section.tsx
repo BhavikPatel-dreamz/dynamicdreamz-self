@@ -30,7 +30,7 @@ export function VerifiedKnowledgeSection({
       className="verified-shopify-knowledge-section py-20 max-[992px]:py-15 max-[768px]:py-10"
       aria-labelledby="verified-shopify-knowledge-title"
     >
-      <Container>
+      <Container variant="compactMobile">
         <SplitSectionHeading
           description={content.description}
           eyebrow={content.eyebrow}
@@ -38,7 +38,7 @@ export function VerifiedKnowledgeSection({
           headingId="verified-shopify-knowledge-title"
           variant="left"
         />
-        <div className="grid grid-cols-3 mx-[-50px] divide-x divide-[#333]/10 max-[992px]:grid-cols-1 max-[992px]:divide-x-0 max-[992px]:divide-y">
+        <div className="grid grid-cols-3 mx-[-50px] divide-x divide-[#333]/10 max-[1200px]:mx-[-15px] max-[992px]:mx-0 max-[992px]:grid-cols-1 max-[992px]:divide-x-0 max-[992px]:divide-y">
           {content.items.map((item) => (
             <article
               data-aos="fade-up"

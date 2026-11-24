@@ -47,7 +47,7 @@ export function FormSection({
               </h2>
             )}
             {description && (
-              <p className="max-w-[720px] text-base font-normal leading-relaxed text-[#535353] max-[768px]:text-sm">
+              <p className="max-w-[720px] text-[16px] font-normal leading-relaxed text-[#535353] max-[1200px]:text-sm">
                 {description}
               </p>
             )}

@@ -33,14 +33,14 @@ export function CredentialEvidenceSection({
       id="see_our_certifications"
       aria-labelledby="shopify-credential-evidence-title"
     >
-      <Container>
+      <Container variant="compactMobile">
         <SplitSectionHeading
           description={content.description}
           eyebrow={content.eyebrow}
           heading={content.heading}
           headingId="shopify-credential-evidence-title"
         />
-        <div className="grid grid-cols-4 gap-x-10 max-[1200px]:gap-x-5 max-[992px]:grid-cols-2 max-[992px]:gap-y-[30px] max-[390px]:grid-cols-1">
+        <div className="grid grid-cols-4 gap-x-10 max-[1200px]:gap-x-5 max-[992px]:grid-cols-2 max-[992px]:gap-y-[30px] max-[389px]:grid-cols-1">
           {content.items.map((item) => (
             <article data-aos="fade-up" className="flex h-full flex-col text-center" key={item.title}>
               <a

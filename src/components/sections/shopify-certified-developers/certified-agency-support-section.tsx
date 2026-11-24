@@ -45,7 +45,7 @@ export function CertifiedAgencySupportSection({
       className="certified_developers_section bg-[#171E16] py-20 max-[992px]:py-15 max-[768px]:py-10"
       aria-labelledby="certified-agency-support-title"
     >
-      <Container>
+      <Container variant="compactMobile">
         <SplitSectionHeading
           dark
           eyebrow={content.eyebrow}

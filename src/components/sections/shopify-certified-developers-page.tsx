@@ -16,7 +16,10 @@ import {
 export function ShopifyCertifiedDevelopersPage() {
   return (
     <div>
-      <ServiceHeroVideoSection content={shopifyCertifiedDevelopersHero} />
+      <ServiceHeroVideoSection
+        containerVariant="compactMobile"
+        content={shopifyCertifiedDevelopersHero}
+      />
       <IndustryBrandsSection
         content={shopifyCertifiedDevelopersBrands}
         heading={shopifyCertifiedDevelopersBrands.heading}
@@ -28,6 +31,7 @@ export function ShopifyCertifiedDevelopersPage() {
       <CertifiedServicesSection />
       <PartnerDirectoryProofSection />
       <SplitFaqSection
+        containerVariant="compactMobile"
         idPrefix="shopify-certified-developers-faq"
         items={shopifyCertifiedDevelopersFaqs}
       />

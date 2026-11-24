@@ -36,7 +36,7 @@ export function IndustryCustomDevelopmentSection({
             <h2 className="mb-3 font-montreal-medium font-normal text-[35px] leading-[1.4] tracking-normal text-white max-[992px]:text-[30px] max-[992px]:leading-[1.4] max-[768px]:text-2xl max-[768px]:leading-[1.4]">
               {content.heading}
             </h2>
-            <p className="font-sans text-sm leading-6 text-white max-[768px]:text-sm max-[768px]:leading-6">
+            <p className="font-sans text-[16px] leading-7 text-white max-[1200px]:text-sm max-[1200px]:leading-6">
               {content.description}
             </p>
           </div>

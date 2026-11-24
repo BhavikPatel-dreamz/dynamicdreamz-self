@@ -86,7 +86,7 @@ export function ContactHeroSection({
           >
             {title}
           </h1>
-          <p className="mx-auto mt-[22px] max-w-[810px] text-base leading-7 font-medium text-muted max-[768px]:text-sm max-[768px]:leading-6">
+          <p className="mx-auto mt-[22px] max-w-[810px] text-base leading-7 font-medium text-muted max-[1200px]:text-sm max-[1200px]:leading-6">
             {description}
           </p>
           <div className="mt-5 flex flex-wrap items-center justify-center gap-5 text-xs font-semibold uppercase max-[768px]:flex-nowrap max-[768px]:justify-start max-[768px]:overflow-x-auto max-[768px]:whitespace-nowrap max-[768px]:pb-2">
@@ -140,7 +140,7 @@ export function ContactFormSection({
             >
               {title}
             </h2>
-            <p className="text-base leading-7 font-medium text-muted max-[768px]:text-sm max-[768px]:leading-6">
+            <p className="text-base leading-7 font-medium text-muted max-[1200px]:text-sm max-[1200px]:leading-6">
               {description}
             </p>
           </div>

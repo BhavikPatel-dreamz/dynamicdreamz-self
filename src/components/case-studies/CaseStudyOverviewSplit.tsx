@@ -37,7 +37,7 @@ export function CaseStudyChallenge({ challenge }: { challenge?: ChallengeType })
             {heading}
           </h2>
           {challenge.description && (
-            <p className="m-0 font-sans text-[16px] font-medium leading-[30.4px] text-[#535353] max-[768px]:text-sm">
+            <p className="m-0 font-sans text-[16px] font-medium leading-[30.4px] text-[#535353] max-[1200px]:text-sm max-[1200]:leading-[26px]">
               {challenge.description}
             </p>
           )}
@@ -95,7 +95,7 @@ export function CaseStudySolutions({ solutions }: { solutions?: SolutionsType })
               {heading}
             </h2>
             {solutions.lead && (
-              <p className="m-0 font-sans text-[16px] font-normal leading-[30.4px] text-white/90 max-[768px]:text-[14px] max-[768px]:leading-[26px]">
+              <p className="m-0 font-sans text-[16px] font-normal leading-[30.4px] text-white/90 max-[1200px]:text-[14px] max-[1200px]:leading-[26px]">
                 {solutions.lead}
               </p>
             )}

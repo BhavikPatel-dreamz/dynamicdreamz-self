@@ -41,7 +41,7 @@ export function ShopifyHoursHeroSection() {
               {titleStart}
               <span>{shopifyHoursHero.emphasizedTitle}</span>
             </h1>
-            <p className="mt-3 mb-[15px] font-sans text-base leading-[28px] font-medium text-muted">
+            <p className="mt-3 mb-[15px] font-sans text-[16px] leading-[28px] font-medium text-muted max-[1200px]:text-sm max-[1200px]:leading-6">
               {shopifyHoursHero.description}
             </p>
             <div className="hire-shopify-dev-list w-full max-w-[460px] pt-2.5">

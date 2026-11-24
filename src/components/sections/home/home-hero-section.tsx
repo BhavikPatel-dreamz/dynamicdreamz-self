@@ -50,7 +50,7 @@ export function HomeHeroSection({
         <h1 className="mx-auto mb-5 max-w-[1100px] font-montreal-medium text-[56px] leading-[1.14] font-normal text-ink max-[1200px]:text-[48px] max-[1200px]:leading-[60px] max-[992px]:text-[38px] max-[992px]:leading-[48px] max-[768px]:mb-4 max-[768px]:max-w-[358px] max-[768px]:text-[27px] max-[768px]:leading-[37px]">
           {title}
         </h1>
-        <p className="mx-auto mb-[30px] max-w-[940px] text-base leading-7 font-medium text-muted max-[1200px]:leading-6 max-[768px]:mb-6 max-[768px]:max-w-[358px] max-[768px]:text-sm">
+        <p className="mx-auto mb-[30px] max-w-[940px] text-[16px] leading-7 font-medium text-muted max-[1200px]:text-sm max-[1200px]:leading-6 max-[768px]:mb-6 max-[768px]:max-w-[358px]">
           {description}
         </p>
         <div className="mx-auto flex max-w-[1100px] justify-center gap-[15px] max-[768px]:flex-col max-[768px]:items-center max-[768px]:gap-3.5 [&_a]:w-fit [&_a]:max-[768px]:mx-auto">

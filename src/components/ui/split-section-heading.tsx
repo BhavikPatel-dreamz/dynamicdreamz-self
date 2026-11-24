@@ -167,7 +167,7 @@ export function SplitSectionHeading({
               className={cn(
                 "not-last:mb-[15px]",
                 services || leftAligned
-                  ? "font-sans xl:text-base text-sm font-medium leading-7 max-[1200px]:leading-6 max-[768px]:leading-6"
+                  ? "font-sans text-[16px] text-sm font-medium leading-7 max-[1200px]:text-sm max-[1200px]:leading-6 max-[768px]:leading-6"
                   : portfolio
                     ? "font-sans text-[16px] font-medium leading-7 max-[1200px]:text-sm max-[1200px]:leading-6 max-[992px]:text-sm max-[992px]:leading-[24px] max-[768px]:text-sm max-[768px]:leading-6"
                     : "font-sans text-base font-medium leading-7 max-[1200px]:text-sm max-[1200px]:leading-6 not-last:mb-2.5",

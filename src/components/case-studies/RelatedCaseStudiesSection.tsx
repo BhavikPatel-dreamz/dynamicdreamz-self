@@ -61,7 +61,7 @@ export function CaseStudyRelated({
           >
             {caseStudiesUiCopy.relatedHeading}
           </h2>
-          <p className="m-0 font-sans text-[16px] font-medium leading-[30.4px] text-[#535353] max-[768px]:text-sm">
+          <p className="m-0 font-sans text-[16px] font-medium leading-[30.4px] text-[#535353] max-[1200px]:text-sm max-[1200px]:leading-[26px]">
             {caseStudiesUiCopy.relatedDescription}
           </p>
         </div>

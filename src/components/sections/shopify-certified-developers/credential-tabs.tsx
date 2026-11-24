@@ -97,7 +97,7 @@ export function CredentialTabs({
         return (
           <div
             aria-labelledby={tabId}
-            className="flex items-center justify-between bg-[#fafaf7] p-10 max-[992px]:flex-col max-[992px]:p-[30px] max-[576px]:p-[30px_20px]"
+            className="flex items-center justify-between bg-[#fafaf7] p-10 max-[992px]:flex-col max-[992px]:p-[30px]"
             hidden={!isActive}
             id={panelId}
             key={item.id}
@@ -118,7 +118,7 @@ export function CredentialTabs({
             <div className="grid w-[59%] grid-cols-2 gap-3.5 max-[992px]:w-full max-[576px]:grid-cols-1">
               {item.details.map((detail) => (
                 <article
-                  className="rounded-[20px] border border-[#d0d0ce] bg-[#fafaf7] p-[35px_25px] shadow-[2px_2px_0_rgba(40,40,40,0.2)] max-[576px]:p-5"
+                  className="rounded-[20px] border border-[#d0d0ce] bg-[#fafaf7] p-[35px_25px] shadow-[2px_2px_0_rgba(40,40,40,0.2)]"
                   key={detail.label}
                 >
                   <h4 className="mb-2.5 text-[10px] leading-[14px] font-montserrat font-bold tracking-[0.8px] text-brand-red uppercase">

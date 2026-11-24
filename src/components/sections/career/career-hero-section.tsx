@@ -44,7 +44,7 @@ export function CareerHeroSection({
     <section className="hero-new-section hide-logo relative overflow-hidden bg-[#f7f4e9] pt-[91px] max-[992px]:pt-16">
       <Container>
         <div className="wrapper flex flex-wrap items-center justify-between max-[992px]:flex-col">
-          <div className="left-col z-1 flex w-[51%] flex-col justify-center py-[60px] max-[1200px]:pb-[30px] max-[1200px]:w-full max-[992px]:py-10 max-[1200px]:text-center">
+          <div className="left-col z-1 flex w-[51%] flex-col justify-center py-[60px] max-[1200px]:pb-[30px] max-[1200px]:w-full max-[992px]:pt-12 max-[992px]:pb-10 max-[1200px]:text-center">
             <div className="hero-content">
               {eyebrow ? (
                 <Eyebrow
@@ -60,7 +60,7 @@ export function CareerHeroSection({
                 {title}
               </h1>
 
-              <p className="mt-3 font-montserrat text-base font-medium leading-7 text-[#535353] max-[1200px]:text-[14px] max-[1200px]:leading-[24px]">
+              <p className="mt-3 font-montserrat text-[16px] font-medium leading-7 text-[#535353] max-[1200px]:text-[14px] max-[1200px]:leading-6">
                 {description}
               </p>
             </div>

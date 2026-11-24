@@ -36,6 +36,7 @@ export function AboutFoundersSection({
         heading={title}
         description={descriptions}
         eyebrow={eyebrow}
+        variant="left"
         />
 
         <div className="-mx-2 flex flex-wrap max-[768px]:mx-0">

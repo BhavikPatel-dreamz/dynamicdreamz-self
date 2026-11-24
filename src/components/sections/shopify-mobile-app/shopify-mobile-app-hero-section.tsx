@@ -97,7 +97,7 @@ export function ShopifyMobileAppHeroSection({
                 </i>
               </h1>
 
-              <p className="mt-0 mb-[30px] text-base font-medium leading-[28px] text-[#535353] max-[992px]:text-[14px] max-[992px]:leading-[25.2px]">
+              <p className="mt-0 mb-[30px] text-[16px] font-medium leading-[28px] text-[#535353] max-[1200px]:text-[14px] max-[1200px]:leading-[25.2px]">
                 {content.description}
               </p>
 

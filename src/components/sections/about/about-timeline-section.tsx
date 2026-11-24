@@ -36,6 +36,7 @@ export function AboutTimelineSection({
         <SplitSectionHeading
           heading={title}
           description={description}
+          variant="left"
         />
       </Container>
 

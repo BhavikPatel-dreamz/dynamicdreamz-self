@@ -28,7 +28,7 @@ export function CertifiedServicesSection({
       className="certified-process-section py-20 max-[992px]:py-15 max-[768px]:py-10"
       aria-labelledby="certified-shopify-services-title"
     >
-      <Container>
+      <Container variant="compactMobile">
         <SplitSectionHeading
           description={content.description}
           eyebrow={content.eyebrow}

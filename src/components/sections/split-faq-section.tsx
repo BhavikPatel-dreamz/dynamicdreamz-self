@@ -1,4 +1,4 @@
-import { Container } from "@/components/ui/container";
+import { Container, type ContainerVariant } from "@/components/ui/container";
 import { Eyebrow } from "@/components/ui/eyebrow";
 import { FaqAccordion, type FaqAccordionItem } from "@/components/ui/faq-accordion";
 import { LazyFaqAccordion } from "@/components/sections/lazy-faq-accordion";
@@ -26,6 +26,8 @@ export type SplitFaqSectionProps = {
   panelContentClassName?: string;
   iconVariant?: "default" | "circle-cross";
   className?: string;
+  containerClassName?: string;
+  containerVariant?: ContainerVariant;
 };
 
 /**
@@ -56,6 +58,8 @@ export function SplitFaqSection({
   panelContentClassName,
   iconVariant = "circle-cross",
   className,
+  containerClassName,
+  containerVariant,
 }: SplitFaqSectionProps) {
   const titleId = `${idPrefix}-title`;
 
@@ -78,7 +82,7 @@ export function SplitFaqSection({
       data-section="faq"
       id={sectionId ?? `${idPrefix}-section`}
     >
-      <Container className={containerClass}>
+      <Container className={cn(containerClass, containerClassName)} variant={containerVariant}>
         <div className="wrapper flex justify-between gap-[105px] max-[1400px]:gap-8 max-[992px]:flex-col max-[992px]:gap-[30px]">
           <div className="w-[41%] max-[1200px]:w-[44%] max-[992px]:w-full" data-aos="fade-up">
             <header className="header-text mb-0 flex flex-col items-start text-left min-[992px]:sticky min-[992px]:top-[20px]">
@@ -97,7 +101,7 @@ export function SplitFaqSection({
                 {formatBrText(heading, headingBrClassName ?? "max-[1200px]:hidden")}
               </h2>
               {description ? (
-                <p className="max-w-[500px] text-base leading-[28px] font-medium text-[#535353] max-[768px]:text-sm max-[768px]:leading-[24px]">
+                <p className="max-w-[500px] text-[16px] leading-7 font-medium text-[#535353] max-[1200px]:text-sm max-[1200px]:leading-6">
                   {formatBrText(description, "max-[1200px]:hidden")}
                 </p>
               ) : null}

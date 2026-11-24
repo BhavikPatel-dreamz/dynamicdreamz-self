@@ -49,7 +49,7 @@ export function ShopifyHoursComparisonSection({
               </h2>
             </div>
             <div className="section_text w-full text-left">
-              <p className="m-0 font-sans text-base font-medium leading-7 text-[#535353] max-[1200px]:text-sm max-[1200px]:leading-6">
+              <p className="m-0 font-sans text-[16px] font-medium leading-7 text-[#535353] max-[1200px]:text-sm max-[1200px]:leading-6">
                 {description}
               </p>
             </div>

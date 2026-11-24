@@ -1,7 +1,7 @@
 import Image from "next/image";
 
 import { ButtonLink } from "@/components/ui/button-link";
-import { Container } from "@/components/ui/container";
+import { Container, type ContainerVariant } from "@/components/ui/container";
 import { Eyebrow } from "@/components/ui/eyebrow";
 import { formatBrText } from "@/lib/text-formatting";
 import { cn } from "@/lib/class-names";
@@ -54,6 +54,8 @@ export type ServiceHeroVideoSectionProps = {
   titleAccentClassName?: string;
   titleAccentPosition?: "start" | "end";
   rightColClassName?: string;
+  containerClassName?: string;
+  containerVariant?: ContainerVariant;
 };
 
 export function ServiceHeroVideoSection({
@@ -65,6 +67,8 @@ export function ServiceHeroVideoSection({
   titleAccentClassName,
   titleAccentPosition = "end",
   rightColClassName,
+  containerClassName,
+  containerVariant,
 }: ServiceHeroVideoSectionProps) {
   const isShopifyMigration = wrapperClassName?.includes("hero-shopify-migration");
   const isThreeBadges = content.badges?.length === 3;
@@ -76,7 +80,7 @@ export function ServiceHeroVideoSection({
         className,
       )}
     >
-      <Container>
+      <Container className={containerClassName} variant={containerVariant}>
         <div className={cn("wrapper flex flex-wrap items-center justify-between", wrapperClassName)}>
           <div
             className={cn(
@@ -170,7 +174,7 @@ export function ServiceHeroVideoSection({
 
               {(content.paragraphs ?? []).map((p, index) => (
                 <p
-                  className="mb-[15px] font-sans text-base font-medium leading-7 text-[#535353] max-[1200px]:text-sm max-[1200px]:leading-6 max-[768px]:text-sm"
+                  className="mb-[15px] font-sans text-[16px] font-medium leading-7 text-[#535353] max-[1200px]:text-sm max-[1200px]:leading-6"
                   key={index}
                 >
                   {formatBrText(p)}

@@ -25,7 +25,7 @@ export function CredentialTabsSection({
       className="which_shopify_credential_section py-20 max-[992px]:py-15 max-[768px]:py-10"
       aria-labelledby="shopify-credential-tabs-title"
     >
-      <Container>
+      <Container variant="compactMobile">
         <SplitSectionHeading
           className="mb-[54px]"
           description={content.description}

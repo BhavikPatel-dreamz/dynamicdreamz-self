@@ -132,12 +132,12 @@ export function OurWorkHeroSection({
   const logos = propProofLogos && propProofLogos.length > 0 ? propProofLogos : proofLogos;
 
   return (
-    <section className="hero-new-section overflow-hidden bg-cream pt-[91px] max-[992px]:pt-16">
+    <section className="hero-new-section overflow-hidden bg-cream pt-[91px] max-[1200px]:pt-[75px]">
       <Container
         className="relative min-[992px]:max-[1199.98px]:!max-w-[960px] min-[992px]:max-[1199.98px]:!px-5"
       >
         <div className="wrapper flex flex-wrap justify-between max-[991.98px]:flex-col">
-          <div className="left-col z-1 flex flex-col justify-center w-[44.697%] py-[60px] max-[1400px]:w-1/2 max-[1200px]:w-[57%] max-[991.98px]:w-full max-[991.98px]:px-[calc((100%-680px)/2)] max-[991.98px]:pt-[30px] max-[991.98px]:pb-10 max-[767.98px]:px-[calc((100%-500px)/2)] max-[576px]:px-5 max-[991.98px]:items-center max-[991.98px]:text-center">
+          <div className="left-col z-1 flex flex-col justify-center w-[44.697%] py-[60px] max-[1400px]:w-1/2 max-[1200px]:w-[57%] max-[991.98px]:w-full max-[991.98px]:px-[calc((100%-680px)/2)] max-[991.98px]:pt-12 max-[991.98px]:pb-10 max-[767.98px]:px-[calc((100%-500px)/2)] max-[576px]:px-5 max-[991.98px]:items-center max-[991.98px]:text-center">
             <div className="hero-content">
               <Eyebrow align="responsive-center" className="mb-4 max-[1200px]:justify-start max-[992px]:justify-center" tone="muted">
                 {heroContent.eyebrow}
@@ -145,7 +145,7 @@ export function OurWorkHeroSection({
               <h1 className="max-w-[700px] text-ink max-[991.98px]:max-w-[680px] font-montreal-medium text-[50px] leading-[60px] font-normal tracking-normal max-[1200px]:text-[40px] max-[1200px]:leading-[50px] max-[768px]:text-[30px] max-[768px]:leading-[40px]">
                 {heroContent.title}
               </h1>
-              <p className="mt-2.5 max-w-[690px] text-base leading-[190%] font-medium text-muted max-[768px]:mt-4 max-[992px]:text-[14px] max-[992px]:leading-[25.2px]">
+              <p className="mt-2.5 max-w-[690px] text-[16px] leading-[190%] font-medium text-muted max-[768px]:mt-4 max-[1200px]:text-[14px] max-[1200px]:leading-[24px]">
                 {heroContent.description}
               </p>
               <div className="mt-6 flex flex-wrap justify-center gap-[15px] lg:justify-start max-[768px]:inline-flex max-[768px]:w-full max-[768px]:flex-col max-[768px]:gap-2.5 [&_a]:max-[768px]:w-auto [&_a]:max-w-max [&_a]:max-[576px]:max-w-full [&_a]:max-[768px]:mx-auto [&_a]:max-[576px]:w-full">

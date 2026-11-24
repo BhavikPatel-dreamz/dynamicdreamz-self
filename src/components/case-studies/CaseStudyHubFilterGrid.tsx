@@ -210,11 +210,11 @@ function CaseStudyCard({ item }: { item: CaseStudyItem }) {
                 href={item.href}
                 className="group/title block focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#ad5151]"
               >
-                <div className="cs-cate-wrapp mb-2.5 flex flex-wrap items-center">
-                  <span className="relative mr-2.5 mb-1 pr-2.5 font-montserrat text-[10px] font-bold uppercase tracking-[0.8px] text-[#ad5151] after:absolute after:top-1/2 after:right-0 after:size-[3px] after:-translate-y-1/2 after:rounded-full after:bg-[#ad5151] after:content-['']">
+                <div className="cs-cate-wrapp mb-2.5 flex items-center">
+                  <span className="relative mr-2.5 mb-1 shrink-0 pr-2.5 font-montserrat text-[10px] font-bold uppercase tracking-[0.8px] text-[#ad5151] after:absolute after:top-1/2 after:right-0 after:size-[3px] after:-translate-y-1/2 after:rounded-full after:bg-[#ad5151] after:content-['']">
                     {item.technology}
                   </span>
-                  <span className="mb-1 font-montserrat text-[10px] font-bold uppercase tracking-[0.8px] text-[#ad5151]">
+                  <span className="mb-1 min-w-0 truncate font-montserrat text-[10px] font-bold uppercase tracking-[0.8px] text-[#ad5151]">
                     {item.industry}
                   </span>
                 </div>

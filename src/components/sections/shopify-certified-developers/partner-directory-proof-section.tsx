@@ -37,7 +37,7 @@ export function PartnerDirectoryProofSection({
       className="shopifys_official_partner_section pt-0 pb-20 max-[992px]:pt-0 max-[992px]:pb-15 max-[768px]:pt-0 max-[768px]:pb-10"
       aria-labelledby="shopify-partner-directory-title"
     >
-      <Container>
+      <Container variant="compactMobile">
         <div
           data-aos="fade-up"
           className="sop-box-wrapper rounded-[30px] bg-[#fafaf7] p-[50px] max-[1200px]:p-[50px_40px] max-[992px]:p-[40px_30px] max-[576px]:rounded-[20px] max-[576px]:p-[30px_20px]"

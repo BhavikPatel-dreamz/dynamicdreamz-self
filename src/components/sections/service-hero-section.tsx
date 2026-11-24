@@ -365,7 +365,7 @@ export function ServiceHeroSection({
                 content.paragraphs.map((paragraph, idx) => (
                   <p
                     className={cn(
-                      "mt-0 mb-2.5 font-sans text-[16px] font-medium leading-[28px] text-[#535353] max-[1200px]:text-[14px] max-[1200px]:leading-[24px]",
+                      "mt-0 mb-2.5 font-sans text-[16px] font-medium leading-7 text-[#535353] max-[1200px]:text-sm max-[1200px]:leading-6",
                       splitBodyClass,
                     )}
                     key={idx}
