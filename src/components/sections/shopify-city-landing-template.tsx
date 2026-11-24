@@ -101,6 +101,7 @@ export function ShopifyCityLandingTemplate({
         content={brandsContent}
         heading={content.brands.title}
         items={content.brands.items}
+        density="compact"
       />
       {content.officeTeam ? (
         <AiEmpoweredDeliverySection

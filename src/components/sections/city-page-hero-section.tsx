@@ -73,7 +73,7 @@ export function CityPageHeroSection({
             className={cn(
               "left-col z-1 flex flex-col justify-center",
               hasTabletSlider
-                ? "w-[51%] py-[60px] max-[1200px]:w-full max-[1200px]:text-center max-[992px]:w-full max-[992px]:text-center max-[1200px]:pt-[60px] max-[1200px]:pb-10 max-[992px]:py-10"
+                ? "w-[51%] pb-24 max-[1200px]:w-full max-[1200px]:text-center max-[992px]:w-full max-[992px]:text-center max-[1200px]:pt-[60px] max-[1200px]:pb-10 max-[992px]:py-10"
                 : "w-full max-w-[760px] max-[1200px]:max-w-none max-[1200px]:text-center",
             )}
           >

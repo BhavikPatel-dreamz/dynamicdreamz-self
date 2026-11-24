@@ -2192,7 +2192,7 @@ export function BlockRenderer({ sections, testimonials }: BlockRendererProps) {
               <IndustryBrandsSection
                 key={blockKey}
                 heading={cleanHeading}
-                density={bpBlock.density || "standard"}
+                density={bpBlock.density || "compact"}
                 mobileSpacing={bpBlock.mobileSpacing || "standard"}
                 showHeading={bpBlock.showHeading ?? true}
                 content={{

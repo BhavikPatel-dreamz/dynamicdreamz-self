@@ -46,7 +46,7 @@ export function BlogTableOfContents({ items, title, toggleLabel }: BlogTableOfCo
   const numbers = computeTocNumbers(items);
 
   return (
-    <section className="mt-0 mb-4 w-full border border-[#ddd] bg-[#f7f5ef] py-5 pr-[26px] pl-5 max-[768px]:px-4 max-[768px]:py-4" aria-label={title}>
+    <section className="mt-[15px] mb-4 w-full border border-[#ddd] bg-[#f7f5ef] py-5 pr-[26px] pl-5 max-[768px]:px-4 max-[768px]:py-4" aria-label={title}>
       <button
         type="button"
         onClick={() => setIsOpen((prev) => !prev)}

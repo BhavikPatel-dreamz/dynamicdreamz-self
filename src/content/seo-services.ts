@@ -64,22 +64,27 @@ export const seoServicesWhyChoose: ThemeCustomizationServicesContent = {
     "Our SEO work focuses on improving organic visibility, technical health, content relevance and qualified search traffic. Paid-media efficiency may improve over time, but results vary by market, competition, website quality and implementation.",
   boxes: [
     {
+      number: "01",
       icon: "01",
       title: "Your website is not visible online.",
     },
     {
+      number: "02",
       icon: "02",
       title: "You have spent lots of money on ads, but still get nothing.",
     },
     {
+      number: "03",
       icon: "03",
       title: "Your website traffic suddenly decreases, and you have no idea why",
     },
     {
+      number: "04",
       icon: "04",
       title: "The number of leads and inquiry calls has declined.",
     },
     {
+      number: "05",
       icon: "05",
       title: "You have a new website and want to grow your business fast.",
     },

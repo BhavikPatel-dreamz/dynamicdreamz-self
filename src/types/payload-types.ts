@@ -948,7 +948,7 @@ export interface Page {
               | null;
             cardVariant?: ('green' | 'yellow' | 'transparent' | 'services-box') | null;
             columns?: ('2' | '3' | '4') | null;
-            headerLayout?: ('centered' | 'split') | null;
+            headerLayout?: ('centered' | 'split' | 'stacked') | null;
             sectionId?: string | null;
             className?: string | null;
             themeSlug?: string | null;

@@ -66,6 +66,7 @@ export const ServicesGridBlock: Block = {
       options: [
         { label: "Centered Heading", value: "centered" },
         { label: "Split (Left Heading, Right Description)", value: "split" },
+        { label: "Stacked", value: "stacked" },
       ],
     },
     {

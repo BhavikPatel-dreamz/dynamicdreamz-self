@@ -36,7 +36,7 @@ export function IndustryBrandsSection({
   heading,
   items = industryBrandLogos,
   mobileSpacing = "standard",
-  density = "standard",
+  density = "compact",
   showHeading = true,
   sliderSlides,
   sliderAutoplayStartDelayMs,

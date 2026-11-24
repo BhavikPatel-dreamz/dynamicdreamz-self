@@ -88,6 +88,7 @@ export function WordPressCityLandingTemplate({
         content={brandsContent}
         heading={content.brands.title}
         items={content.brands.items}
+        density="compact"
       />
       <CityPageCounterSection
         content={content.counter}

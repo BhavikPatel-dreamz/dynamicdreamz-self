@@ -38,7 +38,7 @@ export const BrandPartnersBlock: Block = {
     {
       name: "density",
       type: "select",
-      defaultValue: "standard",
+      defaultValue: "compact",
       options: [
         { label: "Standard (84px rail, 31% heading col)", value: "standard" },
         { label: "Compact (70px rail, 33% heading col)", value: "compact" },

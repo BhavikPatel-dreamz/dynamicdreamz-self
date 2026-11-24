@@ -86,7 +86,7 @@ export function ThemeCustomizationServicesSection({
                   className="object-contain"
                 />
               ) : typeof box.icon === "string" ? (
-                resolveThemeIcon(box.icon) || resolveMobileAppIcon(box.icon)
+                resolveThemeIcon(box.icon) || resolveMobileAppIcon(box.icon) || box.icon
               ) : box.icon ??
                 (!box.number
                   ? resolveMobileAppIcon(
@@ -107,7 +107,7 @@ export function ThemeCustomizationServicesSection({
                 {resolvedIcon ? (
                   <div
                     className={cn(
-                      "icon mb-[15px] flex font-montserrat text-sm font-medium text-brand-red [&:not(:has(svg))]:pb-2.5 [&>svg]:h-auto [&>svg]:size-6",
+                      "icon mb-[15px] flex font-montserrat text-sm font-medium text-brand-red",
                       box.iconWrapperClassName,
                     )}
                   >
@@ -120,10 +120,8 @@ export function ThemeCustomizationServicesSection({
                     </span>
                   </div>
                 ) : box.number && isRoundedNumber ? (
-                  <div className="number mb-[15px]">
-                    <span className="font-montserrat font-medium text-brand-red">
-                      {box.number}
-                    </span>
+                  <div className="icon mb-[15px] flex font-montserrat text-sm font-medium text-brand-red pb-2.5">
+                    {box.number}
                   </div>
                 ) : null}
               <h3 className="mb-2 font-montreal-medium text-[20px] font-normal leading-[28.8px] text-[#282828] max-[992px]:text-lg">

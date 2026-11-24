@@ -31,7 +31,7 @@ export function FullStackDevelopmentPage() {
       />
       <IndustryBrandsSection
         content={fullStackDevelopmentBrandsContent}
-        density="flexible"
+        density="compact"
         heading={fullStackDevelopmentBrandsContent.heading}
       />
       <ThemeCustomizationServicesSection

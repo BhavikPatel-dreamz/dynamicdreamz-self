@@ -100,7 +100,7 @@ export function MobileAppLandingTemplate({
         }}
         heading={brands.heading}
         items={brands.items}
-        density="flexible"
+        density="compact"
       />
 
       {/* 3. Workflow Delivery */}
