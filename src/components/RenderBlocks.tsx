@@ -145,7 +145,6 @@ import { shopifyCroAssessment } from "@/content/shopify-cro-agency";
 import { whiteLabelShopifyScenarios } from "@/content/white-label-shopify-development";
 import { aboutStory } from "@/content/about";
 import { hiringCallout } from "@/content/life-dynamicdreamz";
-import { shopifyMobileAppCaseStudies } from "@/content/shopify-mobile-app-development";
 
 // Common CMS Types
 export type CmsMedia =
@@ -2678,26 +2677,25 @@ export function BlockRenderer({ sections, testimonials }: BlockRendererProps) {
                   heading={parseTextOrArray(psBlock.heading)}
                   description={parseTextOrArray(psBlock.description)}
                   className="py-20 max-[992px]:py-15 max-[768px]:py-10"
-                  items={(psBlock.items ?? []).map((item, idx) => {
+                  items={(psBlock.items ?? []).map((item) => {
                     const itemAny = item as { tags?: string; description?: string };
-                    const fallbackItem = shopifyMobileAppCaseStudies.items[idx];
                     return {
                       title: item.name,
-                      href: item.href || fallbackItem?.href || "#",
-                      image: resolveMediaUrl(item.image) || item.imageSrc || fallbackItem?.image || "",
+                      href: item.href || "#",
+                      image: resolveMediaUrl(item.image) || item.imageSrc || "",
                       imageAlt: item.imageAlt || item.name,
-                      technology: item.metrics || fallbackItem?.technology || "Shopify",
-                      industry: item.category || fallbackItem?.industry || "Ecommerce",
+                      technology: item.metrics || "Shopify",
+                      industry: item.category || "Ecommerce",
                       description:
                         (item as any).description ||
                         itemAny.description ||
-                        (fallbackItem as any)?.description,
+                        "",
                       tags: itemAny.tags
                         ? itemAny.tags
                             .split(",")
                             .map((t) => t.trim())
                             .filter(Boolean)
-                        : fallbackItem?.tags,
+                        : [],
                     };
                   })}
                 />
