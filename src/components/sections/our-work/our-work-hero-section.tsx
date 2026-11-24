@@ -132,7 +132,7 @@ export function OurWorkHeroSection({
   const logos = propProofLogos && propProofLogos.length > 0 ? propProofLogos : proofLogos;
 
   return (
-    <section className="hero-new-section overflow-hidden bg-cream pt-[91px] max-[1200px]:pt-[75px]">
+    <section className="hero-new-section overflow-hidden bg-cream pt-[91px] max-[1200px]:pt-[65px]">
       <Container
         className="relative min-[992px]:max-[1199.98px]:!max-w-[960px] min-[992px]:max-[1199.98px]:!px-5"
       >
