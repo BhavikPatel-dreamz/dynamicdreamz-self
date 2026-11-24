@@ -590,6 +590,13 @@ export interface CaseStudy {
         }[]
       | null;
   };
+  showcaseTop?: {
+    eyebrow?: string | null;
+    heading?: string | null;
+    description?: string | null;
+    desktopImage?: (number | null) | Media;
+    mobileImage?: (number | null) | Media;
+  };
   challenge?: {
     eyebrow?: string | null;
     heading?: string | null;
@@ -627,6 +634,13 @@ export interface CaseStudy {
           id?: string | null;
         }[]
       | null;
+  };
+  showcaseBottom?: {
+    eyebrow?: string | null;
+    heading?: string | null;
+    description?: string | null;
+    desktopImage?: (number | null) | Media;
+    mobileImage?: (number | null) | Media;
   };
   projectDelivery?: {
     eyebrow?: string | null;
@@ -2973,6 +2987,15 @@ export interface CaseStudiesSelect<T extends boolean = true> {
               id?: T;
             };
       };
+  showcaseTop?:
+    | T
+    | {
+        eyebrow?: T;
+        heading?: T;
+        description?: T;
+        desktopImage?: T;
+        mobileImage?: T;
+      };
   challenge?:
     | T
     | {
@@ -3016,6 +3039,15 @@ export interface CaseStudiesSelect<T extends boolean = true> {
               description?: T;
               id?: T;
             };
+      };
+  showcaseBottom?:
+    | T
+    | {
+        eyebrow?: T;
+        heading?: T;
+        description?: T;
+        desktopImage?: T;
+        mobileImage?: T;
       };
   projectDelivery?:
     | T

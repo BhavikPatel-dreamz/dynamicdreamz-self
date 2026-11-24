@@ -6,6 +6,7 @@ import type {
   CaseStudyKeyFeatures as KeyFeaturesType,
   CaseStudyProjectDelivery as DeliveryType,
 } from "@/types/case-study";
+import { SplitSectionHeading } from "../ui/split-section-heading";
 
 type CaseStudyCustomSectionsProps = {
   sections?: CaseStudyCustomSection[];
@@ -109,17 +110,7 @@ export function CaseStudyKeyFeatures({ keyFeatures }: CaseStudyKeyFeaturesProps)
   return (
     <section className="bg-[#eff4ef] py-20 max-[992px]:py-15 max-[768px]:py-10" aria-labelledby="key-features-heading">
       <Container>
-        <div >
-          <Eyebrow as="div" className="mb-4" linePosition="overlay">
-            {eyebrow}
-          </Eyebrow>
-          <h2
-            id="key-features-heading"
-            className="m-0 font-montreal-medium text-[35px] font-normal leading-[1.38] text-ink max-[1200px]:text-[28px] max-[768px]:text-2xl"
-          >
-            {heading}
-          </h2>
-        </div>
+        <SplitSectionHeading heading={heading} eyebrow={eyebrow} variant="left" />
 
         <div className={`grid gap-4 ${gridColsClass}`}>
           {keyFeatures.items.map((item, index) => (
@@ -172,7 +163,7 @@ export function CaseStudyServiceDelivered({ projectDelivery }: CaseStudyServiceD
             </Eyebrow>
             <h2
               id="delivery-heading"
-              className="m-0 font-montreal-medium text-[30px] font-normal leading-[1.3] text-[#282828] max-[768px]:text-[22px]"
+              className="m-0 font-montreal-medium text-[35px] font-normal leading-[1.3] text-[#282828] max-[768px]:text-[22px]"
             >
               {heading}
             </h2>
@@ -185,7 +176,7 @@ export function CaseStudyServiceDelivered({ projectDelivery }: CaseStudyServiceD
                   key={`${item.name}-${index}`}
                   className="border-b border-[rgba(40,40,40,0.11)] p-6 max-[768px]:p-4 [&:nth-child(even)]:border-l [&:nth-child(even)]:border-[rgba(40,40,40,0.11)] max-[768px]:[&:nth-child(even)]:border-l-0"
                 >
-                  <span className="mb-3 block font-montserrat text-[12px] font-medium uppercase leading-none tracking-[0.5px] text-[#535353]">
+                  <span className="mb-3 block font-montserrat text-[12px] font-medium uppercase leading-none text-[#535353]">
                     {item.category || caseStudiesUiCopy.serviceDelivered}
                   </span>
                   <h5 className="m-0 font-display text-[16px] font-medium leading-[22px] text-[#282828] max-[768px]:text-[15px]">

@@ -6,6 +6,7 @@ import { Container } from "@/components/ui/container";
 import { Eyebrow } from "@/components/ui/eyebrow";
 import { caseStudiesUiCopy } from "@/content/case-studies-ui";
 import { caseStudyDetails } from "@/content/case-study-details";
+import { SplitSectionHeading } from "../ui/split-section-heading";
 
 type CaseStudyRelatedProps = {
   currentSlug: string;
@@ -51,20 +52,12 @@ export function CaseStudyRelated({
   return (
     <section className="bg-[#eff4ef] py-20 max-[992px]:py-15 max-[768px]:py-10" aria-labelledby="related-case-studies-heading">
       <Container>
-        <div >
-          <Eyebrow as="div" className="mb-4" linePosition="overlay">
-            {caseStudiesUiCopy.relatedEyebrow}
-          </Eyebrow>
-          <h2
-            id="related-case-studies-heading"
-            className="mb-4 font-montreal-medium text-[35px] font-normal leading-[1.38] text-ink max-[1200px]:text-[28px] max-[768px]:text-2xl"
-          >
-            {caseStudiesUiCopy.relatedHeading}
-          </h2>
-          <p className="m-0 font-sans text-[16px] font-medium leading-[30.4px] text-[#535353] max-[1200px]:text-sm max-[1200px]:leading-[26px]">
-            {caseStudiesUiCopy.relatedDescription}
-          </p>
-        </div>
+        <SplitSectionHeading
+          heading={caseStudiesUiCopy.relatedHeading}
+          description={caseStudiesUiCopy.relatedDescription}
+          eyebrow={caseStudiesUiCopy.relatedEyebrow}
+          variant="left"
+        />
 
         <div className="flex flex-wrap justify-start gap-5">
           {relatedItems.map((item) => {
@@ -96,11 +89,11 @@ export function CaseStudyRelated({
                           href={href}
                           className="group/title block focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#ad5151]"
                         >
-                          <div className="mb-2.5 flex flex-wrap items-center">
-                            <span className="relative mr-2.5 mb-1 pr-2.5 font-montserrat text-[10px] font-bold uppercase tracking-[0.8px] text-[#ad5151] after:absolute after:top-1/2 after:right-0 after:size-[3px] after:-translate-y-1/2 after:rounded-full after:bg-[#ad5151] after:content-['']">
+                          <div className="mb-2.5 flex items-center">
+                            <span className="relative shrink-0 mr-2.5 mb-1 pr-2.5 font-montserrat text-[10px] font-bold uppercase tracking-[0.8px] text-[#ad5151] after:absolute after:top-1/2 after:right-0 after:size-[3px] after:-translate-y-1/2 after:rounded-full after:bg-[#ad5151] after:content-['']">
                               {item.technology}
                             </span>
-                            <span className="mb-1 font-montserrat text-[10px] font-bold uppercase tracking-[0.8px] text-[#ad5151]">
+                            <span className="mb-1 min-w-0 truncate font-montserrat text-[10px] font-bold uppercase tracking-[0.8px] text-[#ad5151]">
                               {item.industry}
                             </span>
                           </div>

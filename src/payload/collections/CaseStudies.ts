@@ -100,6 +100,17 @@ export const CaseStudies: CollectionConfig = {
       ],
     },
     {
+      name: "showcaseTop",
+      type: "group",
+      fields: [
+        { name: "eyebrow", type: "text" },
+        { name: "heading", type: "text" },
+        { name: "description", type: "textarea" },
+        { name: "desktopImage", type: "upload", relationTo: "media" },
+        { name: "mobileImage", type: "upload", relationTo: "media" },
+      ],
+    },
+    {
       name: "challenge",
       type: "group",
       fields: [
@@ -153,6 +164,17 @@ export const CaseStudies: CollectionConfig = {
             { name: "description", type: "textarea" },
           ],
         },
+      ],
+    },
+    {
+      name: "showcaseBottom",
+      type: "group",
+      fields: [
+        { name: "eyebrow", type: "text" },
+        { name: "heading", type: "text" },
+        { name: "description", type: "textarea" },
+        { name: "desktopImage", type: "upload", relationTo: "media" },
+        { name: "mobileImage", type: "upload", relationTo: "media" },
       ],
     },
     {

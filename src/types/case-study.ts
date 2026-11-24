@@ -6,6 +6,14 @@ export type CaseStudyImage = {
 };
 
 
+export type CaseStudyShowcase = {
+  eyebrow?: string;
+  heading?: string;
+  description?: string;
+  desktopImage: CaseStudyImage;
+  mobileImage?: CaseStudyImage;
+};
+
 export type CaseStudyArchiveContent = {
   title: string;
   technology: string;
@@ -105,9 +113,11 @@ export type CaseStudyDetail = {
   };
 
   keyMetrics?: CaseStudyKeyMetrics;
+  showcaseTop?: CaseStudyShowcase;
   challenge?: CaseStudyChallenge;
   solutions?: CaseStudySolutions;
   keyFeatures?: CaseStudyKeyFeatures;
+  showcaseBottom?: CaseStudyShowcase;
   projectDelivery?: CaseStudyProjectDelivery;
   relatedCaseStudies?: string[];
   customSections?: CaseStudyCustomSection[];

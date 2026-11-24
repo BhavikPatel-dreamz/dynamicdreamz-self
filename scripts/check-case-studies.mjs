@@ -58,6 +58,20 @@ if (!Array.isArray(entries) || entries.length === 0) {
     }
     checkImage(entry.hero?.image, "hero", slug);
 
+    if (entry.showcaseTop?.desktopImage) {
+      checkImage(entry.showcaseTop.desktopImage, "showcaseTop desktop", slug, true);
+      if (entry.showcaseTop.mobileImage) {
+        checkImage(entry.showcaseTop.mobileImage, "showcaseTop mobile", slug, true);
+      }
+    }
+
+    if (entry.showcaseBottom?.desktopImage) {
+      checkImage(entry.showcaseBottom.desktopImage, "showcaseBottom desktop", slug, true);
+      if (entry.showcaseBottom.mobileImage) {
+        checkImage(entry.showcaseBottom.mobileImage, "showcaseBottom mobile", slug, true);
+      }
+    }
+
     if (entry.challenge) {
       checkText(entry.challenge.heading, "challenge heading", slug);
       if (!Array.isArray(entry.challenge.items)) errors.push(`${slug}: invalid challenge items`);

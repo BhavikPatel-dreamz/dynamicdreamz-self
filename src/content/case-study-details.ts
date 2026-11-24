@@ -36,6 +36,18 @@ function validateCaseStudyDetails(entries: CaseStudyDetail[]) {
       throw new Error(`Invalid case-study slug: ${entry.slug}`);
     }
     validateImage(entry, "hero", entry.hero.image);
+    if (entry.showcaseTop?.desktopImage) {
+      validateImage(entry, "showcaseTop.desktopImage", entry.showcaseTop.desktopImage);
+    }
+    if (entry.showcaseTop?.mobileImage) {
+      validateImage(entry, "showcaseTop.mobileImage", entry.showcaseTop.mobileImage);
+    }
+    if (entry.showcaseBottom?.desktopImage) {
+      validateImage(entry, "showcaseBottom.desktopImage", entry.showcaseBottom.desktopImage);
+    }
+    if (entry.showcaseBottom?.mobileImage) {
+      validateImage(entry, "showcaseBottom.mobileImage", entry.showcaseBottom.mobileImage);
+    }
 
     if (entry.seo.title.length < SEO_LIMITS.titleMin || entry.seo.title.length > SEO_LIMITS.titleMax) {
       throw new Error(`Case study ${entry.slug} has an invalid SEO title length.`);

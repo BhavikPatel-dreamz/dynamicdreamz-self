@@ -13,6 +13,10 @@ import {
   CaseStudyServiceDelivered,
   CaseStudyCustomSections,
 } from "./CaseStudyVisualGallery";
+import {
+  CaseStudyShowcaseTop,
+  CaseStudyShowcaseBottom,
+} from "./CaseStudyShowcaseSection";
 import { CaseStudyRelated } from "./RelatedCaseStudiesSection";
 
 type CaseStudyHeroProps = {
@@ -135,7 +139,7 @@ export function CaseStudyAllInfo({ caseStudy }: CaseStudyAllInfoProps) {
               <span className="mb-1.5 block font-montserrat text-[14px] font-extrabold uppercase leading-[19px] tracking-[1.12px] text-[#282828]">
                 {item.label}
               </span>
-              <p className="m-0 font-sans text-[16px] font-medium leading-[1.6] text-[#535353] max-[1200px]:text-[14px]">
+              <p className="m-0 font-sans leading-[1.6] text-[#535353] max-[1200px]:text-[14px]">
                 {item.value}
               </p>
             </div>
@@ -158,10 +162,16 @@ export function CaseStudyDetailPage({ caseStudy }: CaseStudyDetailPageProps) {
       {caseStudy.keyMetrics && (
         <CaseStudyKeyMetrics keyMetrics={caseStudy.keyMetrics} />
       )}
+      {caseStudy.showcaseTop && (
+        <CaseStudyShowcaseTop showcase={caseStudy.showcaseTop} />
+      )}
       <CaseStudyChallenge challenge={caseStudy.challenge} />
       <CaseStudySolutions solutions={caseStudy.solutions} />
       {caseStudy.keyFeatures && (
         <CaseStudyKeyFeatures keyFeatures={caseStudy.keyFeatures} />
+      )}
+      {caseStudy.showcaseBottom && (
+        <CaseStudyShowcaseBottom showcase={caseStudy.showcaseBottom} />
       )}
       <CaseStudyServiceDelivered projectDelivery={caseStudy.projectDelivery} />
       {caseStudy.customSections && (

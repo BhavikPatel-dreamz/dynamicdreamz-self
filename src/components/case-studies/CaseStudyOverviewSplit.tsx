@@ -6,6 +6,7 @@ import type {
   CaseStudyChallenge as ChallengeType,
   CaseStudySolutions as SolutionsType,
 } from "@/types/case-study";
+import { SplitSectionHeading } from "../ui/split-section-heading";
 
 export function CaseStudyChallenge({ challenge }: { challenge?: ChallengeType }) {
   if (!challenge || !challenge.items || challenge.items.length === 0) {
@@ -26,22 +27,12 @@ export function CaseStudyChallenge({ challenge }: { challenge?: ChallengeType })
   return (
     <section id="explore" className="scroll-mt-20 py-20 max-[992px]:py-15 max-[768px]:py-10" aria-labelledby="challenge-heading">
       <Container>
-        <div >
-          <Eyebrow as="div" className="mb-4" linePosition="overlay">
-            {eyebrow}
-          </Eyebrow>
-          <h2
-            id="challenge-heading"
-            className="mb-4 font-montreal-medium text-[35px] font-normal leading-[1.38] text-ink max-[1200px]:text-[28px] max-[768px]:text-2xl"
-          >
-            {heading}
-          </h2>
-          {challenge.description && (
-            <p className="m-0 font-sans text-[16px] font-medium leading-[30.4px] text-[#535353] max-[1200px]:text-sm max-[1200]:leading-[26px]">
-              {challenge.description}
-            </p>
-          )}
-        </div>
+        <SplitSectionHeading
+          heading={heading}
+          description={challenge.description}
+          eyebrow={eyebrow}
+          variant="left"
+        />
 
         <div className={`grid ${gridColsClass}`}>
           {challenge.items.map((item, index) => (
@@ -95,7 +86,7 @@ export function CaseStudySolutions({ solutions }: { solutions?: SolutionsType })
               {heading}
             </h2>
             {solutions.lead && (
-              <p className="m-0 font-sans text-[16px] font-normal leading-[30.4px] text-white/90 max-[1200px]:text-[14px] max-[1200px]:leading-[26px]">
+              <p className="m-0 font-sans font-normal leading-[30.4px] text-white/90 max-[1200px]:text-[14px] max-[1200px]:leading-[26px]">
                 {solutions.lead}
               </p>
             )}
@@ -107,10 +98,10 @@ export function CaseStudySolutions({ solutions }: { solutions?: SolutionsType })
                 key={`${item.number}-${index}`}
                 className="flex items-start border-b border-white/16 py-4 first:border-t first:border-white/16"
               >
-                <div className="w-[35px] shrink-0 font-montserrat text-[16px] font-semibold text-[#ad5151]">
+                <div className="w-[35px] shrink-0 font-montserrat font-semibold text-[#ad5151]">
                   <span>{item.number}</span>
                 </div>
-                <p className="m-0 w-[calc(100%-35px)] font-sans text-[15px] leading-[26px] text-white/90 max-[768px]:text-[14px]">
+                <p className="m-0 w-[calc(100%-35px)] font-sans leading-[26px] text-white/90 max-[768px]:text-[14px]">
                   {item.text}
                 </p>
               </div>

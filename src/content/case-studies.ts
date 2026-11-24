@@ -35,7 +35,8 @@ export const caseStudiesContent = {
   },
   filter: {
     technologies: [
-      "Full-Stack Development",
+      "Full Stack Development",
+      "Medusa v2 · Next.js 16",
       "Mobile Apps",
       "Shopify / Shopify Plus",
       "Shopify Custom Apps & Integrations",

@@ -748,6 +748,43 @@ export function adaptPayloadCaseStudyToDetail(
         }
       : fallbackDetail?.keyMetrics;
 
+  const resolveShowcase = (
+    raw: CaseStudy["showcaseTop"] | CaseStudy["showcaseBottom"],
+    fallback?: CaseStudyDetail["showcaseTop"],
+  ): CaseStudyDetail["showcaseTop"] => {
+    if (!raw && !fallback) return undefined;
+    const desktopSrc = resolveMediaUrl(raw?.desktopImage) || fallback?.desktopImage.src;
+    if (!desktopSrc) return fallback;
+
+    const desktopImage = {
+      src: desktopSrc,
+      width: resolveMediaWidth(raw?.desktopImage, fallback?.desktopImage.width || 1400) || 1400,
+      height: resolveMediaHeight(raw?.desktopImage, fallback?.desktopImage.height || 900) || 900,
+      alt: resolveMediaAlt(raw?.desktopImage, fallback?.desktopImage.alt || cs.title) || fallback?.desktopImage.alt || cs.title,
+    };
+
+    const mobileSrc = resolveMediaUrl(raw?.mobileImage) || fallback?.mobileImage?.src;
+    const mobileImage = mobileSrc
+      ? {
+          src: mobileSrc,
+          width: resolveMediaWidth(raw?.mobileImage, fallback?.mobileImage?.width || 768) || 768,
+          height: resolveMediaHeight(raw?.mobileImage, fallback?.mobileImage?.height || 500) || 500,
+          alt: resolveMediaAlt(raw?.mobileImage, fallback?.mobileImage?.alt || cs.title) || fallback?.mobileImage?.alt || cs.title,
+        }
+      : undefined;
+
+    return {
+      eyebrow: raw?.eyebrow || fallback?.eyebrow,
+      heading: raw?.heading || fallback?.heading,
+      description: raw?.description || fallback?.description,
+      desktopImage,
+      mobileImage,
+    };
+  };
+
+  const showcaseTop = resolveShowcase(cs.showcaseTop, fallbackDetail?.showcaseTop);
+  const showcaseBottom = resolveShowcase(cs.showcaseBottom, fallbackDetail?.showcaseBottom);
+
   const challenge = cs.challenge
     ? {
         eyebrow: cs.challenge.eyebrow || fallbackDetail?.challenge?.eyebrow,
@@ -869,9 +906,11 @@ export function adaptPayloadCaseStudyToDetail(
       image: heroImage,
     },
     keyMetrics,
+    showcaseTop,
     challenge,
     solutions,
     keyFeatures,
+    showcaseBottom,
     projectDelivery,
     relatedCaseStudies,
     customSections,
