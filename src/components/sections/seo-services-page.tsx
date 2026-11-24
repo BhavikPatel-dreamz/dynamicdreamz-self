@@ -27,7 +27,7 @@ export function SeoServicesPage() {
         content={{ slug: seoServicesBrands.slug }}
         heading={seoServicesBrands.heading}
         items={seoServicesBrands.items}
-        density="compact"
+        density="flexible"
       />
       <ThemeCustomizationServicesSection
         content={seoServicesWhyChoose}

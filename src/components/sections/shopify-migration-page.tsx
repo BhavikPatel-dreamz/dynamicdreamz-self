@@ -34,7 +34,7 @@ export function ShopifyMigrationPage() {
       {/* 2. Client Logos */}
       <IndustryBrandsSection
         content={shopifyMigrationBrands}
-        density="compact"
+        density="flexible"
         heading={shopifyMigrationBrands.heading}
         items={shopifyMigrationBrands.items}
       />

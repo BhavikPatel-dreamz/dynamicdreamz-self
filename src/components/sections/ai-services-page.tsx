@@ -31,7 +31,7 @@ export function AiServicesPage() {
       />
       <IndustryBrandsSection
         content={aiServicesBrands}
-        density="compact"
+        density="flexible"
         heading={aiServicesBrands.heading}
       />
       <ThemeCustomizationServicesSection

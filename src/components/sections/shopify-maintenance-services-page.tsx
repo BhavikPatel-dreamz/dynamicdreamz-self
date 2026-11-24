@@ -20,7 +20,7 @@ export function ShopifyMaintenanceServicesPage() {
       />
       <IndustryBrandsSection
         content={brandsContent}
-        density="compact"
+        density="flexible"
         heading={shopifyMaintenanceServicesContent.brands.title}
         items={shopifyMaintenanceServicesContent.brands.items}
       />
