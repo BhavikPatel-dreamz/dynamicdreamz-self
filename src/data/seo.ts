@@ -888,7 +888,7 @@ export const pageSeo = {
   },
   prestashopToShopifyMigration: {
     path: "/prestashop-to-shopify-migration/",
-    title: "PrestaShop to Shopify Migration Services",
+    title: "PrestaShop to Shopify Migration Services | Dynamic Dreamz",
     description:
       "Migrate PrestaShop to Shopify with Dynamic Dreamz. We transfer store data, rebuild required features, configure apps, protect SEO, and support QA and launch.",
     socialDescription:
@@ -1041,7 +1041,7 @@ export const pageSeo = {
   },
   bigcommerceToShopifyMigration: {
     path: "/bigcommerce-to-shopify-migration/",
-    title: "BigCommerce to Shopify Migration Services",
+    title: "BigCommerce to Shopify Migration Services | Dynamic Dreamz",
     description:
       "Migrate BigCommerce to Shopify with Dynamic Dreamz. We handle store data, design, custom features, apps, integrations, SEO redirects, QA, and launch support.",
     keywords: [
@@ -1087,7 +1087,7 @@ export const pageSeo = {
   },
   squarespaceToShopifyMigration: {
     path: "/squarespace-to-shopify-migration/",
-    title: "Squarespace to Shopify Migration Services",
+    title: "Squarespace to Shopify Migration Services | Dynamic Dreamz",
     description:
       "Migrate Squarespace to Shopify with Dynamic Dreamz. Move store data, rebuild key features, preserve SEO, and launch your new Shopify store with confidence.",
     keywords: [
@@ -1110,7 +1110,7 @@ export const pageSeo = {
   },
   ecwidToShopifyMigration: {
     path: "/ecwid-to-shopify-migration/",
-    title: "Ecwid to Shopify Migration Services",
+    title: "Ecwid to Shopify Migration Services | Dynamic Dreamz",
     description:
       "Migrate Ecwid to Shopify with Dynamic Dreamz. We move store data, recreate required functionality, configure apps, protect SEO, complete QA and support launch.",
     keywords: [
@@ -1161,7 +1161,7 @@ export const pageSeo = {
   },
   salesforceToShopifyMigration: {
     path: "/salesforce-to-shopify-migration/",
-    title: "Salesforce to Shopify Migration Services",
+      title: "Salesforce to Shopify Migration Services | Dynamic Dreamz",
     description:
       "Migrate Salesforce to Shopify with Dynamic Dreamz. We plan data transfer, design, custom functionality, integrations, SEO redirects, testing and launch support.",
     keywords: [
@@ -1184,7 +1184,7 @@ export const pageSeo = {
   },
   etsyToShopifyMigration: {
     path: "/etsy-to-shopify-migration/",
-    title: "Etsy to Shopify Migration Services",
+    title: "Etsy to Shopify Migration Services | Dynamic Dreamz",
     description:
       "Migrate from Etsy to Shopify with Dynamic Dreamz. We transfer product catalogs, content, configure Shopify storefronts, protect SEO, and support launch.",
     keywords: [
@@ -1207,7 +1207,7 @@ export const pageSeo = {
   },
   wixToShopifyMigration: {
     path: "/wix-to-shopify-migration/",
-    title: "Wix to Shopify Migration Services",
+    title: "Wix to Shopify Migration Services | Dynamic Dreamz",
     description:
       "Migrate Wix to Shopify with Dynamic Dreamz. We handle store data, design, apps, custom functionality, SEO redirects, QA and post-launch Shopify support.",
     keywords: [
