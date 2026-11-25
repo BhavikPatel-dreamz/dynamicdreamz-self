@@ -18,7 +18,7 @@ export function ContactWidget({ whatsappNumber }: { whatsappNumber?: string | nu
     : siteConfig.whatsappHref;
 
   return (
-    <div className="whatsapp-widget fixed right-5 bottom-[60px] max-[1200px]:bottom-[50px] max-[768px]:bottom-[38px] z-110 [&_a]:[transition:all_.3s_ease]">
+    <div className="whatsapp-widget fixed right-5 bottom-[80px] max-[768px]:bottom-[38px] z-110 [&_a]:[transition:all_.3s_ease]">
       <a
         className="whatsapp-widget flex min-w-[240px] max-[1200px]:min-w-[220px] max-[768px]:min-w-[200px] items-center rounded-[100px] bg-brand-green px-2.5 py-1.75 max-[768px]:p-[5px] text-white shadow-[0_10px_30px_rgb(0_0_0/15%)] transition-all duration-300 ease-[ease] [transition:all_.3s_ease] hover:-translate-y-0.75 hover:shadow-[0_15px_40px_rgb(0_0_0/20%)]"
         href={href}
@@ -89,7 +89,7 @@ export function SiteHeader({
     <header className="site-header fixed top-0 left-0 z-[111] w-full py-[15px] min-[1200px]:py-0 max-[992px]:[&.header-up]:py-[12px] min-[1200px]:[&.header-up]:py-0 bg-white/60 backdrop-blur-[25px] transition-all duration-500 ease-in-out [body:has(main[data-page=career-apply-now])_&]:hidden [body:has(main[data-page=request-quote])_&]:hidden [body:has(main[data-page=white-label-shopify])_&:not(.header-up):not(.header-down)]:bg-transparent [body:has(main[data-page=white-label-shopify])_&:not(.header-up):not(.header-down)]:backdrop-blur-none [body:has(main[data-page=white-label-wordpress])_&:not(.header-up):not(.header-down)]:bg-transparent [body:has(main[data-page=white-label-wordpress])_&:not(.header-up):not(.header-down)]:backdrop-blur-none [body:has(main[data-page=white-label-website-design])_&:not(.header-up):not(.header-down)]:bg-transparent [body:has(main[data-page=white-label-website-design])_&:not(.header-up):not(.header-down)]:backdrop-blur-none [&.header-down]:-translate-y-full [&.header-down]:shadow-[0_-6px_10px_5px_rgb(0_0_0/10%)] [&.header-up]:translate-y-0 [&.header-up]:bg-white/60 [&.header-up]:shadow-[0_-6px_10px_5px_rgb(0_0_0/10%)] max-[1200px]:[&_.container]:min-h-[34px]">
       <HeaderScrollBehavior />
       <Container className="relative flex items-center justify-between gap-0">
-        <div className="flex items-center">
+        <div className="flex items-center justify-center">
           <MobileNavigation navigation={effectiveNav} contactEmail={contactEmail} />
 
           <Link
@@ -110,7 +110,9 @@ export function SiteHeader({
               preload
             />
           </Link>
+        </div>
 
+        <div>
           <DesktopNavigation navigation={effectiveNav} />
         </div>
 

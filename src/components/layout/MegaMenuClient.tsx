@@ -44,7 +44,7 @@ function ArrowIcon() {
 
 function HamburgerIcon() {
   return (
-    <svg aria-hidden="true" viewBox="0 0 18 15" width="18" height="15">
+    <svg className="text-[#252c15]" aria-hidden="true" viewBox="0 0 18 15" width="18" height="15">
       <rect width="18" height="3" rx="1.5" fill="currentColor" />
       <rect y="6" width="18" height="3" rx="1.5" fill="currentColor" />
       <rect y="12" width="18" height="3" rx="1.5" fill="currentColor" />
@@ -230,7 +230,7 @@ export function DesktopNavigation({ navigation }: DesktopNavigationProps = {}) {
 
   return (
     <nav
-      className="ml-5 hidden shrink-0 min-[1200px]:block min-[1400px]:ml-[43px]"
+      className="hidden shrink-0 min-[1200px]:block max-[1400px]:ml-[20px]"
       aria-label="Primary navigation"
       ref={navigationRef}
     >
@@ -402,7 +402,7 @@ export function MobileNavigation({ navigation, contactEmail }: MobileNavigationP
   return (
     <div className="hidden w-[30px] shrink-0 max-[1200px]:block mr-3 max-[768px]:mr-0">
       <button
-        className="flex h-[30px] w-[30px] cursor-pointer items-center justify-start border-0 bg-transparent p-0 shrink-0"
+        className="h-[30px] w-[30px] cursor-pointer border-0 bg-transparent p-0 shrink-0"
         ref={toggleRef}
         type="button"
         aria-label="Toggle menu"
