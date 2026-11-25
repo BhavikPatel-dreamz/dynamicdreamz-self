@@ -41,7 +41,7 @@ export function CareerHeroSection({
   const scrollingTrackId = useId();
 
   return (
-    <section className="hero-new-section hide-logo relative overflow-hidden bg-[#f7f4e9] pt-[91px] max-[992px]:pt-16">
+    <section className="hero-new-section hide-logo relative overflow-hidden bg-[#f7f4e9] pt-[91px] max-[992px]:pt-[65px]">
       <Container>
         <div className="wrapper flex flex-wrap items-center justify-between max-[992px]:flex-col">
           <div className="left-col z-1 flex w-[51%] flex-col justify-center py-[60px] max-[1200px]:w-full max-[992px]:py-10 max-[1200px]:text-center">
