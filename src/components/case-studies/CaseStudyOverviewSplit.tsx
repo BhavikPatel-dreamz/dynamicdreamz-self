@@ -34,7 +34,7 @@ export function CaseStudyChallenge({ challenge }: { challenge?: ChallengeType })
           variant="left"
         />
 
-        <div className={`grid ${gridColsClass}`}>
+        <div className={`grid ${gridColsClass}`} data-aos="fade-up">
           {challenge.items.map((item, index) => (
             <div
               key={`${item.number}-${index}`}
@@ -75,7 +75,7 @@ export function CaseStudySolutions({ solutions }: { solutions?: SolutionsType })
     <section className="bg-[#192019] py-20 text-white max-[992px]:py-15 max-[768px]:py-10" aria-labelledby="solutions-heading">
       <Container>
         <div className="mx-auto max-w-[900px]">
-          <div >
+          <div data-aos="fade-up">
             <Eyebrow as="div" className="mb-4" linePosition="overlay" tone="inverse">
               {eyebrow}
             </Eyebrow>
@@ -92,7 +92,7 @@ export function CaseStudySolutions({ solutions }: { solutions?: SolutionsType })
             )}
           </div>
 
-          <div className="mt-8">
+          <div className="mt-8" data-aos="fade-up">
             {solutions.items.map((item, index) => (
               <div
                 key={`${item.number}-${index}`}
