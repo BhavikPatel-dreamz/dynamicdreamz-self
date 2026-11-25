@@ -65,6 +65,7 @@ export function CaseStudyRelated({
             return (
               <article
                 key={item.slug}
+                data-aos="fade-up"
                 className="flex w-[calc(33.333%-14px)] flex-col overflow-hidden rounded-[20px] border border-[rgba(40,40,40,0.06)] bg-white transition-shadow duration-300 hover:shadow-[0_10px_30px_rgba(0,0,0,0.08)] max-[1200px]:w-[calc(50%-10px)] max-[768px]:w-full"
               >
                 <div className="flex h-full flex-col">

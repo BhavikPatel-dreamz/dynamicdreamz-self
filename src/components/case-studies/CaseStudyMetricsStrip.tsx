@@ -11,7 +11,11 @@ export function CaseStudyKeyMetrics({ keyMetrics }: CaseStudyKeyMetricsProps) {
   }
 
   return (
-    <section className="pt-20 max-[768px]:pt-[50px]" aria-label={keyMetrics.heading}>
+    <section
+      className="py-20 max-[768px]:py-[50px]"
+      aria-label={keyMetrics.heading}
+      data-aos="fade-up"
+    >
       <Container>
         <div className="flex flex-wrap overflow-hidden rounded-[22px] bg-[#182019] max-[768px]:rounded-[16px]">
           <div className="flex w-[22%] items-center p-[25px] max-[992px]:w-full max-[992px]:border-b max-[992px]:border-[#424842] max-[992px]:py-4 max-[992px]:px-5">

@@ -27,26 +27,31 @@ export function CaseStudyCustomSections({ sections }: CaseStudyCustomSectionsPro
         >
           <Container>
             <div className="mx-auto max-w-[900px]">
-              {section.eyebrow ? (
-                <Eyebrow as="div" className="mb-4" linePosition="overlay">
-                  {section.eyebrow}
-                </Eyebrow>
-              ) : null}
-              <h2 className="mb-4 font-montreal-medium text-[35px] font-normal leading-[1.38] text-ink max-[1200px]:text-[28px] max-[768px]:text-2xl">
-                {section.heading}
-              </h2>
-              {section.lead ? (
-                <p className="mb-4 font-sans text-[16px] font-medium leading-[30.4px] text-[#535353] max-[768px]:text-sm">
-                  {section.lead}
-                </p>
-              ) : null}
-              {section.description ? (
-                <p className="mb-4 font-sans text-[16px] font-semibold leading-[30.4px] text-[#282828] max-[768px]:text-sm">
-                  {section.description}
-                </p>
-              ) : null}
+              <div data-aos={!section.takeaways?.length ? "fade-up" : undefined}>
+                {section.eyebrow ? (
+                  <Eyebrow as="div" className="mb-4" linePosition="overlay">
+                    {section.eyebrow}
+                  </Eyebrow>
+                ) : null}
+                <h2 className="mb-4 font-montreal-medium text-[35px] font-normal leading-[1.38] text-ink max-[1200px]:text-[28px] max-[768px]:text-2xl">
+                  {section.heading}
+                </h2>
+                {section.lead ? (
+                  <p className="mb-4 font-sans text-[16px] font-medium leading-[30.4px] text-[#535353] max-[768px]:text-sm">
+                    {section.lead}
+                  </p>
+                ) : null}
+                {section.description ? (
+                  <p className="mb-4 font-sans text-[16px] font-semibold leading-[30.4px] text-[#282828] max-[768px]:text-sm">
+                    {section.description}
+                  </p>
+                ) : null}
+              </div>
               {section.items && section.items.length > 0 ? (
-                <div className="mt-8 grid grid-cols-3 gap-4 max-[1200px]:grid-cols-2 max-[768px]:grid-cols-1">
+                <div
+                  data-aos="fade-up"
+                  className="mt-8 grid grid-cols-3 gap-4 max-[1200px]:grid-cols-2 max-[768px]:grid-cols-1"
+                >
                   {section.items.map((item, itemIdx) => (
                     <div
                       key={itemIdx}
@@ -112,7 +117,7 @@ export function CaseStudyKeyFeatures({ keyFeatures }: CaseStudyKeyFeaturesProps)
       <Container>
         <SplitSectionHeading heading={heading} eyebrow={eyebrow} variant="left" />
 
-        <div className={`grid gap-4 ${gridColsClass}`}>
+        <div className={`grid gap-4 ${gridColsClass}`} data-aos="fade-up">
           {keyFeatures.items.map((item, index) => (
             <div
               key={`${item.number}-${index}`}
@@ -156,7 +161,10 @@ export function CaseStudyServiceDelivered({ projectDelivery }: CaseStudyServiceD
   return (
     <section className="py-20 max-[992px]:py-15 max-[768px]:py-10" aria-labelledby="delivery-heading">
       <Container>
-        <div className="flex flex-wrap overflow-hidden rounded-[22px] border border-[rgba(40,40,40,0.11)] max-[768px]:rounded-[16px]">
+        <div
+          data-aos="fade-up"
+          className="flex flex-wrap overflow-hidden rounded-[22px] border border-[rgba(40,40,40,0.11)] max-[768px]:rounded-[16px]"
+        >
           <div className="w-[35%] border-r border-[rgba(40,40,40,0.11)] bg-[#fbefd7] p-[34px] max-[992px]:w-full max-[992px]:border-r-0 max-[992px]:border-b max-[992px]:border-[rgba(40,40,40,0.11)] max-[768px]:p-5">
             <Eyebrow as="div" className="mb-4" linePosition="overlay">
               {eyebrow}

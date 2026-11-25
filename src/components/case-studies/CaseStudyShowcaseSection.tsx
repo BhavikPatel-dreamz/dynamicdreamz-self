@@ -17,11 +17,11 @@ export function CaseStudyShowcaseTop({ showcase }: CaseStudyShowcaseProps) {
 
   return (
     <section
-      className="full-width-image-top-section bg-[#eff4ef] py-20 max-[992px]:py-[50px] mt-20 max-[992px]:mt-[50px]"
+      className="full-width-image-top-section bg-[#eff4ef] py-20 max-[992px]:py-[50px]"
       aria-label="Project showcase overview"
     >
       <Container>
-        <div className="image-wrapper mb-0 overflow-hidden">
+        <div className="image-wrapper mb-0 overflow-hidden" data-aos="fade-up">
           {mobileImage ? (
             <picture>
               <source media="(min-width: 768px)" srcSet={desktopImage.src} />
@@ -66,7 +66,7 @@ export function CaseStudyShowcaseBottom({ showcase }: CaseStudyShowcaseProps) {
     >
       <Container>
         {hasTextHeader ? (
-          <div className="section_title_with_eyebrow mb-10 max-[768px]:mb-6">
+          <div className="section_title_with_eyebrow mb-10 max-[768px]:mb-6" data-aos="fade-up">
             <div className="title">
               {eyebrow ? (
                 <Eyebrow as="div" className="mb-4" linePosition="overlay">
@@ -89,7 +89,7 @@ export function CaseStudyShowcaseBottom({ showcase }: CaseStudyShowcaseProps) {
           </div>
         ) : null}
 
-        <div className="image-wrapper mb-0 overflow-hidden">
+        <div className="image-wrapper mb-0 overflow-hidden" data-aos="fade-up">
           {mobileImage ? (
             <picture>
               <source media="(min-width: 768px)" srcSet={desktopImage.src} />
