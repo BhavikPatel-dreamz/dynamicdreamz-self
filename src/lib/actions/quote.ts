@@ -2,6 +2,7 @@
 
 import { headers } from "next/headers";
 import { quoteFormCopy } from "@/content/forms";
+import { ATTRIBUTION_FIELDS, resolveServerAttribution } from "@/lib/attribution";
 
 export type QuoteFormState = {
   status: "idle" | "success" | "error";
@@ -73,8 +74,6 @@ export async function submitQuoteForm(
   let pageUrl = "https://www.dynamicdreamz.com/request-quote";
   const pageName = "request-quote";
 
-  let refererHeader = "";
-
   try {
     const headerList = await headers();
     remoteIp =
@@ -98,27 +97,19 @@ export async function submitQuoteForm(
     cityState = [city, region, country].filter(Boolean).join("-");
     const referer = headerList.get("referer");
     if (referer) {
-      refererHeader = referer;
       pageUrl = referer;
     }
   } catch {
     // Graceful fallback if headers() is unavailable
   }
 
-  const utmSource = fieldValue(formData, "utm_source") || "N/A";
-  const utmMedium = fieldValue(formData, "utm_medium") || "N/A";
-  const utmCampaign = fieldValue(formData, "utm_campaign") || "N/A";
-  const utmTerm = fieldValue(formData, "utm_term") || "N/A";
-  const utmContent = fieldValue(formData, "utm_content") || "N/A";
-  const firstSource = fieldValue(formData, "first_source") || "N/A";
-  const firstMedium = fieldValue(formData, "first_medium") || "N/A";
-  const referrer =
-    fieldValue(formData, "referrer") ||
-    (refererHeader && !refererHeader.includes("request-quote") ? refererHeader : "N/A");
-  const landingPage =
-    fieldValue(formData, "landing_page") ||
-    (refererHeader && !refererHeader.includes("request-quote") ? refererHeader : "N/A");
-  const submissionPage = fieldValue(formData, "submission_page") || pageUrl;
+  const attribution = resolveServerAttribution(
+    (field) => formData.get(field),
+    {
+      fallbackLandingPage: pageUrl,
+      fallbackSubmissionPage: pageUrl,
+    },
+  );
 
   // Record submission in Payload CMS form-submissions collection
   try {
@@ -148,16 +139,10 @@ export async function submitQuoteForm(
             { field: "citystate", value: cityState },
             { field: "pagename", value: pageName },
             { field: "_url", value: pageUrl },
-            { field: "utm_source", value: utmSource },
-            { field: "utm_medium", value: utmMedium },
-            { field: "utm_campaign", value: utmCampaign },
-            { field: "utm_term", value: utmTerm },
-            { field: "utm_content", value: utmContent },
-            { field: "first_source", value: firstSource },
-            { field: "first_medium", value: firstMedium },
-            { field: "referrer", value: referrer },
-            { field: "landing_page", value: landingPage },
-            { field: "submission_page", value: submissionPage },
+            ...ATTRIBUTION_FIELDS.map((field) => ({
+              field,
+              value: attribution[field],
+            })),
           ],
         },
       });
@@ -189,8 +174,13 @@ export async function submitQuoteForm(
       budget,
       project,
       attribution: {
-        utmSource: fieldValue(formData, "utm_source"),
-        utmMedium: fieldValue(formData, "utm_medium"),
+        utmSource: attribution.utm_source,
+        utmMedium: attribution.utm_medium,
+        firstSource: attribution.first_source,
+        firstMedium: attribution.first_medium,
+        referrer: attribution.referrer,
+        landingPage: attribution.landing_page,
+        submissionPage: attribution.submission_page,
         utmCampaign: fieldValue(formData, "utm_campaign"),
         utmTerm: fieldValue(formData, "utm_term"),
         utmContent: fieldValue(formData, "utm_content"),

@@ -6,19 +6,7 @@ import { submitCareerApplication, type CareerApplyFormState } from "@/lib/action
 import { ButtonLink } from "@/components/ui/button-link";
 import { careerApplyNowContent } from "@/content/career-apply-now";
 import { careerApplyFormCopy } from "@/content/forms";
-
-const attributionFields = [
-  "utm_source",
-  "utm_medium",
-  "utm_campaign",
-  "utm_term",
-  "utm_content",
-  "first_source",
-  "first_medium",
-  "landing_page",
-  "submission_page",
-  "referrer",
-] as const;
+import { ATTRIBUTION_FIELDS, populateAttributionInputs } from "@/lib/attribution";
 
 const initialFormState: CareerApplyFormState = {
   status: "idle",
@@ -59,6 +47,7 @@ export function CareerApplyNowForm() {
   useEffect(() => {
     if (state.status === "success") {
       formRef.current?.reset();
+      populateAttributionInputs(formRef.current);
       if (fileNameRef.current) {
         fileNameRef.current.textContent = careerApplyFormCopy.upload.noFileChosen;
       }
@@ -98,36 +87,7 @@ export function CareerApplyNowForm() {
       }
     }
 
-    for (const name of attributionFields) {
-      const field = formRef.current?.elements.namedItem(name);
-      if (field instanceof HTMLInputElement) {
-        if (name === "referrer") {
-          field.value = document.referrer || sessionStorage.getItem("dd_initial_referrer") || "N/A";
-        } else if (name === "submission_page") {
-          field.value = window.location.href;
-        } else if (name === "landing_page") {
-          field.value =
-            sessionStorage.getItem("dd_referring_page") ||
-            sessionStorage.getItem("dd_initial_landing_page") ||
-            window.location.href;
-        } else if (name === "first_source") {
-          field.value =
-            sessionStorage.getItem("dd_first_source") ||
-            sessionStorage.getItem("dd_utm_source") ||
-            searchParams.get("utm_source") ||
-            "N/A";
-        } else if (name === "first_medium") {
-          field.value =
-            sessionStorage.getItem("dd_first_medium") ||
-            sessionStorage.getItem("dd_utm_medium") ||
-            searchParams.get("utm_medium") ||
-            "N/A";
-        } else {
-          field.value =
-            searchParams.get(name) || sessionStorage.getItem(`dd_${name}`) || "";
-        }
-      }
-    }
+    populateAttributionInputs(formRef.current);
   }, []);
 
   function clearFieldError(fieldName: string) {
@@ -153,6 +113,7 @@ export function CareerApplyNowForm() {
   function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     setClearedFields({});
     const form = event.currentTarget;
+    populateAttributionInputs(form);
     const formData = new FormData(form);
     const name = ((formData.get("EnterYourName") as string) || "").trim();
     const email = ((formData.get("email") as string) || "").trim();
@@ -225,7 +186,7 @@ export function CareerApplyNowForm() {
           className="sr-only"
           aria-hidden="true"
         />
-        {attributionFields.map((name) => (
+        {ATTRIBUTION_FIELDS.map((name) => (
           <input key={name} type="hidden" name={name} />
         ))}
 

@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 
@@ -107,7 +108,9 @@ export default async function RootLayout({ children }: { children: React.ReactNo
       className={`${neueMontreal.variable} ${neueMontrealMedium.variable} ${montserrat.variable}`}
     >
       <body>
-        <AttributionTracker />
+        <Suspense fallback={null}>
+          <AttributionTracker />
+        </Suspense>
         <AOSProvider>
           <SmoothScroll />
           <a

@@ -6,19 +6,7 @@ import { type QuoteFormState, submitQuoteForm } from "@/lib/actions/quote";
 import { quoteFormCopy } from "@/content/forms";
 import { requestQuoteContent } from "@/content/request-quote";
 import { PhoneInput } from "@/components/ui/phone-input";
-
-const attributionFields = [
-  "utm_source",
-  "utm_medium",
-  "utm_campaign",
-  "utm_term",
-  "utm_content",
-  "first_source",
-  "first_medium",
-  "referrer",
-  "landing_page",
-  "submission_page",
-] as const;
+import { ATTRIBUTION_FIELDS, populateAttributionInputs } from "@/lib/attribution";
 
 const initialQuoteFormState: QuoteFormState = {
   status: "idle",
@@ -75,6 +63,7 @@ export function QuoteForm({
   useEffect(() => {
     if (state.status === "success") {
       formRef.current?.reset();
+      populateAttributionInputs(formRef.current);
     }
   }, [state.status]);
 
@@ -91,6 +80,7 @@ export function QuoteForm({
   function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     setClearedFields({});
     const form = event.currentTarget;
+    populateAttributionInputs(form);
     const formData = new FormData(form);
     const name = ((formData.get("name") as string) || "").trim();
     const email = ((formData.get("email") as string) || "").trim();
@@ -135,35 +125,7 @@ export function QuoteForm({
           : null;
 
   useEffect(() => {
-    const searchParams = new URLSearchParams(window.location.search);
-
-    for (const name of attributionFields) {
-      const field = formRef.current?.elements.namedItem(name);
-
-      if (field instanceof HTMLInputElement) {
-        if (name === "referrer") {
-          const initialReferrer = sessionStorage.getItem("dd_initial_referrer");
-          field.value = document.referrer || initialReferrer || "N/A";
-        } else if (name === "submission_page") {
-          field.value = window.location.href;
-        } else if (name === "landing_page") {
-          const referringPage = sessionStorage.getItem("dd_referring_page");
-          const initialLanding = sessionStorage.getItem("dd_initial_landing_page");
-          field.value = referringPage || initialLanding || window.location.href;
-        } else if (name === "first_source") {
-          const storedSource = sessionStorage.getItem("dd_first_source") || sessionStorage.getItem("dd_utm_source");
-          const currentSource = searchParams.get("utm_source") || "";
-          field.value = storedSource || currentSource || "N/A";
-        } else if (name === "first_medium") {
-          const storedMedium = sessionStorage.getItem("dd_first_medium") || sessionStorage.getItem("dd_utm_medium");
-          const currentMedium = searchParams.get("utm_medium") || "";
-          field.value = storedMedium || currentMedium || "N/A";
-        } else {
-          const storedUtm = sessionStorage.getItem(`dd_${name}`);
-          field.value = searchParams.get(name) || storedUtm || "";
-        }
-      }
-    }
+    populateAttributionInputs(formRef.current);
   }, []);
 
   return (
@@ -182,7 +144,7 @@ export function QuoteForm({
           className="sr-only"
           aria-hidden="true"
         />
-        {attributionFields.map((name) => (
+        {ATTRIBUTION_FIELDS.map((name) => (
           <input key={name} type="hidden" name={name} />
         ))}
 

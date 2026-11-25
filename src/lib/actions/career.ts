@@ -3,6 +3,7 @@
 import { headers } from "next/headers";
 
 import { careerApplyFormCopy } from "@/content/forms";
+import { ATTRIBUTION_FIELDS, resolveServerAttribution } from "@/lib/attribution";
 
 export type CareerApplyFormState = {
   status: "idle" | "success" | "error";
@@ -131,6 +132,14 @@ export async function submitCareerApplication(
     // Graceful fallback if headers() is unavailable
   }
 
+  const attribution = resolveServerAttribution(
+    (field) => formData.get(field),
+    {
+      fallbackLandingPage: pageUrl,
+      fallbackSubmissionPage: pageUrl,
+    },
+  );
+
   // Record submission in Payload CMS form-submissions collection
   try {
     const { getPayload } = await import("payload");
@@ -155,16 +164,10 @@ export async function submitCareerApplication(
         { field: "citystate", value: cityState },
         { field: "pagename", value: pageName },
         { field: "_url", value: pageUrl },
-        { field: "utm_source", value: fieldValue(formData, "utm_source") || "N/A" },
-        { field: "utm_medium", value: fieldValue(formData, "utm_medium") || "N/A" },
-        { field: "utm_campaign", value: fieldValue(formData, "utm_campaign") || "N/A" },
-        { field: "utm_term", value: fieldValue(formData, "utm_term") || "N/A" },
-        { field: "utm_content", value: fieldValue(formData, "utm_content") || "N/A" },
-        { field: "first_source", value: fieldValue(formData, "first_source") || fieldValue(formData, "utm_source") || "N/A" },
-        { field: "first_medium", value: fieldValue(formData, "first_medium") || fieldValue(formData, "utm_medium") || "N/A" },
-        { field: "landing_page", value: fieldValue(formData, "landing_page") || pageUrl },
-        { field: "submission_page", value: fieldValue(formData, "submission_page") || pageUrl },
-        { field: "referrer", value: fieldValue(formData, "referrer") || "N/A" },
+        ...ATTRIBUTION_FIELDS.map((field) => ({
+          field,
+          value: attribution[field],
+        })),
       ];
 
       let submissionUploads: Array<{
@@ -245,11 +248,16 @@ export async function submitCareerApplication(
       pageUrl,
       resumeFile: fileMeta,
       attribution: {
-        utmSource: fieldValue(formData, "utm_source") || "N/A",
-        utmMedium: fieldValue(formData, "utm_medium") || "N/A",
-        utmCampaign: fieldValue(formData, "utm_campaign") || "N/A",
-        utmTerm: fieldValue(formData, "utm_term") || "N/A",
-        utmContent: fieldValue(formData, "utm_content") || "N/A",
+        utmSource: attribution.utm_source,
+        utmMedium: attribution.utm_medium,
+        firstSource: attribution.first_source,
+        firstMedium: attribution.first_medium,
+        referrer: attribution.referrer,
+        landingPage: attribution.landing_page,
+        submissionPage: attribution.submission_page,
+        utmCampaign: fieldValue(formData, "utm_campaign"),
+        utmTerm: fieldValue(formData, "utm_term"),
+        utmContent: fieldValue(formData, "utm_content"),
       },
     };
 

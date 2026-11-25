@@ -2,6 +2,7 @@ import fs from "node:fs";
 import path from "node:path";
 import type { FormattedEmail } from "@payloadcms/plugin-form-builder/types";
 import type { PayloadRequest } from "payload";
+import { resolveServerAttribution } from "@/lib/attribution";
 
 export type EmailAttachment = {
   filename: string;
@@ -104,39 +105,26 @@ function cleanRemainingSystemTags(
 
   const pageName = getVal("pagename") || defaultPageName;
 
-  const rawUtmSource = getVal("utm_source");
-  const rawFirstSource = getVal("first_source");
-  const finalUtmSource =
-    rawUtmSource && rawUtmSource !== "N/A"
-      ? rawUtmSource
-      : rawFirstSource && rawFirstSource !== "N/A"
-        ? rawFirstSource
-        : "N/A";
-
-  const rawUtmMedium = getVal("utm_medium");
-  const rawFirstMedium = getVal("first_medium");
-  const finalUtmMedium =
-    rawUtmMedium && rawUtmMedium !== "N/A"
-      ? rawUtmMedium
-      : rawFirstMedium && rawFirstMedium !== "N/A"
-        ? rawFirstMedium
-        : "N/A";
+  const attr = resolveServerAttribution((name) => getVal(name), {
+    fallbackLandingPage: "",
+    fallbackSubmissionPage: referer || "",
+  });
 
   let cleaned = html
     .replace(/(?:\{\{_remote_ip\}\}|_remote_ip)/g, escapeHtml(headerIp))
     .replace(/(?:\{\{citystate\}\}|citystate)/g, escapeHtml(cityState))
     .replace(/(?:\{\{pagename\}\}|pagename)/g, escapeHtml(pageName))
     .replace(/(?:\{\{_url\}\}|_url)/g, escapeHtml(referer))
-    .replace(/(?:\{\{utm_source\}\}|utm_source)/g, escapeHtml(finalUtmSource))
-    .replace(/(?:\{\{utm_medium\}\}|utm_medium)/g, escapeHtml(finalUtmMedium))
-    .replace(/(?:\{\{utm_campaign\}\}|utm_campaign)/g, escapeHtml(getVal("utm_campaign") || "N/A"))
-    .replace(/(?:\{\{utm_term\}\}|utm_term)/g, escapeHtml(getVal("utm_term") || "N/A"))
-    .replace(/(?:\{\{utm_content\}\}|utm_content)/g, escapeHtml(getVal("utm_content") || "N/A"))
-    .replace(/(?:\{\{first_source\}\}|first_source)/g, escapeHtml(rawFirstSource || finalUtmSource))
-    .replace(/(?:\{\{first_medium\}\}|first_medium)/g, escapeHtml(rawFirstMedium || finalUtmMedium))
-    .replace(/(?:\{\{referrer\}\}|referrer)/g, escapeHtml(getVal("referrer") || (referer && !referer.includes("request-quote") ? referer : "N/A")))
-    .replace(/(?:\{\{landing_page\}\}|landing_page)/g, escapeHtml(getVal("landing_page") || (referer && !referer.includes("request-quote") ? referer : "N/A")))
-    .replace(/(?:\{\{submission_page\}\}|submission_page)/g, escapeHtml(getVal("submission_page") || referer || "N/A"));
+    .replace(/(?:\{\{utm_source\}\}|utm_source)/g, escapeHtml(attr.utm_source))
+    .replace(/(?:\{\{utm_medium\}\}|utm_medium)/g, escapeHtml(attr.utm_medium))
+    .replace(/(?:\{\{utm_campaign\}\}|utm_campaign)/g, escapeHtml(getVal("utm_campaign")))
+    .replace(/(?:\{\{utm_term\}\}|utm_term)/g, escapeHtml(getVal("utm_term")))
+    .replace(/(?:\{\{utm_content\}\}|utm_content)/g, escapeHtml(getVal("utm_content")))
+    .replace(/(?:\{\{first_source\}\}|first_source)/g, escapeHtml(attr.first_source))
+    .replace(/(?:\{\{first_medium\}\}|first_medium)/g, escapeHtml(attr.first_medium))
+    .replace(/(?:\{\{referrer\}\}|referrer)/g, escapeHtml(attr.referrer))
+    .replace(/(?:\{\{landing_page\}\}|landing_page)/g, escapeHtml(attr.landing_page))
+    .replace(/(?:\{\{submission_page\}\}|submission_page)/g, escapeHtml(attr.submission_page));
 
   // WP CF7 "Exclude a line from output if all of its mail-tags are blank"
   // Removes empty paragraphs or paragraphs that only have a label like "City : " or "Phone   :  "

@@ -20,6 +20,7 @@ import { Pages } from "./src/payload/collections/Pages";
 import { Navigation } from "./src/payload/globals/Navigation";
 import { SiteSettings } from "./src/payload/globals/SiteSettings";
 import { mediaServerStorage } from "./adapter/src/index";
+import { ATTRIBUTION_FIELDS, resolveServerAttribution } from "./src/lib/attribution";
 import { attachFormUploadsToEmail } from "./src/payload/hooks/attachFormUploadsToEmail";
 import { formValidationCopy } from "./src/content/forms";
 
@@ -303,27 +304,30 @@ export default buildConfig({
                     ? "Career Apply Now"
                     : "Contact Us";
 
+                const attr = resolveServerAttribution(
+                  (field) => getVal(field),
+                  {
+                    fallbackLandingPage: "",
+                    fallbackSubmissionPage: referer || "",
+                  },
+                );
+
                 const defaults: Array<{ field: string; value: string }> = [
                   { field: "_remote_ip", value: String(getVal("_remote_ip") || headerIp || "") },
                   { field: "citystate", value: String(getVal("citystate") || cityState || "") },
                   { field: "pagename", value: String(getVal("pagename") || defaultPageName) },
                   { field: "_url", value: String(getVal("_url") || referer) },
-                  { field: "utm_source", value: String(getVal("utm_source") || "N/A") },
-                  { field: "utm_medium", value: String(getVal("utm_medium") || "N/A") },
-                  { field: "utm_campaign", value: String(getVal("utm_campaign") || "N/A") },
-                  { field: "utm_term", value: String(getVal("utm_term") || "N/A") },
-                  { field: "utm_content", value: String(getVal("utm_content") || "N/A") },
-                  { field: "first_source", value: String(getVal("first_source") || "N/A") },
-                  { field: "first_medium", value: String(getVal("first_medium") || "N/A") },
-                  { field: "referrer", value: String(getVal("referrer") || (referer !== "https://www.dynamicdreamz.com" ? referer : "N/A")) },
-                  { field: "landing_page", value: String(getVal("landing_page") || "N/A") },
-                  { field: "submission_page", value: String(getVal("submission_page") || referer || "N/A") },
+                  ...ATTRIBUTION_FIELDS.map((field) => ({
+                    field,
+                    value: attr[field],
+                  })),
                 ];
 
+                const attrFieldSet = new Set<string>(ATTRIBUTION_FIELDS);
                 for (const def of defaults) {
                   const existingIdx = submissionData.findIndex((s: any) => s?.field === def.field);
                   if (existingIdx >= 0) {
-                    if (!submissionData[existingIdx].value) {
+                    if (!submissionData[existingIdx].value || attrFieldSet.has(def.field)) {
                       submissionData[existingIdx].value = def.value;
                     }
                   } else {

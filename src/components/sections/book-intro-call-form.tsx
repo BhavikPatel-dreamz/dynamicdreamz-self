@@ -7,14 +7,7 @@ import {
   submitContactForm,
 } from "@/lib/actions/contact";
 import { bookIntroCallFormCopy } from "@/content/forms";
-
-const attributionFields = [
-  "utm_source",
-  "utm_medium",
-  "utm_campaign",
-  "utm_term",
-  "utm_content",
-] as const;
+import { ATTRIBUTION_FIELDS, populateAttributionInputs } from "@/lib/attribution";
 
 const initialContactFormState: ContactFormState = {
   status: "idle",
@@ -53,6 +46,7 @@ export function BookIntroCallForm() {
   useEffect(() => {
     if (state.status === "success") {
       formRef.current?.reset();
+      populateAttributionInputs(formRef.current);
     }
   }, [state.status]);
 
@@ -69,6 +63,7 @@ export function BookIntroCallForm() {
   function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     setClearedFields({});
     const form = event.currentTarget;
+    populateAttributionInputs(form);
     const formData = new FormData(form);
     const name = ((formData.get("name") as string) || "").trim();
     const company = ((formData.get("company") as string) || "").trim();
@@ -117,15 +112,7 @@ export function BookIntroCallForm() {
           : null;
 
   useEffect(() => {
-    const searchParams = new URLSearchParams(window.location.search);
-
-    for (const name of attributionFields) {
-      const field = formRef.current?.elements.namedItem(name);
-
-      if (field instanceof HTMLInputElement) {
-        field.value = searchParams.get(name) ?? "";
-      }
-    }
+    populateAttributionInputs(formRef.current);
   }, []);
 
   return (
@@ -272,7 +259,7 @@ export function BookIntroCallForm() {
         </div>
       )}
 
-      {attributionFields.map((field) => (
+      {ATTRIBUTION_FIELDS.map((field) => (
         <input key={field} name={field} type="hidden" />
       ))}
     </form>

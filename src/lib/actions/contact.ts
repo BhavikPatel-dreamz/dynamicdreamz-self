@@ -2,6 +2,7 @@
 
 import { headers } from "next/headers";
 import { contactFormCopy } from "@/content/forms";
+import { ATTRIBUTION_FIELDS, resolveServerAttribution } from "@/lib/attribution";
 
 export type ContactFormState = {
   status: "idle" | "success" | "error";
@@ -102,11 +103,13 @@ export async function submitContactForm(
     // Graceful fallback if headers() is unavailable
   }
 
-  const utmSource = fieldValue(formData, "utm_source") || "N/A";
-  const utmMedium = fieldValue(formData, "utm_medium") || "N/A";
-  const utmCampaign = fieldValue(formData, "utm_campaign") || "N/A";
-  const utmTerm = fieldValue(formData, "utm_term") || "N/A";
-  const utmContent = fieldValue(formData, "utm_content") || "N/A";
+  const attribution = resolveServerAttribution(
+    (field) => formData.get(field),
+    {
+      fallbackLandingPage: pageUrl,
+      fallbackSubmissionPage: pageUrl,
+    },
+  );
 
   // Record submission in Payload CMS form-submissions collection
   try {
@@ -134,16 +137,10 @@ export async function submitContactForm(
             { field: "citystate", value: cityState },
             { field: "pagename", value: pageName },
             { field: "_url", value: pageUrl },
-            { field: "utm_source", value: utmSource },
-            { field: "utm_medium", value: utmMedium },
-            { field: "utm_campaign", value: utmCampaign },
-            { field: "utm_term", value: utmTerm },
-            { field: "utm_content", value: utmContent },
-            { field: "first_source", value: fieldValue(formData, "first_source") || utmSource },
-            { field: "first_medium", value: fieldValue(formData, "first_medium") || utmMedium },
-            { field: "landing_page", value: fieldValue(formData, "landing_page") || pageUrl },
-            { field: "submission_page", value: fieldValue(formData, "submission_page") || pageUrl },
-            { field: "referrer", value: fieldValue(formData, "referrer") || "N/A" },
+            ...ATTRIBUTION_FIELDS.map((field) => ({
+              field,
+              value: attribution[field],
+            })),
           ],
         },
       });
@@ -173,8 +170,13 @@ export async function submitContactForm(
       company,
       project,
       attribution: {
-        utmSource: fieldValue(formData, "utm_source"),
-        utmMedium: fieldValue(formData, "utm_medium"),
+        utmSource: attribution.utm_source,
+        utmMedium: attribution.utm_medium,
+        firstSource: attribution.first_source,
+        firstMedium: attribution.first_medium,
+        referrer: attribution.referrer,
+        landingPage: attribution.landing_page,
+        submissionPage: attribution.submission_page,
         utmCampaign: fieldValue(formData, "utm_campaign"),
         utmTerm: fieldValue(formData, "utm_term"),
         utmContent: fieldValue(formData, "utm_content"),
