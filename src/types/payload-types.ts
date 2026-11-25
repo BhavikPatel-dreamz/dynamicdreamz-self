@@ -622,18 +622,85 @@ export interface CaseStudy {
         }[]
       | null;
   };
+  platformArchitecture?: {
+    eyebrow?: string | null;
+    heading?: string | null;
+    description?: string | null;
+    coreRuleLabel?: string | null;
+    coreRuleText?: string | null;
+    flowRows?:
+      | {
+          showArrowAfter?: boolean | null;
+          nodes?:
+            | {
+                variant?: ('default' | 'primary' | 'accent') | null;
+                category: string;
+                title: string;
+                id?: string | null;
+              }[]
+            | null;
+          id?: string | null;
+        }[]
+      | null;
+  };
   keyFeatures?: {
     eyebrow?: string | null;
     heading?: string | null;
+    description?: string | null;
     isTwoColumn?: boolean | null;
     items?:
       | {
           number?: string | null;
           title?: string | null;
           description?: string | null;
+          label?: string | null;
+          tableHeaders?:
+            | {
+                text: string;
+                id?: string | null;
+              }[]
+            | null;
+          tableRows?:
+            | {
+                cells?:
+                  | {
+                      text: string;
+                      id?: string | null;
+                    }[]
+                  | null;
+                id?: string | null;
+              }[]
+            | null;
           id?: string | null;
         }[]
       | null;
+  };
+  performanceSecurity?: {
+    eyebrow?: string | null;
+    heading?: string | null;
+    description?: string | null;
+    leftTitle?: string | null;
+    leftSubtitle?: string | null;
+    leftDescription?: string | null;
+    leftRows?:
+      | {
+          title: string;
+          detail: string;
+          metric: string;
+          id?: string | null;
+        }[]
+      | null;
+    leftNote?: string | null;
+    rightTitle?: string | null;
+    rightDescription?: string | null;
+    rightItems?:
+      | {
+          title: string;
+          description: string;
+          id?: string | null;
+        }[]
+      | null;
+    rightNote?: string | null;
   };
   showcaseBottom?: {
     eyebrow?: string | null;
@@ -642,6 +709,39 @@ export interface CaseStudy {
     desktopImage?: (number | null) | Media;
     mobileImage?: (number | null) | Media;
   };
+  measuredResults?: {
+    eyebrow?: string | null;
+    heading?: string | null;
+    description?: string | null;
+    items?:
+      | {
+          stat: string;
+          label: string;
+          note?: string | null;
+          id?: string | null;
+        }[]
+      | null;
+  };
+  teamProcess?: {
+    eyebrow?: string | null;
+    heading?: string | null;
+    teamChips?:
+      | {
+          count: string;
+          role: string;
+          id?: string | null;
+        }[]
+      | null;
+    processHeading?: string | null;
+    processDescription?: string | null;
+    processSteps?:
+      | {
+          number: string;
+          text: string;
+          id?: string | null;
+        }[]
+      | null;
+  };
   projectDelivery?: {
     eyebrow?: string | null;
     heading?: string | null;
@@ -649,6 +749,17 @@ export interface CaseStudy {
       | {
           category?: string | null;
           name?: string | null;
+          id?: string | null;
+        }[]
+      | null;
+  };
+  projectTakeaway?: {
+    eyebrow?: string | null;
+    heading?: string | null;
+    paragraphs?:
+      | {
+          text: string;
+          highlight?: boolean | null;
           id?: string | null;
         }[]
       | null;
@@ -3025,11 +3136,35 @@ export interface CaseStudiesSelect<T extends boolean = true> {
               id?: T;
             };
       };
+  platformArchitecture?:
+    | T
+    | {
+        eyebrow?: T;
+        heading?: T;
+        description?: T;
+        coreRuleLabel?: T;
+        coreRuleText?: T;
+        flowRows?:
+          | T
+          | {
+              showArrowAfter?: T;
+              nodes?:
+                | T
+                | {
+                    variant?: T;
+                    category?: T;
+                    title?: T;
+                    id?: T;
+                  };
+              id?: T;
+            };
+      };
   keyFeatures?:
     | T
     | {
         eyebrow?: T;
         heading?: T;
+        description?: T;
         isTwoColumn?: T;
         items?:
           | T
@@ -3037,8 +3172,55 @@ export interface CaseStudiesSelect<T extends boolean = true> {
               number?: T;
               title?: T;
               description?: T;
+              label?: T;
+              tableHeaders?:
+                | T
+                | {
+                    text?: T;
+                    id?: T;
+                  };
+              tableRows?:
+                | T
+                | {
+                    cells?:
+                      | T
+                      | {
+                          text?: T;
+                          id?: T;
+                        };
+                    id?: T;
+                  };
               id?: T;
             };
+      };
+  performanceSecurity?:
+    | T
+    | {
+        eyebrow?: T;
+        heading?: T;
+        description?: T;
+        leftTitle?: T;
+        leftSubtitle?: T;
+        leftDescription?: T;
+        leftRows?:
+          | T
+          | {
+              title?: T;
+              detail?: T;
+              metric?: T;
+              id?: T;
+            };
+        leftNote?: T;
+        rightTitle?: T;
+        rightDescription?: T;
+        rightItems?:
+          | T
+          | {
+              title?: T;
+              description?: T;
+              id?: T;
+            };
+        rightNote?: T;
       };
   showcaseBottom?:
     | T
@@ -3048,6 +3230,43 @@ export interface CaseStudiesSelect<T extends boolean = true> {
         description?: T;
         desktopImage?: T;
         mobileImage?: T;
+      };
+  measuredResults?:
+    | T
+    | {
+        eyebrow?: T;
+        heading?: T;
+        description?: T;
+        items?:
+          | T
+          | {
+              stat?: T;
+              label?: T;
+              note?: T;
+              id?: T;
+            };
+      };
+  teamProcess?:
+    | T
+    | {
+        eyebrow?: T;
+        heading?: T;
+        teamChips?:
+          | T
+          | {
+              count?: T;
+              role?: T;
+              id?: T;
+            };
+        processHeading?: T;
+        processDescription?: T;
+        processSteps?:
+          | T
+          | {
+              number?: T;
+              text?: T;
+              id?: T;
+            };
       };
   projectDelivery?:
     | T
@@ -3059,6 +3278,19 @@ export interface CaseStudiesSelect<T extends boolean = true> {
           | {
               category?: T;
               name?: T;
+              id?: T;
+            };
+      };
+  projectTakeaway?:
+    | T
+    | {
+        eyebrow?: T;
+        heading?: T;
+        paragraphs?:
+          | T
+          | {
+              text?: T;
+              highlight?: T;
               id?: T;
             };
       };

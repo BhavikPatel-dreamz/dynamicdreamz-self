@@ -2,13 +2,19 @@ import Image from "next/image";
 
 import { Container } from "@/components/ui/container";
 import { Eyebrow } from "@/components/ui/eyebrow";
+import { SplitSectionHeading } from "@/components/ui/split-section-heading";
+import { cn } from "@/lib/class-names";
 import type { CaseStudyShowcase } from "@/types/case-study";
 
-type CaseStudyShowcaseProps = {
+type CaseStudyShowcaseTopProps = {
   showcase: CaseStudyShowcase;
+  hasKeyMetrics?: boolean;
 };
 
-export function CaseStudyShowcaseTop({ showcase }: CaseStudyShowcaseProps) {
+export function CaseStudyShowcaseTop({
+  showcase,
+  hasKeyMetrics = false,
+}: CaseStudyShowcaseTopProps) {
   if (!showcase || !showcase.desktopImage) {
     return null;
   }
@@ -17,8 +23,11 @@ export function CaseStudyShowcaseTop({ showcase }: CaseStudyShowcaseProps) {
 
   return (
     <section
-      className="full-width-image-top-section bg-[#eff4ef] py-20 max-[992px]:py-[50px]"
-      aria-label="Project showcase overview"
+      className={cn(
+        "full-width-image-top-section bg-[#eff4ef] py-20 max-[992px]:py-[50px]",
+        hasKeyMetrics ? "mt-20 max-[992px]:mt-[50px]" : "mt-0",
+      )}
+      aria-label={desktopImage.alt}
     >
       <Container>
         <div className="image-wrapper mb-0 overflow-hidden" data-aos="fade-up">
@@ -51,7 +60,15 @@ export function CaseStudyShowcaseTop({ showcase }: CaseStudyShowcaseProps) {
   );
 }
 
-export function CaseStudyShowcaseBottom({ showcase }: CaseStudyShowcaseProps) {
+type CaseStudyShowcaseBottomProps = {
+  showcase: CaseStudyShowcase;
+  followsKeyFeatures?: boolean;
+};
+
+export function CaseStudyShowcaseBottom({
+  showcase,
+  followsKeyFeatures = false,
+}: CaseStudyShowcaseBottomProps) {
   if (!showcase || !showcase.desktopImage) {
     return null;
   }
@@ -61,32 +78,40 @@ export function CaseStudyShowcaseBottom({ showcase }: CaseStudyShowcaseProps) {
 
   return (
     <section
-      className="full-width-image-bottom-section bg-white pt-20 max-[992px]:pt-15 max-[768px]:pt-10"
-      aria-label={heading || "Project showcase details"}
+      className={cn(
+        "full-width-image-bottom-section mt-20 max-[992px]:mt-[50px]",
+        followsKeyFeatures
+          ? "bg-white p-0"
+          : "bg-[#eff4ef] py-20 max-[992px]:py-[50px]",
+      )}
+      aria-label={heading || desktopImage.alt}
     >
       <Container>
         {hasTextHeader ? (
-          <div className="section_title_with_eyebrow mb-10 max-[768px]:mb-6" data-aos="fade-up">
-            <div className="title">
+          heading ? (
+            <SplitSectionHeading
+              description={description}
+              eyebrow={eyebrow}
+              heading={heading}
+              variant="left"
+            />
+          ) : (
+            <div
+              className="section_title_with_eyebrow mb-10 max-[992px]:mb-[30px]"
+              data-aos="fade-up"
+            >
               {eyebrow ? (
-                <Eyebrow as="div" className="mb-4" linePosition="overlay">
+                <Eyebrow as="div" className="mb-4" lineThickness="thin">
                   {eyebrow}
                 </Eyebrow>
               ) : null}
-              {heading ? (
-                <h2 className="mb-4 font-montreal-medium text-[35px] font-normal leading-[1.38] text-ink max-[1200px]:text-[28px] max-[768px]:text-2xl">
-                  {heading}
-                </h2>
-              ) : null}
-            </div>
-            {description ? (
-              <div className="section_text">
-                <p className="font-sans text-[16px] font-medium leading-[30.4px] text-[#535353] max-[768px]:text-sm">
+              {description ? (
+                <p className="font-sans text-base font-medium leading-7 text-[#535353] max-[1200px]:text-sm max-[1200px]:leading-6">
                   {description}
                 </p>
-              </div>
-            ) : null}
-          </div>
+              ) : null}
+            </div>
+          )
         ) : null}
 
         <div className="image-wrapper mb-0 overflow-hidden" data-aos="fade-up">

@@ -698,7 +698,11 @@ export async function getPayloadAdjacentPosts(
 export function adaptPayloadCaseStudiesToItems(
   caseStudies: CaseStudy[],
 ): CaseStudyItem[] {
-  return caseStudies.map((cs) => {
+  const canonicalOrder = new Map(
+    caseStudiesItemsJson.map((item, index) => [item.slug, index]),
+  );
+
+  const items = caseStudies.map((cs) => {
     const fallbackItem = caseStudiesItemsJson.find((item) => item.slug === cs.slug);
     const heroSrc = resolveMediaUrl(cs.heroImage) || fallbackItem?.image || "/assets/case-studies/gnc-india.webp";
     const heroAlt = resolveMediaAlt(cs.heroImage, cs.title) || fallbackItem?.alt || cs.title;
@@ -706,19 +710,28 @@ export function adaptPayloadCaseStudiesToItems(
     const tags =
       rawTags.length > 0
         ? rawTags
-        : ([cs.technology, cs.industry].filter(Boolean) as string[]);
+        : (fallbackItem?.tags || ([cs.technology, cs.industry].filter(Boolean) as string[]));
 
     return {
       slug: cs.slug,
       title: cs.archive?.title || cs.title,
       technology: cs.archive?.technology || cs.technology || fallbackItem?.technology || "Shopify Plus",
-      industry: cs.archive?.industry || cs.industry || fallbackItem?.industry || "",
+      industry: cs.archive?.industry ?? cs.industry ?? fallbackItem?.industry ?? "",
       excerpt: cs.archive?.excerpt || cs.summary || fallbackItem?.excerpt || "",
       image: heroSrc,
       alt: heroAlt,
       href: `/case-studies/${cs.slug}/`,
-      tags: tags.length > 0 ? tags : (fallbackItem?.tags || ["Shopify Plus"]),
+      tags: tags.length > 0 ? tags : ["Shopify Plus"],
     };
+  });
+
+  return items.sort((a, b) => {
+    const aIdx = canonicalOrder.get(a.slug);
+    const bIdx = canonicalOrder.get(b.slug);
+    if (aIdx !== undefined && bIdx !== undefined) return aIdx - bIdx;
+    if (aIdx === undefined && bIdx !== undefined) return 1;
+    if (aIdx !== undefined && bIdx === undefined) return -1;
+    return 0;
   });
 }
 
@@ -814,66 +827,263 @@ export function adaptPayloadCaseStudyToDetail(
       }
     : fallbackDetail?.solutions;
 
-  const keyFeatures = cs.keyFeatures
-    ? {
-        eyebrow: cs.keyFeatures.eyebrow || fallbackDetail?.keyFeatures?.eyebrow,
-        heading: cs.keyFeatures.heading || fallbackDetail?.keyFeatures?.heading || "Key Features Delivered",
-        isTwoColumn: cs.keyFeatures.isTwoColumn || false,
-        items: cs.keyFeatures.items && cs.keyFeatures.items.length > 0
-          ? cs.keyFeatures.items.map((it) => ({
+  const platformArchitecture =
+    cs.platformArchitecture &&
+    cs.platformArchitecture.flowRows &&
+    cs.platformArchitecture.flowRows.length > 0
+      ? {
+          eyebrow:
+            cs.platformArchitecture.eyebrow ||
+            fallbackDetail?.platformArchitecture?.eyebrow,
+          heading:
+            cs.platformArchitecture.heading ||
+            fallbackDetail?.platformArchitecture?.heading ||
+            "Platform Architecture",
+          description:
+            cs.platformArchitecture.description ||
+            fallbackDetail?.platformArchitecture?.description,
+          coreRuleLabel:
+            cs.platformArchitecture.coreRuleLabel ||
+            fallbackDetail?.platformArchitecture?.coreRuleLabel,
+          coreRuleText:
+            cs.platformArchitecture.coreRuleText ||
+            fallbackDetail?.platformArchitecture?.coreRuleText,
+          flowRows: cs.platformArchitecture.flowRows.map((row) => ({
+            showArrowAfter: Boolean(row.showArrowAfter),
+            nodes: (row.nodes || []).map((node) => ({
+              variant: node.variant || "default",
+              category: node.category || "",
+              title: node.title || "",
+            })),
+          })),
+        }
+      : fallbackDetail?.platformArchitecture;
+
+  const keyFeatures =
+    cs.keyFeatures && cs.keyFeatures.items && cs.keyFeatures.items.length > 0
+      ? {
+          eyebrow: cs.keyFeatures.eyebrow || fallbackDetail?.keyFeatures?.eyebrow,
+          heading:
+            cs.keyFeatures.heading ||
+            fallbackDetail?.keyFeatures?.heading ||
+            "Key Features Delivered",
+          description:
+            cs.keyFeatures.description ||
+            fallbackDetail?.keyFeatures?.description,
+          isTwoColumn: Boolean(cs.keyFeatures.isTwoColumn),
+          items: cs.keyFeatures.items.map((it) => {
+            const headers = (it.tableHeaders || [])
+              .map((h) => h.text || "")
+              .filter(Boolean);
+            const rows = (it.tableRows || [])
+              .map((row) => (row.cells || []).map((cell) => cell.text || ""))
+              .filter((row) => row.length > 0);
+            return {
               number: it.number || "",
               title: it.title || "",
               description: it.description || undefined,
-            }))
-          : fallbackDetail?.keyFeatures?.items || [],
-      }
-    : fallbackDetail?.keyFeatures;
+              label: it.label || undefined,
+              table:
+                headers.length > 0 && rows.length > 0
+                  ? { headers, rows }
+                  : undefined,
+            };
+          }),
+        }
+      : fallbackDetail?.keyFeatures;
 
-  const projectDelivery = cs.projectDelivery
-    ? {
-        eyebrow: cs.projectDelivery.eyebrow || fallbackDetail?.projectDelivery?.eyebrow,
-        heading: cs.projectDelivery.heading || fallbackDetail?.projectDelivery?.heading || "Project Delivery & Technology",
-        items: cs.projectDelivery.items && cs.projectDelivery.items.length > 0
-          ? cs.projectDelivery.items.map((it) => ({
-              category: it.category || undefined,
-              name: it.name || "",
-            }))
-          : fallbackDetail?.projectDelivery?.items || [],
-      }
-    : fallbackDetail?.projectDelivery;
+  const performanceSecurity =
+    cs.performanceSecurity &&
+    (cs.performanceSecurity.heading ||
+      cs.performanceSecurity.leftTitle ||
+      (cs.performanceSecurity.leftRows &&
+        cs.performanceSecurity.leftRows.length > 0))
+      ? {
+          eyebrow:
+            cs.performanceSecurity.eyebrow ||
+            fallbackDetail?.performanceSecurity?.eyebrow,
+          heading:
+            cs.performanceSecurity.heading ||
+            fallbackDetail?.performanceSecurity?.heading ||
+            "Performance & Security",
+          description:
+            cs.performanceSecurity.description ||
+            fallbackDetail?.performanceSecurity?.description,
+          leftTitle:
+            cs.performanceSecurity.leftTitle ||
+            fallbackDetail?.performanceSecurity?.leftTitle ||
+            "",
+          leftSubtitle:
+            cs.performanceSecurity.leftSubtitle ||
+            fallbackDetail?.performanceSecurity?.leftSubtitle,
+          leftDescription:
+            cs.performanceSecurity.leftDescription ||
+            fallbackDetail?.performanceSecurity?.leftDescription,
+          leftRows: (cs.performanceSecurity.leftRows || []).map((row) => ({
+            title: row.title || "",
+            detail: row.detail || "",
+            metric: row.metric || "",
+          })),
+          leftNote:
+            cs.performanceSecurity.leftNote ||
+            fallbackDetail?.performanceSecurity?.leftNote,
+          rightTitle:
+            cs.performanceSecurity.rightTitle ||
+            fallbackDetail?.performanceSecurity?.rightTitle,
+          rightDescription:
+            cs.performanceSecurity.rightDescription ||
+            fallbackDetail?.performanceSecurity?.rightDescription,
+          rightItems:
+            cs.performanceSecurity.rightItems &&
+            cs.performanceSecurity.rightItems.length > 0
+              ? cs.performanceSecurity.rightItems.map((item) => ({
+                  title: item.title || "",
+                  description: item.description || "",
+                }))
+              : undefined,
+          rightNote:
+            cs.performanceSecurity.rightNote ||
+            fallbackDetail?.performanceSecurity?.rightNote,
+        }
+      : fallbackDetail?.performanceSecurity;
 
-  const customSections =
-    cs.customSections && cs.customSections.length > 0
+  const measuredResults =
+    cs.measuredResults &&
+    cs.measuredResults.items &&
+    cs.measuredResults.items.length > 0
+      ? {
+          eyebrow:
+            cs.measuredResults.eyebrow ||
+            fallbackDetail?.measuredResults?.eyebrow,
+          heading:
+            cs.measuredResults.heading ||
+            fallbackDetail?.measuredResults?.heading ||
+            "Measured Results",
+          description:
+            cs.measuredResults.description ||
+            fallbackDetail?.measuredResults?.description,
+          items: cs.measuredResults.items.map((item) => ({
+            stat: item.stat || "",
+            label: item.label || "",
+            note: item.note || undefined,
+          })),
+        }
+      : fallbackDetail?.measuredResults;
+
+  const teamProcess =
+    cs.teamProcess &&
+    (cs.teamProcess.heading ||
+      (cs.teamProcess.teamChips && cs.teamProcess.teamChips.length > 0) ||
+      (cs.teamProcess.processSteps && cs.teamProcess.processSteps.length > 0))
+      ? {
+          eyebrow:
+            cs.teamProcess.eyebrow || fallbackDetail?.teamProcess?.eyebrow,
+          heading:
+            cs.teamProcess.heading ||
+            fallbackDetail?.teamProcess?.heading ||
+            "",
+          teamChips: (cs.teamProcess.teamChips || []).map((chip) => ({
+            count: chip.count || "",
+            role: chip.role || "",
+          })),
+          processHeading:
+            cs.teamProcess.processHeading ||
+            fallbackDetail?.teamProcess?.processHeading ||
+            "",
+          processDescription:
+            cs.teamProcess.processDescription ||
+            fallbackDetail?.teamProcess?.processDescription,
+          processSteps: (cs.teamProcess.processSteps || []).map((step) => ({
+            number: step.number || "",
+            text: step.text || "",
+          })),
+        }
+      : fallbackDetail?.teamProcess;
+
+  const projectDelivery =
+    cs.projectDelivery &&
+    cs.projectDelivery.items &&
+    cs.projectDelivery.items.length > 0
+      ? {
+          eyebrow:
+            cs.projectDelivery.eyebrow ||
+            fallbackDetail?.projectDelivery?.eyebrow,
+          heading:
+            cs.projectDelivery.heading ||
+            fallbackDetail?.projectDelivery?.heading ||
+            "Project Delivery & Technology",
+          items: cs.projectDelivery.items.map((it) => ({
+            category: it.category || undefined,
+            name: it.name || "",
+          })),
+        }
+      : fallbackDetail?.projectDelivery;
+
+  const projectTakeaway =
+    cs.projectTakeaway &&
+    cs.projectTakeaway.paragraphs &&
+    cs.projectTakeaway.paragraphs.length > 0
+      ? {
+          eyebrow:
+            cs.projectTakeaway.eyebrow ||
+            fallbackDetail?.projectTakeaway?.eyebrow,
+          heading:
+            cs.projectTakeaway.heading ||
+            fallbackDetail?.projectTakeaway?.heading ||
+            "Project Takeaway",
+          paragraphs: cs.projectTakeaway.paragraphs.map((p) => ({
+            text: p.text || "",
+            highlight: Boolean(p.highlight),
+          })),
+        }
+      : fallbackDetail?.projectTakeaway;
+
+  const customSections = Array.isArray(cs.customSections)
+    ? cs.customSections.length > 0
       ? cs.customSections.map((s) => ({
           eyebrow: s.eyebrow || undefined,
           heading: s.heading,
           lead: s.lead || undefined,
           description: s.description || undefined,
-          items: s.items && s.items.length > 0
-            ? s.items.map((i) => ({
-                number: i.number || undefined,
-                title: i.title || undefined,
-                description: i.description || undefined,
-                note: i.note || undefined,
-              }))
-            : undefined,
-          takeaways: s.takeaways && s.takeaways.length > 0
-            ? s.takeaways.map((t) => t.text || "").filter(Boolean)
-            : undefined,
+          items:
+            s.items && s.items.length > 0
+              ? s.items.map((i) => ({
+                  number: i.number || undefined,
+                  title: i.title || undefined,
+                  description: i.description || undefined,
+                  note: i.note || undefined,
+                }))
+              : undefined,
+          takeaways:
+            s.takeaways && s.takeaways.length > 0
+              ? s.takeaways.map((t) => t.text || "").filter(Boolean)
+              : undefined,
         }))
-      : fallbackDetail?.customSections;
+      : undefined
+    : fallbackDetail?.customSections;
 
-  const relatedCaseStudies =
-    cs.relatedCaseStudies && cs.relatedCaseStudies.length > 0
-      ? cs.relatedCaseStudies
+  const relatedCaseStudies = Array.isArray(cs.relatedCaseStudies)
+    ? cs.relatedCaseStudies.length > 0
+      ? (cs.relatedCaseStudies
           .map((r) => {
-            if (typeof r === "object" && r !== null && "slug" in r && typeof r.slug === "string") {
+            if (
+              typeof r === "object" &&
+              r !== null &&
+              "slug" in r &&
+              typeof r.slug === "string"
+            ) {
               return r.slug;
             }
             return "";
           })
-          .filter(Boolean) as string[]
-      : fallbackDetail?.relatedCaseStudies;
+          .filter(Boolean) as string[])
+      : undefined
+    : fallbackDetail?.relatedCaseStudies;
+
+  const archiveTags =
+    cs.archive?.tags && cs.archive.tags.length > 0
+      ? (cs.archive.tags.map((t) => t.tag).filter(Boolean) as string[])
+      : fallbackDetail?.archive.tags || fallbackItem?.tags;
 
   const heroEyebrows =
     cs.heroEyebrows && cs.heroEyebrows.length > 0
@@ -887,7 +1097,7 @@ export function adaptPayloadCaseStudyToDetail(
     title: cs.title,
     summary: cs.summary || fallbackDetail?.summary || "",
     projectTitle: cs.projectTitle || fallbackDetail?.projectTitle || cs.title,
-    industry: cs.industry || fallbackDetail?.industry || "",
+    industry: cs.industry ?? fallbackDetail?.industry ?? "",
     technology: cs.technology || fallbackDetail?.technology || "Shopify Plus",
     location: cs.location || fallbackDetail?.location || "Surat, Gujarat, India",
     websiteUrl: cs.websiteUrl || fallbackDetail?.websiteUrl || undefined,
@@ -899,8 +1109,9 @@ export function adaptPayloadCaseStudyToDetail(
         cs.technology ||
         fallbackDetail?.archive.technology ||
         "Shopify Plus",
-      industry: cs.archive?.industry || cs.industry || fallbackDetail?.archive.industry || "",
+      industry: cs.archive?.industry ?? cs.industry ?? fallbackDetail?.archive.industry ?? "",
       excerpt: cs.archive?.excerpt || cs.summary || fallbackDetail?.archive.excerpt || "",
+      tags: archiveTags,
     },
     hero: {
       image: heroImage,
@@ -909,9 +1120,14 @@ export function adaptPayloadCaseStudyToDetail(
     showcaseTop,
     challenge,
     solutions,
+    platformArchitecture,
     keyFeatures,
+    performanceSecurity,
     showcaseBottom,
+    measuredResults,
+    teamProcess,
     projectDelivery,
+    projectTakeaway,
     relatedCaseStudies,
     customSections,
     seo: {

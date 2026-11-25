@@ -1,7 +1,7 @@
 [
   {
     "slug": "gnc-india",
-    "title": "The making of GNC India: Conversion-Focused Shopify Redesign with Goal-Based Navigation & Trust Signals",
+    "title": "GNC India: Conversion-Focused Shopify Redesign with Goal-Based Navigation & Trust Signals",
     "technology": "Shopify / Shopify Plus",
     "industry": "Health & Nutrition",
     "excerpt": "See how Dynamic Dreamz redesigned GNC India on Shopify with goal-based navigation, trust signals and a conversion-focused shopping experience.",
@@ -18,7 +18,7 @@
     "title": "Inner Grandma: Shopify CRO Case Study – 34% Higher Conversions",
     "technology": "Shopify / Shopify Plus",
     "industry": "Fashion & Apparel",
-    "excerpt": "Inner Grandma is a US lifestyle brand selling clothing, home goods and craft-inspired pieces. Its strong community and more than 50,000 monthly visits should have supported a smooth shopping journey—b",
+    "excerpt": "Inner Grandma is a US lifestyle brand selling clothing, home goods and craft-inspired pieces. Its strong community and more than 50,000 monthly visits should have supported a smooth shopping journey—but customers were disappearing before checkout.",
     "image": "/assets/case-studies/inner-grandma.webp",
     "alt": "innergrandma",
     "href": "/case-studies/inner-grandma/",
@@ -46,7 +46,7 @@
     "title": "DONJ Jewellery: Medusa + Next.js Headless Rebuild with a 100K+ Diamond Marketplace & Custom Ring Builder",
     "technology": "Medusa v2 · Next.js 16",
     "industry": "Jewellery & Luxury Retail",
-    "excerpt": "A full ecommerce rebuild for DONJ Jewellery, replacing the legacy WordPress and WooCommerce storefront with a modular headless platform using Medusa v2 and Next.js 16. The new platform brings the ring",
+    "excerpt": "A full ecommerce rebuild for DONJ Jewellery, replacing the legacy WordPress and WooCommerce storefront with a modular headless platform using Medusa v2 and Next.js 16.",
     "image": "/assets/case-studies/don-j.webp",
     "alt": "DONJ Jewellery headless commerce case study by Dynamic Dreamz",
     "href": "/case-studies/don-j/",
@@ -71,7 +71,7 @@
   },
   {
     "slug": "nekter-juice-bar",
-    "title": "The making of Nekter Juice Bar: Shopify Redesign with Streamlined Ordering & Multi-Location Store Pickup",
+    "title": "Nekter Juice Bar: Shopify Redesign with Streamlined Ordering & Multi-Location Store Pickup",
     "technology": "Shopify / Shopify Plus",
     "industry": "Food & Beverages",
     "excerpt": "See how Dynamic Dreamz improved Nekter Juice Bar’s Shopify experience with streamlined ordering and multi-location store pickup functionality.",
@@ -113,7 +113,7 @@
   },
   {
     "slug": "custom-neon",
-    "title": "The making of Custom Neon: Interactive Shopify Neon Sign Designer with Live Pricing",
+    "title": "Custom Neon: Interactive Shopify Neon Sign Designer with Live Pricing",
     "technology": "Shopify Custom Apps & Integrations",
     "industry": "Home & Living",
     "excerpt": "See how Dynamic Dreamz built an interactive Shopify neon sign configurator for Custom Neon with product customization and live pricing.",
@@ -141,7 +141,7 @@
   },
   {
     "slug": "kalki-fashion-mobile-app",
-    "title": "The making of KALKI Fashion: Shopify-Integrated Luxury Ethnic Wear Shopping App",
+    "title": "KALKI Fashion: Shopify-Integrated Luxury Ethnic Wear Shopping App",
     "technology": "Shopify Mobile App Development",
     "industry": "Fashion & Apparel",
     "excerpt": "See how Dynamic Dreamz built a Shopify-connected mobile app for KALKI Fashion with React Native, dynamic pricing, cart sync and localization.",
@@ -155,7 +155,7 @@
   },
   {
     "slug": "d-shop-shipping-app",
-    "title": "The making of D Shop: Custom Shopify Plus Shipping App with Real-Time Multi-Courier Rate Comparison",
+    "title": "D Shop: Custom Shopify Plus Shipping App with Real-Time Multi-Courier Rate Comparison",
     "technology": "Shopify Custom Apps & Integrations",
     "industry": "Retail",
     "excerpt": "See how Dynamic Dreamz built a custom Shopify Plus shipping app for D Shop with real-time rate comparison across multiple courier providers.",
@@ -183,7 +183,7 @@
   },
   {
     "slug": "trendia",
-    "title": "The making of Trendia: Shopify + Unicommerce Integration for 300+ Vendor Inventory & Local-First Fulfillment",
+    "title": "Trendia: Shopify + Unicommerce Integration for 300+ Vendor Inventory & Local-First Fulfillment",
     "technology": "Shopify / Shopify Plus",
     "industry": "Fashion & Apparel",
     "excerpt": "See how Dynamic Dreamz connected Shopify and Unicommerce for Trendia to support inventory and fulfillment workflows across 300+ vendors.",
@@ -211,7 +211,7 @@
   },
   {
     "slug": "zetheta",
-    "title": "The making of ZeTheta: FinTech Learning Platform with WooCommerce & Sensei LMS Integration",
+    "title": "ZeTheta: FinTech Learning Platform with WooCommerce & Sensei LMS Integration",
     "technology": "WordPress",
     "industry": "Education (EdTech)",
     "excerpt": "See how Dynamic Dreamz developed ZeTheta’s FinTech learning platform using WordPress, WooCommerce and Sensei LMS for online education.",
@@ -225,7 +225,7 @@
   },
   {
     "slug": "tap-your-talents",
-    "title": "The making of Tap Your Talents: Talent Discovery & Networking Platform Built with Flutter",
+    "title": "Tap Your Talents: Talent Discovery & Networking Platform Built with Flutter",
     "technology": "Mobile Apps",
     "industry": "Education (EdTech)",
     "excerpt": "See how Dynamic Dreamz developed the Tap Your Talents mobile platform with Flutter for talent discovery, networking and community engagement.",
@@ -239,7 +239,7 @@
   },
   {
     "slug": "utsah-health-app",
-    "title": "The making of Utsah Health App: CGM Device Integration & Wellness E-Commerce Platform",
+    "title": "Utsah Health App: CGM Device Integration & Wellness E-Commerce Platform",
     "technology": "Mobile Apps",
     "industry": "Health & Nutrition",
     "excerpt": "See how Dynamic Dreamz developed Utsah’s wellness mobile app with CGM device integration, health data experiences and ecommerce functionality.",
@@ -281,7 +281,7 @@
   },
   {
     "slug": "refacekit",
-    "title": "The making of RefaceKit: Custom Shopify Kitchen Cabinet Refacing Configurator with Dynamic Pricing Logic",
+    "title": "RefaceKit: Custom Shopify Kitchen Cabinet Refacing Configurator with Dynamic Pricing Logic",
     "technology": "Shopify Custom Apps & Integrations",
     "industry": "Home & Living",
     "excerpt": "See how Dynamic Dreamz built a Shopify kitchen cabinet configurator for RefaceKit with complex product options and dynamic pricing logic.",
@@ -295,7 +295,7 @@
   },
   {
     "slug": "house-of-good-vibes",
-    "title": "The making of House of Good Vibes: React Native Shopify App with Drag-and-Drop CMS Page Builder & Daily Meditation Scheduler",
+    "title": "House of Good Vibes: React Native Shopify App with Drag-and-Drop CMS Page Builder & Daily Meditation Scheduler",
     "technology": "Shopify Mobile App Development",
     "industry": "Lifestyle",
     "excerpt": "See how Dynamic Dreamz built a Shopify-connected React Native app with CMS page building, meditation scheduling and customer engagement features.",
@@ -323,7 +323,7 @@
   },
   {
     "slug": "american-socks",
-    "title": "The making of American Socks: Shopify as Central Hub for Zoho, Revo POS & WooCommerce Integration",
+    "title": "American Socks: Shopify as Central Hub for Zoho, Revo POS & WooCommerce Integration",
     "technology": "Shopify Custom Apps & Integrations",
     "industry": "Fashion & Apparel",
     "excerpt": "See how Dynamic Dreamz connected Shopify with Zoho, Revo POS and WooCommerce for American Socks to streamline connected commerce operations.",
@@ -365,7 +365,7 @@
   },
   {
     "slug": "forma-prior",
-    "title": "The making of Forma Prior: Custom Shopify Footwear Configurator for Bespoke Shoemaking",
+    "title": "Forma Prior: Custom Shopify Footwear Configurator for Bespoke Shoemaking",
     "technology": "Shopify Custom Apps & Integrations",
     "industry": "Fashion & Apparel",
     "excerpt": "See how Dynamic Dreamz developed a custom Shopify footwear configurator for Forma Prior to support bespoke product selection and customization.",
@@ -379,7 +379,7 @@
   },
   {
     "slug": "renee-cosmetics-mobile-app",
-    "title": "The making of RENÉE Cosmetics: Shopify-Integrated Beauty & Cosmetics Shopping App",
+    "title": "RENÉE Cosmetics: Shopify-Integrated Beauty & Cosmetics Shopping App",
     "technology": "Shopify Mobile App Development",
     "industry": "Beauty & Cosmetics",
     "excerpt": "See how Dynamic Dreamz developed a Shopify-connected mobile shopping app for RENÉE Cosmetics across iOS and Android.",
@@ -393,7 +393,7 @@
   },
   {
     "slug": "holy-plantz",
-    "title": "The making of Holy Plantz: Figma-to-Shopify Redesign with Custom Sections for a Plant-Based Food Brand",
+    "title": "Holy Plantz: Figma-to-Shopify Redesign with Custom Sections for a Plant-Based Food Brand",
     "technology": "Shopify / Shopify Plus",
     "industry": "Food & Beverages",
     "excerpt": "See how Dynamic Dreamz transformed Holy Plantz’s Figma designs into a custom Shopify storefront with reusable sections and responsive development.",
@@ -451,7 +451,7 @@
   },
   {
     "slug": "first-aid-distributions-migration",
-    "title": "The making of Adobe Commerce to Shopify Migration: Zero Data-Loss Replatform for First Aid Distributions",
+    "title": "Adobe Commerce to Shopify Migration: Zero Data-Loss Replatform for First Aid Distributions",
     "technology": "Shopify Migration",
     "industry": "Health & Nutrition",
     "excerpt": "See how Dynamic Dreamz migrated First Aid Distributions from Adobe Commerce to Shopify while preserving key ecommerce data and functionality.",
@@ -465,7 +465,7 @@
   },
   {
     "slug": "the-indus-valley",
-    "title": "The making of The Indus Valley: Shopify Store Development for Premium Kitchenware & Cookware",
+    "title": "The Indus Valley: Shopify Store Development for Premium Kitchenware & Cookware",
     "technology": "Shopify / Shopify Plus",
     "industry": "Home & Living",
     "excerpt": "See how Dynamic Dreamz developed a Shopify ecommerce experience for The Indus Valley’s premium kitchenware and cookware product range.",
@@ -479,7 +479,7 @@
   },
   {
     "slug": "danario",
-    "title": "The making of Danario : Shopify Redesign with configuration product for self-adhesive kitchen panels",
+    "title": "Danario : Shopify Redesign with configuration product for self-adhesive kitchen panels",
     "technology": "Shopify / Shopify Plus",
     "industry": "Home & Living",
     "excerpt": "See how Dynamic Dreamz redesigned Danario on Shopify with configurable products for custom self-adhesive kitchen panel requirements.",
@@ -521,7 +521,7 @@
   },
   {
     "slug": "zedmed",
-    "title": "The making of Zedmed: Custom Shopify Dawn Theme Store for UK B2B Medical & NHS Supplies",
+    "title": "Zedmed: Custom Shopify Dawn Theme Store for UK B2B Medical & NHS Supplies",
     "technology": "Shopify / Shopify Plus",
     "industry": "Health & Nutrition",
     "excerpt": "See how Dynamic Dreamz built a B2B Shopify storefront for Zedmed to support medical supplies, professional buyers and NHS-focused requirements.",
@@ -535,7 +535,7 @@
   },
   {
     "slug": "calmenta",
-    "title": "The making of Calmenta: Custom Shopify Impact Theme Redesign for a Luxury Wellness Brand",
+    "title": "Calmenta: Custom Shopify Impact Theme Redesign for a Luxury Wellness Brand",
     "technology": "Shopify / Shopify Plus",
     "industry": "Healthcare & Medical",
     "excerpt": "See how Dynamic Dreamz redesigned Calmenta’s Shopify storefront using the Impact theme for a more premium wellness shopping experience.",
@@ -563,7 +563,7 @@
   },
   {
     "slug": "pins-by-design",
-    "title": "The making of Pins by Design: Custom Shopify Configurator with Google Sheets-Driven Dynamic Pricing",
+    "title": "Pins by Design: Custom Shopify Configurator with Google Sheets-Driven Dynamic Pricing",
     "technology": "Shopify Custom Apps & Integrations",
     "industry": "Manufacturing",
     "excerpt": "See how Dynamic Dreamz built a custom Shopify product configurator for Pins by Design with dynamic pricing powered by Google Sheets data.",
@@ -577,7 +577,7 @@
   },
   {
     "slug": "llama-by-cwrb",
-    "title": "The making of Llama by CWRB: Women’s Cycling Community App Built with Flutter & Laravel",
+    "title": "Llama by CWRB: Women’s Cycling Community App Built with Flutter & Laravel",
     "technology": "Mobile Apps",
     "industry": "Social Networking",
     "excerpt": "See how Dynamic Dreamz developed a Flutter and Laravel mobile platform for Llama by CWRB’s women’s cycling community.",
@@ -614,12 +614,12 @@
     "href": "/case-studies/beauty-software/",
     "tags": [
       "Booking & Management System",
-      "Full-Stack Development"
+      "Full Stack Development"
     ]
   },
   {
     "slug": "sandf-product-group",
-    "title": "The making of S&F Product Group: Full Stack SaaS Inventory Management Platform with Real-Time Stock Control",
+    "title": "S&F Product Group: Full Stack SaaS Inventory Management Platform with Real-Time Stock Control",
     "technology": "Full Stack Development",
     "industry": "Retail",
     "excerpt": "See how Dynamic Dreamz developed a full-stack SaaS inventory management platform for S&F Product Group with real-time stock control.",
@@ -633,7 +633,7 @@
   },
   {
     "slug": "care-e-well",
-    "title": "The making of Care-E-Well: BuddyBoss-Powered Digital Parenting & Healthcare Community Platform",
+    "title": "Care-E-Well: BuddyBoss-Powered Digital Parenting & Healthcare Community Platform",
     "technology": "WordPress",
     "industry": "Health & Nutrition",
     "excerpt": "See how Dynamic Dreamz developed Care-E-Well’s digital parenting and healthcare community platform using WordPress and BuddyBoss.",
@@ -647,7 +647,7 @@
   },
   {
     "slug": "vital-mobility",
-    "title": "The making of Vital Mobility: WooCommerce Healthcare E-Commerce Platform for Mobility Equipment",
+    "title": "Vital Mobility: WooCommerce Healthcare E-Commerce Platform for Mobility Equipment",
     "technology": "WordPress",
     "industry": "Health & Nutrition",
     "excerpt": "See how Dynamic Dreamz developed a WooCommerce ecommerce platform for Vital Mobility’s healthcare and mobility equipment business.",
@@ -661,7 +661,7 @@
   },
   {
     "slug": "aziz-art",
-    "title": "The making of Aziz Art: Multi-Vendor WooCommerce Marketplace for Latin American Artists",
+    "title": "Aziz Art: Multi-Vendor WooCommerce Marketplace for Latin American Artists",
     "technology": "WordPress",
     "industry": "E-commerce",
     "excerpt": "See how Dynamic Dreamz built a multi-vendor WooCommerce marketplace for Aziz Art to showcase and sell work from Latin American artists.",
@@ -731,7 +731,7 @@
   },
   {
     "slug": "join-rax",
-    "title": "The making of Join RAX: Custom WordPress LMS with LearnDash & Membership Access Control",
+    "title": "Join RAX: Custom WordPress LMS with LearnDash & Membership Access Control",
     "technology": "WordPress",
     "industry": "Education (EdTech)",
     "excerpt": "See how Dynamic Dreamz developed Join RAX’s WordPress learning platform with LearnDash, membership controls and restricted course access.",
@@ -745,7 +745,7 @@
   },
   {
     "slug": "consciouspoker",
-    "title": "The making of ConsciousPoker: WordPress Membership Site with ActiveMember360 Course Management",
+    "title": "ConsciousPoker: WordPress Membership Site with ActiveMember360 Course Management",
     "technology": "WordPress",
     "industry": "Education (EdTech)",
     "excerpt": "See how Dynamic Dreamz developed ConsciousPoker’s WordPress membership and online learning platform with ActiveMember360 integrations.",
@@ -759,7 +759,7 @@
   },
   {
     "slug": "sooqselect",
-    "title": "The making of SooqSelect: Kuwait’s Business Directory & Lead Generation Platform on WordPress",
+    "title": "SooqSelect: Kuwait’s Business Directory & Lead Generation Platform on WordPress",
     "technology": "WordPress",
     "industry": "Directory",
     "excerpt": "See how Dynamic Dreamz developed SooqSelect’s WordPress business directory and lead-generation platform for the Kuwait market.",
@@ -773,7 +773,7 @@
   },
   {
     "slug": "avmh",
-    "title": "The making of AVMH: WordPress & WooCommerce Music Class Subscription Platform",
+    "title": "AVMH: WordPress & WooCommerce Music Class Subscription Platform",
     "technology": "WordPress",
     "industry": "Education (EdTech)",
     "excerpt": "See how Dynamic Dreamz developed AVMH’s WordPress and WooCommerce platform for music classes, subscriptions and online customer management.",
@@ -787,7 +787,7 @@
   },
   {
     "slug": "quite-events",
-    "title": "The making of Quiet Events: Mobile-Friendly WordPress Redesign on Avada Theme for a Silent Disco Brand",
+    "title": "Quiet Events: Mobile-Friendly WordPress Redesign on Avada Theme for a Silent Disco Brand",
     "technology": "WordPress",
     "industry": "Entertainment",
     "excerpt": "See how Dynamic Dreamz redesigned Quiet Events’ WordPress website using Avada with a responsive experience for its silent disco business.",

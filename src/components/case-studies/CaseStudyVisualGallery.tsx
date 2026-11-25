@@ -109,37 +109,98 @@ export function CaseStudyKeyFeatures({ keyFeatures }: CaseStudyKeyFeaturesProps)
   const heading = keyFeatures.heading || caseStudiesUiCopy.featuresHeading;
 
   const gridColsClass = keyFeatures.isTwoColumn
-    ? "grid-cols-2 max-[768px]:grid-cols-1"
+    ? "grid-cols-2 max-[1200px]:grid-cols-1"
     : "grid-cols-3 max-[1200px]:grid-cols-2 max-[768px]:grid-cols-1";
 
   return (
-    <section className="bg-[#eff4ef] py-20 max-[992px]:py-15 max-[768px]:py-10" aria-labelledby="key-features-heading">
+    <section
+      className="bg-[#eff4ef] py-20 max-[992px]:py-[50px]"
+      aria-labelledby="key-features-heading"
+    >
       <Container>
-        <SplitSectionHeading heading={heading} eyebrow={eyebrow} variant="left" />
+        <SplitSectionHeading
+          description={keyFeatures.description}
+          heading={heading}
+          headingId="key-features-heading"
+          eyebrow={eyebrow}
+          variant="left"
+        />
 
         <div className={`grid gap-4 ${gridColsClass}`} data-aos="fade-up">
-          {keyFeatures.items.map((item, index) => (
-            <div
-              key={`${item.number}-${index}`}
-              className="flex h-full flex-col justify-between overflow-hidden rounded-[18px] border border-[rgba(40,40,40,0.07)] bg-white p-[25px] max-[768px]:p-5 max-[768px]:rounded-[12px]"
-            >
-              <div className="mb-[30px]">
-                <span className="block font-montserrat text-[26px] font-medium leading-none text-[#ad5151]">
-                  {item.number}
-                </span>
+          {keyFeatures.items.map((item, index) => {
+            const hasMetaBelowDesc = Boolean(item.label || item.table);
+            return (
+              <div
+                key={`${item.number}-${index}`}
+                className="flex h-full flex-col overflow-hidden rounded-[18px] border border-[rgba(40,40,40,0.07)] bg-white p-[25px] max-[768px]:rounded-[12px] max-[768px]:p-5"
+              >
+                <div className="mb-[30px]">
+                  <span className="block font-montserrat text-[26px] font-medium leading-none text-[#ad5151]">
+                    {item.number}
+                  </span>
+                </div>
+                <div>
+                  <h3
+                    className={`font-montreal-medium text-[20px] font-normal leading-[28.8px] text-[#282828] max-[992px]:text-[18px] max-[992px]:leading-[26px] ${
+                      keyFeatures.isTwoColumn || item.description
+                        ? "mb-3"
+                        : "mb-0"
+                    }`}
+                  >
+                    {item.title}
+                  </h3>
+                  {item.description ? (
+                    <p
+                      className={`font-sans text-[14px] font-normal leading-6 text-[#535353] whitespace-pre-line ${
+                        hasMetaBelowDesc ? "mb-[15px]" : "mb-0"
+                      }`}
+                    >
+                      {item.description}
+                    </p>
+                  ) : null}
+                  {item.label ? (
+                    <span className="label block border-l-2 border-[#ad5151] bg-[#ad5151]/[0.07] px-3 py-[7px] font-sans text-sm font-medium leading-6 text-[#535353] max-[768px]:text-xs max-[768px]:leading-5">
+                      {item.label}
+                    </span>
+                  ) : null}
+                  {item.table &&
+                  item.table.headers.length > 0 &&
+                  item.table.rows.length > 0 ? (
+                    <div className="mt-[15px] overflow-x-auto whitespace-nowrap">
+                      <table className="detail-table w-full border-collapse text-xs">
+                        <thead>
+                          <tr>
+                            {item.table.headers.map((header, headerIdx) => (
+                              <th
+                                key={`th-${headerIdx}`}
+                                className="border-b border-[rgba(40,40,40,0.11)] px-[9px] py-2 text-left text-[12px] font-bold uppercase tracking-[0.05em] text-[#282828]"
+                              >
+                                {header}
+                              </th>
+                            ))}
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {item.table.rows.map((row, rowIdx) => (
+                            <tr key={`tr-${rowIdx}`}>
+                              {row.map((cell, cellIdx) => (
+                                <td
+                                  key={`td-${rowIdx}-${cellIdx}`}
+                                  className="border-b border-[rgba(40,40,40,0.11)] px-[9px] py-2 text-[#535353]"
+                                >
+                                  {cell}
+                                </td>
+                              ))}
+                            </tr>
+                          ))}
+                        </tbody>
+                      </table>
+                    </div>
+                  ) : null}
+                </div>
               </div>
-              <div className="flex-1">
-                <h3 className="m-0 font-display text-[18px] font-medium leading-[26px] text-[#282828]">
-                  {item.title}
-                </h3>
-                {item.description && (
-                  <p className="mt-2.5 font-sans text-[14px] font-normal leading-[22px] text-[#535353]">
-                    {item.description}
-                  </p>
-                )}
-              </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </Container>
     </section>
@@ -150,28 +211,34 @@ type CaseStudyServiceDeliveredProps = {
   projectDelivery?: DeliveryType;
 };
 
-export function CaseStudyServiceDelivered({ projectDelivery }: CaseStudyServiceDeliveredProps) {
+export function CaseStudyServiceDelivered({
+  projectDelivery,
+}: CaseStudyServiceDeliveredProps) {
   if (!projectDelivery || !projectDelivery.items || projectDelivery.items.length === 0) {
     return null;
   }
 
   const eyebrow = projectDelivery.eyebrow || caseStudiesUiCopy.deliveryEyebrow;
   const heading = projectDelivery.heading || caseStudiesUiCopy.deliveryHeading;
+  const totalItems = projectDelivery.items.length;
 
   return (
-    <section className="py-20 max-[992px]:py-15 max-[768px]:py-10" aria-labelledby="delivery-heading">
+    <section
+      className="py-20 max-[992px]:py-[50px]"
+      aria-labelledby="delivery-heading"
+    >
       <Container>
         <div
           data-aos="fade-up"
           className="flex flex-wrap overflow-hidden rounded-[22px] border border-[rgba(40,40,40,0.11)] max-[768px]:rounded-[16px]"
         >
-          <div className="w-[35%] border-r border-[rgba(40,40,40,0.11)] bg-[#fbefd7] p-[34px] max-[992px]:w-full max-[992px]:border-r-0 max-[992px]:border-b max-[992px]:border-[rgba(40,40,40,0.11)] max-[768px]:p-5">
-            <Eyebrow as="div" className="mb-4" linePosition="overlay">
+          <div className="w-[35%] border-r border-[rgba(40,40,40,0.11)] bg-[#fbefd7] p-[34px] max-[1200px]:p-[30px] max-[992px]:w-full max-[992px]:border-r-0 max-[992px]:border-b max-[992px]:px-5 max-[992px]:py-[25px] max-[768px]:border-b-0 max-[768px]:p-5">
+            <Eyebrow as="div" className="mb-4" lineThickness="thin">
               {eyebrow}
             </Eyebrow>
             <h2
               id="delivery-heading"
-              className="m-0 font-montreal-medium text-[35px] font-normal leading-[1.3] text-[#282828] max-[768px]:text-[22px]"
+              className="m-0 font-montreal-medium text-[35px] font-normal leading-[49px] text-[#282828] max-[1200px]:text-[30px] max-[1200px]:leading-[42px] max-[768px]:text-2xl max-[768px]:leading-[31.2px]"
             >
               {heading}
             </h2>
@@ -179,19 +246,29 @@ export function CaseStudyServiceDelivered({ projectDelivery }: CaseStudyServiceD
 
           <div className="flex w-[65%] bg-white max-[992px]:w-full">
             <div className="grid w-full grid-cols-2 max-[768px]:grid-cols-1">
-              {projectDelivery.items.map((item, index) => (
-                <div
-                  key={`${item.name}-${index}`}
-                  className="border-b border-[rgba(40,40,40,0.11)] p-6 max-[768px]:p-4 [&:nth-child(even)]:border-l [&:nth-child(even)]:border-[rgba(40,40,40,0.11)] max-[768px]:[&:nth-child(even)]:border-l-0"
-                >
-                  <span className="mb-3 block font-montserrat text-[12px] font-medium uppercase leading-none text-[#535353]">
-                    {item.category || caseStudiesUiCopy.serviceDelivered}
-                  </span>
-                  <h5 className="m-0 font-display text-[16px] font-medium leading-[22px] text-[#282828] max-[768px]:text-[15px]">
-                    {item.name}
-                  </h5>
-                </div>
-              ))}
+              {projectDelivery.items.map((item, index) => {
+                const isInLastDesktopRow =
+                  totalItems % 2 === 0
+                    ? index >= totalItems - 2
+                    : index === totalItems - 1;
+                return (
+                  <div
+                    key={`${item.name}-${index}`}
+                    className={`p-6 max-[992px]:p-5 max-[768px]:border-l-0 max-[768px]:border-t max-[768px]:border-b-0 max-[768px]:border-[rgba(40,40,40,0.11)] max-[768px]:px-5 max-[768px]:py-[15px] [&:nth-child(even)]:border-l [&:nth-child(even)]:border-[rgba(40,40,40,0.11)] max-[768px]:[&:nth-child(even)]:border-l-0 ${
+                      isInLastDesktopRow
+                        ? "border-b-0"
+                        : "border-b border-[rgba(40,40,40,0.11)]"
+                    }`}
+                  >
+                    <span className="mb-3 block font-montserrat text-[12px] font-medium uppercase leading-none text-[#535353]">
+                      {item.category || caseStudiesUiCopy.serviceDelivered}
+                    </span>
+                    <h3 className="m-0 font-montreal-medium text-[16px] font-normal leading-[22.36px] text-[#282828]">
+                      {item.name}
+                    </h3>
+                  </div>
+                );
+              })}
             </div>
           </div>
         </div>

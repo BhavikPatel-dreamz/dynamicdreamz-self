@@ -148,11 +148,50 @@ export const CaseStudies: CollectionConfig = {
       ],
     },
     {
+      name: "platformArchitecture",
+      type: "group",
+      fields: [
+        { name: "eyebrow", type: "text" },
+        { name: "heading", type: "text" },
+        { name: "description", type: "textarea" },
+        { name: "coreRuleLabel", type: "text" },
+        { name: "coreRuleText", type: "textarea" },
+        {
+          name: "flowRows",
+          type: "array",
+          dbName: "cs_pa_rows",
+          fields: [
+            { name: "showArrowAfter", type: "checkbox", defaultValue: false },
+            {
+              name: "nodes",
+              type: "array",
+              dbName: "cs_pa_nodes",
+              fields: [
+                {
+                  name: "variant",
+                  type: "select",
+                  defaultValue: "default",
+                  options: [
+                    { label: "Default", value: "default" },
+                    { label: "Primary (Dark)", value: "primary" },
+                    { label: "Accent (Sage)", value: "accent" },
+                  ],
+                },
+                { name: "category", type: "text", required: true },
+                { name: "title", type: "text", required: true },
+              ],
+            },
+          ],
+        },
+      ],
+    },
+    {
       name: "keyFeatures",
       type: "group",
       fields: [
         { name: "eyebrow", type: "text" },
         { name: "heading", type: "text" },
+        { name: "description", type: "textarea" },
         { name: "isTwoColumn", type: "checkbox", defaultValue: false },
         {
           name: "items",
@@ -162,8 +201,63 @@ export const CaseStudies: CollectionConfig = {
             { name: "number", type: "text" },
             { name: "title", type: "text" },
             { name: "description", type: "textarea" },
+            { name: "label", type: "textarea" },
+            {
+              name: "tableHeaders",
+              type: "array",
+              dbName: "cs_kft_hdrs",
+              fields: [{ name: "text", type: "text", required: true }],
+            },
+            {
+              name: "tableRows",
+              type: "array",
+              dbName: "cs_kft_rows",
+              fields: [
+                {
+                  name: "cells",
+                  type: "array",
+                  dbName: "cs_kft_cells",
+                  fields: [{ name: "text", type: "text", required: true }],
+                },
+              ],
+            },
           ],
         },
+      ],
+    },
+    {
+      name: "performanceSecurity",
+      type: "group",
+      fields: [
+        { name: "eyebrow", type: "text" },
+        { name: "heading", type: "text" },
+        { name: "description", type: "textarea" },
+        { name: "leftTitle", type: "text" },
+        { name: "leftSubtitle", type: "text" },
+        { name: "leftDescription", type: "textarea" },
+        {
+          name: "leftRows",
+          type: "array",
+          dbName: "cs_ps_lrows",
+          fields: [
+            { name: "title", type: "text", required: true },
+            { name: "detail", type: "text", required: true },
+            { name: "metric", type: "text", required: true },
+          ],
+        },
+        { name: "leftNote", type: "textarea" },
+        { name: "rightTitle", type: "text" },
+        { name: "rightDescription", type: "textarea" },
+        {
+          name: "rightItems",
+          type: "array",
+          dbName: "cs_ps_ritems",
+          fields: [
+            { name: "title", type: "text", required: true },
+            { name: "description", type: "textarea", required: true },
+          ],
+        },
+        { name: "rightNote", type: "textarea" },
       ],
     },
     {
@@ -175,6 +269,53 @@ export const CaseStudies: CollectionConfig = {
         { name: "description", type: "textarea" },
         { name: "desktopImage", type: "upload", relationTo: "media" },
         { name: "mobileImage", type: "upload", relationTo: "media" },
+      ],
+    },
+    {
+      name: "measuredResults",
+      type: "group",
+      fields: [
+        { name: "eyebrow", type: "text" },
+        { name: "heading", type: "text" },
+        { name: "description", type: "textarea" },
+        {
+          name: "items",
+          type: "array",
+          dbName: "cs_mr_items",
+          fields: [
+            { name: "stat", type: "text", required: true },
+            { name: "label", type: "text", required: true },
+            { name: "note", type: "text" },
+          ],
+        },
+      ],
+    },
+    {
+      name: "teamProcess",
+      type: "group",
+      fields: [
+        { name: "eyebrow", type: "text" },
+        { name: "heading", type: "text" },
+        {
+          name: "teamChips",
+          type: "array",
+          dbName: "cs_tp_chips",
+          fields: [
+            { name: "count", type: "text", required: true },
+            { name: "role", type: "text", required: true },
+          ],
+        },
+        { name: "processHeading", type: "text" },
+        { name: "processDescription", type: "textarea" },
+        {
+          name: "processSteps",
+          type: "array",
+          dbName: "cs_tp_steps",
+          fields: [
+            { name: "number", type: "text", required: true },
+            { name: "text", type: "textarea", required: true },
+          ],
+        },
       ],
     },
     {
@@ -190,6 +331,23 @@ export const CaseStudies: CollectionConfig = {
           fields: [
             { name: "category", type: "text" },
             { name: "name", type: "text" },
+          ],
+        },
+      ],
+    },
+    {
+      name: "projectTakeaway",
+      type: "group",
+      fields: [
+        { name: "eyebrow", type: "text" },
+        { name: "heading", type: "text" },
+        {
+          name: "paragraphs",
+          type: "array",
+          dbName: "cs_pt_paras",
+          fields: [
+            { name: "text", type: "textarea", required: true },
+            { name: "highlight", type: "checkbox", defaultValue: false },
           ],
         },
       ],

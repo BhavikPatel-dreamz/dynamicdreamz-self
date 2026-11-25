@@ -97,12 +97,38 @@ if (!Array.isArray(entries) || entries.length === 0) {
 
     if (entry.keyFeatures) {
       checkText(entry.keyFeatures.heading, "keyFeatures heading", slug);
+      if (entry.keyFeatures.description) checkText(entry.keyFeatures.description, "keyFeatures description", slug);
       if (!Array.isArray(entry.keyFeatures.items)) errors.push(`${slug}: invalid keyFeatures items`);
       else {
         entry.keyFeatures.items.forEach((item, index) => {
           checkText(item.title, `keyFeatures item ${index + 1} title`, slug);
+          if (item.description) checkText(item.description, `keyFeatures item ${index + 1} description`, slug);
+          if (item.label) checkText(item.label, `keyFeatures item ${index + 1} label`, slug);
         });
       }
+    }
+
+    if (entry.platformArchitecture) {
+      checkText(entry.platformArchitecture.heading, "platformArchitecture heading", slug);
+      if (!Array.isArray(entry.platformArchitecture.flowRows)) errors.push(`${slug}: invalid platformArchitecture flowRows`);
+    }
+
+    if (entry.performanceSecurity) {
+      checkText(entry.performanceSecurity.heading, "performanceSecurity heading", slug);
+    }
+
+    if (entry.measuredResults) {
+      checkText(entry.measuredResults.heading, "measuredResults heading", slug);
+      if (!Array.isArray(entry.measuredResults.items)) errors.push(`${slug}: invalid measuredResults items`);
+    }
+
+    if (entry.teamProcess) {
+      checkText(entry.teamProcess.heading, "teamProcess heading", slug);
+    }
+
+    if (entry.projectTakeaway) {
+      checkText(entry.projectTakeaway.heading, "projectTakeaway heading", slug);
+      if (!Array.isArray(entry.projectTakeaway.paragraphs)) errors.push(`${slug}: invalid projectTakeaway paragraphs`);
     }
 
     if (entry.projectDelivery) {

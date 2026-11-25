@@ -8,6 +8,11 @@ import type { CaseStudyDetail } from "@/types/case-study";
 
 import { CaseStudyKeyMetrics } from "./CaseStudyMetricsStrip";
 import { CaseStudyChallenge, CaseStudySolutions } from "./CaseStudyOverviewSplit";
+import { CaseStudyMeasuredResultsSection } from "./CaseStudyMeasuredResultsSection";
+import { CaseStudyPerformanceSecuritySection } from "./CaseStudyPerformanceSecuritySection";
+import { CaseStudyPlatformArchitectureSection } from "./CaseStudyPlatformArchitectureSection";
+import { CaseStudyProjectTakeawaySection } from "./CaseStudyProjectTakeawaySection";
+import { CaseStudyTeamProcessSection } from "./CaseStudyTeamProcessSection";
 import {
   CaseStudyKeyFeatures,
   CaseStudyServiceDelivered,
@@ -28,6 +33,10 @@ export function CaseStudyHero({ caseStudy }: CaseStudyHeroProps) {
     caseStudy.heroEyebrows && caseStudy.heroEyebrows.length > 0
       ? caseStudy.heroEyebrows
       : [caseStudy.technology, caseStudy.industry].filter(Boolean);
+  const summaryParagraphs = caseStudy.summary
+    .split(/\n{2,}/)
+    .map((paragraph) => paragraph.trim())
+    .filter(Boolean);
 
   return (
     <section
@@ -52,9 +61,14 @@ export function CaseStudyHero({ caseStudy }: CaseStudyHeroProps) {
               >
                 {caseStudy.title}
               </h1>
-              <p className="mb-[15px] font-montserrat text-sm font-normal leading-6 text-[#535353]">
-                {caseStudy.summary}
-              </p>
+              {summaryParagraphs.map((paragraph, index) => (
+                <p
+                  key={`hero-summary-${index}`}
+                  className="mb-[15px] font-montserrat text-sm font-normal leading-6 text-[#535353] whitespace-pre-line"
+                >
+                  {paragraph}
+                </p>
+              ))}
               <div className="btns_group flex flex-wrap items-center gap-2.5 pt-2.5 max-[576px]:w-full max-[576px]:flex-col [&_a]:max-[576px]:w-full [&_a]:text-center">
                 {caseStudy.websiteUrl ? (
                   <ButtonLink
@@ -69,7 +83,7 @@ export function CaseStudyHero({ caseStudy }: CaseStudyHeroProps) {
                 <ButtonLink
                   href="#explore"
                   variant="outline"
-                  aria-label={caseStudiesUiCopy.exploreCaseStudy}
+                  aria-label={caseStudiesUiCopy.exploreCaseStudyAriaLabel}
                 >
                   {caseStudiesUiCopy.exploreCaseStudy}
                 </ButtonLink>
@@ -139,7 +153,7 @@ export function CaseStudyAllInfo({ caseStudy }: CaseStudyAllInfoProps) {
               <span className="mb-1.5 block font-montserrat text-[14px] font-extrabold uppercase leading-[19px] tracking-[1.12px] text-[#282828]">
                 {item.label}
               </span>
-              <p className="m-0 font-sans leading-[1.6] text-[#535353] max-[1200px]:text-[14px]">
+              <p className="m-0 font-sans text-sm font-normal leading-6 text-[#535353]">
                 {item.value}
               </p>
             </div>
@@ -155,6 +169,15 @@ export type CaseStudyDetailPageProps = {
 };
 
 export function CaseStudyDetailPage({ caseStudy }: CaseStudyDetailPageProps) {
+  const hasKeyMetrics = Boolean(
+    caseStudy.keyMetrics?.items && caseStudy.keyMetrics.items.length > 0,
+  );
+  const followsKeyFeatures = Boolean(
+    caseStudy.keyFeatures?.items &&
+      caseStudy.keyFeatures.items.length > 0 &&
+      !caseStudy.performanceSecurity,
+  );
+
   return (
     <div className="single-case-study overflow-x-clip">
       <CaseStudyHero caseStudy={caseStudy} />
@@ -163,26 +186,50 @@ export function CaseStudyDetailPage({ caseStudy }: CaseStudyDetailPageProps) {
         <CaseStudyKeyMetrics keyMetrics={caseStudy.keyMetrics} />
       )}
       {caseStudy.showcaseTop && (
-        <CaseStudyShowcaseTop showcase={caseStudy.showcaseTop} />
+        <CaseStudyShowcaseTop
+          showcase={caseStudy.showcaseTop}
+          hasKeyMetrics={hasKeyMetrics}
+        />
       )}
       <CaseStudyChallenge challenge={caseStudy.challenge} />
       <CaseStudySolutions solutions={caseStudy.solutions} />
+      {caseStudy.platformArchitecture && (
+        <CaseStudyPlatformArchitectureSection
+          platformArchitecture={caseStudy.platformArchitecture}
+        />
+      )}
       {caseStudy.keyFeatures && (
         <CaseStudyKeyFeatures keyFeatures={caseStudy.keyFeatures} />
       )}
+      {caseStudy.performanceSecurity && (
+        <CaseStudyPerformanceSecuritySection
+          performanceSecurity={caseStudy.performanceSecurity}
+        />
+      )}
       {caseStudy.showcaseBottom && (
-        <CaseStudyShowcaseBottom showcase={caseStudy.showcaseBottom} />
+        <CaseStudyShowcaseBottom
+          showcase={caseStudy.showcaseBottom}
+          followsKeyFeatures={followsKeyFeatures}
+        />
+      )}
+      {caseStudy.measuredResults && (
+        <CaseStudyMeasuredResultsSection
+          measuredResults={caseStudy.measuredResults}
+        />
+      )}
+      {caseStudy.teamProcess && (
+        <CaseStudyTeamProcessSection teamProcess={caseStudy.teamProcess} />
       )}
       <CaseStudyServiceDelivered projectDelivery={caseStudy.projectDelivery} />
+      {caseStudy.projectTakeaway && (
+        <CaseStudyProjectTakeawaySection
+          projectTakeaway={caseStudy.projectTakeaway}
+        />
+      )}
       {caseStudy.customSections && (
         <CaseStudyCustomSections sections={caseStudy.customSections} />
       )}
-      <CaseStudyRelated
-        currentSlug={caseStudy.slug}
-        relatedSlugs={caseStudy.relatedCaseStudies}
-        technology={caseStudy.technology}
-        industry={caseStudy.industry}
-      />
+      <CaseStudyRelated relatedSlugs={caseStudy.relatedCaseStudies} />
     </div>
   );
 }
