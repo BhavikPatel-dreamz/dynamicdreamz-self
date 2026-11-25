@@ -41,7 +41,7 @@ export function CareerHeroSection({
   const scrollingTrackId = useId();
 
   return (
-    <section className="hero-new-section hide-logo relative overflow-hidden bg-[#f7f4e9] pt-[91px] max-[992px]:pt-[65px]">
+    <section className="hero-new-section hide-logo relative overflow-hidden bg-[#f7f4e9] pt-[91px] max-[992px]:pt-[70px]">
       <Container>
         <div className="wrapper flex flex-wrap items-center justify-between max-[992px]:flex-col">
           <div className="left-col z-1 flex w-[51%] flex-col justify-center py-[60px] max-[1200px]:w-full max-[992px]:py-10 max-[1200px]:text-center">
@@ -72,7 +72,7 @@ export function CareerHeroSection({
               {badges.map((badge, idx) => (
                 <div
                   className={cn(
-                    "global_brands_item relative border-r border-[#d9d9d9] px-[15px] last:border-r-0",
+                    "global_brands_item relative border-r border-[#d9d9d9] px-[15px] max-[1200px]:px-3 last:border-r-0",
                     "max-[768px]:w-1/3 max-[768px]:border-r max-[768px]:border-[#d9d9d9] max-[768px]:last:border-r-0 max-[768px]:p-2.5 max-[768px]:text-center",
                   )}
                   key={`${badge.href}-${idx}`}
@@ -96,7 +96,7 @@ export function CareerHeroSection({
             </div>
           </div>
 
-          <div className="right-col relative flex h-[580px] w-[48%] overflow-hidden max-[1200px]:hidden max-[992px]:block max-[992px]:mt-6 max-[992px]:h-[260px] max-[992px]:w-full max-[768px]:hidden">
+          <div className="right-col relative flex h-[580px] w-[48%] overflow-hidden max-[1200px]:hidden max-[992px]:block  max-[992px]:h-[260px] max-[992px]:w-full max-[768px]:hidden">
             <div className="scrolling_img_wrap relative h-full w-full overflow-hidden">
               <div className="scrolling_anim_img absolute inset-0 px-[68px] max-[1200px]:px-5 max-[992px]:relative max-[992px]:px-0">
                 <div id={scrollingTrackId} className={cn("scrolling_track", styles.scrollingTrack)}>

@@ -142,7 +142,7 @@ export function CityPageHeroSection({
                 {content.badges.map((badge, idx) => (
                   <div
                     className={cn(
-                      "global_brands_item relative border-r border-[#d9d9d9] px-[15px] first:pl-[15px] last:border-r-0",
+                      "global_brands_item relative border-r border-[#d9d9d9] px-[15px] max-[1200px]:px-3 first:pl-[15px] last:border-r-0",
                       isHideLogo
                         ? "max-[768px]:w-1/3 max-[768px]:border-r max-[768px]:border-[#d9d9d9] max-[768px]:last:border-r-0 max-[768px]:p-2.5 max-[768px]:text-center"
                         : "max-[768px]:w-1/2 max-[768px]:border-0 max-[768px]:p-3.5 max-[768px]:text-center",
