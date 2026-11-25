@@ -75,7 +75,7 @@ export function ShopifyMobileAppHeroSection({
   };
 
   return (
-    <section className="hero-new-section relative overflow-hidden bg-[#f7f4e9] pt-[91px] max-[992px]:pt-16">
+    <section className="hero-new-section relative overflow-hidden bg-[#f7f4e9] pt-[91px] max-[992px]:pt-[70px]">
       <Container className="max-w-[1408px] px-[15px]">
         <div className="wrapper flex items-center justify-between max-[1200px]:flex-col">
           <div className="left-col z-1 w-[53%] min-[1400px]:w-[51%] min-[1200px]:max-[1400px]:w-[50%] py-[60px] max-[1200px]:w-full max-[1200px]:py-10 max-[1200px]:text-center max-[768px]:py-8">
@@ -133,7 +133,7 @@ export function ShopifyMobileAppHeroSection({
                   {content.badges.map((badge, idx) => (
                     <div
                       className={cn(
-                        "global_brands_item relative px-[15px] border-r border-[#d9d9d9] last:border-r-0",
+                        "global_brands_item relative px-[15px] max-[1200px]:px-3 border-r border-[#d9d9d9] last:border-r-0",
                         badgeRowLayout
                           ? "max-[768px]:w-1/3 max-[768px]:p-[15px] max-[768px]:text-center"
                           : "max-[768px]:w-1/2 max-[768px]:border-0 max-[768px]:p-[15px] max-[768px]:text-center",

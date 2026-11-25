@@ -168,7 +168,7 @@ export function OurWorkHeroSection({
             >
               {logos.map((logo) => (
                 <div
-                  className="global_brands_item relative border-r border-[#d9d9d9] px-[15px] last:border-r-0 max-[767.98px]:w-1/2 max-[767.98px]:border-0 max-[767.98px]:p-[15px] max-[767.98px]:text-center"
+                  className="global_brands_item relative border-r border-[#d9d9d9] px-[15px] max-[1200px]:px-3 last:border-r-0 max-[767.98px]:w-1/2 max-[767.98px]:border-0 max-[767.98px]:p-[15px] max-[767.98px]:text-center"
                   key={logo.src}
                 >
                   <a
