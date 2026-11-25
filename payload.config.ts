@@ -3,7 +3,7 @@ import { fileURLToPath } from "node:url";
 import { postgresAdapter } from "@payloadcms/db-postgres";
 import { lexicalEditor } from "@payloadcms/richtext-lexical";
 import { formBuilderPlugin } from "@payloadcms/plugin-form-builder";
-import { nodemailerAdapter } from "@payloadcms/email-nodemailer";
+import { resendAdapter } from "@payloadcms/email-resend";
 import { buildConfig, type Field } from "payload";
 import sharp from "sharp";
 
@@ -25,6 +25,26 @@ import { formValidationCopy } from "./src/content/forms";
 
 const filename = fileURLToPath(import.meta.url);
 const dirname = path.dirname(filename);
+
+/**
+ * Extracts bare address and display name from env (`EMAIL_FROM` / `EMAIL_FROM_NAME`)
+ * whether `EMAIL_FROM` is set as `user@domain.com` or `"Name <user@domain.com>"`.
+ */
+function resolveDefaultEmailSender(rawFrom?: string, rawName?: string) {
+  const trimmedFrom = (rawFrom || "").trim();
+  const angleMatch = trimmedFrom.match(/^(?:"?([^"]*?)"?\s*)?<([^<>@\s]+@[^<>@\s]+)>$/);
+
+  const defaultFromAddress = angleMatch ? angleMatch[2].trim() : trimmedFrom;
+  const parsedName = angleMatch?.[1]?.trim();
+  const defaultFromName = (rawName || "").trim() || parsedName || "Dynamic Dreamz";
+
+  return { defaultFromAddress, defaultFromName };
+}
+
+const defaultEmailSender = resolveDefaultEmailSender(
+  process.env.RESEND_FROM_ADDRESS || process.env.EMAIL_FROM,
+  process.env.RESEND_FROM_NAME || process.env.EMAIL_FROM_NAME,
+);
 
 export default buildConfig({
   admin: {
@@ -375,26 +395,11 @@ export default buildConfig({
     }),
   ],
   editor: lexicalEditor(),
-  email:
-    process.env.SMTP_USER && process.env.SMTP_PASS
-      ? nodemailerAdapter({
-        defaultFromAddress:
-          process.env.EMAIL_FROM || process.env.SMTP_USER || "hello@dynamicdreamz.com",
-        defaultFromName: process.env.EMAIL_FROM_NAME || "Dynamic Dreamz",
-        transportOptions: ({
-          host: process.env.SMTP_HOST || "smtp.gmail.com",
-          port: Number(process.env.SMTP_PORT) || 465,
-          secure: Number(process.env.SMTP_PORT ?? 465) === 465,
-          auth: {
-            user: process.env.SMTP_USER,
-            pass: (process.env.SMTP_PASS || "").replace(/\s+/g, ""),
-          },
-          connectionTimeout: 10000,
-          greetingTimeout: 10000,
-          socketTimeout: 15000,
-        } as any),
-      })
-      : undefined,
+  email: resendAdapter({
+    defaultFromAddress: defaultEmailSender.defaultFromAddress,
+    defaultFromName: defaultEmailSender.defaultFromName,
+    apiKey: process.env.RESEND_API_KEY || "",
+  }),
   secret: process.env.PAYLOAD_SECRET || "",
   typescript: {
     outputFile: path.resolve(dirname, "src/types/payload-types.ts"),

@@ -5,7 +5,7 @@ import type { PayloadRequest } from "payload";
 
 export type EmailAttachment = {
   filename: string;
-  content?: Buffer;
+  content?: string | Buffer;
   path?: string;
   contentType?: string;
 };
@@ -27,7 +27,7 @@ interface FormSubmissionLike {
   }> | null;
 }
 
-const MAX_ATTACHMENT_BYTES = 12 * 1024 * 1024; // 12MB limit for safe SMTP delivery
+const MAX_ATTACHMENT_BYTES = 12 * 1024 * 1024; // 12MB raw limit (stays within Resend's 40MB total payload cap)
 
 function formatBytes(bytes?: number | null): string {
   if (!bytes || isNaN(bytes)) return "";
@@ -172,11 +172,173 @@ function applyEmailTypography(html: string): string {
 }
 
 /**
+ * Splits a comma-separated recipient string without breaking quoted display names.
+ */
+function splitEmailAddressList(raw: string): string[] {
+  const parts: string[] = [];
+  let current = "";
+  let inQuotes = false;
+  let angleDepth = 0;
+
+  for (let i = 0; i < raw.length; i += 1) {
+    const ch = raw[i];
+    if (ch === '"' && raw[i - 1] !== "\\") {
+      inQuotes = !inQuotes;
+      current += ch;
+    } else if (!inQuotes && ch === "<") {
+      angleDepth += 1;
+      current += ch;
+    } else if (!inQuotes && ch === ">" && angleDepth > 0) {
+      angleDepth -= 1;
+      current += ch;
+    } else if (!inQuotes && angleDepth === 0 && ch === ",") {
+      const trimmed = current.trim();
+      if (trimmed) parts.push(trimmed);
+      current = "";
+    } else {
+      current += ch;
+    }
+  }
+
+  const last = current.trim();
+  if (last) parts.push(last);
+  return parts;
+}
+
+/**
+ * Resend rejects comma-separated recipient strings and empty strings on optional fields;
+ * normalize to a single string, a string[], or `[]` when empty.
+ */
+function normalizeRecipientField(value: unknown, useEmptyArrayWhenBlank: boolean): string | string[] {
+  const list: string[] = [];
+
+  if (typeof value === "string") {
+    list.push(...splitEmailAddressList(value));
+  } else if (Array.isArray(value)) {
+    for (const item of value) {
+      if (typeof item === "string") {
+        list.push(...splitEmailAddressList(item));
+      } else if (item && typeof item === "object" && "address" in item && typeof item.address === "string") {
+        const trimmed = item.address.trim();
+        if (trimmed) list.push(trimmed);
+      }
+    }
+  }
+
+  if (list.length === 0) {
+    return useEmptyArrayWhenBlank ? [] : "";
+  }
+  return list.length === 1 ? list[0] : list;
+}
+
+function extractEmailDomain(address: string): string {
+  const atIdx = address.lastIndexOf("@");
+  return atIdx >= 0 ? address.slice(atIdx + 1).trim().toLowerCase() : "";
+}
+
+/**
+ * Formats RFC 5322 sender strings (e.g. `Name<a@b.com>` or unquoted commas in display names)
+ * and aligns unverified sender domains with `defaultFromAddress` when testing on another domain.
+ */
+function normalizeFromAddress(from?: string, defaultFromAddress?: string): string {
+  const fallbackAddress = (defaultFromAddress || "").trim();
+  const trimmed = (from || "").trim();
+  if (!trimmed) return "";
+
+  const match = trimmed.match(/^(.*?)<([^<>@\s]+@[^<>@\s]+)>$/);
+  const rawName = match ? match[1].trim() : "";
+  let address = match ? match[2].trim() : trimmed;
+
+  if (
+    fallbackAddress &&
+    fallbackAddress.includes("@") &&
+    process.env.EMAIL_ALLOW_CUSTOM_FROM_DOMAINS !== "true"
+  ) {
+    const fromDomain = extractEmailDomain(address);
+    const defaultDomain = extractEmailDomain(fallbackAddress);
+    if (fromDomain && defaultDomain && fromDomain !== defaultDomain) {
+      address = fallbackAddress;
+    }
+  }
+
+  if (!rawName) return address;
+
+  const unquoted =
+    rawName.startsWith('"') && rawName.endsWith('"') && rawName.length >= 2
+      ? rawName.slice(1, -1)
+      : rawName;
+
+  const needsQuotes = /[",;<>()[\]\\:@]/.test(unquoted);
+  const formattedName = needsQuotes
+    ? `"${unquoted.replace(/\\/g, "\\\\").replace(/"/g, '\\"')}"`
+    : unquoted;
+
+  return `${formattedName} <${address}>`;
+}
+
+/**
+ * `@payloadcms/email-resend` serializes payloads with `JSON.stringify`, so raw `Buffer`
+ * attachment contents must be encoded as base64 strings beforehand.
+ */
+function normalizeAttachmentForResend(attachment: EmailAttachment): EmailAttachment {
+  if (Buffer.isBuffer(attachment.content)) {
+    return {
+      ...attachment,
+      content: attachment.content.toString("base64"),
+    };
+  }
+  return attachment;
+}
+
+function finalizeEmailForDelivery(
+  email: FormattedEmail,
+  submissionData: Array<{ field: string; value: unknown }> | null | undefined,
+  req: PayloadRequest,
+  attachmentBoxHtml?: string,
+  extraAttachments?: EmailAttachment[],
+): FormattedEmail {
+  let html = cleanRemainingSystemTags(
+    cleanEmptyParagraphs(email.html || ""),
+    submissionData,
+    req,
+  );
+
+  if (attachmentBoxHtml) {
+    if (html.includes("</div>")) {
+      const lastDivIndex = html.lastIndexOf("</div>");
+      html = html.slice(0, lastDivIndex) + attachmentBoxHtml + html.slice(lastDivIndex);
+    } else {
+      html += attachmentBoxHtml;
+    }
+  }
+
+  const existingAttachments = (((email as any).attachments || []) as EmailAttachment[]).map(
+    normalizeAttachmentForResend,
+  );
+  const combinedAttachments = extraAttachments
+    ? [...existingAttachments, ...extraAttachments.map(normalizeAttachmentForResend)]
+    : existingAttachments;
+
+  const defaultFromAddress = req?.payload?.email?.defaultFromAddress;
+
+  return {
+    ...email,
+    from: normalizeFromAddress(email.from, defaultFromAddress),
+    to: normalizeRecipientField(email.to, false) as string,
+    cc: normalizeRecipientField(email.cc, true) as string,
+    bcc: normalizeRecipientField(email.bcc, true) as string,
+    replyTo: normalizeRecipientField(email.replyTo, true) as string,
+    html: applyEmailTypography(html),
+    ...(combinedAttachments.length > 0 ? { attachments: combinedAttachments } : {}),
+  } as FormattedEmail;
+}
+
+/**
  * Production-ready hook for @payloadcms/plugin-form-builder beforeEmail.
  *
- * Inspects form submission uploads (e.g. CVs, resumes, documents), fetches or reads the file
- * buffer, and attaches them directly to outgoing emails via Nodemailer while embedding a fallback
- * download link in the HTML body.
+ * Normalizes form email headers/recipients for Resend, cleans system template tags,
+ * and attaches form submission uploads (e.g. CVs, resumes, documents) as base64
+ * attachments while embedding clickable fallback download links in the HTML body.
  */
 export const attachFormUploadsToEmail = async (
   emails: FormattedEmail[],
@@ -292,12 +454,9 @@ export const attachFormUploadsToEmail = async (
     }
 
     if (uploadRefs.length === 0) {
-      return emails.map((email) => ({
-        ...email,
-        html: applyEmailTypography(
-          cleanRemainingSystemTags(cleanEmptyParagraphs(email.html || ""), doc?.submissionData, req),
-        ),
-      }));
+      return emails.map((email) =>
+        finalizeEmailForDelivery(email, doc?.submissionData, req),
+      );
     }
 
     // 2. Resolve document records and build attachments
@@ -390,7 +549,7 @@ export const attachFormUploadsToEmail = async (
           if (fileBuffer.byteLength <= MAX_ATTACHMENT_BYTES) {
             attachment = {
               filename,
-              content: fileBuffer,
+              content: fileBuffer.toString("base64"),
               contentType: mimeType,
             };
           } else {
@@ -422,12 +581,9 @@ export const attachFormUploadsToEmail = async (
     }
 
     if (resolvedFiles.length === 0) {
-      return emails.map((email) => ({
-        ...email,
-        html: applyEmailTypography(
-          cleanRemainingSystemTags(cleanEmptyParagraphs(email.html || ""), doc?.submissionData, req),
-        ),
-      }));
+      return emails.map((email) =>
+        finalizeEmailForDelivery(email, doc?.submissionData, req),
+      );
     }
 
     // 3. Build email HTML section with clean clickable download links
@@ -461,44 +617,26 @@ export const attachFormUploadsToEmail = async (
     return emails.map((email, idx) => {
       let emailConfig = formDoc?.emails?.[idx];
       if (!emailConfig && Array.isArray(formDoc?.emails)) {
+        const rawTo = typeof email.to === "string" ? email.to.trim() : "";
         emailConfig = formDoc.emails.find(
-          (e: any) => e?.emailTo && email.to && e.emailTo.trim() === email.to.trim(),
+          (e: any) => e?.emailTo && rawTo && e.emailTo.trim() === rawTo,
         );
       }
 
       // Respect the admin toggle: defaults to true if unset or newly created
       const isAttachEnabled = emailConfig ? emailConfig.attachUploads !== false : true;
 
-      // If admin disabled attachments for this email, leave email untouched except typography & system tag cleanup
       if (!isAttachEnabled) {
-        return {
-          ...email,
-          html: applyEmailTypography(
-            cleanRemainingSystemTags(cleanEmptyParagraphs(email.html || ""), doc?.submissionData, req),
-          ),
-        };
+        return finalizeEmailForDelivery(email, doc?.submissionData, req);
       }
 
-      const existingAttachments = ((email as any).attachments || []) as EmailAttachment[];
-      const combinedAttachments = [...existingAttachments, ...physicalAttachments];
-
-      let updatedHtml = cleanRemainingSystemTags(cleanEmptyParagraphs(email.html || ""), doc?.submissionData, req);
-      if (updatedHtml.includes("</div>")) {
-        // Insert right before the last closing </div> for cleaner document hierarchy
-        const lastDivIndex = updatedHtml.lastIndexOf("</div>");
-        updatedHtml =
-          updatedHtml.slice(0, lastDivIndex) +
-          attachmentBoxHtml +
-          updatedHtml.slice(lastDivIndex);
-      } else {
-        updatedHtml += attachmentBoxHtml;
-      }
-
-      return {
-        ...email,
-        html: applyEmailTypography(updatedHtml),
-        attachments: combinedAttachments,
-      } as unknown as FormattedEmail;
+      return finalizeEmailForDelivery(
+        email,
+        doc?.submissionData,
+        req,
+        attachmentBoxHtml,
+        physicalAttachments,
+      );
     });
   } catch (err) {
     req.payload.logger.error({
