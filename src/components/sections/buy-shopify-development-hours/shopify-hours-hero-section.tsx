@@ -6,13 +6,37 @@ import { Eyebrow } from "@/components/ui/eyebrow";
 import {
   shopifyHoursHero,
   shopifyHoursPackages,
+  type ShopifyHoursPackage,
 } from "@/content/buy-shopify-development-hours";
 
-export function ShopifyHoursHeroSection() {
-  const titleStart = shopifyHoursHero.title.replace(
-    shopifyHoursHero.emphasizedTitle,
-    "",
-  );
+export type ShopifyHoursHeroContent = {
+  eyebrows: readonly string[];
+  title: string;
+  emphasizedTitle?: string;
+  description: string;
+  highlightsHeading: string;
+  highlights: readonly string[];
+  pricingHeading: {
+    prefix: string;
+    accent: string;
+    suffix: string;
+  };
+  quoteLabel: string;
+  quoteHref: string;
+};
+
+export type ShopifyHoursHeroSectionProps = {
+  content?: ShopifyHoursHeroContent;
+  packages?: readonly ShopifyHoursPackage[];
+};
+
+export function ShopifyHoursHeroSection({
+  content = shopifyHoursHero,
+  packages = shopifyHoursPackages,
+}: ShopifyHoursHeroSectionProps = {}) {
+  const titleStart = content.emphasizedTitle
+    ? content.title.replace(content.emphasizedTitle, "")
+    : content.title;
 
   return (
     <section
@@ -28,7 +52,7 @@ export function ShopifyHoursHeroSection() {
               <div className="title w-full text-[14px] leading-6 max-[992px]:flex">
                 <Eyebrow
                   as="span"
-                  items={shopifyHoursHero.eyebrows}
+                  items={content.eyebrows}
                   linePosition="overlay"
                   tone="muted"
                 />
@@ -39,17 +63,17 @@ export function ShopifyHoursHeroSection() {
               id="shopify-hours-hero-title"
             >
               {titleStart}
-              <span>{shopifyHoursHero.emphasizedTitle}</span>
+              {content.emphasizedTitle ? <span>{content.emphasizedTitle}</span> : null}
             </h1>
             <p className="mt-3 mb-[15px] font-sans text-[16px] leading-[28px] font-medium text-muted max-[1200px]:text-sm max-[1200px]:leading-6">
-              {shopifyHoursHero.description}
+              {content.description}
             </p>
             <div className="hire-shopify-dev-list w-full max-w-[460px] pt-2.5">
               <h5 className="mb-5 font-montserrat text-base font-semibold text-brand-red">
-                {shopifyHoursHero.highlightsHeading}
+                {content.highlightsHeading}
               </h5>
               <ul>
-                {shopifyHoursHero.highlights.map((highlight) => (
+                {content.highlights.map((highlight) => (
                   <li
                     className="relative mb-[13px] border-b border-black/10 pb-[13px] pl-[27px] font-sans text-sm leading-[normal] font-medium text-ink last:mb-0 last:border-b-0 last:pb-0 max-[768px]:pl-[31px] max-[768px]:leading-[22px]"
                     key={highlight}
@@ -70,10 +94,10 @@ export function ShopifyHoursHeroSection() {
           </div>
           <div data-aos="fade-up" className="hire-shopify-dev-right w-[49%] pl-[50px] max-[992px]:w-full max-[992px]:pt-[50px] max-[992px]:pl-0">
             <PricingPackageSelector
-              heading={shopifyHoursHero.pricingHeading}
-              packages={shopifyHoursPackages}
-              quoteHref={shopifyHoursHero.quoteHref}
-              quoteLabel={shopifyHoursHero.quoteLabel}
+              heading={content.pricingHeading}
+              packages={packages}
+              quoteHref={content.quoteHref}
+              quoteLabel={content.quoteLabel}
             />
           </div>
         </div>

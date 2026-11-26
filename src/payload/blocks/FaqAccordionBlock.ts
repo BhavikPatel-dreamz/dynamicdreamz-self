@@ -35,6 +35,16 @@ export const FaqAccordionBlock: Block = {
       label: "HTML Section ID (e.g. faqs)",
     },
     {
+      name: "containerVariant",
+      type: "select",
+      defaultValue: "default",
+      label: "Container Width / Mobile Padding",
+      options: [
+        { label: "Default Container", value: "default" },
+        { label: "Compact Mobile Padding (compactMobile)", value: "compactMobile" },
+      ],
+    },
+    {
       name: "variant",
       type: "select",
       defaultValue: "split",
@@ -73,8 +83,8 @@ export const FaqAccordionBlock: Block = {
         {
           name: "answer",
           type: "textarea",
-          required: true,
-          label: "Answer",
+          required: false,
+          label: "Answer (Plain Text or Leave Blank when using Rich Answer Parts)",
         },
         {
           name: "answerParts",

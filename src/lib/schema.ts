@@ -6434,7 +6434,7 @@ export function createModularPageSchema({
       if (!node || typeof node !== "object") return node;
       const nodeType = node["@type"];
 
-      if (nodeType === "WebPage") {
+      if (nodeType === "WebPage" || nodeType === "CollectionPage") {
         const currentPrimaryImage =
           node.primaryImageOfPage && typeof node.primaryImageOfPage === "object"
             ? (node.primaryImageOfPage as Record<string, unknown>)

@@ -162,12 +162,16 @@ const INHERENT_SECTION_BACKGROUND_CLASSES: Record<string, string> = {
   "mobile-app-comparison": "bg-[#f7f4e9]",
   "shopify-mobile-app-dtc": "bg-[#fafaf7]",
   "shopify-app-benefits": "bg-[#eff4ef]",
-  "support-scenarios": "bg-[#eff4ef]",
-  "white-label-delivery": "bg-[#eff4ef]",
   "credential-tabs": "bg-[#eff4ef]",
   "partner-directory-proof": "bg-[#eff4ef]",
   "theme-customization-approach": "bg-[#eff4ef]",
   "theme-features-banner": "bg-[#fbefd7]",
+  "cro-assessment": "bg-[#E6ECF0]",
+  "b2b-smart-b2b": "bg-[#eff4ef]",
+  "certified-agency-support": "bg-[#171E16]",
+  "cro-revenue-impact": "bg-[#171E16]",
+  "cro-engagement": "bg-[#FAFAF7]",
+  "team-behind-it": "bg-[#EFF4EF]",
 };
 
 /**
@@ -445,10 +449,24 @@ export function getBlockBackgroundCategory(
       if (processVariant === "migration-grid") {
         return obj.cardVariant === "white" ? "white" : "colored";
       }
-      if (processVariant === "development-process") {
+      if (processVariant === "development-process" || processVariant === "numbered-timeline") {
         return "colored";
       }
       if (processVariant === "horizontal-process" || processVariant === "white-label-process") {
+        return "white";
+      }
+    }
+
+    if (normType === "proof-stats") {
+      const psVariant = variantOrTheme || obj.variant;
+      if (psVariant === "credential-evidence" || psVariant === "team-boxes") {
+        return "colored";
+      }
+    }
+
+    if (normType === "testimonials-carousel") {
+      const tcVariant = variantOrTheme || obj.variant;
+      if (tcVariant === "client-stories") {
         return "white";
       }
     }

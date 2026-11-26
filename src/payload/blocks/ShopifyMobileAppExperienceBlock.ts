@@ -34,6 +34,11 @@ export const ShopifyMobileAppExperienceBlock: Block = {
       ],
     },
     {
+      name: "sectionId",
+      type: "text",
+      label: "HTML Section ID (e.g. shopping_eperience, why-choose-dd)",
+    },
+    {
       name: "moments",
       type: "array",
       dbName: "sme_moments",

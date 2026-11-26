@@ -81,6 +81,22 @@ export const ProcessTimelineBlock: Block = {
       label: "HTML Section ID (e.g. migration-process)",
     },
     {
+      name: "headingId",
+      type: "text",
+      label: "Heading DOM ID (e.g. shopify-hours-process-title)",
+    },
+    {
+      name: "className",
+      type: "text",
+      label: "Custom CSS Class (e.g. engagement-section)",
+    },
+    {
+      name: "removeTopPadding",
+      type: "checkbox",
+      defaultValue: false,
+      label: "Remove top padding (pt-0)",
+    },
+    {
       name: "removeBottomPadding",
       type: "checkbox",
       defaultValue: false,
@@ -102,6 +118,11 @@ export const ProcessTimelineBlock: Block = {
           type: "text",
           required: true,
           label: "Step Title",
+        },
+        {
+          name: "secondaryTitle",
+          type: "text",
+          label: "Second Line Break (Optional split-line label)",
         },
         {
           name: "description",

@@ -30,6 +30,8 @@ export type DeliveryModelComparisonSectionProps = {
   eyebrow?: string;
   heading?: string;
   description?: string;
+  columns?: DeliveryModelComparisonContent["columns"];
+  rows?: DeliveryModelComparisonContent["rows"];
   primaryCta?: { label: string; href: string };
   secondaryCta?: { label: string; href: string };
 };
@@ -39,6 +41,8 @@ export function DeliveryModelComparisonSection({
   eyebrow = content.eyebrow,
   heading = content.heading,
   description = content.description,
+  columns = content.columns,
+  rows = content.rows,
   primaryCta = content.ctas.primary,
   secondaryCta = content.ctas.secondary,
 }: DeliveryModelComparisonSectionProps = {}) {
@@ -61,7 +65,7 @@ export function DeliveryModelComparisonSection({
             <table className="compare-table w-full min-w-[900px] border-separate border-spacing-0 bg-white">
               <thead>
                 <tr>
-                  {content.columns.map((col, idx) => (
+                  {columns.map((col, idx) => (
                     <th
                       className={`px-[18px] py-[17px] text-left font-montserrat text-sm font-bold uppercase tracking-[0.06em] text-[#282828] transition-colors max-[992px]:px-[14px] max-[992px]:py-2 max-[992px]:text-[12px] max-[992px]:leading-[13px] max-[992px]:whitespace-nowrap ${
                         col.isWinner
@@ -88,8 +92,8 @@ export function DeliveryModelComparisonSection({
                 </tr>
               </thead>
               <tbody>
-                {content.rows.map((row, idx) => {
-                  const isLastRow = idx === content.rows.length - 1;
+                {rows.map((row, idx) => {
+                  const isLastRow = idx === rows.length - 1;
                   return (
                     <tr key={row.feature}>
                       <td

@@ -15,6 +15,7 @@ export const BrandPartnersBlock: Block = {
         { label: "Logo Slider (Marquee / Rail)", value: "slider" },
         { label: "Brand Grid", value: "grid" },
         { label: "Home Brand Partners", value: "home" },
+        { label: "Shopify Hours Brand Partners", value: "shopify-hours" },
         { label: "Platform & App Integrations", value: "integrations" },
         { label: "White Label Tools Grid (Categorized Logos)", value: "tools-grid" },
         { label: "Full-Stack Technologies Stack (Tabbed / Categorized)", value: "tech-stack" },
@@ -101,6 +102,7 @@ export const BrandPartnersBlock: Block = {
           options: [
             { label: "Row 1 (Top / Forward)", value: "1" },
             { label: "Row 2 (Bottom / Reverse)", value: "2" },
+            { label: "Row 3 (Bottom Mobile Marquee)", value: "3" },
           ],
         },
         {

@@ -225,8 +225,13 @@ function runCheck() {
     { slug: "about-founders", mediaFields: ["image"] },
     { slug: "about-story", mediaFields: ["poster", "overlay"] },
     { slug: "about-timeline", mediaFields: ["image"] },
+    { slug: "b2b-smart-b2b", mediaFields: ["image"] },
     { slug: "brand-partners", mediaFields: ["logo"] },
     { slug: "cro-barriers", mediaFields: ["icon"] },
+    { slug: "cro-engagement", mediaFields: ["icon"] },
+    { slug: "cro-process", mediaFields: ["icon"] },
+    { slug: "cro-revenue-impact", mediaFields: ["icon"] },
+    { slug: "cro-services", mediaFields: ["icon"] },
     { slug: "cta-banner", mediaFields: ["backgroundImage", "image"] },
     { slug: "life-culture-hiring", mediaFields: ["image", "icon"] },
     { slug: "life-gallery", mediaFields: ["image"] },
@@ -237,6 +242,7 @@ function runCheck() {
     { slug: "service-hero", mediaFields: ["videoPoster", "image", "bgShape"] },
     { slug: "services-grid", mediaFields: ["icon"] },
     { slug: "testimonials-carousel", mediaFields: ["image", "logo"] },
+    { slug: "verified-knowledge", mediaFields: ["icon"] },
   ];
 
   for (const { slug } of blocksRequiringMedia) {

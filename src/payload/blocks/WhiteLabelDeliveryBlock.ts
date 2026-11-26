@@ -26,6 +26,68 @@ export const WhiteLabelDeliveryBlock: Block = {
       label: "Description",
     },
     {
+      name: "columns",
+      type: "array",
+      dbName: "wld_cols",
+      label: "Comparison Table Columns",
+      fields: [
+        {
+          name: "label",
+          type: "text",
+          required: true,
+          label: "Column Heading",
+        },
+        {
+          name: "isWinner",
+          type: "checkbox",
+          defaultValue: false,
+          label: "Highlight Winner Column",
+        },
+        {
+          name: "kicker",
+          type: "text",
+          label: "Winner Kicker (e.g. Recommended for agencies)",
+        },
+        {
+          name: "pill",
+          type: "text",
+          label: "Winner Pill Badge",
+        },
+      ],
+    },
+    {
+      name: "rows",
+      type: "array",
+      dbName: "wld_rows",
+      label: "Comparison Matrix Rows",
+      fields: [
+        {
+          name: "feature",
+          type: "text",
+          required: true,
+          label: "Feature / Row Label",
+        },
+        {
+          name: "inHouse",
+          type: "text",
+          required: true,
+          label: "In-House Value",
+        },
+        {
+          name: "freelancer",
+          type: "text",
+          required: true,
+          label: "Freelancer Value",
+        },
+        {
+          name: "partner",
+          type: "text",
+          required: true,
+          label: "White-Label Partner Value",
+        },
+      ],
+    },
+    {
       name: "primaryCta",
       type: "group",
       label: "Primary CTA",

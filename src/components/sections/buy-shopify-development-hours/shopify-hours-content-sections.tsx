@@ -9,11 +9,20 @@ import {
   shopifyHoursTasks,
 } from "@/content/buy-shopify-development-hours";
 
+export type ShopifyHoursComparisonItem = {
+  title: string;
+  points: readonly string[];
+  note: string;
+  cta: string;
+  href: string;
+};
+
 export type ShopifyHoursComparisonSectionProps = {
   eyebrow?: string;
   heading?: string;
   description?: string;
   badge?: string;
+  items?: readonly ShopifyHoursComparisonItem[];
 };
 
 export function ShopifyHoursComparisonSection({
@@ -21,6 +30,7 @@ export function ShopifyHoursComparisonSection({
   heading = shopifyHoursComparison.heading,
   description = shopifyHoursComparison.description,
   badge = shopifyHoursComparison.ribbon,
+  items = shopifyHoursComparison.items,
 }: ShopifyHoursComparisonSectionProps = {}) {
   return (
     <section
@@ -65,7 +75,7 @@ export function ShopifyHoursComparisonSection({
               </span>
             </div>
             <div className="bulk-shopify-fulltime-resources-table flex items-stretch rounded-[20px] border-2 border-[#171E16] bg-white p-[20px_32px_20px_20px] min-[768px]:max-[992px]:p-[20px_10px] max-[768px]:flex-wrap max-[768px]:p-[30px_15px]">
-              {shopifyHoursComparison.items.map((item, index) => (
+              {items.map((item, index) => (
                 <article
                   className={`bulk-shopify-fulltime-resources-list relative flex flex-col ${
                     index === 0
@@ -122,7 +132,19 @@ export function ShopifyHoursComparisonSection({
   );
 }
 
-export function ShopifyHoursTasksSection() {
+export type ShopifyHoursTasksSectionProps = {
+  eyebrow?: string;
+  heading?: string;
+  description?: string;
+  items?: readonly string[];
+};
+
+export function ShopifyHoursTasksSection({
+  eyebrow = shopifyHoursTasks.eyebrow,
+  heading = shopifyHoursTasks.heading,
+  description = shopifyHoursTasks.description,
+  items = shopifyHoursTasks.items,
+}: ShopifyHoursTasksSectionProps = {}) {
   return (
     <section
       aria-labelledby="shopify-hours-tasks-title"
@@ -132,15 +154,15 @@ export function ShopifyHoursTasksSection() {
         <div className="can-you-use-shopify-hours-row">
           <SplitSectionHeading
             className="mb-[50px]"
-            description={shopifyHoursTasks.description}
-            eyebrow={shopifyHoursTasks.eyebrow}
-            heading={shopifyHoursTasks.heading}
+            description={description}
+            eyebrow={eyebrow}
+            heading={heading}
             headingId="shopify-hours-tasks-title"
             variant="left"
           />
           <div data-aos="fade-up" className="can-you-use-shopify-hours-list">
             <ul className="flex flex-wrap justify-start gap-x-[11px] gap-y-6">
-              {shopifyHoursTasks.items.map((item) => (
+              {items.map((item) => (
                 <li
                   className="relative rounded-[30px] border border-black/20 bg-[#fafaf7] py-[17px] pr-[13px] pl-[37px] font-sans text-sm font-medium leading-[19.48px] text-[#282828] max-[768px]:w-full"
                   key={item}

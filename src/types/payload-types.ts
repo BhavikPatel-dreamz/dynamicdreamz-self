@@ -835,6 +835,7 @@ export interface Page {
             bodyLayout?: ('default' | 'compact') | null;
             tabletMediaVisibility?: ('auto' | 'hidden' | 'inline' | 'inline-70') | null;
             backgroundColor?: ('cream' | 'white') | null;
+            containerVariant?: ('default' | 'compactMobile') | null;
             wrapperClassName?: string | null;
             eyebrow?: string | null;
             eyebrows?:
@@ -864,8 +865,32 @@ export interface Page {
             secondaryCta?: {
               label?: string | null;
               href?: string | null;
+              ariaLabel?: string | null;
               target?: ('_self' | '_blank') | null;
             };
+            highlightsHeading?: string | null;
+            highlights?:
+              | {
+                  text: string;
+                  id?: string | null;
+                }[]
+              | null;
+            pricingHeading?: {
+              prefix?: string | null;
+              accent?: string | null;
+              suffix?: string | null;
+            };
+            packages?:
+              | {
+                  hours: number;
+                  rate: number;
+                  previousRate: number;
+                  cost: number;
+                  previousCost: number;
+                  purchaseHref: string;
+                  id?: string | null;
+                }[]
+              | null;
             /**
              * e.g. /assets/home/why-dynamic-dreamz.mp4 or CDN URL
              */
@@ -958,7 +983,8 @@ export interface Page {
             blockType: 'service-hero';
           }
         | {
-            variant?: ('slider' | 'grid' | 'home' | 'integrations' | 'tools-grid' | 'tech-stack') | null;
+            variant?:
+              ('slider' | 'grid' | 'home' | 'shopify-hours' | 'integrations' | 'tools-grid' | 'tech-stack') | null;
             eyebrow?: string | null;
             heading?: string | null;
             description?: string | null;
@@ -971,7 +997,7 @@ export interface Page {
             brands?:
               | {
                   name?: string | null;
-                  row?: ('1' | '2') | null;
+                  row?: ('1' | '2' | '3') | null;
                   logo?: (number | null) | Media;
                   src?: string | null;
                   alt?: string | null;
@@ -1003,13 +1029,14 @@ export interface Page {
             description?: string | null;
             idPrefix?: string | null;
             sectionId?: string | null;
+            containerVariant?: ('default' | 'compactMobile') | null;
             variant?: ('split' | 'home') | null;
             iconVariant?: ('circle-cross' | 'default') | null;
             animateOnReveal?: boolean | null;
             faqs?:
               | {
                   question: string;
-                  answer: string;
+                  answer?: string | null;
                   answerParts?:
                     | {
                         text: string;
@@ -1218,6 +1245,7 @@ export interface Page {
             eyebrow?: string | null;
             heading?: string | null;
             description?: string | null;
+            secondaryDescription?: string | null;
             paragraphs?:
               | {
                   text: string;
@@ -1268,9 +1296,11 @@ export interface Page {
                   icon?: (number | null) | Media;
                   iconSrc?: string | null;
                   iconAlt?: string | null;
+                  href?: string | null;
                   id?: string | null;
                 }[]
               | null;
+            note?: string | null;
             partnerHeading?: string | null;
             partnerDescription?: string | null;
             partnerLogo?: (number | null) | Media;
@@ -1306,11 +1336,15 @@ export interface Page {
             isBgTransparent?: boolean | null;
             cardVariant?: ('pista' | 'white') | null;
             sectionId?: string | null;
+            headingId?: string | null;
+            className?: string | null;
+            removeTopPadding?: boolean | null;
             removeBottomPadding?: boolean | null;
             steps?:
               | {
                   step?: string | null;
                   title: string;
+                  secondaryTitle?: string | null;
                   description?: string | null;
                   bullets?:
                     | {
@@ -1566,6 +1600,21 @@ export interface Page {
             heading?: string | null;
             description?: string | null;
             badge?: string | null;
+            items?:
+              | {
+                  title: string;
+                  points?:
+                    | {
+                        text: string;
+                        id?: string | null;
+                      }[]
+                    | null;
+                  note: string;
+                  cta: string;
+                  href: string;
+                  id?: string | null;
+                }[]
+              | null;
             id?: string | null;
             blockName?: string | null;
             blockType: 'hours-comparison';
@@ -1610,6 +1659,24 @@ export interface Page {
             eyebrow?: string | null;
             heading: string;
             description?: string | null;
+            columns?:
+              | {
+                  label: string;
+                  isWinner?: boolean | null;
+                  kicker?: string | null;
+                  pill?: string | null;
+                  id?: string | null;
+                }[]
+              | null;
+            rows?:
+              | {
+                  feature: string;
+                  inHouse: string;
+                  freelancer: string;
+                  partner: string;
+                  id?: string | null;
+                }[]
+              | null;
             primaryCta?: {
               label?: string | null;
               href?: string | null;
@@ -1626,6 +1693,7 @@ export interface Page {
             eyebrow?: string | null;
             heading: string;
             description?: string | null;
+            sectionId?: string | null;
             approaches?:
               | {
                   badge?: string | null;
@@ -1832,6 +1900,8 @@ export interface Page {
             items?:
               | {
                   scenarioId?: string | null;
+                  title?: string | null;
+                  subtitle?: string | null;
                   kicker?: string | null;
                   heading: string;
                   description: string;
@@ -1841,6 +1911,7 @@ export interface Page {
                         id?: string | null;
                       }[]
                     | null;
+                  meta?: string | null;
                   primaryCtaLabel?: string | null;
                   primaryCtaHref?: string | null;
                   secondaryCtaLabel?: string | null;
@@ -2107,6 +2178,7 @@ export interface Page {
             heading: string;
             description?: string | null;
             columns?: ('4' | '3') | null;
+            sectionId?: string | null;
             moments?:
               | {
                   step: string;
@@ -2318,6 +2390,261 @@ export interface Page {
             id?: string | null;
             blockName?: string | null;
             blockType: 'white-label-why';
+          }
+        | {
+            sectionId?: string | null;
+            eyebrow?: string | null;
+            heading: string;
+            paragraphs?:
+              | {
+                  text: string;
+                  id?: string | null;
+                }[]
+              | null;
+            features?:
+              | {
+                  text: string;
+                  id?: string | null;
+                }[]
+              | null;
+            buttons?:
+              | {
+                  label: string;
+                  href: string;
+                  ariaLabel?: string | null;
+                  id?: string | null;
+                }[]
+              | null;
+            meta?:
+              | {
+                  text: string;
+                  id?: string | null;
+                }[]
+              | null;
+            image?: (number | null) | Media;
+            imageSrc?: string | null;
+            imageAlt?: string | null;
+            imageWidth?: number | null;
+            imageHeight?: number | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'b2b-smart-b2b';
+          }
+        | {
+            eyebrow?: string | null;
+            heading: string;
+            description?: string | null;
+            items?:
+              | {
+                  title: string;
+                  description: string;
+                  icon?: (number | null) | Media;
+                  iconSrc?: string | null;
+                  iconAlt?: string | null;
+                  id?: string | null;
+                }[]
+              | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'verified-knowledge';
+          }
+        | {
+            eyebrow?: string | null;
+            heading: string;
+            paragraphs?:
+              | {
+                  text: string;
+                  id?: string | null;
+                }[]
+              | null;
+            items?:
+              | {
+                  title: string;
+                  description: string;
+                  id?: string | null;
+                }[]
+              | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'certified-agency-support';
+          }
+        | {
+            eyebrow?: string | null;
+            heading: string;
+            description?: string | null;
+            items?:
+              | {
+                  eyebrow?: string | null;
+                  title: string;
+                  description: string;
+                  id?: string | null;
+                }[]
+              | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'certified-services';
+          }
+        | {
+            eyebrow?: string | null;
+            heading: string;
+            description?: string | null;
+            beforeBadge?: string | null;
+            beforeMetrics?:
+              | {
+                  label: string;
+                  value: string;
+                  icon?: (number | null) | Media;
+                  iconSrc?: string | null;
+                  alt?: string | null;
+                  id?: string | null;
+                }[]
+              | null;
+            beforeTotalLabel?: string | null;
+            beforeTotalValue?: string | null;
+            afterBadge?: string | null;
+            afterMetrics?:
+              | {
+                  label: string;
+                  value: string;
+                  icon?: (number | null) | Media;
+                  iconSrc?: string | null;
+                  alt?: string | null;
+                  id?: string | null;
+                }[]
+              | null;
+            afterTotalLabel?: string | null;
+            afterTotalValue?: string | null;
+            footerText?: string | null;
+            footerHighlight?: string | null;
+            footerSuffix?: string | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'cro-revenue-impact';
+          }
+        | {
+            eyebrow?: string | null;
+            heading: string;
+            description?: string | null;
+            items?:
+              | {
+                  title: string;
+                  description: string;
+                  icon?: (number | null) | Media;
+                  iconSrc?: string | null;
+                  alt?: string | null;
+                  id?: string | null;
+                }[]
+              | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'cro-services';
+          }
+        | {
+            eyebrow?: string | null;
+            heading: string;
+            description?: string | null;
+            steps?:
+              | {
+                  number?: string | null;
+                  title: string;
+                  description: string;
+                  icon?: (number | null) | Media;
+                  iconSrc?: string | null;
+                  id?: string | null;
+                }[]
+              | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'cro-process';
+          }
+        | {
+            eyebrow?: string | null;
+            heading: string;
+            paragraphs?:
+              | {
+                  text: string;
+                  id?: string | null;
+                }[]
+              | null;
+            points?:
+              | {
+                  text: string;
+                  id?: string | null;
+                }[]
+              | null;
+            tagline?: string | null;
+            removeTopPadding?: boolean | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'cro-why';
+          }
+        | {
+            heading: string;
+            items?:
+              | {
+                  title: string;
+                  description: string;
+                  icon?: (number | null) | Media;
+                  iconSrc?: string | null;
+                  alt?: string | null;
+                  features?:
+                    | {
+                        text: string;
+                        id?: string | null;
+                      }[]
+                    | null;
+                  ctaLabel: string;
+                  ctaHref: string;
+                  id?: string | null;
+                }[]
+              | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'cro-engagement';
+          }
+        | {
+            eyebrow?: string | null;
+            heading: string;
+            description?: string | null;
+            cards?:
+              | {
+                  title: string;
+                  description: string;
+                  id?: string | null;
+                }[]
+              | null;
+            hideCtas?: boolean | null;
+            primaryCta?: {
+              label?: string | null;
+              href?: string | null;
+            };
+            secondaryCta?: {
+              label?: string | null;
+              href?: string | null;
+              variant?: ('arrowLink' | 'outline') | null;
+            };
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'team-behind-it';
+          }
+        | {
+            eyebrow?: string | null;
+            heading: string;
+            description?: string | null;
+            cards?:
+              | {
+                  tag: string;
+                  heading: string;
+                  description: string;
+                  pill: string;
+                  ctaLabel: string;
+                  ctaHref: string;
+                  id?: string | null;
+                }[]
+              | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'how-agencies-use';
           }
       )[]
     | null;
@@ -3417,6 +3744,7 @@ export interface PagesSelect<T extends boolean = true> {
               bodyLayout?: T;
               tabletMediaVisibility?: T;
               backgroundColor?: T;
+              containerVariant?: T;
               wrapperClassName?: T;
               eyebrow?: T;
               eyebrows?:
@@ -3450,7 +3778,33 @@ export interface PagesSelect<T extends boolean = true> {
                 | {
                     label?: T;
                     href?: T;
+                    ariaLabel?: T;
                     target?: T;
+                  };
+              highlightsHeading?: T;
+              highlights?:
+                | T
+                | {
+                    text?: T;
+                    id?: T;
+                  };
+              pricingHeading?:
+                | T
+                | {
+                    prefix?: T;
+                    accent?: T;
+                    suffix?: T;
+                  };
+              packages?:
+                | T
+                | {
+                    hours?: T;
+                    rate?: T;
+                    previousRate?: T;
+                    cost?: T;
+                    previousCost?: T;
+                    purchaseHref?: T;
+                    id?: T;
                   };
               videoSrc?: T;
               videoPoster?: T;
@@ -3599,6 +3953,7 @@ export interface PagesSelect<T extends boolean = true> {
               description?: T;
               idPrefix?: T;
               sectionId?: T;
+              containerVariant?: T;
               variant?: T;
               iconVariant?: T;
               animateOnReveal?: T;
@@ -3813,6 +4168,7 @@ export interface PagesSelect<T extends boolean = true> {
               eyebrow?: T;
               heading?: T;
               description?: T;
+              secondaryDescription?: T;
               paragraphs?:
                 | T
                 | {
@@ -3857,8 +4213,10 @@ export interface PagesSelect<T extends boolean = true> {
                     icon?: T;
                     iconSrc?: T;
                     iconAlt?: T;
+                    href?: T;
                     id?: T;
                   };
+              note?: T;
               partnerHeading?: T;
               partnerDescription?: T;
               partnerLogo?: T;
@@ -3887,12 +4245,16 @@ export interface PagesSelect<T extends boolean = true> {
               isBgTransparent?: T;
               cardVariant?: T;
               sectionId?: T;
+              headingId?: T;
+              className?: T;
+              removeTopPadding?: T;
               removeBottomPadding?: T;
               steps?:
                 | T
                 | {
                     step?: T;
                     title?: T;
+                    secondaryTitle?: T;
                     description?: T;
                     bullets?:
                       | T
@@ -4137,6 +4499,21 @@ export interface PagesSelect<T extends boolean = true> {
               heading?: T;
               description?: T;
               badge?: T;
+              items?:
+                | T
+                | {
+                    title?: T;
+                    points?:
+                      | T
+                      | {
+                          text?: T;
+                          id?: T;
+                        };
+                    note?: T;
+                    cta?: T;
+                    href?: T;
+                    id?: T;
+                  };
               id?: T;
               blockName?: T;
             };
@@ -4184,6 +4561,24 @@ export interface PagesSelect<T extends boolean = true> {
               eyebrow?: T;
               heading?: T;
               description?: T;
+              columns?:
+                | T
+                | {
+                    label?: T;
+                    isWinner?: T;
+                    kicker?: T;
+                    pill?: T;
+                    id?: T;
+                  };
+              rows?:
+                | T
+                | {
+                    feature?: T;
+                    inHouse?: T;
+                    freelancer?: T;
+                    partner?: T;
+                    id?: T;
+                  };
               primaryCta?:
                 | T
                 | {
@@ -4205,6 +4600,7 @@ export interface PagesSelect<T extends boolean = true> {
               eyebrow?: T;
               heading?: T;
               description?: T;
+              sectionId?: T;
               approaches?:
                 | T
                 | {
@@ -4429,6 +4825,8 @@ export interface PagesSelect<T extends boolean = true> {
                 | T
                 | {
                     scenarioId?: T;
+                    title?: T;
+                    subtitle?: T;
                     kicker?: T;
                     heading?: T;
                     description?: T;
@@ -4438,6 +4836,7 @@ export interface PagesSelect<T extends boolean = true> {
                           text?: T;
                           id?: T;
                         };
+                    meta?: T;
                     primaryCtaLabel?: T;
                     primaryCtaHref?: T;
                     secondaryCtaLabel?: T;
@@ -4716,6 +5115,7 @@ export interface PagesSelect<T extends boolean = true> {
               heading?: T;
               description?: T;
               columns?: T;
+              sectionId?: T;
               moments?:
                 | T
                 | {
@@ -4934,6 +5334,276 @@ export interface PagesSelect<T extends boolean = true> {
                 | {
                     title?: T;
                     description?: T;
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        'b2b-smart-b2b'?:
+          | T
+          | {
+              sectionId?: T;
+              eyebrow?: T;
+              heading?: T;
+              paragraphs?:
+                | T
+                | {
+                    text?: T;
+                    id?: T;
+                  };
+              features?:
+                | T
+                | {
+                    text?: T;
+                    id?: T;
+                  };
+              buttons?:
+                | T
+                | {
+                    label?: T;
+                    href?: T;
+                    ariaLabel?: T;
+                    id?: T;
+                  };
+              meta?:
+                | T
+                | {
+                    text?: T;
+                    id?: T;
+                  };
+              image?: T;
+              imageSrc?: T;
+              imageAlt?: T;
+              imageWidth?: T;
+              imageHeight?: T;
+              id?: T;
+              blockName?: T;
+            };
+        'verified-knowledge'?:
+          | T
+          | {
+              eyebrow?: T;
+              heading?: T;
+              description?: T;
+              items?:
+                | T
+                | {
+                    title?: T;
+                    description?: T;
+                    icon?: T;
+                    iconSrc?: T;
+                    iconAlt?: T;
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        'certified-agency-support'?:
+          | T
+          | {
+              eyebrow?: T;
+              heading?: T;
+              paragraphs?:
+                | T
+                | {
+                    text?: T;
+                    id?: T;
+                  };
+              items?:
+                | T
+                | {
+                    title?: T;
+                    description?: T;
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        'certified-services'?:
+          | T
+          | {
+              eyebrow?: T;
+              heading?: T;
+              description?: T;
+              items?:
+                | T
+                | {
+                    eyebrow?: T;
+                    title?: T;
+                    description?: T;
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        'cro-revenue-impact'?:
+          | T
+          | {
+              eyebrow?: T;
+              heading?: T;
+              description?: T;
+              beforeBadge?: T;
+              beforeMetrics?:
+                | T
+                | {
+                    label?: T;
+                    value?: T;
+                    icon?: T;
+                    iconSrc?: T;
+                    alt?: T;
+                    id?: T;
+                  };
+              beforeTotalLabel?: T;
+              beforeTotalValue?: T;
+              afterBadge?: T;
+              afterMetrics?:
+                | T
+                | {
+                    label?: T;
+                    value?: T;
+                    icon?: T;
+                    iconSrc?: T;
+                    alt?: T;
+                    id?: T;
+                  };
+              afterTotalLabel?: T;
+              afterTotalValue?: T;
+              footerText?: T;
+              footerHighlight?: T;
+              footerSuffix?: T;
+              id?: T;
+              blockName?: T;
+            };
+        'cro-services'?:
+          | T
+          | {
+              eyebrow?: T;
+              heading?: T;
+              description?: T;
+              items?:
+                | T
+                | {
+                    title?: T;
+                    description?: T;
+                    icon?: T;
+                    iconSrc?: T;
+                    alt?: T;
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        'cro-process'?:
+          | T
+          | {
+              eyebrow?: T;
+              heading?: T;
+              description?: T;
+              steps?:
+                | T
+                | {
+                    number?: T;
+                    title?: T;
+                    description?: T;
+                    icon?: T;
+                    iconSrc?: T;
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        'cro-why'?:
+          | T
+          | {
+              eyebrow?: T;
+              heading?: T;
+              paragraphs?:
+                | T
+                | {
+                    text?: T;
+                    id?: T;
+                  };
+              points?:
+                | T
+                | {
+                    text?: T;
+                    id?: T;
+                  };
+              tagline?: T;
+              removeTopPadding?: T;
+              id?: T;
+              blockName?: T;
+            };
+        'cro-engagement'?:
+          | T
+          | {
+              heading?: T;
+              items?:
+                | T
+                | {
+                    title?: T;
+                    description?: T;
+                    icon?: T;
+                    iconSrc?: T;
+                    alt?: T;
+                    features?:
+                      | T
+                      | {
+                          text?: T;
+                          id?: T;
+                        };
+                    ctaLabel?: T;
+                    ctaHref?: T;
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        'team-behind-it'?:
+          | T
+          | {
+              eyebrow?: T;
+              heading?: T;
+              description?: T;
+              cards?:
+                | T
+                | {
+                    title?: T;
+                    description?: T;
+                    id?: T;
+                  };
+              hideCtas?: T;
+              primaryCta?:
+                | T
+                | {
+                    label?: T;
+                    href?: T;
+                  };
+              secondaryCta?:
+                | T
+                | {
+                    label?: T;
+                    href?: T;
+                    variant?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        'how-agencies-use'?:
+          | T
+          | {
+              eyebrow?: T;
+              heading?: T;
+              description?: T;
+              cards?:
+                | T
+                | {
+                    tag?: T;
+                    heading?: T;
+                    description?: T;
+                    pill?: T;
+                    ctaLabel?: T;
+                    ctaHref?: T;
                     id?: T;
                   };
               id?: T;

@@ -23,6 +23,11 @@ export const ProofStatsBlock: Block = {
       label: "Description",
     },
     {
+      name: "secondaryDescription",
+      type: "textarea",
+      label: "Secondary Narrative Text (Shopify Plus Proof)",
+    },
+    {
       name: "paragraphs",
       type: "array",
       dbName: "pr_paras",
@@ -202,7 +207,17 @@ export const ProofStatsBlock: Block = {
           type: "text",
           label: "Icon Alt Text",
         },
+        {
+          name: "href",
+          type: "text",
+          label: "Verification / Link URL (Credential Evidence)",
+        },
       ],
+    },
+    {
+      name: "note",
+      type: "textarea",
+      label: "Bottom Footnote (Credential Evidence)",
     },
     {
       name: "partnerHeading",

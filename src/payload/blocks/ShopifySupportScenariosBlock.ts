@@ -35,6 +35,16 @@ export const ShopifySupportScenariosBlock: Block = {
           label: "Unique Identifier",
         },
         {
+          name: "title",
+          type: "text",
+          label: "Tab Button Title",
+        },
+        {
+          name: "subtitle",
+          type: "text",
+          label: "Tab Button Subtitle",
+        },
+        {
           name: "kicker",
           type: "text",
           label: "Top Kicker Tag",
@@ -63,6 +73,11 @@ export const ShopifySupportScenariosBlock: Block = {
               required: true,
             },
           ],
+        },
+        {
+          name: "meta",
+          type: "textarea",
+          label: "Bottom Meta / Best Fit Note",
         },
         {
           name: "primaryCtaLabel",

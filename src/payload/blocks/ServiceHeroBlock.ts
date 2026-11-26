@@ -109,6 +109,16 @@ export const ServiceHeroBlock: Block = {
               ],
             },
             {
+              name: "containerVariant",
+              type: "select",
+              defaultValue: "default",
+              label: "Container Width / Mobile Padding",
+              options: [
+                { label: "Default Container", value: "default" },
+                { label: "Compact Mobile Padding (compactMobile)", value: "compactMobile" },
+              ],
+            },
+            {
               name: "wrapperClassName",
               type: "text",
               label: "Custom Wrapper CSS Class (e.g. hero-shopify-migration)",
@@ -197,6 +207,7 @@ export const ServiceHeroBlock: Block = {
               fields: [
                 { name: "label", type: "text" },
                 { name: "href", type: "text" },
+                { name: "ariaLabel", type: "text", label: "Accessible Label (aria-label)" },
                 {
                   name: "target",
                   type: "select",
@@ -206,6 +217,55 @@ export const ServiceHeroBlock: Block = {
                     { label: "New Tab (_blank)", value: "_blank" },
                   ],
                 },
+              ],
+            },
+            // Shopify Hours Hero Fields
+            {
+              name: "highlightsHeading",
+              type: "text",
+              label: "Key Highlights Heading (Buy Hours Hero)",
+              admin: {
+                condition: (data, siblingData) => siblingData?.variant === "buy-hours",
+              },
+            },
+            {
+              name: "highlights",
+              type: "array",
+              dbName: "sh_hl",
+              label: "Key Highlights List (Buy Hours Hero)",
+              admin: {
+                condition: (data, siblingData) => siblingData?.variant === "buy-hours",
+              },
+              fields: [{ name: "text", type: "text", required: true }],
+            },
+            {
+              name: "pricingHeading",
+              type: "group",
+              label: "Pricing Card Heading (Buy Hours Hero)",
+              admin: {
+                condition: (data, siblingData) => siblingData?.variant === "buy-hours",
+              },
+              fields: [
+                { name: "prefix", type: "text", label: "Prefix (e.g. Starting from)" },
+                { name: "accent", type: "text", label: "Accent (e.g. $25/hour)" },
+                { name: "suffix", type: "text", label: "Suffix (e.g. with bulk package)" },
+              ],
+            },
+            {
+              name: "packages",
+              type: "array",
+              dbName: "sh_pkgs",
+              label: "Hours Packages Slider Items (Buy Hours Hero)",
+              admin: {
+                condition: (data, siblingData) => siblingData?.variant === "buy-hours",
+              },
+              fields: [
+                { name: "hours", type: "number", required: true, label: "Hours" },
+                { name: "rate", type: "number", required: true, label: "Hourly Rate ($)" },
+                { name: "previousRate", type: "number", required: true, label: "Previous Hourly Rate ($)" },
+                { name: "cost", type: "number", required: true, label: "Total Cost ($)" },
+                { name: "previousCost", type: "number", required: true, label: "Previous Cost ($)" },
+                { name: "purchaseHref", type: "text", required: true, label: "Purchase URL" },
               ],
             },
           ],

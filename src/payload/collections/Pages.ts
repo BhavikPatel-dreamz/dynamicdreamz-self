@@ -59,6 +59,17 @@ import { DesignReasonsBlock } from "@/payload/blocks/DesignReasonsBlock";
 import { WhiteLabelServicesBlock } from "@/payload/blocks/WhiteLabelServicesBlock";
 import { WhiteLabelStatsBlock } from "@/payload/blocks/WhiteLabelStatsBlock";
 import { WhiteLabelWhyBlock } from "@/payload/blocks/WhiteLabelWhyBlock";
+import { ShopifyB2bSmartB2bBlock } from "@/payload/blocks/ShopifyB2bSmartB2bBlock";
+import { VerifiedKnowledgeBlock } from "@/payload/blocks/VerifiedKnowledgeBlock";
+import { CertifiedAgencySupportBlock } from "@/payload/blocks/CertifiedAgencySupportBlock";
+import { CertifiedServicesBlock } from "@/payload/blocks/CertifiedServicesBlock";
+import { ShopifyCroRevenueImpactBlock } from "@/payload/blocks/ShopifyCroRevenueImpactBlock";
+import { ShopifyCroServicesBlock } from "@/payload/blocks/ShopifyCroServicesBlock";
+import { ShopifyCroProcessBlock } from "@/payload/blocks/ShopifyCroProcessBlock";
+import { ShopifyCroWhyBlock } from "@/payload/blocks/ShopifyCroWhyBlock";
+import { ShopifyCroEngagementBlock } from "@/payload/blocks/ShopifyCroEngagementBlock";
+import { ShopifyTeamBehindItBlock } from "@/payload/blocks/ShopifyTeamBehindItBlock";
+import { HowAgenciesUseBlock } from "@/payload/blocks/HowAgenciesUseBlock";
 import { previewDraftPath } from "@/lib/preview-url";
 import { safeRevalidatePath } from "@/lib/revalidate";
 
@@ -180,6 +191,17 @@ export const Pages: CollectionConfig = {
         WhiteLabelServicesBlock,
         WhiteLabelStatsBlock,
         WhiteLabelWhyBlock,
+        ShopifyB2bSmartB2bBlock,
+        VerifiedKnowledgeBlock,
+        CertifiedAgencySupportBlock,
+        CertifiedServicesBlock,
+        ShopifyCroRevenueImpactBlock,
+        ShopifyCroServicesBlock,
+        ShopifyCroProcessBlock,
+        ShopifyCroWhyBlock,
+        ShopifyCroEngagementBlock,
+        ShopifyTeamBehindItBlock,
+        HowAgenciesUseBlock,
       ],
     },
     {

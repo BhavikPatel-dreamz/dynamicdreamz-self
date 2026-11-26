@@ -26,6 +26,11 @@ export const B2bArchitectureBlock: Block = {
       label: "Description",
     },
     {
+      name: "sectionId",
+      type: "text",
+      label: "HTML Section ID (e.g. choose-approach)",
+    },
+    {
       name: "approaches",
       type: "array",
       dbName: "ba_apps",
