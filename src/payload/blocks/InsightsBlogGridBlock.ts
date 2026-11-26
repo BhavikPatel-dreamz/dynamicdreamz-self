@@ -26,5 +26,37 @@ export const InsightsBlogGridBlock: Block = {
       defaultValue: "/blogs/",
       label: "CTA Button Link",
     },
+    {
+      name: "insights",
+      type: "array",
+      dbName: "hi_items",
+      label: "Featured Blog Articles",
+      fields: [
+        { name: "title", type: "text", required: true, label: "Article Title" },
+        { name: "href", type: "text", required: true, label: "Article Path / URL" },
+        {
+          name: "image",
+          type: "upload",
+          relationTo: "media",
+          label: "Featured Image",
+        },
+        {
+          name: "imageSrc",
+          type: "text",
+          label: "Static Image Fallback Path",
+        },
+        { name: "width", type: "number", defaultValue: 1024, label: "Image Width" },
+        { name: "height", type: "number", defaultValue: 774, label: "Image Height" },
+        { name: "date", type: "text", required: true, label: "ISO Date (YYYY-MM-DD)" },
+        { name: "displayDate", type: "text", required: true, label: "Display Date" },
+        { name: "category", type: "text", defaultValue: "Shopify", label: "Category Name" },
+        {
+          name: "categoryHref",
+          type: "text",
+          defaultValue: "/blogs/category/shopify/",
+          label: "Category Link",
+        },
+      ],
+    },
   ],
 };

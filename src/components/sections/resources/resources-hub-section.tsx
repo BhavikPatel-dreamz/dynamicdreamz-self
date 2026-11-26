@@ -2,19 +2,23 @@ import Image from "next/image";
 
 import { ResourcesCategoryAccordion } from "@/components/sections/resources/resources-category-accordion";
 import { Container } from "@/components/ui/container";
-import { resourcesHub } from "@/content/resources";
+import { resourcesHub, type ResourceCategory } from "@/content/resources";
 
 export type ResourcesHubSectionProps = {
   title?: string;
   description?: string;
   points?: readonly string[];
+  categories?: readonly ResourceCategory[];
 };
 
 export function ResourcesHubSection({
   title = resourcesHub.title,
   points = resourcesHub.points,
+  categories,
 }: ResourcesHubSectionProps = {}) {
   const activePoints = points && points.length > 0 ? points : resourcesHub.points;
+  const activeCategories =
+    categories && categories.length > 0 ? categories : resourcesHub.categories;
 
   return (
     <section className="resources-listing mt-[180px] bg-[#f7f5ef] py-[60px] max-[992px]:mt-[120px] max-[768px]:mt-[90px]" aria-labelledby="resources-hub-title">
@@ -32,7 +36,7 @@ export function ResourcesHubSection({
             </ul>
           </div>
           <div className="resources-listing-accordion min-w-0 flex-1 max-[992px]:w-full">
-            <ResourcesCategoryAccordion categories={resourcesHub.categories} />
+            <ResourcesCategoryAccordion categories={activeCategories} />
           </div>
         </div>
       </Container>

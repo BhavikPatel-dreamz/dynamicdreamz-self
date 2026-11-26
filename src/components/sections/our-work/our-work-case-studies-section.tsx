@@ -4,19 +4,29 @@ import Link from "next/link";
 import { Container } from "@/components/ui/container";
 import { SplitSectionHeading } from "@/components/ui/split-section-heading";
 import { TextArrowLink } from "@/components/ui/text-arrow-link";
-import { ourWorkCaseStudies, ourWorkPage } from "@/content/our-work";
+import {
+  ourWorkCaseStudies,
+  ourWorkPage,
+  type OurWorkCaseStudy,
+} from "@/content/our-work";
 
 export type OurWorkCaseStudiesSectionProps = {
   eyebrow?: string;
   title?: string;
   description?: string;
+  viewCaseStudyLabel?: string;
+  items?: readonly OurWorkCaseStudy[];
 };
 
 export function OurWorkCaseStudiesSection({
   eyebrow = ourWorkPage.caseStudies.eyebrow,
   title = ourWorkPage.caseStudies.title,
   description = ourWorkPage.caseStudies.description,
+  viewCaseStudyLabel = ourWorkPage.ui.viewCaseStudy,
+  items,
 }: OurWorkCaseStudiesSectionProps = {}) {
+  const activeItems = items && items.length > 0 ? items : ourWorkCaseStudies;
+
   return (
     <section
       className="see-the-work-sec bg-[#eff4ef] py-20 max-[992px]:py-15 max-[768px]:py-10"
@@ -32,7 +42,7 @@ export function OurWorkCaseStudiesSection({
         />
 
         <div className="cs-listing-main three-col flex flex-wrap justify-between gap-y-5 max-[992px]:gap-y-[30px] max-[768px]:gap-y-5">
-          {ourWorkCaseStudies.map((item) => (
+          {activeItems.map((item) => (
             <article
               data-aos="fade-up"
               className="cs-listing-row flex w-[calc(33.333%_-_14px)] flex-col overflow-hidden rounded-[20px] border border-[rgba(40,40,40,0.06)] bg-white transition-shadow duration-300 hover:shadow-[0_10px_30px_rgba(0,0,0,0.08)] max-[1200px]:w-[calc(50%_-_10px)] max-[992px]:w-full"
@@ -86,7 +96,7 @@ export function OurWorkCaseStudiesSection({
                         className="focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#ad5151]"
                         href={`/case-studies/${item.slug}/`}
                       >
-                        {ourWorkPage.ui.viewCaseStudy}
+                        {viewCaseStudyLabel}
                       </TextArrowLink>
                     </div>
                   </div>

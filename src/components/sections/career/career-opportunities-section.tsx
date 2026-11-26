@@ -6,24 +6,34 @@ import {
   careerJobs,
   careerLocations,
   currentOpportunities,
+  type CareerJob,
+  type CareerLocation,
 } from "@/content/career";
 
 export type CareerOpportunitiesSectionProps = {
   eyebrow?: string;
   title?: string;
   description?: string;
+  locations?: readonly CareerLocation[];
+  jobs?: readonly CareerJob[];
 };
 
 export function CareerOpportunitiesSection({
   eyebrow = currentOpportunities.eyebrow,
   title = currentOpportunities.title,
   description = currentOpportunities.description,
+  locations: customLocations,
+  jobs: customJobs,
 }: CareerOpportunitiesSectionProps = {}) {
-  const jobLists = careerLocations.map((location) => ({
+  const activeLocations =
+    customLocations && customLocations.length > 0 ? customLocations : careerLocations;
+  const activeJobs = customJobs && customJobs.length > 0 ? customJobs : careerJobs;
+
+  const jobLists = activeLocations.map((location) => ({
     location,
     content: (
       <div className="space-y-[37px]" data-job-location={location.slug}>
-        {careerJobs
+        {activeJobs
           .filter((job) => job.locations.includes(location.slug))
           .map((job) => (
             <CareerJobCard
@@ -51,7 +61,7 @@ export function CareerOpportunitiesSection({
           headingId="career-opportunities-title"
           variant="left"
         />
-        <CareerLocationFilter jobLists={jobLists} locations={careerLocations} />
+        <CareerLocationFilter jobLists={jobLists} locations={activeLocations} />
       </Container>
     </section>
   );

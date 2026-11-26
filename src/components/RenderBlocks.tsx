@@ -147,6 +147,16 @@ import { ShopifyCroWhySection } from "@/components/sections/shopify-cro/shopify-
 import { ShopifyCroEngagementSection } from "@/components/sections/shopify-cro/shopify-cro-engagement-section";
 import { ShopifyTeamBehindItSection } from "@/components/sections/white-label-shopify/shopify-team-behind-it-section";
 import { HowAgenciesUseSection } from "@/components/sections/white-label-shopify/how-agencies-use-section";
+import { AboutTeamSection } from "@/components/sections/about/about-team-section";
+import { OurWorkCaseStudiesSection } from "@/components/sections/our-work/our-work-case-studies-section";
+import { ResourcesBlogSection } from "@/components/sections/resources/resources-blog-section";
+import { ResourcesStorySection } from "@/components/sections/resources/resources-story-section";
+import { ResourcesTrustSection } from "@/components/sections/resources/resources-trust-section";
+import { BookDiscoveryCallPage } from "@/components/sections/book-a-discovery-call-page";
+import { SiteMapPage } from "@/components/sections/site-map-page";
+import { PrivacyPolicyPage } from "@/components/sections/privacy-policy-page";
+import { TermsOfServicePage } from "@/components/sections/terms-of-service-page";
+import { ThankYouPage } from "@/components/sections/thank-you-page";
 
 // Phase 2.5 Canonical Content Fallbacks
 import { shopifyHoursHero, shopifyHoursPackages } from "@/content/buy-shopify-development-hours";
@@ -158,6 +168,12 @@ import { shopifyCroAssessment } from "@/content/shopify-cro-agency";
 import { whiteLabelShopifyScenarios } from "@/content/white-label-shopify-development";
 import { aboutStory } from "@/content/about";
 import { hiringCallout } from "@/content/life-dynamicdreamz";
+import { bookDiscoveryCallContent } from "@/content/book-a-discovery-call";
+import { privacyPolicyContent } from "@/content/privacy-policy";
+import { termsOfServiceContent } from "@/content/terms-of-service";
+import { thankYouForEnquiryContent } from "@/content/thank-you-for-enquiry";
+import { siteMapCopy } from "@/content/site-map";
+import type { WorkPlatform } from "@/content/our-work";
 
 // Common CMS Types
 export type CmsMedia =
@@ -295,6 +311,27 @@ export interface BlockServiceHero {
     previousCost: number;
     purchaseHref: string;
   }[];
+  deliveryTitle?: string;
+  statistics?: readonly { label: string; value: string }[];
+  titleBeforeTeamwork?: string;
+  teamwork?: string;
+  titleAfterTeamwork?: string;
+  showcaseLayout?: "default" | "caseStudiesLive" | "ourWork";
+  hideShowcaseOnMobile?: boolean;
+  scrollingImages?: readonly {
+    image?: CmsMedia;
+    src?: string;
+    alt?: string;
+    width?: number;
+    height?: number;
+  }[];
+  showcaseImages?: readonly {
+    image?: CmsMedia;
+    src?: string;
+    alt?: string;
+    width?: number;
+    height?: number;
+  }[];
   // Media - Video
   video?: string;
   videoSrc?: string;
@@ -416,6 +453,34 @@ export interface BlockContactDetails {
   id?: string | number;
   eyebrow?: string;
   title: string;
+  sales?: {
+    label?: string;
+    email?: string;
+    phone?: string;
+    phoneHref?: string;
+  };
+  hr?: {
+    label?: string;
+    email?: string;
+    phone?: string;
+    phoneHref?: string;
+    actionLabel?: string;
+    actionHref?: string;
+  };
+  discoveryCall?: {
+    label?: string;
+    actionLabel?: string;
+    actionHref?: string;
+    description?: string;
+  };
+  social?: {
+    label?: string;
+    profiles?: readonly {
+      name: string;
+      label: string;
+      href: string;
+    }[];
+  };
 }
 
 export interface BlockRequestQuoteHero {
@@ -506,6 +571,7 @@ export interface BlockFaqAccordion {
   variant?: "split" | "home";
   iconVariant?: "circle-cross" | "default";
   animateOnReveal?: boolean;
+  lazyAccordion?: boolean;
   faqs?: readonly {
     question: string;
     answer: string;
@@ -842,6 +908,32 @@ export interface BlockOurWorkProjects {
   eyebrow?: string;
   title?: string;
   description?: string;
+  filters?: readonly {
+    filterId: string;
+    label: string;
+  }[];
+  projects?: readonly {
+    projectId: string;
+    platform: "shopify" | "wordpress" | "apps" | "magento" | "bigCommerce";
+    name: string;
+    category: string;
+    href?: string | null;
+    image?: CmsMedia;
+    imageSrc?: string;
+    imageAlt?: string;
+    platformMark?: {
+      image?: CmsMedia;
+      src?: string;
+      width?: number;
+      height?: number;
+    };
+    appLinks?: readonly {
+      label: string;
+      href: string;
+      icon?: CmsMedia;
+      iconSrc?: string;
+    }[];
+  }[];
 }
 
 export interface BlockHoursComparison {
@@ -949,6 +1041,13 @@ export interface BlockResourcesHub {
   title?: string;
   description?: string;
   points?: { text: string }[];
+  categories?: readonly {
+    title: string;
+    links?: readonly {
+      title: string;
+      href: string;
+    }[];
+  }[];
 }
 
 export interface BlockThemeFeaturesBanner {
@@ -997,6 +1096,8 @@ export interface BlockShopifyPlusAgencySplit {
   intro?: string;
   paragraphs?: readonly (string | { text?: string })[];
   videoSrc?: string;
+  poster?: CmsMedia;
+  posterSrc?: string;
   counters?: readonly {
     value: string;
     label: string;
@@ -1028,6 +1129,18 @@ export interface BlockSelectedWorkVideo {
   description?: string;
   ctaLabel?: string;
   ctaHref?: string;
+  projects?: readonly {
+    name: string;
+    technology: string;
+    href: string;
+    mediaType?: "image" | "video";
+    image?: CmsMedia;
+    imageSrc?: string;
+    imageAlt?: string;
+    videoSrc?: string;
+    videoPoster?: CmsMedia;
+    videoPosterSrc?: string;
+  }[];
 }
 
 export interface BlockInsightsBlogGrid {
@@ -1037,6 +1150,18 @@ export interface BlockInsightsBlogGrid {
   title: string;
   ctaLabel?: string;
   ctaHref?: string;
+  insights?: readonly {
+    title: string;
+    href: string;
+    image?: CmsMedia;
+    imageSrc?: string;
+    width?: number;
+    height?: number;
+    date: string;
+    displayDate: string;
+    category?: string;
+    categoryHref?: string;
+  }[];
 }
 
 export interface BlockCredentialTabs {
@@ -1136,6 +1261,8 @@ export interface BlockAboutValues {
     title: string;
     description: string;
     iconName: string;
+    icon?: CmsMedia;
+    iconSrc?: string;
   }[];
 }
 
@@ -1169,6 +1296,26 @@ export interface BlockCareerOpportunities {
   eyebrow?: string;
   title: string;
   description?: string;
+  locations?: readonly {
+    slug: string;
+    label: string;
+  }[];
+  jobs?: readonly {
+    slug: string;
+    title: string;
+    applicationTitle: string;
+    experience: string;
+    jobType: string;
+    postedOn: string;
+    postedDate: string;
+    positions: number;
+    locations?: readonly (string | { text?: string })[];
+    icon?: CmsMedia;
+    iconSrc?: string;
+    iconAlt?: string;
+    summary: string;
+    jobDescription: string;
+  }[];
 }
 
 export interface BlockShopifyHoursTasks {
@@ -1675,6 +1822,226 @@ export interface BlockHowAgenciesUse {
   }[];
 }
 
+export interface BlockAboutTeam {
+  __component?: string;
+  blockType?: "about-team";
+  id?: string | number;
+  keyManagers?: readonly {
+    name: string;
+    role: string;
+    image?: CmsMedia;
+    imageSrc?: string;
+    alt?: string;
+  }[];
+  departmentLeaders?: readonly {
+    name: string;
+    role: string;
+    image?: CmsMedia;
+    imageSrc?: string;
+    alt?: string;
+  }[];
+}
+
+export interface BlockOurWorkCaseStudies {
+  __component?: string;
+  blockType?: "our-work-case-studies";
+  id?: string | number;
+  eyebrow?: string;
+  title: string;
+  description?: string;
+  viewCaseStudyLabel?: string;
+  items?: readonly {
+    slug: string;
+    category: string;
+    industry?: string;
+    title: string;
+    excerpt?: string;
+    chips?: readonly (string | { text?: string })[];
+    image?: CmsMedia;
+    imageSrc?: string;
+    imageAlt?: string;
+  }[];
+}
+
+export interface BlockResourcesBlog {
+  __component?: string;
+  blockType?: "resources-blog";
+  id?: string | number;
+  title: string;
+  articles?: readonly {
+    title: string;
+    href: string;
+    image?: CmsMedia;
+    imageSrc?: string;
+    width?: number;
+    height?: number;
+    date: string;
+    displayDate: string;
+    category?: string;
+    categoryHref?: string;
+  }[];
+}
+
+export interface BlockResourcesStory {
+  __component?: string;
+  blockType?: "resources-story";
+  id?: string | number;
+  title: string;
+  subtitle?: string;
+  paragraphs?: readonly (string | { text?: string })[];
+  videoId?: string;
+  videoTitle?: string;
+  poster?: CmsMedia;
+  posterSrc?: string;
+  videoPosterAlt?: string;
+  overlay?: CmsMedia;
+  overlaySrc?: string;
+  starIcon?: CmsMedia;
+  starIconSrc?: string;
+  reviews?: readonly {
+    name: string;
+    href: string;
+    reviews: string;
+    rating: string;
+    logo?: CmsMedia;
+    logoSrc?: string;
+    logoWidth?: number;
+    logoHeight?: number;
+    logoClassName?: string;
+  }[];
+}
+
+export interface BlockResourcesTrust {
+  __component?: string;
+  blockType?: "resources-trust";
+  id?: string | number;
+  title: string;
+  description?: string;
+  stats?: readonly {
+    value: number;
+    suffix?: string;
+    label: string;
+  }[];
+}
+
+export interface BlockBookDiscoveryCall {
+  __component?: string;
+  blockType?: "book-discovery-call";
+  id?: string | number;
+  eyebrow?: string;
+  title: string;
+  description?: string;
+  host?: {
+    name?: string;
+    role?: string;
+    image?: CmsMedia;
+    imageSrc?: string;
+    imageAlt?: string;
+  };
+  benefits?: readonly {
+    icon: string;
+    title: string;
+    description: string;
+  }[];
+  calendar?: {
+    heading?: string;
+    details?: string;
+    iframeTitle?: string;
+    src?: string;
+  };
+}
+
+export interface BlockSiteMap {
+  __component?: string;
+  blockType?: string;
+  id?: string | number;
+  title?: string;
+  checkIcon?: CmsMedia;
+  checkIconSrc?: string;
+  links?: readonly {
+    label: string;
+    href: string;
+    children?: readonly {
+      label: string;
+      href: string;
+    }[];
+  }[];
+}
+
+export interface BlockPrivacyPolicy {
+  __component?: string;
+  blockType?: "privacy-policy";
+  id?: string | number;
+  heroTitle: string;
+  sections?: readonly {
+    title: string;
+    level?: "2" | "3";
+    paragraphs?: readonly (string | { text?: string })[];
+    items?: readonly {
+      parts?: readonly {
+        text: string;
+        strong?: boolean;
+      }[];
+    }[];
+  }[];
+  contactLabels?: {
+    email?: string;
+    phone?: string;
+    address?: string;
+  };
+  contact?: {
+    name?: string;
+    email?: string;
+    phone?: string;
+    phoneHref?: string;
+    address?: string;
+    addressHref?: string;
+  };
+}
+
+export interface BlockTermsOfService {
+  __component?: string;
+  blockType?: "terms-of-service";
+  id?: string | number;
+  heroTitle: string;
+  intro: string;
+  sections?: readonly {
+    title: string;
+    paragraphs?: readonly (string | { text?: string })[];
+    items?: readonly (string | { text?: string })[];
+    closingParagraphs?: readonly (string | { text?: string })[];
+  }[];
+  contactEmail: string;
+}
+
+export interface BlockThankYou {
+  __component?: string;
+  blockType?: "thank-you";
+  id?: string | number;
+  buttonPlacement?: "above-contact" | "below-contact";
+  heading: string;
+  descriptionLine1: string;
+  descriptionLine2: string;
+  homeCta?: {
+    label?: string;
+    href?: string;
+  };
+  contactPhone?: {
+    label?: string;
+    href?: string;
+    icon?: CmsMedia;
+    iconSrc?: string;
+    iconAlt?: string;
+  };
+  contactEmail?: {
+    label?: string;
+    href?: string;
+    icon?: CmsMedia;
+    iconSrc?: string;
+    iconAlt?: string;
+  };
+}
+
 export type CmsSectionBlock =
   | BlockServiceHero
   | BlockBrandPartners
@@ -1746,7 +2113,17 @@ export type CmsSectionBlock =
   | BlockContactOffices
   | BlockContactDetails
   | BlockRequestQuoteHero
-  | BlockCareerApply;
+  | BlockCareerApply
+  | BlockAboutTeam
+  | BlockOurWorkCaseStudies
+  | BlockResourcesBlog
+  | BlockResourcesStory
+  | BlockResourcesTrust
+  | BlockBookDiscoveryCall
+  | BlockSiteMap
+  | BlockPrivacyPolicy
+  | BlockTermsOfService
+  | BlockThankYou;
 
 // ---------------------------------------------------------------------------
 // BlockRenderer Component
@@ -1790,6 +2167,31 @@ async function CmsTestimonialsCarousel({
       items={items}
     />
   );
+}
+
+function mapHeroGalleryMedia(
+  items: readonly {
+    image?: CmsMedia;
+    src?: string;
+    alt?: string;
+    width?: number;
+    height?: number;
+  }[] | undefined,
+  defaultWidth: number,
+  defaultHeight: number,
+) {
+  return (items ?? [])
+    .map((item) => {
+      const src = resolveMediaUrl(item.image) || item.src || "";
+      if (!src) return null;
+      return {
+        src,
+        alt: item.alt ?? resolveMediaAlt(item.image, ""),
+        width: item.width || defaultWidth,
+        height: item.height || defaultHeight,
+      };
+    })
+    .filter((item): item is NonNullable<typeof item> => Boolean(item));
 }
 
 export function BlockRenderer({ sections, testimonials }: BlockRendererProps) {
@@ -1955,16 +2357,26 @@ export function BlockRenderer({ sections, testimonials }: BlockRendererProps) {
             }
 
             if (variant === "about") {
+              const stats = (shBlock.statistics ?? [])
+                .filter((s) => Boolean(s?.label && s?.value))
+                .map((s) => ({ label: s.label, value: s.value }));
               return (
                 <AboutHeroSection
                   key={blockKey}
                   title={shBlock.title}
                   description={shBlock.description}
+                  deliveryTitle={shBlock.deliveryTitle || undefined}
+                  statistics={stats.length > 0 ? stats : undefined}
                 />
               );
             }
 
             if (variant === "career") {
+              const scrollingItems = mapHeroGalleryMedia(
+                shBlock.scrollingImages,
+                434,
+                256,
+              );
               return (
                 <CareerHeroSection
                   key={blockKey}
@@ -1972,6 +2384,7 @@ export function BlockRenderer({ sections, testimonials }: BlockRendererProps) {
                   title={shBlock.title}
                   description={shBlock.description}
                   badges={badges.length > 0 ? badges : undefined}
+                  scrollingImages={scrollingItems.length > 0 ? scrollingItems : undefined}
                 />
               );
             }
@@ -1980,6 +2393,9 @@ export function BlockRenderer({ sections, testimonials }: BlockRendererProps) {
               return (
                 <LifeHeroSection
                   key={blockKey}
+                  titleBeforeTeamwork={shBlock.titleBeforeTeamwork || undefined}
+                  teamwork={shBlock.teamwork || undefined}
+                  titleAfterTeamwork={shBlock.titleAfterTeamwork || undefined}
                   lead={shBlock.lead}
                   description={shBlock.description}
                   image={
@@ -1993,6 +2409,11 @@ export function BlockRenderer({ sections, testimonials }: BlockRendererProps) {
             }
 
             if (variant === "our-work") {
+              const showcaseItems = mapHeroGalleryMedia(
+                shBlock.showcaseImages,
+                548,
+                323,
+              );
               return (
                 <OurWorkHeroSection
                   key={blockKey}
@@ -2003,6 +2424,9 @@ export function BlockRenderer({ sections, testimonials }: BlockRendererProps) {
                     primaryCta,
                     secondaryCta,
                   }}
+                  layout={shBlock.showcaseLayout || "ourWork"}
+                  hideShowcaseOnMobile={shBlock.hideShowcaseOnMobile ?? true}
+                  showcaseImages={showcaseItems.length > 0 ? showcaseItems : undefined}
                   proofLogos={badges.length > 0 ? badges : undefined}
                 />
               );
@@ -2622,7 +3046,44 @@ export function BlockRenderer({ sections, testimonials }: BlockRendererProps) {
             }
 
             if (bpBlock.variant === "integrations") {
-              return <IntegrationsSection key={blockKey} title={bpBlock.heading} />;
+              const row1 = (bpBlock.brands ?? [])
+                .filter((b) => (b.row || "1") !== "2")
+                .map((b) => {
+                  const src = resolveMediaUrl(b.logo) || b.src || "";
+                  if (!src) return null;
+                  return {
+                    src,
+                    alt: b.alt || b.name || "",
+                    width: b.width || 160,
+                    height: b.height || 44,
+                  };
+                })
+                .filter((b): b is NonNullable<typeof b> => Boolean(b));
+              const row2 = (bpBlock.brands ?? [])
+                .filter((b) => b.row === "2")
+                .map((b) => {
+                  const src = resolveMediaUrl(b.logo) || b.src || "";
+                  if (!src) return null;
+                  return {
+                    src,
+                    alt: b.alt || b.name || "",
+                    width: b.width || 160,
+                    height: b.height || 44,
+                  };
+                })
+                .filter((b): b is NonNullable<typeof b> => Boolean(b));
+              const integrationRows =
+                row1.length > 0 || row2.length > 0
+                  ? [row1, ...(row2.length > 0 ? [row2] : [])]
+                  : undefined;
+
+              return (
+                <IntegrationsSection
+                  key={blockKey}
+                  title={bpBlock.heading}
+                  rows={integrationRows}
+                />
+              );
             }
 
             if (bpBlock.variant === "tools-grid") {
@@ -2714,10 +3175,6 @@ export function BlockRenderer({ sections, testimonials }: BlockRendererProps) {
           // Block 3: FAQ Accordion
           case "faq-accordion": {
             const faBlock = block as BlockFaqAccordion;
-            if (faBlock.variant === "home") {
-              return <HomeFaqSection key={blockKey} />;
-            }
-
             const faqs = (faBlock.faqs ?? []).map((f) => {
               const parsedAnswer = parseTextOrArray(f.answer) ?? "";
               const parsedSecondary = f.secondaryAnswer
@@ -2744,6 +3201,31 @@ export function BlockRenderer({ sections, testimonials }: BlockRendererProps) {
             });
 
             const faqDesc = parseTextOrArray(faBlock.description);
+            const normalizedFaqDesc = Array.isArray(faqDesc)
+              ? faqDesc.join(" ")
+              : faqDesc || undefined;
+
+            if (faBlock.variant === "home") {
+              return (
+                <HomeFaqSection
+                  key={blockKey}
+                  eyebrow={faBlock.eyebrow || undefined}
+                  heading={
+                    faBlock.heading
+                      ? parseTextOrArray(faBlock.heading)
+                      : undefined
+                  }
+                  description={normalizedFaqDesc}
+                  idPrefix={faBlock.idPrefix || "home-faq"}
+                  sectionId={(faBlock as { sectionId?: string }).sectionId || undefined}
+                  iconVariant={faBlock.iconVariant || "circle-cross"}
+                  animateOnReveal={faBlock.animateOnReveal}
+                  lazyAccordion={faBlock.lazyAccordion ?? true}
+                  items={faqs.length > 0 ? faqs : undefined}
+                />
+              );
+            }
+
             return (
               <SplitFaqSection
                 key={blockKey}
@@ -2756,9 +3238,10 @@ export function BlockRenderer({ sections, testimonials }: BlockRendererProps) {
                 }
                 eyebrow={faBlock.eyebrow}
                 heading={parseTextOrArray(faBlock.heading)}
-                description={Array.isArray(faqDesc) ? faqDesc.join(" ") : faqDesc || undefined}
+                description={normalizedFaqDesc}
                 iconVariant={faBlock.iconVariant || "circle-cross"}
                 animateOnReveal={faBlock.animateOnReveal}
+                lazyAccordion={faBlock.lazyAccordion}
                 items={faqs}
               />
             );
@@ -2923,9 +3406,9 @@ export function BlockRenderer({ sections, testimonials }: BlockRendererProps) {
                     boxes: services.map((s) => {
                       const sAny = s as { iconName?: string };
                       const iconKey = sAny.iconName || sgBlock.sharedIconName;
-                      const uploadedOrStaticIcon =
-                        resolveMediaUrl(s.icon) || s.iconSrc || undefined;
-                      const themeIcon = iconKey
+                      const uploadedIcon = resolveMediaUrl(s.icon) || undefined;
+                      const staticIcon = s.iconSrc || undefined;
+                      const themeIcon = !uploadedIcon && iconKey
                         ? resolveServiceIcon(
                             iconKey,
                             (sgBlock as { themeSlug?: string }).themeSlug,
@@ -2943,7 +3426,7 @@ export function BlockRenderer({ sections, testimonials }: BlockRendererProps) {
                             iconKey,
                             (sgBlock as { themeSlug?: string }).themeSlug,
                           )
-                        : !uploadedOrStaticIcon && !s.number
+                        : !uploadedIcon && !staticIcon && !s.number
                           ? resolveMobileAppIcon(s.title)
                           : null;
                       return {
@@ -2951,7 +3434,7 @@ export function BlockRenderer({ sections, testimonials }: BlockRendererProps) {
                         badge: s.badge || undefined,
                         title: s.title,
                         description: s.description || undefined,
-                        icon: themeIcon || uploadedOrStaticIcon,
+                        icon: uploadedIcon || themeIcon || staticIcon,
                         iconAlt: s.iconAlt || undefined,
                       };
                     }),
@@ -3920,8 +4403,12 @@ export function BlockRenderer({ sections, testimonials }: BlockRendererProps) {
             const cdBlock = block as BlockContactDetails;
             return (
               <ContactDetailsSection
+                discoveryCall={cdBlock.discoveryCall}
                 eyebrow={cdBlock.eyebrow}
+                hr={cdBlock.hr}
                 key={blockKey}
+                sales={cdBlock.sales}
+                social={cdBlock.social}
                 title={cdBlock.title}
               />
             );
@@ -4044,10 +4531,10 @@ export function BlockRenderer({ sections, testimonials }: BlockRendererProps) {
               return {
                 name: f.name,
                 role: f.role,
-                bio: f.bio || "",
+                biography: f.bio || "",
                 image: mediaUrl || f.imageSrc || "",
                 alt: f.alt || resolveMediaAlt(f.image, f.name),
-                linkedin: f.linkedin || "",
+                linkedIn: f.linkedin || "",
               };
             });
 
@@ -4084,12 +4571,52 @@ export function BlockRenderer({ sections, testimonials }: BlockRendererProps) {
 
           case "our-work-projects": {
             const owpBlock = block as BlockOurWorkProjects;
+            const filters = (owpBlock.filters ?? [])
+              .filter((f) => Boolean(f?.filterId && f?.label))
+              .map((f) => ({
+                id: f.filterId as WorkPlatform,
+                label: f.label,
+              }));
+            const projects = (owpBlock.projects ?? []).map((p) => {
+              const pmSrc =
+                resolveMediaUrl(p.platformMark?.image) ||
+                p.platformMark?.src ||
+                "";
+              const appLinks = (p.appLinks ?? [])
+                .map((a) => ({
+                  label: a.label,
+                  href: a.href,
+                  icon: resolveMediaUrl(a.icon) || a.iconSrc || "",
+                }))
+                .filter((a) => Boolean(a.icon));
+
+              return {
+                id: p.projectId,
+                platform: p.platform,
+                name: p.name,
+                category: p.category,
+                href: p.href || null,
+                image: resolveMediaUrl(p.image) || p.imageSrc || "",
+                imageAlt: p.imageAlt || resolveMediaAlt(p.image, p.name),
+                platformMark: pmSrc
+                  ? {
+                      src: pmSrc,
+                      width: p.platformMark?.width || 89,
+                      height: p.platformMark?.height || 24,
+                    }
+                  : undefined,
+                appLinks: appLinks.length > 0 ? appLinks : undefined,
+              };
+            });
+
             return (
               <OurWorkProjectsSection
                 key={blockKey}
                 eyebrow={owpBlock.eyebrow || undefined}
                 title={owpBlock.title || undefined}
                 description={owpBlock.description || undefined}
+                filters={filters.length > 0 ? filters : undefined}
+                projects={projects.length > 0 ? projects : undefined}
               />
             );
           }
@@ -4235,12 +4762,23 @@ export function BlockRenderer({ sections, testimonials }: BlockRendererProps) {
           case "resources-hub": {
             const rhBlock = block as BlockResourcesHub;
             const points = rhBlock.points?.map((p) => p.text);
+            const categories = (rhBlock.categories ?? [])
+              .filter((c) => Boolean(c?.title))
+              .map((c) => ({
+                title: c.title,
+                links: (c.links ?? []).map((l) => ({
+                  title: l.title,
+                  href: l.href,
+                })),
+              }));
 
             return (
               <ResourcesHubSection
                 key={blockKey}
                 title={rhBlock.title || undefined}
+                description={rhBlock.description || undefined}
                 points={points && points.length > 0 ? points : undefined}
+                categories={categories.length > 0 ? categories : undefined}
               />
             );
           }
@@ -4315,6 +4853,11 @@ export function BlockRenderer({ sections, testimonials }: BlockRendererProps) {
               tone: c.tone || "green",
             }));
 
+            const poster =
+              resolveMediaUrl(hspaBlock.poster) ||
+              hspaBlock.posterSrc ||
+              undefined;
+
             return (
               <ShopifyPlusAgencySection
                 key={blockKey}
@@ -4332,6 +4875,7 @@ export function BlockRenderer({ sections, testimonials }: BlockRendererProps) {
                       : shopifyPlusAgencyContent.counters,
                   videoSrc:
                     hspaBlock.videoSrc || shopifyPlusAgencyContent.videoSrc,
+                  poster,
                 }}
               />
             );
@@ -4359,6 +4903,26 @@ export function BlockRenderer({ sections, testimonials }: BlockRendererProps) {
 
           case "home-selected-work": {
             const hswBlock = block as BlockSelectedWorkVideo;
+            const projects = (hswBlock.projects ?? []).map((p) => ({
+              name: p.name,
+              technology: p.technology,
+              href: p.href,
+              media:
+                p.mediaType === "video"
+                  ? {
+                      type: "video" as const,
+                      src: p.videoSrc || "",
+                      poster:
+                        resolveMediaUrl(p.videoPoster) ||
+                        p.videoPosterSrc ||
+                        undefined,
+                    }
+                  : {
+                      type: "image" as const,
+                      src: resolveMediaUrl(p.image) || p.imageSrc || "",
+                      alt: p.imageAlt || resolveMediaAlt(p.image, p.name),
+                    },
+            }));
 
             return (
               <SelectedWorkSection
@@ -4367,12 +4931,24 @@ export function BlockRenderer({ sections, testimonials }: BlockRendererProps) {
                 description={hswBlock.description}
                 ctaLabel={hswBlock.ctaLabel}
                 ctaHref={hswBlock.ctaHref}
+                projects={projects.length > 0 ? projects : undefined}
               />
             );
           }
 
           case "home-insights": {
             const hiBlock = block as BlockInsightsBlogGrid;
+            const items = (hiBlock.insights ?? []).map((i) => ({
+              title: i.title,
+              href: i.href,
+              image: resolveMediaUrl(i.image) || i.imageSrc || undefined,
+              width: i.width || 1024,
+              height: i.height || 774,
+              date: i.date,
+              displayDate: i.displayDate,
+              category: i.category,
+              categoryHref: i.categoryHref,
+            }));
 
             return (
               <InsightsSection
@@ -4380,6 +4956,7 @@ export function BlockRenderer({ sections, testimonials }: BlockRendererProps) {
                 title={hiBlock.title}
                 ctaLabel={hiBlock.ctaLabel}
                 ctaHref={hiBlock.ctaHref}
+                items={items.length > 0 ? items : undefined}
               />
             );
           }
@@ -4540,6 +5117,7 @@ export function BlockRenderer({ sections, testimonials }: BlockRendererProps) {
               title: v.title,
               description: v.description,
               iconName: v.iconName,
+              icon: resolveMediaUrl(v.icon) || v.iconSrc || undefined,
             }));
 
             return (
@@ -4593,6 +5171,27 @@ export function BlockRenderer({ sections, testimonials }: BlockRendererProps) {
 
           case "career-opportunities": {
             const coBlock = block as BlockCareerOpportunities;
+            const locations = (coBlock.locations ?? []).map((loc) => ({
+              slug: loc.slug,
+              label: loc.label,
+            }));
+            const jobs = (coBlock.jobs ?? []).map((j) => ({
+              slug: j.slug,
+              title: j.title,
+              applicationTitle: j.applicationTitle,
+              experience: j.experience,
+              jobType: j.jobType,
+              postedOn: j.postedOn,
+              postedDate: j.postedDate,
+              positions: j.positions,
+              locations: (j.locations ?? [])
+                .map((l) => (typeof l === "string" ? l : l?.text || ""))
+                .filter(Boolean),
+              icon: resolveMediaUrl(j.icon) || j.iconSrc || "",
+              iconAlt: j.iconAlt || undefined,
+              summary: j.summary,
+              jobDescription: j.jobDescription,
+            }));
 
             return (
               <CareerOpportunitiesSection
@@ -4600,6 +5199,8 @@ export function BlockRenderer({ sections, testimonials }: BlockRendererProps) {
                 eyebrow={coBlock.eyebrow}
                 title={coBlock.title}
                 description={coBlock.description}
+                locations={locations.length > 0 ? locations : undefined}
+                jobs={jobs.length > 0 ? jobs : undefined}
               />
             );
           }
@@ -5419,6 +6020,365 @@ export function BlockRenderer({ sections, testimonials }: BlockRendererProps) {
                     ctaLabel: c.ctaLabel,
                     ctaHref: c.ctaHref,
                   })),
+                }}
+              />
+            );
+          }
+
+          case "about-team": {
+            const atBlock = block as BlockAboutTeam;
+            const mapPeople = (
+              list: BlockAboutTeam["keyManagers"],
+            ) =>
+              (list ?? []).map((p) => ({
+                name: p.name,
+                role: p.role,
+                image: resolveMediaUrl(p.image) || p.imageSrc || "",
+                alt: p.alt || resolveMediaAlt(p.image, p.name),
+              }));
+            const km = mapPeople(atBlock.keyManagers);
+            const dl = mapPeople(atBlock.departmentLeaders);
+
+            return (
+              <AboutTeamSection
+                key={blockKey}
+                keyManagers={km.length > 0 ? km : undefined}
+                departmentLeaders={dl.length > 0 ? dl : undefined}
+              />
+            );
+          }
+
+          case "our-work-case-studies": {
+            const owcsBlock = block as BlockOurWorkCaseStudies;
+            const items = (owcsBlock.items ?? []).map((item) => ({
+              slug: item.slug,
+              category: item.category,
+              industry: item.industry || "",
+              title: item.title,
+              excerpt: item.excerpt || "",
+              chips: (item.chips ?? [])
+                .map((c) => (typeof c === "string" ? c : c?.text || ""))
+                .filter(Boolean),
+              image: resolveMediaUrl(item.image) || item.imageSrc || "",
+              imageAlt: item.imageAlt || resolveMediaAlt(item.image, item.title),
+            }));
+
+            return (
+              <OurWorkCaseStudiesSection
+                key={blockKey}
+                eyebrow={owcsBlock.eyebrow || undefined}
+                title={owcsBlock.title || undefined}
+                description={owcsBlock.description || undefined}
+                viewCaseStudyLabel={owcsBlock.viewCaseStudyLabel || undefined}
+                items={items.length > 0 ? items : undefined}
+              />
+            );
+          }
+
+          case "resources-blog": {
+            const rbBlock = block as BlockResourcesBlog;
+            const articles = (rbBlock.articles ?? []).map((a) => ({
+              title: a.title,
+              href: a.href,
+              image: resolveMediaUrl(a.image) || a.imageSrc || undefined,
+              width: a.width || 1024,
+              height: a.height || 515,
+              date: a.date,
+              displayDate: a.displayDate,
+              category: a.category,
+              categoryHref: a.categoryHref,
+            }));
+
+            return (
+              <ResourcesBlogSection
+                key={blockKey}
+                title={rbBlock.title || undefined}
+                articles={articles.length > 0 ? articles : undefined}
+              />
+            );
+          }
+
+          case "resources-story": {
+            const rsBlock = block as BlockResourcesStory;
+            const paragraphs = (rsBlock.paragraphs ?? [])
+              .map((p) => (typeof p === "string" ? p : p?.text || ""))
+              .filter(Boolean);
+            const reviews = (rsBlock.reviews ?? []).map((r) => ({
+              name: r.name,
+              href: r.href,
+              reviews: r.reviews,
+              rating: r.rating,
+              logo: resolveMediaUrl(r.logo) || r.logoSrc || "",
+              logoWidth: r.logoWidth || 78,
+              logoHeight: r.logoHeight || 23,
+              logoClassName: r.logoClassName || undefined,
+            }));
+
+            return (
+              <ResourcesStorySection
+                key={blockKey}
+                title={rsBlock.title || undefined}
+                subtitle={rsBlock.subtitle || undefined}
+                paragraphs={paragraphs.length > 0 ? paragraphs : undefined}
+                videoId={rsBlock.videoId || undefined}
+                videoTitle={rsBlock.videoTitle || undefined}
+                poster={
+                  resolveMediaUrl(rsBlock.poster) || rsBlock.posterSrc || undefined
+                }
+                videoPosterAlt={rsBlock.videoPosterAlt || undefined}
+                overlay={
+                  resolveMediaUrl(rsBlock.overlay) || rsBlock.overlaySrc || undefined
+                }
+                starIcon={
+                  resolveMediaUrl(rsBlock.starIcon) || rsBlock.starIconSrc || undefined
+                }
+                reviews={reviews.length > 0 ? reviews : undefined}
+              />
+            );
+          }
+
+          case "resources-trust": {
+            const rtBlock = block as BlockResourcesTrust;
+            const stats = (rtBlock.stats ?? []).map((s) => ({
+              value: s.value,
+              suffix: s.suffix ?? "+",
+              label: s.label,
+            }));
+
+            return (
+              <ResourcesTrustSection
+                key={blockKey}
+                title={rtBlock.title || undefined}
+                description={rtBlock.description || undefined}
+                stats={stats.length > 0 ? stats : undefined}
+              />
+            );
+          }
+
+          case "book-discovery-call": {
+            const bdcBlock = block as BlockBookDiscoveryCall;
+            const hostImage =
+              resolveMediaUrl(bdcBlock.host?.image) ||
+              bdcBlock.host?.imageSrc ||
+              bookDiscoveryCallContent.host.image;
+
+            return (
+              <BookDiscoveryCallPage
+                key={blockKey}
+                content={{
+                  eyebrow: bdcBlock.eyebrow || bookDiscoveryCallContent.eyebrow,
+                  title: bdcBlock.title || bookDiscoveryCallContent.title,
+                  description:
+                    bdcBlock.description || bookDiscoveryCallContent.description,
+                  host: {
+                    name: bdcBlock.host?.name || bookDiscoveryCallContent.host.name,
+                    role: bdcBlock.host?.role || bookDiscoveryCallContent.host.role,
+                    image: hostImage,
+                    imageAlt:
+                      bdcBlock.host?.imageAlt ||
+                      resolveMediaAlt(
+                        bdcBlock.host?.image,
+                        bookDiscoveryCallContent.host.imageAlt,
+                      ),
+                  },
+                  benefits:
+                    bdcBlock.benefits && bdcBlock.benefits.length > 0
+                      ? bdcBlock.benefits
+                      : bookDiscoveryCallContent.benefits,
+                  calendar: {
+                    heading:
+                      bdcBlock.calendar?.heading ||
+                      bookDiscoveryCallContent.calendar.heading,
+                    details:
+                      bdcBlock.calendar?.details ||
+                      bookDiscoveryCallContent.calendar.details,
+                    iframeTitle:
+                      bdcBlock.calendar?.iframeTitle ||
+                      bookDiscoveryCallContent.calendar.iframeTitle,
+                    src:
+                      bdcBlock.calendar?.src ||
+                      bookDiscoveryCallContent.calendar.src,
+                  },
+                }}
+              />
+            );
+          }
+
+          case "site-map": {
+            const smBlock = block as BlockSiteMap;
+            const checkIcon =
+              resolveMediaUrl(smBlock.checkIcon) ||
+              smBlock.checkIconSrc ||
+              undefined;
+            const links = (smBlock.links ?? []).map((l) => ({
+              label: l.label,
+              href: l.href,
+              children:
+                l.children && l.children.length > 0
+                  ? l.children.map((c) => ({ label: c.label, href: c.href }))
+                  : undefined,
+            }));
+
+            return (
+              <SiteMapPage
+                key={blockKey}
+                title={smBlock.title || siteMapCopy.title}
+                checkIcon={checkIcon}
+                links={links.length > 0 ? links : undefined}
+              />
+            );
+          }
+
+          case "privacy-policy": {
+            const ppBlock = block as BlockPrivacyPolicy;
+            const sectionsData = (ppBlock.sections ?? []).map((sec) => ({
+              title: sec.title,
+              level: (sec.level === "3" ? 3 : 2) as 2 | 3,
+              paragraphs:
+                sec.paragraphs && sec.paragraphs.length > 0
+                  ? sec.paragraphs
+                      .map((p) => (typeof p === "string" ? p : p?.text || ""))
+                      .filter(Boolean)
+                  : undefined,
+              items:
+                sec.items && sec.items.length > 0
+                  ? sec.items.map((item) =>
+                      (item.parts ?? []).map((part) => ({
+                        text: part.text,
+                        strong: part.strong,
+                      })),
+                    )
+                  : undefined,
+            }));
+
+            return (
+              <PrivacyPolicyPage
+                key={blockKey}
+                content={{
+                  heroTitle: ppBlock.heroTitle || privacyPolicyContent.heroTitle,
+                  contactLabels: {
+                    email:
+                      ppBlock.contactLabels?.email ||
+                      privacyPolicyContent.contactLabels.email,
+                    phone:
+                      ppBlock.contactLabels?.phone ||
+                      privacyPolicyContent.contactLabels.phone,
+                    address:
+                      ppBlock.contactLabels?.address ||
+                      privacyPolicyContent.contactLabels.address,
+                  },
+                  contact: ppBlock.contact,
+                  sections:
+                    sectionsData.length > 0 ? sectionsData : undefined,
+                }}
+              />
+            );
+          }
+
+          case "terms-of-service": {
+            const tosBlock = block as BlockTermsOfService;
+            const sectionsData = (tosBlock.sections ?? []).map((sec) => ({
+              title: sec.title,
+              paragraphs:
+                sec.paragraphs && sec.paragraphs.length > 0
+                  ? sec.paragraphs
+                      .map((p) => (typeof p === "string" ? p : p?.text || ""))
+                      .filter(Boolean)
+                  : undefined,
+              items:
+                sec.items && sec.items.length > 0
+                  ? sec.items
+                      .map((it) => (typeof it === "string" ? it : it?.text || ""))
+                      .filter(Boolean)
+                  : undefined,
+              closingParagraphs:
+                sec.closingParagraphs && sec.closingParagraphs.length > 0
+                  ? sec.closingParagraphs
+                      .map((p) => (typeof p === "string" ? p : p?.text || ""))
+                      .filter(Boolean)
+                  : undefined,
+            }));
+
+            return (
+              <TermsOfServicePage
+                key={blockKey}
+                content={{
+                  heroTitle:
+                    tosBlock.heroTitle || termsOfServiceContent.heroTitle,
+                  intro: tosBlock.intro || termsOfServiceContent.intro,
+                  sections:
+                    sectionsData.length > 0 ? sectionsData : undefined,
+                  contactEmail:
+                    tosBlock.contactEmail || termsOfServiceContent.contactEmail,
+                }}
+              />
+            );
+          }
+
+          case "thank-you": {
+            const tyBlock = block as BlockThankYou;
+            const phoneIcon =
+              resolveMediaUrl(tyBlock.contactPhone?.icon) ||
+              tyBlock.contactPhone?.iconSrc ||
+              thankYouForEnquiryContent.contact.phone.icon;
+            const emailIcon =
+              resolveMediaUrl(tyBlock.contactEmail?.icon) ||
+              tyBlock.contactEmail?.iconSrc ||
+              thankYouForEnquiryContent.contact.email.icon;
+
+            return (
+              <ThankYouPage
+                key={blockKey}
+                buttonPlacement={tyBlock.buttonPlacement || "above-contact"}
+                content={{
+                  heading:
+                    tyBlock.heading || thankYouForEnquiryContent.heading,
+                  descriptionLine1:
+                    tyBlock.descriptionLine1 ||
+                    thankYouForEnquiryContent.descriptionLine1,
+                  descriptionLine2:
+                    tyBlock.descriptionLine2 ||
+                    thankYouForEnquiryContent.descriptionLine2,
+                  homeCta: {
+                    label:
+                      tyBlock.homeCta?.label ||
+                      thankYouForEnquiryContent.homeCta.label,
+                    href:
+                      tyBlock.homeCta?.href ||
+                      thankYouForEnquiryContent.homeCta.href,
+                  },
+                  contact: {
+                    phone: {
+                      label:
+                        tyBlock.contactPhone?.label ||
+                        thankYouForEnquiryContent.contact.phone.label,
+                      href:
+                        tyBlock.contactPhone?.href ||
+                        thankYouForEnquiryContent.contact.phone.href,
+                      icon: phoneIcon,
+                      iconAlt:
+                        tyBlock.contactPhone?.iconAlt ||
+                        resolveMediaAlt(
+                          tyBlock.contactPhone?.icon,
+                          thankYouForEnquiryContent.contact.phone.iconAlt,
+                        ),
+                    },
+                    email: {
+                      label:
+                        tyBlock.contactEmail?.label ||
+                        thankYouForEnquiryContent.contact.email.label,
+                      href:
+                        tyBlock.contactEmail?.href ||
+                        thankYouForEnquiryContent.contact.email.href,
+                      icon: emailIcon,
+                      iconAlt:
+                        tyBlock.contactEmail?.iconAlt ||
+                        resolveMediaAlt(
+                          tyBlock.contactEmail?.icon,
+                          thankYouForEnquiryContent.contact.email.iconAlt,
+                        ),
+                    },
+                  },
                 }}
               />
             );

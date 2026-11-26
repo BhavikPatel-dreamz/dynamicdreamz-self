@@ -30,7 +30,7 @@ function ProjectMedia({ project }: { project: Project }) {
         className="absolute inset-0 h-full w-full object-cover"
         decorative
         hidePosterOnMobile
-        poster={projectVideoPosters[project.media.src]}
+        poster={project.media.poster ?? projectVideoPosters[project.media.src]}
         posterSizes="(max-width: 767px) calc(100vw - 50px), 50vw"
         preload="none"
         sourceMedia="(min-width: 768px)"
@@ -51,10 +51,16 @@ function ProjectMedia({ project }: { project: Project }) {
   );
 }
 
-function ProjectList({ decorative = false }: { decorative?: boolean }) {
+function ProjectList({
+  decorative = false,
+  items = projects,
+}: {
+  decorative?: boolean;
+  items?: readonly Project[];
+}) {
   return (
     <div className="flex w-1/2 shrink-0 basis-1/2 max-[768px]:w-auto max-[768px]:basis-auto max-[768px]:aria-hidden:hidden" aria-hidden={decorative || undefined} data-project-clone={decorative ? "true" : undefined}>
-      {projects.map((project) => (
+      {items.map((project) => (
         <a
           className="group/project block w-1/5 shrink-0 basis-1/5 text-white max-[768px]:w-[calc(100cqw-50px)] max-[768px]:basis-[calc(100cqw-50px)] max-[768px]:snap-start"
           key={project.name}
@@ -86,6 +92,7 @@ export type SelectedWorkSectionProps = {
   description?: string;
   ctaLabel?: string;
   ctaHref?: string;
+  projects?: readonly Project[];
 };
 
 export function SelectedWorkSection({
@@ -93,7 +100,10 @@ export function SelectedWorkSection({
   description = homeSectionCopy.selectedWorkDescription,
   ctaLabel = homeSectionCopy.ctaViewWork,
   ctaHref = homeSectionCopy.ctaViewWorkHref,
+  projects: customProjects,
 }: SelectedWorkSectionProps = {}) {
+  const activeProjects =
+    customProjects && customProjects.length > 0 ? customProjects : projects;
   const projectTrackId = useId();
 
   return (
@@ -116,9 +126,9 @@ export function SelectedWorkSection({
         aria-label="Selected ecommerce work"
       >
         <div className={cn("flex w-[calc(500%+5px)] min-[1600px]:w-[calc(425%+5px)] max-[768px]:w-max", styles.projectMotion)}>
-          <ProjectList />
+          <ProjectList items={activeProjects} />
           <ClientAfterViewport mediaQuery="(min-width: 768px)" rootId={projectTrackId}>
-            <ProjectList decorative />
+            <ProjectList items={activeProjects} decorative />
           </ClientAfterViewport>
         </div>
       </div>

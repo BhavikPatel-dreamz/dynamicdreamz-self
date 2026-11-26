@@ -9,6 +9,8 @@ export type AboutValuesSectionProps = {
     title: string;
     description: string;
     iconName: string;
+    icon?: string;
+    iconAlt?: string;
   }[];
 };
 
@@ -27,7 +29,13 @@ export function AboutValuesSection({
         heading: title,
         description: description,
         boxes: activeValues.map((value) => ({
-          icon: <AboutValueIcon name={value.iconName} />,
+          icon:
+            "icon" in value && value.icon ? (
+              value.icon
+            ) : (
+              <AboutValueIcon name={value.iconName} />
+            ),
+          iconAlt: "iconAlt" in value ? value.iconAlt : undefined,
           title: value.title,
           description: value.description,
         })),

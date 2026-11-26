@@ -6,18 +6,22 @@ import { siteMapLinks, type SiteMapLinkItem } from "@/content/site-map";
 import { siteMapCopy } from "@/content/site-map";
 
 export type SiteMapPageProps = {
+  title?: string;
   links?: readonly SiteMapLinkItem[];
+  checkIcon?: string;
   className?: string;
 };
 
 export function SiteMapPage({
+  title = siteMapCopy.title,
   links = siteMapLinks,
+  checkIcon = "/assets/icons/gradient-check.svg",
   className = "standard-text-content pt-[150px] pb-20 max-[992px]:pt-[120px] max-[768px]:pt-[100px] max-[768px]:pb-[50px]",
 }: SiteMapPageProps) {
   return (
     <section className={className} data-section="sitemap" id="site-map-content">
       <Container>
-        <h1 className="sr-only">{siteMapCopy.title}</h1>
+        <h1 className="sr-only">{title}</h1>
         <ul className="list-none p-0">
           {links.map((item) => (
             <li
@@ -29,7 +33,7 @@ export function SiteMapPage({
                 aria-hidden="true"
                 className="absolute top-[1px] left-0 size-[22px]"
                 height={22}
-                src="/assets/icons/gradient-check.svg"
+                src={checkIcon}
                 width={22}
               />
               <Link
@@ -50,7 +54,7 @@ export function SiteMapPage({
                         aria-hidden="true"
                         className="absolute top-[1px] left-0 size-[22px]"
                         height={22}
-                        src="/assets/icons/gradient-check.svg"
+                        src={checkIcon}
                         width={22}
                       />
                       <Link

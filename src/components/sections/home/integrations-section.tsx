@@ -2,16 +2,20 @@ import { LoopingLogoTrack } from "@/components/sections/home/looping-logo-track"
 import styles from "@/components/sections/home/integrations-section.module.css";
 import { Container } from "@/components/ui/container";
 import { SplitSectionHeading } from "@/components/ui/split-section-heading";
-import { homeSectionCopy, integrationLogoRows } from "@/content/home";
+import { homeSectionCopy, integrationLogoRows, type ImageItem } from "@/content/home";
 import { cn } from "@/lib/class-names";
 
 export type IntegrationsSectionProps = {
   title?: string;
+  rows?: readonly (readonly ImageItem[])[];
 };
 
 export function IntegrationsSection({
   title = homeSectionCopy.integrationsTitle,
+  rows,
 }: IntegrationsSectionProps = {}) {
+  const activeRows = rows && rows.length > 0 ? rows : integrationLogoRows;
+
   return (
     <section className="our_partners overflow-hidden bg-[#fafaf7] py-20 max-[992px]:py-15 max-[768px]:py-10">
       <Container>
@@ -26,7 +30,7 @@ export function IntegrationsSection({
         className="our_partners_logo_wrap space-y-[50px] max-[768px]:space-y-6"
         aria-label="Platforms and integrations"
       >
-        {integrationLogoRows.map((row, index) => (
+        {activeRows.map((row, index) => (
           <div className="flex w-full min-h-[50px] max-[768px]:min-h-[30px] items-center overflow-hidden" key={index}>
             <LoopingLogoTrack
               className={cn("flex shrink-0 items-center", index === 0 ? styles.moveLeft : styles.moveRight)}

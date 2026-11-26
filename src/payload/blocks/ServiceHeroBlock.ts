@@ -268,6 +268,77 @@ export const ServiceHeroBlock: Block = {
                 { name: "purchaseHref", type: "text", required: true, label: "Purchase URL" },
               ],
             },
+            // About Hero Fields
+            {
+              name: "deliveryTitle",
+              type: "text",
+              label: "Delivery Card Heading (About Hero)",
+              admin: {
+                condition: (data, siblingData) => siblingData?.variant === "about",
+              },
+            },
+            {
+              name: "statistics",
+              type: "array",
+              dbName: "sh_stats",
+              label: "Delivery Statistics (About Hero)",
+              admin: {
+                condition: (data, siblingData) => siblingData?.variant === "about",
+              },
+              fields: [
+                { name: "label", type: "text", required: true, label: "Metric Label" },
+                { name: "value", type: "text", required: true, label: "Metric Value (e.g. 20+)" },
+              ],
+            },
+            // Life Hero Fields
+            {
+              name: "titleBeforeTeamwork",
+              type: "text",
+              label: "Heading Segment Before Highlighted Word (e.g. Where)",
+              admin: {
+                condition: (data, siblingData) => siblingData?.variant === "life",
+              },
+            },
+            {
+              name: "teamwork",
+              type: "text",
+              label: "Underlined Highlight Word (e.g. Teamwork)",
+              admin: {
+                condition: (data, siblingData) => siblingData?.variant === "life",
+              },
+            },
+            {
+              name: "titleAfterTeamwork",
+              type: "text",
+              label: "Heading Segment Before Lead Word (e.g. Takes the)",
+              admin: {
+                condition: (data, siblingData) => siblingData?.variant === "life",
+              },
+            },
+            // Our Work Hero Layout Fields
+            {
+              name: "showcaseLayout",
+              type: "select",
+              defaultValue: "ourWork",
+              label: "Our Work Hero Showcase Layout",
+              options: [
+                { label: "Our Work (Hide Showcase on Mobile)", value: "ourWork" },
+                { label: "Case Studies Live (Show on Mobile)", value: "caseStudiesLive" },
+                { label: "Default", value: "default" },
+              ],
+              admin: {
+                condition: (data, siblingData) => siblingData?.variant === "our-work",
+              },
+            },
+            {
+              name: "hideShowcaseOnMobile",
+              type: "checkbox",
+              defaultValue: true,
+              label: "Hide Showcase Track on Mobile",
+              admin: {
+                condition: (data, siblingData) => siblingData?.variant === "our-work",
+              },
+            },
           ],
         },
         {
@@ -510,6 +581,40 @@ export const ServiceHeroBlock: Block = {
                     { name: "height", type: "number", defaultValue: 39 },
                   ],
                 },
+              ],
+            },
+            // Career Hero Scrolling Team Photos
+            {
+              name: "scrollingImages",
+              type: "array",
+              dbName: "sh_scrls",
+              label: "Scrolling Team Photos (Career Hero)",
+              admin: {
+                condition: (data, siblingData) => siblingData?.variant === "career",
+              },
+              fields: [
+                { name: "image", type: "upload", relationTo: "media" },
+                { name: "src", type: "text", label: "Static Fallback Path" },
+                { name: "alt", type: "text" },
+                { name: "width", type: "number", defaultValue: 434 },
+                { name: "height", type: "number", defaultValue: 256 },
+              ],
+            },
+            // Our Work Hero Showcase Images
+            {
+              name: "showcaseImages",
+              type: "array",
+              dbName: "sh_shwcs",
+              label: "Scrolling Portfolio Showcase Images (Our Work Hero)",
+              admin: {
+                condition: (data, siblingData) => siblingData?.variant === "our-work",
+              },
+              fields: [
+                { name: "image", type: "upload", relationTo: "media" },
+                { name: "src", type: "text", label: "Static Fallback Path" },
+                { name: "alt", type: "text" },
+                { name: "width", type: "number", defaultValue: 548 },
+                { name: "height", type: "number", defaultValue: 323 },
               ],
             },
           ],

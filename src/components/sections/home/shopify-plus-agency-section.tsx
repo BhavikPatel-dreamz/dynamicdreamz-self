@@ -24,6 +24,7 @@ export type ShopifyPlusAgencyContent = {
   paragraphs?: readonly string[];
   counters?: readonly ShopifyPlusAgencyCounter[];
   videoSrc?: string;
+  poster?: string;
 };
 
 export type ShopifyPlusAgencySectionProps = {
@@ -43,6 +44,7 @@ export function ShopifyPlusAgencySection({ content }: ShopifyPlusAgencySectionPr
       ? content.counters
       : shopifyPlusAgencyContent.counters;
   const videoSrc = content?.videoSrc || shopifyPlusAgencyContent.videoSrc;
+  const poster = content?.poster || "/assets/about/hero-video-poster.webp";
 
   return (
     <section className="bg-[#fbeed5] py-10 max-[768px]:py-[30px]" aria-labelledby="shopify-plus-agency-title">
@@ -92,7 +94,7 @@ export function ShopifyPlusAgencySection({ content }: ShopifyPlusAgencySectionPr
             <DeferredAutoplayVideo
               className="absolute inset-0 h-full w-full object-cover"
               decorative
-              poster="/assets/about/hero-video-poster.webp"
+              poster={poster}
               posterClassName="object-cover"
               posterSizes="(max-width: 991px) 100vw, 50vw"
               preload="metadata"

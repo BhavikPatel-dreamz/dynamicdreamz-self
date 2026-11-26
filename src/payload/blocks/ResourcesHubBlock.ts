@@ -32,5 +32,24 @@ export const ResourcesHubBlock: Block = {
         },
       ],
     },
+    {
+      name: "categories",
+      type: "array",
+      dbName: "rh_cats",
+      label: "Accordion Resource Categories",
+      fields: [
+        { name: "title", type: "text", required: true, label: "Category Title" },
+        {
+          name: "links",
+          type: "array",
+          dbName: "rh_clnks",
+          label: "Category Links",
+          fields: [
+            { name: "title", type: "text", required: true, label: "Link Title" },
+            { name: "href", type: "text", required: true, label: "Link URL / Path" },
+          ],
+        },
+      ],
+    },
   ],
 };

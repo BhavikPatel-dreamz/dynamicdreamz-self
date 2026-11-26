@@ -69,6 +69,12 @@ export const FaqAccordionBlock: Block = {
       label: "Animate on Reveal (data-aos)",
     },
     {
+      name: "lazyAccordion",
+      type: "checkbox",
+      defaultValue: false,
+      label: "Lazy Hydrate Accordion Items",
+    },
+    {
       name: "faqs",
       type: "array",
       dbName: "fa_items",

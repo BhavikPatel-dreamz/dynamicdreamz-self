@@ -44,6 +44,18 @@ export const ShopifyPlusAgencySplitBlock: Block = {
       label: "Video Path (MP4)",
     },
     {
+      name: "poster",
+      type: "upload",
+      relationTo: "media",
+      label: "Video Poster Image",
+    },
+    {
+      name: "posterSrc",
+      type: "text",
+      defaultValue: "/assets/about/hero-video-poster.webp",
+      label: "Static Poster Fallback Path",
+    },
+    {
       name: "counters",
       type: "array",
       dbName: "hspa_cntrs",

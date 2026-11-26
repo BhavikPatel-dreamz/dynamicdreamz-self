@@ -1,4 +1,6 @@
 import type { ReactNode } from "react";
+import { CareerBenefitIcon } from "@/components/sections/career/career-benefit-icons";
+import { AboutValueIcon } from "@/components/sections/about/about-values-icons";
 
 import {
   AstraBenefitIcon,
@@ -476,6 +478,14 @@ export function resolveServiceIcon(
     serviceSlug === "hire-wordpress-developers"
   ) {
     return <WordPressCustomizationIcon name={name} />;
+  }
+
+  if (serviceSlug === "career") {
+    return <CareerBenefitIcon name={name} />;
+  }
+
+  if (serviceSlug === "about" || serviceSlug === "about-us") {
+    return <AboutValueIcon name={name} />;
   }
 
   return null;

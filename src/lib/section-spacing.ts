@@ -172,6 +172,12 @@ const INHERENT_SECTION_BACKGROUND_CLASSES: Record<string, string> = {
   "cro-revenue-impact": "bg-[#171E16]",
   "cro-engagement": "bg-[#FAFAF7]",
   "team-behind-it": "bg-[#EFF4EF]",
+  "home-shopify-plus-agency": "bg-[#fbeed5]",
+  "home-selected-work": "bg-dark-green",
+  "our-work-case-studies": "bg-[#eff4ef]",
+  "resources-hub": "bg-[#f7f5ef]",
+  "resources-story": "bg-[#e8f9ef]",
+  "thank-you": "bg-[#e8f9ef]",
 };
 
 /**
@@ -321,7 +327,6 @@ export function shouldCollapseTopPadding(
   const KNOWN_COLLAPSIBLE_SUBSECTIONS = new Set([
     "industries-served",
     "industries-grid",
-    "our-work-projects",
     "how-to-choose-spa",
   ]);
 
@@ -473,10 +478,10 @@ export function getBlockBackgroundCategory(
 
     if (normType === "brand-partners") {
       const bpVariant = variantOrTheme || obj.variant || "slider";
-      if (bpVariant === "tools-grid" || bpVariant === "tech-stack" || bpVariant === "integrations") {
-        return "colored";
+      if (bpVariant === "home" || bpVariant === "shopify-hours") {
+        return "white";
       }
-      return "white";
+      return "colored";
     }
 
     // Variant or theme

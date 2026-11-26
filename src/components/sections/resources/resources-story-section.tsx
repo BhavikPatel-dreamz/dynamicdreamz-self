@@ -6,10 +6,40 @@ import { VideoDialog } from "@/components/ui/video-dialog";
 import { resourcesStory } from "@/content/resources";
 import { cn } from "@/lib/class-names";
 
-function StoryReviews() {
+export type ResourcesStoryReviewItem = {
+  name: string;
+  href: string;
+  reviews: string;
+  rating: string;
+  logo: string;
+  logoWidth: number;
+  logoHeight: number;
+  logoClassName?: string;
+};
+
+export type ResourcesStorySectionProps = {
+  title?: string;
+  subtitle?: string;
+  paragraphs?: readonly string[];
+  videoId?: string;
+  videoTitle?: string;
+  poster?: string;
+  videoPosterAlt?: string;
+  overlay?: string;
+  starIcon?: string;
+  reviews?: readonly ResourcesStoryReviewItem[];
+};
+
+function StoryReviews({
+  reviews = resourcesStory.reviews,
+  starIcon = "/assets/reviews/five-stars.svg",
+}: {
+  reviews?: readonly ResourcesStoryReviewItem[];
+  starIcon?: string;
+}) {
   return (
     <ul className="mt-[55px] grid grid-cols-3 gap-4 max-[992px]:grid-cols-1 max-[992px]:gap-2">
-      {resourcesStory.reviews.map((review) => (
+      {reviews.map((review) => (
         <li key={review.name}>
           <a
             className={cn(
@@ -26,7 +56,7 @@ function StoryReviews() {
             <span className="flex flex-col items-start">
               <Image className={cn("mb-2 object-contain", review.logoClassName)} src={review.logo} alt={`${review.name} logo`} width={review.logoWidth} height={review.logoHeight} />
               <span className="flex items-center gap-1.75 min-h-6.75">
-                <Image className="h-[14px] w-auto" src="/assets/reviews/five-stars.svg" alt="Five stars" width={78} height={14} />
+                <Image className="h-[14px] w-auto" src={starIcon} alt="Five stars" width={78} height={14} />
                 <strong className="text-[22px] leading-none font-bold text-[#252c15]">{review.rating}</strong>
               </span>
             </span>
@@ -37,35 +67,51 @@ function StoryReviews() {
   );
 }
 
-export function ResourcesStorySection() {
+export function ResourcesStorySection({
+  title = resourcesStory.title,
+  subtitle = resourcesStory.subtitle,
+  paragraphs,
+  videoId = resourcesStory.videoId,
+  videoTitle = resourcesStory.videoTitle,
+  poster = "/assets/about/hero-video-poster.webp",
+  videoPosterAlt = resourcesStory.videoPosterAlt,
+  overlay = "/assets/about/we-are-dynamic-dreamz.svg",
+  starIcon = "/assets/reviews/five-stars.svg",
+  reviews,
+}: ResourcesStorySectionProps = {}) {
+  const activeParagraphs =
+    paragraphs && paragraphs.length > 0 ? paragraphs : resourcesStory.paragraphs;
+  const activeReviews =
+    reviews && reviews.length > 0 ? reviews : resourcesStory.reviews;
+
   return (
     <section className="resources-hero-div bg-[linear-gradient(97.18deg,#e8f9ef_28.5%,#e6fafd_91.82%)] py-[60px]" aria-labelledby="resources-story-title">
       <Container>
         <div className="hero-wrapper flex flex-row-reverse justify-between max-[992px]:flex-col">
           <div className="left-col w-[44.5%] max-[992px]:mb-[42px] max-[992px]:w-full">
-            {resourcesStory.paragraphs.map((paragraph) => (
+            {activeParagraphs.map((paragraph) => (
               <p className="mb-6 text-muted last:mb-0 lg:text-left text-center" key={paragraph}>{paragraph}</p>
             ))}
           </div>
           <div className="right-col w-1/2 max-[992px]:w-full">
             <div className="mb-7">
-              <h2 id="resources-story-title" className="mb-3 relative pl-5 text-[50px] leading-[60px] font-normal tracking-normal text-ink before:absolute before:top-1/2 before:left-0 before:h-[45px] before:w-[5px] before:-translate-y-1/2 before:bg-[linear-gradient(111.61deg,#15c064_-0.6%,#00d1ff_92.42%)] max-[992px]:text-[36px] max-[992px]:leading-[55px] max-[768px]:text-[26px] max-[768px]:leading-[47.2px]">{resourcesStory.title}</h2>
-              <p className="text-[18px] leading-[1.4] font-bold text-ink">{resourcesStory.subtitle}</p>
+              <h2 id="resources-story-title" className="mb-3 relative pl-5 text-[50px] leading-[60px] font-normal tracking-normal text-ink before:absolute before:top-1/2 before:left-0 before:h-[45px] before:w-[5px] before:-translate-y-1/2 before:bg-[linear-gradient(111.61deg,#15c064_-0.6%,#00d1ff_92.42%)] max-[992px]:text-[36px] max-[992px]:leading-[55px] max-[768px]:text-[26px] max-[768px]:leading-[47.2px]">{title}</h2>
+              <p className="text-[18px] leading-[1.4] font-bold text-ink">{subtitle}</p>
             </div>
             <div className="h-[360px] max-[1200px]:h-[300px] max-[992px]:h-[400px] max-[576px]:h-[300px] max-[480px]:h-[242px]">
               <VideoDialog
-                videoId={resourcesStory.videoId}
-                title={resourcesStory.videoTitle}
-                poster="/assets/about/hero-video-poster.webp"
-                posterAlt={resourcesStory.videoPosterAlt}
-                overlay="/assets/about/we-are-dynamic-dreamz.svg"
+                videoId={videoId}
+                title={videoTitle}
+                poster={poster}
+                posterAlt={videoPosterAlt}
+                overlay={overlay}
                 overlayWidth={423}
                 overlayHeight={18}
                 overlayClassName="p-[30px] pb-[30px] lg:pb-[30px]"
                 sizes="(max-width: 767px) calc(100vw - 32px), (max-width: 991px) 680px, 570px"
               />
             </div>
-            <StoryReviews />
+            <StoryReviews reviews={activeReviews} starIcon={starIcon} />
           </div>
         </div>
       </Container>

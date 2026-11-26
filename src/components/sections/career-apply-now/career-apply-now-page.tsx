@@ -25,6 +25,7 @@ export function CareerApplyNowPage({
   emailLabel,
   emailAddress,
   emailHref,
+  note,
   form,
 }: CareerApplyNowPageProps = {}) {
   return (
@@ -42,6 +43,7 @@ export function CareerApplyNowPage({
                 emailLabel={emailLabel}
                 emailAddress={emailAddress}
                 emailHref={emailHref}
+                note={note}
               />
               {form ? (
                 <div className="right-col w-[61%] max-[1200px]:w-[55%] max-[992px]:w-full">

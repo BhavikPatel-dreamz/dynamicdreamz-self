@@ -891,6 +891,19 @@ export interface Page {
                   id?: string | null;
                 }[]
               | null;
+            deliveryTitle?: string | null;
+            statistics?:
+              | {
+                  label: string;
+                  value: string;
+                  id?: string | null;
+                }[]
+              | null;
+            titleBeforeTeamwork?: string | null;
+            teamwork?: string | null;
+            titleAfterTeamwork?: string | null;
+            showcaseLayout?: ('ourWork' | 'caseStudiesLive' | 'default') | null;
+            hideShowcaseOnMobile?: boolean | null;
             /**
              * e.g. /assets/home/why-dynamic-dreamz.mp4 or CDN URL
              */
@@ -966,6 +979,26 @@ export interface Page {
                 height?: number | null;
               };
             };
+            scrollingImages?:
+              | {
+                  image?: (number | null) | Media;
+                  src?: string | null;
+                  alt?: string | null;
+                  width?: number | null;
+                  height?: number | null;
+                  id?: string | null;
+                }[]
+              | null;
+            showcaseImages?:
+              | {
+                  image?: (number | null) | Media;
+                  src?: string | null;
+                  alt?: string | null;
+                  width?: number | null;
+                  height?: number | null;
+                  id?: string | null;
+                }[]
+              | null;
             badges?:
               | {
                   logo?: (number | null) | Media;
@@ -1033,6 +1066,7 @@ export interface Page {
             variant?: ('split' | 'home') | null;
             iconVariant?: ('circle-cross' | 'default') | null;
             animateOnReveal?: boolean | null;
+            lazyAccordion?: boolean | null;
             faqs?:
               | {
                   question: string;
@@ -1461,6 +1495,37 @@ export interface Page {
         | {
             eyebrow?: string | null;
             title: string;
+            sales?: {
+              label?: string | null;
+              email?: string | null;
+              phone?: string | null;
+              phoneHref?: string | null;
+            };
+            hr?: {
+              label?: string | null;
+              email?: string | null;
+              phone?: string | null;
+              phoneHref?: string | null;
+              actionLabel?: string | null;
+              actionHref?: string | null;
+            };
+            discoveryCall?: {
+              label?: string | null;
+              actionLabel?: string | null;
+              actionHref?: string | null;
+              description?: string | null;
+            };
+            social?: {
+              label?: string | null;
+              profiles?:
+                | {
+                    name: string;
+                    label: string;
+                    href: string;
+                    id?: string | null;
+                  }[]
+                | null;
+            };
             id?: string | null;
             blockName?: string | null;
             blockType: 'contact-details';
@@ -1591,6 +1656,41 @@ export interface Page {
             eyebrow?: string | null;
             title?: string | null;
             description?: string | null;
+            filters?:
+              | {
+                  filterId: string;
+                  label: string;
+                  id?: string | null;
+                }[]
+              | null;
+            projects?:
+              | {
+                  projectId: string;
+                  platform: 'shopify' | 'wordpress' | 'apps' | 'magento' | 'bigCommerce';
+                  name: string;
+                  category: string;
+                  href?: string | null;
+                  image?: (number | null) | Media;
+                  imageSrc?: string | null;
+                  imageAlt?: string | null;
+                  platformMark?: {
+                    image?: (number | null) | Media;
+                    src?: string | null;
+                    width?: number | null;
+                    height?: number | null;
+                  };
+                  appLinks?:
+                    | {
+                        label: string;
+                        href: string;
+                        icon?: (number | null) | Media;
+                        iconSrc?: string | null;
+                        id?: string | null;
+                      }[]
+                    | null;
+                  id?: string | null;
+                }[]
+              | null;
             id?: string | null;
             blockName?: string | null;
             blockType: 'our-work-projects';
@@ -1729,6 +1829,19 @@ export interface Page {
                   id?: string | null;
                 }[]
               | null;
+            categories?:
+              | {
+                  title: string;
+                  links?:
+                    | {
+                        title: string;
+                        href: string;
+                        id?: string | null;
+                      }[]
+                    | null;
+                  id?: string | null;
+                }[]
+              | null;
             id?: string | null;
             blockName?: string | null;
             blockType: 'resources-hub';
@@ -1787,6 +1900,8 @@ export interface Page {
                 }[]
               | null;
             videoSrc?: string | null;
+            poster?: (number | null) | Media;
+            posterSrc?: string | null;
             counters?:
               | {
                   value: string;
@@ -1822,6 +1937,21 @@ export interface Page {
             description?: string | null;
             ctaLabel?: string | null;
             ctaHref?: string | null;
+            projects?:
+              | {
+                  name: string;
+                  technology: string;
+                  href: string;
+                  mediaType: 'image' | 'video';
+                  image?: (number | null) | Media;
+                  imageSrc?: string | null;
+                  imageAlt?: string | null;
+                  videoSrc?: string | null;
+                  videoPoster?: (number | null) | Media;
+                  videoPosterSrc?: string | null;
+                  id?: string | null;
+                }[]
+              | null;
             id?: string | null;
             blockName?: string | null;
             blockType: 'home-selected-work';
@@ -1830,6 +1960,21 @@ export interface Page {
             title: string;
             ctaLabel?: string | null;
             ctaHref?: string | null;
+            insights?:
+              | {
+                  title: string;
+                  href: string;
+                  image?: (number | null) | Media;
+                  imageSrc?: string | null;
+                  width?: number | null;
+                  height?: number | null;
+                  date: string;
+                  displayDate: string;
+                  category?: string | null;
+                  categoryHref?: string | null;
+                  id?: string | null;
+                }[]
+              | null;
             id?: string | null;
             blockName?: string | null;
             blockType: 'home-insights';
@@ -1946,6 +2091,8 @@ export interface Page {
                   title: string;
                   description: string;
                   iconName: string;
+                  icon?: (number | null) | Media;
+                  iconSrc?: string | null;
                   id?: string | null;
                 }[]
               | null;
@@ -1980,6 +2127,37 @@ export interface Page {
             eyebrow?: string | null;
             title: string;
             description?: string | null;
+            locations?:
+              | {
+                  slug: 'surat' | 'ahmedabad';
+                  label: string;
+                  id?: string | null;
+                }[]
+              | null;
+            jobs?:
+              | {
+                  slug: string;
+                  title: string;
+                  applicationTitle: string;
+                  experience: string;
+                  jobType: string;
+                  postedOn: string;
+                  postedDate: string;
+                  positions: number;
+                  locations?:
+                    | {
+                        text: string;
+                        id?: string | null;
+                      }[]
+                    | null;
+                  icon?: (number | null) | Media;
+                  iconSrc?: string | null;
+                  iconAlt?: string | null;
+                  summary: string;
+                  jobDescription: string;
+                  id?: string | null;
+                }[]
+              | null;
             id?: string | null;
             blockName?: string | null;
             blockType: 'career-opportunities';
@@ -2646,6 +2824,285 @@ export interface Page {
             blockName?: string | null;
             blockType: 'how-agencies-use';
           }
+        | {
+            keyManagers?:
+              | {
+                  name: string;
+                  role: string;
+                  image?: (number | null) | Media;
+                  imageSrc?: string | null;
+                  alt?: string | null;
+                  id?: string | null;
+                }[]
+              | null;
+            departmentLeaders?:
+              | {
+                  name: string;
+                  role: string;
+                  image?: (number | null) | Media;
+                  imageSrc?: string | null;
+                  alt?: string | null;
+                  id?: string | null;
+                }[]
+              | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'about-team';
+          }
+        | {
+            eyebrow?: string | null;
+            title: string;
+            description?: string | null;
+            viewCaseStudyLabel?: string | null;
+            items?:
+              | {
+                  slug: string;
+                  category: string;
+                  industry?: string | null;
+                  title: string;
+                  excerpt?: string | null;
+                  chips?:
+                    | {
+                        text: string;
+                        id?: string | null;
+                      }[]
+                    | null;
+                  image?: (number | null) | Media;
+                  imageSrc?: string | null;
+                  imageAlt?: string | null;
+                  id?: string | null;
+                }[]
+              | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'our-work-case-studies';
+          }
+        | {
+            title: string;
+            articles?:
+              | {
+                  title: string;
+                  href: string;
+                  image?: (number | null) | Media;
+                  imageSrc?: string | null;
+                  width?: number | null;
+                  height?: number | null;
+                  date: string;
+                  displayDate: string;
+                  category?: string | null;
+                  categoryHref?: string | null;
+                  id?: string | null;
+                }[]
+              | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'resources-blog';
+          }
+        | {
+            title: string;
+            subtitle?: string | null;
+            paragraphs?:
+              | {
+                  text: string;
+                  id?: string | null;
+                }[]
+              | null;
+            videoId?: string | null;
+            videoTitle?: string | null;
+            poster?: (number | null) | Media;
+            posterSrc?: string | null;
+            videoPosterAlt?: string | null;
+            overlay?: (number | null) | Media;
+            overlaySrc?: string | null;
+            starIcon?: (number | null) | Media;
+            starIconSrc?: string | null;
+            reviews?:
+              | {
+                  name: string;
+                  href: string;
+                  reviews: string;
+                  rating: string;
+                  logo?: (number | null) | Media;
+                  logoSrc?: string | null;
+                  logoWidth?: number | null;
+                  logoHeight?: number | null;
+                  logoClassName?: string | null;
+                  id?: string | null;
+                }[]
+              | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'resources-story';
+          }
+        | {
+            title: string;
+            description?: string | null;
+            stats?:
+              | {
+                  value: number;
+                  suffix?: string | null;
+                  label: string;
+                  id?: string | null;
+                }[]
+              | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'resources-trust';
+          }
+        | {
+            eyebrow?: string | null;
+            title: string;
+            description?: string | null;
+            host: {
+              name: string;
+              role: string;
+              image?: (number | null) | Media;
+              imageSrc?: string | null;
+              imageAlt?: string | null;
+            };
+            benefits?:
+              | {
+                  icon: string;
+                  title: string;
+                  description: string;
+                  id?: string | null;
+                }[]
+              | null;
+            calendar: {
+              heading?: string | null;
+              details?: string | null;
+              iframeTitle?: string | null;
+              src: string;
+            };
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'book-discovery-call';
+          }
+        | {
+            title?: string | null;
+            checkIcon?: (number | null) | Media;
+            checkIconSrc?: string | null;
+            links?:
+              | {
+                  label: string;
+                  href: string;
+                  children?:
+                    | {
+                        label: string;
+                        href: string;
+                        id?: string | null;
+                      }[]
+                    | null;
+                  id?: string | null;
+                }[]
+              | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'site-map';
+          }
+        | {
+            heroTitle: string;
+            sections?:
+              | {
+                  title: string;
+                  level?: ('2' | '3') | null;
+                  paragraphs?:
+                    | {
+                        text: string;
+                        id?: string | null;
+                      }[]
+                    | null;
+                  items?:
+                    | {
+                        parts?:
+                          | {
+                              text: string;
+                              strong?: boolean | null;
+                              id?: string | null;
+                            }[]
+                          | null;
+                        id?: string | null;
+                      }[]
+                    | null;
+                  id?: string | null;
+                }[]
+              | null;
+            contactLabels?: {
+              email?: string | null;
+              phone?: string | null;
+              address?: string | null;
+            };
+            contact?: {
+              name?: string | null;
+              email?: string | null;
+              phone?: string | null;
+              phoneHref?: string | null;
+              address?: string | null;
+              addressHref?: string | null;
+            };
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'privacy-policy';
+          }
+        | {
+            heroTitle: string;
+            intro: string;
+            sections?:
+              | {
+                  title: string;
+                  paragraphs?:
+                    | {
+                        text: string;
+                        id?: string | null;
+                      }[]
+                    | null;
+                  items?:
+                    | {
+                        text: string;
+                        id?: string | null;
+                      }[]
+                    | null;
+                  closingParagraphs?:
+                    | {
+                        text: string;
+                        id?: string | null;
+                      }[]
+                    | null;
+                  id?: string | null;
+                }[]
+              | null;
+            contactEmail: string;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'terms-of-service';
+          }
+        | {
+            buttonPlacement: 'above-contact' | 'below-contact';
+            heading: string;
+            descriptionLine1: string;
+            descriptionLine2: string;
+            homeCta: {
+              label: string;
+              href: string;
+            };
+            contactPhone: {
+              label: string;
+              href: string;
+              icon?: (number | null) | Media;
+              iconSrc?: string | null;
+              iconAlt?: string | null;
+            };
+            contactEmail: {
+              label: string;
+              href: string;
+              icon?: (number | null) | Media;
+              iconSrc?: string | null;
+              iconAlt?: string | null;
+            };
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'thank-you';
+          }
       )[]
     | null;
   seo?: {
@@ -2656,6 +3113,7 @@ export interface Page {
      */
     canonicalUrl?: string | null;
     metaImage?: (number | null) | Media;
+    preventIndexing?: boolean | null;
   };
   updatedAt: string;
   createdAt: string;
@@ -3806,6 +4264,19 @@ export interface PagesSelect<T extends boolean = true> {
                     purchaseHref?: T;
                     id?: T;
                   };
+              deliveryTitle?: T;
+              statistics?:
+                | T
+                | {
+                    label?: T;
+                    value?: T;
+                    id?: T;
+                  };
+              titleBeforeTeamwork?: T;
+              teamwork?: T;
+              titleAfterTeamwork?: T;
+              showcaseLayout?: T;
+              hideShowcaseOnMobile?: T;
               videoSrc?: T;
               videoPoster?: T;
               videoPosterSrc?: T;
@@ -3889,6 +4360,26 @@ export interface PagesSelect<T extends boolean = true> {
                           height?: T;
                         };
                   };
+              scrollingImages?:
+                | T
+                | {
+                    image?: T;
+                    src?: T;
+                    alt?: T;
+                    width?: T;
+                    height?: T;
+                    id?: T;
+                  };
+              showcaseImages?:
+                | T
+                | {
+                    image?: T;
+                    src?: T;
+                    alt?: T;
+                    width?: T;
+                    height?: T;
+                    id?: T;
+                  };
               badges?:
                 | T
                 | {
@@ -3957,6 +4448,7 @@ export interface PagesSelect<T extends boolean = true> {
               variant?: T;
               iconVariant?: T;
               animateOnReveal?: T;
+              lazyAccordion?: T;
               faqs?:
                 | T
                 | {
@@ -4359,6 +4851,45 @@ export interface PagesSelect<T extends boolean = true> {
           | {
               eyebrow?: T;
               title?: T;
+              sales?:
+                | T
+                | {
+                    label?: T;
+                    email?: T;
+                    phone?: T;
+                    phoneHref?: T;
+                  };
+              hr?:
+                | T
+                | {
+                    label?: T;
+                    email?: T;
+                    phone?: T;
+                    phoneHref?: T;
+                    actionLabel?: T;
+                    actionHref?: T;
+                  };
+              discoveryCall?:
+                | T
+                | {
+                    label?: T;
+                    actionLabel?: T;
+                    actionHref?: T;
+                    description?: T;
+                  };
+              social?:
+                | T
+                | {
+                    label?: T;
+                    profiles?:
+                      | T
+                      | {
+                          name?: T;
+                          label?: T;
+                          href?: T;
+                          id?: T;
+                        };
+                  };
               id?: T;
               blockName?: T;
             };
@@ -4489,6 +5020,43 @@ export interface PagesSelect<T extends boolean = true> {
               eyebrow?: T;
               title?: T;
               description?: T;
+              filters?:
+                | T
+                | {
+                    filterId?: T;
+                    label?: T;
+                    id?: T;
+                  };
+              projects?:
+                | T
+                | {
+                    projectId?: T;
+                    platform?: T;
+                    name?: T;
+                    category?: T;
+                    href?: T;
+                    image?: T;
+                    imageSrc?: T;
+                    imageAlt?: T;
+                    platformMark?:
+                      | T
+                      | {
+                          image?: T;
+                          src?: T;
+                          width?: T;
+                          height?: T;
+                        };
+                    appLinks?:
+                      | T
+                      | {
+                          label?: T;
+                          href?: T;
+                          icon?: T;
+                          iconSrc?: T;
+                          id?: T;
+                        };
+                    id?: T;
+                  };
               id?: T;
               blockName?: T;
             };
@@ -4637,6 +5205,19 @@ export interface PagesSelect<T extends boolean = true> {
                     text?: T;
                     id?: T;
                   };
+              categories?:
+                | T
+                | {
+                    title?: T;
+                    links?:
+                      | T
+                      | {
+                          title?: T;
+                          href?: T;
+                          id?: T;
+                        };
+                    id?: T;
+                  };
               id?: T;
               blockName?: T;
             };
@@ -4704,6 +5285,8 @@ export interface PagesSelect<T extends boolean = true> {
                     id?: T;
                   };
               videoSrc?: T;
+              poster?: T;
+              posterSrc?: T;
               counters?:
                 | T
                 | {
@@ -4741,6 +5324,21 @@ export interface PagesSelect<T extends boolean = true> {
               description?: T;
               ctaLabel?: T;
               ctaHref?: T;
+              projects?:
+                | T
+                | {
+                    name?: T;
+                    technology?: T;
+                    href?: T;
+                    mediaType?: T;
+                    image?: T;
+                    imageSrc?: T;
+                    imageAlt?: T;
+                    videoSrc?: T;
+                    videoPoster?: T;
+                    videoPosterSrc?: T;
+                    id?: T;
+                  };
               id?: T;
               blockName?: T;
             };
@@ -4750,6 +5348,21 @@ export interface PagesSelect<T extends boolean = true> {
               title?: T;
               ctaLabel?: T;
               ctaHref?: T;
+              insights?:
+                | T
+                | {
+                    title?: T;
+                    href?: T;
+                    image?: T;
+                    imageSrc?: T;
+                    width?: T;
+                    height?: T;
+                    date?: T;
+                    displayDate?: T;
+                    category?: T;
+                    categoryHref?: T;
+                    id?: T;
+                  };
               id?: T;
               blockName?: T;
             };
@@ -4873,6 +5486,8 @@ export interface PagesSelect<T extends boolean = true> {
                     title?: T;
                     description?: T;
                     iconName?: T;
+                    icon?: T;
+                    iconSrc?: T;
                     id?: T;
                   };
               id?: T;
@@ -4908,6 +5523,37 @@ export interface PagesSelect<T extends boolean = true> {
               eyebrow?: T;
               title?: T;
               description?: T;
+              locations?:
+                | T
+                | {
+                    slug?: T;
+                    label?: T;
+                    id?: T;
+                  };
+              jobs?:
+                | T
+                | {
+                    slug?: T;
+                    title?: T;
+                    applicationTitle?: T;
+                    experience?: T;
+                    jobType?: T;
+                    postedOn?: T;
+                    postedDate?: T;
+                    positions?: T;
+                    locations?:
+                      | T
+                      | {
+                          text?: T;
+                          id?: T;
+                        };
+                    icon?: T;
+                    iconSrc?: T;
+                    iconAlt?: T;
+                    summary?: T;
+                    jobDescription?: T;
+                    id?: T;
+                  };
               id?: T;
               blockName?: T;
             };
@@ -5609,6 +6255,309 @@ export interface PagesSelect<T extends boolean = true> {
               id?: T;
               blockName?: T;
             };
+        'about-team'?:
+          | T
+          | {
+              keyManagers?:
+                | T
+                | {
+                    name?: T;
+                    role?: T;
+                    image?: T;
+                    imageSrc?: T;
+                    alt?: T;
+                    id?: T;
+                  };
+              departmentLeaders?:
+                | T
+                | {
+                    name?: T;
+                    role?: T;
+                    image?: T;
+                    imageSrc?: T;
+                    alt?: T;
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        'our-work-case-studies'?:
+          | T
+          | {
+              eyebrow?: T;
+              title?: T;
+              description?: T;
+              viewCaseStudyLabel?: T;
+              items?:
+                | T
+                | {
+                    slug?: T;
+                    category?: T;
+                    industry?: T;
+                    title?: T;
+                    excerpt?: T;
+                    chips?:
+                      | T
+                      | {
+                          text?: T;
+                          id?: T;
+                        };
+                    image?: T;
+                    imageSrc?: T;
+                    imageAlt?: T;
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        'resources-blog'?:
+          | T
+          | {
+              title?: T;
+              articles?:
+                | T
+                | {
+                    title?: T;
+                    href?: T;
+                    image?: T;
+                    imageSrc?: T;
+                    width?: T;
+                    height?: T;
+                    date?: T;
+                    displayDate?: T;
+                    category?: T;
+                    categoryHref?: T;
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        'resources-story'?:
+          | T
+          | {
+              title?: T;
+              subtitle?: T;
+              paragraphs?:
+                | T
+                | {
+                    text?: T;
+                    id?: T;
+                  };
+              videoId?: T;
+              videoTitle?: T;
+              poster?: T;
+              posterSrc?: T;
+              videoPosterAlt?: T;
+              overlay?: T;
+              overlaySrc?: T;
+              starIcon?: T;
+              starIconSrc?: T;
+              reviews?:
+                | T
+                | {
+                    name?: T;
+                    href?: T;
+                    reviews?: T;
+                    rating?: T;
+                    logo?: T;
+                    logoSrc?: T;
+                    logoWidth?: T;
+                    logoHeight?: T;
+                    logoClassName?: T;
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        'resources-trust'?:
+          | T
+          | {
+              title?: T;
+              description?: T;
+              stats?:
+                | T
+                | {
+                    value?: T;
+                    suffix?: T;
+                    label?: T;
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        'book-discovery-call'?:
+          | T
+          | {
+              eyebrow?: T;
+              title?: T;
+              description?: T;
+              host?:
+                | T
+                | {
+                    name?: T;
+                    role?: T;
+                    image?: T;
+                    imageSrc?: T;
+                    imageAlt?: T;
+                  };
+              benefits?:
+                | T
+                | {
+                    icon?: T;
+                    title?: T;
+                    description?: T;
+                    id?: T;
+                  };
+              calendar?:
+                | T
+                | {
+                    heading?: T;
+                    details?: T;
+                    iframeTitle?: T;
+                    src?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        'site-map'?:
+          | T
+          | {
+              title?: T;
+              checkIcon?: T;
+              checkIconSrc?: T;
+              links?:
+                | T
+                | {
+                    label?: T;
+                    href?: T;
+                    children?:
+                      | T
+                      | {
+                          label?: T;
+                          href?: T;
+                          id?: T;
+                        };
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        'privacy-policy'?:
+          | T
+          | {
+              heroTitle?: T;
+              sections?:
+                | T
+                | {
+                    title?: T;
+                    level?: T;
+                    paragraphs?:
+                      | T
+                      | {
+                          text?: T;
+                          id?: T;
+                        };
+                    items?:
+                      | T
+                      | {
+                          parts?:
+                            | T
+                            | {
+                                text?: T;
+                                strong?: T;
+                                id?: T;
+                              };
+                          id?: T;
+                        };
+                    id?: T;
+                  };
+              contactLabels?:
+                | T
+                | {
+                    email?: T;
+                    phone?: T;
+                    address?: T;
+                  };
+              contact?:
+                | T
+                | {
+                    name?: T;
+                    email?: T;
+                    phone?: T;
+                    phoneHref?: T;
+                    address?: T;
+                    addressHref?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        'terms-of-service'?:
+          | T
+          | {
+              heroTitle?: T;
+              intro?: T;
+              sections?:
+                | T
+                | {
+                    title?: T;
+                    paragraphs?:
+                      | T
+                      | {
+                          text?: T;
+                          id?: T;
+                        };
+                    items?:
+                      | T
+                      | {
+                          text?: T;
+                          id?: T;
+                        };
+                    closingParagraphs?:
+                      | T
+                      | {
+                          text?: T;
+                          id?: T;
+                        };
+                    id?: T;
+                  };
+              contactEmail?: T;
+              id?: T;
+              blockName?: T;
+            };
+        'thank-you'?:
+          | T
+          | {
+              buttonPlacement?: T;
+              heading?: T;
+              descriptionLine1?: T;
+              descriptionLine2?: T;
+              homeCta?:
+                | T
+                | {
+                    label?: T;
+                    href?: T;
+                  };
+              contactPhone?:
+                | T
+                | {
+                    label?: T;
+                    href?: T;
+                    icon?: T;
+                    iconSrc?: T;
+                    iconAlt?: T;
+                  };
+              contactEmail?:
+                | T
+                | {
+                    label?: T;
+                    href?: T;
+                    icon?: T;
+                    iconSrc?: T;
+                    iconAlt?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
       };
   seo?:
     | T
@@ -5617,6 +6566,7 @@ export interface PagesSelect<T extends boolean = true> {
         metaDescription?: T;
         canonicalUrl?: T;
         metaImage?: T;
+        preventIndexing?: T;
       };
   updatedAt?: T;
   createdAt?: T;

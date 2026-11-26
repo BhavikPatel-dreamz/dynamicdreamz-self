@@ -70,6 +70,16 @@ import { ShopifyCroWhyBlock } from "@/payload/blocks/ShopifyCroWhyBlock";
 import { ShopifyCroEngagementBlock } from "@/payload/blocks/ShopifyCroEngagementBlock";
 import { ShopifyTeamBehindItBlock } from "@/payload/blocks/ShopifyTeamBehindItBlock";
 import { HowAgenciesUseBlock } from "@/payload/blocks/HowAgenciesUseBlock";
+import { AboutTeamBlock } from "@/payload/blocks/AboutTeamBlock";
+import { OurWorkCaseStudiesBlock } from "@/payload/blocks/OurWorkCaseStudiesBlock";
+import { ResourcesBlogBlock } from "@/payload/blocks/ResourcesBlogBlock";
+import { ResourcesStoryBlock } from "@/payload/blocks/ResourcesStoryBlock";
+import { ResourcesTrustBlock } from "@/payload/blocks/ResourcesTrustBlock";
+import { BookDiscoveryCallBlock } from "@/payload/blocks/BookDiscoveryCallBlock";
+import { SiteMapBlock } from "@/payload/blocks/SiteMapBlock";
+import { PrivacyPolicyBlock } from "@/payload/blocks/PrivacyPolicyBlock";
+import { TermsOfServiceBlock } from "@/payload/blocks/TermsOfServiceBlock";
+import { ThankYouBlock } from "@/payload/blocks/ThankYouBlock";
 import { previewDraftPath } from "@/lib/preview-url";
 import { safeRevalidatePath } from "@/lib/revalidate";
 
@@ -202,6 +212,16 @@ export const Pages: CollectionConfig = {
         ShopifyCroEngagementBlock,
         ShopifyTeamBehindItBlock,
         HowAgenciesUseBlock,
+        AboutTeamBlock,
+        OurWorkCaseStudiesBlock,
+        ResourcesBlogBlock,
+        ResourcesStoryBlock,
+        ResourcesTrustBlock,
+        BookDiscoveryCallBlock,
+        SiteMapBlock,
+        PrivacyPolicyBlock,
+        TermsOfServiceBlock,
+        ThankYouBlock,
       ],
     },
     {
@@ -241,6 +261,12 @@ export const Pages: CollectionConfig = {
           },
         },
         { name: "metaImage", type: "upload", relationTo: "media" },
+        {
+          name: "preventIndexing",
+          type: "checkbox",
+          defaultValue: false,
+          label: "Prevent Search Indexing (noindex, nofollow)",
+        },
       ],
     },
   ],

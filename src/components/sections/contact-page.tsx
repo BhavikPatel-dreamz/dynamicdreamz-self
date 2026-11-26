@@ -247,13 +247,78 @@ export function ContactOfficesSection({
 export type ContactDetailsSectionProps = {
   eyebrow?: string;
   title?: string;
+  sales?: {
+    label?: string;
+    email?: string;
+    phone?: string;
+    phoneHref?: string;
+  };
+  hr?: {
+    label?: string;
+    email?: string;
+    phone?: string;
+    phoneHref?: string;
+    actionLabel?: string;
+    actionHref?: string;
+  };
+  discoveryCall?: {
+    label?: string;
+    actionLabel?: string;
+    actionHref?: string;
+    description?: string;
+  };
+  social?: {
+    label?: string;
+    profiles?: readonly {
+      name: string;
+      label: string;
+      href: string;
+    }[];
+  };
 };
 
 export function ContactDetailsSection({
   eyebrow = contactPageContent.contactDetailsSection.eyebrow,
   title = contactPageContent.contactDetailsSection.title,
+  sales,
+  hr,
+  discoveryCall,
+  social,
 }: ContactDetailsSectionProps = {}) {
   const { contactDetailsSection } = contactPageContent;
+  const resolvedSales = {
+    label: sales?.label || contactDetailsSection.sales.label,
+    email: sales?.email || contactDetailsSection.sales.email,
+    phone: sales?.phone || contactDetailsSection.sales.phone,
+    phoneHref: sales?.phoneHref || contactDetailsSection.sales.phoneHref,
+  };
+  const resolvedHr = {
+    label: hr?.label || contactDetailsSection.hr.label,
+    email: hr?.email || contactDetailsSection.hr.email,
+    phone: hr?.phone || contactDetailsSection.hr.phone,
+    phoneHref: hr?.phoneHref || contactDetailsSection.hr.phoneHref,
+    actionLabel: hr?.actionLabel || contactDetailsSection.hr.actionLabel,
+    actionHref: hr?.actionHref || contactDetailsSection.hr.actionHref,
+  };
+  const resolvedDiscoveryCall = {
+    label: discoveryCall?.label || contactDetailsSection.discoveryCall.label,
+    actionLabel:
+      discoveryCall?.actionLabel ||
+      contactDetailsSection.discoveryCall.actionLabel,
+    actionHref:
+      discoveryCall?.actionHref ||
+      contactDetailsSection.discoveryCall.actionHref,
+    description:
+      discoveryCall?.description ||
+      contactDetailsSection.discoveryCall.description,
+  };
+  const resolvedSocial = {
+    label: social?.label || contactDetailsSection.social.label,
+    profiles:
+      social?.profiles && social.profiles.length > 0
+        ? social.profiles
+        : contactDetailsSection.social.profiles,
+  };
 
   return (
     <section
@@ -277,47 +342,47 @@ export function ContactDetailsSection({
             {/* Item 1: Sales */}
             <div className="flex min-h-[138px] flex-col justify-start border-r border-[rgba(40,40,40,0.11)] p-[22px_20px] transition-colors duration-300 hover:bg-[#f7f4e9] max-[1200px]:border-b max-[768px]:min-h-0 max-[768px]:border-r-0 max-[768px]:px-0 max-[768px]:py-5 max-[768px]:hover:bg-transparent">
               <span className="mb-2.5 font-sans text-[10px] leading-[1.4] font-bold uppercase tracking-[0.8px] text-brand-red">
-                {contactDetailsSection.sales.label}
+                {resolvedSales.label}
               </span>
               <a
-                href={`mailto:${contactDetailsSection.sales.email}`}
+                href={`mailto:${resolvedSales.email}`}
                 className="text-base leading-7 font-semibold text-ink break-words transition-colors hover:text-brand-red max-[768px]:text-sm"
               >
-                {contactDetailsSection.sales.email}
+                {resolvedSales.email}
               </a>
               <a
-                href={contactDetailsSection.sales.phoneHref}
+                href={resolvedSales.phoneHref}
                 className="mt-[5px] text-sm leading-[22px] font-medium text-muted transition-colors hover:text-brand-red"
               >
-                {contactDetailsSection.sales.phone}
+                {resolvedSales.phone}
               </a>
             </div>
 
             {/* Item 2: HR */}
             <div className="flex min-h-[138px] flex-col justify-start border-r border-[rgba(40,40,40,0.11)] p-[22px_20px] transition-colors duration-300 hover:bg-[#f7f4e9] max-[1200px]:border-r-0 max-[1200px]:border-b max-[768px]:min-h-0 max-[768px]:px-0 max-[768px]:py-5 max-[768px]:hover:bg-transparent">
               <span className="mb-2.5 font-sans text-[10px] leading-[1.4] font-bold uppercase tracking-[0.8px] text-brand-red">
-                {contactDetailsSection.hr.label}
+                {resolvedHr.label}
               </span>
               <a
-                href={`mailto:${contactDetailsSection.hr.email}`}
+                href={`mailto:${resolvedHr.email}`}
                 className="text-base leading-7 font-semibold text-ink break-words transition-colors hover:text-brand-red max-[768px]:text-sm"
               >
-                {contactDetailsSection.hr.email}
+                {resolvedHr.email}
               </a>
               <a
-                href={contactDetailsSection.hr.phoneHref}
+                href={resolvedHr.phoneHref}
                 className="mt-[5px] text-sm leading-[22px] font-medium text-muted transition-colors hover:text-brand-red"
               >
-                {contactDetailsSection.hr.phone}
+                {resolvedHr.phone}
               </a>
               <div className="mt-3">
                 <Link
-                  href={contactDetailsSection.hr.actionHref}
+                  href={resolvedHr.actionHref}
                   target="_blank"
                   rel="nofollow noopener noreferrer"
                   className="group inline-flex items-center text-xs font-semibold uppercase text-brand-red transition-colors hover:text-ink"
                 >
-                  {contactDetailsSection.hr.actionLabel}
+                  {resolvedHr.actionLabel}
                   <DiagonalArrowIcon className="ml-2.5 size-2.5 text-brand-red transition-colors group-hover:text-ink" />
                 </Link>
               </div>
@@ -326,26 +391,26 @@ export function ContactDetailsSection({
             {/* Item 3: Discovery Call */}
             <div className="flex min-h-[138px] flex-col justify-start border-r border-[rgba(40,40,40,0.11)] p-[22px_20px] transition-colors duration-300 hover:bg-[#f7f4e9] max-[1200px]:border-b-0 max-[768px]:min-h-0 max-[768px]:border-r-0 max-[768px]:border-b max-[768px]:px-0 max-[768px]:py-5 max-[768px]:hover:bg-transparent">
               <span className="mb-2.5 font-sans text-[10px] leading-[1.4] font-bold uppercase tracking-[0.8px] text-brand-red">
-                {contactDetailsSection.discoveryCall.label}
+                {resolvedDiscoveryCall.label}
               </span>
               <Link
-                href={contactDetailsSection.discoveryCall.actionHref}
+                href={resolvedDiscoveryCall.actionHref}
                 className="text-base leading-7 font-semibold text-ink transition-colors hover:text-brand-red max-[768px]:text-sm"
               >
-                {contactDetailsSection.discoveryCall.actionLabel}
+                {resolvedDiscoveryCall.actionLabel}
               </Link>
               <span className="mt-[5px] text-sm leading-[22px] font-medium text-muted">
-                {contactDetailsSection.discoveryCall.description}
+                {resolvedDiscoveryCall.description}
               </span>
             </div>
 
             {/* Item 4: Social */}
             <div className="flex min-h-[138px] flex-col justify-start p-[22px_20px] transition-colors duration-300 hover:bg-[#f7f4e9] max-[768px]:min-h-0 max-[768px]:px-0 max-[768px]:py-5 max-[768px]:hover:bg-transparent">
               <span className="mb-2.5 font-sans text-[10px] leading-[1.4] font-bold uppercase tracking-[0.8px] text-brand-red">
-                {contactDetailsSection.social.label}
+                {resolvedSocial.label}
               </span>
               <div className="mt-1 flex items-center gap-2.5">
-                {contactDetailsSection.social.profiles.map((profile) => (
+                {resolvedSocial.profiles.map((profile) => (
                   <div key={profile.href} className="text-center">
                     <a
                       href={profile.href}

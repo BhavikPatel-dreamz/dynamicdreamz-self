@@ -13,6 +13,28 @@ import { getAllServicePageSlugs, getServicePageEntry } from "@/lib/service-pages
 
 export const dynamicParams = true;
 
+function normalizePagePath(
+  rawPath: string | undefined,
+  pageSlug: string,
+): string {
+  const fallback =
+    pageSlug === "home" || pageSlug === "index"
+      ? "/"
+      : `/${pageSlug.replace(/^\/+|\/+$/g, "")}/`;
+  if (!rawPath) return fallback;
+  let cleaned = rawPath.trim();
+  if (!cleaned) return fallback;
+  if (cleaned.startsWith("http://") || cleaned.startsWith("https://")) {
+    try {
+      cleaned = new URL(cleaned).pathname || "/";
+    } catch {
+      cleaned = cleaned.replace(/^https?:\/\/[^/]+/i, "") || "/";
+    }
+  }
+  const normalized = cleaned.replace(/^\/+|\/+$/g, "");
+  return normalized ? `/${normalized}/` : "/";
+}
+
 export async function generateStaticParams() {
   const allSlugs = getAllServicePageSlugs();
   return [
@@ -56,11 +78,7 @@ export async function generateMetadata({
     const description =
       page.seo?.metaDescription ||
       `${page.title || "Page"} - Professional web and ecommerce solutions by Dynamic Dreamz.`;
-    const canonicalPath = page.seo?.canonicalUrl
-      ? page.seo.canonicalUrl
-      : pageSlug === "home"
-        ? "/"
-        : `/${pageSlug.replace(/^\/+|\/+$/g, "")}/`;
+    const canonicalPath = normalizePagePath(page.seo?.canonicalUrl, pageSlug);
     const canonical = absoluteUrl(canonicalPath);
     const metaImageUrl =
       typeof page.seo?.metaImage === "string"
@@ -134,11 +152,7 @@ export default async function DynamicPageRoute({ params }: DynamicPageRouteProps
     const description =
       page?.seo?.metaDescription ||
       `${page?.title || "Page"} - Professional web and ecommerce solutions by Dynamic Dreamz.`;
-    const canonicalPath = page?.seo?.canonicalUrl
-      ? page.seo.canonicalUrl
-      : pageSlug === "home"
-        ? "/"
-        : `/${pageSlug.replace(/^\/+|\/+$/g, "")}/`;
+    const canonicalPath = normalizePagePath(page?.seo?.canonicalUrl, pageSlug);
     const metaImageUrl =
       typeof page?.seo?.metaImage === "string"
         ? page.seo.metaImage

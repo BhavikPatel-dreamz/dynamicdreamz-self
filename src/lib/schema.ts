@@ -1323,7 +1323,10 @@ export function createCareerPageSchema() {
         hiringOrganization: { "@id": organizationId },
         jobLocation: {
           "@type": "Place",
-          address: careerOfficeAddresses[location.slug],
+          address:
+            careerOfficeAddresses[
+              location.slug as keyof typeof careerOfficeAddresses
+            ] ?? careerOfficeAddresses.surat,
         },
         url: absoluteUrl(careerApplicationPath(job, location)),
       };
@@ -6434,7 +6437,12 @@ export function createModularPageSchema({
       if (!node || typeof node !== "object") return node;
       const nodeType = node["@type"];
 
-      if (nodeType === "WebPage" || nodeType === "CollectionPage") {
+      if (
+        nodeType === "WebPage" ||
+        nodeType === "CollectionPage" ||
+        nodeType === "AboutPage" ||
+        nodeType === "ContactPage"
+      ) {
         const currentPrimaryImage =
           node.primaryImageOfPage && typeof node.primaryImageOfPage === "object"
             ? (node.primaryImageOfPage as Record<string, unknown>)

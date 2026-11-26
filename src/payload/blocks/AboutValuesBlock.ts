@@ -43,6 +43,17 @@ export const AboutValuesBlock: Block = {
           required: true,
           label: "Icon Identifier (e.g. innovation, integrity, transparency)",
         },
+        {
+          name: "icon",
+          type: "upload",
+          relationTo: "media",
+          label: "Optional Custom Icon Upload",
+        },
+        {
+          name: "iconSrc",
+          type: "text",
+          label: "Static Icon Fallback Path",
+        },
       ],
     },
   ],

@@ -183,7 +183,7 @@ export type Project = {
   name: string;
   technology: string;
   href: string;
-  media: { type: "image"; src: string; alt: string } | { type: "video"; src: string };
+  media: { type: "image"; src: string; alt: string } | { type: "video"; src: string; poster?: string };
 };
 
 export const projects: Project[] = [

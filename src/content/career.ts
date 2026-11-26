@@ -1,6 +1,6 @@
 export type CareerLocation = {
-  slug: "surat" | "ahmedabad";
-  label: "Surat" | "Ahmedabad";
+  slug: string;
+  label: string;
 };
 
 export type CareerJob = {
@@ -12,7 +12,7 @@ export type CareerJob = {
   postedOn: string;
   postedDate: string;
   positions: number;
-  locations: CareerLocation["slug"][];
+  locations: readonly string[];
   icon: string;
   iconAlt?: string;
   summary: string;
@@ -126,10 +126,10 @@ export const careerSectionCopy = {
   ],
 } as const;
 
-export const careerLocations: CareerLocation[] = [
+export const careerLocations = [
   { slug: "surat", label: "Surat" },
   { slug: "ahmedabad", label: "Ahmedabad" },
-];
+] as const satisfies readonly CareerLocation[];
 
 export const careerJobs: CareerJob[] = [
   {

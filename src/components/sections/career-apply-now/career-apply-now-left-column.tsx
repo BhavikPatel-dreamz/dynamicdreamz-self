@@ -8,6 +8,7 @@ export type CareerApplyNowLeftColumnProps = {
   emailLabel?: string;
   emailAddress?: string;
   emailHref?: string;
+  note?: string;
 };
 
 export function CareerApplyNowLeftColumn({
@@ -18,6 +19,7 @@ export function CareerApplyNowLeftColumn({
   emailLabel = careerApplyNowContent.contact.email.label,
   emailAddress = careerApplyNowContent.contact.email.address,
   emailHref = careerApplyNowContent.contact.email.href,
+  note,
 }: CareerApplyNowLeftColumnProps = {}) {
   return (
     <div className="left-col w-[31%] max-[1200px]:w-[40%] max-[992px]:mb-[60px] max-[992px]:w-full max-[768px]:mb-10">
@@ -125,6 +127,11 @@ export function CareerApplyNowLeftColumn({
           </li>
         </ul>
       </div>
+      {note && note.trim() ? (
+        <p className="mt-6 text-sm font-medium leading-6 text-[#535353] max-[992px]:text-center">
+          {note}
+        </p>
+      ) : null}
     </div>
   );
 }
