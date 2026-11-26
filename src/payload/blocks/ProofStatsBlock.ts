@@ -23,6 +23,54 @@ export const ProofStatsBlock: Block = {
       label: "Description",
     },
     {
+      name: "paragraphs",
+      type: "array",
+      dbName: "pr_paras",
+      label: "Multi-Paragraph Description (Optional — overrides Description)",
+      fields: [
+        {
+          name: "text",
+          type: "textarea",
+          required: true,
+          label: "Paragraph",
+        },
+      ],
+    },
+    {
+      name: "cta",
+      type: "group",
+      label: "Primary Section CTA (Team Boxes)",
+      fields: [
+        {
+          name: "label",
+          type: "text",
+          label: "CTA Label",
+        },
+        {
+          name: "href",
+          type: "text",
+          label: "CTA Link",
+        },
+      ],
+    },
+    {
+      name: "secondaryCta",
+      type: "group",
+      label: "Secondary Section CTA (Team Boxes)",
+      fields: [
+        {
+          name: "label",
+          type: "text",
+          label: "Secondary CTA Label",
+        },
+        {
+          name: "href",
+          type: "text",
+          label: "Secondary CTA Link",
+        },
+      ],
+    },
+    {
       name: "variant",
       type: "select",
       defaultValue: "counters-bar",
@@ -186,6 +234,23 @@ export const ProofStatsBlock: Block = {
       name: "logoHref",
       type: "text",
       label: "Partner Callout Link URL",
+    },
+    {
+      name: "partnerLink",
+      type: "group",
+      label: "Partner Callout CTA Link (Why Choose Migration)",
+      fields: [
+        {
+          name: "label",
+          type: "text",
+          label: "Link Label",
+        },
+        {
+          name: "href",
+          type: "text",
+          label: "Link URL",
+        },
+      ],
     },
   ],
 };

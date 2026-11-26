@@ -831,8 +831,12 @@ export interface Page {
               | 'industry'
               | 'mobile-app';
             mobileBadgeLayout?: ('divided' | 'row') | null;
+            heroComponent?: ('auto' | 'service-hero' | 'service-hero-video') | null;
+            bodyLayout?: ('default' | 'compact') | null;
+            tabletMediaVisibility?: ('auto' | 'hidden' | 'inline' | 'inline-70') | null;
             backgroundColor?: ('cream' | 'white') | null;
             wrapperClassName?: string | null;
+            eyebrow?: string | null;
             eyebrows?:
               | {
                   text: string;
@@ -955,9 +959,12 @@ export interface Page {
           }
         | {
             variant?: ('slider' | 'grid' | 'home' | 'integrations' | 'tools-grid' | 'tech-stack') | null;
+            eyebrow?: string | null;
             heading?: string | null;
             description?: string | null;
             slug?: string | null;
+            ariaLabel?: string | null;
+            toolsStyle?: ('boxed' | 'unboxed') | null;
             density?: ('standard' | 'compact' | 'flexible') | null;
             mobileSpacing?: ('standard' | 'spacious') | null;
             showHeading?: boolean | null;
@@ -971,6 +978,18 @@ export interface Page {
                   width?: number | null;
                   height?: number | null;
                   href?: string | null;
+                  id?: string | null;
+                }[]
+              | null;
+            techCategories?:
+              | {
+                  category: string;
+                  technologies?:
+                    | {
+                        text: string;
+                        id?: string | null;
+                      }[]
+                    | null;
                   id?: string | null;
                 }[]
               | null;
@@ -991,6 +1010,22 @@ export interface Page {
               | {
                   question: string;
                   answer: string;
+                  answerParts?:
+                    | {
+                        text: string;
+                        strong?: boolean | null;
+                        id?: string | null;
+                      }[]
+                    | null;
+                  listPosition?: ('after' | 'before') | null;
+                  listItems?:
+                    | {
+                        label?: string | null;
+                        text: string;
+                        id?: string | null;
+                      }[]
+                    | null;
+                  secondaryAnswer?: string | null;
                   id?: string | null;
                 }[]
               | null;
@@ -1003,6 +1038,7 @@ export interface Page {
             eyebrow?: string | null;
             heading: string;
             description?: string | null;
+            descriptionSize?: ('default' | 'compact') | null;
             ctaLabel?: string | null;
             ctaHref?: string | null;
             secondaryCta?: {
@@ -1031,6 +1067,7 @@ export interface Page {
             description?: string | null;
             variant?: ('classic' | 'client-stories' | 'home') | null;
             hasTopPadding?: boolean | null;
+            sectionId?: string | null;
             /**
              * Leave empty to automatically display testimonials from the global Testimonials collection (recommended).
              */
@@ -1076,6 +1113,12 @@ export interface Page {
             headerLayout?: ('centered' | 'split' | 'stacked') | null;
             sectionId?: string | null;
             className?: string | null;
+            catalogTheme?: ('pista' | 'white') | null;
+            sharedIconName?: string | null;
+            hideCta?: boolean | null;
+            ctaLabel?: string | null;
+            ctaHref?: string | null;
+            ctaAriaLabel?: string | null;
             themeSlug?: string | null;
             iconKind?: ('feature' | 'benefit' | 'service') | null;
             removeBottomPadding?: boolean | null;
@@ -1130,6 +1173,8 @@ export interface Page {
             variant?: ('default' | 'liveGrid' | 'case-studies-slider' | 'case-studies-cards') | null;
             sectionId?: string | null;
             removeTopPadding?: boolean | null;
+            removeBottomPadding?: boolean | null;
+            category?: string | null;
             columns?: ('4' | '3' | '2') | null;
             headerLayout?: ('split' | 'centered') | null;
             cardVariant?: ('default' | 'ourWorkRefresh') | null;
@@ -1152,6 +1197,8 @@ export interface Page {
                   imageSrc?: string | null;
                   imageAlt?: string | null;
                   category?: string | null;
+                  description?: string | null;
+                  ctaLabel?: string | null;
                   metrics?: string | null;
                   tags?: string | null;
                   platformMark?: {
@@ -1171,6 +1218,20 @@ export interface Page {
             eyebrow?: string | null;
             heading?: string | null;
             description?: string | null;
+            paragraphs?:
+              | {
+                  text: string;
+                  id?: string | null;
+                }[]
+              | null;
+            cta?: {
+              label?: string | null;
+              href?: string | null;
+            };
+            secondaryCta?: {
+              label?: string | null;
+              href?: string | null;
+            };
             variant?:
               | (
                   | 'counters-bar'
@@ -1216,6 +1277,10 @@ export interface Page {
             partnerLogoSrc?: string | null;
             partnerLogoAlt?: string | null;
             logoHref?: string | null;
+            partnerLink?: {
+              label?: string | null;
+              href?: string | null;
+            };
             id?: string | null;
             blockName?: string | null;
             blockType: 'proof-stats';
@@ -1224,6 +1289,7 @@ export interface Page {
             eyebrow?: string | null;
             heading: string;
             description?: string | null;
+            note?: string | null;
             variant?:
               | (
                   | 'development-process'
@@ -1240,6 +1306,7 @@ export interface Page {
             isBgTransparent?: boolean | null;
             cardVariant?: ('pista' | 'white') | null;
             sectionId?: string | null;
+            removeBottomPadding?: boolean | null;
             steps?:
               | {
                   step?: string | null;
@@ -3346,8 +3413,12 @@ export interface PagesSelect<T extends boolean = true> {
           | {
               variant?: T;
               mobileBadgeLayout?: T;
+              heroComponent?: T;
+              bodyLayout?: T;
+              tabletMediaVisibility?: T;
               backgroundColor?: T;
               wrapperClassName?: T;
+              eyebrow?: T;
               eyebrows?:
                 | T
                 | {
@@ -3483,9 +3554,12 @@ export interface PagesSelect<T extends boolean = true> {
           | T
           | {
               variant?: T;
+              eyebrow?: T;
               heading?: T;
               description?: T;
               slug?: T;
+              ariaLabel?: T;
+              toolsStyle?: T;
               density?: T;
               mobileSpacing?: T;
               showHeading?: T;
@@ -3500,6 +3574,18 @@ export interface PagesSelect<T extends boolean = true> {
                     width?: T;
                     height?: T;
                     href?: T;
+                    id?: T;
+                  };
+              techCategories?:
+                | T
+                | {
+                    category?: T;
+                    technologies?:
+                      | T
+                      | {
+                          text?: T;
+                          id?: T;
+                        };
                     id?: T;
                   };
               id?: T;
@@ -3521,6 +3607,22 @@ export interface PagesSelect<T extends boolean = true> {
                 | {
                     question?: T;
                     answer?: T;
+                    answerParts?:
+                      | T
+                      | {
+                          text?: T;
+                          strong?: T;
+                          id?: T;
+                        };
+                    listPosition?: T;
+                    listItems?:
+                      | T
+                      | {
+                          label?: T;
+                          text?: T;
+                          id?: T;
+                        };
+                    secondaryAnswer?: T;
                     id?: T;
                   };
               id?: T;
@@ -3533,6 +3635,7 @@ export interface PagesSelect<T extends boolean = true> {
               eyebrow?: T;
               heading?: T;
               description?: T;
+              descriptionSize?: T;
               ctaLabel?: T;
               ctaHref?: T;
               secondaryCta?:
@@ -3564,6 +3667,7 @@ export interface PagesSelect<T extends boolean = true> {
               description?: T;
               variant?: T;
               hasTopPadding?: T;
+              sectionId?: T;
               items?:
                 | T
                 | {
@@ -3596,6 +3700,12 @@ export interface PagesSelect<T extends boolean = true> {
               headerLayout?: T;
               sectionId?: T;
               className?: T;
+              catalogTheme?: T;
+              sharedIconName?: T;
+              hideCta?: T;
+              ctaLabel?: T;
+              ctaHref?: T;
+              ctaAriaLabel?: T;
               themeSlug?: T;
               iconKind?: T;
               removeBottomPadding?: T;
@@ -3653,6 +3763,8 @@ export interface PagesSelect<T extends boolean = true> {
               variant?: T;
               sectionId?: T;
               removeTopPadding?: T;
+              removeBottomPadding?: T;
+              category?: T;
               columns?: T;
               headerLayout?: T;
               cardVariant?: T;
@@ -3678,6 +3790,8 @@ export interface PagesSelect<T extends boolean = true> {
                     imageSrc?: T;
                     imageAlt?: T;
                     category?: T;
+                    description?: T;
+                    ctaLabel?: T;
                     metrics?: T;
                     tags?: T;
                     platformMark?:
@@ -3699,6 +3813,24 @@ export interface PagesSelect<T extends boolean = true> {
               eyebrow?: T;
               heading?: T;
               description?: T;
+              paragraphs?:
+                | T
+                | {
+                    text?: T;
+                    id?: T;
+                  };
+              cta?:
+                | T
+                | {
+                    label?: T;
+                    href?: T;
+                  };
+              secondaryCta?:
+                | T
+                | {
+                    label?: T;
+                    href?: T;
+                  };
               variant?: T;
               columns?: T;
               theme?: T;
@@ -3733,6 +3865,12 @@ export interface PagesSelect<T extends boolean = true> {
               partnerLogoSrc?: T;
               partnerLogoAlt?: T;
               logoHref?: T;
+              partnerLink?:
+                | T
+                | {
+                    label?: T;
+                    href?: T;
+                  };
               id?: T;
               blockName?: T;
             };
@@ -3742,12 +3880,14 @@ export interface PagesSelect<T extends boolean = true> {
               eyebrow?: T;
               heading?: T;
               description?: T;
+              note?: T;
               variant?: T;
               columns?: T;
               eyebrowVariant?: T;
               isBgTransparent?: T;
               cardVariant?: T;
               sectionId?: T;
+              removeBottomPadding?: T;
               steps?:
                 | T
                 | {

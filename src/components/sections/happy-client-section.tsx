@@ -17,6 +17,7 @@ export type HappyClientSectionProps = {
   variant?: "client-stories";
   className?: string;
   hasTopPadding?: boolean;
+  id?: string;
 };
 
 export function HappyClientSection({
@@ -28,6 +29,7 @@ export function HappyClientSection({
   variant,
   className,
   hasTopPadding = false,
+  id = "client-testimonials",
 }: HappyClientSectionProps = {}) {
   const carouselAriaLabel = controlsLabels.ariaLabel;
   const isWhite = variant === "client-stories";
@@ -43,7 +45,7 @@ export function HappyClientSection({
         className,
       )}
       data-section="testimonials"
-      id="client-testimonials"
+      id={id}
     >
       <Container>
         <SplitSectionHeading

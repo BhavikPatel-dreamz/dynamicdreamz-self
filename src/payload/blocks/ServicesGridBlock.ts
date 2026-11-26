@@ -80,6 +80,45 @@ export const ServicesGridBlock: Block = {
       label: "Custom CSS Class (e.g. pt-20, pb-0)",
     },
     {
+      name: "catalogTheme",
+      type: "select",
+      defaultValue: "pista",
+      label: "Theme Catalog Background",
+      options: [
+        { label: "Pista Green (#EFF4EF)", value: "pista" },
+        { label: "White Background", value: "white" },
+      ],
+      admin: {
+        condition: (data, siblingData) => siblingData?.variant === "theme-catalog",
+      },
+    },
+    {
+      name: "sharedIconName",
+      type: "text",
+      label: "Shared Card Icon Key (Optional — e.g. app-store-ready)",
+    },
+    {
+      name: "hideCta",
+      type: "checkbox",
+      defaultValue: false,
+      label: "Hide Section / Card CTAs",
+    },
+    {
+      name: "ctaLabel",
+      type: "text",
+      label: "Section CTA Label (Agency Services)",
+    },
+    {
+      name: "ctaHref",
+      type: "text",
+      label: "Section CTA Link (Agency Services)",
+    },
+    {
+      name: "ctaAriaLabel",
+      type: "text",
+      label: "Section CTA Accessible Label",
+    },
+    {
       name: "themeSlug",
       type: "text",
       label: "Theme Slug (for bespoke theme SVGs)",

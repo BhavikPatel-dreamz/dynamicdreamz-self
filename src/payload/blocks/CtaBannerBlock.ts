@@ -37,6 +37,16 @@ export const CtaBannerBlock: Block = {
       label: "Description (Supporting Subtext)",
     },
     {
+      name: "descriptionSize",
+      type: "select",
+      defaultValue: "default",
+      label: "Description Typography Size",
+      options: [
+        { label: "Default Typography", value: "default" },
+        { label: "Compact 14px Copy (Image CTA)", value: "compact" },
+      ],
+    },
+    {
       name: "ctaLabel",
       type: "text",
       defaultValue: "Let's Talk",

@@ -40,6 +40,11 @@ export const TestimonialsCarouselBlock: Block = {
       label: "Add Top Padding",
     },
     {
+      name: "sectionId",
+      type: "text",
+      label: "HTML Section ID (Optional)",
+    },
+    {
       name: "items",
       type: "array",
       dbName: "tc_items",

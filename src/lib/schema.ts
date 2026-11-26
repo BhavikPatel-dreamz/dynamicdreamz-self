@@ -6293,31 +6293,233 @@ export function createFullStackDevelopmentPageSchema() {
   });
 }
 
+type CmsFaqItemInput = {
+  question?: string | readonly string[];
+  answer?: string | readonly string[];
+  answerParts?: readonly { text?: string; strong?: boolean }[];
+  listPosition?: "before" | "after" | string;
+  listItems?: readonly { label?: string; text?: string }[];
+  secondaryAnswer?: string | readonly string[];
+};
+
+function buildCmsFaqAnswerText(faq: CmsFaqItemInput): string {
+  const parts: string[] = [];
+  const primary =
+    faq.answerParts && faq.answerParts.length > 0
+      ? cleanFaqSchemaText(
+          faq.answerParts
+            .map((part) => part?.text || "")
+            .filter(Boolean)
+            .join(""),
+        )
+      : cleanFaqSchemaText(faq.answer);
+  const bullets = (faq.listItems ?? [])
+    .filter((li) => Boolean(li?.text || li?.label))
+    .map((li) =>
+      [li.label ? cleanFaqSchemaText(li.label) : "", cleanFaqSchemaText(li.text)]
+        .filter(Boolean)
+        .join(": "),
+    );
+  const secondary = cleanFaqSchemaText(faq.secondaryAnswer);
+
+  if (faq.listPosition === "before") {
+    if (bullets.length > 0) parts.push(bullets.join(" "));
+    if (primary) parts.push(primary);
+  } else {
+    if (primary) parts.push(primary);
+    if (bullets.length > 0) parts.push(bullets.join(" "));
+  }
+  if (secondary) parts.push(secondary);
+
+  return cleanFaqSchemaText(parts.join(" "));
+}
+
+function extractCmsFaqQuestions(sections: readonly unknown[]) {
+  const faqBlock = sections.find(
+    (s): s is { blockType: "faq-accordion"; faqs?: CmsFaqItemInput[] } =>
+      Boolean(
+        s &&
+          typeof s === "object" &&
+          "blockType" in s &&
+          s.blockType === "faq-accordion",
+      ),
+  );
+
+  return (faqBlock?.faqs ?? [])
+    .map((faq) => {
+      const question = cleanFaqSchemaText(faq?.question);
+      const answer = buildCmsFaqAnswerText(faq ?? {});
+      if (!question || !answer) return null;
+      return { question, answer };
+    })
+    .filter((item): item is { question: string; answer: string } => Boolean(item));
+}
+
+function extractCmsServiceOffers(sections: readonly unknown[]) {
+  const offers: Array<{ title: string; description: string }> = [];
+
+  for (const section of sections) {
+    if (!section || typeof section !== "object" || !("blockType" in section)) continue;
+    const block = section as {
+      blockType?: string;
+      services?: Array<{ title?: string; description?: string }>;
+    };
+
+    if (
+      block.blockType === "services-grid" &&
+      Array.isArray(block.services) &&
+      block.services.length > 0
+    ) {
+      for (const item of block.services) {
+        const itemTitle = cleanFaqSchemaText(item?.title);
+        const itemDesc = cleanFaqSchemaText(item?.description);
+        if (itemTitle) {
+          offers.push({ title: itemTitle, description: itemDesc || itemTitle });
+        }
+      }
+      break;
+    }
+
+    if (
+      block.blockType === "white-label-services" &&
+      Array.isArray(block.services) &&
+      block.services.length > 0
+    ) {
+      for (const item of block.services) {
+        const itemTitle = cleanFaqSchemaText(item?.title);
+        const itemDesc = cleanFaqSchemaText(item?.description);
+        if (itemTitle) {
+          offers.push({ title: itemTitle, description: itemDesc || itemTitle });
+        }
+      }
+      break;
+    }
+  }
+
+  return offers;
+}
+
 export function createModularPageSchema({
   title,
   description,
   path,
+  metaImageUrl,
   sections = [],
+  baseSchema,
 }: {
   title: string;
   description: string;
   path: string;
+  metaImageUrl?: string;
   sections?: readonly unknown[];
+  baseSchema?: object;
 }) {
   const pageUrl = absoluteUrl(path);
   const pageId = `${pageUrl}#webpage`;
+  const serviceId = `${pageUrl}#service`;
   const breadcrumbId = `${pageUrl}#breadcrumb`;
   const faqId = `${pageUrl}#faq`;
 
-  const faqBlock = sections.find(
-    (s): s is { blockType: "faq-accordion"; faqs?: Array<{ question?: string; answer?: string }> } =>
-      Boolean(s && typeof s === "object" && "blockType" in s && s.blockType === "faq-accordion"),
-  );
+  const faqs = extractCmsFaqQuestions(sections);
+  const typedBaseSchema =
+    baseSchema && typeof baseSchema === "object"
+      ? (baseSchema as Record<string, unknown>)
+      : undefined;
 
-  const faqs = (faqBlock?.faqs ?? []).filter(
-    (f): f is { question: string; answer: string } =>
-      Boolean(f && typeof f.question === "string" && typeof f.answer === "string"),
+  if (typedBaseSchema && Array.isArray(typedBaseSchema["@graph"])) {
+    const baseGraph = typedBaseSchema["@graph"] as Record<string, unknown>[];
+    let hasFaqNode = false;
+
+    const mergedGraph = baseGraph.map((node) => {
+      if (!node || typeof node !== "object") return node;
+      const nodeType = node["@type"];
+
+      if (nodeType === "WebPage") {
+        const currentPrimaryImage =
+          node.primaryImageOfPage && typeof node.primaryImageOfPage === "object"
+            ? (node.primaryImageOfPage as Record<string, unknown>)
+            : undefined;
+        const resolvedPrimaryImage = metaImageUrl
+          ? {
+              ...(currentPrimaryImage ?? { "@type": "ImageObject" }),
+              "@type": "ImageObject",
+              url: absoluteUrl(metaImageUrl),
+            }
+          : currentPrimaryImage;
+
+        return {
+          ...node,
+          name: title,
+          description,
+          ...(resolvedPrimaryImage
+            ? { primaryImageOfPage: resolvedPrimaryImage }
+            : {}),
+        };
+      }
+
+      if (nodeType === "Service") {
+        return {
+          ...node,
+          description,
+        };
+      }
+
+      if (nodeType === "FAQPage") {
+        hasFaqNode = true;
+        if (faqs.length > 0) {
+          return {
+            ...node,
+            mainEntity: faqs.map((faq) => ({
+              "@type": "Question",
+              name: faq.question,
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: faq.answer,
+              },
+            })),
+          };
+        }
+      }
+
+      return node;
+    });
+
+    if (!hasFaqNode && faqs.length > 0) {
+      mergedGraph.push({
+        "@type": "FAQPage",
+        "@id": faqId,
+        isPartOf: { "@id": pageId },
+        mainEntity: faqs.map((faq) => ({
+          "@type": "Question",
+          name: faq.question,
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: faq.answer,
+          },
+        })),
+      });
+    }
+
+    return {
+      ...typedBaseSchema,
+      "@context": typedBaseSchema["@context"] ?? "https://schema.org",
+      "@graph": mergedGraph,
+    };
+  }
+
+  const heroBlock = sections.find(
+    (s): s is { blockType?: string; title?: string; titleAccent?: string } =>
+      Boolean(
+        s &&
+          typeof s === "object" &&
+          "blockType" in s &&
+          (s as { blockType?: string }).blockType === "service-hero",
+      ),
   );
+  const offers = extractCmsServiceOffers(sections);
+  const serviceName =
+    cleanFaqSchemaText(heroBlock?.title) ||
+    title.replace(/\s*\|\s*Dynamic Dreamz$/i, "").trim();
 
   const breadcrumbItems = [
     {
@@ -6332,9 +6534,17 @@ export function createModularPageSchema({
     breadcrumbItems.push({
       "@type": "ListItem",
       position: 2,
-      name: title,
+      name: serviceName || title,
       item: pageUrl,
     });
+  }
+
+  const mainEntityRefs: Array<{ "@id": string }> = [];
+  if (offers.length > 0 || heroBlock) {
+    mainEntityRefs.push({ "@id": serviceId });
+  }
+  if (faqs.length > 0) {
+    mainEntityRefs.push({ "@id": faqId });
   }
 
   const graph: Record<string, unknown>[] = [
@@ -6354,11 +6564,53 @@ export function createModularPageSchema({
       name: title,
       description,
       isPartOf: { "@id": websiteId },
-      about: { "@id": organizationId },
+      about: { "@id": offers.length > 0 || heroBlock ? serviceId : organizationId },
       breadcrumb: { "@id": breadcrumbId },
-      ...(faqs.length > 0 ? { mainEntity: { "@id": faqId } } : {}),
+      ...(mainEntityRefs.length > 0
+        ? {
+            mainEntity:
+              mainEntityRefs.length === 1 ? mainEntityRefs[0] : mainEntityRefs,
+          }
+        : {}),
+      ...(metaImageUrl
+        ? {
+            primaryImageOfPage: {
+              "@type": "ImageObject",
+              url: absoluteUrl(metaImageUrl),
+            },
+          }
+        : {}),
       inLanguage: "en-US",
     },
+    ...(offers.length > 0 || heroBlock
+      ? [
+          {
+            "@type": "Service",
+            "@id": serviceId,
+            name: serviceName,
+            serviceType: serviceName,
+            url: pageUrl,
+            description,
+            provider: { "@id": organizationId },
+            ...(offers.length > 0
+              ? {
+                  hasOfferCatalog: {
+                    "@type": "OfferCatalog",
+                    name: `${serviceName} capabilities`,
+                    itemListElement: offers.map((offer) => ({
+                      "@type": "Offer",
+                      itemOffered: {
+                        "@type": "Service",
+                        name: offer.title,
+                        description: offer.description,
+                      },
+                    })),
+                  },
+                }
+              : {}),
+          },
+        ]
+      : []),
     {
       "@type": "BreadcrumbList",
       "@id": breadcrumbId,
@@ -6376,7 +6628,7 @@ export function createModularPageSchema({
         name: faq.question,
         acceptedAnswer: {
           "@type": "Answer",
-          text: cleanFaqSchemaText(faq.answer),
+          text: faq.answer,
         },
       })),
     });

@@ -21,6 +21,11 @@ export const BrandPartnersBlock: Block = {
       ],
     },
     {
+      name: "eyebrow",
+      type: "text",
+      label: "Eyebrow Text (Tech Stack / Integrations)",
+    },
+    {
       name: "heading",
       type: "text",
       label: "Heading",
@@ -34,6 +39,24 @@ export const BrandPartnersBlock: Block = {
       name: "slug",
       type: "text",
       label: "Platform / Landing Slug (for aria-labelledby, e.g. shopify-migration)",
+    },
+    {
+      name: "ariaLabel",
+      type: "text",
+      label: "Accessible Region Label (aria-label)",
+    },
+    {
+      name: "toolsStyle",
+      type: "select",
+      defaultValue: "boxed",
+      label: "Tools Grid Presentation",
+      options: [
+        { label: "Boxed Icons (Default)", value: "boxed" },
+        { label: "Unboxed Icons (SEO Tools Variant)", value: "unboxed" },
+      ],
+      admin: {
+        condition: (data, siblingData) => siblingData?.variant === "tools-grid",
+      },
     },
     {
       name: "density",
@@ -110,6 +133,34 @@ export const BrandPartnersBlock: Block = {
           name: "href",
           type: "text",
           label: "Link URL (Optional)",
+        },
+      ],
+    },
+    {
+      name: "techCategories",
+      type: "array",
+      dbName: "bp_tcats",
+      label: "Technology Categories (Full-Stack Tech Stack Variant)",
+      fields: [
+        {
+          name: "category",
+          type: "text",
+          required: true,
+          label: "Category Title",
+        },
+        {
+          name: "technologies",
+          type: "array",
+          dbName: "bp_titems",
+          label: "Technologies",
+          fields: [
+            {
+              name: "text",
+              type: "text",
+              required: true,
+              label: "Technology Name",
+            },
+          ],
         },
       ],
     },

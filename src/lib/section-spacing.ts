@@ -375,6 +375,7 @@ export function getBlockBackgroundCategory(
       bg?: string;
       variant?: string;
       cardVariant?: string;
+      catalogTheme?: string;
       theme?: string;
       isBgTransparent?: boolean;
       style?: { backgroundColor?: string; background?: string };
@@ -416,6 +417,50 @@ export function getBlockBackgroundCategory(
       if (fromStyle === "colored") return "colored";
     }
 
+    const normType = (obj.blockType || obj.__component || "").toLowerCase().replace(/^sections\./, "");
+
+    // Variant-specific section container backgrounds
+    if (normType === "services-grid") {
+      const gridVariant = variantOrTheme || obj.variant || "stage-services";
+      if (gridVariant === "agency-services" || gridVariant === "industries-grid") {
+        return "white";
+      }
+      if (gridVariant === "theme-catalog") {
+        return obj.catalogTheme === "white" ? "white" : "colored";
+      }
+      if (gridVariant === "theme-boxes") {
+        return obj.cardVariant === "transparent" ? "white" : "colored";
+      }
+      if (
+        gridVariant === "stage-services" ||
+        gridVariant === "ai-services" ||
+        gridVariant === "migration-services"
+      ) {
+        return "colored";
+      }
+    }
+
+    if (normType === "process-timeline") {
+      const processVariant = variantOrTheme || obj.variant || "development-process";
+      if (processVariant === "migration-grid") {
+        return obj.cardVariant === "white" ? "white" : "colored";
+      }
+      if (processVariant === "development-process") {
+        return "colored";
+      }
+      if (processVariant === "horizontal-process" || processVariant === "white-label-process") {
+        return "white";
+      }
+    }
+
+    if (normType === "brand-partners") {
+      const bpVariant = variantOrTheme || obj.variant || "slider";
+      if (bpVariant === "tools-grid" || bpVariant === "tech-stack" || bpVariant === "integrations") {
+        return "colored";
+      }
+      return "white";
+    }
+
     // Variant or theme
     const variantProp = variantOrTheme || obj.variant || obj.cardVariant || obj.theme;
     if (variantProp) {
@@ -427,7 +472,6 @@ export function getBlockBackgroundCategory(
     }
 
     // Fall back to inherent component class
-    const normType = (obj.blockType || obj.__component || "").toLowerCase().replace(/^sections\./, "");
     if (INHERENT_SECTION_BACKGROUND_CLASSES[normType]) {
       return detectBackgroundFromClass(INHERENT_SECTION_BACKGROUND_CLASSES[normType]);
     }

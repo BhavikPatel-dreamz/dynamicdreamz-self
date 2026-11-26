@@ -68,7 +68,7 @@ export async function generateMetadata({
         : page.seo?.metaImage?.url;
 
     return {
-      title,
+      title: { absolute: title },
       description,
       alternates: {
         canonical,
@@ -139,6 +139,11 @@ export default async function DynamicPageRoute({ params }: DynamicPageRouteProps
       : pageSlug === "home"
         ? "/"
         : `/${pageSlug.replace(/^\/+|\/+$/g, "")}/`;
+    const metaImageUrl =
+      typeof page?.seo?.metaImage === "string"
+        ? page.seo.metaImage
+        : page?.seo?.metaImage?.url;
+    const baseSchema = serviceEntry ? serviceEntry.getSchema() : undefined;
 
     return (
       <main id="main-content" data-page={pageSlug}>
@@ -150,7 +155,9 @@ export default async function DynamicPageRoute({ params }: DynamicPageRouteProps
                 title,
                 description,
                 path: canonicalPath,
+                metaImageUrl,
                 sections: pageSections,
+                baseSchema,
               }),
             ),
           }}

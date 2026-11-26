@@ -67,6 +67,39 @@ export const ServiceHeroBlock: Block = {
               },
             },
             {
+              name: "heroComponent",
+              type: "select",
+              defaultValue: "auto",
+              label: "Hero Renderer Component",
+              options: [
+                { label: "Automatic (Variant & Video Logo Default)", value: "auto" },
+                { label: "Modern Service Hero (ServiceHeroSection)", value: "service-hero" },
+                { label: "Split Video Hero (ServiceHeroVideoSection)", value: "service-hero-video" },
+              ],
+            },
+            {
+              name: "bodyLayout",
+              type: "select",
+              defaultValue: "default",
+              label: "Description Layout",
+              options: [
+                { label: "Default Typography", value: "default" },
+                { label: "Compact Editorial Copy (14px)", value: "compact" },
+              ],
+            },
+            {
+              name: "tabletMediaVisibility",
+              type: "select",
+              defaultValue: "auto",
+              label: "Tablet Media Column Visibility",
+              options: [
+                { label: "Default (Preserve Variant Default)", value: "auto" },
+                { label: "Hidden on Tablet & Mobile", value: "hidden" },
+                { label: "Inline on Tablet (Auto Width)", value: "inline" },
+                { label: "Inline on Tablet (70% Width)", value: "inline-70" },
+              ],
+            },
+            {
               name: "backgroundColor",
               type: "select",
               defaultValue: "cream",
@@ -79,6 +112,11 @@ export const ServiceHeroBlock: Block = {
               name: "wrapperClassName",
               type: "text",
               label: "Custom Wrapper CSS Class (e.g. hero-shopify-migration)",
+            },
+            {
+              name: "eyebrow",
+              type: "text",
+              label: "Single Eyebrow Label (Optional)",
             },
             {
               name: "eyebrows",

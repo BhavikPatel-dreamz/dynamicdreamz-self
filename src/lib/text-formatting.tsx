@@ -1,6 +1,37 @@
 import Link from "next/link";
 import { Fragment, type ReactNode } from "react";
 
+const INTERNAL_IGNORE_PREFIXES = [
+  "/assets/",
+  "/api/",
+  "/_next/",
+  "/admin",
+  "/.well-known/",
+] as const;
+
+const MARKDOWN_LINK_FILE_EXT_PATTERN = /\.[a-zA-Z0-9]+$/;
+
+function normalizeInternalMarkdownHref(rawHref: string): string {
+  if (!rawHref.startsWith("/")) return rawHref;
+  if (rawHref === "/") return "/";
+
+  const suffixIndex = rawHref.search(/[?#]/);
+  const pathname = suffixIndex === -1 ? rawHref : rawHref.slice(0, suffixIndex);
+  const suffix = suffixIndex === -1 ? "" : rawHref.slice(suffixIndex);
+
+  if (!pathname || pathname === "/") return "/" + suffix;
+  if (
+    INTERNAL_IGNORE_PREFIXES.some((prefix) => pathname.startsWith(prefix)) ||
+    MARKDOWN_LINK_FILE_EXT_PATTERN.test(pathname)
+  ) {
+    return rawHref;
+  }
+
+  return pathname.endsWith("/")
+    ? `${pathname}${suffix}`
+    : `${pathname}/${suffix}`;
+}
+
 /**
  * Parses inline Markdown syntax:
  * - Links: `[label](url)`
@@ -34,10 +65,7 @@ function parseInlineFormatting(
     if (mdLinkMatch) {
       const label = mdLinkMatch[1];
       const rawHref = mdLinkMatch[2].trim();
-      const href =
-        rawHref.startsWith("/") && rawHref.length > 1
-          ? rawHref.replace(/\/+$/, "")
-          : rawHref;
+      const href = normalizeInternalMarkdownHref(rawHref);
       const isExternal =
         href.startsWith("http://") ||
         href.startsWith("https://") ||

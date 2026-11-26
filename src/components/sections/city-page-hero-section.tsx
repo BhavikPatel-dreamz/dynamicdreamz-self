@@ -32,6 +32,7 @@ export type CityPageHeroContent = {
   secondaryCta?: {
     label: string;
     href: string;
+    target?: string;
   };
   badges?: readonly CityPageHeroBadge[];
   tabletSlider?: CityPageHeroTabletSlider;
@@ -121,6 +122,12 @@ export function CityPageHeroSection({
                     <ButtonLink
                       variant="outline"
                       href={content.secondaryCta.href}
+                      target={content.secondaryCta.target}
+                      rel={
+                        content.secondaryCta.target === "_blank"
+                          ? "noopener noreferrer"
+                          : undefined
+                      }
                     >
                       {content.secondaryCta.label}
                     </ButtonLink>

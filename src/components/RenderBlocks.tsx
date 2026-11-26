@@ -235,8 +235,12 @@ export interface BlockServiceHero {
     | "default"
     | "shopify-plus-experts"
     | "migration";
+  heroComponent?: "auto" | "service-hero" | "service-hero-video";
+  bodyLayout?: "default" | "compact";
+  tabletMediaVisibility?: "auto" | "hidden" | "inline" | "inline-70";
   mobileBadgeLayout?: "divided" | "row";
   backgroundColor?: "cream" | "white";
+  wrapperClassName?: string;
   eyebrows?: readonly (string | { text?: string; id?: string | number })[];
   eyebrow?: string;
   eyebrowSpans?: readonly { text?: string }[];
@@ -434,8 +438,12 @@ export interface BlockBrandPartners {
   blockType?: string;
   id?: string | number;
   variant?: "slider" | "grid" | "home" | "integrations" | "tools-grid" | "tech-stack";
+  eyebrow?: string;
   heading?: string;
   description?: string;
+  slug?: string;
+  ariaLabel?: string;
+  toolsStyle?: "boxed" | "unboxed";
   density?: "standard" | "compact" | "flexible";
   mobileSpacing?: "standard" | "spacious";
   showHeading?: boolean;
@@ -448,6 +456,10 @@ export interface BlockBrandPartners {
     width?: number;
     height?: number;
     href?: string;
+  }[];
+  techCategories?: readonly {
+    category: string;
+    technologies?: readonly (string | { text?: string })[];
   }[];
 }
 
@@ -465,6 +477,10 @@ export interface BlockFaqAccordion {
   faqs?: readonly {
     question: string;
     answer: string;
+    answerParts?: readonly {
+      text?: string;
+      strong?: boolean;
+    }[];
     listPosition?: "before" | "after";
     listItems?: readonly {
       label?: string;
@@ -482,6 +498,7 @@ export interface BlockCtaBanner {
   eyebrow?: string;
   heading: string;
   description?: string;
+  descriptionSize?: "default" | "compact";
   ctaLabel?: string;
   ctaHref?: string;
   secondaryCta?: {
@@ -507,6 +524,7 @@ export interface BlockTestimonialsCarousel {
   description?: string;
   variant?: "classic" | "client-stories" | "home";
   hasTopPadding?: boolean;
+  sectionId?: string;
   items?: readonly {
     name: string;
     company?: string;
@@ -543,6 +561,13 @@ export interface BlockServicesGrid {
   columns?: string;
   headerLayout?: "centered" | "split";
   className?: string;
+  catalogTheme?: "pista" | "white";
+  sharedIconName?: string;
+  hideCta?: boolean;
+  ctaLabel?: string;
+  ctaHref?: string;
+  ctaAriaLabel?: string;
+  removeBottomPadding?: boolean;
   sectionId?: string;
   sixCards?: boolean;
   lastColFull?: boolean;
@@ -583,6 +608,10 @@ export interface BlockPortfolioShowcase {
   columns?: "2" | "3" | "4";
   headerLayout?: "split" | "centered";
   cardVariant?: "default" | "ourWorkRefresh";
+  sectionId?: string;
+  removeTopPadding?: boolean;
+  removeBottomPadding?: boolean;
+  category?: string;
   hideCta?: boolean;
   ctaLabel?: string;
   ctaHref?: string;
@@ -601,6 +630,8 @@ export interface BlockPortfolioShowcase {
     imageSrc?: string;
     imageAlt?: string;
     category?: string;
+    description?: string;
+    ctaLabel?: string;
     metrics?: string;
   }[];
 }
@@ -612,6 +643,15 @@ export interface BlockProofStats {
   eyebrow?: string;
   heading?: string;
   description?: string;
+  paragraphs?: readonly (string | { text?: string })[];
+  cta?: {
+    label?: string;
+    href?: string;
+  };
+  secondaryCta?: {
+    label?: string;
+    href?: string;
+  };
   sectionId?: string;
   variant?:
     | "counters-bar"
@@ -647,6 +687,10 @@ export interface BlockProofStats {
   partnerLogoSrc?: string;
   partnerLogoAlt?: string;
   logoHref?: string;
+  partnerLink?: {
+    label?: string;
+    href?: string;
+  };
 }
 
 export interface BlockProcessTimeline {
@@ -656,7 +700,9 @@ export interface BlockProcessTimeline {
   eyebrow?: string;
   heading: string;
   description?: string;
+  note?: string;
   sectionId?: string;
+  removeBottomPadding?: boolean;
   cardVariant?: "white" | "pista";
   variant?:
     | "development-process"
@@ -1458,7 +1504,8 @@ async function CmsTestimonialsCarousel({
 
   return (
     <HappyClientSection
-      eyebrow={block.eyebrow}
+      id={block.sectionId || undefined}
+      eyebrow={block.eyebrow ?? undefined}
       heading={parseTextOrArray(block.heading)}
       description={parseTextOrArray(block.description)}
       variant={block.variant === "client-stories" ? "client-stories" : undefined}
@@ -1878,6 +1925,11 @@ export function BlockRenderer({ sections, testimonials }: BlockRendererProps) {
                   key={blockKey}
                   variant="centered"
                   showReviews={shBlock.showReviews ?? !isRisks}
+                  bodyClassName={
+                    shBlock.bodyLayout === "compact"
+                      ? "!mt-2 !mb-0 !text-[14px] !font-normal !leading-[26px] !text-[#535353]"
+                      : undefined
+                  }
                   content={{
                     title: shBlock.title,
                     titleAccent: shBlock.titleAccent,
@@ -1913,6 +1965,11 @@ export function BlockRenderer({ sections, testimonials }: BlockRendererProps) {
                       : "hero-new-section relative overflow-hidden bg-[#f7f4e9] pt-[91px] pb-0 max-[992px]:pt-16"
                   }
                   showReviews={true}
+                  bodyClassName={
+                    shBlock.bodyLayout === "compact"
+                      ? "!mt-2 !mb-0 !text-[14px] !font-normal !leading-[26px] !text-[#535353]"
+                      : undefined
+                  }
                   content={{
                     title: shBlock.title,
                     titleAccent: shBlock.titleAccent,
@@ -2012,25 +2069,65 @@ export function BlockRenderer({ sections, testimonials }: BlockRendererProps) {
               );
             }
 
-            // 6. Video with Floating Partner Badge (or isShopifyPlusExperts)
+            // 6. Floating Partner Badge OR explicit ServiceHeroSection override
             const hasVideoLogo =
               Boolean(shBlock.videoLogo?.logo || shBlock.videoLogo?.src) ||
               isShopifyPlusExperts;
 
-            if (hasVideoLogo) {
-              const videoLogoUrl =
-                resolveMediaUrl(shBlock.videoLogo?.logo) ||
-                shBlock.videoLogo?.src ||
-                "/assets/platforms/shopify-plus-white.svg";
+            const useServiceHeroSection =
+              shBlock.heroComponent === "service-hero" ||
+              (shBlock.heroComponent !== "service-hero-video" && hasVideoLogo);
+
+            if (useServiceHeroSection) {
+              const videoLogoUrl = hasVideoLogo
+                ? resolveMediaUrl(shBlock.videoLogo?.logo) ||
+                  shBlock.videoLogo?.src ||
+                  "/assets/platforms/shopify-plus-white.svg"
+                : undefined;
+
+              const serviceHeroRightColClass =
+                shBlock.tabletMediaVisibility === "hidden"
+                  ? "max-[992px]:hidden"
+                  : shBlock.tabletMediaVisibility === "inline"
+                  ? "max-[992px]:inline-block max-[768px]:hidden"
+                  : shBlock.tabletMediaVisibility === "inline-70"
+                  ? "max-[992px]:inline-block max-[992px]:w-[70%] max-[768px]:hidden"
+                  : undefined;
+
+              const resolvedServiceHeroVideo =
+                shBlock.videoSrc ||
+                shBlock.video ||
+                (hasVideoLogo ? "/assets/home/why-dynamic-dreamz.mp4" : undefined);
+
               return (
                 <ServiceHeroSection
                   key={blockKey}
+                  className={
+                    isWhiteBg && (resolvedServiceHeroVideo || hasVideoLogo)
+                      ? "inner-hero-sec relative overflow-hidden bg-white pt-[158px] pb-[55px] max-[992px]:pt-[100px]"
+                      : !isWhiteBg && !resolvedServiceHeroVideo && !hasVideoLogo && shBlock.backgroundColor === "cream"
+                      ? "hero-new-section relative overflow-hidden bg-[#f7f4e9] pt-[91px] pb-0 max-[992px]:pt-16"
+                      : undefined
+                  }
+                  rightColClassName={serviceHeroRightColClass}
+                  titleAccentPosition={shBlock.titleAccentPosition}
+                  bodyClassName={
+                    shBlock.bodyLayout === "compact"
+                      ? "!mt-2 !mb-0 !text-[14px] !font-normal !leading-[26px] !text-[#535353]"
+                      : undefined
+                  }
                   content={{
                     title: shBlock.title,
                     titleAccent: shBlock.titleAccent,
                     subheading: shBlock.subtitle,
                     description: shBlock.description,
-                    paragraphs: paragraphs.length > 0 ? paragraphs : shBlock.description ? [shBlock.description] : undefined,
+                    secondaryDescription: shBlock.secondaryDescription,
+                    paragraphs:
+                      paragraphs.length > 0
+                        ? paragraphs
+                        : hasVideoLogo && shBlock.description
+                        ? [shBlock.description]
+                        : undefined,
                     ctaLabel:
                       isAppmaker && (!primaryCta?.label || primaryCta.label === "Let's Talk")
                         ? "start your free trial today!"
@@ -2041,16 +2138,30 @@ export function BlockRenderer({ sections, testimonials }: BlockRendererProps) {
                         : primaryCta?.href,
                     secondaryCta,
                     eyebrows: eyebrows.length > 0 ? eyebrows : undefined,
-                    videoSrc: videoSrc || "/assets/home/why-dynamic-dreamz.mp4",
-                    videoLogo: {
-                      src: videoLogoUrl,
-                      alt: shBlock.videoLogo?.alt || "Shopify Plus",
-                      width: shBlock.videoLogo?.width || 143,
-                      height: shBlock.videoLogo?.height || 30,
-                    },
+                    videoSrc: resolvedServiceHeroVideo,
+                    image:
+                      !resolvedServiceHeroVideo && imageUrl
+                        ? {
+                            src: imageUrl,
+                            alt:
+                              shBlock.imageAlt ||
+                              resolveMediaAlt(shBlock.image, shBlock.title),
+                            width: shBlock.imageWidth || 684,
+                            height: shBlock.imageHeight || 550,
+                          }
+                        : undefined,
+                    videoLogo:
+                      hasVideoLogo && videoLogoUrl
+                        ? {
+                            src: videoLogoUrl,
+                            alt: shBlock.videoLogo?.alt || "Shopify Plus",
+                            width: shBlock.videoLogo?.width || 143,
+                            height: shBlock.videoLogo?.height || 30,
+                          }
+                        : undefined,
                     badges: badges.length > 0 ? badges : undefined,
                   }}
-                  videoLogoClassName="left-[-90px]"
+                  videoLogoClassName={hasVideoLogo ? "left-[-90px]" : undefined}
                 />
               );
             }
@@ -2067,9 +2178,21 @@ export function BlockRenderer({ sections, testimonials }: BlockRendererProps) {
                 ? "mix-blend-darken"
                 : undefined;
 
+            const videoHeroRightColClass =
+              shBlock.tabletMediaVisibility === "hidden"
+                ? undefined
+                : shBlock.tabletMediaVisibility === "inline"
+                ? "max-[992px]:inline-block max-[768px]:hidden"
+                : "max-[992px]:inline-block max-[992px]:w-[70%] max-[768px]:hidden";
+
+            const hasExplicitEyebrowArray = Boolean(
+              (shBlock.eyebrows && shBlock.eyebrows.length > 0) ||
+                (shBlock.eyebrowSpans && shBlock.eyebrowSpans.length > 0),
+            );
+
             return (
               <ServiceHeroVideoSection
-                rightColClassName="max-[992px]:inline-block max-[992px]:w-[70%] max-[768px]:hidden"
+                rightColClassName={videoHeroRightColClass}
                 key={blockKey}
                 className={isWhiteBg ? "bg-white" : undefined}
                 titleAccentTag={shBlock.titleAccentTag}
@@ -2086,7 +2209,11 @@ export function BlockRenderer({ sections, testimonials }: BlockRendererProps) {
                   cta: primaryCta?.label,
                   ctaHref: primaryCta?.href,
                   secondaryCta,
-                  eyebrowSpans: eyebrows.length > 0 ? eyebrows : undefined,
+                  eyebrow: !hasExplicitEyebrowArray ? shBlock.eyebrow : undefined,
+                  eyebrowSpans:
+                    hasExplicitEyebrowArray && eyebrows.length > 0
+                      ? eyebrows
+                      : undefined,
                   video: (variant === "video" || !imageUrl) ? videoSrc : undefined,
                   videoPoster: resolveMediaUrl(shBlock.videoPoster) || shBlock.videoPosterSrc,
                   image: imageUrl
@@ -2119,7 +2246,7 @@ export function BlockRenderer({ sections, testimonials }: BlockRendererProps) {
                   alt: b.alt || b.name || "",
                   width: b.width || 120,
                   height: b.height || 44,
-                  href: b.href || "#",
+                  href: b.href || undefined,
                 };
               })
               .filter((b): b is NonNullable<typeof b> => Boolean(b && b.src));
@@ -2154,26 +2281,48 @@ export function BlockRenderer({ sections, testimonials }: BlockRendererProps) {
                   image: resolveMediaUrl(b.logo) || b.src || "",
                 }))
                 .filter((t) => Boolean(t.image));
-              const rows = [row1, row2];
+              const rows = row2.length > 0 ? [row1, row2] : [row1];
 
               return (
                 <WhiteLabelToolsSection
                   key={blockKey}
+                  eyebrow={bpBlock.eyebrow || undefined}
                   title={bpBlock.heading}
                   description={bpBlock.description}
+                  ariaLabel={bpBlock.ariaLabel || undefined}
+                  className={bpBlock.toolsStyle === "unboxed" ? "seo-tools" : undefined}
                   rows={row1.length > 0 || row2.length > 0 ? rows : undefined}
                 />
               );
             }
 
             if (bpBlock.variant === "tech-stack") {
+              const techCategories = (bpBlock.techCategories ?? [])
+                .filter((c) => Boolean(c?.category))
+                .map((c) => ({
+                  category: c.category,
+                  technologies: (c.technologies ?? [])
+                    .map((t) => (typeof t === "string" ? t : t?.text || ""))
+                    .filter(Boolean),
+                }));
+
               return (
                 <TechnologiesWorkWithSection
                   key={blockKey}
                   content={{
-                    heading: bpBlock.heading || fullStackDevelopmentTechnologiesContent.heading,
-                    description: bpBlock.description || fullStackDevelopmentTechnologiesContent.description,
-                    categories: fullStackDevelopmentTechnologiesContent.categories,
+                    eyebrow:
+                      bpBlock.eyebrow ||
+                      fullStackDevelopmentTechnologiesContent.eyebrow,
+                    heading:
+                      bpBlock.heading ||
+                      fullStackDevelopmentTechnologiesContent.heading,
+                    description:
+                      bpBlock.description ||
+                      fullStackDevelopmentTechnologiesContent.description,
+                    categories:
+                      techCategories.length > 0
+                        ? techCategories
+                        : fullStackDevelopmentTechnologiesContent.categories,
                   }}
                 />
               );
@@ -2195,8 +2344,8 @@ export function BlockRenderer({ sections, testimonials }: BlockRendererProps) {
                 mobileSpacing={bpBlock.mobileSpacing || "standard"}
                 showHeading={bpBlock.showHeading ?? true}
                 content={{
-                  slug: (bpBlock as { slug?: string }).slug || "brand-partners",
-                  ariaLabel: cleanHeading || "Brand Partners",
+                  slug: bpBlock.slug || "brand-partners",
+                  ariaLabel: bpBlock.ariaLabel || undefined,
                 }}
                 items={brands}
               />
@@ -2210,7 +2359,30 @@ export function BlockRenderer({ sections, testimonials }: BlockRendererProps) {
               return <HomeFaqSection key={blockKey} />;
             }
 
-            const faqs = (faBlock.faqs ?? []).map((f) => normalizeFaqItem(f));
+            const faqs = (faBlock.faqs ?? []).map((f) => {
+              const parsedAnswer = parseTextOrArray(f.answer) ?? "";
+              const parsedSecondary = f.secondaryAnswer
+                ? parseTextOrArray(f.secondaryAnswer)
+                : undefined;
+              const answerParts =
+                f.answerParts && f.answerParts.length > 0
+                  ? f.answerParts
+                      .filter((p) => Boolean(p?.text))
+                      .map((p) => ({
+                        text: p.text || "",
+                        strong: Boolean(p.strong),
+                      }))
+                  : undefined;
+
+              return normalizeFaqItem({
+                question: f.question,
+                answer: parsedAnswer,
+                answerParts,
+                listPosition: f.listPosition,
+                listItems: f.listItems,
+                secondaryAnswer: parsedSecondary,
+              });
+            });
 
             const faqDesc = parseTextOrArray(faBlock.description);
             return (
@@ -2250,6 +2422,11 @@ export function BlockRenderer({ sections, testimonials }: BlockRendererProps) {
                   key={blockKey}
                   heading={cbBlock.heading}
                   description={cbBlock.description || ""}
+                  descriptionClassName={
+                    cbBlock.descriptionSize === "compact"
+                      ? "!text-[14px] !leading-[26px]"
+                      : undefined
+                  }
                   ctaLabel={ctaLabel}
                   ctaHref={ctaHref}
                   backgroundImage={bgImage}
@@ -2381,31 +2558,36 @@ export function BlockRenderer({ sections, testimonials }: BlockRendererProps) {
                     bottomNote: sgBlock.bottomNote,
                     boxes: services.map((s) => {
                       const sAny = s as { iconName?: string };
-                      const themeIcon = sAny.iconName
+                      const iconKey = sAny.iconName || sgBlock.sharedIconName;
+                      const uploadedOrStaticIcon =
+                        resolveMediaUrl(s.icon) || s.iconSrc || undefined;
+                      const themeIcon = iconKey
                         ? resolveServiceIcon(
-                            sAny.iconName,
+                            iconKey,
                             (sgBlock as { themeSlug?: string }).themeSlug,
                             (sgBlock as { iconKind?: "feature" | "benefit" | "service" }).iconKind ||
                               (sgBlock.cardVariant === "yellow" ? "feature" : "benefit"),
                           ) ||
                           resolveThemeIcon(
-                            sAny.iconName,
+                            iconKey,
                             (sgBlock as { themeSlug?: string }).themeSlug,
                             (sgBlock as { iconKind?: "feature" | "benefit" | "service" }).iconKind ||
                               (sgBlock.cardVariant === "yellow" ? "feature" : "benefit"),
                           ) ||
-                          resolveMobileAppIcon(sAny.iconName) ||
+                          resolveMobileAppIcon(iconKey) ||
                           resolveMigrationIcon(
-                            sAny.iconName,
+                            iconKey,
                             (sgBlock as { themeSlug?: string }).themeSlug,
                           )
-                        : resolveMobileAppIcon(s.title);
+                        : !uploadedOrStaticIcon && !s.number
+                          ? resolveMobileAppIcon(s.title)
+                          : null;
                       return {
                         number: s.number || undefined,
                         badge: s.badge || undefined,
                         title: s.title,
                         description: s.description || undefined,
-                        icon: themeIcon || resolveMediaUrl(s.icon) || s.iconSrc || undefined,
+                        icon: themeIcon || uploadedOrStaticIcon,
                         iconAlt: s.iconAlt || undefined,
                       };
                     }),
@@ -2424,13 +2606,24 @@ export function BlockRenderer({ sections, testimonials }: BlockRendererProps) {
                   : cardVariant === "services-box"
                     ? "pb-20"
                     : undefined);
+              const sectionCta =
+                sgBlock.ctaLabel && sgBlock.ctaHref
+                  ? {
+                      label: sgBlock.ctaLabel,
+                      href: sgBlock.ctaHref,
+                      ariaLabel: sgBlock.ctaAriaLabel || undefined,
+                    }
+                  : undefined;
               return (
                 <AgencyServicesSection
                   key={blockKey}
                   id={sgBlock.sectionId || "services"}
                   cardVariant={cardVariant}
                   columns={cols}
-                  hideCta={cardVariant === "services-box"}
+                  hideCta={
+                    Boolean(sgBlock.hideCta) ||
+                    (!sectionCta && cardVariant === "services-box")
+                  }
                   showDescription={true}
                   headerLayout={sgBlock.headerLayout === "split" ? "split" : undefined}
                   className={paddingClass}
@@ -2439,6 +2632,7 @@ export function BlockRenderer({ sections, testimonials }: BlockRendererProps) {
                     eyebrow: sgBlock.eyebrow,
                     heading: sgBlock.heading,
                     description: sgBlock.description || "",
+                    cta: sectionCta,
                     items: services.map((s) => {
                       const themeIcon = (s as { iconName?: string }).iconName
                         ? resolveServiceIcon(
@@ -2452,6 +2646,9 @@ export function BlockRenderer({ sections, testimonials }: BlockRendererProps) {
                             "service",
                           )
                         : null;
+                      const bullets = (s.bullets ?? [])
+                        .map((b) => (typeof b === "string" ? b : b?.text || ""))
+                        .filter(Boolean);
                       return {
                         title: s.title,
                         description: s.description || "",
@@ -2460,6 +2657,7 @@ export function BlockRenderer({ sections, testimonials }: BlockRendererProps) {
                         iconAlt: s.iconAlt || (typeof s.title === "string" ? s.title : "Service Icon"),
                         iconSvg: themeIcon || undefined,
                         href: s.ctaHref || undefined,
+                        bullets: bullets.length > 0 ? bullets : undefined,
                         pills: (s.pills ?? [])
                           .map((p) => (typeof p === "string" ? p : p.text || ""))
                           .filter(Boolean),
@@ -2476,7 +2674,7 @@ export function BlockRenderer({ sections, testimonials }: BlockRendererProps) {
 
             if (sgBlock.variant === "migration-services") {
               const bannerFallback = shopifyMigrationServicesContent.banner;
-              const hasBanner = Boolean(sgBlock.banner?.title || bannerFallback);
+              const hasBanner = Boolean(sgBlock.banner?.title);
               const banner = hasBanner
                 ? {
                     badge: sgBlock.banner?.badge || bannerFallback.badge,
@@ -2526,6 +2724,7 @@ export function BlockRenderer({ sections, testimonials }: BlockRendererProps) {
               return (
                 <AiServicesGridSection
                   key={blockKey}
+                  id={sgBlock.sectionId || undefined}
                   content={{
                     eyebrow: sgBlock.eyebrow,
                     heading: sgBlock.heading,
@@ -2534,6 +2733,7 @@ export function BlockRenderer({ sections, testimonials }: BlockRendererProps) {
                       label: s.tag || s.number,
                       title: s.title,
                       description: s.description || "",
+                      useCasesHeading: s.badge || undefined,
                       useCases: (s.bullets ?? [])
                         .map((b) => (typeof b === "string" ? b : b?.text || ""))
                         .filter(Boolean)
@@ -2619,7 +2819,8 @@ export function BlockRenderer({ sections, testimonials }: BlockRendererProps) {
               return (
                 <ShopifyThemesGridSection
                   key={blockKey}
-                  variant="pista"
+                  id={sgBlock.sectionId || undefined}
+                  variant={sgBlock.catalogTheme === "white" ? "white" : "pista"}
                   content={{
                     eyebrow: sgBlock.eyebrow,
                     title: sgBlock.heading,
@@ -2642,6 +2843,7 @@ export function BlockRenderer({ sections, testimonials }: BlockRendererProps) {
             return (
               <ShopifyStageServicesSection
                 key={blockKey}
+                id={sgBlock.sectionId || undefined}
                 sixCards={sgBlock.sixCards}
                 lastColFull={sgBlock.lastColFull}
                 content={{
@@ -2673,12 +2875,17 @@ export function BlockRenderer({ sections, testimonials }: BlockRendererProps) {
               return (
                 <ServicesCaseStudiesSection
                   key={blockKey}
+                  id={psBlock.sectionId || undefined}
                   eyebrow={psBlock.eyebrow}
                   heading={parseTextOrArray(psBlock.heading)}
                   description={parseTextOrArray(psBlock.description)}
                   className="py-20 max-[992px]:py-15 max-[768px]:py-10"
                   items={(psBlock.items ?? []).map((item) => {
-                    const itemAny = item as { tags?: string; description?: string };
+                    const itemAny = item as {
+                      tags?: string;
+                      description?: string;
+                      ctaLabel?: string;
+                    };
                     return {
                       title: item.name,
                       href: item.href || "#",
@@ -2686,10 +2893,8 @@ export function BlockRenderer({ sections, testimonials }: BlockRendererProps) {
                       imageAlt: item.imageAlt || item.name,
                       technology: item.metrics || "Shopify",
                       industry: item.category || "Ecommerce",
-                      description:
-                        (item as any).description ||
-                        itemAny.description ||
-                        "",
+                      description: itemAny.description || "",
+                      ctaLabel: itemAny.ctaLabel || undefined,
                       tags: itemAny.tags
                         ? itemAny.tags
                             .split(",")
@@ -2766,15 +2971,19 @@ export function BlockRenderer({ sections, testimonials }: BlockRendererProps) {
               ? (parseInt(psBlock.columns, 10) as 2 | 3 | 4)
               : 4;
 
+            const portfolioClassName =
+              [
+                psBlock.removeTopPadding ? "pt-0 max-[992px]:pt-0 max-[768px]:pt-0" : "",
+                psBlock.removeBottomPadding ? "pb-0 max-[992px]:pb-0 max-[768px]:pb-0" : "",
+              ]
+                .filter(Boolean)
+                .join(" ") || undefined;
+
             return (
               <PortfolioShowcaseSection
                 key={blockKey}
                 sectionId={(psBlock as { sectionId?: string }).sectionId || undefined}
-                className={
-                  (psBlock as { removeTopPadding?: boolean }).removeTopPadding
-                    ? "pt-0 max-[992px]:pt-0 max-[768px]:pt-0"
-                    : undefined
-                }
+                className={portfolioClassName}
                 columns={cols}
                 headerLayout={psBlock.headerLayout || "split"}
                 cardVariant={psBlock.cardVariant || "default"}
@@ -2785,6 +2994,7 @@ export function BlockRenderer({ sections, testimonials }: BlockRendererProps) {
                   eyebrow: psBlock.eyebrow,
                   heading: psBlock.heading || "Selected Ecommerce Work",
                   description: psBlock.description,
+                  category: psBlock.category || undefined,
                   platformMark,
                   ctaLabel: psBlock.ctaLabel,
                   ctaHref: psBlock.ctaHref,
@@ -2820,13 +3030,32 @@ export function BlockRenderer({ sections, testimonials }: BlockRendererProps) {
             }
 
             if (prBlock.variant === "team-boxes") {
+              const paragraphs = (prBlock.paragraphs ?? [])
+                .map((p) => (typeof p === "string" ? p : p?.text || ""))
+                .filter(Boolean);
+
               return (
                 <ShopifyTeamBoxesSection
                   key={blockKey}
+                  id={prBlock.sectionId || undefined}
                   content={{
                     eyebrow: prBlock.eyebrow,
                     heading: prBlock.heading || "",
-                    description: prBlock.description || "",
+                    description:
+                      paragraphs.length > 0
+                        ? paragraphs
+                        : prBlock.description || "",
+                    cta:
+                      prBlock.cta?.label && prBlock.cta?.href
+                        ? { label: prBlock.cta.label, href: prBlock.cta.href }
+                        : undefined,
+                    secondaryCta:
+                      prBlock.secondaryCta?.label && prBlock.secondaryCta?.href
+                        ? {
+                            label: prBlock.secondaryCta.label,
+                            href: prBlock.secondaryCta.href,
+                          }
+                        : undefined,
                     items: (prBlock.boxes ?? []).map((b) => ({
                       title: b.title,
                       description: b.description || "",
@@ -2854,6 +3083,18 @@ export function BlockRenderer({ sections, testimonials }: BlockRendererProps) {
 
             if (prBlock.variant === "why-choose-migration") {
               const defaultMobileIcons = ["cross-platform", "backend", "shield", "update"];
+              const builtInMigrationIcons = new Set([
+                "certified",
+                "design",
+                "expertise",
+                "qa",
+                "support",
+                "shopify-bag",
+                "custom-build",
+                "long-term-support",
+                "verticals",
+                "team",
+              ]);
               const items =
                 (prBlock.boxes ?? []).length > 0
                   ? (prBlock.boxes ?? []).map((b, idx) => {
@@ -2862,15 +3103,16 @@ export function BlockRenderer({ sections, testimonials }: BlockRendererProps) {
                         (b.badgeText && b.badgeText !== "cross"
                           ? b.badgeText
                           : defaultMobileIcons[idx] || b.badgeText);
-                      const iconSvg = iconName
-                        ? resolveMobileAppIcon(iconName)
-                        : b.title
-                        ? resolveMobileAppIcon(b.title)
-                        : undefined;
+                      const iconSvg =
+                        iconName && !builtInMigrationIcons.has(iconName)
+                          ? resolveMobileAppIcon(iconName)
+                          : !iconName && b.title
+                          ? resolveMobileAppIcon(b.title)
+                          : undefined;
                       return {
                         title: b.title,
                         description: b.description || "",
-                        icon: b.badgeText || "certified",
+                        icon: b.badgeText || b.iconName || "certified",
                         iconSvg,
                       };
                     })
@@ -2906,12 +3148,20 @@ export function BlockRenderer({ sections, testimonials }: BlockRendererProps) {
                 logoHref:
                   (prBlock as { logoHref?: string }).logoHref ||
                   shopifyMigrationWhyChoose.logoHref,
+                partnerLink:
+                  prBlock.partnerLink?.label && prBlock.partnerLink?.href
+                    ? {
+                        label: prBlock.partnerLink.label,
+                        href: prBlock.partnerLink.href,
+                      }
+                    : shopifyMigrationWhyChoose.partnerLink,
                 items,
                 stats,
               };
               return (
                 <WhyChooseShopifyMigrationSection
                   key={blockKey}
+                  id={prBlock.sectionId || undefined}
                   content={migrationContent}
                 />
               );
@@ -3016,6 +3266,13 @@ export function BlockRenderer({ sections, testimonials }: BlockRendererProps) {
 
             if (ptBlock.variant === "migration-grid") {
               const variant = (ptBlock as { cardVariant?: "white" | "pista" }).cardVariant || "pista";
+              const migrationGridClassName =
+                [
+                  shouldRemoveTopPadding ? "pt-0" : "",
+                  ptBlock.removeBottomPadding ? "pb-0" : "",
+                ]
+                  .filter(Boolean)
+                  .join(" ") || undefined;
               return (
                 <ShopifyMigrationNumberedGridSection
                   key={blockKey}
@@ -3024,7 +3281,7 @@ export function BlockRenderer({ sections, testimonials }: BlockRendererProps) {
                   eyebrow={ptBlock.eyebrow}
                   heading={ptBlock.heading}
                   description={ptBlock.description}
-                  className={shouldRemoveTopPadding ? "pt-0" : undefined}
+                  className={migrationGridClassName}
                   items={steps.map((s, idx) => ({
                     number: s.step || String(idx + 1).padStart(2, "0"),
                     title: s.title,
@@ -3038,6 +3295,7 @@ export function BlockRenderer({ sections, testimonials }: BlockRendererProps) {
               return (
                 <ShopifyHorizontalProcessSection
                   key={blockKey}
+                  id={(ptBlock as { sectionId?: string }).sectionId || undefined}
                   content={{
                     eyebrow: ptBlock.eyebrow,
                     heading: ptBlock.heading,
@@ -3119,7 +3377,7 @@ export function BlockRenderer({ sections, testimonials }: BlockRendererProps) {
                   eyebrow={ptBlock.eyebrow}
                   title={parseTextOrArray(ptBlock.heading)}
                   description={parseTextOrArray(ptBlock.description)}
-                  note={(ptBlock as { note?: string }).note || (typeof ptBlock.description === "string" ? ptBlock.description : "")}
+                  note={ptBlock.note ?? ""}
                   steps={steps.map((s, idx) => ({
                     step: s.step || String(idx + 1).padStart(2, "0"),
                     title: s.title,
@@ -3136,6 +3394,7 @@ export function BlockRenderer({ sections, testimonials }: BlockRendererProps) {
             return (
               <OurDevelopmentProcessSection
                 key={blockKey}
+                id={(ptBlock as { sectionId?: string }).sectionId || undefined}
                 columns={cols}
                 eyebrowVariant={ptBlock.eyebrowVariant || "dash"}
                 isBgTransparent={ptBlock.isBgTransparent}
@@ -4226,7 +4485,7 @@ export function BlockRenderer({ sections, testimonials }: BlockRendererProps) {
             return (
               <TextBoxSection
                 key={blockKey}
-                heading={tb.heading}
+                heading={parseTextOrArray(tb.heading) ?? tb.heading}
                 subheading={tb.subheading}
                 paragraphs={paragraphs.length > 0 ? paragraphs : undefined}
                 listItems={listItems.length > 0 ? listItems : undefined}
@@ -4365,7 +4624,7 @@ export function BlockRenderer({ sections, testimonials }: BlockRendererProps) {
               <WhiteLabelWhySection
                 key={blockKey}
                 eyebrow={wlw.eyebrow}
-                title={wlw.title}
+                title={parseTextOrArray(wlw.title)}
                 reasons={(wlw.reasons ?? []).map((r) => ({
                   title: r.title,
                   description: r.description,

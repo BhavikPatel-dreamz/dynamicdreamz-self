@@ -47,6 +47,17 @@ export const PortfolioShowcaseBlock: Block = {
       label: "Remove top padding (pt-0)",
     },
     {
+      name: "removeBottomPadding",
+      type: "checkbox",
+      defaultValue: false,
+      label: "Remove bottom padding (pb-0)",
+    },
+    {
+      name: "category",
+      type: "text",
+      label: "Section Category Badge (e.g. WORDPRESS)",
+    },
+    {
       name: "columns",
       type: "select",
       defaultValue: "4",
@@ -167,6 +178,16 @@ export const PortfolioShowcaseBlock: Block = {
           name: "category",
           type: "text",
           label: "Industry / Category Tag",
+        },
+        {
+          name: "description",
+          type: "textarea",
+          label: "Case Study Description (Slider Cards)",
+        },
+        {
+          name: "ctaLabel",
+          type: "text",
+          label: "Card CTA Label (e.g. View Case Study)",
         },
         {
           name: "metrics",

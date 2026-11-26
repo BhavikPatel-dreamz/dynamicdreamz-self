@@ -24,6 +24,11 @@ export const ProcessTimelineBlock: Block = {
       label: "Description",
     },
     {
+      name: "note",
+      type: "textarea",
+      label: "Bottom Note / Clarification Text (White-Label Process)",
+    },
+    {
       name: "variant",
       type: "select",
       defaultValue: "development-process",
@@ -74,6 +79,12 @@ export const ProcessTimelineBlock: Block = {
       name: "sectionId",
       type: "text",
       label: "HTML Section ID (e.g. migration-process)",
+    },
+    {
+      name: "removeBottomPadding",
+      type: "checkbox",
+      defaultValue: false,
+      label: "Remove bottom padding (pb-0)",
     },
     {
       name: "steps",

@@ -76,6 +76,60 @@ export const FaqAccordionBlock: Block = {
           required: true,
           label: "Answer",
         },
+        {
+          name: "answerParts",
+          type: "array",
+          dbName: "fa_apts",
+          label: "Rich Answer Parts (Optional inline bold spans)",
+          fields: [
+            {
+              name: "text",
+              type: "text",
+              required: true,
+              label: "Text Segment",
+            },
+            {
+              name: "strong",
+              type: "checkbox",
+              defaultValue: false,
+              label: "Bold Text",
+            },
+          ],
+        },
+        {
+          name: "listPosition",
+          type: "select",
+          defaultValue: "after",
+          label: "Bullet List Position",
+          options: [
+            { label: "After Primary Answer", value: "after" },
+            { label: "Before Primary Answer", value: "before" },
+          ],
+        },
+        {
+          name: "listItems",
+          type: "array",
+          dbName: "fa_list",
+          label: "Structured Bullet Items (Optional)",
+          fields: [
+            {
+              name: "label",
+              type: "text",
+              label: "Bold Prefix Label (Optional)",
+            },
+            {
+              name: "text",
+              type: "text",
+              required: true,
+              label: "Bullet Text",
+            },
+          ],
+        },
+        {
+          name: "secondaryAnswer",
+          type: "textarea",
+          label: "Closing / Secondary Paragraph (Optional)",
+        },
       ],
     },
   ],
