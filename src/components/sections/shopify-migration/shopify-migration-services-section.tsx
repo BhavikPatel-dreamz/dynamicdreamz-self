@@ -107,7 +107,7 @@ export function ShopifyMigrationServicesSection({
 
         {banner && (
           <div
-            className="wrapper flex items-center justify-between rounded-[30px] border-[1.5px] border-[rgba(23,30,22,0.1)] bg-[#EFF4EF] p-[40px_32px_32px_32px] max-[1200px]:flex-wrap max-[992px]:mt-8 max-[992px]:rounded-[20px] max-[992px]:p-[30px] max-[768px]:p-5"
+            className="wrapper flex items-center justify-between rounded-[30px] border-[1.5px] border-[rgba(23,30,22,0.1)] bg-[#EFF4EF] p-[40px_32px_32px_32px] max-[1200px]:flex-wrap max-[992px]:rounded-[20px] max-[992px]:p-[30px] max-[768px]:p-5"
             data-aos="fade-up"
           >
             <div className="wlp-banner-content max-w-[868px] max-[1440px]:max-w-[720px] max-[1200px]:mb-5 max-[1200px]:max-w-full">

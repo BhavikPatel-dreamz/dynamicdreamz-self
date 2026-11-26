@@ -87,8 +87,8 @@ export function SeoSafeMigrationSection({
                         </p>
                       </div>
                     </div>
-                    <div className="redirect flex w-[55%] items-center gap-[15px] px-2.5 max-[768px]:w-full max-[768px]:gap-2 max-[768px]:px-0">
-                      <div className="url flex items-center gap-1.5 font-bold text-[#ad5151]">
+                    <div className="redirect flex flex-wrap w-[55%] items-center gap-[15px] px-2.5 max-[768px]:w-full max-[768px]:gap-2 max-[768px]:px-0">
+                      <div className="url flex items-center gap-2.5 font-bold text-[#ad5151]">
                         <h3 className="m-0 font-montreal-medium text-[20px] font-normal leading-[28.8px] text-[#282828] max-[992px]:text-lg max-[992px]:leading-[26px]">
                           {row.statusCode ?? "301"}
                         </h3>

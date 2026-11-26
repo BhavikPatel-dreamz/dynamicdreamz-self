@@ -18,7 +18,7 @@ export function ContactWidget({ whatsappNumber }: { whatsappNumber?: string | nu
     : siteConfig.whatsappHref;
 
   return (
-    <div className="whatsapp-widget fixed right-5 bottom-[80px] max-[768px]:bottom-[38px] z-110 [&_a]:[transition:all_.3s_ease]">
+    <div className="whatsapp-widget fixed right-5 bottom-[80px] max-[768px]:bottom-[38px] max-[576px]:bottom-5 z-110 [&_a]:[transition:all_.3s_ease]">
       <a
         className="whatsapp-widget flex min-w-[240px] max-[1200px]:min-w-[220px] max-[768px]:min-w-[200px] items-center rounded-[100px] bg-brand-green px-2.5 py-1.75 max-[768px]:p-[5px] text-white shadow-[0_10px_30px_rgb(0_0_0/15%)] transition-all duration-300 ease-[ease] [transition:all_.3s_ease] hover:-translate-y-0.75 hover:shadow-[0_15px_40px_rgb(0_0_0/20%)]"
         href={href}

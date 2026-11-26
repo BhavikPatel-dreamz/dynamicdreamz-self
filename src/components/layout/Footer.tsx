@@ -222,7 +222,7 @@ export function SiteFooter({
   const effectiveCopyright = copyrightText;
 
   return (
-    <footer className="bg-cream text-ink pt-15 max-[1200px]:pt-10 max-[768px]:pb-[70px]">
+    <footer className="bg-cream text-ink pt-15 max-[1200px]:pt-10 max-[992px]:pt-[22px] max-[768px]:pb-[70px]">
       <Container>
         {/* Desktop (1200px+) and Tablet (992px - 1199px) */}
         <div className="hidden min-[992px]:flex min-[992px]:flex-wrap min-[992px]:justify-between">

@@ -2246,7 +2246,7 @@ export function BlockRenderer({ sections, testimonials }: BlockRendererProps) {
                   alt: b.alt || b.name || "",
                   width: b.width || 120,
                   height: b.height || 44,
-                  href: b.href || undefined,
+                  href: b.href && b.href !== "#" ? b.href : undefined,
                 };
               })
               .filter((b): b is NonNullable<typeof b> => Boolean(b && b.src));

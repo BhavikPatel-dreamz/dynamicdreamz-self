@@ -12,7 +12,7 @@ export type ContainerProps<T extends ElementType = "div"> = {
 
 const containerVariantStyles: Record<ContainerVariant, string> = {
   default:
-    "max-w-none px-4 md:px-5 max-[576px]:px-5 min-[576px]:max-w-[540px] min-[768px]:max-w-[720px] min-[992px]:max-w-[960px] min-[1200px]:max-w-[1180px] min-[1300px]:max-w-[1280px] min-[1400px]:max-w-[1360px]",
+    "max-w-none px-4 md:px-5 max-[576px]:px-4 min-[576px]:max-w-[540px] min-[768px]:max-w-[720px] min-[992px]:max-w-[960px] min-[1200px]:max-w-[1180px] min-[1300px]:max-w-[1280px] min-[1400px]:max-w-[1360px]",
   wide:
     "max-w-none px-[15px] md:px-5 min-[576px]:max-w-[540px] min-[768px]:max-w-[720px] min-[992px]:max-w-[960px] min-[1200px]:max-w-[1180px] min-[1300px]:max-w-[1280px] min-[1400px]:max-w-[1408px]",
   narrow:

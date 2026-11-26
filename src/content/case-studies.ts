@@ -1,10 +1,10 @@
 import caseStudiesItemsJson from "@/content/case-studies-items.json";
 import type { CaseStudyItem } from "@/types/case-study";
-import { globalBrandLogos } from "@/content/brands";
+import { caseStudiesBrandLogos } from "@/content/brands";
 
 export type { CaseStudyItem } from "@/types/case-study";
 
-export const caseStudiesBrandLogos = globalBrandLogos;
+export { caseStudiesBrandLogos };
 
 export const caseStudiesBrandSection = {
   slug: "case-studies",

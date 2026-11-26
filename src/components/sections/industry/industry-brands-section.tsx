@@ -54,8 +54,8 @@ export function IndustryBrandsSection({
   return (
     <section
       className={cn(
-        "our-client-sec overflow-hidden bg-[#FBEED5]",
-        showHeading ? "dev py-4.25 max-[768px]:pt-5" : "py-10",
+        "our-client-sec min-h-[49px] overflow-hidden bg-[#FBEED5]",
+        showHeading ? "dev py-4.25 max-[767.98px]:pt-5" : "py-10",
       )}
       aria-label={showHeading ? undefined : ariaLabel}
       aria-labelledby={showHeading ? `${content.slug}-brands-title` : undefined}
@@ -68,9 +68,9 @@ export function IndustryBrandsSection({
               "left-col pl-[calc((100%-1140px)/2)] max-[1200px]:pl-[calc((100%-920px)/2)] max-[991.98px]:w-full max-[991.98px]:p-0 max-[991.98px]:text-center",
               // `cn` is a plain join, so width/padding presets stay mutually exclusive.
               isCompact
-                ? "w-1/3 min-[1400px]:pl-[calc((100%-1320px)/2)] max-[991.98px]:mb-5 max-[768px]:mb-[15px]"
+                ? "w-1/3 max-[1199.98px]:w-[30%] min-[1400px]:pl-[calc((100%-1320px)/2)] max-[991.98px]:mb-5 max-[767.98px]:mb-[15px]"
                 : isFlexible
-                  ? "w-[30%] max-[1200px]:w-[30%] min-[1400px]:pl-[calc((100%-1320px)/2)] max-[991.98px]:mb-5 max-[768px]:mb-[15px]"
+                  ? "w-[30%] max-[1200px]:w-[30%] min-[1400px]:pl-[calc((100%-1320px)/2)] max-[991.98px]:mb-5 max-[767.98px]:mb-[15px]"
                   : cn(
                       "w-[31%] max-[1200px]:w-[30%] min-[1400px]:pl-[calc((100%-1334px)/2)]",
                       hasSpaciousMobileLayout
@@ -95,9 +95,9 @@ export function IndustryBrandsSection({
         ) : null}
         <div
           className={cn(
-            "right-col max-[991.98px]:w-full",
+            "right-col min-w-0 max-[991.98px]:w-full max-[991.98px]:overflow-hidden",
             isCompact
-              ? "w-2/3 max-[1200px]:w-[70%]"
+              ? "w-2/3 max-[1199.98px]:w-[70%]"
               : isFlexible
                 ? // Live `.right-col` is 69% (70% ≤1199px), matching the 30% heading column.
                   "w-[69%] max-[1200px]:w-[70%]"

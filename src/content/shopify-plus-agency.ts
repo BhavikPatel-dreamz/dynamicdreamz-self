@@ -202,7 +202,7 @@ export const shopifyPlusAgencyServices = {
         "Build Shopify Plus B2B and wholesale experiences with company accounts, custom catalogs, price lists, payment terms, buyer permissions and ERP or CRM integrations.",
       cta: {
         label: "Explore B2B Solutions",
-        href: "/request-quote/",
+        href: "/shopify-b2b/",
       },
     },
     {
@@ -212,7 +212,7 @@ export const shopifyPlusAgencyServices = {
         "Develop a custom Shopify Plus theme from Figma with flexible sections, tailored PDP and PLP experiences, responsive interactions and performance-focused development.",
       cta: {
         label: "Explore Custom Themes",
-        href: "/request-quote/",
+        href: "/shopify-theme-customization/",
       },
     },
     {

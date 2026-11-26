@@ -1,4 +1,4 @@
-import { globalBrandLogos } from "@/content/brands";
+import { caseStudiesBrandLogos } from "@/content/brands";
 
 export const resourcesSectionCopy = {
   blogsTitle: "Shopify Blogs",
@@ -898,7 +898,7 @@ export const resourcesStory = {
   ],
 } as const;
 
-export const resourcesClientLogos = globalBrandLogos;
+export const resourcesClientLogos = caseStudiesBrandLogos;
 
 export const resourcesStats = [
   { value: 18, suffix: "+", label: "Years of Experience" },

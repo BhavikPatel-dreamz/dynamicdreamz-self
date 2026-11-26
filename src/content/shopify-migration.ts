@@ -453,7 +453,7 @@ export const shopifyMigrationTestimonials = {
   eyebrow: "Client Stories",
   heading: "Don't Just Take Our Word For It",
   description:
-    "Our client's satisfaction is the real test of our success. Discover how our specialized app\ndevelopment services have enabled companies to grow in the digital economy.",
+    "Our client's satisfaction is the real test of our success. Discover how our specialized app development services have enabled companies to grow in the digital economy.",
   items: shopifyPlusAgencyTestimonials.items,
 };
 

@@ -166,3 +166,163 @@ export const globalBrandLogos: readonly ClientLogoSliderItem[] = [
 ] as const;
 
 export const commonBrandLogos = globalBrandLogos;
+
+export const ourWorkBrandLogos: readonly ClientLogoSliderItem[] = [
+  {
+    src: "/assets/clients/ranavat.svg",
+    href: "https://www.ranavat.com/",
+    alt: "Ranavat",
+    width: 190,
+    height: 21,
+  },
+  {
+    src: "/assets/clients/prolash.svg",
+    href: "https://prolash.com/",
+    alt: "Prolash",
+    width: 164,
+    height: 18,
+  },
+  {
+    src: "/assets/clients/tropicfeel.svg",
+    href: "https://shop.tropicfeel.com/",
+    alt: "Tropicfeel",
+    width: 148,
+    height: 31,
+  },
+  {
+    src: "/assets/clients/perfect-locks.svg",
+    href: "https://www.perfectlocks.com/",
+    alt: "Perfect Locks",
+    width: 175,
+    height: 32,
+  },
+  {
+    src: "/assets/clients/bombay-shirt-company.svg",
+    href: "https://www.bombayshirts.com/",
+    alt: "Bombay Shirt Company",
+    width: 188,
+    height: 24,
+  },
+  {
+    src: "/assets/clients/kayfi.svg",
+    href: "https://kayfi.com/",
+    alt: "Kayfi",
+    width: 90,
+    height: 49,
+  },
+  {
+    src: "/assets/clients/simsdirect.svg",
+    href: "https://simsdirect.com.au/",
+    alt: "Sims Direct",
+    width: 143,
+    height: 49,
+  },
+  {
+    src: "/assets/clients/kvaser.svg",
+    href: "https://www.kvaser.com/",
+    alt: "Kvaser",
+    width: 135,
+    height: 25,
+  },
+  {
+    src: "/assets/clients/nekter-colored.svg",
+    href: "https://www.nekterjuicebar.com/",
+    alt: "Nékter Juice Bar",
+    width: 62,
+    height: 61,
+  },
+  {
+    src: "/assets/clients/circuit-city.svg",
+    href: "https://circuitcity.com/",
+    alt: "Circuit City",
+    width: 64,
+    height: 64,
+  },
+] as const;
+
+export const caseStudiesBrandLogos: readonly ClientLogoSliderItem[] = [
+  {
+    src: "/assets/clients/supertails.svg",
+    href: "https://supertails.com/",
+    alt: "Supertails",
+    width: 164,
+    height: 41,
+  },
+  {
+    src: "/assets/clients/eleven-eleven.svg",
+    href: "https://11-11.in/",
+    alt: "11.11",
+    width: 145,
+    height: 20,
+  },
+  {
+    src: "/assets/clients/bellavita.svg",
+    href: "https://bellavitaorganic.com/",
+    alt: "Bella Vita",
+    width: 166,
+    height: 24,
+  },
+  {
+    src: "/assets/clients/bombay-shirt-company.svg",
+    href: "https://www.bombayshirts.com/",
+    alt: "Bombay Shirt Company",
+    width: 188,
+    height: 24,
+  },
+  {
+    src: "/assets/clients/popclub.svg",
+    href: "https://popclub.co/",
+    alt: "Pop Club",
+    width: 65,
+    height: 41,
+  },
+  {
+    src: "/assets/clients/sri-sri-tattva.svg",
+    href: "https://www.srisritattva.com/",
+    alt: "Sri Sri Tattva",
+    width: 106,
+    height: 40,
+  },
+  {
+    src: "/assets/clients/tropicfeel.svg",
+    href: "https://shop.tropicfeel.com/",
+    alt: "Tropicfeel",
+    width: 148,
+    height: 31,
+  },
+  {
+    src: "/assets/clients/renee.svg",
+    href: "https://www.reneecosmetics.in/",
+    alt: "Renée Cosmetics",
+    width: 92,
+    height: 30,
+  },
+  {
+    src: "/assets/clients/royce-chocolate-black.svg",
+    href: "https://royceindia.com/",
+    alt: "Royce Chocolate",
+    width: 132,
+    height: 38,
+  },
+  {
+    src: "/assets/clients/tego.svg",
+    href: "https://tego.fit/",
+    alt: "TEGO Fit",
+    width: 107,
+    height: 42,
+  },
+  {
+    src: "/assets/clients/nekter-colored.svg",
+    href: "https://www.nekterjuicebar.com/",
+    alt: "Nékter Juice Bar",
+    width: 62,
+    height: 61,
+  },
+  {
+    src: "/assets/clients/rare-rabbit.svg",
+    href: "https://thehouseofrare.com/",
+    alt: "Rare Rabbit",
+    width: 101,
+    height: 70,
+  },
+] as const;

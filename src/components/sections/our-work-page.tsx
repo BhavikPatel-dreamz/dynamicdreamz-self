@@ -2,6 +2,7 @@ import { IndustryBrandsSection } from "@/components/sections/industry/industry-b
 import { OurWorkCaseStudiesSection } from "@/components/sections/our-work/our-work-case-studies-section";
 import { OurWorkHeroSection } from "@/components/sections/our-work/our-work-hero-section";
 import { OurWorkProjectsSection } from "@/components/sections/our-work/our-work-projects-section";
+import { ourWorkBrandLogos } from "@/content/brands";
 
 const brandSection = {
   slug: "our-work",
@@ -17,7 +18,12 @@ export function OurWorkPage() {
         layout="ourWork"
         typography="liveMontserrat"
       />
-      <IndustryBrandsSection content={brandSection} density="compact" mobileSpacing="standard" />
+      <IndustryBrandsSection
+        content={brandSection}
+        density="compact"
+        items={ourWorkBrandLogos}
+        mobileSpacing="standard"
+      />
       <OurWorkProjectsSection />
       <OurWorkCaseStudiesSection />
     </>

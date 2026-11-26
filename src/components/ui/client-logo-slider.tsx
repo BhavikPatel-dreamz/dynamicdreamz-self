@@ -38,18 +38,16 @@ type ClientLogoSliderProps = {
 type ClientLogoSlideProps = {
   logo: ClientLogoSliderItem;
   variant: ClientLogoSliderProps["variant"];
-  hasCompactRail: boolean;
 };
 
-function ClientLogoSlide({ logo, variant, hasCompactRail }: ClientLogoSlideProps) {
+function ClientLogoSlide({ logo, variant }: ClientLogoSlideProps) {
   return (
     <div
       className={cn(
         "flex h-(--client-logo-slider-height) items-center justify-center [&_img]:h-auto [&_img]:w-auto [&_img]:max-w-full [&_img]:object-contain",
         variant === "resources"
-          ? "px-7 max-[768px]:px-[22px] [&_img]:max-h-[58px]"
-          : "px-5 max-[768px]:px-2.5 [&_img]:max-h-[70px]",
-        hasCompactRail && variant !== "resources" && "[&_img]:max-h-(--client-logo-slider-height)",
+          ? "px-7 max-[767.98px]:px-[22px] [&_img]:max-h-[58px]"
+          : "px-5 max-[767.98px]:px-2.5 [&_img]:max-h-(--client-logo-slider-height)",
       )}
     >
       {logo.href ? (
@@ -59,10 +57,10 @@ function ClientLogoSlide({ logo, variant, hasCompactRail }: ClientLogoSlideProps
           target="_blank"
           rel="nofollow noopener noreferrer"
         >
-          <ClientLogo logo={logo} />
+          <ClientLogo logo={logo} loading="eager" />
         </a>
       ) : (
-        <ClientLogo logo={logo} />
+        <ClientLogo logo={logo} loading="eager" />
       )}
     </div>
   );
@@ -86,7 +84,7 @@ export function ClientLogoSlider({
   const [autoplayReady, setAutoplayReady] = useState(autoplayStartDelayMs === 0);
   const [isNearViewport, setIsNearViewport] = useState(false);
   const [slidesToShow, setSlidesToShow] = useState(
-    slides?.desktop ?? (variant === "industry" ? 4 : 6),
+    slides?.desktop ?? (variant === "resources" ? 6 : 4),
   );
 
   useEffect(() => {
@@ -184,9 +182,9 @@ export function ClientLogoSlider({
     // Live rail heights: 84px on services pages, 70px on flexible-css pages
     // (60px ≤767px). `cn` is a plain join, so the preset is exclusive.
     hasCompactRail
-      ? "[--client-logo-slider-height:70px] max-[768px]:[--client-logo-slider-height:60px]"
+      ? "[--client-logo-slider-height:70px] max-[767.98px]:[--client-logo-slider-height:60px]"
       : variant === "industry"
-        ? "[--client-logo-slider-height:84px] max-[768px]:[--client-logo-slider-height:60px]"
+        ? "[--client-logo-slider-height:84px] max-[767.98px]:[--client-logo-slider-height:60px]"
         : "[--client-logo-slider-height:84px]",
   );
 
@@ -200,7 +198,7 @@ export function ClientLogoSlider({
         >
           {items.map((logo, idx) => (
             <div key={`${logo.src || "logo"}-${idx}`}>
-              <ClientLogoSlide hasCompactRail={hasCompactRail} logo={logo} variant={variant} />
+              <ClientLogoSlide logo={logo} variant={variant} />
             </div>
           ))}
         </Slider>
@@ -213,7 +211,7 @@ export function ClientLogoSlider({
                 key={`${logo.src || "logo"}-${idx}`}
                 style={{ flexBasis: `${100 / slidesToShow}%` }}
               >
-                <ClientLogoSlide hasCompactRail={hasCompactRail} logo={logo} variant={variant} />
+                <ClientLogoSlide logo={logo} variant={variant} />
               </div>
             ))}
           </div>
