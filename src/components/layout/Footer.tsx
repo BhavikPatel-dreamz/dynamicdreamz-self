@@ -122,11 +122,11 @@ function ContactDetails({
   return (
     <div className="border-t border-ink/10 pt-[15px] max-[992px]:border-0 max-[992px]:pt-0">
       <address className="flex flex-col gap-[15px] not-italic">
-        <a className="flex items-center text-sm leading-5 font-medium text-[rgba(40,40,40,0.8)] transition-colors duration-300 hover:text-[#282828] focus-visible:text-[#282828] max-[768px]:text-[11.5px] max-[768px]:leading-[15px]" href={`mailto:${displayEmail}`}>
+        <a className="flex items-center text-sm leading-5 font-medium text-[rgba(40,40,40,0.8)] transition-colors duration-300 hover:text-[#282828] focus-visible:text-[#282828]" href={`mailto:${displayEmail}`}>
           <span className="mr-2.5 flex w-[18px] shrink-0 items-center justify-center text-[#111111]"><MailIcon /></span>
           <span>{displayEmail}</span>
         </a>
-        <a className="flex items-center text-sm leading-5 font-medium text-[rgba(40,40,40,0.8)] transition-colors duration-300 hover:text-[#282828] focus-visible:text-[#282828] max-[768px]:text-[11.5px] max-[768px]:leading-[15px]" href={hrefPhone}>
+        <a className="flex items-center text-sm leading-5 font-medium text-[rgba(40,40,40,0.8)] transition-colors duration-300 hover:text-[#282828] focus-visible:text-[#282828]" href={hrefPhone}>
           <span className="mr-2.5 flex w-[18px] shrink-0 items-center justify-center text-[#111111]"><PhoneIcon /></span>
           <span>{displayPhone}</span>
         </a>

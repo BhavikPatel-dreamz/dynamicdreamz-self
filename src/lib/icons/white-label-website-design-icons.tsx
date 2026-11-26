@@ -192,9 +192,9 @@ export function WhiteLabelWebsiteDesignAdvantageIcon({
       aria-hidden="true"
       className={className}
       fill="none"
-      height="40"
+      height="24"
       viewBox="0 0 40 40"
-      width="40"
+      width="24"
       xmlns="http://www.w3.org/2000/svg"
       {...props}
     >

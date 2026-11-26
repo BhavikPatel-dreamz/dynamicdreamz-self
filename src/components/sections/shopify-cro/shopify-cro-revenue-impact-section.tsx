@@ -44,12 +44,12 @@ export function ShopifyCroRevenueImpactSection({
     <section className={className}>
       <Container>
         <SplitSectionHeading
-          className="mb-[66px]"
+          className="mb-[66px] max-[992px]:mb-[66px]"
           dark
           description={content.description}
           eyebrow={content.eyebrow}
           heading={content.heading}
-          textColumnClassName="text-right"
+          variant="left"
         />
 
         <div

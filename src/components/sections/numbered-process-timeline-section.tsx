@@ -53,10 +53,10 @@ export function NumberedProcessTimelineSection({
                 className="relative z-1 flex flex-col items-center px-3 text-center max-[768px]:items-start max-[768px]:py-3 max-[768px]:pr-0 max-[768px]:pl-3 max-[768px]:text-left"
                 key={label}
               >
-                <span className="relative flex size-[90px] shrink-0 items-center justify-center rounded-full bg-[#f7eeee] text-[30px] leading-[57px] font-bold text-brand-red after:absolute after:-inset-1 after:rounded-full after:border after:border-dashed after:border-brand-red max-[768px]:size-[50px] max-[768px]:text-base max-[768px]:leading-[43px] max-[768px]:after:-inset-1">
+                <span className="relative flex size-[90px] shrink-0 items-center justify-center rounded-full bg-[#f7eeee] text-[30px] leading-[57px] font-bold text-brand-red after:absolute after:-inset-1 after:rounded-full after:border after:border-dashed after:border-brand-red max-[768px]:size-[70px] max-[768px]:leading-[43px] max-[768px]:after:-inset-1">
                   {index + 1}
                 </span>
-                <span aria-hidden="true" className="mt-[30px] size-[18px] rounded-[6px] bg-brand-red max-[768px]:absolute max-[768px]:top-4 max-[768px]:-left-[19px] max-[768px]:mt-0 max-[768px]:size-[15px]" />
+                <span aria-hidden="true" className="mt-[30px] size-[18px] rounded-[6px] bg-brand-red max-[768px]:absolute max-[768px]:top-7 max-[768px]:-left-[19px] max-[768px]:mt-0" />
                 <span className="mt-[30px] max-w-[210px] text-lg leading-[25.2px] font-semibold max-[1200px]:text-base max-[992px]:text-sm max-[992px]:leading-[19px] max-[768px]:mt-5 max-[768px]:max-w-none max-[768px]:text-[15px] max-[768px]:leading-5">
                   {typeof item === "string" ? (
                     item

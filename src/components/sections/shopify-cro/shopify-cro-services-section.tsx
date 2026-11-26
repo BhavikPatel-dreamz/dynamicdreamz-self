@@ -32,10 +32,10 @@ export function ShopifyCroServicesSection({
     <section className={className}>
       <Container>
         <SplitSectionHeading
-          
           description={content.description}
           eyebrow={content.eyebrow}
           heading={content.heading}
+          variant="left"
         />
 
         <div className="shopify-cro-services-grid flex flex-wrap justify-center">
@@ -66,7 +66,7 @@ export function ShopifyCroServicesSection({
                     className="size-full object-contain"
                   />
                 </div>
-                <h3 className="h4 mb-5 font-display text-lg font-small leading-[26px] text-ink">
+                <h3 className="h4 mb-3 font-display text-lg font-small leading-[26px] text-ink">
                   {item.title}
                 </h3>
                 <p className="m-0 font-sans text-sm font-small leading-6 text-muted">

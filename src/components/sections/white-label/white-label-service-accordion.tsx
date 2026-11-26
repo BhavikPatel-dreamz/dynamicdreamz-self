@@ -19,7 +19,7 @@ export function WhiteLabelServiceAccordion({
   services,
   flushEnd = false,
 }: WhiteLabelServiceAccordionProps) {
-  const [openIndex, setOpenIndex] = useState<number | null>(0);
+  const [openIndex, setOpenIndex] = useState<number | null>();
   const columns = [services.slice(0, 3), services.slice(3)];
 
   return (
