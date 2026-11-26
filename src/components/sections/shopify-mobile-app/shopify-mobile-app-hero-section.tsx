@@ -162,7 +162,7 @@ export function ShopifyMobileAppHeroSection({
             </div>
           </div>
 
-          <div className="right-col w-[48%] max-[1200px]:w-[50%] max-[1200px]:mx-auto max-[1200px]:mt-5 max-[992px]:hidden">
+          <div className="right-col w-[43.5%] max-[1200px]:w-[50%] max-[1200px]:mx-auto max-[1200px]:mt-5 max-[992px]:hidden">
             <PhoneAppSlider
               slides={content.slides}
               frameImage={frameImage}

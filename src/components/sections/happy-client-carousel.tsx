@@ -26,13 +26,13 @@ const baseSettings: Settings = {
   swipeToSlide: true,
   responsive: [
     {
-      breakpoint: 992,
+      breakpoint: 1199,
       settings: {
         slidesToShow: 2,
       },
     },
     {
-      breakpoint: 768,
+      breakpoint: 766,
       settings: {
         slidesToShow: 1,
       },
@@ -52,7 +52,7 @@ export function HappyClientCarousel({ items, ariaLabel, controls }: HappyClientC
   const isAtEnd = activeSlide >= finalSlide;
 
   useEffect(() => {
-    const mobileQuery = window.matchMedia("(max-width: 767px)");
+    const mobileQuery = window.matchMedia("(max-width: 766px)");
     const tabletQuery = window.matchMedia("(max-width: 1199px)");
     const updateVisibleSlides = () => {
       setVisibleSlides(mobileQuery.matches ? 1 : tabletQuery.matches ? 2 : 3);
@@ -98,7 +98,7 @@ export function HappyClientCarousel({ items, ariaLabel, controls }: HappyClientC
       </div>
 
       {controls ? (
-        <div aria-label={`${ariaLabel} controls`} className="mt-[30px] flex justify-center gap-3" role="group">
+        <div aria-label={`${ariaLabel} controls`} className="mt-2.5 flex justify-center gap-3" role="group">
           <button
             aria-label={controls.previousLabel}
             className={controlButtonClassName}
