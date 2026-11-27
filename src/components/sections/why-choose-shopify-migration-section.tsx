@@ -525,10 +525,10 @@ export function WhyChooseShopifyMigrationSection({
                         )}
                         key={stat.label}
                       >
-                        <span className="block font-montreal-bold text-[32px] font-semibold leading-[28.8px] text-ink max-[1400px]:text-[28px] max-[992px]:leading-[26px]">
+                        <span className="block mb-3 font-montreal-bold text-[32px] font-semibold leading-[28.8px] text-ink max-[1400px]:text-[28px] max-[992px]:leading-[26px]">
                           {stat.value}
                         </span>
-                        <p className="mt-1 font-sans text-xs font-regular uppercase leading-[150%] text-[#535353]">
+                        <p className="font-sans text-xs font-regular uppercase leading-[150%] text-[#535353]">
                           {stat.label}
                         </p>
                       </div>

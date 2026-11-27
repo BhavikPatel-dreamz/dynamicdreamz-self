@@ -206,7 +206,7 @@ export const extendableThemeCustomizationContent = {
     heading: "Why Choose Dynamic Dreamz",
     description:
       [
-      "At Dynamic Dreamz, we specialize in WordPress theme customization and web development ensuring your website is both visually appealing and functional.",
+      "At Dynamic Dreamz, we specialize in WordPress theme customization and web development, ensuring your website is both visually appealing and functional.",
     ],
     items: [
       {

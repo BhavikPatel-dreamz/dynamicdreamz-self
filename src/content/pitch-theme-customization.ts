@@ -182,42 +182,36 @@ export const pitchThemeCustomizationContent = {
     items: [
       {
             name: "Atolea Jewelry",
-            category: "SHOPIFY",
             href: "https://atoleajewelry.com/",
             image: "/assets/our-work/projects/atolea-jewelry.webp",
             imageAlt: "Atolea Jewelry Waterproof Shopify Storefront by Dynamic Dreamz"
       },
       {
             name: "Bombay Shirt Company",
-            category: "SHOPIFY",
             href: "https://www.bombayshirts.com/",
             image: "/assets/fashion/portfolio/bombay-shirt-company-fashion.webp",
             imageAlt: "Bombay Shirt Company Custom Shopify Storefront by Dynamic Dreamz"
       },
       {
             name: "Sims Direct",
-            category: "SHOPIFY",
             href: "https://simsdirect.com.au/",
             image: "/assets/our-work/projects/sims-direct.webp",
             imageAlt: "SimsDirect Travel SIM Cards Shopify Storefront built by Dynamic Dreamz"
       },
       {
             name: "Bonbon Lingerie",
-            category: "SHOPIFY",
             href: "https://bonbonlingerie.com/",
             image: "/assets/our-work/projects/bonbon-lingerie.webp",
             imageAlt: "Bonbon Lingerie Luxury Shopify Storefront built by Dynamic Dreamz"
       },
       {
             name: "Pagerie",
-            category: "SHOPIFY",
             href: "https://www.pagerie.com/",
             image: "/assets/pet-industry/portfolio/pagerie-dog-accessories.webp",
             imageAlt: "Pagerie Luxury Pet Accessories Shopify Storefront by Dynamic Dreamz"
       },
       {
             name: "Weardiop",
-            category: "SHOPIFY",
             href: "https://weardiop.com/",
             image: "/assets/our-work/projects/weardiop.webp",
             imageAlt: "Weardiop Shopify Storefront built by Dynamic Dreamz"
@@ -248,7 +242,7 @@ export const pitchThemeCustomizationContent = {
     },
     {
         question: "What if I need extra pages like About or Blog?",
-        answer: "We can create and design any additional pages you need, matching the theme's style and your brand's tone."
+        answer: "We can create and design any additional pages you need, matching the theme’s style and your brand’s tone."
     }
 ] as const,
 } as const;

@@ -1,4 +1,5 @@
 import { cache } from "react";
+import { unstable_cache } from "next/cache";
 import { getPayload } from "payload";
 import config from "@payload-config";
 import {
@@ -15,9 +16,10 @@ import type {
   Media,
   Testimonial,
 } from "@/types/payload-types";
-import type {
-  BlogArchiveArticle,
-  BlogArchiveCategoryValue,
+import {
+  filterBlogArchiveArticlesList,
+  type BlogArchiveArticle,
+  type BlogArchiveCategoryValue,
 } from "@/content/blogs";
 import type {
   BlogPostDetail,
@@ -31,20 +33,36 @@ import type { CaseStudyDetail, CaseStudyItem } from "@/types/case-study";
 import type { HappyClientTestimonialItem } from "@/components/sections/happy-client-card";
 import caseStudiesItemsJson from "@/content/case-studies-items.json";
 
-export const getPayloadNavigation = cache(async function getPayloadNavigation() {
-  try {
+const getCachedPayloadNavigation = unstable_cache(
+  async () => {
     const payload = await getPayload({ config });
     return await payload.findGlobal({ slug: "navigation" });
+  },
+  ["payload-navigation"],
+  { tags: ["navigation"], revalidate: 3600 },
+);
+
+export const getPayloadNavigation = cache(async function getPayloadNavigation() {
+  try {
+    return await getCachedPayloadNavigation();
   } catch (err) {
     console.warn("Payload getPayloadNavigation warning:", err);
     return null;
   }
 });
 
-export const getPayloadSiteSettings = cache(async function getPayloadSiteSettings() {
-  try {
+const getCachedPayloadSiteSettings = unstable_cache(
+  async () => {
     const payload = await getPayload({ config });
     return await payload.findGlobal({ slug: "site-settings" });
+  },
+  ["payload-site-settings"],
+  { tags: ["site-settings"], revalidate: 3600 },
+);
+
+export const getPayloadSiteSettings = cache(async function getPayloadSiteSettings() {
+  try {
+    return await getCachedPayloadSiteSettings();
   } catch (err) {
     console.warn("Payload getPayloadSiteSettings warning:", err);
     return null;
@@ -156,20 +174,69 @@ export function adaptPayloadFooterBottomLinks(
   }));
 }
 
-export async function getPayloadPosts(limit = 200) {
-  try {
+const postArchiveSelect = {
+  title: true,
+  slug: true,
+  date: true,
+  displayDate: true,
+  excerpt: true,
+  featuredImage: true,
+  categories: true,
+} as const;
+
+const getCachedPayloadPosts = unstable_cache(
+  async (limit: number) => {
     const payload = await getPayload({ config });
     const res = await payload.find({
       collection: "posts",
       limit,
       sort: "-date",
+      depth: 1,
+      select: postArchiveSelect,
     });
     return res.docs;
+  },
+  ["payload-posts-summary"],
+  { tags: ["posts"], revalidate: 3600 },
+);
+
+export async function getPayloadPosts(limit = 200) {
+  try {
+    return await getCachedPayloadPosts(limit);
   } catch (err) {
     console.warn("Payload getPayloadPosts warning:", err);
     return [];
   }
 }
+
+const getCachedPayloadBlogArchiveArticles = unstable_cache(
+  async (limit: number): Promise<BlogArchiveArticle[]> => {
+    const payload = await getPayload({ config });
+    const res = await payload.find({
+      collection: "posts",
+      limit,
+      sort: "-date",
+      depth: 1,
+      select: postArchiveSelect,
+    });
+    return res.docs.map((doc) => adaptPayloadPostToArchive(doc as Post));
+  },
+  ["payload-blog-archive-articles"],
+  { tags: ["posts"], revalidate: 3600 },
+);
+
+export const getPayloadBlogArchiveArticles = cache(
+  async function getPayloadBlogArchiveArticles(
+    limit = 200,
+  ): Promise<BlogArchiveArticle[]> {
+    try {
+      return await getCachedPayloadBlogArchiveArticles(limit);
+    } catch (err) {
+      console.warn("Payload getPayloadBlogArchiveArticles warning:", err);
+      return [];
+    }
+  },
+);
 
 export async function getPayloadPostBySlug(
   slug: string,
@@ -558,18 +625,7 @@ export function filterPayloadArchivePosts(
   query = "",
   category?: BlogArchiveCategoryValue,
 ): BlogArchiveArticle[] {
-  const normalizedQuery = query.trim().toLocaleLowerCase("en-US");
-
-  return posts.filter((post) => {
-    const matchesCategory = category
-      ? post.category.toLocaleLowerCase("en-US") === category
-      : post.category !== "Faqs";
-    const matchesQuery = normalizedQuery
-      ? post.title.toLocaleLowerCase("en-US").includes(normalizedQuery)
-      : true;
-
-    return matchesCategory && matchesQuery;
-  });
+  return filterBlogArchiveArticlesList(posts, query, category);
 }
 
 export function adaptPayloadPostToBlogPostDetail(

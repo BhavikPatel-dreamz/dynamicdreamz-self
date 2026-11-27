@@ -204,42 +204,36 @@ export const savorThemeCustomizationContent = {
     items: [
       {
         name: "Atolea Jewelry",
-        category: "SHOPIFY",
         href: "https://atoleajewelry.com/",
         image: "/assets/our-work/projects/atolea-jewelry.webp",
         imageAlt: "Atolea Jewelry Waterproof Shopify Storefront by Dynamic Dreamz",
       },
       {
         name: "Bombay Shirt Company",
-        category: "SHOPIFY",
         href: "https://www.bombayshirts.com/",
         image: "/assets/fashion/portfolio/bombay-shirt-company-fashion.webp",
         imageAlt: "Bombay Shirt Company Custom Shopify Storefront by Dynamic Dreamz",
       },
       {
         name: "Sims Direct",
-        category: "SHOPIFY",
         href: "https://simsdirect.com.au/",
         image: "/assets/our-work/projects/sims-direct.webp",
         imageAlt: "SimsDirect Travel SIM Cards Shopify Storefront built by Dynamic Dreamz",
       },
       {
         name: "Bonbon Lingerie",
-        category: "SHOPIFY",
         href: "https://bonbonlingerie.com/",
         image: "/assets/our-work/projects/bonbon-lingerie.webp",
         imageAlt: "Bonbon Lingerie Luxury Shopify Storefront built by Dynamic Dreamz",
       },
       {
         name: "Pagerie",
-        category: "SHOPIFY",
         href: "https://www.pagerie.com/",
         image: "/assets/pet-industry/portfolio/pagerie-dog-accessories.webp",
         imageAlt: "Pagerie Luxury Pet Accessories Shopify Storefront by Dynamic Dreamz",
       },
       {
         name: "Weardiop",
-        category: "SHOPIFY",
         href: "https://weardiop.com/",
         image: "/assets/our-work/projects/weardiop.webp",
         imageAlt: "Weardiop Shopify Storefront built by Dynamic Dreamz",
@@ -256,7 +250,7 @@ export const savorThemeCustomizationContent = {
     {
       question: "Is the Savor theme good for a small restaurant business?",
       answer:
-        "Absolutely! The Savor theme is developed for food and beverage brands of all sizes. It's simple to use and makes it easier to showcase your menu and narrative.",
+        "Absolutely! The Savor theme is developed for food and beverage brands of all sizes. It’s simple to use and makes it easier to showcase your menu and narrative.",
     },
     {
       question: "Will my store be mobile-friendly after customization?",

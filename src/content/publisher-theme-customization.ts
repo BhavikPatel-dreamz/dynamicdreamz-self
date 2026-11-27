@@ -182,14 +182,12 @@ export const publisherThemeCustomizationContent = {
     items: [
       {
         name: "Tap Fit",
-        category: "SHOPIFY",
         href: "https://www.shoptapfit.com/",
         image: "/assets/publisher-theme-customization/portfolio/tap-fit.webp",
         imageAlt: "Tap Fit Tap Dance Fitness Shopify Storefront by Dynamic Dreamz",
       },
       {
         name: "Ruby Olive",
-        category: "SHOPIFY",
         href: "https://rubyolive.com/",
         image: "/assets/publisher-theme-customization/portfolio/ruby-olive.webp",
         imageAlt: "Ruby Olive Colorful Jewelry Shopify Storefront by Dynamic Dreamz",
@@ -200,7 +198,7 @@ export const publisherThemeCustomizationContent = {
   faqs: [
     {
         question: "What is Publisher Theme Customization?",
-        answer: "Publisher theme customization involves modifying the default theme design and functionalities of the Shopify Publisher theme to suit your brand's requirements. It includes a modification of layout, color schemes, typography, and integration of custom features to enhance user experience and boost conversions."
+        answer: "Publisher theme customization involves modifying the default theme design and functionalities of the Shopify Publisher theme to suit your brand’s requirements. It includes a modification of layout, color schemes, typography, and integration of custom features to enhance user experience and boost conversions."
     },
     {
         question: "How long does it take to customize the Publisher Theme?",
@@ -216,11 +214,11 @@ export const publisherThemeCustomizationContent = {
     },
     {
         question: "Will customization affect my store's performance?",
-        answer: "No, it's not possible that after the customization, your website performance will go down. We make sure that every customization is speed- and performance-oriented. To deliver a better user experience, our developers use best practices to keep fast loading speed and straightforward navigation."
+        answer: "No, it’s not possible that after the customization, your website performance will go down. We make sure that every customization is speed- and performance-oriented. To deliver a better user experience, our developers use best practices to keep fast loading speed and straightforward navigation."
     },
     {
         question: "How secure will my store be after customization?",
-        answer: "We especially give attention to security in every customization project. We follow Shopify's coding standards and best practices for all changes, ensuring a secure and trustworthy shopping environment for your customers. Besides, we implement safety features to protect your store from vulnerabilities and potential threats."
+        answer: "We especially give attention to security in every customization project. We follow Shopify’s coding standards and best practices for all changes, ensuring a secure and trustworthy shopping environment for your customers. Besides, we implement safety features to protect your store from vulnerabilities and potential threats."
     }
 ] as const,
 } as const;

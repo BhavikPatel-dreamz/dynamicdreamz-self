@@ -109,7 +109,7 @@ export const newsbloggerThemeCustomizationContent = {
     ] as const,
   },
   services: {
-    eyebrow: "Services",
+    eyebrow: "Our Services",
     heading: ["Our WordPress Theme", "Customization Services"],
     description:
       "We provide tailored NewsBlogger theme customization services to suit your unique blogging or news publishing goals. Our services:",

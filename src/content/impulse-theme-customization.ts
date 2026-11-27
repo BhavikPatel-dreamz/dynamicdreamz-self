@@ -203,42 +203,36 @@ export const impulseThemeCustomizationContent = {
     items: [
       {
         name: "AdHOC Atelier",
-        category: "SHOPIFY",
         href: "https://adhocatelier.it/",
         image: "/assets/hire-shopify-developers/portfolio/adhoc-atler.webp",
         imageAlt: "AdHOC Atelier Shopify Storefront built by Dynamic Dreamz",
       },
       {
         name: "Lace Laboratory",
-        category: "SHOPIFY",
         href: "https://lacelaboratory.com/",
         image: "/assets/our-work/projects/lace-laboratory.webp",
         imageAlt: "Lace Laboratory Premium Lingerie Shopify Storefront by Dynamic Dreamz",
       },
       {
         name: "Purra Performance",
-        category: "SHOPIFY",
         href: "https://purraperformance.com/",
         image: "/assets/our-work/projects/purra-performance.webp",
         imageAlt: "Purra Performance Antimicrobial Apparel Shopify Storefront by Dynamic Dreamz",
       },
       {
         name: "Lash Affair",
-        category: "SHOPIFY",
         href: "https://lashaffair.com/",
         image: "/assets/our-work/projects/lash-affair.webp",
         imageAlt: "Lash Affair Eyelash Extensions Shopify Storefront by Dynamic Dreamz",
       },
       {
         name: "Iridescent Sea",
-        category: "SHOPIFY",
         href: "https://iridescentsea.com.au/",
         image: "/assets/our-work/projects/iridescent-sea.webp",
         imageAlt: "Iridescent Sea Luxury Beachwear Shopify Storefront by Dynamic Dreamz",
       },
       {
         name: "Boutique Jacques",
-        category: "SHOPIFY",
         href: "https://www.boutiquejacques.com/",
         image: "/assets/our-work/projects/boutique-jacques.webp",
         imageAlt: "Boutique Jacques European Menswear Shopify Storefront by Dynamic Dreamz",
@@ -250,7 +244,7 @@ export const impulseThemeCustomizationContent = {
     {
       question: "How can Impulse theme customization benefit my store?",
       answer:
-        "Theme customization allows you to change the theme's design and features per your brand's unique requirements, improving user experience and increasing conversions.",
+        "Theme customization allows you to change the theme’s design and features per your brand’s unique requirements, improving user experience and increasing conversions.",
     },
     {
       question:
@@ -261,7 +255,7 @@ export const impulseThemeCustomizationContent = {
     {
       question: "Is the Impulse theme customization SEO friendly?",
       answer:
-        "Absolutely! Our customization service ensures that all changes do not harm SEO but improve it and help you improve your store's visibility online.",
+        "Absolutely! Our customization service ensures that all changes do not harm SEO but improve it and help you improve your store’s visibility online.",
     },
     {
       question: "How long does it take to customize the Impulse theme?",

@@ -23,9 +23,20 @@ type BlogCardProps = {
   item: BlogCardItem;
   variant: "home" | "resources" | "archive";
   isLast?: boolean;
+  onCategoryClick?: (
+    categoryHref: string,
+    event: React.MouseEvent<HTMLAnchorElement>,
+  ) => void;
+  prefetchCategory?: boolean;
 };
 
-export function BlogCard({ item, variant, isLast = false }: BlogCardProps) {
+export function BlogCard({
+  item,
+  variant,
+  isLast = false,
+  onCategoryClick,
+  prefetchCategory,
+}: BlogCardProps) {
   const category = item.category ?? "Shopify";
   const categoryHref = item.categoryHref ?? "/blogs/?category=shopify";
 
@@ -69,7 +80,16 @@ export function BlogCard({ item, variant, isLast = false }: BlogCardProps) {
           </Link>
         </div>
         <div className="-mx-1 mb-[9px] flex flex-wrap items-center">
-          <Link className="inline-flex" href={categoryHref}>
+          <Link
+            className="inline-flex"
+            href={categoryHref}
+            prefetch={prefetchCategory}
+            onClick={
+              onCategoryClick
+                ? (event) => onCategoryClick(categoryHref, event)
+                : undefined
+            }
+          >
             <span
               className="mx-1 mb-2 flex items-center rounded-[50px] border border-[rgba(40,40,40,0.15)] px-[10px] py-2 text-center text-xs leading-[72%] font-medium text-muted uppercase transition-colors duration-300 hover:text-brand-red focus-visible:text-brand-red max-[768px]:px-[7.5px] max-[768px]:py-[3.5px] max-[768px]:text-[10px] max-[768px]:leading-[1.48] max-[768px]:tracking-[0.2px]"
               data-blogs-meta

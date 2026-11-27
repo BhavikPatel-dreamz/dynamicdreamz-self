@@ -199,14 +199,12 @@ export const expanseThemeCustomizationContent = {
     items: [
       {
         name: "The Whisky Stock",
-        category: "SHOPIFY",
         href: "https://thewhiskystock.com/",
         image: "/assets/our-work/projects/the-whisky-stock.webp",
         imageAlt: "The Whisky Stock Single Malt Whisky Shopify Storefront by Dynamic Dreamz",
       },
       {
         name: "Podrum",
-        category: "SHOPIFY",
         href: "https://podrum.com.au/",
         image: "/assets/our-work/projects/podrum.webp",
         imageAlt: "Podrum Premium Wine & Spirits Shopify Storefront by Dynamic Dreamz",

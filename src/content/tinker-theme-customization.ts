@@ -5,7 +5,7 @@ export const tinkerThemeCustomizationContent = {
     eyebrows: ["Shopify Platinum Partner", "Theme Customization"] as const,
     title: "Tinker Theme Customization Service",
     description:
-      "Brands that are creative and playful can be easily displayed with the Tinker theme. Choose Tinker Theme Customization Service by Dynamic Dreamz, their Shopify experts help you customize the Tinker theme to fit your business requirements. From advanced feature integration to layout modification, we create a quick and responsive Shopify store that is designed to transform visitors into loyal customers.",
+      "Brands that are creative and playful can be easily displayed with the Tinker theme. Choose Tinker Theme Customization Service by **Dynamic Dreamz**, their Shopify experts help you customize the Tinker theme to fit your business requirements. From advanced feature integration to layout modification, we create a quick and responsive Shopify store that is designed to transform visitors into loyal customers.",
     ctaText: "Request a Quote",
     ctaHref: "/request-quote/",
     ctaAriaLabel: "Request a Quote",
@@ -182,42 +182,36 @@ export const tinkerThemeCustomizationContent = {
     items: [
       {
             name: "Atolea Jewelry",
-            category: "SHOPIFY",
             href: "https://atoleajewelry.com/",
             image: "/assets/our-work/projects/atolea-jewelry.webp",
             imageAlt: "Atolea Jewelry Waterproof Shopify Storefront by Dynamic Dreamz"
       },
       {
             name: "Bombay Shirt Company",
-            category: "SHOPIFY",
             href: "https://www.bombayshirts.com/",
             image: "/assets/fashion/portfolio/bombay-shirt-company-fashion.webp",
             imageAlt: "Bombay Shirt Company Custom Shopify Storefront by Dynamic Dreamz"
       },
       {
             name: "Sims Direct",
-            category: "SHOPIFY",
             href: "https://simsdirect.com.au/",
             image: "/assets/our-work/projects/sims-direct.webp",
             imageAlt: "SimsDirect Travel SIM Cards Shopify Storefront built by Dynamic Dreamz"
       },
       {
             name: "Bonbon Lingerie",
-            category: "SHOPIFY",
             href: "https://bonbonlingerie.com/",
             image: "/assets/our-work/projects/bonbon-lingerie.webp",
             imageAlt: "Bonbon Lingerie Luxury Shopify Storefront built by Dynamic Dreamz"
       },
       {
             name: "Pagerie",
-            category: "SHOPIFY",
             href: "https://www.pagerie.com/",
             image: "/assets/pet-industry/portfolio/pagerie-dog-accessories.webp",
             imageAlt: "Pagerie Luxury Pet Accessories Shopify Storefront by Dynamic Dreamz"
       },
       {
             name: "Weardiop",
-            category: "SHOPIFY",
             href: "https://weardiop.com/",
             image: "/assets/our-work/projects/weardiop.webp",
             imageAlt: "Weardiop Shopify Storefront built by Dynamic Dreamz"
@@ -236,7 +230,7 @@ export const tinkerThemeCustomizationContent = {
     },
     {
         question: "Can you match my brand colors and fonts?",
-        answer: "Yes. We can change the theme's layout, color scheme, and typography to represent your brand identity exactly."
+        answer: "Yes. We can change the theme’s layout, color scheme, and typography to represent your brand identity exactly."
     },
     {
         question: "How long does customization take?",

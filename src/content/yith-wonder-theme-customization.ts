@@ -115,7 +115,7 @@ export const yithWonderThemeCustomizationContent = {
     ] as const,
   },
   services: {
-    eyebrow: "Services",
+    eyebrow: "Our Services",
     heading: "Our WordPress Theme Customization Services",
     description:
       "We offer professional YITH Wonder theme customization services to create a visually attractive and high-performance WordPress website. Check our services:",

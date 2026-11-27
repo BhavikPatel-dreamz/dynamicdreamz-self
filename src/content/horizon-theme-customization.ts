@@ -203,7 +203,7 @@ export const horizonThemeCustomizationContent = {
         imageAlt: "Bonbon Lingerie Luxury Shopify Storefront built by Dynamic Dreamz",
       },
       {
-        name: "Sims Direct",
+        name: "SimsDirect / Simify",
         category: "Shopify / Shopify Plus",
         href: "https://simsdirect.com.au/",
         image: "/assets/our-work/projects/sims-direct.webp",

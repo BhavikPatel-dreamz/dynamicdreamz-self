@@ -642,7 +642,7 @@ export const shopifyThemeCustomizationPricing = {
       description:
         "For brands or agencies with recurring Shopify theme, feature and storefront development requirements.",
       ctaLabel: "Discuss Dedicated Capacity",
-      ctaHref: siteConfig.quotePath,
+      ctaHref: "/book-a-discovery-call/",
     },
   ] as const,
 };
@@ -651,7 +651,7 @@ export const shopifyThemeCustomizationTestimonials = {
   eyebrow: "Client Stories",
   heading: "Don't Just Take Our Word For It",
   description:
-    "Our clients' success speaks for itself. Read testimonials from satisfied clients who have benefited from our Shopify maintenance services and see how we can help you achieve similar results.",
+    "Our clients' success speaks for itself. Read testimonials from satisfied clients who have benefited from our Shopify theme customization services and see how we can help you achieve similar results.",
   items: shopifyPlusAgencyTestimonials.items,
 };
 

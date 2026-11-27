@@ -90,13 +90,14 @@ export function normalizeBlogArchiveCategory(value: string): BlogArchiveCategory
     : undefined;
 }
 
-export function filterBlogArchiveArticles(
+export function filterBlogArchiveArticlesList(
+  articles: readonly BlogArchiveArticle[],
   query = "",
   category?: BlogArchiveCategoryValue,
-) {
+): BlogArchiveArticle[] {
   const normalizedQuery = query.trim().toLocaleLowerCase("en-US");
 
-  return blogArchiveArticles.filter((article) => {
+  return articles.filter((article) => {
     const matchesCategory = category
       ? article.category.toLocaleLowerCase("en-US") === category
       : article.category !== "Faqs";
@@ -106,6 +107,13 @@ export function filterBlogArchiveArticles(
 
     return matchesCategory && matchesQuery;
   });
+}
+
+export function filterBlogArchiveArticles(
+  query = "",
+  category?: BlogArchiveCategoryValue,
+) {
+  return filterBlogArchiveArticlesList(blogArchiveArticles, query, category);
 }
 
 export function getBlogArchivePage(page: number) {
@@ -119,6 +127,18 @@ export type BlogArchivePaginationOptions = {
   query?: string;
 };
 
+export function buildBlogArchiveHref(
+  options?: BlogArchivePaginationOptions & { page?: number },
+): string {
+  const params = new URLSearchParams();
+  const trimmedQuery = options?.query?.trim();
+  if (trimmedQuery) params.set("s", trimmedQuery);
+  if (options?.category) params.set("category", options.category);
+  if (options?.page && options.page > 1) params.set("page", String(options.page));
+  const qs = params.toString();
+  return qs ? `/blogs/?${qs}` : "/blogs/";
+}
+
 export function getBlogArchivePagination(
   currentPage: number,
   totalPages: number = BLOGS_TOTAL_PAGES,
@@ -127,14 +147,12 @@ export function getBlogArchivePagination(
   const safePage = Math.min(Math.max(Math.trunc(currentPage), 1), totalPages);
   const items: BlogArchivePaginationItem[] = [];
 
-  const pageHref = (page: number) => {
-    const params = new URLSearchParams();
-    if (options?.query) params.set("s", options.query);
-    if (options?.category) params.set("category", options.category);
-    if (page > 1) params.set("page", String(page));
-    const qs = params.toString();
-    return qs ? `/blogs/?${qs}` : "/blogs/";
-  };
+  const pageHref = (page: number) =>
+    buildBlogArchiveHref({
+      category: options?.category,
+      query: options?.query,
+      page,
+    });
 
   if (safePage > 1) {
     items.push({ label: "Previous page", href: pageHref(safePage - 1), previous: true });

@@ -369,7 +369,7 @@ export const wordPressThemeCustomizationContent = {
         name: "YITH Wonder Theme",
         image: "/assets/wordpress-theme-customization/themes/yith-wonder.webp",
         alt: "YITH Wonder Theme",
-        href: "/request-quote/",
+        href: "/yith-wonder-theme-customization/",
         ctaText: "learn more",
       },
       {
@@ -390,7 +390,7 @@ export const wordPressThemeCustomizationContent = {
         name: "Inspiro Theme",
         image: "/assets/wordpress-theme-customization/themes/inspiro.webp",
         alt: "Inspiro Theme",
-        href: "/request-quote/",
+        href: "/inspiro-theme-customization/",
         ctaText: "learn more",
       },
       {

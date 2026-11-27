@@ -2,16 +2,13 @@ import type { Metadata } from "next";
 import { BlogsPage } from "@/components/blog/BlogHubFeed";
 import {
   BLOGS_PAGE_SIZE,
+  blogArchiveArticles,
   blogsMetadataCopy,
-  filterBlogArchiveArticles,
+  filterBlogArchiveArticlesList,
   normalizeBlogArchiveCategory,
 } from "@/content/blogs";
 import { pageMetadata } from "@/data/seo";
-import {
-  adaptPayloadPostToArchive,
-  filterPayloadArchivePosts,
-  getPayloadPosts,
-} from "@/lib/payload";
+import { getPayloadBlogArchiveArticles } from "@/lib/payload";
 import { createBlogsPageSchema, serializeJsonLd } from "@/lib/schema";
 import { absoluteUrl } from "@/lib/seo";
 
@@ -73,15 +70,14 @@ export default async function BlogsRoute({ searchParams }: BlogsRouteProps) {
   const requestedCategory = firstValue(params.category).toLowerCase();
   const activeCategory = normalizeBlogArchiveCategory(requestedCategory);
 
-  const payloadPosts = await getPayloadPosts();
-  const filteredArticles =
-    payloadPosts && payloadPosts.length > 0
-      ? filterPayloadArchivePosts(
-          payloadPosts.map(adaptPayloadPostToArchive),
-          query,
-          activeCategory,
-        )
-      : filterBlogArchiveArticles(query, activeCategory);
+  const payloadArticles = await getPayloadBlogArchiveArticles();
+  const allArticles =
+    payloadArticles.length > 0 ? payloadArticles : blogArchiveArticles;
+  const filteredArticles = filterBlogArchiveArticlesList(
+    allArticles,
+    query,
+    activeCategory,
+  );
 
   const totalPages = Math.max(1, Math.ceil(filteredArticles.length / BLOGS_PAGE_SIZE));
   const requestedPage = Number(firstValue(params.page));
@@ -101,11 +97,10 @@ export default async function BlogsRoute({ searchParams }: BlogsRouteProps) {
         }}
       />
       <BlogsPage
-        articles={articles}
+        allArticles={allArticles}
         query={query}
         activeCategory={activeCategory}
         currentPage={currentPage}
-        totalPages={totalPages}
       />
     </main>
   );

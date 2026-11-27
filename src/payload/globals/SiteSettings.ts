@@ -1,5 +1,5 @@
 import type { GlobalConfig } from "payload";
-import { safeRevalidatePath } from "@/lib/revalidate";
+import { safeRevalidatePath, safeRevalidateTag } from "@/lib/revalidate";
 
 export const SiteSettings: GlobalConfig = {
   slug: "site-settings",
@@ -12,6 +12,7 @@ export const SiteSettings: GlobalConfig = {
       () => {
         safeRevalidatePath("/", "layout");
         safeRevalidatePath("/");
+        safeRevalidateTag("site-settings");
       },
     ],
   },

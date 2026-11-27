@@ -5,7 +5,7 @@ export const heritageThemeCustomizationContent = {
     eyebrows: ["Shopify Platinum Partner", "Theme Customization"] as const,
     title: "Heritage Theme Customization Service",
     description:
-      "Want a clean, traditional store design that represents your brand story beautifully? You can build a quick, useful, and mobile-friendly Shopify store that catches the essence of your business with our **Heritage theme customization service.** Whether you're launching or scaling, we'll customize the Heritage theme to suit your product type and audience perfectly—without compromising performance or usability.",
+      "Want a clean, traditional store design that represents your brand story beautifully? You can build a quick, useful, and mobile-friendly Shopify store that catches the essence of your business with our **Heritage theme customization service**. Whether you’re launching or scaling, we’ll customize the Heritage theme to suit your product type and audience perfectly—without compromising performance or usability.",
     ctaText: "Request a Quote",
     ctaHref: "/request-quote/",
     ctaAriaLabel: "Request a Quote",
@@ -182,42 +182,36 @@ export const heritageThemeCustomizationContent = {
     items: [
       {
             name: "Atolea Jewelry",
-            category: "SHOPIFY",
             href: "https://atoleajewelry.com/",
             image: "/assets/our-work/projects/atolea-jewelry.webp",
             imageAlt: "Atolea Jewelry Waterproof Shopify Storefront by Dynamic Dreamz"
       },
       {
             name: "Bombay Shirt Company",
-            category: "SHOPIFY",
             href: "https://www.bombayshirts.com/",
             image: "/assets/fashion/portfolio/bombay-shirt-company-fashion.webp",
             imageAlt: "Bombay Shirt Company Custom Shopify Storefront by Dynamic Dreamz"
       },
       {
             name: "Sims Direct",
-            category: "SHOPIFY",
             href: "https://simsdirect.com.au/",
             image: "/assets/our-work/projects/sims-direct.webp",
             imageAlt: "SimsDirect Travel SIM Cards Shopify Storefront built by Dynamic Dreamz"
       },
       {
             name: "Bonbon Lingerie",
-            category: "SHOPIFY",
             href: "https://bonbonlingerie.com/",
             image: "/assets/our-work/projects/bonbon-lingerie.webp",
             imageAlt: "Bonbon Lingerie Luxury Shopify Storefront built by Dynamic Dreamz"
       },
       {
             name: "Pagerie",
-            category: "SHOPIFY",
             href: "https://www.pagerie.com/",
             image: "/assets/pet-industry/portfolio/pagerie-dog-accessories.webp",
             imageAlt: "Pagerie Luxury Pet Accessories Shopify Storefront by Dynamic Dreamz"
       },
       {
             name: "Weardiop",
-            category: "SHOPIFY",
             href: "https://weardiop.com/",
             image: "/assets/our-work/projects/weardiop.webp",
             imageAlt: "Weardiop Shopify Storefront built by Dynamic Dreamz"
@@ -228,7 +222,7 @@ export const heritageThemeCustomizationContent = {
   faqs: [
     {
         question: "Can you customize the Heritage theme for a specific industry like fashion or food?",
-        answer: "Yes, we customize the Heritage theme for any industry. Whether you're in fashion, food, or home decor, we adjust layout, visuals, and features to suit your niche."
+        answer: "Yes, we customize the Heritage theme for any industry. Whether you’re in fashion, food, or home decor, we adjust layout, visuals, and features to suit your niche."
     },
     {
         question: "How long does it take to customize the Heritage theme?",

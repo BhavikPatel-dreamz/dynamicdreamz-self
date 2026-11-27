@@ -1,6 +1,6 @@
 import type { CollectionConfig } from "payload";
 import { previewDraftPath } from "@/lib/preview-url";
-import { safeRevalidatePath } from "@/lib/revalidate";
+import { safeRevalidatePath, safeRevalidateTag } from "@/lib/revalidate";
 import { blogContentBlocks } from "@/payload/blocks/blog";
 
 export const Posts: CollectionConfig = {
@@ -37,6 +37,7 @@ export const Posts: CollectionConfig = {
         }
         safeRevalidatePath("/blogs/");
         safeRevalidatePath("/");
+        safeRevalidateTag("posts");
       },
     ],
     afterDelete: [
@@ -46,13 +47,14 @@ export const Posts: CollectionConfig = {
         }
         safeRevalidatePath("/blogs/");
         safeRevalidatePath("/");
+        safeRevalidateTag("posts");
       },
     ],
   },
   fields: [
     { name: "title", type: "text", required: true },
     { name: "slug", type: "text", required: true, unique: true },
-    { name: "date", type: "date", required: true },
+    { name: "date", type: "date", required: true, index: true },
     { name: "displayDate", type: "text" },
     { name: "featuredImage", type: "upload", relationTo: "media" },
     { name: "excerpt", type: "textarea", required: true },

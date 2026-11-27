@@ -204,42 +204,36 @@ export const vesselThemeCustomizationContent = {
     items: [
       {
         name: "Atolea Jewelry",
-        category: "SHOPIFY",
         href: "https://atoleajewelry.com/",
         image: "/assets/our-work/projects/atolea-jewelry.webp",
         imageAlt: "Atolea Jewelry Waterproof Shopify Storefront by Dynamic Dreamz",
       },
       {
         name: "Bombay Shirt Company",
-        category: "SHOPIFY",
         href: "https://www.bombayshirts.com/",
         image: "/assets/fashion/portfolio/bombay-shirt-company-fashion.webp",
         imageAlt: "Bombay Shirt Company Custom Shopify Storefront by Dynamic Dreamz",
       },
       {
         name: "Sims Direct",
-        category: "SHOPIFY",
         href: "https://simsdirect.com.au/",
         image: "/assets/our-work/projects/sims-direct.webp",
         imageAlt: "SimsDirect Travel SIM Cards Shopify Storefront built by Dynamic Dreamz",
       },
       {
         name: "Bonbon Lingerie",
-        category: "SHOPIFY",
         href: "https://bonbonlingerie.com/",
         image: "/assets/our-work/projects/bonbon-lingerie.webp",
         imageAlt: "Bonbon Lingerie Luxury Shopify Storefront built by Dynamic Dreamz",
       },
       {
         name: "Pagerie",
-        category: "SHOPIFY",
         href: "https://www.pagerie.com/",
         image: "/assets/pet-industry/portfolio/pagerie-dog-accessories.webp",
         imageAlt: "Pagerie Luxury Pet Accessories Shopify Storefront by Dynamic Dreamz",
       },
       {
         name: "Weardiop",
-        category: "SHOPIFY",
         href: "https://weardiop.com/",
         image: "/assets/our-work/projects/weardiop.webp",
         imageAlt: "Weardiop Shopify Storefront built by Dynamic Dreamz",
@@ -252,7 +246,7 @@ export const vesselThemeCustomizationContent = {
       question:
         "Can I modify the design of the Vessel theme to match my brand?",
       answer:
-        "Yes, the Vessel theme provides flexible customization options, allowing you to tailor the layout to align with your brand's identity. Choose our Vessel Theme Customization Service.",
+        "Yes, the Vessel theme provides flexible customization options, allowing you to tailor the layout to align with your brand’s identity. Choose our Vessel Theme Customization Service.",
     },
     {
       question: "Is the Vessel theme suitable for mobile devices?",
@@ -262,12 +256,12 @@ export const vesselThemeCustomizationContent = {
     {
       question: "Can I integrate third-party apps with the Vessel theme?",
       answer:
-        "Yes, the Vessel theme supports integration with various third-party apps to improve your store's functionality.",
+        "Yes, the Vessel theme supports integration with various third-party apps to improve your store’s functionality.",
     },
     {
       question: "How long does it take to customize the Vessel theme?",
       answer:
-        "The customization duration relies on the complexity of your requirements and scope of work. Normally, if your customization is small, then it takes a few days, but if it's more advanced and complex, then it takes weeks.",
+        "The customization duration relies on the complexity of your requirements and scope of work. Normally, if your customization is small, then it takes a few days, but if it’s more advanced and complex, then it takes weeks.",
     },
     {
       question: "Can I get support once the customization is finished?",
@@ -278,7 +272,7 @@ export const vesselThemeCustomizationContent = {
       question:
         "Will customizing the Vessel theme affect my store's performance?",
       answer:
-        "No, our customization process is designed to enhance your store's performance without compromising speed or functionality.",
+        "No, our customization process is designed to enhance your store’s performance without compromising speed or functionality.",
     },
   ] as const,
 } as const;

@@ -270,7 +270,7 @@ export const neveThemeCustomizationContent = {
     {
       question: "What is the cost of Neve theme customization?",
       answer:
-        "The cost of the Neve theme customization depends on what type of changes you want, the complexity of the changes, and the expertise of the WordPress expert who will work on your project. If you want a proper cost estimation, you can contact us with your detailed requirements.",
+        "The cost of the Neve theme customization depends on **what type of changes you want, the complexity of the changes, and the expertise of the WordPress expert** who will work on your project. If you want a proper cost estimation, you can **contact us** with your detailed requirements.",
     },
     {
       question: "What can be customized in the Neve theme?",
@@ -280,12 +280,12 @@ export const neveThemeCustomizationContent = {
     {
       question: "Is the Neve theme good for an eCommerce store?",
       answer:
-        "Yes! Neve is WooCommerce-compatible, making it a wonderful choice for online stores. We customize it as per your need and optimize it for faster loading and better conversions.",
+        "Yes! Neve is **WooCommerce-compatible**, making it a wonderful choice for online stores. We customize it as per your need and optimize it for faster loading and better conversions.",
     },
     {
       question: "How long does Neve theme customization take?",
       answer:
-        "There is no fixed time limit for the theme customization work. The time frame depends on the complexity of the changes you want; small changes take a few days, and bigger and complex changes take a few weeks.",
+        "There is no fixed time limit for the theme customization work. The time frame depends on the complexity of the changes you want; **small changes take a few days, and bigger and complex changes take a few weeks.**",
     },
     {
       question: "Will my website be SEO-friendly after customization?",

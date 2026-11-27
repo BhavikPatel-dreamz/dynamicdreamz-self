@@ -1,5 +1,5 @@
 import type { CollectionConfig } from "payload";
-import { safeRevalidatePath } from "@/lib/revalidate";
+import { safeRevalidatePath, safeRevalidateTag } from "@/lib/revalidate";
 
 export const Categories: CollectionConfig = {
   slug: "categories",
@@ -13,11 +13,13 @@ export const Categories: CollectionConfig = {
     afterChange: [
       () => {
         safeRevalidatePath("/blogs/");
+        safeRevalidateTag("posts");
       },
     ],
     afterDelete: [
       () => {
         safeRevalidatePath("/blogs/");
+        safeRevalidateTag("posts");
       },
     ],
   },
