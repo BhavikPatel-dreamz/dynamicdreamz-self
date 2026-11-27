@@ -66,7 +66,7 @@ export function CityPageHeroSection({
           className={cn(
             "wrapper flex",
             hasTabletSlider
-              ? "flex-wrap items-end justify-between max-[1200px]:flex-col max-[1200px]:items-center max-[992px]:flex-col max-[992px]:items-center"
+              ? "flex-wrap justify-between max-[1200px]:flex-col max-[1200px]:items-center max-[992px]:flex-col max-[992px]:items-center"
               : "max-[992px]:flex-col",
           )}
         >
@@ -74,8 +74,8 @@ export function CityPageHeroSection({
             className={cn(
               "left-col z-1 flex flex-col justify-center",
               hasTabletSlider
-                ? "w-[51%] my-auto max-[1200px]:w-full max-[1200px]:text-center max-[992px]:w-full max-[992px]:text-center max-[1200px]:pt-[60px] max-[1200px]:pb-10 max-[992px]:py-10"
-                : "w-full max-w-[760px] max-[1200px]:max-w-none max-[1200px]:text-center",
+                ? "w-[51%] py-[60px] max-[1400px]:w-1/2 max-[1200px]:w-full max-[1200px]:text-center max-[1200px]:pt-[60px] max-[1200px]:pb-[30px] max-[992px]:w-full max-[992px]:text-center max-[992px]:pt-10 max-[992px]:pb-10"
+                : "w-full max-w-[760px] py-[60px] max-[1200px]:max-w-none max-[1200px]:text-center max-[992px]:pt-10 max-[992px]:pb-10",
             )}
           >
             <div className="hero-content">
@@ -172,7 +172,7 @@ export function CityPageHeroSection({
           </div>
 
           {content.tabletSlider && (
-            <div className="right-col flex w-[43.182%] items-end max-[1200px]:w-[48%] max-[992px]:hidden">
+            <div className="right-col flex w-[43.182%] items-end max-[1400px]:w-[48%] max-[1200px]:w-1/2 max-[1200px]:mx-auto max-[1200px]:mb-10 max-[992px]:hidden">
               <CityHeroTabletSlider slider={content.tabletSlider} />
             </div>
           )}
