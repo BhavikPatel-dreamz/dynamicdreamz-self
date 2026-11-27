@@ -132,7 +132,7 @@ export const pageSeo = {
     ],
     openGraphType: "article",
     publishedTime: "2024-05-02T09:10:53+00:00",
-    modifiedTime: "2026-10-01T09:30:38+00:00",
+    modifiedTime: "2026-10-06T12:07:58+00:00",
     image: {
       path: "/assets/og/dynamic-dreamz-company.png",
       width: 1200,

@@ -133,6 +133,38 @@ export const careerLocations = [
 
 export const careerJobs: CareerJob[] = [
   {
+    slug: "project-manager-business-analyst",
+    title: "Project Manager / Business Analyst",
+    applicationTitle: "Business Development Executive (BDE)",
+    experience: "5 to 7 Yrs",
+    jobType: "Full time",
+    postedOn: "06/10/2026",
+    postedDate: "2026-10-06",
+    positions: 1,
+    locations: ["surat"],
+    icon: "/assets/career/jobs/job-project-manager-business-analyst.svg",
+    iconAlt: "BDE Icon",
+    summary:
+      "Manage IT projects, gather and document client requirements, and coordinate between clients and technical teams across web and ecommerce deliveries.",
+    jobDescription: "/assets/career/jobs/project-manager-business-analyst.pdf",
+  },
+  {
+    slug: "technical-content-writer",
+    title: "Technical Content Writer",
+    applicationTitle: "Technical Content Writer",
+    experience: "2 to 4 Yrs",
+    jobType: "Full time",
+    postedOn: "06/10/2026",
+    postedDate: "2026-10-06",
+    positions: 1,
+    locations: ["surat"],
+    icon: "/assets/career/jobs/job-technical-content-writer.svg",
+    iconAlt: "Content Writer Icon",
+    summary:
+      "Create technical articles, case studies, website and blog content, and SEO-friendly documentation across web and mobile app projects.",
+    jobDescription: "/assets/career/jobs/technical-content-writer.pdf",
+  },
+  {
     slug: "cre-project-coordinator",
     title: "Jr. CRE (Client Relationship Executive) / Project Coordinator",
     applicationTitle: "Customer Relationship Executive (CRE)",
