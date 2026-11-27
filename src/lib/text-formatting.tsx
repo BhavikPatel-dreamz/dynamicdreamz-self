@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { Fragment, type ReactNode } from "react";
 
+import { resolveLinkProps } from "@/lib/link-utils";
+
 const INTERNAL_IGNORE_PREFIXES = [
   "/assets/",
   "/api/",
@@ -66,35 +68,24 @@ function parseInlineFormatting(
       const label = mdLinkMatch[1];
       const rawHref = mdLinkMatch[2].trim();
       const href = normalizeInternalMarkdownHref(rawHref);
-      const isExternal =
-        href.startsWith("http://") ||
-        href.startsWith("https://") ||
-        href.startsWith("mailto:") ||
-        href.startsWith("tel:");
-      const isAnchor = href.startsWith("#");
+      const resolved = resolveLinkProps({ href });
       const key = `md-link-${i}`;
 
-      if (isExternal) {
+      if (resolved.isNativeAnchor) {
         elements.push(
           <a
             className={defaultLinkClassName}
-            href={href}
+            href={resolved.normalizedHref}
             key={key}
-            rel="noopener noreferrer"
-            target="_blank"
+            rel={resolved.rel}
+            target={resolved.target}
           >
-            {label}
-          </a>,
-        );
-      } else if (isAnchor) {
-        elements.push(
-          <a className={defaultLinkClassName} href={href} key={key}>
             {label}
           </a>,
         );
       } else {
         elements.push(
-          <Link className={defaultLinkClassName} href={href} key={key}>
+          <Link className={defaultLinkClassName} href={resolved.normalizedHref} key={key}>
             {label}
           </Link>,
         );

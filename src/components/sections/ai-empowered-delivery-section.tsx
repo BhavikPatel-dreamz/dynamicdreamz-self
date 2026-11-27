@@ -1,7 +1,7 @@
-import Link from "next/link";
 import { ButtonLink } from "@/components/ui/button-link";
 import { Container } from "@/components/ui/container";
 import { Eyebrow } from "@/components/ui/eyebrow";
+import { SmartLink } from "@/components/ui/smart-link";
 import { cn } from "@/lib/class-names";
 
 export type CityOfficeAddress = {
@@ -105,7 +105,7 @@ export function AiEmpoweredDeliverySection({
                   <p className="mb-[5px] text-xs leading-normal text-white/[0.58]">
                     {content.address.address}
                   </p>
-                  <Link
+                  <SmartLink
                     className="text-arrow-link text-brand-red group inline-flex items-center text-[10px] font-bold uppercase hover:text-white"
                     href={content.address.link.href}
                   >
@@ -123,7 +123,7 @@ export function AiEmpoweredDeliverySection({
                         fill="currentColor"
                       />
                     </svg>
-                  </Link>
+                  </SmartLink>
                 </div>
               ) : null}
             </div>

@@ -10,6 +10,7 @@ import {
   type MegaMenuItem,
   type PrimaryNavigationGroup,
 } from "@/data/navigation";
+import { SmartLink } from "@/components/ui/smart-link";
 import { siteChromeCopy } from "@/content/common";
 import { siteConfig } from "@/data/site";
 import { cn } from "@/lib/class-names";
@@ -105,7 +106,7 @@ function MenuItem({
   if (work) {
     return (
       <li>
-        <Link
+        <SmartLink
           className={cn(
             "group/item flex h-full min-h-[172px] flex-col rounded-[15px] border border-[#f0f0f0] p-5 transition-colors duration-150 hover:bg-[#f7f4e9] focus-visible:bg-[#f7f4e9]"
           )}
@@ -120,14 +121,14 @@ function MenuItem({
             {item.ctaLabel}
             <span className="ml-[5px]"><ArrowIcon /></span>
           </span>
-        </Link>
+        </SmartLink>
       </li>
     );
   }
 
   return (
     <li>
-      <Link
+      <SmartLink
         className={cn(
           "flex min-h-16 items-start gap-[11px] rounded-[11px] px-3 py-2 transition-colors duration-[160ms] hover:bg-[#f7f4e9] focus-visible:bg-[#f7f4e9] min-[1200px]:max-[1400px]:p-2.5"
         )}
@@ -136,7 +137,7 @@ function MenuItem({
       >
         <MenuIcon item={item} />
         <MenuCopy item={item} active={isItemActive} />
-      </Link>
+      </SmartLink>
     </li>
   );
 }
@@ -178,13 +179,13 @@ function MenuPanel({ group, pathname }: { group: PrimaryNavigationGroup; pathnam
             <strong className="font-bold">{group.promo.title}</strong>
             <span className="font-normal"> · {group.promo.details}</span>
           </p>
-          <Link
+          <SmartLink
             className="inline-flex shrink-0 items-center font-bold uppercase hover:text-[#ad5151] focus-visible:text-[#ad5151]"
             href={group.promo.ctaHref}
           >
             {group.promo.ctaLabel}
             <span className="ml-[5px]"><ArrowIcon /></span>
-          </Link>
+          </SmartLink>
         </div>
       ) : null}
     </div>
@@ -278,7 +279,7 @@ export function DesktopNavigation({ navigation }: DesktopNavigationProps = {}) {
           );
         })}
         <li className="py-9">
-          <Link
+          <SmartLink
             className={cn(
               "flex items-center font-montserrat text-[13px] leading-[normal] font-medium whitespace-nowrap text-[#282828] hover:text-[#ad5151] min-[1400px]:text-sm",
               isNavigationLinkActive(siteConfig.contactPath, normalizedPathname) && "text-[#ad5151]",
@@ -288,7 +289,7 @@ export function DesktopNavigation({ navigation }: DesktopNavigationProps = {}) {
             aria-current={isNavigationLinkActive(siteConfig.contactPath, normalizedPathname) ? "page" : undefined}
           >
             {siteChromeCopy.contactUs}
-          </Link>
+          </SmartLink>
         </li>
       </ul>
     </nav>
@@ -487,7 +488,7 @@ export function MobileNavigation({ navigation, contactEmail }: MobileNavigationP
                           const isItemActive = isNavigationLinkActive(item.href, normalizedPathname);
                           return (
                             <li key={item.label}>
-                              <Link
+                              <SmartLink
                                 className={cn(
                                   "flex w-fit items-center gap-[11px] py-[9px] text-sm leading-none font-medium text-[#282828] hover:text-[#ad5151] focus-visible:text-[#ad5151]",
                                   isItemActive && "text-[#ad5151] font-semibold",
@@ -503,7 +504,7 @@ export function MobileNavigation({ navigation, contactEmail }: MobileNavigationP
                                     {item.badge}
                                   </span>
                                 ) : null}
-                              </Link>
+                              </SmartLink>
                             </li>
                           );
                         })}
@@ -515,14 +516,14 @@ export function MobileNavigation({ navigation, contactEmail }: MobileNavigationP
                             <strong className="font-bold">{group.promo.title}</strong>
                             <span> · {group.promo.details}</span>
                           </p>
-                          <Link
+                          <SmartLink
                             className="inline-flex items-center font-bold uppercase hover:text-[#ad5151] focus-visible:text-[#ad5151]"
                             href={group.promo.ctaHref}
                             onClick={closeMenu}
                           >
                             {group.promo.ctaLabel}
                             <span className="ml-[5px]"><ArrowIcon /></span>
-                          </Link>
+                          </SmartLink>
                         </div>
                       ) : null}
                     </div>
@@ -532,7 +533,7 @@ export function MobileNavigation({ navigation, contactEmail }: MobileNavigationP
             })}
 
             <li className="border-b border-[#f0f0f0] py-6">
-              <Link
+              <SmartLink
                 className={cn(
                   topLevelLinkClass,
                   isNavigationLinkActive(siteConfig.contactPath, normalizedPathname) && "text-[#ad5151]",
@@ -542,7 +543,7 @@ export function MobileNavigation({ navigation, contactEmail }: MobileNavigationP
                 onClick={closeMenu}
               >
                 {siteChromeCopy.contactUs}
-              </Link>
+              </SmartLink>
             </li>
             <li className="py-6">
               <a className="block text-sm leading-[normal] font-semibold text-[#d92128] underline" href={`mailto:${email}`} onClick={closeMenu}>{email}</a>

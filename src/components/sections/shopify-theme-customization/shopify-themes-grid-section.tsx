@@ -1,7 +1,7 @@
 import Image from "next/image";
-import Link from "next/link";
 
 import { Container } from "@/components/ui/container";
+import { SmartLink } from "@/components/ui/smart-link";
 import { SplitSectionHeading } from "@/components/ui/split-section-heading";
 import { sharedUiCopy } from "@/content/common";
 import { siteConfig } from "@/data/site";
@@ -60,7 +60,7 @@ export function ShopifyThemesGridSection({
 
               return (
                 <div className="col" data-aos="fade-up" key={title}>
-                  <Link
+                  <SmartLink
                     className="shopify-theme-card group block h-full rounded-[24px] border border-[rgba(40,40,40,0.11)] bg-white p-4 max-[992px]:p-2.5 max-[992px]:rounded-[12px] transition-all duration-300 ease-[ease] hover:-translate-y-[5px] hover:shadow-[0_22px_50px_rgba(40,40,40,0.10)] [will-change:transform]"
                     href={href}
                   >
@@ -90,7 +90,7 @@ export function ShopifyThemesGridSection({
                         </svg>
                       </span>
                     </div>
-                  </Link>
+                  </SmartLink>
                 </div>
               );
             })}
@@ -123,7 +123,7 @@ export function ShopifyThemesGridSection({
 
             return (
               <div className="col" data-aos="fade-up" key={title}>
-                <Link
+                <SmartLink
                   className="group relative block h-full rounded-[15px] border border-[#efefef] bg-white p-[20px_20px_34px_20px] transition-all duration-300 ease-[ease] hover:shadow-[0px_10px_50px_0px_rgba(94,94,94,0.08)] before:absolute before:-inset-[2px] before:-z-10 before:rounded-[15px] before:bg-gradient-to-r before:from-[#15c064] before:to-[#00d1ff] before:opacity-0 before:transition-opacity before:duration-300 hover:before:opacity-100"
                   href={href}
                 >
@@ -157,7 +157,7 @@ export function ShopifyThemesGridSection({
                       </svg>
                     </span>
                   </div>
-                </Link>
+                </SmartLink>
               </div>
             );
           })}

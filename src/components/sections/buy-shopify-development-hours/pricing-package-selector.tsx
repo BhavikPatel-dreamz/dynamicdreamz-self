@@ -3,8 +3,8 @@
 import { useId, useState } from "react";
 
 import { ButtonLink } from "@/components/ui/button-link";
+import { SmartLink } from "@/components/ui/smart-link";
 import { shopifyHoursSectionCopy, type ShopifyHoursPackage } from "@/content/buy-shopify-development-hours";
-import Link from "next/link";
 
 type PricingPackageSelectorProps = {
   packages: readonly ShopifyHoursPackage[];
@@ -105,12 +105,12 @@ export function PricingPackageSelector({
         {shopifyHoursSectionCopy.pricing.purchasePrefix}{selectedPackage.cost}
       </ButtonLink>
       <div className="flex text-center">
-        <Link
+        <SmartLink
           className="quote-link block w-full pt-5 text-center font-montserrat text-sm leading-[normal] font-bold text-ink uppercase underline decoration-[8.5%] transition-colors duration-500 hover:text-brand-red"
           href={quoteHref}
         >
           {quoteLabel}
-        </Link>
+        </SmartLink>
       </div>
     </div>
   );

@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useState } from "react";
 
+import { SmartLink } from "@/components/ui/smart-link";
 import type { ResourceCategory } from "@/content/resources";
 import { cn } from "@/lib/class-names";
 
@@ -44,7 +45,7 @@ export function ResourcesCategoryAccordion({ categories }: { categories: readonl
                   <ul className={cn("py-5 border-t border-ink/10")}>
                     {category.links.map((link) => (
                       <li className="relative mb-6 pl-[30px] text-[16px] leading-[1.3] font-medium last:mb-0 before:absolute before:top-[9px] before:left-0 before:h-[3px] before:w-[15px] before:bg-[linear-gradient(90deg,#20b15a,#42c7d8)]" key={link.href}>
-                        <a className="text-muted underline transition-colors hover:text-brand-red focus-visible:text-brand-red" href={link.href} tabIndex={open ? undefined : -1}>{link.title}</a>
+                        <SmartLink className="text-muted underline transition-colors hover:text-brand-red focus-visible:text-brand-red" href={link.href} tabIndex={open ? undefined : -1}>{link.title}</SmartLink>
                       </li>
                     ))}
                   </ul>

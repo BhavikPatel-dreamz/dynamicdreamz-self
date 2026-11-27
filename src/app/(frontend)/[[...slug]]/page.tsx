@@ -3,8 +3,7 @@ import { draftMode } from "next/headers";
 import { notFound } from "next/navigation";
 
 import { RenderBlocks, type CmsSectionBlock } from "@/components/RenderBlocks";
-import { DraftModeIndicator, RefreshRouteOnSave } from "@/components/preview";
-import { draftPreviewCopy } from "@/content/common";
+import { RefreshRouteOnSave } from "@/components/preview";
 import { siteConfig } from "@/data/site";
 import { getPayloadPageBySlug, getPayloadAdaptedTestimonials } from "@/lib/payload";
 import { createModularPageSchema, serializeJsonLd } from "@/lib/schema";
@@ -176,16 +175,7 @@ export default async function DynamicPageRoute({ params }: DynamicPageRouteProps
             ),
           }}
         />
-        {draft.isEnabled ? (
-          <>
-            <RefreshRouteOnSave />
-            <DraftModeIndicator
-              badge={draftPreviewCopy.badge}
-              exitLabel={draftPreviewCopy.exit}
-              separator={draftPreviewCopy.separator}
-            />
-          </>
-        ) : null}
+        {draft.isEnabled ? <RefreshRouteOnSave /> : null}
         <RenderBlocks sections={pageSections} testimonials={testimonials} />
       </main>
     );
@@ -202,16 +192,7 @@ export default async function DynamicPageRoute({ params }: DynamicPageRouteProps
             __html: serializeJsonLd(schema),
           }}
         />
-        {draft.isEnabled ? (
-          <>
-            <RefreshRouteOnSave />
-            <DraftModeIndicator
-              badge={draftPreviewCopy.badge}
-              exitLabel={draftPreviewCopy.exit}
-              separator={draftPreviewCopy.separator}
-            />
-          </>
-        ) : null}
+        {draft.isEnabled ? <RefreshRouteOnSave /> : null}
         {serviceEntry.render()}
       </main>
     );

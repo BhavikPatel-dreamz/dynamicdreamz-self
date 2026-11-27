@@ -1,7 +1,7 @@
 import Image from "next/image";
-import Link from "next/link";
 import React from "react";
 import { Container } from "@/components/ui/container";
+import { SmartLink } from "@/components/ui/smart-link";
 import { SplitSectionHeading } from "@/components/ui/split-section-heading";
 import { sharedUiCopy } from "@/content/common";
 import { cn } from "@/lib/class-names";
@@ -113,12 +113,12 @@ export function FeaturesGridSection({
 
                 {item.linkUrl || item.href || item.link ? (
                   <div className="relative z-10 mt-4 pt-2">
-                    <Link
+                    <SmartLink
                       className="inline-flex items-center gap-1 text-sm font-bold text-brand-red transition-colors hover:text-brand-red/80"
                       href={(item.linkUrl || item.href || item.link)!}
                     >
                       {item.linkText ?? sharedUiCopy.learnMore} →
-                    </Link>
+                    </SmartLink>
                   </div>
                 ) : null}
               </article>

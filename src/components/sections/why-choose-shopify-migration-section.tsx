@@ -1,9 +1,10 @@
 import type { ReactNode } from "react";
 import Image from "next/image";
-import Link from "next/link";
 import { Container } from "@/components/ui/container";
+import { SmartLink } from "@/components/ui/smart-link";
 import { SplitSectionHeading } from "@/components/ui/split-section-heading";
 import { cn } from "@/lib/class-names";
+import { isExternalHttpUrl } from "@/lib/link-utils";
 import { resolveMobileAppIcon } from "@/lib/theme-icon-resolver";
 
 export type WhyChooseMigrationItem = {
@@ -536,37 +537,20 @@ export function WhyChooseShopifyMigrationSection({
                 </div>
               </div>
 
-              {content.partnerLink.href.startsWith("/") ? (
-                <Link
-                  className="btn-link-arrow mt-[30px] flex items-center justify-center gap-2 border-t border-[rgba(0,0,0,0.1)] pt-5 font-montserrat text-sm font-bold uppercase tracking-[0.32px] text-[#ad5151] transition-colors hover:text-[#282828]"
-                  href={content.partnerLink.href}
+              <SmartLink
+                className="btn-link-arrow mt-[30px] flex items-center justify-center gap-2 border-t border-[rgba(0,0,0,0.1)] pt-5 font-montserrat text-sm font-bold uppercase tracking-[0.32px] text-[#ad5151] transition-colors hover:text-[#282828]"
+                href={content.partnerLink.href}
+                rel={isExternalHttpUrl(content.partnerLink.href) ? "nofollow" : undefined}
+              >
+                <span>{content.partnerLink.label}</span>
+                <svg
+                  aria-hidden="true"
+                  className="h-3 w-3 shrink-0 fill-current"
+                  viewBox="0 0 12 12"
                 >
-                  <span>{content.partnerLink.label}</span>
-                  <svg
-                    aria-hidden="true"
-                    className="h-3 w-3 shrink-0 fill-current"
-                    viewBox="0 0 12 12"
-                  >
-                    <path d="M0.331035 10.2567C-0.0794748 10.6262 -0.112753 11.2585 0.256706 11.669C0.626165 12.0795 1.25845 12.1128 1.66896 11.7433L0.331035 10.2567ZM11.9986 2.05256C12.0276 1.50104 11.6041 1.03041 11.0526 1.00138L2.065 0.528352C1.51348 0.499324 1.04285 0.922889 1.01382 1.47441C0.984795 2.02593 1.40836 2.49656 1.95988 2.52559L9.94882 2.94606L9.52835 10.935C9.49933 11.4865 9.92289 11.9572 10.4744 11.9862C11.0259 12.0152 11.4966 11.5916 11.5256 11.0401L11.9986 2.05256ZM1.66896 11.7433L11.669 2.74329L10.331 1.25671L0.331035 10.2567L1.66896 11.7433Z" />
-                  </svg>
-                </Link>
-              ) : (
-                <a
-                  className="btn-link-arrow mt-[30px] flex items-center justify-center gap-2 border-t border-[rgba(0,0,0,0.1)] pt-5 font-montserrat text-sm font-bold uppercase tracking-[0.32px] text-[#ad5151] transition-colors hover:text-[#282828]"
-                  href={content.partnerLink.href}
-                  rel="nofollow noopener noreferrer"
-                  target="_blank"
-                >
-                  <span>{content.partnerLink.label}</span>
-                  <svg
-                    aria-hidden="true"
-                    className="h-3 w-3 shrink-0 fill-current"
-                    viewBox="0 0 12 12"
-                  >
-                    <path d="M0.331035 10.2567C-0.0794748 10.6262 -0.112753 11.2585 0.256706 11.669C0.626165 12.0795 1.25845 12.1128 1.66896 11.7433L0.331035 10.2567ZM11.9986 2.05256C12.0276 1.50104 11.6041 1.03041 11.0526 1.00138L2.065 0.528352C1.51348 0.499324 1.04285 0.922889 1.01382 1.47441C0.984795 2.02593 1.40836 2.49656 1.95988 2.52559L9.94882 2.94606L9.52835 10.935C9.49933 11.4865 9.92289 11.9572 10.4744 11.9862C11.0259 12.0152 11.4966 11.5916 11.5256 11.0401L11.9986 2.05256ZM1.66896 11.7433L11.669 2.74329L10.331 1.25671L0.331035 10.2567L1.66896 11.7433Z" />
-                  </svg>
-                </a>
-              )}
+                  <path d="M0.331035 10.2567C-0.0794748 10.6262 -0.112753 11.2585 0.256706 11.669C0.626165 12.0795 1.25845 12.1128 1.66896 11.7433L0.331035 10.2567ZM11.9986 2.05256C12.0276 1.50104 11.6041 1.03041 11.0526 1.00138L2.065 0.528352C1.51348 0.499324 1.04285 0.922889 1.01382 1.47441C0.984795 2.02593 1.40836 2.49656 1.95988 2.52559L9.94882 2.94606L9.52835 10.935C9.49933 11.4865 9.92289 11.9572 10.4744 11.9862C11.0259 12.0152 11.4966 11.5916 11.5256 11.0401L11.9986 2.05256ZM1.66896 11.7433L11.669 2.74329L10.331 1.25671L0.331035 10.2567L1.66896 11.7433Z" />
+                </svg>
+              </SmartLink>
             </div>
           </div>
         </div>

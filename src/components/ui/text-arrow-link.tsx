@@ -1,6 +1,6 @@
-import Link from "next/link";
 import type { AnchorHTMLAttributes, ReactNode } from "react";
 
+import { SmartLink } from "@/components/ui/smart-link";
 import { cn } from "@/lib/class-names";
 
 export type TextArrowLinkProps = {
@@ -19,21 +19,20 @@ export function TextArrowLink({
   rel,
   ...props
 }: TextArrowLinkProps) {
-  const isExternal =
-    external ||
-    (typeof href === "string" &&
-      (href.startsWith("http://") ||
-        href.startsWith("https://") ||
-        href.startsWith("mailto:") ||
-        href.startsWith("tel:")));
-
   const commonClasses = cn(
     "text-arrow-link group/arrow-link inline-flex items-center font-montserrat text-sm font-bold uppercase leading-none text-[#AD5151] transition-colors duration-300 hover:text-[#282828]",
     className,
   );
 
-  const inner = (
-    <>
+  return (
+    <SmartLink
+      className={commonClasses}
+      external={external}
+      href={href}
+      rel={rel}
+      target={target}
+      {...props}
+    >
       <span className="transition-colors duration-300">{children}</span>
       <svg
         aria-hidden="true"
@@ -45,26 +44,6 @@ export function TextArrowLink({
           fill="currentColor"
         />
       </svg>
-    </>
-  );
-
-  if (isExternal) {
-    return (
-      <a
-        className={commonClasses}
-        href={href}
-        rel={rel ?? "noopener noreferrer"}
-        target={target ?? "_blank"}
-        {...props}
-      >
-        {inner}
-      </a>
-    );
-  }
-
-  return (
-    <Link className={commonClasses} href={href} {...props}>
-      {inner}
-    </Link>
+    </SmartLink>
   );
 }

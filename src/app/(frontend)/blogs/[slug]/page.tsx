@@ -3,9 +3,8 @@ import { draftMode } from "next/headers";
 import { notFound } from "next/navigation";
 
 import { BlogDetailPage } from "@/components/blog/BlogArticleHero";
-import { DraftModeIndicator, RefreshRouteOnSave } from "@/components/preview";
+import { RefreshRouteOnSave } from "@/components/preview";
 import { blogPostIndex, getBlogPostBySlug, getRelatedBlogPosts } from "@/content/blog-post-details";
-import { draftPreviewCopy } from "@/content/common";
 import { createPageMetadata, type PageSeoConfig } from "@/data/seo";
 import {
   adaptPayloadPostToBlogPostDetail,
@@ -91,16 +90,7 @@ export default async function BlogRoute({ params }: BlogRouteProps) {
           __html: serializeJsonLd(createBlogPostDetailPageSchema(post)),
         }}
       />
-      {draft.isEnabled ? (
-        <>
-          <RefreshRouteOnSave />
-          <DraftModeIndicator
-            badge={draftPreviewCopy.badge}
-            exitLabel={draftPreviewCopy.exit}
-            separator={draftPreviewCopy.separator}
-          />
-        </>
-      ) : null}
+      {draft.isEnabled ? <RefreshRouteOnSave /> : null}
       <BlogDetailPage post={post} relatedPosts={relatedPosts} />
     </main>
   );

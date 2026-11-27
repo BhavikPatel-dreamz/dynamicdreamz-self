@@ -1,8 +1,8 @@
 import Image from "next/image";
-import Link from "next/link";
 
 import { Container } from "@/components/ui/container";
 import { HorizontalDragScroll } from "@/components/ui/horizontal-drag-scroll";
+import { SmartLink } from "@/components/ui/smart-link";
 import { SplitSectionHeading } from "@/components/ui/split-section-heading";
 import { shopifyPlusAgencyIndustries } from "@/content/shopify-plus-agency";
 
@@ -73,9 +73,9 @@ export function IndustriesServedSection({
               );
 
               return item.href ? (
-                <Link className="group/industry block h-full" href={item.href} key={item.title}>
+                <SmartLink className="group/industry block h-full" href={item.href} key={item.title}>
                   {card}
-                </Link>
+                </SmartLink>
               ) : (
                 <div className="group/industry h-full" key={item.title}>
                   {card}

@@ -1,6 +1,7 @@
 import React from "react";
 import dynamic from "next/dynamic";
 import { cn } from "@/lib/class-names";
+import { isExternalHttpUrl } from "@/lib/link-utils";
 import { getBlockBackgroundCategory, shouldCollapseTopPadding } from "@/lib/section-spacing";
 import { appmakerHeroCoBranding } from "@/content/appmaker-shopify-mobile-app-development";
 import { mobileAppSharedCopy } from "@/content/common";
@@ -2274,9 +2275,11 @@ export function BlockRenderer({ sections, testimonials }: BlockRendererProps) {
                 }
               : undefined;
 
-            const secondaryCtaTarget =
-              shBlock.secondaryCta?.target ??
-              (shBlock.secondaryCta?.href?.startsWith("http") ? "_blank" : undefined);
+            const secondaryCtaTarget = isExternalHttpUrl(shBlock.secondaryCta?.href)
+              ? "_blank"
+              : shBlock.secondaryCta?.target === "_blank"
+                ? "_blank"
+                : undefined;
 
             const secondaryCta = shBlock.secondaryCta?.label
               ? {

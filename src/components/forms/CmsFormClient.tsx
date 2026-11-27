@@ -3,6 +3,7 @@
 import React, { useEffect, useId, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import { PhoneInput } from "@/components/ui/phone-input";
+import { SmartLink } from "@/components/ui/smart-link";
 import { cmsFormCopy, contactFormCopy } from "@/content/forms";
 import { ATTRIBUTION_FIELDS, resolveAttributionMap } from "@/lib/attribution";
 import type { Form as PayloadForm } from "@/types/payload-types";
@@ -76,15 +77,14 @@ function renderLexicalNode(node: any, key: number | string): React.ReactNode {
     }
     case "link":
       return (
-        <a
+        <SmartLink
           key={key}
           href={node.fields?.url || node.url || "#"}
           target={node.fields?.newTab ? "_blank" : undefined}
-          rel={node.fields?.newTab ? "noopener noreferrer" : undefined}
           className="text-[#d92128] underline underline-offset-2 hover:no-underline"
         >
           {children}
-        </a>
+        </SmartLink>
       );
     case "list": {
       const ListTag = node.listType === "number" ? "ol" : "ul";

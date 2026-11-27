@@ -1,7 +1,7 @@
 import Image from "next/image";
-import Link from "next/link";
 
 import { Container } from "@/components/ui/container";
+import { SmartLink } from "@/components/ui/smart-link";
 import { SplitSectionHeading } from "@/components/ui/split-section-heading";
 import { sharedUiCopy } from "@/content/common";
 import { shopifyPlusAgencyCaseStudies } from "@/content/shopify-plus-agency";
@@ -55,7 +55,7 @@ export function CaseStudyCardsSection({
               className="group/case cs-listing-row flex flex-col justify-between overflow-hidden rounded-[20px] border border-[rgba(40,40,40,0.06)] bg-white transition-all duration-300 hover:shadow-[0_10px_50px_rgba(94,94,94,0.08)]"
               key={item.name}
             >
-              <Link
+              <SmartLink
                 className="cs-wrapper flex h-full flex-col justify-between"
                 href={item.href}
               >
@@ -117,7 +117,7 @@ export function CaseStudyCardsSection({
                     </span>
                   </div>
                 </div>
-              </Link>
+              </SmartLink>
             </article>
           ))}
         </div>

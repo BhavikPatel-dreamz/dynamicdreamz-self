@@ -1,9 +1,8 @@
-import Link from "next/link";
-
 import { CmsFormClient } from "@/components/forms/CmsFormClient";
 import { ContactForm } from "@/components/sections/contact-form";
 import { Container } from "@/components/ui/container";
 import { Eyebrow } from "@/components/ui/eyebrow";
+import { SmartLink } from "@/components/ui/smart-link";
 import { SplitSectionHeading } from "@/components/ui/split-section-heading";
 import { contactPageContent } from "@/content/contact";
 import { contactFormCopy } from "@/content/forms";
@@ -376,15 +375,15 @@ export function ContactDetailsSection({
                 {resolvedHr.phone}
               </a>
               <div className="mt-3">
-                <Link
+                <SmartLink
                   href={resolvedHr.actionHref}
                   target="_blank"
-                  rel="nofollow noopener noreferrer"
+                  rel="nofollow"
                   className="group inline-flex items-center text-xs font-semibold uppercase text-brand-red transition-colors hover:text-ink"
                 >
                   {resolvedHr.actionLabel}
                   <DiagonalArrowIcon className="ml-2.5 size-2.5 text-brand-red transition-colors group-hover:text-ink" />
-                </Link>
+                </SmartLink>
               </div>
             </div>
 
@@ -393,12 +392,12 @@ export function ContactDetailsSection({
               <span className="mb-2.5 font-sans text-[10px] leading-[1.4] font-bold uppercase tracking-[0.8px] text-brand-red">
                 {resolvedDiscoveryCall.label}
               </span>
-              <Link
+              <SmartLink
                 href={resolvedDiscoveryCall.actionHref}
                 className="text-base leading-7 font-semibold text-ink transition-colors hover:text-brand-red max-[768px]:text-sm"
               >
                 {resolvedDiscoveryCall.actionLabel}
-              </Link>
+              </SmartLink>
               <span className="mt-[5px] text-sm leading-[22px] font-medium text-muted">
                 {resolvedDiscoveryCall.description}
               </span>

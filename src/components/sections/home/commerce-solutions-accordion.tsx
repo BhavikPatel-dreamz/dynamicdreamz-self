@@ -1,9 +1,9 @@
 "use client";
 
-import Link from "next/link";
 import { useState } from "react";
 
 import { FaqCircleCrossIcon } from "@/components/ui/faq-circle-cross-icon";
+import { SmartLink } from "@/components/ui/smart-link";
 import { homeSectionCopy } from "@/content/home-client";
 import { cn } from "@/lib/class-names";
 
@@ -91,13 +91,13 @@ export function CommerceSolutionsAccordion({
                       <p className="mb-[15px] text-sm leading-6 font-normal text-muted">
                         {item.body}
                       </p>
-                      <Link
+                      <SmartLink
                         className="inline-flex items-center gap-2.5 text-sm leading-none font-bold text-brand-red uppercase transition-colors hover:text-ink focus-visible:text-ink"
                         href={item.href}
                       >
                         {item.cta}
                         <ArrowIcon />
-                      </Link>
+                      </SmartLink>
                     </div>
                   </div>
                 </div>

@@ -1,8 +1,8 @@
 import Image from "next/image";
-import Link from "next/link";
 
 import { ButtonLink } from "@/components/ui/button-link";
 import { Container } from "@/components/ui/container";
+import { SmartLink } from "@/components/ui/smart-link";
 import { SplitSectionHeading } from "@/components/ui/split-section-heading";
 import { sharedUiCopy } from "@/content/common";
 import { cn } from "@/lib/class-names";
@@ -161,7 +161,7 @@ export function AgencyServicesSection({
                       )}
                     >
                       {serviceHref ? (
-                        <Link
+                        <SmartLink
                           className="text-arrow-link group/link inline-flex items-center text-[14px] font-bold uppercase leading-none tracking-normal text-[#ad5151] transition-colors duration-300 hover:text-ink"
                           href={serviceHref}
                         >
@@ -180,7 +180,7 @@ export function AgencyServicesSection({
                               fill="#ad5151"
                             />
                           </svg>
-                        </Link>
+                        </SmartLink>
                       ) : null}
                     </div>
                   </div>

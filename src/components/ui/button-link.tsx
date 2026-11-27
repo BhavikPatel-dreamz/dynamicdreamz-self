@@ -1,6 +1,7 @@
-import Link, { type LinkProps as NextLinkProps } from "next/link";
+import type { LinkProps as NextLinkProps } from "next/link";
 import type { AnchorHTMLAttributes, ButtonHTMLAttributes, ReactNode } from "react";
 
+import { SmartLink } from "@/components/ui/smart-link";
 import { cn } from "@/lib/class-names";
 
 export type ButtonVariant = "primary" | "primaryDark" | "outline" | "dark" | "light";
@@ -59,16 +60,6 @@ export function ButtonLink({
   disabled,
   ...props
 }: ButtonLinkProps) {
-  const isExternal =
-    external ||
-    (typeof href === "string" &&
-      (href.startsWith("http://") ||
-        href.startsWith("https://") ||
-        href.startsWith("mailto:") ||
-        href.startsWith("tel:")));
-
-  const isAnchor = typeof href === "string" && href.startsWith("#");
-
   const commonClasses = cn(
     "group/button relative z-[1] inline-flex items-center justify-center align-top overflow-hidden rounded-[30px] min-h-[49px] h-[49px] px-6 py-[15px] text-center font-montserrat text-base leading-[normal] font-bold text-[#4f4f4f] not-italic uppercase no-underline! transition-all duration-600 ease shrink-0 max-[992px]:min-h-[44px] max-[992px]:h-[44px] max-[992px]:text-[14px] max-[992px]:px-6 max-[992px]:py-[12px] max-[768px]:min-h-[44px] max-[768px]:h-[44px] disabled:pointer-events-none disabled:opacity-60 max-[576px]:py-3 max-[576px]:px-6 hover:cursor-pointer",
     variantClasses[variant],
@@ -108,43 +99,18 @@ export function ButtonLink({
     );
   }
 
-  if (isExternal) {
-    return (
-      <a
-        className={commonClasses}
-        href={href}
-        rel={rel ?? (target === "_blank" ? "noopener noreferrer" : undefined)}
-        target={target}
-        {...(props as AnchorHTMLAttributes<HTMLAnchorElement>)}
-      >
-        {innerContent}
-      </a>
-    );
-  }
-
-  if (isAnchor) {
-    return (
-      <a
-        className={commonClasses}
-        href={href}
-        {...(props as AnchorHTMLAttributes<HTMLAnchorElement>)}
-      >
-        {innerContent}
-      </a>
-    );
-  }
-
   return (
-    <Link
+    <SmartLink
       className={commonClasses}
       href={href}
+      external={external}
       prefetch={prefetch}
       rel={rel}
       target={target}
       {...(props as AnchorHTMLAttributes<HTMLAnchorElement>)}
     >
       {innerContent}
-    </Link>
+    </SmartLink>
   );
 }
 

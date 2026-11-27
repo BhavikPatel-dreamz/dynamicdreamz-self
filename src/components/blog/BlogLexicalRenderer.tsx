@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Fragment } from "react";
 
 import { cn } from "@/lib/class-names";
+import { resolveLinkProps } from "@/lib/link-utils";
 import type { BlogContentBlock, BlogInlineNode, BlogListItem } from "@/types/blog-post";
 
 type BlogContentRendererProps = {
@@ -31,12 +32,11 @@ function renderInlineNode(node: BlogInlineNode, index: number) {
   }
 
   if (node.type === "link") {
-    const isExternal =
-      node.href.startsWith("http://") ||
-      node.href.startsWith("https://") ||
-      node.href.startsWith("mailto:") ||
-      node.href.startsWith("tel:");
-    const isAnchor = node.href.startsWith("#");
+    const resolved = resolveLinkProps({
+      href: node.href,
+      rel: node.rel,
+      target: node.target,
+    });
 
     let linkText = <Fragment>{node.text}</Fragment>;
     if (node.bold) {
@@ -49,35 +49,33 @@ function renderInlineNode(node: BlogInlineNode, index: number) {
     const linkClasses =
       "text-brand-red underline decoration-1 underline-offset-2 transition-colors duration-200 hover:no-underline";
 
-    if (isExternal) {
+    if (resolved.isNativeAnchor) {
       return (
         <a
           className={linkClasses}
-          href={node.href}
+          href={resolved.normalizedHref}
           key={index}
-          rel={node.rel ?? "noopener noreferrer"}
-          target={node.target ?? "_blank"}
+          rel={resolved.rel}
+          target={resolved.target}
         >
           {linkText}
         </a>
       );
     }
 
-    if (isAnchor) {
-      return (
-        <a className={linkClasses} href={node.href} key={index}>
-          {linkText}
-        </a>
-      );
-    }
-
     const slashlessHref =
-      node.href.length > 1 && node.href.endsWith("/")
-        ? node.href.replace(/\/+$/, "")
-        : node.href;
+      resolved.normalizedHref.length > 1 && resolved.normalizedHref.endsWith("/")
+        ? resolved.normalizedHref.replace(/\/+$/, "")
+        : resolved.normalizedHref;
 
     return (
-      <Link className={linkClasses} href={slashlessHref} key={index}>
+      <Link
+        className={linkClasses}
+        href={slashlessHref}
+        key={index}
+        rel={resolved.rel}
+        target={resolved.target}
+      >
         {linkText}
       </Link>
     );

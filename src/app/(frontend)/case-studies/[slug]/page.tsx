@@ -3,9 +3,8 @@ import { draftMode } from "next/headers";
 import { notFound } from "next/navigation";
 
 import { CaseStudyDetailPage } from "@/components/case-studies/CaseStudyDetailHero";
-import { DraftModeIndicator, RefreshRouteOnSave } from "@/components/preview";
+import { RefreshRouteOnSave } from "@/components/preview";
 import { caseStudyDetails, getCaseStudyBySlug } from "@/content/case-study-details";
-import { draftPreviewCopy } from "@/content/common";
 import { createPageMetadata, type PageSeoConfig } from "@/data/seo";
 import {
   adaptPayloadCaseStudyToDetail,
@@ -82,16 +81,7 @@ export default async function CaseStudyRoute({ params }: CaseStudyRouteProps) {
           __html: serializeJsonLd(createCaseStudyDetailPageSchema(caseStudy)),
         }}
       />
-      {draft.isEnabled ? (
-        <>
-          <RefreshRouteOnSave />
-          <DraftModeIndicator
-            badge={draftPreviewCopy.badge}
-            exitLabel={draftPreviewCopy.exit}
-            separator={draftPreviewCopy.separator}
-          />
-        </>
-      ) : null}
+      {draft.isEnabled ? <RefreshRouteOnSave /> : null}
       <CaseStudyDetailPage caseStudy={caseStudy} />
     </main>
   );

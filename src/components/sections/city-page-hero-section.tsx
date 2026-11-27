@@ -123,11 +123,6 @@ export function CityPageHeroSection({
                       variant="outline"
                       href={content.secondaryCta.href}
                       target={content.secondaryCta.target}
-                      rel={
-                        content.secondaryCta.target === "_blank"
-                          ? "noopener noreferrer"
-                          : undefined
-                      }
                     >
                       {content.secondaryCta.label}
                     </ButtonLink>

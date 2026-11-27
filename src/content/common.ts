@@ -71,12 +71,6 @@ export const notFoundCopy = {
   contactCta: "Contact us",
 } as const;
 
-export const draftPreviewCopy = {
-  badge: "Draft Preview",
-  exit: "Exit",
-  separator: "•",
-} as const;
-
 export const revalidateApiCopy = {
   invalidToken: "Invalid token",
 } as const;

@@ -1,9 +1,9 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
 import { useState } from "react";
 
+import { SmartLink } from "@/components/ui/smart-link";
 import { sharedUiCopy } from "@/content/common";
 import { cn } from "@/lib/class-names";
 import type { WhiteLabelService } from "@/types/white-label-service";
@@ -91,7 +91,7 @@ export function WhiteLabelServiceAccordion({
                     <div className="pb-8 pl-[70px] text-base leading-[30.4px] font-medium text-white/80 max-[1200px]:pb-5 max-[1200px]:pl-[63px] max-[1200px]:leading-[26px] max-[992px]:pb-[15px] max-[992px]:pl-[50px] max-[992px]:leading-6 max-[768px]:pl-10 max-[768px]:text-[15px] max-[768px]:leading-[22px]">
                       {service.description}
                       {service.href ? (
-                        <Link
+                        <SmartLink
                           className="mt-[15px] flex w-fit items-center gap-2.5 font-semibold text-white transition-colors hover:text-brand-red"
                           href={service.href}
                         >
@@ -108,7 +108,7 @@ export function WhiteLabelServiceAccordion({
                               fill="currentColor"
                             />
                           </svg>
-                        </Link>
+                        </SmartLink>
                       ) : null}
                     </div>
                   </div>

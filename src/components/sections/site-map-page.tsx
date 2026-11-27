@@ -1,7 +1,7 @@
 import Image from "next/image";
-import Link from "next/link";
 
 import { Container } from "@/components/ui/container";
+import { SmartLink } from "@/components/ui/smart-link";
 import { siteMapLinks, type SiteMapLinkItem } from "@/content/site-map";
 import { siteMapCopy } from "@/content/site-map";
 
@@ -36,12 +36,12 @@ export function SiteMapPage({
                 src={checkIcon}
                 width={22}
               />
-              <Link
+              <SmartLink
                 className="text-[#252c15] transition-colors duration-200 hover:text-brand-red focus-visible:text-brand-red leading-normal tracking-[0.32px]"
                 href={item.href}
               >
                 {item.label}
-              </Link>
+              </SmartLink>
               {item.children && item.children.length > 0 ? (
                 <ul className="children mt-2.5 ml-5 list-none p-0">
                   {item.children.map((child) => (
@@ -57,12 +57,12 @@ export function SiteMapPage({
                         src={checkIcon}
                         width={22}
                       />
-                      <Link
+                      <SmartLink
                         className="text-[#252c15] transition-colors duration-200 hover:text-brand-red focus-visible:text-brand-red leading-normal tracking-[0.32px]"
                         href={child.href}
                       >
                         {child.label}
-                      </Link>
+                      </SmartLink>
                     </li>
                   ))}
                 </ul>

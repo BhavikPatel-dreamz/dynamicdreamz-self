@@ -111,10 +111,7 @@ function SplitImageHeroText({
           <ButtonLink
             aria-label={secondaryCtaAriaLabel ?? secondaryCtaLabel}
             href={secondaryCtaHref}
-            target={
-              secondaryCtaTarget ??
-              (secondaryCtaHref?.startsWith("http") ? "_blank" : undefined)
-            }
+            target={secondaryCtaTarget}
             variant="outline"
           >
             {secondaryCtaLabel}

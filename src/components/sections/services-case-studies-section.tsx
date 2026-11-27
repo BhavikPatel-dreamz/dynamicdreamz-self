@@ -1,6 +1,6 @@
 import Image from "next/image";
-import Link from "next/link";
 import { Container } from "@/components/ui/container";
+import { SmartLink } from "@/components/ui/smart-link";
 import { SplitSectionHeading } from "@/components/ui/split-section-heading";
 import { TextArrowLink } from "@/components/ui/text-arrow-link";
 import { sharedUiCopy } from "@/content/common";
@@ -64,7 +64,7 @@ export function ServicesCaseStudiesSection({
               data-aos="fade-up"
               className="cs-listing-row relative mb-5 flex min-h-full w-[calc(33.33%-10px)] flex-col overflow-hidden rounded-[20px] border border-[rgba(40,40,40,0.06)] bg-white transition-[0.23s_ease] max-[1200px]:w-[calc(50%-10px)] max-[992px]:w-full"
             >
-              <Link
+              <SmartLink
                 href={item.href}
                 className="cs_list_img cs-col-left relative block overflow-hidden pb-[50%] focus-visible:outline-2 focus-visible:outline-offset-[-2px] focus-visible:outline-[#ad5151]"
               >
@@ -75,11 +75,11 @@ export function ServicesCaseStudiesSection({
                   sizes="(max-width: 991px) 100vw, 430px"
                   className="object-cover shadow-[1px_-3px_10px_0_rgba(0,0,0,0.1)] transition-all duration-1000 hover:scale-105"
                 />
-              </Link>
+              </SmartLink>
               <div className="cs-col-right flex flex-1 flex-col p-[18px]">
                 <div className="cs-text flex flex-1 flex-col justify-between">
                   <div className="cs-title">
-                    <Link
+                    <SmartLink
                       href={item.href}
                       className="block focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#ad5151]"
                     >
@@ -93,7 +93,7 @@ export function ServicesCaseStudiesSection({
                       <h3 className="mb-[15px] line-clamp-2 font-montreal-medium text-[20px] font-normal leading-[1.4] text-[#282828]">
                         {item.title}
                       </h3>
-                    </Link>
+                    </SmartLink>
                     {item.description ? (
                       <p className="mb-[15px] font-sans text-sm font-normal leading-6 text-[#535353]">
                         {formatBrText(item.description)}

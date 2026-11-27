@@ -1,8 +1,8 @@
 "use client";
 
-import Link from "next/link";
 import { usePathname } from "next/navigation";
 
+import { SmartLink } from "@/components/ui/smart-link";
 import { cn } from "@/lib/class-names";
 
 export function isNavigationLinkActive(href: string, pathname: string): boolean {
@@ -48,7 +48,7 @@ export function FooterMenuItem({
 
   return (
     <li className={cn(className, isActive && "current-menu-item")}>
-      <Link
+      <SmartLink
         className={cn(
           "capitalize transition-colors duration-300",
           isMobile
@@ -64,7 +64,7 @@ export function FooterMenuItem({
         aria-current={isActive ? "page" : undefined}
       >
         {label}
-      </Link>
+      </SmartLink>
     </li>
   );
 }
@@ -88,7 +88,7 @@ export function FooterBottomLink({
   const isActive = isFooterLinkActive(href, pathname);
 
   return (
-    <Link
+    <SmartLink
       className={cn(
         className,
         isActive && "text-brand-red opacity-100",
@@ -99,6 +99,6 @@ export function FooterBottomLink({
       aria-current={isActive ? "page" : undefined}
     >
       {label}
-    </Link>
+    </SmartLink>
   );
 }
