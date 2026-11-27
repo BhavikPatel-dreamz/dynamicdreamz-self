@@ -3596,7 +3596,7 @@ export const pageSeo = {
     path: "/shopify-development-in-bangalore/",
     title: "Shopify Development Company in Bangalore | Dynamic Dreamz",
     description:
-      "Shopify development company in Bangalore offering custom Shopify stores, theme development, migrations, app integrations and ongoing support.",
+      "Shopify development company in Bangalore (Bengaluru) offering custom Shopify stores, theme development, migrations, app integrations and ongoing support.",
     socialDescription:
       "Top-rated Shopify development company in Bangalore. Certified Shopify developers for custom stores, Plus upgrades, theme engineering, and migrations.",
     keywords: [

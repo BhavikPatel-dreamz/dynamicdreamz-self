@@ -48,7 +48,7 @@ export const shopifyDevelopmentMelbourneContent = {
         alt: "Dynamic Dreamz — Upwork Top Rated Plus",
         width: 126,
         height: 54,
-        href: "https://www.upwork.com/agencies/dynamicdreamz/",
+        href: "https://www.upwork.com/ag/dynamicdreamz/",
       },
     ],
     tabletSlider: {
@@ -428,10 +428,4 @@ export const shopifyDevelopmentMelbourneContent = {
       answer: "Share your existing store, representative products, campaign calendar and any brand or design guidelines. Use Get In Touch to send the details and arrange a discovery call.",
     }
   ],
-
-  ctaBanner: {
-    heading: "Let's Build Your Dream Store Together",
-    ctaLabel: "Get In Touch",
-    ctaHref: "/request-quote/",
-  },
 };

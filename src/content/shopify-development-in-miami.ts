@@ -241,7 +241,7 @@ export const shopifyDevelopmentMiamiContent = {
           "We don't disappear after launch. Dynamic Dreamz provides dedicated post-launch support, performance monitoring, security updates, and ongoing feature improvements, keeping your Shopify store running at its best, long after go-live.",
         icon: "/assets/services/shopify-development-in-delhi/services/shopify-maintenance-support.svg",
         iconAlt: "Shopify Maintenance & Support Icon",
-        href: "/buy-shopify-hours/",
+        href: "/buy-shopify-development-hours/",
       },
       {
         title: "Shopify 2.0 Migration",
@@ -269,25 +269,25 @@ export const shopifyDevelopmentMiamiContent = {
       "We, a Shopify Plus agency trusted by Miami businesses, build solutions that capture interest, win trust, and create partnerships that last.",
     steps: [
       {
-        step: "01",
+        step: "Step 01",
         title: "Discovery & Planning",
         description:
           "We dig deep into your requirements, map out the full scope, and create a clear development plan that keeps everyone aligned from day one. No guesswork, no surprises, just a solid roadmap built around your goals, your market, and your growth targets.",
       },
       {
-        step: "02",
+        step: "Step 02",
         title: "Design & Development",
         description:
           "Great design is the foundation of a great business. We combine clean aesthetics with purposeful functionality, building Shopify stores that are visually compelling, easy to navigate, and built to convert. Every design decision is driven by simplicity, performance, and your brand identity.",
       },
       {
-        step: "03",
+        step: "Step 03",
         title: "Testing & Launch",
         description:
           "Before your store goes live, we put it through rigorous testing, performance, responsiveness, browser compatibility, and user experience. We only launch when everything is exactly right. No bugs, no surprises, no shortcuts.",
       },
       {
-        step: "04",
+        step: "Step 04",
         title: "Post-Launch Support",
         description:
           "Your launch is just the beginning. We stay by your side after go-live, monitoring performance, resolving any issues quickly, and ensuring your Shopify store continues to grow and evolve with your business and your market.",
@@ -383,7 +383,7 @@ export const shopifyDevelopmentMiamiContent = {
         category: "Shopify / Shopify Plus",
       },
       {
-        name: "Sims Direct",
+        name: "SimsDirect / Simify",
         href: "https://simsdirect.com.au/",
         image: "/assets/our-work/projects/sims-direct.webp",
         imageAlt: "SimsDirect Travel SIM Cards Shopify Storefront built by Dynamic Dreamz",
@@ -481,17 +481,5 @@ export const shopifyDevelopmentMiamiContent = {
     heading: "Want us to help you with your online store?",
     ctaLabel: "request a quote",
     ctaHref: "/request-quote/",
-  },
-
-  bookIntroCall: {
-    formHeading: "Let's Build Something Great Together",
-    formSubheading: "Reach out, and we’ll get back to you within 24 hours.",
-    callHeading: "Book an Intro Call",
-    callDescription:
-      "Let’s have a friendly conversation about the Shopify Store. Whether you’re ready to kick off your Shopify store or still figuring out where to start, we’re happy to jump on a quick call and help you think it through.",
-    callCtaLabel: "Book A Call",
-    callCtaHref: "/book-a-discovery-call/",
-    callIconSrc: "/assets/services/shopify-development-in-texas/call-icon.svg",
-    callIconAlt: "Book an Intro Call Icon",
   },
 } as const;

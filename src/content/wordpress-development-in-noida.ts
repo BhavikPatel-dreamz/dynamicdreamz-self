@@ -287,7 +287,7 @@ export const wordpressDevelopmentNoidaContent = {
       },
       {
         name: "Nexventur",
-        href: "https://nexventur.com/",
+        href: "https://www.nexventur.com/",
         image: "/assets/our-work/projects/nexventur.webp",
         imageAlt: "Nexventur Recruitment & Relocation Website by Dynamic Dreamz",
         category: "WORDPRESS",

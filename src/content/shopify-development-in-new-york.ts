@@ -245,7 +245,7 @@ export const shopifyDevelopmentNewYorkContent = {
           "A great store would always require consistent care. Henceforth, we provide ongoing Shopify maintenance including security updates, performance tuning, bug fixes & feature enhancements- just so your store stays at its best long after launch.",
         icon: "/assets/services/shopify-development-in-delhi/services/shopify-maintenance-support.svg",
         iconAlt: "Shopify Maintenance & Support Icon",
-        href: "/buy-shopify-hours/",
+        href: "/buy-shopify-development-hours/",
       },
       {
         title: "Shopify 2.0 Migration",
@@ -387,7 +387,7 @@ export const shopifyDevelopmentNewYorkContent = {
         category: "Shopify / Shopify Plus",
       },
       {
-        name: "Sims Direct",
+        name: "SimsDirect / Simify",
         href: "https://simsdirect.com.au/",
         image: "/assets/our-work/projects/sims-direct.webp",
         imageAlt: "SimsDirect Travel SIM Cards Shopify Storefront built by Dynamic Dreamz",

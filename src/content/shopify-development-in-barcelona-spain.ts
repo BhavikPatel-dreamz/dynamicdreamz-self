@@ -248,7 +248,7 @@ export const shopifyDevelopmentBarcelonaContent = {
           "We don’t disappear after launch. Dynamic Dreamz provides dedicated post-launch support, performance monitoring, security updates, and ongoing feature improvements, keeping your Shopify store running at its best, long after go-live.",
         icon: "/assets/services/shopify-development-in-delhi/services/shopify-maintenance-support.svg",
         iconAlt: "Shopify Maintenance & Support Icon",
-        href: "/buy-shopify-hours/",
+        href: "/buy-shopify-development-hours/",
       },
       {
         title: "Shopify 2.0 Migration",
@@ -273,7 +273,7 @@ export const shopifyDevelopmentBarcelonaContent = {
     eyebrow: "How We Work",
     heading: "Our Shopify Development Process",
     description:
-      "We, a Shopify Plus agency trusted by Spain businesses, build solutions that capture interest, win trust, and create partnerships that last. Every project begins with understanding you- your business, your goals, and the outcomes you're working toward.",
+      "We a Shopify Plus agency trusted by Spain businesses, build solutions that capture interest, win trust, and create partnerships that last. Every project begins with understanding you- your business, your goals, and the outcomes you're working toward.",
     steps: [
       {
         step: "Step 01",
@@ -390,7 +390,7 @@ export const shopifyDevelopmentBarcelonaContent = {
         href: "https://www.matcharepublic.com/",
       },
       {
-        name: "Sims Direct",
+        name: "SimsDirect / Simify",
         category: "Shopify / Shopify Plus",
         image: "/assets/our-work/projects/sims-direct.webp",
         imageAlt: "SimsDirect Travel SIM Cards Shopify Storefront built by Dynamic Dreamz",
@@ -411,7 +411,7 @@ export const shopifyDevelopmentBarcelonaContent = {
         href: "https://nufyx.com/",
       },
       {
-        name: "Luxxi Nails",
+        name: "Luxxi nails",
         category: "Shopify / Shopify Plus",
         image: "/assets/beauty-cosmetics/portfolio/luxxi-nails.webp",
         imageAlt: "Luxxi Nails Custom Shopify Storefront built by Dynamic Dreamz",

@@ -242,7 +242,7 @@ export const shopifyDevelopmentTexasContent = {
           "We don’t disappear after launch. Dynamic Dreamz provides dedicated post-launch support, performance monitoring, security updates, and ongoing feature improvements, keeping your Shopify store running at its best, long after go-live.",
         icon: "/assets/services/shopify-development-in-delhi/services/shopify-maintenance-support.svg",
         iconAlt: "Shopify Maintenance & Support Icon",
-        href: "/buy-shopify-hours/",
+        href: "/buy-shopify-development-hours/",
       },
       {
         title: "Shopify 2.0 Migration",
@@ -348,7 +348,7 @@ export const shopifyDevelopmentTexasContent = {
   },
 
   portfolio: {
-    eyebrow: "PORTFOLIO",
+    eyebrow: "Portfolio",
     heading: "Our Work",
     description:
       "Thousands of Shopify stores crafted with precision, each one built to perform, convert, and grow.",
@@ -384,14 +384,14 @@ export const shopifyDevelopmentTexasContent = {
         category: "Shopify / Shopify Plus",
       },
       {
-        name: "Sims Direct",
+        name: "SimsDirect / Simify",
         href: "https://simsdirect.com.au/",
         image: "/assets/our-work/projects/sims-direct.webp",
         imageAlt: "SimsDirect Travel SIM Cards Shopify Storefront built by Dynamic Dreamz",
         category: "Shopify / Shopify Plus",
       },
       {
-        name: "Luxxi Nails",
+        name: "Luxxi nails",
         href: "https://luxxinails.com/",
         image: "/assets/beauty-cosmetics/portfolio/luxxi-nails.webp",
         imageAlt: "Luxxi Nails Custom Shopify Storefront built by Dynamic Dreamz",

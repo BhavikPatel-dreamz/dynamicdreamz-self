@@ -63,7 +63,7 @@ export type ShopifyCityLandingContent = {
     items: readonly HappyClientTestimonialItem[];
   };
   faqs: readonly FaqAccordionItem[];
-  ctaBanner: {
+  ctaBanner?: {
     heading: string;
     ctaLabel: string;
     ctaHref: string;
@@ -165,11 +165,13 @@ export function ShopifyCityLandingTemplate({
         idPrefix={faqIdPrefix}
         items={content.faqs}
       />
-      <CtaBannerSection
-        ctaHref={content.ctaBanner.ctaHref}
-        ctaLabel={content.ctaBanner.ctaLabel}
-        heading={content.ctaBanner.heading}
-      />
+      {content.ctaBanner ? (
+        <CtaBannerSection
+          ctaHref={content.ctaBanner.ctaHref}
+          ctaLabel={content.ctaBanner.ctaLabel}
+          heading={content.ctaBanner.heading}
+        />
+      ) : null}
       {children}
     </div>
   );

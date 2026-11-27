@@ -92,7 +92,7 @@ export const wordpressDevelopmentBangaloreContent = {
         alt: "Dynamic Dreamz — Upwork Top Rated Plus",
         width: 126,
         height: 54,
-        href: "https://www.upwork.com/agencies/dynamicdreamz/",
+        href: "https://www.upwork.com/ag/dynamicdreamz/",
       },
     ],
     tabletSlider: {
@@ -278,7 +278,7 @@ export const wordpressDevelopmentBangaloreContent = {
       },
       {
         name: "Nexventur",
-        href: "https://nexventur.com/",
+        href: "https://www.nexventur.com/",
         image: "/assets/our-work/projects/nexventur.webp",
         imageAlt: "Nexventur Recruitment & Relocation Website by Dynamic Dreamz",
         category: "WORDPRESS",

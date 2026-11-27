@@ -257,7 +257,7 @@ export const wordpressDevelopmentMumbaiContent = {
     eyebrow: "Portfolio",
     heading: "Our Work",
     description:
-      "We build high-performing WordPress websites focused on scalability, usability, and measurable results that help businesses grow their digital presence.",
+      "Explore selected WordPress projects delivered for businesses and agencies across different industries.",
     items: [
       {
         name: "Quite Events",
@@ -296,7 +296,7 @@ export const wordpressDevelopmentMumbaiContent = {
       },
       {
         name: "Nexventur",
-        href: "https://nexventur.com/",
+        href: "https://www.nexventur.com/",
         image: "/assets/our-work/projects/nexventur.webp",
         imageAlt: "Nexventur Recruitment & Relocation Website by Dynamic Dreamz",
         category: "WORDPRESS",

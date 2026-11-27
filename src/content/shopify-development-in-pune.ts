@@ -48,7 +48,7 @@ export const shopifyDevelopmentPuneContent = {
         alt: "Dynamic Dreamz — Upwork Top Rated Plus",
         width: 126,
         height: 54,
-        href: "https://www.upwork.com/agencies/dynamicdreamz/",
+        href: "https://www.upwork.com/ag/dynamicdreamz/",
       },
     ],
     tabletSlider: {

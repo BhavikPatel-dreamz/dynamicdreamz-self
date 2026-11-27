@@ -48,7 +48,7 @@ export const shopifyDevelopmentAhmedabadContent = {
         alt: "Dynamic Dreamz — Upwork Top Rated Plus",
         width: 126,
         height: 54,
-        href: "https://www.upwork.com/agencies/dynamicdreamz/",
+        href: "https://www.upwork.com/ag/dynamicdreamz/",
       },
     ],
     tabletSlider: {
@@ -527,10 +527,4 @@ export const shopifyDevelopmentAhmedabadContent = {
         "Yes. We support Shopify Plus projects and ongoing requirements including B2B, checkout extensions, integrations, performance, CRO, new features and maintenance.",
     },
   ],
-
-  ctaBanner: {
-    heading: "Want us to help you with your online store?",
-    ctaLabel: "REQUEST A QUOTE",
-    ctaHref: "/request-quote/",
-  },
 } as const;

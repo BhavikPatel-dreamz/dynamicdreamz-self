@@ -48,7 +48,7 @@ export const shopifyDevelopmentSuratContent = {
         alt: "Dynamic Dreamz — Upwork Top Rated Plus",
         width: 126,
         height: 54,
-        href: "https://www.upwork.com/agencies/dynamicdreamz/",
+        href: "https://www.upwork.com/ag/dynamicdreamz/",
       },
     ],
     tabletSlider: {
@@ -527,10 +527,4 @@ export const shopifyDevelopmentSuratContent = {
         "Yes. We provide ongoing Shopify support for fixes, new features, app changes, CRO, performance improvements, integrations and long-term development requirements.",
     },
   ],
-
-  ctaBanner: {
-    heading: "Want us to help you with your online store?",
-    ctaLabel: "REQUEST A QUOTE",
-    ctaHref: "/request-quote/",
-  },
 } as const;

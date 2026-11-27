@@ -387,7 +387,7 @@ export const shopifyDevelopmentLosAngelesContent = {
         category: "Shopify / Shopify Plus",
       },
       {
-        name: "Sims Direct",
+        name: "SimsDirect / Simify",
         href: "https://simsdirect.com.au/",
         image: "/assets/our-work/projects/sims-direct.webp",
         imageAlt: "SimsDirect Travel SIM Cards Shopify Storefront built by Dynamic Dreamz",

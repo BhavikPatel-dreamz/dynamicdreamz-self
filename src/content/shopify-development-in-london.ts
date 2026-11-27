@@ -48,7 +48,7 @@ export const shopifyDevelopmentLondonContent = {
         alt: "Dynamic Dreamz — Upwork Top Rated Plus",
         width: 126,
         height: 54,
-        href: "https://www.upwork.com/agencies/dynamicdreamz/",
+        href: "https://www.upwork.com/ag/dynamicdreamz/",
       },
     ],
     tabletSlider: {
@@ -428,10 +428,4 @@ export const shopifyDevelopmentLondonContent = {
       answer: "Share your current store, important landing pages, third-party systems and the release window your team is working towards. Use Get In Touch to send the details and arrange a discovery call.",
     }
   ],
-
-  ctaBanner: {
-    heading: "Let's Build Your Dream Store Together",
-    ctaLabel: "Get In Touch",
-    ctaHref: "/request-quote/",
-  },
 };

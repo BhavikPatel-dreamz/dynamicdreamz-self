@@ -48,7 +48,7 @@ export const shopifyDevelopmentChennaiContent = {
         alt: "Dynamic Dreamz — Upwork Top Rated Plus",
         width: 126,
         height: 54,
-        href: "https://www.upwork.com/agencies/dynamicdreamz/",
+        href: "https://www.upwork.com/ag/dynamicdreamz/",
       },
     ],
     tabletSlider: {
@@ -240,7 +240,7 @@ export const shopifyDevelopmentChennaiContent = {
           "Upgrade with our migration service to the most recent Shopify 2.0 framework. We assist you in utilizing Shopify 2.0’s new features and improvements, which include enhanced developer tools, more flexible theme customization options, and better performance. Our migration service ensures everything goes smoothly. So, you can give your customers an even better shopping experience.",
         icon: "/assets/services/shopify-development-in-delhi/services/shopify-2-0-upgrades.svg",
         iconAlt: "Shopify 2.0 Migration Service Icon",
-        link: "/blogs/migrating-a-theme-to-online-store-2-0/",
+        link: "/migrating-a-theme-to-online-store-2-0/",
       },
       {
         title: "Shopify White Label Development Service",
@@ -429,7 +429,7 @@ export const shopifyDevelopmentChennaiContent = {
     {
       question: "How much does hiring a Shopify development company cost?",
       answer:
-        "The cost of [hiring a Shopify development](/how-to-hire-shopify-development-agency) company depends on the complexity of your project, the requirements and features you want, and the expertise of development teams. If you want to know the exact amount, you can consult with a Shopify development company.",
+        "The cost of [hiring a Shopify development](/blogs/how-to-hire-shopify-development-agency/) company depends on the complexity of your project, the requirements and features you want, and the expertise of development teams. If you want to know the exact amount, you can consult with a Shopify development company.",
     },
     {
       question: "How much time does it take to create a Shopify store?",
