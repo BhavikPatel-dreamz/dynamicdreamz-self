@@ -4,7 +4,8 @@ import React, { useEffect, useId, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import { PhoneInput } from "@/components/ui/phone-input";
 import { SmartLink } from "@/components/ui/smart-link";
-import { cmsFormCopy, contactFormCopy } from "@/content/forms";
+import { cmsFormCopy } from "@/content/forms";
+import { countrySelectOptions } from "@/data/countries";
 import { ATTRIBUTION_FIELDS, resolveAttributionMap } from "@/lib/attribution";
 import type { Form as PayloadForm } from "@/types/payload-types";
 import { Button } from "../ui/button-link";
@@ -17,20 +18,6 @@ export type CmsFormClientProps = {
   footerNote?: React.ReactNode;
   onSuccess?: () => void;
 };
-
-const COMMON_COUNTRIES = [
-  "United States",
-  "United Kingdom",
-  "Canada",
-  "Australia",
-  "India",
-  "Germany",
-  "France",
-  "Netherlands",
-  "Singapore",
-  "United Arab Emirates",
-  "Other",
-] as const;
 
 function renderLexicalNode(node: any, key: number | string): React.ReactNode {
   if (!node) return null;
@@ -346,9 +333,13 @@ export function CmsFormClient({
             const rawValue = formData.get(field.name);
             if (rawValue !== null) {
               const dialCode = formData.get(`${field.name}_dial_code`);
+              const trimmedRaw = typeof rawValue === "string" ? rawValue.trim() : "";
               const finalValue =
-                dialCode && typeof dialCode === "string" && typeof rawValue === "string" && rawValue.trim() !== ""
-                  ? `${dialCode} ${rawValue}`
+                dialCode &&
+                typeof dialCode === "string" &&
+                trimmedRaw !== "" &&
+                !trimmedRaw.startsWith("+")
+                  ? `${dialCode} ${trimmedRaw}`
                   : String(rawValue);
               submissionData.push({
                 field: field.name,
@@ -562,7 +553,7 @@ export function CmsFormClient({
                         className="h-[49px] w-full cursor-pointer appearance-none rounded-[5px] border-[1.5px] border-[#dfdfdf] bg-[rgba(254,254,254,0.93)] bg-[url('/assets/request-quote/icons/select-arrow.svg')] bg-[position:calc(100%-16px)_center] bg-no-repeat px-4 pr-9 text-base font-medium text-[#090909] focus:border-[#090909] focus:outline-none max-[1200px]:text-sm max-[992px]:h-[44px]"
                       >
                         <option value="">{cmsFormCopy.countryPlaceholder}</option>
-                        {COMMON_COUNTRIES.map((country) => (
+                        {countrySelectOptions.map((country) => (
                           <option key={country} value={country}>
                             {country}
                           </option>
@@ -613,15 +604,19 @@ export function CmsFormClient({
                         </p>
                       </div>
                     </div>
-                  ) : (field as any).name === "phone" || (field as any).name?.toLowerCase().includes("phone") ? (
+                  ) : (field as any).name === "phone" ||
+                    (field as any).name === "tel" ||
+                    (field as any).name?.toLowerCase().includes("phone") ? (
                     <PhoneInput
                       id={fieldId}
                       name={(field as any).name}
                       required={isRequired}
-                      placeholder={fieldPlaceholder}
+                      ariaInvalid={Boolean(fieldErrors[(field as any).name])}
+                      onChange={() => clearFieldError((field as any).name)}
+                      placeholder={(field as any).placeholder || undefined}
                       defaultIso2="in"
-                      searchPlaceholder={contactFormCopy.phoneSearchPlaceholder}
-                      selectAriaLabel={contactFormCopy.phoneCountrySelectAriaLabel}
+                      selectAriaLabel={cmsFormCopy.phoneCountrySelectAriaLabel}
+                      listAriaLabel={cmsFormCopy.phoneCountryListAriaLabel}
                     />
                   ) : (
                     <input

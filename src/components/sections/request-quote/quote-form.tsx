@@ -47,7 +47,7 @@ export function QuoteForm({
   title = requestQuoteContent.form.title,
   showTitle = true,
   className = "right-col w-1/2 py-[150px] pl-[46px] pb-[110px] max-[1200px]:pl-[30px] max-[992px]:w-full max-[992px]:pt-[150px] max-[992px]:pl-0 max-[992px]:pb-[50px] max-[768px]:pt-[145px] max-[768px]:pb-[50px]",
-  phonePlaceholder = quoteFormCopy.placeholders.phone,
+  phonePlaceholder,
   submitLabel = quoteFormCopy.submit,
   submitButtonClassName,
   budgetOptions = requestQuoteContent.form.budgetOptions,
@@ -200,12 +200,11 @@ export function QuoteForm({
           <div className="mb-7 w-1/2 px-[7px] max-[1200px]:mb-5 max-[992px]:mb-5 max-[768px]:w-full max-[768px]:px-0">
             <FieldLabel htmlFor="quote-phone">{quoteFormCopy.labels.phone}</FieldLabel>
             <PhoneInput
-              
               id="quote-phone"
               name="phone"
               placeholder={phonePlaceholder ?? undefined}
-              searchPlaceholder={quoteFormCopy.phoneSearchPlaceholder}
               selectAriaLabel={quoteFormCopy.phoneCountrySelectAriaLabel}
+              listAriaLabel={quoteFormCopy.phoneCountryListAriaLabel}
               maxLength={400}
             />
           </div>

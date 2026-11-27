@@ -38,7 +38,13 @@ export async function submitContactForm(
 
   const name = fieldValue(formData, "name") || fieldValue(formData, "EnterYourName");
   const email = fieldValue(formData, "email") || fieldValue(formData, "Email");
-  const phone = fieldValue(formData, "phone") || fieldValue(formData, "tel");
+  const rawPhone = fieldValue(formData, "phone") || fieldValue(formData, "tel");
+  const phoneDialCode =
+    fieldValue(formData, "phone_dial_code") || fieldValue(formData, "tel_dial_code");
+  const phone =
+    rawPhone && phoneDialCode && !rawPhone.startsWith("+")
+      ? `${phoneDialCode} ${rawPhone}`
+      : rawPhone;
   const company = fieldValue(formData, "company") || fieldValue(formData, "Companyname");
   const project =
     fieldValue(formData, "project", MAX_PROJECT_LENGTH) ||

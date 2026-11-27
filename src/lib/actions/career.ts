@@ -48,7 +48,13 @@ export async function submitCareerApplication(
   const email = fieldValue(formData, "email");
   const position = fieldValue(formData, "PositionAppliedFor") || fieldValue(formData, "position");
   const location = fieldValue(formData, "Location") || fieldValue(formData, "location") || "Surat";
-  const phone = fieldValue(formData, "tel") || fieldValue(formData, "phone");
+  const rawPhone = fieldValue(formData, "tel") || fieldValue(formData, "phone");
+  const phoneDialCode =
+    fieldValue(formData, "tel_dial_code") || fieldValue(formData, "phone_dial_code");
+  const phone =
+    rawPhone && phoneDialCode && !rawPhone.startsWith("+")
+      ? `${phoneDialCode} ${rawPhone}`
+      : rawPhone;
   const experience = fieldValue(formData, "YearsofExp") || fieldValue(formData, "experience");
   const message =
     fieldValue(formData, "EnterYourMessage", MAX_MESSAGE_LENGTH) ||

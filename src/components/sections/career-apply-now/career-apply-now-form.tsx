@@ -4,6 +4,7 @@ import { useActionState, useEffect, useRef, useState } from "react";
 
 import { submitCareerApplication, type CareerApplyFormState } from "@/lib/actions/career";
 import { ButtonLink } from "@/components/ui/button-link";
+import { PhoneInput } from "@/components/ui/phone-input";
 import { careerApplyNowContent } from "@/content/career-apply-now";
 import { careerApplyFormCopy } from "@/content/forms";
 import { ATTRIBUTION_FIELDS, populateAttributionInputs } from "@/lib/attribution";
@@ -298,39 +299,14 @@ export function CareerApplyNowForm() {
             <FieldLabel htmlFor="job-phone">
               {careerApplyFormCopy.labels.phone}
             </FieldLabel>
-            <div className="flex h-[49px] w-full items-center rounded-[5px] border-[1.5px] border-[#dfdfdf] bg-[rgba(254,254,254,0.93)] px-4 text-base font-medium text-[#090909] transition-colors focus-within:border-[#090909] max-[1200px]:text-sm max-[992px]:h-[44px]">
-              <span
-                className="mr-3 flex shrink-0 items-center gap-1.5 border-r border-[#dfdfdf] pr-3 text-sm text-[#090909]"
-                aria-label={careerApplyFormCopy.phoneAriaLabel}
-              >
-                <svg
-                  className="h-3.5 w-5 shrink-0 rounded-[2px] shadow-[0_0_1px_rgba(0,0,0,0.3)]"
-                  viewBox="0 0 20 14"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  aria-hidden="true"
-                >
-                  <rect width="20" height="14" fill="#FFFFFF" />
-                  <rect width="20" height="4.67" fill="#FF9933" />
-                  <rect y="9.33" width="20" height="4.67" fill="#128807" />
-                  <circle cx="10" cy="7" r="1.8" stroke="#000080" strokeWidth="0.6" />
-                  <circle cx="10" cy="7" r="0.6" fill="#000080" />
-                </svg>
-                <span>{careerApplyFormCopy.phoneCountryCode}</span>
-                <span className="text-[10px] text-[#535353]" aria-hidden="true">
-                  ▼
-                </span>
-              </span>
-              <input
-                id="job-phone"
-                name="tel"
-                type="tel"
-                autoComplete="tel"
-                inputMode="tel"
-                maxLength={400}
-                className="h-full min-w-0 flex-1 border-0 bg-transparent p-0 text-base font-medium text-[#090909] placeholder:text-[#9a9a9a] focus:outline-none max-[1200px]:text-sm"
-              />
-            </div>
+            <PhoneInput
+              id="job-phone"
+              name="tel"
+              defaultIso2="in"
+              selectAriaLabel={careerApplyFormCopy.phoneCountrySelectAriaLabel}
+              listAriaLabel={careerApplyFormCopy.phoneCountryListAriaLabel}
+              maxLength={400}
+            />
           </div>
         </div>
 

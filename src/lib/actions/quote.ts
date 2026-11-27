@@ -38,7 +38,13 @@ export async function submitQuoteForm(
 
   const name = fieldValue(formData, "name");
   const email = fieldValue(formData, "email");
-  const phone = fieldValue(formData, "phone");
+  const rawPhone = fieldValue(formData, "phone") || fieldValue(formData, "tel");
+  const phoneDialCode =
+    fieldValue(formData, "phone_dial_code") || fieldValue(formData, "tel_dial_code");
+  const phone =
+    rawPhone && phoneDialCode && !rawPhone.startsWith("+")
+      ? `${phoneDialCode} ${rawPhone}`
+      : rawPhone;
   const company = fieldValue(formData, "company");
   const websiteUrl = fieldValue(formData, "websiteUrl");
   const budget = fieldValue(formData, "budget");

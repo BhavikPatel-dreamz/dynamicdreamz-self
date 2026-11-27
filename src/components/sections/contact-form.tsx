@@ -174,9 +174,8 @@ export function ContactForm() {
             className="h-[49px]"
             id="contact-phone"
             name="phone"
-            placeholder={contactFormCopy.placeholders.phone}
-            searchPlaceholder={contactFormCopy.phoneSearchPlaceholder}
             selectAriaLabel={contactFormCopy.phoneCountrySelectAriaLabel}
+            listAriaLabel={contactFormCopy.phoneCountryListAriaLabel}
             defaultIso2="in"
             maxLength={400}
           />
