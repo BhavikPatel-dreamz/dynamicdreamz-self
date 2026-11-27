@@ -81,7 +81,7 @@ export function CityPageHeroSection({
             <div className="hero-content">
               {content.eyebrows && content.eyebrows.length > 0 && (
                 <Eyebrow
-                  align="start"
+                  align="responsive-center"
                   as="span"
                   items={content.eyebrows}
                   linePosition="flow"

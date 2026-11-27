@@ -161,8 +161,8 @@ export function CaseStudiesListing({ content }: CaseStudiesListingProps) {
           />
 
           {visibleItems.length === 0 ? <div className="rounded-[20px] bg-white p-12 text-center text-lg text-[#535353]">{caseStudiesUiCopy.empty}</div> : <div className="cs-listing-main -mb-5 flex flex-wrap justify-between max-[992px]:mb-0">{visibleItems.map((item) => <CaseStudyCard key={item.slug} item={item} />)}</div>}
-          <div ref={sentinelRef} className="flex min-h-14 items-center justify-center pt-8 pb-4" aria-live="polite">
-            {loadingMore && (
+          {loadingMore && ( 
+            <div ref={sentinelRef} className="flex min-h-14 items-center justify-center pt-8 pb-4" aria-live="polite">
               <div className="case-study-loading flex items-center justify-center">
                 <div
                   id="cs-loading"
@@ -170,8 +170,8 @@ export function CaseStudiesListing({ content }: CaseStudiesListingProps) {
                   aria-label={caseStudiesUiCopy.loadingMore}
                 />
               </div>
-            )}
           </div>
+          )}
         </Container>
       </div>
     </section>

@@ -43,8 +43,8 @@ export function CareerHeroSection({
   return (
     <section className="hero-new-section hide-logo relative overflow-hidden bg-[#f7f4e9] pt-[91px] max-[992px]:pt-[70px]">
       <Container>
-        <div className="wrapper flex flex-wrap items-center justify-between max-[992px]:flex-col">
-          <div className="left-col z-1 flex w-[51%] flex-col justify-center py-[60px] max-[1200px]:w-full max-[992px]:py-10 max-[1200px]:text-center">
+        <div className="wrapper flex flex-wrap justify-between max-[992px]:flex-col">
+          <div className="left-col z-1 flex w-[51%] flex-col justify-center py-[60px] max-[1400px]:w-[50%] max-[1200px]:w-full max-[992px]:py-10 max-[1200px]:text-center">
             <div className="hero-content">
               {eyebrow ? (
                 <Eyebrow
@@ -96,14 +96,14 @@ export function CareerHeroSection({
             </div>
           </div>
 
-          <div className="right-col relative flex h-[580px] w-[48%] overflow-hidden max-[1200px]:hidden max-[992px]:block  max-[992px]:h-[260px] max-[992px]:w-full max-[768px]:hidden">
+          <div className="right-col relative flex w-[43.182%] overflow-hidden max-[1400px]:w-[48%] max-[1200px]:hidden max-[992px]:mb-10 max-[992px]:block max-[992px]:h-[227px] max-[992px]:w-full max-[768px]:hidden">
             <div className="scrolling_img_wrap relative h-full w-full overflow-hidden">
               <div className="scrolling_anim_img absolute inset-0 px-[68px] max-[1200px]:px-5 max-[992px]:relative max-[992px]:px-0">
                 <div id={scrollingTrackId} className={cn("scrolling_track", styles.scrollingTrack)}>
                   <div className={cn("scrolling_img", styles.scrollingImg)}>
                     {scrollingImages.map((img, i) => (
                       <div
-                        className="item_img mb-6 flex shrink-0 overflow-hidden rounded-[15.93px] shadow-[6.371px_6.371px_15.929px_0_rgba(0,0,0,0.06)] max-[992px]:mb-0 max-[992px]:mr-4 max-[992px]:h-[227px] max-[992px]:w-[342px] max-[992px]:rounded-[10px]"
+                        className="item_img mb-6 flex aspect-[434/256] w-full shrink-0 overflow-hidden rounded-[15.93px] shadow-[6.371px_6.371px_15.929px_0_rgba(0,0,0,0.06)] max-[992px]:mb-0 max-[992px]:mr-4 max-[992px]:aspect-auto max-[992px]:h-[227px] max-[992px]:w-[342px] max-[992px]:rounded-[10px]"
                         key={`hero-img-${i}`}
                       >
                         <Image
@@ -125,7 +125,7 @@ export function CareerHeroSection({
                     >
                       {scrollingImages.map((img, i) => (
                         <div
-                          className="item_img mb-6 flex shrink-0 overflow-hidden rounded-[15.93px] shadow-[6.371px_6.371px_15.929px_0_rgba(0,0,0,0.06)] max-[992px]:mb-0 max-[992px]:mr-4 max-[992px]:h-[227px] max-[992px]:w-[342px] max-[992px]:rounded-[10px]"
+                          className="item_img mb-6 flex aspect-[434/256] w-full shrink-0 overflow-hidden rounded-[15.93px] shadow-[6.371px_6.371px_15.929px_0_rgba(0,0,0,0.06)] max-[992px]:mb-0 max-[992px]:mr-4 max-[992px]:aspect-auto max-[992px]:h-[227px] max-[992px]:w-[342px] max-[992px]:rounded-[10px]"
                           key={`hero-img-dup-${i}`}
                         >
                           <Image

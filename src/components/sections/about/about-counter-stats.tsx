@@ -72,7 +72,7 @@ export function AboutCounterStats({ statistics }: AboutCounterStatsProps) {
               aria-label={stat.value}
               data-about-counter={stat.label}
             >
-              <OdometerNumber value={number} />
+              {number}
               <span className="ml-0.5 text-[40px] leading-[45px] max-[1200px]:leading-[35px] max-[768px]:text-xl max-[768px]:leading-[30px]" aria-hidden="true">
                 +
               </span>

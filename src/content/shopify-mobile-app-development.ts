@@ -230,7 +230,7 @@ export const shopifyMobileAppExploreWork = {
       id: "renee-cosmetics",
       name: "RENÉE Cosmetics",
       category: "React Native",
-      image: "/assets/our-work/projects/renee-cosmetics-app.webp",
+      image: "/assets/our-work/projects/renee.webp",
       imageAlt: "RENÉE Cosmetics Beauty Shopify Storefront by Dynamic Dreamz",
       appLinks: [
         {
@@ -249,7 +249,7 @@ export const shopifyMobileAppExploreWork = {
       id: "bellavita-organic",
       name: "Bellavita Organic",
       category: "React Native",
-      image: "/assets/our-work/projects/bellavita-organic-app.webp",
+      image: "/assets/our-work/projects/bella-vita.webp",
       imageAlt: "Bella Vita Organic Beauty Storefront by Dynamic Dreamz",
       appLinks: [
         {
@@ -287,7 +287,7 @@ export const shopifyMobileAppExploreWork = {
       id: "supertails",
       name: "Supertails",
       category: "React Native",
-      image: "/assets/our-work/projects/supertails-app.webp",
+      image: "/assets/pet-industry/portfolio/supertails-dog.webp",
       imageAlt: "Supertails Pet Supplies Shopify Storefront by Dynamic Dreamz",
       appLinks: [
         {

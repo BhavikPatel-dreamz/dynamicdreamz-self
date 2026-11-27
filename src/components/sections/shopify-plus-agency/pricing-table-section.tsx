@@ -44,7 +44,7 @@ export function PricingTableSection({
           {content.items.map((item) => (
             <article
               data-aos="fade-up"
-              className="pricing_card group relative flex h-full flex-col rounded-[20px] bg-white px-6 pt-8 pb-[60px] max-[1200px]:px-5 max-[1200px]:pt-[25px] max-[992px]:px-[15px] max-[992px]:pt-5"
+              className="pricing_card relative flex h-full flex-col rounded-[20px] bg-white px-6 pt-8 pb-[60px] max-[1200px]:px-5 max-[1200px]:pt-[25px] max-[992px]:px-[15px] max-[992px]:pt-5"
               key={item.label}
             >
               <div className="pricing_card_label mb-2.5 font-montreal-medium text-[18px] font-normal leading-6 text-ink max-[1200px]:text-[14px]">
@@ -72,7 +72,7 @@ export function PricingTableSection({
                 </ul>
               )}
               <SmartLink
-                className="btn-link-arrow absolute bottom-6 left-6 inline-flex items-center font-montserrat text-sm leading-[14px] font-bold uppercase text-[#ad5151] transition-colors hover:text-[#282828] max-[1200px]:left-5 max-[1200px]:text-[10px]"
+                className="btn-link-arrow group absolute bottom-6 left-6 inline-flex items-center font-montserrat text-sm leading-[14px] font-bold uppercase text-[#ad5151] transition-colors hover:text-[#282828] max-[1200px]:left-5 max-[1200px]:text-[10px]"
                 href={item.ctaHref}
               >
                 <span>{item.ctaLabel}</span>
