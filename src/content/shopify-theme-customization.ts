@@ -633,7 +633,7 @@ export const shopifyThemeCustomizationPricing = {
       description:
         "For theme fixes, sections, styling, PDP/collection changes, app integration and ongoing implementation.",
       ctaLabel: "Buy Shopify Development Hours",
-      ctaHref: siteConfig.quotePath,
+      ctaHref: /buy-shopify-development-hours/,
     },
     {
       label: "Dedicated Capacity",
