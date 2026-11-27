@@ -219,7 +219,7 @@ export const hireShopifyAdvantages = [
     title: "Integrity is our core value",
     description:
       "We stick to strict data security guidelines to ensure clients' data stays secure and confidential.",
-    icon: icon("integrity"),
+    icon: icon("data-integrity"),
     iconAlt: "Data security and integrity",
   },
   {
