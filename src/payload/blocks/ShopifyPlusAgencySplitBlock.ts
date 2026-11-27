@@ -38,10 +38,16 @@ export const ShopifyPlusAgencySplitBlock: Block = {
       ],
     },
     {
+      name: "video",
+      type: "upload",
+      relationTo: "media",
+      label: "Agency Video (MP4 / WebM)",
+    },
+    {
       name: "videoSrc",
       type: "text",
       defaultValue: "/assets/home/why-dynamic-dreamz.mp4",
-      label: "Video Path (MP4)",
+      label: "Static Video Fallback Path (MP4)",
     },
     {
       name: "poster",

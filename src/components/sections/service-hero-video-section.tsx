@@ -5,6 +5,7 @@ import { Container, type ContainerVariant } from "@/components/ui/container";
 import { Eyebrow } from "@/components/ui/eyebrow";
 import { formatBrText } from "@/lib/text-formatting";
 import { cn } from "@/lib/class-names";
+import { getVideoMimeType } from "@/lib/video";
 
 export type HeroBadge = {
   label?: string;
@@ -260,7 +261,7 @@ export function ServiceHeroVideoSection({
                   playsInline
                   preload="metadata"
                 >
-                  <source src={content.video} type="video/mp4" />
+                  <source src={content.video} type={getVideoMimeType(content.video)} />
                 </video>
               </div>
             </div>

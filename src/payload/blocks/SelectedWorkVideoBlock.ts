@@ -62,7 +62,13 @@ export const SelectedWorkVideoBlock: Block = {
           label: "Static Image Fallback Path",
         },
         { name: "imageAlt", type: "text", label: "Image Alt Text" },
-        { name: "videoSrc", type: "text", label: "Video Path / URL (MP4)" },
+        {
+          name: "video",
+          type: "upload",
+          relationTo: "media",
+          label: "Video File (MP4 / WebM)",
+        },
+        { name: "videoSrc", type: "text", label: "Static Video Fallback Path (MP4)" },
         {
           name: "videoPoster",
           type: "upload",

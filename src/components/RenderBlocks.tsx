@@ -334,7 +334,7 @@ export interface BlockServiceHero {
     height?: number;
   }[];
   // Media - Video
-  video?: string;
+  video?: CmsMedia;
   videoSrc?: string;
   videoPoster?: CmsMedia;
   videoPosterSrc?: string;
@@ -1096,6 +1096,7 @@ export interface BlockShopifyPlusAgencySplit {
   title: string;
   intro?: string;
   paragraphs?: readonly (string | { text?: string })[];
+  video?: CmsMedia;
   videoSrc?: string;
   poster?: CmsMedia;
   posterSrc?: string;
@@ -1138,6 +1139,7 @@ export interface BlockSelectedWorkVideo {
     image?: CmsMedia;
     imageSrc?: string;
     imageAlt?: string;
+    video?: CmsMedia;
     videoSrc?: string;
     videoPoster?: CmsMedia;
     videoPosterSrc?: string;
@@ -2291,8 +2293,8 @@ export function BlockRenderer({ sections, testimonials }: BlockRendererProps) {
               : undefined;
 
             const videoSrc =
+              resolveMediaUrl(shBlock.video) ||
               shBlock.videoSrc ||
-              shBlock.video ||
               (isShopifyPlusExperts || variant === "video"
                 ? "/assets/home/why-dynamic-dreamz.mp4"
                 : undefined);
@@ -2850,8 +2852,7 @@ export function BlockRenderer({ sections, testimonials }: BlockRendererProps) {
                   : undefined;
 
               const resolvedServiceHeroVideo =
-                shBlock.videoSrc ||
-                shBlock.video ||
+                videoSrc ||
                 (hasVideoLogo ? "/assets/home/why-dynamic-dreamz.mp4" : undefined);
 
               return (
@@ -4877,7 +4878,9 @@ export function BlockRenderer({ sections, testimonials }: BlockRendererProps) {
                       ? counters
                       : shopifyPlusAgencyContent.counters,
                   videoSrc:
-                    hspaBlock.videoSrc || shopifyPlusAgencyContent.videoSrc,
+                    resolveMediaUrl(hspaBlock.video) ||
+                    hspaBlock.videoSrc ||
+                    shopifyPlusAgencyContent.videoSrc,
                   poster,
                 }}
               />
@@ -4914,7 +4917,7 @@ export function BlockRenderer({ sections, testimonials }: BlockRendererProps) {
                 p.mediaType === "video"
                   ? {
                       type: "video" as const,
-                      src: p.videoSrc || "",
+                      src: resolveMediaUrl(p.video) || p.videoSrc || "",
                       poster:
                         resolveMediaUrl(p.videoPoster) ||
                         p.videoPosterSrc ||

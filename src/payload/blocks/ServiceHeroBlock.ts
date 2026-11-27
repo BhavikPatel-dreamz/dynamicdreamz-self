@@ -346,9 +346,18 @@ export const ServiceHeroBlock: Block = {
           fields: [
             // Video Options
             {
+              name: "video",
+              type: "upload",
+              relationTo: "media",
+              label: "Hero Video (MP4 / WebM)",
+              admin: {
+                condition: (data, siblingData) => isHeroVideoVariant(siblingData?.variant),
+              },
+            },
+            {
               name: "videoSrc",
               type: "text",
-              label: "Video URL / Path (MP4)",
+              label: "Video URL / Path Fallback (MP4)",
               admin: {
                 description: "e.g. /assets/home/why-dynamic-dreamz.mp4 or CDN URL",
                 condition: (data, siblingData) => isHeroVideoVariant(siblingData?.variant),

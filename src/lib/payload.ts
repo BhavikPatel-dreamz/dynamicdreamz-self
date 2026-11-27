@@ -307,6 +307,37 @@ export function resolveMediaHeight(media?: MediaOrId, fallback?: number): number
   return fallback;
 }
 
+/**
+ * Fetches a filename-to-URL map from Payload's Media collection so non-CMS
+ * fallback routes can serve uploaded media-server assets while retaining local
+ * `/assets/...` fallbacks when CMS records are absent.
+ */
+export const getPayloadMediaUrlMap = cache(
+  async (filenames: readonly string[]): Promise<Record<string, string>> => {
+    if (filenames.length === 0) return {};
+    try {
+      const payload = await getPayload({ config });
+      const res = await payload.find({
+        collection: "media",
+        where: {
+          filename: { in: [...filenames] },
+        },
+        limit: filenames.length,
+      });
+      const map: Record<string, string> = {};
+      for (const doc of res.docs) {
+        if (doc.filename && doc.url) {
+          map[doc.filename] = doc.url;
+        }
+      }
+      return map;
+    } catch (err) {
+      console.warn("Payload getPayloadMediaUrlMap warning:", err);
+      return {};
+    }
+  },
+);
+
 export function serializeLexicalToHtml(node: unknown): string {
   if (!node || typeof node !== "object") return "";
   const obj = node as {

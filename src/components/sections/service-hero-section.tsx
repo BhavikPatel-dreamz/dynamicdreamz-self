@@ -11,6 +11,7 @@ import { shopifyPlusAgencyHero } from "@/content/shopify-plus-agency";
 import { siteConfig } from "@/data/site";
 import { cn } from "@/lib/class-names";
 import { formatBrText } from "@/lib/text-formatting";
+import { getVideoMimeType } from "@/lib/video";
 
 export type { ServiceHeroReviewItem } from "@/components/sections/service-hero-reviews";
 
@@ -513,7 +514,7 @@ export function ServiceHeroSection({
                   preload="metadata"
                   tabIndex={-1}
                 >
-                  <source src={content.videoSrc} type="video/mp4" />
+                  <source src={content.videoSrc} type={getVideoMimeType(content.videoSrc)} />
                 </video>
               </div>
             ) : content.image ? (

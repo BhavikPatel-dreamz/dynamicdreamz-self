@@ -31,6 +31,9 @@ export const Media: CollectionConfig = {
       },
     ],
     adminThumbnail: ({ doc }) => {
+      if (typeof doc?.mimeType === "string" && doc.mimeType.startsWith("video/")) {
+        return null;
+      }
       const baseURL = getMediaBaseURL();
       const thumb = (doc?.sizes as { thumbnail?: { filename?: string } } | undefined)?.thumbnail?.filename;
       const file = thumb || (doc?.filename as string | undefined);
@@ -49,7 +52,7 @@ export const Media: CollectionConfig = {
         return Response.redirect(`${baseURL}/files/uploads/${encodeURIComponent(filename)}`, 307);
       },
     ],
-    mimeTypes: ["image/*"],
+    mimeTypes: ["image/*", "video/*"],
   },
   fields: [
     {

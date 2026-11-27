@@ -9,6 +9,7 @@ import { DeferredAutoplayVideo } from "@/components/ui/deferred-autoplay-video";
 import { SplitSectionHeading } from "@/components/ui/split-section-heading";
 import { homeSectionCopy, projects, type Project } from "@/content/home";
 import { cn } from "@/lib/class-names";
+import { getMediaFilename } from "@/lib/video";
 
 function DiagonalArrowIcon({ className }: { className?: string }) {
   return (
@@ -21,7 +22,16 @@ function DiagonalArrowIcon({ className }: { className?: string }) {
 const projectVideoPosters: Record<string, string> = {
   "/assets/portfolio/sleepy-cat.mp4": "/assets/case-studies/sleepycat.png",
   "/assets/portfolio/tropicfeel.mp4": "/assets/fashion/portfolio/tropicfeel-fashion.webp",
+  "sleepy-cat.mp4": "/assets/case-studies/sleepycat.png",
+  "tropicfeel.mp4": "/assets/fashion/portfolio/tropicfeel-fashion.webp",
 };
+
+function resolveProjectVideoPoster(videoSrc: string, explicitPoster?: string): string | undefined {
+  if (explicitPoster) return explicitPoster;
+  if (projectVideoPosters[videoSrc]) return projectVideoPosters[videoSrc];
+  const fileName = getMediaFilename(videoSrc);
+  return fileName ? projectVideoPosters[fileName] : undefined;
+}
 
 function ProjectMedia({ project }: { project: Project }) {
   if (project.media.type === "video") {
@@ -30,7 +40,7 @@ function ProjectMedia({ project }: { project: Project }) {
         className="absolute inset-0 h-full w-full object-cover"
         decorative
         hidePosterOnMobile
-        poster={project.media.poster ?? projectVideoPosters[project.media.src]}
+        poster={resolveProjectVideoPoster(project.media.src, project.media.poster)}
         posterSizes="(max-width: 767px) calc(100vw - 50px), 50vw"
         preload="none"
         sourceMedia="(min-width: 768px)"

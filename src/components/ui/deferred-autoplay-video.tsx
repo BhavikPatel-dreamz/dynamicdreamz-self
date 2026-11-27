@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useCallback, useEffect, useRef, useState } from "react";
 
 import { cn } from "@/lib/class-names";
+import { getVideoMimeType } from "@/lib/video";
 
 type DeferredAutoplayVideoProps = {
   src: string;
@@ -106,7 +107,7 @@ export function DeferredAutoplayVideo({
       pendingPlayRef.current = false;
       void video.play().catch(() => {});
     }
-  }, [hasSource]);
+  }, [hasSource, src]);
 
   return (
     <div className="absolute inset-0">
@@ -130,7 +131,7 @@ export function DeferredAutoplayVideo({
         aria-hidden={decorative || undefined}
         tabIndex={decorative ? -1 : undefined}
       >
-        {hasSource ? <source src={src} type="video/mp4" media={sourceMedia} /> : null}
+        {hasSource ? <source src={src} type={getVideoMimeType(src)} media={sourceMedia} /> : null}
       </video>
     </div>
   );

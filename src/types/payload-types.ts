@@ -904,6 +904,7 @@ export interface Page {
             titleAfterTeamwork?: string | null;
             showcaseLayout?: ('ourWork' | 'caseStudiesLive' | 'default') | null;
             hideShowcaseOnMobile?: boolean | null;
+            video?: (number | null) | Media;
             /**
              * e.g. /assets/home/why-dynamic-dreamz.mp4 or CDN URL
              */
@@ -1899,6 +1900,7 @@ export interface Page {
                   id?: string | null;
                 }[]
               | null;
+            video?: (number | null) | Media;
             videoSrc?: string | null;
             poster?: (number | null) | Media;
             posterSrc?: string | null;
@@ -1946,6 +1948,7 @@ export interface Page {
                   image?: (number | null) | Media;
                   imageSrc?: string | null;
                   imageAlt?: string | null;
+                  video?: (number | null) | Media;
                   videoSrc?: string | null;
                   videoPoster?: (number | null) | Media;
                   videoPosterSrc?: string | null;
@@ -4277,6 +4280,7 @@ export interface PagesSelect<T extends boolean = true> {
               titleAfterTeamwork?: T;
               showcaseLayout?: T;
               hideShowcaseOnMobile?: T;
+              video?: T;
               videoSrc?: T;
               videoPoster?: T;
               videoPosterSrc?: T;
@@ -5284,6 +5288,7 @@ export interface PagesSelect<T extends boolean = true> {
                     text?: T;
                     id?: T;
                   };
+              video?: T;
               videoSrc?: T;
               poster?: T;
               posterSrc?: T;
@@ -5334,6 +5339,7 @@ export interface PagesSelect<T extends boolean = true> {
                     image?: T;
                     imageSrc?: T;
                     imageAlt?: T;
+                    video?: T;
                     videoSrc?: T;
                     videoPoster?: T;
                     videoPosterSrc?: T;
