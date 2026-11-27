@@ -1133,7 +1133,7 @@ export const pageSeo = {
   },
   migratingThemeToOnlineStore20: {
     path: "/migrating-a-theme-to-online-store-2-0/",
-    title: "Shopify Online Store 2.0 Theme Migration",
+    title: "Shopify Online Store 2.0 Theme Migration | Dynamic Dreamz",
     description:
       "Migrate your Shopify theme to Online Store 2.0 with Dynamic Dreamz. Retain custom functionality, update integrations, complete QA, and launch with support.",
     socialDescription:

@@ -68,7 +68,7 @@ import { globalBrandLogos } from "@/content/brands";
 export const magentoPlusBrandLogos: readonly ClientLogoSliderItem[] = globalBrandLogos;
 
 export const magentoPlusWhyMigrateContent = {
-  eyebrow: "Why Migrate",
+  eyebrow: "Why Choose",
   heading: "Why Choose Magento to Shopify Plus Migration?",
   description:
     "Magento is a robust but complex platform for users without technical knowledge. Shopify Plus provides simplicity, scalability, and advanced features for growing businesses of all sizes. If you are moving to Shopify Plus you will get a number of excellent benefits. Here’s what Shopify Plus offers to your business:",
@@ -306,7 +306,7 @@ export const magentoPlusFaqs: readonly FaqAccordionItem[] = [
   {
     question: "What happens to my Magento store after migration?",
     answer:
-      "Your Magento store remains completely functional while migrating. We perform all the setup, testing, and migration on a development store. Once the Shopify store is thoroughly tested and ready, we seamlessly switch your domain to Shopify Plus, with no disruption to your daily operations.",
+      "After migration, your Magento store can either be archived or decommissioned based on your preference. You can decide whether to archive or decommission your Magento store after the successful migration.",
   },
   {
     question: "Is Shopify Plus secure?",
