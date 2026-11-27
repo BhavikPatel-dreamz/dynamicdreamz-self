@@ -185,7 +185,7 @@ export function RisksShopifyTopics({ items }: RisksShopifyTopicsProps) {
                 <article className="new-web-title-block mb-[60px] last:mb-0" id={item.id} key={item.id}>
                   {item.introParagraphs?.map((paragraph) => (
                     <p
-                      className="mb-[15px] font-sans text-[14px] font-normal leading-[26px] text-[#535353] last:mb-0"
+                      className="mb-[15px] font-sans text-[14px] font-normal leading-[30.4px] text-[#535353] last:mb-0"
                       key={paragraph}
                     >
                       {paragraph}
@@ -196,7 +196,7 @@ export function RisksShopifyTopics({ items }: RisksShopifyTopicsProps) {
                   </h2>
                   {item.paragraphs.map((paragraph) => (
                     <p
-                      className="mb-[15px] font-sans text-[14px] font-normal leading-[26px] text-[#535353] last:mb-0"
+                      className="mb-[15px] font-sans text-[14px] font-normal leading-[30.4px] text-[#535353] last:mb-0"
                       key={paragraph}
                     >
                       {paragraph}
@@ -216,7 +216,7 @@ export function RisksShopifyTopics({ items }: RisksShopifyTopicsProps) {
                   ) : null}
                   {item.closingParagraphs?.map((paragraph) => (
                     <p
-                      className="mb-[15px] font-sans text-[14px] font-normal leading-[26px] text-[#535353] last:mb-0"
+                      className="mb-[15px] font-sans text-[14px] font-normal leading-[30.4px] text-[#535353] last:mb-0"
                       key={paragraph}
                     >
                       {paragraph}

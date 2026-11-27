@@ -2682,7 +2682,7 @@ export function BlockRenderer({ sections, testimonials }: BlockRendererProps) {
                   showReviews={shBlock.showReviews ?? !isRisks}
                   bodyClassName={
                     shBlock.bodyLayout === "compact"
-                      ? "!mt-2 !mb-0 !text-[14px] !font-normal !leading-[26px] !text-[#535353]"
+                      ? "!mt-3 !mb-0"
                       : undefined
                   }
                   content={{

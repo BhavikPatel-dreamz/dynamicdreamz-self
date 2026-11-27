@@ -27,7 +27,7 @@ export function BookDiscoveryCallPage({
             </Eyebrow>
 
             <h1
-              className="mb-2.5 font-montreal-medium text-[35px] leading-[45px] font-normal tracking-[-0.7px] text-ink max-[992px]:text-[30px] max-[992px]:leading-10 max-[768px]:text-[26px] max-[768px]:leading-[34px]"
+              className="mb-2.5 font-montreal-medium text-[35px] leading-[45px] font-normal text-ink max-[992px]:text-[30px] max-[992px]:leading-10 max-[768px]:text-[26px] max-[768px]:leading-[34px]"
               id="book-discovery-call-title"
             >
               {content.title}
